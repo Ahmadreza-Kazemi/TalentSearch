@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TalentSearch.ir</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        header, footer { background: #036; color: white; padding: 10px 20px; text-align: center; }
+        section { padding: 20px; }
+        .hero { background: url('header-background.jpg'); color: white; padding: 50px 20px; text-align: center; }
+        .services, .values { background: #eef; padding: 20px; }
+        .cta { background: #009688; color: white; padding: 30px 20px; text-align: center; }
+        .cta button { padding: 10px 20px; background: white; color: #009688; border: none; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>TalentSearch.ir</h1>
+        <nav>
+            <a href="#about">About Us</a> | 
+            <a href="#services">Services</a> | 
+            <a href="#blog">Blog</a> | 
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Experience the Future of Psychological Insight</h2>
+        <p>Integrating AI with over 40 years of expertise to empower your personal and professional growth.</p>
+        <button>Discover Insights, Empower Growth</button>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>To revolutionize psychological assessments by leveraging AI for enhanced personal and organizational development.</p>
+    </section>
+
+    <section class="services" id="services">
+        <h2>Our Services</h2>
+        <p>AI-driven talent identification, personality assessments, and mental health evaluations.</p>
+        <a href="services.html">Learn More</a>
+    </section>
+
+    <section class="values">
+        <h2>Our Values</h2>
+        <ul>
+            <li>Innovation</li>
+            <li>Expertise</li>
+            <li>Integrity</li>
+            <li>Empowerment</li>
+            <li>Inclusivity</li>
+        </ul>
+    </section>
+
+    <section class="cta">
+        <h2>Are You Ready to Unlock Your True Potential?</h2>
+        <button>Get Started with Your Assessment Today</button>
+    </section>
+
+    <footer>
+        <p>Contact Us: info@talentsearch.ir</p>
+        <p>Follow Us on LinkedIn, Instagram, and Twitter</p>
+    </footer>
+</body>
+</html>
