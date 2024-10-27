@@ -1,18 +1,28 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
+    <!-- Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تلنت سرچ - کشف پتانسیل شما</title>
-    <link href="https://fonts.googleapis.com/css2?family=Vazir:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>تلنت سرچ - کشف پتانسیل شما با هوش مصنوعی</title>
+    <meta name="description" content="کشف پتانسیل واقعی شما با ارزیابی‌های روان‌شناختی مبتنی بر هوش مصنوعی.">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Vazir:wght@300;400;500&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="styles.css">
-    <meta name="description" content="Default description">
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico">
 </head>
 <body>
+    <!-- Header -->
     <header class="header">
         <div class="container">
             <h1>تلنت سرچ</h1>
             <nav class="navbar">
+                <a href="#home">خانه</a>
                 <a href="#about">درباره ما</a>
                 <a href="#services">خدمات</a>
                 <a href="#contact">تماس با ما</a>
@@ -20,56 +30,74 @@
         </div>
     </header>
 
-    <section class="hero">
+    <!-- Hero Section -->
+    <section id="home" class="hero">
         <div class="hero-content">
-            <h1>پتانسیل واقعی خود را کشف کنید</h1>
-            <p>ما با استفاده از فناوری هوش مصنوعی، شما را در مسیر رشد شخصی و حرفه‌ای هدایت می‌کنیم. باور داریم که با تحلیل دقیق داده‌ها و ارائه راهکارهای مناسب، می‌توانیم به شما کمک کنیم تا توانایی‌های نهفته‌تان را شکوفا کنید و به بهترین نسخه از خودتان تبدیل شوید.</p>
-            <button class="cta-button">شروع کنید</button>
+            <h1>کشف پتانسیل واقعی شما با هوش مصنوعی</h1>
+            <p>با تلفیق روان‌شناسی و هوش مصنوعی، مسیر رشد شخصی خود را به صورت هوشمندانه بیابید.</p>
+            <button class="cta-button">شروع ارزیابی</button>
         </div>
     </section>
 
-    <section id="about" class="section about scroll-element" data-meta-description="تلنت سرچ با بیش از ۴۰ سال تجربه در حوزه روان‌شناسی و استفاده از نوآوری‌های هوش مصنوعی، به افراد و سازمان‌ها کمک می‌کند تا پتانسیل‌های واقعی خود را کشف کنند.">
+    <!-- About Section -->
+    <section id="about" class="section about">
         <h2>درباره ما</h2>
-        <p>تلنت سرچ با بیش از ۴۰ سال تجربه در حوزه روان‌شناسی و استفاده از نوآوری‌های هوش مصنوعی، به افراد و سازمان‌ها کمک می‌کند تا پتانسیل‌های واقعی خود را کشف کنند. ما معتقدیم که هر فرد توانایی‌های منحصر به فردی دارد که با هدایت صحیح می‌تواند به اهداف بزرگ خود دست یابد. هدف ما این است که این مسیر را با ارائه خدمات ارزیابی روان‌شناختی، مشاوره و برنامه‌های توسعه فردی هموار کنیم.</p>
+        <p>ما در تلنت سرچ با استفاده از فناوری‌های پیشرفته هوش مصنوعی و دانش روان‌شناسی، به شما کمک می‌کنیم تا به درک عمیق‌تری از خود برسید و توانایی‌های نهفته‌تان را کشف کنید.</p>
     </section>
 
-    <section id="services" class="section scroll-element" data-meta-description="ما خدماتی را ارائه می‌دهیم که شامل ارزیابی روان‌شناختی، مشاوره حرفه‌ای و برنامه‌های توسعه فردی است.">
-        <h2>خدمات</h2>
-        <p>ما خدماتی را ارائه می‌دهیم که شامل ارزیابی روان‌شناختی، مشاوره حرفه‌ای و برنامه‌های توسعه فردی است. هر یک از این خدمات برای کمک به افراد در رسیدن به پتانسیل واقعی‌شان طراحی شده‌اند.</p>
+    <!-- Services Section -->
+    <section id="services" class="section services">
+        <h2>خدمات ما</h2>
+        <div class="services-container">
+            <div class="service-item">
+                <img src="images/ai-assessment.svg" alt="ارزیابی هوش مصنوعی">
+                <h3>ارزیابی روان‌شناختی مبتنی بر هوش مصنوعی</h3>
+                <p>ارائه تحلیل‌های دقیق با استفاده از الگوریتم‌های یادگیری ماشین.</p>
+            </div>
+            <div class="service-item">
+                <img src="images/consultation.svg" alt="مشاوره فردی">
+                <h3>مشاوره فردی</h3>
+                <p>مشاوره با متخصصین برای برنامه‌ریزی مسیر رشد شخصی.</p>
+            </div>
+            <div class="service-item">
+                <img src="images/personal-development.svg" alt="توسعه شخصی">
+                <h3>برنامه‌های توسعه شخصی</h3>
+                <p>طراحی برنامه‌های اختصاصی برای شکوفایی توانایی‌های شما.</p>
+            </div>
+        </div>
     </section>
 
-    <section id="contact" class="section contact scroll-element" data-meta-description="با ما در تماس باشید برای هرگونه سوال یا نیاز به اطلاعات بیشتر.">
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
         <h2>تماس با ما</h2>
-        <form>
+        <form id="contact-form">
             <label for="name">نام:</label>
-            <input type="text" id="name" name="name" required>
-            <span id="name-error" class="error-message" style="display:none;">لطفاً نام خود را وارد کنید</span>
-            <span id="name-valid-feedback" class="valid-feedback" style="display:none;">✓ معتبر</span>
+            <input type="text" id="name" name="name" required placeholder="نام شما">
 
             <label for="email">ایمیل:</label>
-            <input type="email" id="email" name="email" required>
-            <span id="email-error" class="error-message" style="display:none;">لطفاً یک ایمیل معتبر وارد کنید</span>
-            <span id="email-valid-feedback" class="valid-feedback" style="display:none;">✓ معتبر</span>
+            <input type="email" id="email" name="email" required placeholder="ایمیل شما">
 
             <label for="message">پیام:</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
-            <span id="message-error" class="error-message" style="display:none;">لطفاً پیام خود را وارد کنید</span>
-            <span id="message-valid-feedback" class="valid-feedback" style="display:none;">✓ معتبر</span>
+            <textarea id="message" name="message" rows="4" required placeholder="پیام شما"></textarea>
 
             <button type="submit">ارسال</button>
         </form>
-        <div class="form-confirmation" style="display:none;">پیام شما با موفقیت ارسال شد!</div>
+        <div class="form-confirmation">پیام شما با موفقیت ارسال شد!</div>
     </section>
 
+    <!-- Footer -->
     <footer class="footer">
-        <p>&copy; ۲۰۲۴ تلنت سرچ. تمامی حقوق محفوظ است.</p>
-        <div class="policy-links">
-            <a href="#">لینکدین</a> | <a href="#">اینستاگرام</a> | <a href="#">توییتر</a>
+        <div class="container">
+            <p>&copy; ۲۰۲۴ تلنت سرچ. تمامی حقوق محفوظ است.</p>
+            <div class="social-links">
+                <a href="#"><img src="images/linkedin-icon.svg" alt="لینکدین"></a>
+                <a href="#"><img src="images/instagram-icon.svg" alt="اینستاگرام"></a>
+                <a href="#"><img src="images/twitter-icon.svg" alt="توییتر"></a>
+            </div>
         </div>
     </footer>
 
-    <button class="scroll-to-top scroll-to-top-action" style="display:none;" aria-label="Scroll back to top">⬆</button>
-
+    <!-- Scripts -->
     <script src="script.js"></script>
 </body>
 </html>
