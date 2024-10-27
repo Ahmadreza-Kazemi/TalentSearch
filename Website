@@ -96,20 +96,18 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-info">
-                <p>&copy; ۲۰۲۴ تلنت سرچ. تمامی حقوق محفوظ است.</p>
-                <p>تلفن: ۰۲۱-۱۲۳۴۵۶۷۸</p>
-                <p>ایمیل: <a href="mailto:info@talentsearch.ir">info@talentsearch.ir</a></p>
-            </div>
-            <div class="social-links">
-                <a href="#" aria-label="لینکدین">LinkedIn</a>
-                <a href="#" aria-label="اینستاگرام">Instagram</a>
-                <a href="#" aria-label="توییتر">Twitter</a>
-            </div>
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-info">
+            <p>&copy; ۲۰۲۴ تلنت سرچ. تمامی حقوق محفوظ است.</p>
+            <p>آدرس: تهران، خیابان مثال، پلاک ۱۲۳</p>
+            <p>تلفن: ۰۲۱-۱۲۳۴۵۶۷۸</p>
+            <p>ایمیل: <a href="mailto:info@talentsearch.ir">info@talentsearch.ir</a></p>
         </div>
-    </footer>
+    </div>
+</footer>
+
 
     <!-- Scripts -->
     <script src="scripts.js"></script>
