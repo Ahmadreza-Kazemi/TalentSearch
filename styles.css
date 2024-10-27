@@ -48,6 +48,15 @@ body {
     box-shadow: var(--box-shadow);
 }
 
+.header.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--color-primary);
+    box-shadow: var(--box-shadow-light);
+    z-index: 1000;
+}
+
 .header .container {
     display: flex;
     justify-content: space-between;
@@ -149,6 +158,17 @@ body {
     margin-bottom: var(--margin-medium);
 }
 
+.scroll-element {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity var(--transition), transform var(--transition);
+}
+
+.scroll-element.scrolled {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .faq-item {
     margin-bottom: var(--margin-medium);
     text-align: right;
@@ -216,6 +236,62 @@ body {
     background-color: var(--color-secondary);
 }
 
+.error-message {
+    font-size: 0.9em;
+    color: red;
+    display: none;
+}
+
+.valid-feedback {
+    font-size: 0.9em;
+    color: green;
+    display: none;
+    margin-left: var(--margin-small);
+}
+
+.loading-spinner {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.spinner-container {
+    width: 100%;
+    height: 100%;
+}
+
+.double-bounce1, .double-bounce2 {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    opacity: 0.6;
+    position: absolute;
+    animation: bounce 2.0s infinite ease-in-out;
+}
+
+.double-bounce2 {
+    animation-delay: -1.0s;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: scale(0.0);
+    }
+    50% {
+        transform: scale(1.0);
+    }
+}
+
+.form-confirmation.hidden {
+    display: none;
+    color: green;
+    margin-top: var(--margin-medium);
+}
+
 .footer {
     padding-top: var(--padding-small);
     padding-bottom: var(--padding-small);
@@ -252,6 +328,11 @@ body {
     color: var(--color-light);
     border: none;
     transition: background-color var(--transition);
+    display: none;
+}
+
+.scroll-to-top.show {
+    display: block;
 }
 
 .scroll-to-top:hover {
