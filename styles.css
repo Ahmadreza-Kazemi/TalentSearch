@@ -1,236 +1,259 @@
-/* CSS for Talent Search Website */
+/* CSS for Talent Search Website using CSS variables */
 
-body {
-    font-family: 'Vazir', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f9f9f9;
-    color: #333;
-    line-height: 1.6;
+:root {
+    --font-family: 'Vazir', sans-serif;
+    --color-primary: #1e88e5;
+    --color-secondary: #1565c0;
+    --color-light: #ffffff;
+    --color-dark: #333;
+    --color-cta: #ff6347;
+    --color-cta-hover: #e53e3e;
+    --color-link-hover: #bbdefb;
+    --color-background: #f9f9f9;
+    --color-background-light: #e3f2fd;
+    --color-background-lighter: #f0f4c3;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --button-box-shadow: 0 6px 15px rgba(30, 136, 229, 0.4);
+    --box-shadow-light: 0 4px 8px rgba(0, 0, 0, 0.2);
+    --border-radius: 8px;
+    --transition: 0.3s;
+    --padding-large: 80px;
+    --padding-medium: 60px;
+    --padding-small: 20px;
+    --padding-extra-small: 12px;
+    --margin-medium: 20px;
+    --margin-small: 10px;
+    --font-size-large: 2.5em;
+    --font-size-medium: 2em;
+    --font-size-small: 1.5em;
+    --font-size-extra-small: 1.2em;
 }
 
-.header {
-    background-color: #1e88e5;
-    color: #ffffff;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-background);
+    color: var(--color-dark);
+    line-height: 1.6;
+    direction: rtl;
+    text-align: right;
+}
+
+.header, .footer {
+    background-color: var(--color-primary);
+    color: var(--color-light);
+    padding: var(--padding-small);
+    text-align: center;
+    box-shadow: var(--box-shadow);
 }
 
 .header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.navbar a {
-    color: #ffffff;
+.navbar a, .footer a {
+    color: var(--color-light);
     text-decoration: none;
-    margin: 0 10px;
-    transition: color 0.3s;
+    margin: 0 var(--margin-small);
+    transition: color var(--transition);
 }
 
-.navbar a:hover {
-    color: #bbdefb;
+.navbar a:hover, .footer a:hover {
+    color: var(--color-link-hover);
 }
 
 .hero {
+    padding: var(--padding-medium) var(--padding-small);
     text-align: center;
-    padding: 80px 20px;
-    background-color: #e3f2fd;
+    background-color: var(--color-background-light);
 }
 
-.hero-content h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    color: #1565c0;
-}
-
-.hero-content p {
-    font-size: 1.2em;
+.hero-content {
     max-width: 800px;
     margin: 0 auto;
 }
 
+.hero-content h1 {
+    font-size: var(--font-size-large);
+    color: var(--color-secondary);
+    margin-bottom: var(--margin-medium);
+}
+
+.hero-content p {
+    font-size: var(--font-size-extra-small);
+    margin-bottom: var(--margin-medium);
+}
+
 .cta-button {
-    padding: 15px 30px;
-    font-size: 1.2em;
-    background-color: #ff6347;
-    color: #fff;
+    padding: var(--padding-extra-small) var(--padding-medium);
+    background-color: var(--color-cta);
+    color: var(--color-light);
     border: none;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 4px 15px rgba(255, 99, 71, 0.4);
+    transition: background-color var(--transition), transform var(--transition), box-shadow var(--transition);
+    box-shadow: var(--button-box-shadow);
 }
 
 .cta-button:hover {
-    background-color: #ff4500;
-    transform: scale(1.05);
+    background-color: var(--color-cta-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px rgba(229, 62, 62, 0.6);
+}
+
+.cta-button:active {
+    transform: translateY(1px);
+    box-shadow: 0 6px 12px rgba(229, 62, 62, 0.4);
+}
+
+.icons {
+    margin-top: var(--margin-medium);
 }
 
 .icons a {
-    margin: 0 10px;
-    color: #1565c0;
-    font-size: 1.5em;
-    transition: color 0.3s;
+    margin: 0 var(--margin-small);
+    color: var(--color-secondary);
+    font-size: var(--font-size-small);
+    transition: color var(--transition);
 }
 
 .icons a:hover {
     color: #0d47a1;
 }
 
-.about, .cta-section, .testimonials, .team, .contact, .faq, .success-stories {
-    padding: 60px 20px;
+.section {
+    padding: var(--padding-medium) var(--padding-small);
     text-align: center;
+    background-color: var(--color-light);
 }
 
-.about {
-    background-color: #ffffff;
+.section:nth-of-type(even) {
+    background-color: var(--color-background-lighter);
 }
 
-.cta-section {
-    background-color: #f0f4c3;
+.section h2 {
+    font-size: var(--font-size-medium);
+    color: var(--color-secondary);
+    margin-bottom: var(--margin-medium);
 }
 
-.testimonials {
-    background-color: #e3f2fd;
+.section p {
+    font-size: var(--font-size-extra-small);
+    max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: var(--margin-medium);
 }
 
-.team {
-    background-color: #ffffff;
+.faq-item {
+    margin-bottom: var(--margin-medium);
+    text-align: right;
 }
 
-.contact {
-    background-color: #f0f4c3;
+.faq-item h3 {
+    font-size: var(--font-size-small);
+    color: var(--color-secondary);
+    margin-bottom: var(--margin-small);
 }
 
-.faq {
-    background-color: #e3f2fd;
+.faq-item p {
+    font-size: var(--font-size-extra-small);
 }
 
-.success-stories {
-    background-color: #ffffff;
+.success-story-item {
+    max-width: 400px;
+    background-color: var(--color-light);
+    padding: var(--padding-small);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin: var(--margin-medium) auto;
 }
 
-.about h2, .cta-section h2, .testimonials h2, .team h2, .contact h2, .faq h2, .success-stories h2 {
-    font-size: 2em;
-    color: #1565c0;
-    margin-bottom: 20px;
-}
-
-.team-members {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-.team-member {
-    max-width: 300px;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.team-member img {
-    width: 100%;
-    border-radius: 10px;
-    margin-bottom: 10px;
+.success-story-item h3 {
+    font-size: var(--font-size-small);
+    color: var(--color-secondary);
+    margin-bottom: var(--margin-small);
 }
 
 .contact form {
     max-width: 500px;
     margin: 0 auto;
-    text-align: left;
+    text-align: right;
+    direction: rtl;
 }
 
 .contact form label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: var(--margin-small);
     font-weight: bold;
+    direction: rtl;
 }
 
 .contact form input, .contact form textarea {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
+    padding: var(--padding-extra-small);
+    margin-bottom: var(--margin-medium);
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
+    direction: rtl;
 }
 
 .contact form button {
-    padding: 10px 20px;
-    background-color: #1e88e5;
-    color: #ffffff;
+    padding: var(--padding-extra-small) var(--padding-medium);
+    background-color: var(--color-primary);
+    color: var(--color-light);
     border: none;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color var(--transition);
 }
 
 .contact form button:hover {
-    background-color: #1565c0;
-}
-
-.error-message {
-    font-size: 0.9em;
-    color: red;
-    display: none;
-}
-
-.form-confirmation.hidden {
-    display: none;
-}
-
-.success-stories .success-story-item {
-    max-width: 600px;
-    margin: 20px auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: var(--color-secondary);
 }
 
 .footer {
-    background-color: #1e88e5;
-    color: #ffffff;
-    padding: 20px;
-    text-align: center;
+    padding-top: var(--padding-small);
+    padding-bottom: var(--padding-small);
 }
 
-.footer .policy-links {
-    margin: 10px 0;
+.footer p {
+    font-size: var(--font-size-extra-small);
+    margin-bottom: var(--margin-small);
 }
 
-.footer a {
-    color: #bbdefb;
+.policy-links {
+    margin-top: var(--margin-small);
+}
+
+.policy-links a {
+    color: var(--color-link-hover);
     text-decoration: none;
-    margin: 0 5px;
+    margin: 0 var(--margin-small);
 }
 
-.footer a:hover {
-    color: #ffffff;
+.policy-links a:hover {
+    color: var(--color-light);
 }
 
 .scroll-to-top {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    padding: 10px;
-    background-color: #1e88e5;
-    color: #ffffff;
-    border: none;
+    bottom: var(--margin-medium);
+    right: var(--margin-medium);
+    padding: var(--padding-extra-small);
     border-radius: 50%;
+    box-shadow: var(--box-shadow-light);
     cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s;
+    background-color: var(--color-primary);
+    color: var(--color-light);
+    border: none;
+    transition: background-color var(--transition);
 }
 
 .scroll-to-top:hover {
-    background-color: #1565c0;
-}
-
-.scroll-to-top-action {
-    cursor: pointer;
+    background-color: var(--color-secondary);
 }
