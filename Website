@@ -4,8 +4,8 @@
     <!-- Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تلنت سرچ - کشف پتانسیل شما با هوش مصنوعی</title>
-    <meta name="description" content="کشف پتانسیل واقعی شما با ارزیابی‌های روان‌شناختی مبتنی بر هوش مصنوعی.">
+    <title>تلنت سرچ | کشف پتانسیل شما با هوش مصنوعی</title>
+    <meta name="description" content="با تلنت سرچ، پتانسیل واقعی خود را با ارزیابی‌های روان‌شناختی پیشرفته و فناوری هوش مصنوعی کشف کنید.">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Vazir:wght@300;400;500&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -22,82 +22,96 @@
         <div class="container">
             <h1>تلنت سرچ</h1>
             <nav class="navbar">
-                <a href="#home">خانه</a>
-                <a href="#about">درباره ما</a>
-                <a href="#services">خدمات</a>
-                <a href="#contact">تماس با ما</a>
+                <button class="menu-toggle" aria-label="باز کردن منو">&#9776;</button>
+                <ul class="nav-links">
+                    <li><a href="#home">خانه</a></li>
+                    <li><a href="#about">درباره</a></li>
+                    <li><a href="#services">خدمات</a></li>
+                    <li><a href="#contact">تماس</a></li>
+                </ul>
             </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
+    <main id="home" class="hero">
         <div class="hero-content">
-            <h1>کشف پتانسیل واقعی شما با هوش مصنوعی</h1>
-            <p>با تلفیق روان‌شناسی و هوش مصنوعی، مسیر رشد شخصی خود را به صورت هوشمندانه بیابید.</p>
-            <button class="cta-button">شروع ارزیابی</button>
+            <h2>کشف پتانسیل واقعی شما با هوش مصنوعی</h2>
+            <p>ارائه ارزیابی‌های روان‌شناختی پیشرفته برای شکوفایی توانایی‌های شما.</p>
+            <a href="#services" class="cta-button">شروع کنید</a>
         </div>
-    </section>
+    </main>
 
     <!-- About Section -->
     <section id="about" class="section about">
-        <h2>درباره ما</h2>
-        <p>ما در تلنت سرچ با استفاده از فناوری‌های پیشرفته هوش مصنوعی و دانش روان‌شناسی، به شما کمک می‌کنیم تا به درک عمیق‌تری از خود برسید و توانایی‌های نهفته‌تان را کشف کنید.</p>
+        <div class="container">
+            <h2>درباره ما</h2>
+            <p>در تلنت سرچ، ما با ترکیب روان‌شناسی و فناوری هوش مصنوعی، به شما کمک می‌کنیم تا مسیر رشد شخصی و حرفه‌ای خود را به صورت هوشمندانه ترسیم کنید.</p>
+        </div>
     </section>
 
     <!-- Services Section -->
     <section id="services" class="section services">
-        <h2>خدمات ما</h2>
-        <div class="services-container">
-            <div class="service-item">
-                <img src="images/ai-assessment.svg" alt="ارزیابی هوش مصنوعی">
-                <h3>ارزیابی روان‌شناختی مبتنی بر هوش مصنوعی</h3>
-                <p>ارائه تحلیل‌های دقیق با استفاده از الگوریتم‌های یادگیری ماشین.</p>
-            </div>
-            <div class="service-item">
-                <img src="images/consultation.svg" alt="مشاوره فردی">
-                <h3>مشاوره فردی</h3>
-                <p>مشاوره با متخصصین برای برنامه‌ریزی مسیر رشد شخصی.</p>
-            </div>
-            <div class="service-item">
-                <img src="images/personal-development.svg" alt="توسعه شخصی">
-                <h3>برنامه‌های توسعه شخصی</h3>
-                <p>طراحی برنامه‌های اختصاصی برای شکوفایی توانایی‌های شما.</p>
+        <div class="container">
+            <h2>خدمات ما</h2>
+            <div class="service-list">
+                <div class="service-item">
+                    <h3>ارزیابی‌های هوشمند</h3>
+                    <p>دسترسی به تحلیل‌های عمیق با استفاده از الگوریتم‌های پیشرفته.</p>
+                </div>
+                <div class="service-item">
+                    <h3>مشاوره تخصصی</h3>
+                    <p>مشاوره با متخصصین برای برنامه‌ریزی مسیر رشد شما.</p>
+                </div>
+                <div class="service-item">
+                    <h3>توسعه شخصی</h3>
+                    <p>طراحی برنامه‌های اختصاصی برای شکوفایی توانایی‌های شما.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="section contact">
-        <h2>تماس با ما</h2>
-        <form id="contact-form">
-            <label for="name">نام:</label>
-            <input type="text" id="name" name="name" required placeholder="نام شما">
-
-            <label for="email">ایمیل:</label>
-            <input type="email" id="email" name="email" required placeholder="ایمیل شما">
-
-            <label for="message">پیام:</label>
-            <textarea id="message" name="message" rows="4" required placeholder="پیام شما"></textarea>
-
-            <button type="submit">ارسال</button>
-        </form>
-        <div class="form-confirmation">پیام شما با موفقیت ارسال شد!</div>
+        <div class="container">
+            <h2>تماس با ما</h2>
+            <p>برای شروع سفر خود به سوی آینده، با ما در ارتباط باشید.</p>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">نام</label>
+                    <input type="text" id="name" name="name" required placeholder="نام شما">
+                </div>
+                <div class="form-group">
+                    <label for="email">ایمیل</label>
+                    <input type="email" id="email" name="email" required placeholder="ایمیل شما">
+                </div>
+                <div class="form-group">
+                    <label for="message">پیام</label>
+                    <textarea id="message" name="message" rows="4" required placeholder="پیام شما"></textarea>
+                </div>
+                <button type="submit">ارسال</button>
+            </form>
+            <div class="form-confirmation">پیام شما با موفقیت ارسال شد!</div>
+        </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; ۲۰۲۴ تلنت سرچ. تمامی حقوق محفوظ است.</p>
+            <div class="footer-info">
+                <p>&copy; ۲۰۲۴ تلنت سرچ. تمامی حقوق محفوظ است.</p>
+                <p>تلفن: ۰۲۱-۱۲۳۴۵۶۷۸</p>
+                <p>ایمیل: <a href="mailto:info@talentsearch.ir">info@talentsearch.ir</a></p>
+            </div>
             <div class="social-links">
-                <a href="#"><img src="images/linkedin-icon.svg" alt="لینکدین"></a>
-                <a href="#"><img src="images/instagram-icon.svg" alt="اینستاگرام"></a>
-                <a href="#"><img src="images/twitter-icon.svg" alt="توییتر"></a>
+                <a href="#" aria-label="لینکدین">LinkedIn</a>
+                <a href="#" aria-label="اینستاگرام">Instagram</a>
+                <a href="#" aria-label="توییتر">Twitter</a>
             </div>
         </div>
     </footer>
 
     <!-- Scripts -->
-    <script src="script.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>
