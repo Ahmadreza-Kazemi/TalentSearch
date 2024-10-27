@@ -3,272 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تلنت سرچ - کشف پتانسیل شما</title>
+    <title>تلنت سرچ | مشاوره و توسعه فردی با هوش مصنوعی</title>
+    <meta name="description" content="تلنت سرچ با ۴۰ سال تجربه در روان‌شناسی و نوآوری‌های هوش مصنوعی، به افراد و سازمان‌ها کمک می‌کند تا پتانسیل واقعی خود را کشف کرده و به اهداف شخصی و حرفه‌ای دست یابند. خدمات ما شامل ارزیابی روان‌شناختی، برنامه‌های توسعه فردی و مشاوره هوش مصنوعی است.">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="تلنت سرچ - کشف پتانسیل شما | مشاوره و توسعه فردی با هوش مصنوعی">
+    <meta property="og:description" content="تلنت سرچ با بیش از ۴۰ سال تجربه در حوزه روان‌شناسی و استفاده از نوآوری‌های هوش مصنوعی به افراد و سازمان‌ها کمک می‌کند تا پتانسیل‌های واقعی خود را کشف کنند و به اهداف بزرگ خود دست یابند.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://talentsearch.com">
+    <meta property="og:image" content="https://talentsearch.com/logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Vazir&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM91s3IbcvBJjU6UPvlJ+Yh5+Fw5RM5J8y9u7H" crossorigin="anonymous">
-    <style>
-        body {
-            font-family: 'Vazir', sans-serif;
-            margin: 0;
-            background: #f9f9f9;
-            color: #333;
-            line-height: 1.8;
-            overflow-x: hidden;
-        }
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .header {
-            background: #fff;
-            color: #333;
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        .header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .navbar {
-            display: none;
-            flex-direction: column;
-            background: #fff;
-            position: absolute;
-            top: 100%;
-            right: 0;
-            width: 100%;
-        }
-        .navbar a {
-            color: #00796b;
-            text-decoration: none;
-            padding: 15px;
-            transition: color 0.3s;
-        }
-        .navbar a:hover {
-            color: #004d40;
-        }
-        .hamburger-menu {
-            display: block;
-            color: #333;
-            font-size: 1.5em;
-            cursor: pointer;
-        }
-        .navbar.active {
-            display: flex;
-        }
-        @media (min-width: 768px) {
-            .navbar {
-                display: flex;
-                flex-direction: row;
-                position: static;
-                width: auto;
-                gap: 20px;
-            }
-            .hamburger-menu {
-                display: none;
-            }
-        }
-        .hero {
-            background: linear-gradient(to right, #80cbc4, #4db6ac);
-            color: #fff;
-            padding: 80px 0;
-            text-align: center;
-        }
-        .hero-content {
-            position: relative;
-            z-index: 1;
-        }
-        .hero h1 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-        }
-        .hero p {
-            font-size: 1.2em;
-            margin-bottom: 30px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .hero .cta-button {
-            background: #00796b;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-        .hero .cta-button:hover {
-            background: #004d40;
-        }
-        .icons a {
-            color: #00796b;
-            margin: 0 10px;
-            font-size: 1.5em;
-            transition: color 0.3s;
-        }
-        .icons a:hover {
-            color: #004d40;
-        }
-        .about {
-            background: #fff;
-            padding: 40px 0;
-            text-align: center;
-        }
-        .about h2 {
-            font-size: 2em;
-            color: #00796b;
-            margin-bottom: 20px;
-        }
-        .about p {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        .services {
-            background: #f0f0f0;
-            padding: 40px 0;
-            text-align: center;
-            color: #333;
-        }
-        .services h2 {
-            font-size: 2em;
-            color: #00796b;
-            margin-bottom: 20px;
-        }
-        .service-cards {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            align-items: center;
-        }
-        @media (min-width: 768px) {
-            .service-cards {
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-        }
-        .service-card {
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-            max-width: 300px;
-            flex: 1;
-            text-align: center;
-        }
-        .service-card:hover {
-            transform: translateY(-5px);
-        }
-        .service-card h3 {
-            margin-bottom: 10px;
-        }
-        .team {
-            background: #fff;
-            padding: 40px 0;
-            text-align: center;
-            color: #333;
-        }
-        .team h2 {
-            font-size: 2em;
-            color: #00796b;
-            margin-bottom: 20px;
-        }
-        .team-members {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            align-items: center;
-        }
-        @media (min-width: 768px) {
-            .team-members {
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-        }
-        .team-member {
-            background: #f9f9f9;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-            color: #333;
-            max-width: 300px;
-            flex: 1;
-            text-align: center;
-        }
-        .team-member:hover {
-            transform: translateY(-5px);
-        }
-        .contact {
-            background: #f0f0f0;
-            padding: 40px 0;
-            color: #333;
-            text-align: center;
-        }
-        .contact h2 {
-            font-size: 2em;
-            color: #00796b;
-            margin-bottom: 20px;
-        }
-        .contact form {
-            max-width: 600px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        .contact input, .contact textarea {
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1em;
-            background: #fff;
-            color: #333;
-        }
-        .contact button {
-            background: #00796b;
-            color: #fff;
-            border: none;
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-        .contact button:hover {
-            background: #004d40;
-        }
-        .footer {
-            background: #fff;
-            color: #333;
-            padding: 20px 0;
-            text-align: center;
-            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-        }
-        .footer a {
-            color: #00796b;
-            text-decoration: none;
-        }
-        .footer a:hover {
-            color: #004d40;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header class="header">
         <div class="container">
             <div class="logo">
+                <img src="https://talentsearch.com/logo.png" alt="لوگوی تلنت سرچ">
                 <h1>تلنت سرچ</h1>
             </div>
             <nav class="navbar">
+                <a href="#">خانه</a>
                 <a href="#about">درباره ما</a>
                 <a href="#services">خدمات</a>
                 <a href="#team">تیم ما</a>
@@ -284,11 +38,12 @@
         <div class="container hero-content">
             <h1>پتانسیل واقعی خود را کشف کنید</h1>
             <p>ما با استفاده از فناوری هوش مصنوعی، شما را در مسیر رشد شخصی و حرفه‌ای هدایت می‌کنیم. باور داریم که با تحلیل دقیق داده‌ها و ارائه راهکارهای مناسب، می‌توانیم به شما کمک کنیم تا توانایی‌های نهفته‌تان را شکوفا کنید و به بهترین نسخه از خودتان تبدیل شوید.</p>
-            <button class="cta-button">شروع کنید</button>
+            <button class="cta-button">شروع کنید و توانایی‌های خود را کشف کنید</button>
+            <p class="cta-note">اکنون بهترین زمان برای شروع است، همین حالا اقدام کنید!</p>
             <div class="icons">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                <a href="#" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
             </div>
         </div>
     </section>
@@ -296,26 +51,30 @@
     <section id="about" class="about">
         <div class="container">
             <h2>درباره ما</h2>
-            <p>تلنت سرچ با بیش از ۴۰ سال تجربه در حوزه روان‌شناسی و استفاده از نوآوری‌های هوش مصنوعی، به افراد و سازمان‌ها کمک می‌کند تا پتانسیل‌های واقعی خود را کشف کنند. ما معتقدیم که هر فرد توانایی‌های منحصر به فردی دارد که با هدایت صحیح می‌تواند به اهداف بزرگ خود دست یابد. هدف ما این است که این مسیر را با ارائه خدمات ارزیابی روان‌شناختی، مشاوره و برنامه‌های توسعه فردی هموار کنیم.</p>
+            <p>تلنت سرچ با بیش از ۴۰ سال تجربه در حوزه روان‌شناسی و استفاده از نوآوری‌های هوش مصنوعی، به افراد و سازمان‌ها کمک می‌کند تا پتانسیل‌های واقعی خود را کشف کنند. <a href="#services">مشاهده خدمات ما</a></p>
         </div>
     </section>
 
-    <section id="services" class="services">
+    <section class="cta-section">
         <div class="container">
-            <h2>خدمات ما</h2>
-            <div class="service-cards">
-                <div class="service-card">
-                    <h3>ارزیابی روان‌شناختی</h3>
-                    <p>ارزیابی‌های روان‌شناختی دقیق برای شناخت بهتر نقاط قوت و ضعف شما.</p>
-                </div>
-                <div class="service-card">
-                    <h3>برنامه‌های توسعه فردی</h3>
-                    <p>طراحی برنامه‌های توسعه فردی که به شما کمک می‌کند به اهداف بزرگ خود برسید.</p>
-                </div>
-                <div class="service-card">
-                    <h3>مشاوره هوش مصنوعی</h3>
-                    <p>استفاده از فناوری هوش مصنوعی برای ارائه بهترین راهکارهای رشد و پیشرفت.</p>
-                </div>
+            <h2>آیا آماده‌اید اولین قدم را بردارید؟</h2>
+            <p>همین حالا با تیم ما تماس بگیرید و در مسیر پیشرفت قرار بگیرید.</p>
+            <button class="cta-button" onclick="window.location.href='#contact';">تماس با ما</button>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2>نظرات مشتریان</h2>
+            <div class="testimonial-item">
+                <p>"تجربه من با تلنت سرچ فوق‌العاده بود. تیم حرفه‌ای و استفاده از فناوری هوش مصنوعی به من کمک کرد تا توانایی‌های خود را بهتر بشناسم."</p>
+                <p><i>این نظر واقعی از یکی از مشتریان است که نتایج مثبتی را تجربه کرده است.</i></p>
+                <h4>- محمد رضایی</h4>
+            </div>
+            <div class="testimonial-item">
+                <p>"برنامه‌های توسعه فردی تلنت سرچ به من کمک کرد تا به اهداف حرفه‌ای خود دست پیدا کنم. توصیه می‌کنم حتماً از خدمات آن‌ها استفاده کنید."</p>
+                <p><i>این نظر واقعی از یکی از مشتریان است که نتایج مثبتی را تجربه کرده است.</i></p>
+                <h4>- سارا احمدی</h4>
             </div>
         </div>
     </section>
@@ -325,14 +84,17 @@
             <h2>تیم ما</h2>
             <div class="team-members">
                 <div class="team-member">
+                    <img src="https://talentsearch.com/team-member-placeholder.jpg" alt="تصویر واقعی تیم">
                     <h3>دکتر سارا محمدی</h3>
                     <p>متخصص روان‌شناسی و تحلیل داده‌ها</p>
                 </div>
                 <div class="team-member">
+                    <img src="https://talentsearch.com/team-member-placeholder.jpg" alt="تصویر واقعی تیم">
                     <h3>علی رضایی</h3>
                     <p>متخصص هوش مصنوعی و توسعه فردی</p>
                 </div>
                 <div class="team-member">
+                    <img src="https://talentsearch.com/team-member-placeholder.jpg" alt="تصویر واقعی تیم">
                     <h3>مینا احمدی</h3>
                     <p>کارشناس مشاوره و توسعه منابع انسانی</p>
                 </div>
@@ -344,28 +106,72 @@
         <div class="container">
             <h2>تماس با ما</h2>
             <form>
-                <input type="text" placeholder="نام شما" required>
-                <input type="email" placeholder="ایمیل شما" required>
-                <textarea rows="5" placeholder="پیام شما" required></textarea>
+                <label for="name">نام شما</label>
+                <input type="text" id="name" name="name" placeholder="نام شما" required>
+                <span id="name-error" class="error-message">لطفاً نام خود را وارد کنید</span>
+                <label for="email">ایمیل شما</label>
+                <input type="email" id="email" name="email" placeholder="ایمیل شما" required>
+                <span id="email-error" class="error-message">لطفاً یک ایمیل معتبر وارد کنید</span>
+                <label for="message">پیام شما</label>
+                <textarea id="message" name="message" rows="5" placeholder="پیام شما" required></textarea>
+                <span id="message-error" class="error-message">لطفاً پیام خود را وارد کنید</span>
                 <button type="submit">ارسال پیام</button>
             </form>
+            <p class="form-confirmation hidden">پیام شما با موفقیت ارسال شد. با شما تماس خواهیم گرفت.</p>
         </div>
     </section>
 
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2>سوالات متداول</h2>
+            <div class="faq-item">
+                <h3>چگونه می‌توانم از خدمات شما استفاده کنم؟</h3>
+                <p>برای استفاده از خدمات ما، می‌توانید فرم تماس را پر کنید یا از طریق شبکه‌های اجتماعی با ما در ارتباط باشید. <a href="#contact">تماس با ما</a></p>
+            </div>
+            <div class="faq-item">
+                <h3>آیا اطلاعات من امن خواهد بود؟</h3>
+                <p>بله، ما به حریم خصوصی شما احترام می‌گذاریم و تمامی اطلاعات شما با بالاترین سطح امنیت نگهداری می‌شود.</p>
+            </div>
+            <div class="faq-item">
+                <h3>چگونه می‌توانم با تیم شما ارتباط برقرار کنم؟</h3>
+                <p>شما می‌توانید از طریق فرم تماس موجود در وبسایت یا شبکه‌های اجتماعی با تیم ما در ارتباط باشید. ما همیشه آماده پاسخگویی به سوالات شما هستیم. <a href="#contact">تماس با ما</a></p>
+            </div>
+            <div class="faq-item">
+                <h3>چگونه برنامه‌های توسعه فردی شما به من کمک می‌کنند؟</h3>
+                <p>برنامه‌های توسعه فردی ما با توجه به نیازها و اهداف شما طراحی می‌شوند و به شما کمک می‌کنند تا مهارت‌های جدیدی کسب کنید، نقاط قوت خود را تقویت کنید و به اهداف خود دست یابید.</p>
+            </div>
+        </div>
+    </section>
+
+    <button class="scroll-to-top scroll-to-top-action">بازگشت به بالا</button>
+
+    <section class="success-stories">
+        <div class="container">
+            <h2>داستان‌های موفقیت</h2>
+            <div class="success-story-item">
+                <p>"تلنت سرچ به من کمک کرد تا نه تنها مهارت‌های جدیدی کسب کنم بلکه به یکی از بهترین نسخه‌های خود تبدیل شوم. پشتیبانی تیم فوق‌العاده بود."</p>
+                <h4>- زهرا اکبری</h4>
+            </div>
+            <div class="success-story-item">
+                <p>"استفاده از مشاوره‌های تلنت سرچ به من این امکان را داد که کسب‌وکارم را به مرحله بعدی ببرم و به اهداف حرفه‌ای‌ام دست یابم."</p>
+                <h4>- کیوان نصیری</h4>
+            </div>
+            <div class="success-story-item">
+                <p>"به لطف تحلیل‌های دقیق و برنامه‌های توسعه فردی تلنت سرچ، توانستم عملکرد حرفه‌ای خود را بهبود دهم و به نتایج بهتری در کارم دست پیدا کنم."</p>
+                <h4>- نادر محمدی</h4>
+            </div>
+        </div>
+    </section>
     <footer class="footer">
         <div class="container">
             <p>&copy; ۲۰۲۴ تلنت سرچ. تمامی حقوق محفوظ است.</p>
-            <p>ما را دنبال کنید: <a href="#">لینکدین</a> | <a href="#">اینستاگرام</a> | <a href="#">توییتر</a></p>
+            <div class="policy-links">
+                <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a>
+            </div>
+            <p>ما را دنبال کنید: <a href="#" rel="noopener noreferrer">لینکدین</a> | <a href="#" rel="noopener noreferrer">اینستاگرام</a> | <a href="#" rel="noopener noreferrer">توییتر</a></p>
         </div>
     </footer>
 
-    <script>
-        const hamburgerMenu = document.querySelector('.hamburger-menu');
-        const navbar = document.querySelector('.navbar');
-        
-        hamburgerMenu.addEventListener('click', () => {
-            navbar.classList.toggle('active');
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
