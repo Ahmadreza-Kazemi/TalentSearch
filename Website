@@ -6,6 +6,7 @@
     <title>تلنت سرچ - کشف پتانسیل شما</title>
     <link href="https://fonts.googleapis.com/css2?family=Vazir:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Default description">
 </head>
 <body>
     <header class="header">
@@ -24,63 +25,40 @@
             <h1>پتانسیل واقعی خود را کشف کنید</h1>
             <p>ما با استفاده از فناوری هوش مصنوعی، شما را در مسیر رشد شخصی و حرفه‌ای هدایت می‌کنیم. باور داریم که با تحلیل دقیق داده‌ها و ارائه راهکارهای مناسب، می‌توانیم به شما کمک کنیم تا توانایی‌های نهفته‌تان را شکوفا کنید و به بهترین نسخه از خودتان تبدیل شوید.</p>
             <button class="cta-button">شروع کنید</button>
-            <div class="icons">
-                <a href="#"><i class="fab fa-facebook-f" aria-label="Facebook"></i></a>
-                <a href="#"><i class="fab fa-twitter" aria-label="Twitter"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in" aria-label="LinkedIn"></i></a>
-            </div>
         </div>
     </section>
 
-    <section id="about" class="section about">
+    <section id="about" class="section about scroll-element" data-meta-description="تلنت سرچ با بیش از ۴۰ سال تجربه در حوزه روان‌شناسی و استفاده از نوآوری‌های هوش مصنوعی، به افراد و سازمان‌ها کمک می‌کند تا پتانسیل‌های واقعی خود را کشف کنند.">
         <h2>درباره ما</h2>
         <p>تلنت سرچ با بیش از ۴۰ سال تجربه در حوزه روان‌شناسی و استفاده از نوآوری‌های هوش مصنوعی، به افراد و سازمان‌ها کمک می‌کند تا پتانسیل‌های واقعی خود را کشف کنند. ما معتقدیم که هر فرد توانایی‌های منحصر به فردی دارد که با هدایت صحیح می‌تواند به اهداف بزرگ خود دست یابد. هدف ما این است که این مسیر را با ارائه خدمات ارزیابی روان‌شناختی، مشاوره و برنامه‌های توسعه فردی هموار کنیم.</p>
     </section>
 
-    <section id="services" class="section services">
-        <h2>خدمات ما</h2>
-        <p>ما خدمات متنوعی را ارائه می‌دهیم که شامل ارزیابی روان‌شناختی، مشاوره حرفه‌ای، و برنامه‌های توسعه فردی است. هر یک از این خدمات به گونه‌ای طراحی شده‌اند که به افراد در کشف پتانسیل‌های واقعی‌شان و رشد فردی و حرفه‌ای کمک کنند.</p>
+    <section id="services" class="section scroll-element" data-meta-description="ما خدماتی را ارائه می‌دهیم که شامل ارزیابی روان‌شناختی، مشاوره حرفه‌ای و برنامه‌های توسعه فردی است.">
+        <h2>خدمات</h2>
+        <p>ما خدماتی را ارائه می‌دهیم که شامل ارزیابی روان‌شناختی، مشاوره حرفه‌ای و برنامه‌های توسعه فردی است. هر یک از این خدمات برای کمک به افراد در رسیدن به پتانسیل واقعی‌شان طراحی شده‌اند.</p>
     </section>
 
-    <section id="faq" class="section faq">
-        <h2>سوالات متداول</h2>
-        <div class="faq-item">
-            <h3>چگونه می‌توانم از خدمات تلنت سرچ استفاده کنم؟</h3>
-            <p>برای استفاده از خدمات تلنت سرچ، می‌توانید از طریق فرم تماس با ما یا شماره‌های موجود با ما در ارتباط باشید و راهنمایی‌های لازم را دریافت کنید.</p>
-        </div>
-        <div class="faq-item">
-            <h3>آیا خدمات شما شامل مشاوره فردی هم می‌شود؟</h3>
-            <p>بله، ما خدمات مشاوره فردی نیز ارائه می‌دهیم که به شما در رشد و توسعه شخصی کمک می‌کند.</p>
-        </div>
-    </section>
-
-    <section id="success-stories" class="section success-stories">
-        <h2>داستان‌های موفقیت</h2>
-        <p>ما افتخار داریم که به بسیاری از افراد و سازمان‌ها در کشف پتانسیل‌های واقعی و دستیابی به اهدافشان کمک کرده‌ایم. اینجا چند نمونه از داستان‌های موفقیت مشتریان ما را مشاهده می‌کنید.</p>
-        <div class="success-story-item">
-            <h3>داستان موفقیت ۱</h3>
-            <p>یکی از مشتریان ما توانست با استفاده از خدمات تلنت سرچ و مشاوره‌های حرفه‌ای ما، بهبود قابل توجهی در مهارت‌های رهبری خود پیدا کند و به مدیریت یک تیم بزرگ ارتقا یابد.</p>
-        </div>
-        <div class="success-story-item">
-            <h3>داستان موفقیت ۲</h3>
-            <p>یکی دیگر از مشتریان ما، با استفاده از برنامه‌های توسعه فردی ما، توانست به اهداف شغلی خود دست پیدا کند و در مسیر حرفه‌ای خود پیشرفت کند.</p>
-        </div>
-    </section>
-
-    <section id="contact" class="section contact">
+    <section id="contact" class="section contact scroll-element" data-meta-description="با ما در تماس باشید برای هرگونه سوال یا نیاز به اطلاعات بیشتر.">
         <h2>تماس با ما</h2>
         <form>
             <label for="name">نام:</label>
             <input type="text" id="name" name="name" required>
+            <span id="name-error" class="error-message" style="display:none;">لطفاً نام خود را وارد کنید</span>
+            <span id="name-valid-feedback" class="valid-feedback" style="display:none;">✓ معتبر</span>
 
             <label for="email">ایمیل:</label>
             <input type="email" id="email" name="email" required>
+            <span id="email-error" class="error-message" style="display:none;">لطفاً یک ایمیل معتبر وارد کنید</span>
+            <span id="email-valid-feedback" class="valid-feedback" style="display:none;">✓ معتبر</span>
 
             <label for="message">پیام:</label>
             <textarea id="message" name="message" rows="4" required></textarea>
+            <span id="message-error" class="error-message" style="display:none;">لطفاً پیام خود را وارد کنید</span>
+            <span id="message-valid-feedback" class="valid-feedback" style="display:none;">✓ معتبر</span>
 
             <button type="submit">ارسال</button>
         </form>
+        <div class="form-confirmation" style="display:none;">پیام شما با موفقیت ارسال شد!</div>
     </section>
 
     <footer class="footer">
@@ -90,6 +68,8 @@
         </div>
     </footer>
 
-    <button class="scroll-to-top scroll-to-top-action" aria-label="Scroll to top">⬆</button>
+    <button class="scroll-to-top scroll-to-top-action" style="display:none;" aria-label="Scroll back to top">⬆</button>
+
+    <script src="script.js"></script>
 </body>
 </html>
