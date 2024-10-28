@@ -38,6 +38,7 @@ a:hover {
     margin: 0 auto;
 }
 
+
 /* Header */
 .header {
     background-color: rgba(0, 0, 0, 0.9);
@@ -214,20 +215,10 @@ a:hover {
 }
 
 .service-item {
-    background: linear-gradient(135deg, #0D0D0D, #1A1A1A);
-    background-image: repeating-linear-gradient(
-        45deg,
-        rgba(0, 255, 159, 0.05),
-        rgba(0, 255, 159, 0.05) 1px,
-        transparent 1px,
-        transparent 20px
-    );
-    background-size: 30px 30px;
+    background-color: #0D0D0D;
     padding: 20px;
     border-radius: var(--border-radius);
-    /* Removed box-shadow to eliminate glow */
-    /* box-shadow: 0 0 15px var(--color-primary); */
-    text-align: center;
+    text-align: center; /* Center the text */
     transition: transform var(--transition);
     position: relative;
     overflow: hidden;
@@ -235,20 +226,36 @@ a:hover {
 
 .service-item:hover {
     transform: translateY(-5px);
-    /* Removed box-shadow on hover */
-    /* box-shadow: 0 0 25px var(--color-secondary); */
 }
 
 .service-item h3 {
     font-size: 1.5em;
     color: var(--color-secondary);
     margin-bottom: 15px;
-    text-shadow: 0 0 10px var(--color-secondary);
 }
 
 .service-item p {
     color: var(--color-muted);
     font-size: 1em;
+    margin-bottom: 20px; /* Add margin below the description */
+}
+
+.test-button {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: var(--color-text);
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-size: 1em;
+    transition: background-color var(--transition), transform var(--transition), box-shadow var(--transition);
+    box-shadow: 0 0 10px var(--color-primary);
+}
+
+.test-button:hover {
+    background-color: var(--color-secondary);
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px var(--color-secondary);
 }
 
 /* Contact Section */
@@ -322,7 +329,6 @@ a:hover {
 }
 
 /* Footer */
-/* Footer */
 .footer {
     background-color: #000000;
     padding: 20px 0;
@@ -349,26 +355,6 @@ a:hover {
 
 .footer-info a:hover {
     color: var(--color-secondary);
-}
-
-/* Removed social media styles */
-/* Previously defined .social-links styles have been removed to simplify the footer */
-
-
-.social-links {
-    display: flex;
-    gap: 15px;
-}
-
-.social-links a {
-    color: var(--color-text);
-    font-size: 1.5em;
-    transition: color var(--transition), text-shadow var(--transition);
-}
-
-.social-links a:hover {
-    color: var(--color-secondary);
-    text-shadow: 0 0 10px var(--color-secondary);
 }
 
 /* Mobile Navigation */
@@ -430,7 +416,7 @@ a:hover {
         padding: 0;
     }
 
-    .service-list {
+    .services .test-list {
         grid-template-columns: repeat(2, 1fr);
     }
 }
@@ -453,6 +439,18 @@ a:hover {
         font-size: 1.8em;
     }
 
+    .services .test-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+/* Adjust grid for larger screens */
+@media (min-width: 600px) {
+    .service-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
     .service-list {
         grid-template-columns: repeat(3, 1fr);
     }
