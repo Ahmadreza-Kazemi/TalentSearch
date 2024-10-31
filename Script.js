@@ -1,200 +1,139 @@
-// scripts.js
+// assets/js/script.js
 
 document.addEventListener('DOMContentLoaded', function() {
-
-    /*** Smooth Scrolling for Anchor Links ***/
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.setAttribute('aria-label', 'رفتن به بخش ' + (anchor.textContent.trim() || anchor.getAttribute('href').substring(1)));
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
-
-    /*** Sticky Header ***/
-    const header = document.querySelector('.header');
-    window.addEventListener('scroll', () => {
-        header.classList.toggle('sticky', window.scrollY > 0);
-    });
-
-    /*** Form Validation ***/
-    const form = document.getElementById('contact-form');
-    const formConfirmation = document.querySelector('.form-confirmation');
-    const inputs = form.querySelectorAll('input, textarea');
-
-    form.addEventListener('submit', function(event) {
-        event.preventDefault();
-        let isValid = true;
-
-        inputs.forEach(input => {
-            if (!input.value.trim()) {
-                showError(input, 'این فیلد نمی‌تواند خالی باشد.');
-                isValid = false;
-            } else if (input.type === 'email' && !validateEmail(input.value.trim())) {
-                showError(input, 'لطفاً یک ایمیل معتبر وارد کنید.');
-                isValid = false;
-            } else {
-                hideError(input);
-            }
-        });
-
-        if (isValid) {
-            form.reset();
-            formConfirmation.style.display = 'block';
-            setTimeout(() => {
-                formConfirmation.style.display = 'none';
-            }, 5000);
-        }
-    });
-
-    inputs.forEach(input => {
-        input.addEventListener('input', function() {
-            if (input.value.trim()) {
-                hideError(input);
-            }
-        });
-    });
-
-    function showError(input, message) {
-        let errorElement = input.nextElementSibling;
-        if (!errorElement || !errorElement.classList.contains('error-message')) {
-            errorElement = document.createElement('span');
-            errorElement.classList.add('error-message');
-            input.parentNode.insertBefore(errorElement, input.nextSibling);
-        }
-        errorElement.textContent = message;
-        input.classList.add('input-error');
-    }
-
-    function hideError(input) {
-        const errorElement = input.nextElementSibling;
-        if (errorElement && errorElement.classList.contains('error-message')) {
-            errorElement.textContent = '';
-            input.classList.remove('input-error');
-        }
-    }
-
-    function validateEmail(email) {
-        // Simple email validation regex
-        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return re.test(email);
-    }
-
-    /*** Scroll Animations ***/
-    const scrollElements = document.querySelectorAll('.scroll-element');
-
-    const elementInView = (el, offset = 0) => {
-        const elementTop = el.getBoundingClientRect().top;
-        return (
-            elementTop <= (window.innerHeight || document.documentElement.clientHeight) - offset
-        );
-    };
-
-    const displayScrollElement = (element) => {
-        element.classList.add('in-view');
-    };
-
-    const hideScrollElement = (element) => {
-        element.classList.remove('in-view');
-    };
-
-    const handleScrollAnimation = () => {
-        scrollElements.forEach((el) => {
-            if (elementInView(el, 100)) {
-                displayScrollElement(el);
-            } else {
-                hideScrollElement(el);
-            }
-        });
-    };
-
-    window.addEventListener('scroll', handleScrollAnimation);
-
-    /*** Back to Top Button ***/
+    // Select DOM elements
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
     const scrollToTopButton = document.querySelector('.scroll-to-top');
+    const body = document.body;
+    const header = document.querySelector('.header');
 
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 500) {
-            scrollToTopButton.classList.add('show');
+    /**
+     * Function to toggle the navigation menu on mobile
+     */
+    const toggleMenu = () => {
+        navLinks.classList.toggle('active');
+        menuToggle.classList.toggle('active');
+
+        // Update ARIA attribute
+        const isExpanded = navLinks.classList.contains('active');
+        menuToggle.setAttribute('aria-expanded', isExpanded);
+
+        // When the menu is open, prevent body from scrolling
+        if (isExpanded) {
+            body.style.overflow = 'hidden';
+            console.log('Menu opened');
         } else {
-            scrollToTopButton.classList.remove('show');
+            body.style.overflow = '';
+            console.log('Menu closed');
         }
-    });
+    };
 
-    scrollToTopButton.addEventListener('click', () => {
+    /**
+     * Function to close the navigation menu
+     */
+    const closeMenu = () => {
+        if (navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+            menuToggle.classList.remove('active');
+            body.style.overflow = '';
+            menuToggle.setAttribute('aria-expanded', 'false');
+            console.log('Menu closed');
+        }
+    };
+
+    /**
+     * Function to handle clicks outside the navigation menu
+     */
+    const handleClickOutside = (event) => {
+        if (!navLinks.contains(event.target) && !menuToggle.contains(event.target)) {
+            closeMenu();
+        }
+    };
+
+    /**
+     * Function to show or hide the Back to Top button based on scroll position
+     */
+    const handleScroll = () => {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        scrollToTopButton.classList.toggle('show', scrollTop > window.innerHeight / 2);
+    };
+
+    /**
+     * Function to smoothly scroll to the top of the page
+     */
+    const scrollToTop = () => {
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
         });
-    });
 
-    /*** Lazy Loading Images ***/
-    const lazyImages = document.querySelectorAll('img.lazy');
-
-    const lazyLoad = () => {
-        lazyImages.forEach(img => {
-            if (img.getBoundingClientRect().top <= window.innerHeight && img.getBoundingClientRect().bottom >= 0 && getComputedStyle(img).display !== 'none') {
-                img.src = img.dataset.src;
-                img.classList.remove('lazy');
-            }
-        });
+        // Set focus to the header for accessibility
+        header.setAttribute('tabindex', '-1'); // Make header focusable
+        header.focus();
+        console.log('Scrolled to top');
     };
 
-    document.addEventListener('scroll', lazyLoad);
-    window.addEventListener('resize', lazyLoad);
-    window.addEventListener('orientationchange', lazyLoad);
-
-    /*** ARIA Labels for Accessibility ***/
-    document.querySelectorAll('button, .cta-button').forEach(button => {
-        if (!button.hasAttribute('aria-label')) {
-            const label = button.textContent.trim();
-            button.setAttribute('aria-label', label);
-        }
-    });
-
-    /*** Dynamic Page Title ***/
-    document.addEventListener('visibilitychange', function() {
+    /**
+     * Function to handle dynamic page title changes based on visibility
+     */
+    const handleVisibilityChange = () => {
         if (document.hidden) {
             document.title = 'منتظر بازگشت شما هستیم!';
+            console.log('Page hidden: Title changed');
         } else {
-            document.title = 'تلنت سرچ - کشف پتانسیل شما';
+            document.title = 'استعدادیاب | ارزیابی‌های روان‌شناختی برای تعالی فردی شما';
+            console.log('Page visible: Title reverted');
         }
-    });
-
-    /*** Update Meta Description Dynamically ***/
-    const metaDescriptionTag = document.querySelector('meta[name="description"]');
-    const sections = document.querySelectorAll('section');
-
-    const updateMetaDescription = () => {
-        sections.forEach(section => {
-            const rect = section.getBoundingClientRect();
-            if (rect.top >= 0 && rect.top <= 300) {
-                const description = section.getAttribute('data-meta-description');
-                if (description) {
-                    metaDescriptionTag.setAttribute('content', description);
-                }
-            }
-        });
     };
 
-    window.addEventListener('scroll', updateMetaDescription);
+    /**
+     * Function to handle window resize and adjust any responsive features if necessary
+     */
+    const handleResize = () => {
+        // Placeholder for any future responsive adjustments
+        console.log('Window resized');
+    };
 
-    /*** Initialize Scroll Animations and Lazy Loading ***/
-    handleScrollAnimation();
-    lazyLoad();
+    /**
+     * Function to handle keyboard navigation for accessibility
+     */
+    const handleKeyDown = (event) => {
+        // Close menu on 'Escape' key press
+        if (event.key === 'Escape') {
+            closeMenu();
+        }
+    };
 
+    /**
+     * Initialize all event listeners and functionalities
+     */
+    const init = () => {
+        // Toggle navigation menu on hamburger click (only mobile)
+        menuToggle.addEventListener('click', toggleMenu);
+
+        // Close menu when clicking outside
+        document.addEventListener('click', handleClickOutside);
+
+        // Close menu on 'Escape' key press
+        document.addEventListener('keydown', handleKeyDown);
+
+        // Show or hide Back to Top button on scroll
+        window.addEventListener('scroll', handleScroll);
+
+        // Scroll to top when Back to Top button is clicked
+        scrollToTopButton.addEventListener('click', scrollToTop);
+
+        // Handle dynamic page title changes
+        document.addEventListener('visibilitychange', handleVisibilityChange);
+
+        // Handle window resize
+        window.addEventListener('resize', handleResize);
+    };
+
+    // Set the initial document title
+    document.title = 'استعدادیاب | ارزیابی‌های روان‌شناختی برای تعالی فردی شما';
+
+    // Call the init function to set everything up
+    init();
 });
-
-// scripts.js
-
-document.addEventListener('DOMContentLoaded', function() {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navbar = document.querySelector('.navbar');
-
-    menuToggle.addEventListener('click', function() {
-        navbar.classList.toggle('active');
-    });
-});
-
