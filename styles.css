@@ -170,7 +170,7 @@ p {
 /* ===================================================
    Responsive Navbar
    =================================================== */
-@media (max-width: 599px) { /* Replaced var(--breakpoint-mobile) with 599px */
+@media (max-width: var(--breakpoint-mobile)) { /* Replaced var(--breakpoint-mobile) with 599px */
     .nav-links {
         display: none; /* Hidden on mobile by default */
         position: fixed;
@@ -198,7 +198,7 @@ p {
     }
 }
 
-@media (min-width: 992px) { /* Replaced var(--breakpoint-desktop) with 992px */
+@media (min-width: var(--breakpoint-desktop)) { /* Replaced var(--breakpoint-desktop) with 992px */
     .nav-links {
         display: flex; /* Visible on desktop */
         transform: translateX(0);
@@ -303,17 +303,50 @@ p {
 }
 
 /* Tablet Styles - Two Columns */
-@media (min-width: 600px) and (max-width: 991px) { /* Replaced var(--breakpoint-tablet) with 991px */
+@media (min-width: 600px) and (max-width: var(--breakpoint-tablet)) { /* Replaced var(--breakpoint-tablet) with 991px */
     .services .service-list {
         grid-template-columns: repeat(2, 1fr); /* Two columns */
     }
 }
 
 /* Desktop Styles - Three Columns */
-@media (min-width: 992px) { /* Replaced var(--breakpoint-desktop) with 992px */
+@media (min-width: var(--breakpoint-desktop)) { /* Replaced var(--breakpoint-desktop) with 992px */
     .services .service-list {
         grid-template-columns: repeat(3, 1fr); /* Three columns */
     }
+}
+
+/* ===================================================
+   Getting Started Section Styling
+   =================================================== */
+.getting-started {
+    background-color: #ffffff; /* White background for contrast */
+    padding: var(--spacing-large) var(--spacing-medium);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto; /* Centers the section */
+}
+
+.getting-started h2 {
+    margin-bottom: var(--spacing-medium);
+    font-size: 2em;
+    color: var(--color-primary);
+    text-align: center; /* Center the heading */
+    text-shadow: 0 0 10px var(--color-primary);
+}
+
+/*  Ensuring the h2 does not overlap with the navbar */
+.main-content {
+    padding-top: calc(var(--header-height) + var(--spacing-medium)); /* Ensures content starts below the header */
+}
+
+.form-container {
+    background-color: #000000; /* Black background as per your request */
+    padding: var(--spacing-medium);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-top: var(--spacing-medium);
 }
 
 /* ===================================================
@@ -335,7 +368,7 @@ p {
     margin: 0 auto;
 }
 
-.footer h2 {
+.about-info h2 {
     font-size: 1.8em;
     color: var(--color-primary);
     margin-bottom: var(--spacing-medium);
@@ -446,6 +479,14 @@ p {
         padding: 10px 25px;
         font-size: 0.9em;
     }
+
+    .getting-started {
+        padding: var(--spacing-medium) var(--spacing-small);
+    }
+
+    .getting-started h2 {
+        font-size: 1.8em;
+    }
 }
 
 /* Tablet Styles */
@@ -467,6 +508,14 @@ p {
 
     .hero p {
         font-size: 1.3em;
+    }
+
+    .getting-started {
+        padding: var(--spacing-large) var(--spacing-medium);
+    }
+
+    .getting-started h2 {
+        font-size: 2em;
     }
 }
 
@@ -509,6 +558,14 @@ p {
 
     .hero p {
         font-size: 1.5em;
+    }
+
+    .getting-started {
+        padding: var(--spacing-large) var(--spacing-medium);
+    }
+
+    .getting-started h2 {
+        font-size: 2em;
     }
 }
 
