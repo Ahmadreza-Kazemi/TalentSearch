@@ -9,7 +9,25 @@
 </head>
 <body>
     <!-- Header will be dynamically injected here -->
-    <div class="header"></div>
+<header class="header" style="background: linear-gradient(135deg, rgba(26,26,46,0.95), rgba(26,26,46,0.85)); padding: 0 var(--spacing-medium); display: flex; align-items: center; justify-content: space-between; box-shadow: 0 4px 6px rgba(0,0,0,0.1); position: relative; height: var(--header-height); width: 100%; z-index: 1000;">
+  <div class="logo" style="font-size: 1.8em; color: var(--color-primary); text-decoration: none; font-weight: bold; transition: color var(--transition-speed) var(--transition-type);">
+    استعدادیاب
+  </div>
+  <nav class="navbar" role="navigation" aria-label="Main Navigation">
+    <button class="menu-toggle" aria-label="باز کردن منو" aria-expanded="false" style="background: none; border: none; cursor: pointer; display: flex; flex-direction: column; justify-content: space-between; width: 35px; height: 24px; padding: 0; z-index: 1001;">
+      <span class="hamburger" style="width: 100%; height: 4px; background-color: var(--color-text); border-radius: 2px; transition: all var(--transition-speed) var(--transition-type);"></span>
+      <span class="hamburger" style="width: 100%; height: 4px; background-color: var(--color-text); border-radius: 2px; transition: all var(--transition-speed) var(--transition-type);"></span>
+      <span class="hamburger" style="width: 100%; height: 4px; background-color: var(--color-text); border-radius: 2px; transition: all var(--transition-speed) var(--transition-type);"></span>
+    </button>
+    <ul class="nav-links" style="position: fixed; top: var(--header-height); left: 0; width: 80%; max-width: 320px; background-color: rgba(26,26,46,0.95); display: none; flex-direction: column; align-items: center; justify-content: flex-start; gap: var(--spacing-large); box-shadow: 2px 0 8px rgba(0,0,0,0.2); list-style: none; padding: var(--spacing-medium); box-sizing: border-box; overflow-y: auto; transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;">
+      <li><a href="/" style="font-size: 1.6em; color: var(--color-text); text-decoration: none; position: relative; padding: 8px 0; transition: color var(--transition-speed) var(--transition-type); white-space: nowrap;">خانه</a></li>
+      <li><a href="/interactivemind" style="font-size: 1.6em; color: var(--color-text); text-decoration: none; position: relative; padding: 8px 0; transition: color var(--transition-speed) var(--transition-type); white-space: nowrap;">ذهن تعاملی</a></li>
+      <li><a href="index.html#services" style="font-size: 1.6em; color: var(--color-text); text-decoration: none; position: relative; padding: 8px 0; transition: color var(--transition-speed) var(--transition-type); white-space: nowrap;">ارزیابی‌ها</a></li>
+      <li><a href="/getting-started" style="font-size: 1.6em; color: var(--color-text); text-decoration: none; position: relative; padding: 8px 0; transition: color var(--transition-speed) var(--transition-type); white-space: nowrap;">استعدادیابی</a></li>
+      <li><a href="index.html#footer" style="font-size: 1.6em; color: var(--color-text); text-decoration: none; position: relative; padding: 8px 0; transition: color var(--transition-speed) var(--transition-type); white-space: nowrap;">درباره</a></li>
+    </ul>
+  </nav>
+</header>
 
     <main class="main-content">
         <section id="getting-started" class="section getting-started">
