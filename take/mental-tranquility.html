@@ -3,71 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>استعدادیاب | فهرست آرامش روانی</title>
-    <meta name="description" content="آزمون فهرست آرامش روانی برای ارزیابی ویژگی‌های روان‌شناختی و بهبود تعالی فردی شما.">
-    <link rel="stylesheet" href="/assets/css/styles.css">
-    <style>
-        iframe {
-            width: 100%; /* Ensures the iframe fills the width of its container */
-            height: auto; /* Allows dynamic height adjustment */
-            border: none; /* Removes the border */
-            overflow: hidden; /* Hides overflow */
-        }
-
-        #form-container {
-            width: 100%; /* Full width */
-            min-height: 800px; /* Default height for iframe */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            position: relative;
-        }
-    </style>
+    <title>استعدادیاب | شروع به کار</title>
+    <meta name="description" content="با استعدادیاب، شروع به کار با ارزیابی‌های روان‌شناختی پیشرفته و فناوری هوش مصنوعی را آغاز کنید.">
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
     <!-- Header will be dynamically injected here -->
     <div class="header"></div>
-    
+
     <main class="main-content">
         <section id="getting-started" class="section getting-started">
-            <h1>فهرست آرامش روانی</h1>
-            <p>لطفاً آزمون زیر را با دقت کامل کنید تا نتایج دقیقی از ارزیابی شما ارائه شود.</p>
-            
-            <!-- Container for iframe -->
-            <div id="form-container">
-<!--START---- FormAfzar.Com ----->
 <script type="text/javascript" src="https://formafzar.com/pages/formbuilder/ravesh-formbuilder.js" form-url="https://formafzar.com/form/sh68g" form-style="inline" form-theme=""></script>
-<!--END--- FormAfzar.Com ----->
-
-            </div>
         </section>
     </main>
 
     <!-- Footer will be dynamically injected here -->
     <div class="footer"></div>
 
-    <script src="/assets/js/script.js"></script>
-    <script src="/assets/js/header-footer-inject.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/header-footer-inject.js"></script>
 
-    <!-- JavaScript for iframe resizing -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const iframe = document.querySelector("#form-container iframe");
-            
-            if (iframe) {
-                iframe.addEventListener("load", function () {
-                    try {
-                        const resizeObserver = new ResizeObserver(() => {
-                            iframe.style.height = iframe.contentWindow.document.body.scrollHeight + "px";
-                        });
-                        resizeObserver.observe(iframe.contentWindow.document.body);
-                    } catch (error) {
-                        console.error("Iframe resizing failed:", error);
-                    }
-                });
-            }
-        });
-    </script>
 </body>
 </html>
