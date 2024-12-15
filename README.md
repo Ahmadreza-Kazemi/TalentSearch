@@ -4,35 +4,6 @@
 
 **TalentSearch.ir** offers advanced psychological assessments to elevate your personal excellence. Leveraging over forty years of experience at the Interactive Institute of Heyajan Andisheh in psychology and specialized evaluations, combined with artificial intelligence, we help you discover your potential talents on the path to personal fulfillment and life satisfaction.
 
-## Our Assessments
-
-We provide a range of psychological assessments designed to identify and enhance your unique strengths and talents.
-
-### Analytical Intelligence
-Analytical intelligence enables you to comprehend information effectively and analyze it accurately. Individuals with high analytical intelligence can organize information in new and efficient ways.
-
-### Practical Intelligence
-Practical intelligence involves applying practical experiences to enhance learning and understanding of subjects. Those who possess this intelligence develop their skills through experience and observation, continuously seeking to learn and grow.
-
-### Academic Intelligence
-Academic intelligence refers to the ability to learn academic material quickly and accurately. Individuals with high academic intelligence typically perform well in both practical and theoretical subjects.
-
-### Creativity
-Creativity is the ability to present new and innovative solutions to problems. Creative individuals can generate innovative ideas and turn novel concepts into reality, even in challenging situations.
-
-### Precision in Work
-Precision in work pertains to the ability to perform assigned tasks accurately and effectively. Someone strong in this skill completes their responsibilities with high precision and quality.
-
-### Sharpness
-Sharpness refers to the quick and accurate understanding of complex concepts and problem-solving abilities. Individuals with high sharpness can process and apply new information swiftly.
-
-### Genius
-Genius denotes an exceptional ability to comprehend and solve complex problems and create artistic or scientific works. It is often combined with innovation and creativity.
-
-## Get Started
-
-Ready to discover your talents? [Start Now](#)
-
 ## Contact Us
 
 - **Address:** Tehran, Sohrvardi, Khoramshahr, Abrali, 6th, 44
