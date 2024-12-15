@@ -1,0 +1,45 @@
+/* Styles for Assessment Form Section */
+.assessment-form {
+    background-color: #fff;
+    padding: var(--spacing-large) var(--spacing-medium);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: var(--spacing-large) auto;
+    border-radius: var(--border-radius);
+}
+
+.assessment-form h1 {
+    font-size: 2em;
+    color: var(--color-primary);
+    text-align: center;
+    text-shadow: 0 0 10px var(--color-primary);
+}
+
+.assessment-form p {
+    font-size: 1em;
+    margin-bottom: var(--spacing-medium);
+    line-height: 1.6;
+    text-align: center;
+}
+
+.assessment-form script {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+/* Adjustments for Responsive Design */
+@media (max-width: 768px) {
+    .assessment-form {
+        padding: var(--spacing-medium) var(--spacing-small);
+        margin: var(--spacing-medium) auto;
+    }
+
+    .assessment-form h1 {
+        font-size: 1.5em;
+    }
+
+    .assessment-form p {
+        font-size: 0.9em;
+    }
+}
