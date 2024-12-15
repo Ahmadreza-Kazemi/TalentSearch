@@ -19,6 +19,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Inject header and footer content
-    injectContent('header.html', headerContainer);
-    injectContent('footer.html', footerContainer);
+    injectContent('/header.html', headerContainer);
+    injectContent('/footer.html', footerContainer);
 });
