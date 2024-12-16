@@ -79,6 +79,88 @@
         .cta-introduction:hover {
             background-color: #0069d9;
         }
+        /* Batteries Section */
+.batteries-section {
+    margin-bottom: 40px;
+}
+
+.batteries-section h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.batteries-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.battery-card {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.battery-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+}
+
+.battery-card h3 {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+.battery-card p {
+    font-size: 1em;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.battery-links {
+    display: flex;
+    gap: 10px;
+}
+
+.battery-btn {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #fff;
+    transition: background-color 0.3s;
+}
+
+.battery-btn:first-child {
+    background-color: #17a2b8;
+}
+
+.battery-btn:first-child:hover {
+    background-color: #138496;
+}
+
+.battery-btn:last-child {
+    background-color: #6c757d;
+}
+
+.battery-btn:last-child:hover {
+    background-color: #5a6268;
+}
+
+/* Responsive Design for Batteries Section */
+@media (max-width: 768px) {
+    .batteries-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 
         /* Responsive Design */
         @media (max-width: 768px) {
@@ -96,6 +178,90 @@
 
     <main class="main-content">
         <div class="inventory-grid">
+                <section class="batteries-section">
+        <h2>بسته‌های ارزیابی</h2>
+        <div class="batteries-grid">
+            <!-- Battery 1: Job Satisfaction Battery -->
+            <div class="battery-card">
+                <h3>بسته رضایت شغلی</h3>
+                <p><strong>نام فارسی:</strong> فهرست جامع تشخیص تعاملی رضایت شغلی</p>
+                <div class="battery-links">
+                    <a href="https://formafzar.com/form/jyzyq" class="battery-btn">فرم ارزیابی</a>
+                    <a href="/take/Job-Satisfaction" class="battery-btn">صفحه ارزیابی</a>
+                </div>
+            </div>
+
+            <!-- Battery 2: Marriage Satisfaction Battery -->
+            <div class="battery-card">
+                <h3>بسته رضایت زناشویی</h3>
+                <p><strong>نام فارسی:</strong> فهرست جامع تشخیص تعاملی رضایت زناشویی</p>
+                <div class="battery-links">
+                    <a href="https://formafzar.com/form/h6a3s" class="battery-btn">فرم ارزیابی</a>
+                    <a href="/take/Marriage-Satisfaction" class="battery-btn">صفحه ارزیابی</a>
+                </div>
+            </div>
+
+            <!-- Battery 3: Individual Satisfaction Battery -->
+            <div class="battery-card">
+                <h3>بسته رضایت فردی</h3>
+                <p><strong>نام فارسی:</strong> فهرست جامع تشخیص تعاملی فردی</p>
+                <div class="battery-links">
+                    <a href="https://formafzar.com/form/i5hv6" class="battery-btn">فرم ارزیابی</a>
+                    <a href="/take/Individual-Satisfaction" class="battery-btn">صفحه ارزیابی</a>
+                </div>
+            </div>
+
+            <!-- Battery 4: Marriage Readiness Battery -->
+            <div class="battery-card">
+                <h3>بسته آمادگی ازدواج</h3>
+                <p><strong>نام فارسی:</strong> فهرست جامع تشخیص تعاملی آمادگی ازدواج</p>
+                <div class="battery-links">
+                    <a href="https://formafzar.com/form/4zowk" class="battery-btn">فرم ارزیابی</a>
+                    <a href="/take/Marriage-Readiness" class="battery-btn">صفحه ارزیابی</a>
+                </div>
+            </div>
+
+            <!-- Battery 5: Adolescent Battery -->
+            <div class="battery-card">
+                <h3>بسته نوجوان</h3>
+                <p><strong>نام فارسی:</strong> فهرست جامع تشخیص تعاملی نوجوان</p>
+                <div class="battery-links">
+                    <a href="https://formafzar.com/form/cwllb" class="battery-btn">فرم ارزیابی</a>
+                    <a href="/take/Adolescent" class="battery-btn">صفحه ارزیابی</a>
+                </div>
+            </div>
+
+            <!-- Battery 6: General Battery -->
+            <div class="battery-card">
+                <h3>بسته عمومی</h3>
+                <p><strong>نام فارسی:</strong> فهرست جامع تشخیصی ج</p>
+                <div class="battery-links">
+                    <a href="https://formafzar.com/form/191pa" class="battery-btn">فرم ارزیابی</a>
+                    <a href="/take/General" class="battery-btn">صفحه ارزیابی</a>
+                </div>
+            </div>
+
+            <!-- Battery 7: Talent Battery -->
+            <div class="battery-card">
+                <h3>بسته استعداد</h3>
+                <p><strong>نام فارسی:</strong> فهرست جامع تشخیص تعاملی استعداد</p>
+                <div class="battery-links">
+                    <a href="https://formafzar.com/form/ifhf5" class="battery-btn">فرم ارزیابی</a>
+                    <a href="/take/Talent" class="battery-btn">صفحه ارزیابی</a>
+                </div>
+            </div>
+
+            <!-- Battery 8: Child Battery -->
+            <div class="battery-card">
+                <h3>بسته کودک</h3>
+                <p><strong>نام فارسی:</strong> فهرست جامع تشخیص تعاملی کودک</p>
+                <div class="battery-links">
+                    <a href="https://formafzar.com/form/vaxur" class="battery-btn">فرم ارزیابی</a>
+                    <a href="/take/Child" class="battery-btn">صفحه ارزیابی</a>
+                </div>
+            </div>
+        </div>
+    </section>
             <!-- Inventory 1 -->
             <div class="inventory-card">
                 <div>
