@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Select header and footer containers
     let headerContainer = document.querySelector(".header");
 
     // Function to fetch and inject content into a container
@@ -19,5 +18,5 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Inject header and footer content
     injectContent('/header.html', headerContainer);
-    injectContent('/footer.html', footerContainer);
+    injectContent('/footer.html');
 });
