@@ -1,22 +1,23 @@
 document.addEventListener("DOMContentLoaded", function() {
-    let headerContainer = document.querySelector(".header");
-
-    // Function to fetch and inject content into a container
-    async function injectContent(url) {
+    // Function to fetch and inject content into the document
+    async function injectContent(url, targetElement) {
         try {
             const response = await fetch(url);
             if (!response.ok) {
                 throw new Error(`Failed to load content from ${url}`);
             }
             const html = await response.text();
-            container.innerHTML = html;
+            targetElement.insertAdjacentHTML('beforeend', html);
         } catch (error) {
             console.error(error);
-            container.innerHTML = `<p>خطا در بارگذاری محتوا!</p>`;
+            targetElement.innerHTML = "<p>خطا در بارگذاری محتوا!</p>";
         }
     }
 
-    // Inject header and footer content
-    injectContent('/header.html', headerContainer);
-    injectContent('/footer.html');
+    // Select elements where the header and footer will be injected directly
+    let bodyElement = document.body;
+
+    // Inject header and footer content into the body
+    injectContent('/header.html', bodyElement);
+    injectContent('/footer.html', bodyElement);
 });
