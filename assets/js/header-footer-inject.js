@@ -1,10 +1,9 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Select header and footer containers
     let headerContainer = document.querySelector(".header");
-    let footerContainer = document.querySelector(".footer");
 
     // Function to fetch and inject content into a container
-    async function injectContent(url, container) {
+    async function injectContent(url) {
         try {
             const response = await fetch(url);
             if (!response.ok) {
