@@ -8,47 +8,54 @@
     <link rel="stylesheet" href="assets/css/styles.css">
     <style>/* Modern Shallow Color Palette for Test Page */
 
+/* Modern Shallow Color Palette for Test Page */
+
 /* Section Styles */
 .batteries-section, .inventory-section {
-    margin-bottom: 50px;
-    padding: 25px;
-    background-color: #ffffff;
+    margin-bottom: 60px;
+    padding: 30px 20px;
+    background-color: #FFFFFF; /* White background for sections */
     border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
 }
 
+/* Section Headers */
 .batteries-section h2, .inventory-section h2 {
     text-align: center;
-    font-size: 2.2em;
-    margin-bottom: 10px;
-    color: #34495e;
-    font-family: 'Roboto', sans-serif;
+    font-size: 2.4em;
+    margin-bottom: 15px;
+    color: #333333; /* Dark Gray for headers */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
 }
 
+/* Section Description */
 .section-description {
     text-align: center;
-    font-size: 1em;
-    color: #7f8c8d;
+    font-size: 1.1em;
+    color: #555555; /* Medium Gray for description */
     margin-bottom: 25px;
-    max-width: 700px;
+    max-width: 800px;
     margin-left: auto;
     margin-right: auto;
-    line-height: 1.5;
+    line-height: 1.6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Grid Layout */
 .batteries-grid, .inventory-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 20px;
 }
 
 /* Card Styles */
 .battery-card, .inventory-card {
-    background-color: #f9f9f9;
+    background-color: #F9F9F9; /* Very Light Gray for cards */
     border-radius: 10px;
-    padding: 20px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    padding: 25px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Light shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -56,63 +63,73 @@
 
 .battery-card:hover, .inventory-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Enhanced shadow on hover */
 }
 
+/* Card Headers */
 .battery-card h3, .inventory-card h2 {
-    font-size: 1.4em;
+    font-size: 1.6em;
     margin-bottom: 10px;
-    color: #2980b9;
-    font-family: 'Roboto', sans-serif;
+    color: #4A90E2; /* Primary Soft Blue for card titles */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
 }
 
+/* Card Descriptions */
 .battery-card p, .inventory-card p.description {
-    font-size: 0.95em;
-    color: #6c7a89;
-    margin-bottom: 15px;
-    line-height: 1.4;
+    font-size: 1em;
+    color: #555555; /* Medium Gray for descriptions */
+    margin-bottom: 20px;
+    line-height: 1.5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Inventory ID */
 .inventory-card p.id {
-    font-size: 0.85em;
-    color: #95a5a6;
-    margin-bottom: 15px;
+    font-size: 0.9em;
+    color: #95A5A6; /* Light Gray for IDs */
+    margin-bottom: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Button Styles */
+/* Button Container */
 .battery-links, .cta-buttons {
     display: flex;
-    gap: 8px;
+    gap: 10px;
 }
 
+/* Buttons */
 .battery-btn, .cta-btn {
     flex: 1;
-    padding: 10px;
+    padding: 12px;
     text-align: center;
     text-decoration: none;
-    border-radius: 5px;
-    font-weight: 500;
-    color: #ffffff;
-    transition: background-color 0.2s ease, transform 0.2s ease;
-    font-family: 'Roboto', sans-serif;
+    border-radius: 6px;
+    font-weight: 600;
+    color: #FFFFFF; /* White text on buttons */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor: pointer;
 }
 
+/* Primary Buttons */
 .battery-btn:first-child, .cta-test {
-    background-color: #3498db;
+    background-color: #4A90E2; /* Soft Blue */
 }
 
 .battery-btn:first-child:hover, .cta-test:hover {
-    background-color: #2980b9;
-    transform: scale(1.02);
+    background-color: #357AB8; /* Darker Blue on hover */
+    transform: translateY(-2px);
 }
 
+/* Secondary Buttons */
 .battery-btn:last-child, .cta-introduction {
-    background-color: #95a5a6;
+    background-color: #50E3C2; /* Soft Teal */
 }
 
 .battery-btn:last-child:hover, .cta-introduction:hover {
-    background-color: #7f8c8d;
-    transform: scale(1.02);
+    background-color: #38D1B8; /* Darker Teal on hover */
+    transform: translateY(-2px);
 }
 
 /* Responsive Design */
@@ -121,6 +138,7 @@
         grid-template-columns: 1fr;
     }
 }
+
     </style>
 </head>
 <body>
