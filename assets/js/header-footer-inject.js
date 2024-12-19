@@ -21,13 +21,11 @@ document.addEventListener("DOMContentLoaded", function() {
     // Inject header and footer content
     injectContent('/header.html', headerContainer);
     injectContent('/footer.html', footerContainer);
-});
-document.addEventListener("DOMContentLoaded", function() {
+
+    // Hamburger menu functionality
     let t = document.querySelector(".menu-toggle");
     let e = document.querySelector(".nav-links");
     let n = document.querySelector("body");
-    let o = document.createElement("div");
-    let c, i = document.title;
 
     function a() {
         e.classList.toggle("active");
@@ -54,44 +52,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (t.key === "Escape") s();
     }
 
-    function d() {
-        const t = window.scrollY || document.documentElement.scrollTop;
-        c.classList.toggle("show", t > window.innerHeight / 2);
-    }
-
-    function u() {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-        o.setAttribute("tabindex", "-1");
-        o.focus();
-    }
-
-    function m() {
-        document.hidden
-            ? (document.title = "منتظر بازگشت شما هستیم!")
-            : (document.title = i);
-    }
-
-    // Event listeners for scroll-to-top button
-    c = document.createElement("button");
-    c.classList.add("scroll-to-top");
-    c.setAttribute("aria-label", "بازگشت به بالا");
-    c.innerHTML = "↑";
-    document.body.appendChild(c);
-    window.addEventListener("scroll", d);
-    c.addEventListener("click", u);
-    document.addEventListener("visibilitychange", m);
-
-    // Event listeners for the hamburger menu
     t.addEventListener("click", a);
     document.addEventListener("click", r);
     document.addEventListener("keydown", l);
 });
-    // Closes the menu if a click is detected outside of the menu and toggle button
-    function r(n) {
-        if (!e.contains(n.target) && !t.contains(n.target)) s();
-    }
-
-    // Closes the menu if the Escape key is pressed
-    function l(t) {
-        if (t.key === "Escape") s();
-    }
