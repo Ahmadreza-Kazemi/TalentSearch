@@ -21,38 +21,4 @@ document.addEventListener("DOMContentLoaded", function() {
     // Inject header and footer content
     injectContent('/header.html', headerContainer);
     injectContent('/footer.html', footerContainer);
-
-    // Hamburger menu functionality
-    let t = document.querySelector(".menu-toggle");
-    let e = document.querySelector(".nav-links");
-    let n = document.querySelector("body");
-
-    function a() {
-        e.classList.toggle("active");
-        t.classList.toggle("active");
-        const o = e.classList.contains("active");
-        t.setAttribute("aria-expanded", o);
-        n.style.overflow = o ? "hidden" : "";
-    }
-
-    function s() {
-        if (e.classList.contains("active")) {
-            e.classList.remove("active");
-            t.classList.remove("active");
-            n.style.overflow = "";
-            t.setAttribute("aria-expanded", "false");
-        }
-    }
-
-    function r(n) {
-        if (!e.contains(n.target) && !t.contains(n.target)) s();
-    }
-
-    function l(t) {
-        if (t.key === "Escape") s();
-    }
-
-    t.addEventListener("click", a);
-    document.addEventListener("click", r);
-    document.addEventListener("keydown", l);
 });
