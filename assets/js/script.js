@@ -20,16 +20,6 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    // Closes the menu if a click is detected outside of the menu and toggle button
-    function r(n) {
-        if (!e.contains(n.target) && !t.contains(n.target)) s();
-    }
-
-    // Closes the menu if the Escape key is pressed
-    function l(t) {
-        if (t.key === "Escape") s();
-    }
-
     // Toggles the visibility of the scroll-to-top button based on scroll position
     function d() {
         const t = window.scrollY || document.documentElement.scrollTop;
