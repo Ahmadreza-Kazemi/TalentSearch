@@ -1,13 +1,108 @@
-    <div class="logo">استعدادیاب</div>
-    <nav class="navbar" role="navigation" aria-label="Main Navigation">
-        <button class="menu-toggle" aria-label="باز کردن منو" aria-expanded="false">
-            <span class="hamburger"></span>
-            <span class="hamburger"></span>
-            <span class="hamburger"></span>
-        </button>
-        <ul class="nav-links">
+    <style>
+        :root {
+            --color-text: #eaeaea;
+            --color-secondary: #4ecdc4;
+            --spacing-medium: 20px;
+            --header-height: 80px;
+            --transition-speed: 0.3s;
+            --transition-type: ease;
+        }
+        .header {
+            background: linear-gradient(135deg, rgba(26, 26, 46, .95), rgba(26, 26, 46, .85));
+            padding: 0 var(--spacing-medium);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 6px rgba(0,0,0,.1);
+            height: var(--header-height);
+            width: 100%;
+            z-index: 1000;
+        }
+        .menu-toggle {
+            background: 0 0;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 35px;
+            height: 24px;
+            padding: 0;
+            z-index: 1001;
+        }
+        .menu-toggle .hamburger {
+            width: 100%;
+            height: 4px;
+            background-color: var(--color-text);
+            border-radius: 2px;
+            transition: all var(--transition-speed) var(--transition-type);
+        }
+        .menu-toggle.active .hamburger:first-child {
+            transform: translateY(10px) rotate(45deg);
+        }
+        .menu-toggle.active .hamburger:nth-child(2) {
+            opacity: 0;
+        }
+        .menu-toggle.active .hamburger:nth-child(3) {
+            transform: translateY(-10px) rotate(-45deg);
+        }
+        .nav-links {
+            position: fixed;
+            top: var(--header-height);
+            left: 0;
+            width: 80%;
+            max-width: 320px;
+            background-color: rgba(26, 26, 46, .95);
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            gap: var(--spacing-medium);
+            box-shadow: 2px 0 8px rgba(0,0,0,.2);
+            list-style: none;
+            padding: var(--spacing-medium);
+            box-sizing: border-box;
+            overflow-y: auto;
+            transition: transform .3s ease-in-out, top .3s ease-in-out;
+        }
+        .nav-links.active {
+            display: flex;
+            transform: translateX(0);
+        }
+        .nav-links a {
+            font-size: 1.6em;
+            padding: 8px 0;
+            white-space: nowrap;
+            color: var(--color-text);
+            transition: color var(--transition-speed) var(--transition-type);
+            text-decoration: none;
+        }
+        .nav-links a::after {
+            content: '';
+            width: 0%;
+            height: 2px;
+            left: 50%;
+            bottom: -4px;
+            background-color: var(--color-secondary);
+            transition: width var(--transition-speed) var(--transition-type), left var(--transition-speed) var(--transition-type);
+        }
+        .nav-links a:focus::after, .nav-links a:hover::after {
+            width: 100%;
+            left: 0;
+        }
+    </style>
+    <div class="header">
+        <div class="logo">استعدادیاب</div>
+        <nav class="navbar" role="navigation" aria-label="Main Navigation">
+            <button class="menu-toggle" aria-label="باز کردن منو" aria-expanded="false">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-links">
                 <li><a href="/">خانه</a></li>
                 <li><a href="/psychological-assessments">آزمون‌ها</a></li>
                 <li><a href="/about-us">درباره‌ما</a></li>
-        </ul>
-    </nav>
+            </ul>
+        </nav>
+    </div>
