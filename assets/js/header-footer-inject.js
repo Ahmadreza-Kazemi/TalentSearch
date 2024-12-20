@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Select header and footer containers
-    let headerContainer = document.querySelector(".header-container");
+    let headerContainer = document.querySelector(".header-container"); // Ensure you have these containers in your HTML
     let footerContainer = document.querySelector(".footer-container");
 
     // Function to fetch and inject content into a container
@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", function() {
             }
             const html = await response.text();
             container.innerHTML = html;
-            return html;
         } catch (error) {
             console.error(error);
             container.innerHTML = `<p>خطا در بارگذاری محتوا!</p>`;
@@ -20,15 +19,17 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Inject header and footer content
-    injectContent('/header.html', headerContainer).then(() => {
-        // Initialize header scripts after injecting header.html
-        initializeHeaderScripts();
-    });
+    injectContent('/header.html', headerContainer);
     injectContent('/footer.html', footerContainer)
         .then(() => {
-            // Initialize footer scripts if necessary
+            // After footer is injected, initialize any footer-related scripts if necessary
         });
 
+    // Initialize header scripts after injecting header.html
+    injectContent('/header.html', headerContainer).then(() => {
+        initializeHeaderScripts();
+    });
+    
     // Function to initialize header-related JavaScript
     function initializeHeaderScripts() {
         let menuToggle = document.querySelector(".menu-toggle");
