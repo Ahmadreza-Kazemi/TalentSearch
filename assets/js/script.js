@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     let t, e, n, o, c, i;
 
-    // Toggles the active state of elements and updates the aria-expanded attribute and overflow style
     function a() {
         e.classList.toggle("active");
         t.classList.toggle("active");
@@ -10,7 +9,6 @@ document.addEventListener("DOMContentLoaded", function() {
         n.style.overflow = o ? "hidden" : "";
     }
 
-    // Removes the active state from elements and resets the aria-expanded attribute and overflow style
     function s() {
         if (e.classList.contains("active")) {
             e.classList.remove("active");
@@ -20,20 +18,25 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    // Toggles the visibility of the scroll-to-top button based on scroll position
+    function r(n) {
+        if (!e.contains(n.target) && !t.contains(n.target)) s();
+    }
+
+    function l(t) {
+        if (t.key === "Escape") s();
+    }
+
     function d() {
         const t = window.scrollY || document.documentElement.scrollTop;
         c.classList.toggle("show", t > window.innerHeight / 2);
     }
 
-    // Smoothly scrolls to the top of the page and sets focus to an element
     function u() {
         window.scrollTo({ top: 0, behavior: "smooth" });
         o.setAttribute("tabindex", "-1");
         o.focus();
     }
 
-    // Changes the document title based on visibility state
     function m() {
         document.hidden
             ? (document.title = "منتظر بازگشت شما هستیم!")
