@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Check if containers exist
     if (!headerContainer) {
-        console.error("Header container (.header-container) not found!");
+        console.error("Header container (.header) not found!");
         return;
     }
 
@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Ensure the header container is empty before injecting content
     headerContainer.innerHTML = '';
     // Inject header content directly
-    injectHeaderContent(headerContainer);
+    injectHeaderContent(header);
     
     // Inject footer content
     if (footerContainer) {
