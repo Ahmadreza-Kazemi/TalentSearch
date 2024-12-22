@@ -65,6 +65,9 @@ document.addEventListener("DOMContentLoaded", function() {
         document.addEventListener("keydown", handleEscapeKey);
     }
 
+    // Ensure the header container is empty before injecting content
+    headerContainer.innerHTML = '';
+    // Inject header and footer content
     injectContent('/header.html', headerContainer);
     injectContent('/footer.html', footerContainer);
 });
