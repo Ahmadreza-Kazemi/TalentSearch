@@ -3,6 +3,29 @@ document.addEventListener("DOMContentLoaded", function() {
     let headerContainer = document.querySelector(".header");
     let footerContainer = document.querySelector(".footer");
 
+    // Function to inject header content directly
+    function injectHeaderContent(container) {
+        const headerHTML = `
+            <div id="header" class="header">
+                <div class="logo">استعدادیاب</div>
+                <nav class="navbar" role="navigation" aria-label="Main Navigation">
+                    <ul class="nav-links">
+                        <li><a href="/">خانه</a></li>
+                        <li><a href="/psychological-assessments">آزمون‌ها</a></li>
+                        <li><a href="/about-us">درباره‌ما</a></li>
+                    </ul>
+                    <button class="menu-toggle" aria-label="باز کردن منو" aria-expanded="false">
+                        <span class="hamburger"></span>
+                        <span class="hamburger"></span>
+                        <span class="hamburger"></span>
+                    </button>
+                </nav>
+            </div>
+        `;
+        container.innerHTML = headerHTML;
+        attachEventListeners();
+    }
+
     // Function to fetch and inject content into a container
     async function injectContent(url, container) {
         try {
@@ -67,7 +90,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Ensure the header container is empty before injecting content
     headerContainer.innerHTML = '';
-    // Inject header and footer content
-    injectContent('/header.html', headerContainer);
+    // Inject header content directly
+    injectHeaderContent(headerContainer);
+    // Inject footer content
     injectContent('/footer.html', footerContainer);
 });
