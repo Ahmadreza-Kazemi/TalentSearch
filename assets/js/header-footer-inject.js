@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Select header and footer containers
-    let headerContainer = document.querySelector(".header");
+    let headerContainer = document.querySelector(".header-container");
     let footerContainer = document.querySelector(".footer");
 
     // Function to inject header content directly
     function injectHeaderContent(container) {
         const headerHTML = `
-            <div id="header" class="header">
+            <div class="header">
                 <div class="logo">استعدادیاب</div>
                 <nav class="navbar" role="navigation" aria-label="Main Navigation">
                     <ul class="nav-links">
