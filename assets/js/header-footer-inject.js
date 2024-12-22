@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
             container.innerHTML = html;
 
             // Re-attach event listeners after content is injected
+            console.log(`Content injected from ${url}`);
             attachEventListeners();
         } catch (error) {
             console.error(error);
@@ -58,6 +59,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if (menuToggle) {
             menuToggle.addEventListener("click", toggleMenu);
+            console.log("Menu toggle event listener attached");
         }
         document.addEventListener("click", handleClickOutside);
         document.addEventListener("keydown", handleEscapeKey);
