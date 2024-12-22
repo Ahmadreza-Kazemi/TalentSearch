@@ -19,12 +19,18 @@ body, html {
 :root {
     --font-family: 'Vazir', sans-serif;
     --color-bg: #1a1a2e;
+    --color-text: #eaeaea;
     --color-primary: #FFA500;
+    --color-secondary: #4ecdc4;
     --color-accent: #556270;
-    --color-muted: #c7c7c7;
+    --header-height: 80px;
     --border-radius: 8px;
-    --spacing-small: 10px;
+    --spacing-medium: 20px;
     --spacing-large: 40px;
+    --transition-speed: 0.3s;
+    --transition-type: ease;
+    --color-muted: #c7c7c7;
+    --spacing-small: 10px;
     --breakpoint-mobile: 576px;
     --breakpoint-tablet: 768px;
     --breakpoint-desktop: 992px;
@@ -65,7 +71,119 @@ p {
     font-size: 1em;
 }
 
+/* Header */
+.header {
+    background: linear-gradient(135deg, rgba(26, 26, 46, .95), rgba(26, 26, 46, .85));
+    padding: 0 var(--spacing-medium);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, .1);
+    height: var(--header-height);
+    width: 100%;
+    z-index: 1000;
+}
 
+.logo {
+    font-size: 1.8em;
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color var(--transition-speed) var(--transition-type);
+}
+
+.logo:focus, .logo:hover {
+    color: var(--color-secondary);
+}
+
+.navbar {
+    position: relative;
+}
+
+/* Navigation */
+.nav-links {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    width: 80%;
+    max-width: 320px;
+    background-color: rgba(26, 26, 46, .95);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--spacing-large);
+    box-shadow: 2px 0 8px rgba(0, 0, 0, .2);
+    list-style: none;
+    padding: var(--spacing-medium);
+    box-sizing: border-box;
+    overflow-y: auto;
+    transition: transform .3s ease-in-out, top .3s ease-in-out;
+}
+
+.nav-links.active {
+    display: flex;
+    transform: translateX(0);
+}
+
+.nav-links a {
+    font-size: 1.6em;
+    padding: 8px 0;
+    white-space: nowrap;
+    transition: color var(--transition-speed) var(--transition-type);
+    text-decoration: none;
+}
+
+.nav-links a::after {
+    width: 0%;
+    height: 2px;
+    left: 50%;
+    bottom: -4px;
+    background-color: var(--color-secondary);
+    transition: width var(--transition-speed) var(--transition-type), left var(--transition-speed) var(--transition-type);
+}
+
+.nav-links a:focus::after, .nav-links a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.nav-links a:focus, .nav-links a:hover {
+    color: var(--color-secondary);
+}
+
+.menu-toggle {
+    background: 0 0;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 35px;
+    height: 24px;
+    padding: 0;
+    z-index: 1001;
+}
+
+.menu-toggle .hamburger {
+    width: 100%;
+    height: 4px;
+    background-color: var(--color-text);
+    border-radius: 2px;
+    transition: all var(--transition-speed) var(--transition-type);
+}
+
+.menu-toggle.active .hamburger:first-child {
+    transform: translateY(10px) rotate(45deg);
+}
+
+.menu-toggle.active .hamburger:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active .hamburger:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
 
 /* Hero Section */
 .hero {
@@ -123,7 +241,7 @@ p {
 .service-item {
     background-color: #2c3e50;
     padding: var(--spacing-medium);
-    transition: transform var(--transition-speed) var(--transition-type), box-shadow var(--transition-speed) var(--transition-type);
+    transition: transform var(--transition-speed) var(--transition-type), box-shadow var(--transition-speed) var (--transition-type);
 }
 
 .service-item:focus-within, .service-item:hover {
@@ -500,4 +618,28 @@ p {
     .powered-by {
         font-size: .85em;
     }
+}
+
+/* Font Face */
+@font-face {
+    font-family: 'Vazir';
+    src: url('assets/fonts/Vazir.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Skip Link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #fff;
+    color: #000;
+    padding: 8px;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 0;
 }
