@@ -1,4 +1,3 @@
-<script>
     document.addEventListener("DOMContentLoaded", function () {
         // Select header and footer containers
         let headerContainer = document.querySelector(".header");
@@ -64,4 +63,3 @@
         document.addEventListener("click", handleClickOutside);
         document.addEventListener("keydown", handleEscapeKey);
     });
-</script>
