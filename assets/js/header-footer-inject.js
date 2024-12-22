@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
             </div>
         `;
         container.innerHTML = headerHTML;
-        attachEventListeners();
+        attachEventListeners(); // Ensure event listeners are attached after injecting header content
     }
 
     // Function to fetch and inject content into a container
@@ -50,6 +50,10 @@ document.addEventListener("DOMContentLoaded", function() {
         let menuToggle = document.querySelector(".menu-toggle");
         let navLinks = document.querySelector(".nav-links");
         let body = document.querySelector("body");
+
+        console.log("Attaching event listeners");
+        console.log("menuToggle:", menuToggle);
+        console.log("navLinks:", navLinks);
 
         function toggleMenu() {
             navLinks.classList.toggle("active");
@@ -83,6 +87,8 @@ document.addEventListener("DOMContentLoaded", function() {
         if (menuToggle) {
             menuToggle.addEventListener("click", toggleMenu);
             console.log("Menu toggle event listener attached");
+        } else {
+            console.log("Menu toggle element not found");
         }
         document.addEventListener("click", handleClickOutside);
         document.addEventListener("keydown", handleEscapeKey);
