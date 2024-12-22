@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Select header and footer containers
-    let headerContainer = document.querySelector(".header-container");
+    let headerContainer = document.querySelector(".header");
     let footerContainer = document.querySelector(".footer");
 
     // Check if containers exist
