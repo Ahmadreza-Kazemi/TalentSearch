@@ -3,6 +3,16 @@ document.addEventListener("DOMContentLoaded", function() {
     let headerContainer = document.querySelector(".header-container");
     let footerContainer = document.querySelector(".footer");
 
+    // Check if containers exist
+    if (!headerContainer) {
+        console.error("Header container (.header-container) not found!");
+        return;
+    }
+
+    if (!footerContainer) {
+        console.warn("Footer container (.footer) not found!");
+    }
+
     // Function to inject header content directly
     function injectHeaderContent(container) {
         const headerHTML = `
@@ -98,6 +108,9 @@ document.addEventListener("DOMContentLoaded", function() {
     headerContainer.innerHTML = '';
     // Inject header content directly
     injectHeaderContent(headerContainer);
+    
     // Inject footer content
-    injectContent('/footer.html', footerContainer);
+    if (footerContainer) {
+        injectContent('/footer.html', footerContainer);
+    }
 });
