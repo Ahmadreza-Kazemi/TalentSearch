@@ -12,9 +12,24 @@ document.addEventListener("DOMContentLoaded", function() {
             }
             const html = await response.text();
             container.innerHTML = html;
+
+            // Re-attach event listeners after content is injected
+            attachMenuToggleListener();
         } catch (error) {
             console.error(error);
             container.innerHTML = `<p>خطا در بارگذاری محتوا!</p>`;
+        }
+    }
+
+    // Function to attach menu toggle event listener
+    function attachMenuToggleListener() {
+        const menuToggle = document.querySelector('.menu-toggle');
+        if (menuToggle) {
+            menuToggle.addEventListener('click', function() {
+                const expanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
+                menuToggle.setAttribute('aria-expanded', !expanded);
+                document.querySelector('.nav-links').classList.toggle('open');
+            });
         }
     }
 
