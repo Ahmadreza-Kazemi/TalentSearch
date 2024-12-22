@@ -1,0 +1,538 @@
+<div class="ravesh-editor-html" style="direction:rtl">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>گزارش تحلیل فهرست تشخیص تعاملی شخصیت</title>
+    <style>
+        @font-face {
+            font-family: 'IRANSansWeb';
+            src: url('fonts/IRANSansWeb.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'BTitrBold';
+            src: url('fonts/BTitrBold.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'BKoodakBold';
+            src: url('fonts/BKoodakBold.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'BHoma';
+            src: url('fonts/BHoma.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'BYekan';
+            src: url('fonts/BYekan.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'Tahoma';
+            src: url('fonts/Tahoma.woff2') format('woff2');
+        }
+        .report-container {
+            font-family: 'BYekan', sans-serif;
+            direction: rtl;
+            line-height: 1.8;
+            background-color: #F5F5F5;
+            color: #333333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            max-width: 800px;
+            width: 100%;
+            margin: auto;
+            background-color: #F5F5F5;
+            padding: 40px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+        }
+        .report-header-custom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #0DA3B8;
+            border-radius: 20px 20px 0 0;
+        }
+        .report-header-inner {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .report-header-img {
+            width: 40px;
+            height: 40px;
+        }
+        .report-header-title {
+            margin: 0;
+            font-size: 1.8em;
+            color: #ffffff;
+            font-family: 'IRANSansWeb', sans-serif;
+            font-weight: normal;
+        }
+        .report-header-date {
+            color: #ffffff;
+            font-size: 1em;
+        }
+        .report-title {
+            text-align: center;
+            color: #0DA3B8;
+            font-family: 'IRANSansWeb', sans-serif;
+            font-weight: bold;
+            font-size: 32px;
+            margin-bottom: 25px;
+        }
+        .report-info-container, .report-score-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .report-info-item, .report-score-item {
+            background-color: #F8F9FA;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            font-size: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'BYekan', sans-serif;
+            flex: 1;
+            min-width: 300px;
+            margin-right: 10px; /* Add space between columns */
+        }
+        .report-info-item strong, .report-score-item strong {
+            color: #0DA3B8;
+            font-family: 'IRANSansWeb', sans-serif;
+        }
+        .report-info-data, .report-score-data {
+            font-family: 'IRANSansWeb', sans-serif;
+        }
+        .report-section-title {
+            font-size: 22px;
+            color: #CC3333;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #CC3333;
+            font-family: 'IRANSansWeb', sans-serif;
+            font-weight: bold;
+            text-align: center;
+        }
+        .report-component-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 22px;
+            color: #DBCF93;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #DBCF93;
+            font-family: 'IRANSansWeb', sans-serif;
+        }
+        .report-paragraph {
+            background-color: #E0F7FA;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .report-list {
+            list-style-type: none;
+            padding: 0;
+            font-size: 16px;
+        }
+        .report-list-item {
+            background: #F8F9FA;
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+        }
+        .report-list-item strong {
+            font-size: 18px;
+            color: #0DA3B8;
+            margin-bottom: 5px;
+        }
+        .report-badge {
+            display: inline-block;
+            padding: 8px 15px;
+            font-size: 14px;
+            color: #FFFFFF;
+            background-color: #4A9B8C;
+            border-radius: 10px;
+        }
+        .report-recommendation {
+            background-color: #EAEAEA;
+            padding: 20px;
+            margin-top: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .report-recommendation-title {
+            font-weight: bold;
+            color: #CC3333;
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
+        .report-recommendation-text {
+            margin-bottom: 5px;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+        .report-footer-custom {
+            background-color: #F5F5F5;
+            color: #333333;
+            padding: 20px;
+            text-align: center;
+            font-family: 'IRANSansWeb', sans-serif;
+            border-top: 1px solid #E0E0E0;
+            font-size: 16px; /* Increased font size */
+        }
+        .report-footer-content {
+            margin-bottom: 20px;
+        }
+        .report-footer-img {
+            width: 80px;
+            height: 80px;
+        }
+        .report-footer-paragraph {
+            margin: 5px 0;
+        }
+        .report-footer-paragraph.yellow-text {
+            color: #DBCF93;
+        }
+        .report-footer-menu {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 10px 0;
+        }
+        .report-footer-menu-link {
+            color: #0DA3B8;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .report-footer-menu-link:hover {
+            color: #007B8A;
+        }
+        .report-footer-address {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .report-summary-container {
+            max-width: 800px;
+            margin: auto;
+            background-color: #FFFFFF;
+            padding: 40px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+            border-radius: 10px;
+        }
+        .report-summary-heading {
+            text-align: center;
+            color: #0DA3B8;
+            font-family: 'IRANSansWeb', sans-serif;
+            font-weight: bold;
+            font-size: 32px;
+            margin-bottom: 25px;
+        }
+        .report-summary-content {
+            color: #333333;
+            font-family: 'IRANSansWeb', sans-serif;
+            line-height: 1.8;
+        }
+        .report-conditional-display {
+            display: block;
+        }
+        .report-conditional-display[style*="--score-rate1: 1"] {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #FF9999; /* Moderate */
+        }
+        .report-conditional-display[style*="--score-rate2: 2"] {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #FFD580; /* Good */
+        }
+        .report-conditional-display[style*="--score-rate3: 3"] {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #99FF99; /* Excellent */
+        }
+    </style>
+    <div class="report-report-container">
+        <header class="report-header-custom">
+            <div class="report-header-inner">
+                <img src="../panel/file?type=picture&amp;v=3&amp;mode=filemanager&amp;file=%7eDB3gfQUls%2bt2iiMYKbsRAxrtFhcHKUIUUo7pPtO17bHCzNxwU4zNh3UVor6QMtl7Y6EWX8dD0PSvzZOYkRrXlfejPn4lNTj6" class="report-header-img" alt="لوگو">
+                <h1 class="report-header-title">گزارش تحلیل فهرست تشخیص تعاملی شخصیت</h1>
+            </div>
+            <div class="report-header-date">تاریخ اجرا: #primary_createDate#</div>
+        </header>
+        
+        <div class="report-section-title">فهرست تشخیص تعاملی شخصیت</div>
+        <p class="report-paragraph">
+            این ارزیابی به منظور تحلیل و بررسی ویژگی‌های شخصیتی فرد در حوزه‌های مختلف از جمله تعهد، نیرومندی، ظرفیت تحلیلی، بیتابی روانی، استقلال و سازش انجام شده است. هدف از این ارزیابی شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد.
+        </p><p></p>
+               
+        <div class="report-section-title">اطلاعات فردی</div>
+        <div class="report-info-container">
+            <div class="report-info-item"><strong>نام:</strong> <span class="report-info-data">#field_349#</span></div>
+            <div class="report-info-item"><strong>نام خانوادگی:</strong> <span class="report-info-data">#field_1712#</span></div>
+            <div class="report-info-item"><strong>موبایل:</strong> <span class="report-info-data">#field_350#</span></div>
+            <div class="report-info-item"><strong>ایمیل:</strong> <span class="report-info-data">#field_351#</span></div></div>
+
+        </div>
+        <div class="report-section-title">نتیجه</div>
+        <div class="report-score-container">
+            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10147#;"><strong>استقلال:</strong> <span class="report-badge">#field_564#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10147#;"><strong>استقلال:</strong> <span class="report-badge">#field_564#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10147#;"><strong>استقلال:</strong> <span class="report-badge">#field_564#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10148#;"><strong>انضباط:</strong> <span class="report-badge">#field_565#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10148#;"><strong>انضباط:</strong> <span class="report-badge">#field_565#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10148#;"><strong>انضباط:</strong> <span class="report-badge">#field_565#</span></div>
+
+        </div>
+        <div class="report-section-title">تفسیر</div>
+        <p class="report-paragraph">
+            این بخش به تحلیل و تفسیر نتایج ارزیابی روان‌شناختی فرد می‌پردازد. تحلیل روان‌شناختی شامل بررسی ویژگی‌های شخصیتی مختلف است. هدف از این تحلیل شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد. نتایج این تحلیل می‌تواند به فرد کمک کند تا با شناخت بهتر از خود، برنامه‌های توسعه فردی و حرفه‌ای موثرتری را دنبال کند.
+        </p>
+<!-- بی‌تعادلی (عامل منفی یا نشانگر عدم حکمت در مدیریت احساسات و آینده‌نگری) -->
+<div class="report-component-title">بی تعادلی 
+    <span class="report-badge report-score-data">#field_1145#<br></span>
+</div>
+<p class="report-paragraph">
+    بی‌تعادلی نشان‌دهنده دشواری فرد در مدیریت هیجانات و به کار بستن خرد در موقعیت‌های پیچیده است. هرچه مقدار این شاخص بالاتر باشد، احتمال وجود رفتارهای نامتعادل، ضعف در آینده‌نگری و عدم توجه کافی به جنبه‌های ارزشمند زندگی بیشتر است. این امر می‌تواند توان فرد را در ایجاد تعادل روانی و اتخاذ تصمیم‌های حکیمانه کاهش دهد.
+</p>
+<ul class="report-list">
+
+    <!-- سطح پایین بی‌تعادلی (وضعیت مطلوب‌تر) -->
+    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10233#;">
+        <strong>«سطح پایین»<br></strong>
+        شما به‌طور کلی قادر هستید هیجانات خود را کنترل کنید و در امور مختلف تعادل نسبی دارید. آینده‌نگری و توجه به مقتضیات زندگی در شما مشهود است و رفتارتان نشانگر یک انسجام نسبی درونی است.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. حفظ روند فعلی با شناخت هرچه بهتر احساسات و واکنش‌هایتان؛ نوشتن افکار روزانه و مرور آن‌ها می‌تواند مفید باشد.<br>
+                ۲. شرکت در فعالیت‌های فرهنگی یا آموزشی که بینش شما را نسبت به مقتضیات زندگی و آینده‌نگری تعمیق می‌کند.<br>
+                ۳. گفت‌وگو با دوستان یا مشاوران برای تقویت هرچه بیشتر تصمیم‌های سنجیده در موقعیت‌های دشوار.<br>
+                ۴. ادامه مطالعه منابع مرتبط با مهارت‌های ارتباطی و عاطفی، تا بیشترین استفاده را از هوش هیجانی خویش ببرید.<br>
+                ۵. در صورت بروز شرایط بحرانی، استفاده از تکنیک‌های آرام‌سازی (نفس عمیق، مدیتیشن) برای بازگرداندن سریع ثبات روانی.
+            </div>
+        </div>
+    </li>
+
+    <!-- سطح متوسط بی‌تعادلی -->
+    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10233#;">
+        <strong>«سطح متوسط»<br></strong>
+        شما در اکثر شرایط تلاش می‌کنید متعادل رفتار کنید، اما گاهی تحت تأثیر هیجانات یا عوامل بیرونی از حالت تعادل خارج می‌شوید. در این موقعیت‌ها، شاید نتوانید از قدرت آینده‌نگری و خردورزی بهره کامل ببرید.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. شناسایی محرک‌هایی که باعث افت تعادل یا هیجان‌زدگی شما می‌شوند و تلاش برای مدیریت یا دوری هوشمندانه از آن‌ها.<br>
+                ۲. تمرین تکنیک‌های کنترل هیجان (مثلاً تنفس عمیق، شمارش معکوس، یا مکث ذهنی) قبل از واکنش ناگهانی در برابر موقعیت‌های چالش‌برانگیز.<br>
+                ۳. گنجاندن فعالیت‌های آرامش‌بخش (مانند ورزش سبک، گوش دادن به موسیقی آرام) در برنامه روزانه، جهت تنظیم بهتر هیجانات.<br>
+                ۴. ارزیابی و یادداشت تصمیم‌های احساسی گذشته برای یادگیری از خطاها و تقویت آینده‌نگری.<br>
+                ۵. گفت‌وگوی سازنده با افراد با تجربه یا مشاوران، تا در شرایط تنش بتوانید از دیدگاهی تازه بهره گیرید.
+            </div>
+        </div>
+    </li>
+
+    <!-- سطح بالا بی‌تعادلی (وضعیت نامطلوب‌تر) -->
+    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10233#;">
+        <strong>«سطح بالا»<br></strong>
+        شما ممکن است به‌طور مکرر در مدیریت هیجانات با دشواری مواجه شوید، برخی اوقات رفتارهای نامتعادل نشان دهید و به خوبی نتوانید بین مصلحت آینده و خواسته‌های آنی تمایز قائل شوید. این وضعیت می‌تواند توان شما را در دستیابی به ثبات روانی و حکمت در تصمیم‌گیری کاهش دهد.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. مراجعه به روان‌شناس یا روان‌درمانگر برای بررسی عمیق‌تر عوامل ریشه‌ای بی‌تعادلی و تقویت مهارت‌های کنترل هیجان.<br>
+                ۲. شناسایی شرایط یا افرادی که هیجان‌های نامساعد را تشدید می‌کنند و تلاش برای رفع تعارضات یا کاهش مواجهه با آن‌ها.<br>
+                ۳. یادگیری مداوم مهارت‌های تصمیم‌گیری بلندمدت و آینده‌نگر از طریق شرکت در کارگاه‌های حرفه‌ای یا مطالعه منابع معتبر.<br>
+                ۴. پیاده‌سازی روتین‌های ثابت (ورزش، خواب منظم، مطالعه ساختارمند) برای ایجاد نظم در زندگی و بهبود خودکنترلی.<br>
+                ۵. شرکت در تمرین‌های گروهی یا تیم‌های کاری که نیازمند انضباط و هماهنگی‌اند، تا از جنبه‌های مثبت تعاملات اجتماعی در مدیریت هیجان بهره‌مند شوید.
+            </div>
+        </div>
+    </li>
+</ul>
+
+<!-- همه‌جانبه‌نگری (جنبه خردمندانه تصمیم‌گیری و در نظر گرفتن همه‌ی جوانب) -->
+<div class="report-component-title">همه جانبه نگری
+    <span class="report-badge report-score-data">#field_1146#<br></span>
+</div>
+<p class="report-paragraph">
+    همه‌جانبه‌نگری نشانه قدرت فرد در مد نظر قرار دادن تمام ابعاد یک مسئله، رعایت اصول منطقی، بررسی پیامدها و اتخاذ تصمیم‌های سنجیده و خردمندانه است. این ویژگی بخش مهمی از «حکمت عملی» محسوب می‌شود، زیرا مانع از تصمیم‌گیری‌های عجولانه و یک‌سویه می‌شود.
+</p>
+<ul class="report-list">
+    <!-- سطح متوسط همه جانبه نگری -->
+    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10234#;">
+        <strong>«متوسط»<br></strong>
+        شما در بسیاری از موقعیت‌ها تلاش می‌کنید همه جوانب را در نظر بگیرید، ولی گاهی تحت تأثیر شرایط یا احساسات، ممکن است برخی ابعاد را نادیده بگیرید. این سطح نشان می‌دهد با کمی دقت و تمرین بیشتر، می‌توانید دید وسیع‌تری پیدا کنید.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. تعیین چارچوبی ثابت برای تحلیل مسائل (مانند ماتریس مزایا و معایب یا روش «۵ چرا»).<br>
+                ۲. گفت‌وگو با افراد مختلف و گوش دادن به دیدگاه‌های گوناگون، پیش از تصمیم‌گیری درباره موضوعات پیچیده.<br>
+                ۳. افزایش مطالعه و تمرین شیوه‌های تفکر انتقادی؛ پرسیدن سوال‌های کلیدی، از خود و دیگران.<br>
+                ۴. فراهم کردن زمان کافی برای تصمیم‌گیری‌های مهم؛ پرهیز از عجله و احساس فشار محیطی.<br>
+                ۵. مرور نتایج تصمیم‌های پیشین برای شناسایی مواردی که یک‌جانبه به مسئله نگریسته‌اید و از آن‌ها درس بگیرید.
+            </div>
+        </div>
+    </li>
+
+    <!-- سطح خوب همه جانبه نگری -->
+    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10234#;">
+        <strong>«خوب»<br></strong>
+        شما اغلب هنگام تصمیم‌گیری، از عقل و منطق استفاده می‌کنید، پیامدهای رفتارتان را می‌سنجید و به جنبه‌های ارزشمند زندگی اهمیت می‌دهید. این سطح از همه‌جانبه‌نگری نشانه درک عمیق مسائل است و به شما کمک می‌کند در موقعیت‌های حساس، سنجیده عمل نمایید.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. حفظ این سطح با ادامه شرکت در مباحث گروهی یا مطالعه مطالب متنوع (علمی، تاریخی، فلسفی) برای تقویت دید گسترده‌تر.<br>
+                ۲. پرداختن به تمرین‌های شناختی مانند حل مسائل پیچیده یا معماهای استدلالی برای توسعۀ بیشتر قدرت تحلیلی.<br>
+                ۳. مراقبت از اینکه تحت تأثیر احساسات زودگذر یا فشارهای بیرونی، اهمیت ابعاد مختلف مسئله کم نشود.<br>
+                ۴. تقویت مهارت گفت‌وگو و شنیدن فعال برای دریافت بازخوردهای متنوع در تصمیم‌گیری مشترک یا گروهی.<br>
+                ۵. میان جنبه‌های منطقی و ارزش‌های درونی خود توازن ایجاد کنید؛ برخی مسائل به قضاوت اخلاقی و انسانی نیز نیاز دارند.
+            </div>
+        </div>
+    </li>
+
+    <!-- سطح عالی همه جانبه نگری -->
+    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10234#;">
+        <strong>«عالی»<br></strong>
+        شما در بالاترین سطح همه‌جانبه‌نگری قرار دارید؛ هنگام تصمیم‌گیری جوانب را به‌خوبی بررسی می‌کنید، از قدرت تفکر منسجم برخوردارید و در موقعیت‌های حساس عملکرد بسیار سنجیده‌ای دارید. این ویژگی نشان‌دهنده حکمت عملی چشمگیر و دیدگاه فراگیر شماست.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. رهبری یا مشاوره در پروژه‌ها و گروه‌هایی که تصمیم‌گیری‌های پیچیده نیاز دارند؛ شما دید گسترده و تحلیلی خوبی دارید.<br>
+                ۲. آموزش روش‌های همه‌جانبه‌نگری به دیگران در قالب کارگاه‌های تفکر انتقادی یا جلسات هم‌اندیشی.<br>
+                ۳. حفظ رویکرد یادگیری مستمر و انعطاف‌پذیری ذهنی؛ حتی با وجود قدرت تحلیلی بالا، ممکن است گاه نیازمند بازنگری باشید.<br>
+                ۴. مستندسازی روش تصمیم‌گیری و پیامدهای آن، برای استفاده در آینده یا الگوسازی برای اطرافیان.<br>
+                ۵. پرهیز از اعتماد بیش از حد به توانمندی خود؛ تعامل با دیدگاه‌های دیگران شما را از افتادن در دام یک‌سویه‌نگری حفظ می‌کند.
+            </div>
+        </div>
+    </li>
+</ul>
+
+<!-- هیجانی (عامل تأثیر احساسات بر تشخیص و تصمیم‌گیری) -->
+<div class="report-component-title">هیجانی 
+    <span class="report-badge report-score-data">#field_1147#<br></span>
+</div>
+<p class="report-paragraph">
+    هیجانی بیانگر حساسیت فرد به احساسات درونی و اثرپذیری از عواطف خود و دیگران در تصمیم‌گیری است. افرادی که امتیاز بالاتری در این بخش کسب می‌کنند، ممکن است بیشتر تحت تأثیر هیجان‌ها قرار گیرند و در موقعیت‌های حساس نتوانند تشخیص منطقی را در اولویت بگذارند. از سویی، اگر به‌درستی مدیریت شود، می‌تواند عاملی از همدلی و ارتباط انسانی عمیق‌تر باشد.
+</p>
+<ul class="report-list">
+    <!-- سطح متوسط هیجانی -->
+    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10235#;">
+        <strong>«متوسط»<br></strong>
+        شما گاهی تحت تأثیر احساسات یا دیدگاه‌های دیگران قرار می‌گیرید، اما در بسیاری مواقع تلاش می‌کنید منطق را نیز مد نظر داشته باشید. به‌طور کلی، تعادل نسبی بین هیجان و استدلال برقرار است، اما در شرایط بحرانی ممکن است دچار شک و تردید شوید.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. آگاهی از لحظاتی که هیجانات در اوج است؛ یک مکث کوتاه یا تنفس عمیق ممکن است بین هیجان و عمل فاصله بیندازد.<br>
+                ۲. تعریف محدوده‌ای برای پذیرش تأثیرات بیرونی؛ مثلاً مشورت کنید اما تصمیم نهایی را برپایه تحلیل شخصی اتخاذ نمایید.<br>
+                ۳. تمرین ذهن‌آگاهی (Mindfulness) و شناسایی هیجان‌های منفی یا مثبت در همان لحظه ظهور برای مدیریت بهتر آن‌ها.<br>
+                ۴. گفت‌وگو با فردی معتمد یا مشاور هنگام مواجهه با مسئله حساس، تا از زوایای منطقی بیشتر بهره‌مند شوید.<br>
+                ۵. یادآوری اهمیت تعادل بین دل و عقل؛ هیجانات مثبت می‌توانند حامی خرد باشند، نه جایگزین آن.
+            </div>
+        </div>
+    </li>
+
+    <!-- سطح خوب هیجانی -->
+    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10235#;">
+        <strong>«خوب»<br></strong>
+        شما با میزان قابل قبولی از احساسات درگیر می‌شوید و معمولاً اجازه نمی‌دهید هیجانات منفی یا تاثیر بیرونی افراطی، روی انتخاب‌هایتان غلبه کند. این سطح از هیجانی بودن، نشان‌دهنده هوش هیجانی نسبتاً مناسب و توانایی همدلی با اطرافیان است.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. حفظ این سطح مناسب از هیجانات با شرکت در فعالیت‌های گروهی و اجتماعی که حس همدلی را افزایش می‌دهد.<br>
+                ۲. ادامه تقویت تکنیک‌های تصمیم‌گیری منطقی؛ گاهی خلاصه‌نویسی جوانب امر قبل از انتخاب نهایی، کمک بسیاری می‌کند.<br>
+                ۳. بیان شفاف احساسات به اطرافیان در شرایط پراسترس، تا انتظارات و نیازهایتان را درست منتقل کنید.<br>
+                ۴. آگاهی از نشانه‌های فرسودگی عاطفی؛ گاهی گوشه‌گیری موقت یا استراحت ذهنی می‌تواند سلامتی روانی را تضمین کند.<br>
+                ۵. توجه به مرز میان هیجان و منطق در تصمیم‌های مشترک؛ تعادل میان این دو، ضامن موفقیت و پایداری است.
+            </div>
+        </div>
+    </li>
+
+    <!-- سطح عالی هیجانی -->
+    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10235#;">
+        <strong>«عالی»<br></strong>
+        شما در سطح بالایی از حساسیت و هیجانات قرار دارید و به‌راحتی تحت تأثیر احساسات خود یا دیگران قرار می‌گیرید. این حالت می‌تواند عامل ارتباطی بسیار قوی و همدلانه باشد، اما در عین حال خطر تصمیم‌گیری‌های شتاب‌زده یا افراطی نیز افزایش می‌یابد.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. استفاده از این توانمندی برای نشان دادن همدلی عمیق با اطرافیان؛ شما می‌توانید حامی عاطفی خوبی باشید.<br>
+                ۲. آگاهی از مرزهای هیجان؛ وقتی متوجه می‌شوید احساسات شدید بر شما غلبه کرده، چند لحظه مکث کنید یا از فردی بی‌طرف مشاوره بخواهید.<br>
+                ۳. ترکیب خلاقیت و احساسات؛ این سطح از حساسیت می‌تواند در رشته‌های هنری یا فعالیت‌های اجتماعی بشدت مؤثر باشد.<br>
+                ۴. مراقبت از خود در برابر فرسودگی احساسی؛ زمان‌هایی برای تجدید قوا و فاصله گرفتن از چالش‌های عاطفی برنامه‌ریزی کنید.<br>
+                ۵. در تصمیم‌های مهم، از روش‌های تحلیلی نیز سود ببرید؛ جایگزین کردن یا تکمیل احساسات با منطق، تعادل نهایی را تضمین می‌کند.
+            </div>
+        </div>
+    </li>
+
+</ul>
+
+
+
+
+                                              
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+            <div class="report-section-title">جمع‌بندی</div>
+            <div class="report-paragraph">
+            <p>این گزارش ارزیابی مهارت‌های شما شامل تحلیل تعهد، نیرومندی، ظرفیت تحلیلی، بیتابی روانی، استقلال و سازش است. این بررسی نقاط قوت و زمینه‌های نیازمند بهبود شما را نشان داده و توصیه‌های کاربردی برای توسعه مهارت‌های شما ارائه می‌دهد.</p>
+            
+            <p><b>نقاط قوت: </b>شما در برخی از حوزه‌ها عملکرد برجسته‌ای دارید که نشان‌دهنده توانایی‌های قوی در مدیریت مسئولیت‌ها، انرژی بالا، تحلیل مسائل پیچیده، آرامش روانی، خودکفایی و تطبیق‌پذیری است. به عنوان مثال، در حوزه‌های "تعهد" و "ظرفیت تحلیلی"، شما توانایی زیادی در مدیریت وظایف و تحلیل مسائل نشان داده‌اید که می‌تواند به پیشرفت حرفه‌ای و رشد فردی شما کمک کند.</p>
+            
+            <p><b>حوزه‌های نیازمند بهبود:</b> در برخی از بخش‌ها نیاز به تمرکز بیشتر وجود دارد. به عنوان مثال، در حوزه‌های "بیتابی روانی" و "استقلال"، شما می‌توانید با تمرین‌های منظم و فعالیت‌های هدفمند مانند تکنیک‌های مدیریت استرس و برنامه‌ریزی منظم مهارت‌های خود را بهبود بخشید. همچنین، افزایش تعاملات اجتماعی و تمرین مهارت‌های تصمیم‌گیری مستقل می‌تواند تأثیر مثبتی بر عملکرد شما داشته باشد.</p>
+            
+            <p><b>گام‌های بعدی:</b> برای تقویت مهارت‌های خود، پیشنهاد می‌شود که به توصیه‌های ارائه‌شده در هر بخش توجه ویژه‌ای کنید و در صورت نیاز از خدمات مشاوره تخصصی استفاده نمایید. همچنین، ارزیابی منظم و پیگیری مداوم می‌تواند به توسعه پایدار و موفقیت شما در تمامی ابعاد زندگی کمک کند.</p>
+            </div>
+        
+        <footer class="report-footer-custom">
+            <div class="report-footer-content">
+                <img src="../panel/file?type=picture&amp;v=3&amp;mode=filemanager&amp;file=%7eDB3gfQUls%2bt2iiMYKbsRAxrtFhcHKUIUUo7pPtO17bHCzNxwU4zNh3UVor6QMtl7Y6EWX8dD0PSvzZOYkRrXlfejPn4lNTj6" class="report-footer-img" alt="لوگو">
+            </div>
+            <p class="report-footer-paragraph">مؤسّسه تعاملی هیجان اندیشه | تماس: 02188174100 | ایمیل: info@eot.ir</p>
+            <p class="report-footer-paragraph yellow-text">© ۱۴۰۳ تمامی حقوق محفوظ است.</p>
+            <ul class="report-footer-menu">
+                <li><a href="https://www.eot.ir/" class="report-footer-menu-link">صفحه اصلی</a></li>
+                <li><a href="https://www.eot.ir/contact" class="report-footer-menu-link">تماس با ما</a></li>
+                <li><a href="https://www.eot.ir/about" class="report-footer-menu-link">درباره ما</a></li>
+            </ul>
+            <address class="report-footer-address">تهران، سهروردی، خرمشهر، عربعلی، کوچه ششم، شماره ۴۴</address>
+        </footer>
+    </div>

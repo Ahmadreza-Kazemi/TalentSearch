@@ -1,0 +1,1525 @@
+<div class="ravesh-editor-html" style="direction:rtl">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>گزارش تحلیل فهرست تشخیص تعاملی شخصیت</title>
+    <style>
+        @font-face {
+            font-family: 'IRANSansWeb';
+            src: url('fonts/IRANSansWeb.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'BTitrBold';
+            src: url('fonts/BTitrBold.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'BKoodakBold';
+            src: url('fonts/BKoodakBold.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'BHoma';
+            src: url('fonts/BHoma.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'BYekan';
+            src: url('fonts/BYekan.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'Tahoma';
+            src: url('fonts/Tahoma.woff2') format('woff2');
+        }
+        .report-container {
+            font-family: 'BYekan', sans-serif;
+            direction: rtl;
+            line-height: 1.8;
+            background-color: #F5F5F5;
+            color: #333333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            max-width: 800px;
+            width: 100%;
+            margin: auto;
+            background-color: #F5F5F5;
+            padding: 40px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+        }
+        .report-header-custom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #0DA3B8;
+            border-radius: 20px 20px 0 0;
+        }
+        .report-header-inner {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .report-header-img {
+            width: 40px;
+            height: 40px;
+        }
+        .report-header-title {
+            margin: 0;
+            font-size: 1.8em;
+            color: #ffffff;
+            font-family: 'IRANSansWeb', sans-serif;
+            font-weight: normal;
+        }
+        .report-header-date {
+            color: #ffffff;
+            font-size: 1em;
+        }
+        .report-title {
+            text-align: center;
+            color: #0DA3B8;
+            font-family: 'IRANSansWeb', sans-serif;
+            font-weight: bold;
+            font-size: 32px;
+            margin-bottom: 25px;
+        }
+        .report-info-container, .report-score-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .report-info-item, .report-score-item {
+            background-color: #F8F9FA;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            font-size: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'BYekan', sans-serif;
+            flex: 1;
+            min-width: 300px;
+            margin-right: 10px; /* Add space between columns */
+        }
+        .report-info-item strong, .report-score-item strong {
+            color: #0DA3B8;
+            font-family: 'IRANSansWeb', sans-serif;
+        }
+        .report-info-data, .report-score-data {
+            font-family: 'IRANSansWeb', sans-serif;
+        }
+        .report-section-title {
+            font-size: 22px;
+            color: #CC3333;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #CC3333;
+            font-family: 'IRANSansWeb', sans-serif;
+            font-weight: bold;
+            text-align: center;
+        }
+        .report-component-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 22px;
+            color: #DBCF93;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #DBCF93;
+            font-family: 'IRANSansWeb', sans-serif;
+        }
+        .report-paragraph {
+            background-color: #E0F7FA;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .report-list {
+            list-style-type: none;
+            padding: 0;
+            font-size: 16px;
+        }
+        .report-list-item {
+            background: #F8F9FA;
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+        }
+        .report-list-item strong {
+            font-size: 18px;
+            color: #0DA3B8;
+            margin-bottom: 5px;
+        }
+        .report-badge {
+            display: inline-block;
+            padding: 8px 15px;
+            font-size: 14px;
+            color: #FFFFFF;
+            background-color: #4A9B8C;
+            border-radius: 10px;
+        }
+        .report-recommendation {
+            background-color: #EAEAEA;
+            padding: 20px;
+            margin-top: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .report-recommendation-title {
+            font-weight: bold;
+            color: #CC3333;
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
+        .report-recommendation-text {
+            margin-bottom: 5px;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+        .report-footer-custom {
+            background-color: #F5F5F5;
+            color: #333333;
+            padding: 20px;
+            text-align: center;
+            font-family: 'IRANSansWeb', sans-serif;
+            border-top: 1px solid #E0E0E0;
+            font-size: 16px; /* Increased font size */
+        }
+        .report-footer-content {
+            margin-bottom: 20px;
+        }
+        .report-footer-img {
+            width: 80px;
+            height: 80px;
+        }
+        .report-footer-paragraph {
+            margin: 5px 0;
+        }
+        .report-footer-paragraph.yellow-text {
+            color: #DBCF93;
+        }
+        .report-footer-menu {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 10px 0;
+        }
+        .report-footer-menu-link {
+            color: #0DA3B8;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .report-footer-menu-link:hover {
+            color: #007B8A;
+        }
+        .report-footer-address {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .report-summary-container {
+            max-width: 800px;
+            margin: auto;
+            background-color: #FFFFFF;
+            padding: 40px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+            border-radius: 10px;
+        }
+        .report-summary-heading {
+            text-align: center;
+            color: #0DA3B8;
+            font-family: 'IRANSansWeb', sans-serif;
+            font-weight: bold;
+            font-size: 32px;
+            margin-bottom: 25px;
+        }
+        .report-summary-content {
+            color: #333333;
+            font-family: 'IRANSansWeb', sans-serif;
+            line-height: 1.8;
+        }
+        .report-conditional-display {
+            display: block;
+        }
+        .report-conditional-display[style*="--score-rate1: 1"] {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #FF9999; /* Moderate */
+        }
+        .report-conditional-display[style*="--score-rate2: 2"] {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #FFD580; /* Good */
+        }
+        .report-conditional-display[style*="--score-rate3: 3"] {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #99FF99; /* Excellent */
+        }
+    </style>
+    <div class="report-report-container">
+        <header class="report-header-custom">
+            <div class="report-header-inner">
+                <img src="../panel/file?type=picture&amp;v=3&amp;mode=filemanager&amp;file=%7eDB3gfQUls%2bt2iiMYKbsRAxrtFhcHKUIUUo7pPtO17bHCzNxwU4zNh3UVor6QMtl7Y6EWX8dD0PSvzZOYkRrXlfejPn4lNTj6" class="report-header-img" alt="لوگو">
+                <h1 class="report-header-title">گزارش تحلیل فهرست تشخیص تعاملی شخصیت</h1>
+            </div>
+            <div class="report-header-date">تاریخ اجرا: #primary_createDate#</div>
+        </header>
+        
+        <div class="report-section-title">فهرست تشخیص تعاملی شخصیت</div>
+        <p class="report-paragraph">
+            این ارزیابی به منظور تحلیل و بررسی ویژگی‌های شخصیتی فرد در حوزه‌های مختلف از جمله تعهد، نیرومندی، ظرفیت تحلیلی، بیتابی روانی، استقلال و سازش انجام شده است. هدف از این ارزیابی شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد.
+        </p><p></p>
+               
+        <div class="report-section-title">اطلاعات فردی</div>
+        <div class="report-info-container">
+            <div class="report-info-item"><strong>نام:</strong> <span class="report-info-data">#field_349#</span></div>
+            <div class="report-info-item"><strong>نام خانوادگی:</strong> <span class="report-info-data">#field_1712#</span></div>
+            <div class="report-info-item"><strong>موبایل:</strong> <span class="report-info-data">#field_350#</span></div>
+            <div class="report-info-item"><strong>ایمیل:</strong> <span class="report-info-data">#field_351#</span></div></div>
+
+        </div>
+        <div class="report-section-title">نتیجه</div>
+        <div class="report-score-container">
+            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10147#;"><strong>استقلال:</strong> <span class="report-badge">#field_564#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10147#;"><strong>استقلال:</strong> <span class="report-badge">#field_564#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10147#;"><strong>استقلال:</strong> <span class="report-badge">#field_564#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10148#;"><strong>انضباط:</strong> <span class="report-badge">#field_565#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10148#;"><strong>انضباط:</strong> <span class="report-badge">#field_565#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10148#;"><strong>انضباط:</strong> <span class="report-badge">#field_565#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10149#;"><strong>آرامش زندگی:</strong> <span class="report-badge">#field_566#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10149#;"><strong>آرامش زندگی:</strong> <span class="report-badge">#field_566#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10149#;"><strong>آرامش زندگی:</strong> <span class="report-badge">#field_566#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10150#;"><strong>آینده پویی:</strong> <span class="report-badge">#field_567#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10150#;"><strong>آینده پویی:</strong> <span class="report-badge">#field_567#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10150#;"><strong>آینده پویی:</strong> <span class="report-badge">#field_567#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10151#;"><strong>بی تعادلی:</strong> <span class="report-badge">#field_568#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10151#;"><strong>بی تعادلی:</strong> <span class="report-badge">#field_568#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10151#;"><strong>بی تعادلی:</strong> <span class="report-badge">#field_568#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10152#;"><strong>بیتابی:</strong> <span class="report-badge">#field_569#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10152#;"><strong>بیتابی:</strong> <span class="report-badge">#field_569#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10152#;"><strong>بیتابی:</strong> <span class="report-badge">#field_569#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10153#;"><strong>پاکزیستی:</strong> <span class="report-badge">#field_570#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10153#;"><strong>پاکزیستی:</strong> <span class="report-badge">#field_570#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10153#;"><strong>پاکزیستی:</strong> <span class="report-badge">#field_570#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10154#;"><strong>پشتیبانی:</strong> <span class="report-badge">#field_571#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10154#;"><strong>پشتیبانی:</strong> <span class="report-badge">#field_571#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10154#;"><strong>پشتیبانی:</strong> <span class="report-badge">#field_571#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10155#;"><strong>پیامد سنجی:</strong> <span class="report-badge">#field_572#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10155#;"><strong>پیامد سنجی:</strong> <span class="report-badge">#field_572#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10155#;"><strong>پیامد سنجی:</strong> <span class="report-badge">#field_572#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10156#;"><strong>تحلیل ورزی:</strong> <span class="report-badge">#field_573#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10156#;"><strong>تحلیل ورزی:</strong> <span class="report-badge">#field_573#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10156#;"><strong>تحلیل ورزی:</strong> <span class="report-badge">#field_573#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10157#;"><strong>تعالی طلبی:</strong> <span class="report-badge">#field_574#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10157#;"><strong>تعالی طلبی:</strong> <span class="report-badge">#field_574#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10157#;"><strong>تعالی طلبی:</strong> <span class="report-badge">#field_574#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10158#;"><strong>جدید:</strong> <span class="report-badge">#field_575#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10158#;"><strong>جدید:</strong> <span class="report-badge">#field_575#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10158#;"><strong>جدید:</strong> <span class="report-badge">#field_575#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10159#;"><strong>خودپویشی:</strong> <span class="report-badge">#field_576#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10159#;"><strong>خودپویشی:</strong> <span class="report-badge">#field_576#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10159#;"><strong>خودپویشی:</strong> <span class="report-badge">#field_576#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10160#;"><strong>روان آوارگی:</strong> <span class="report-badge">#field_577#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10160#;"><strong>روان آوارگی:</strong> <span class="report-badge">#field_577#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10160#;"><strong>روان آوارگی:</strong> <span class="report-badge">#field_577#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10161#;"><strong>سرسختی شناختی:</strong> <span class="report-badge">#field_578#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10161#;"><strong>سرسختی شناختی:</strong> <span class="report-badge">#field_578#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10161#;"><strong>سرسختی شناختی:</strong> <span class="report-badge">#field_578#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10162#;"><strong>کنجکاوی:</strong> <span class="report-badge">#field_579#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10162#;"><strong>کنجکاوی:</strong> <span class="report-badge">#field_579#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10162#;"><strong>کنجکاوی:</strong> <span class="report-badge">#field_579#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10163#;"><strong>کوشایی:</strong> <span class="report-badge">#field_580#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10163#;"><strong>کوشایی:</strong> <span class="report-badge">#field_580#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10163#;"><strong>کوشایی:</strong> <span class="report-badge">#field_580#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10164#;"><strong>معنویت:</strong> <span class="report-badge">#field_581#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10164#;"><strong>معنویت:</strong> <span class="report-badge">#field_581#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10164#;"><strong>معنویت:</strong> <span class="report-badge">#field_581#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10165#;"><strong>نیروی روانی:</strong> <span class="report-badge">#field_582#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10165#;"><strong>نیروی روانی:</strong> <span class="report-badge">#field_582#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10165#;"><strong>نیروی روانی:</strong> <span class="report-badge">#field_582#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10166#;"><strong>هدفمندی:</strong> <span class="report-badge">#field_583#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10166#;"><strong>هدفمندی:</strong> <span class="report-badge">#field_583#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10166#;"><strong>هدفمندی:</strong> <span class="report-badge">#field_583#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10167#;"><strong>هیجانی:</strong> <span class="report-badge">#field_584#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10167#;"><strong>هیجانی:</strong> <span class="report-badge">#field_584#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10167#;"><strong>هیجانی:</strong> <span class="report-badge">#field_584#</span></div>
+
+        </div>
+        <div class="report-section-title">تفسیر</div>
+        <p class="report-paragraph">
+            این بخش به تحلیل و تفسیر نتایج ارزیابی روان‌شناختی فرد می‌پردازد. تحلیل روان‌شناختی شامل بررسی ویژگی‌های شخصیتی مختلف است. هدف از این تحلیل شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد. نتایج این تحلیل می‌تواند به فرد کمک کند تا با شناخت بهتر از خود، برنامه‌های توسعه فردی و حرفه‌ای موثرتری را دنبال کند.
+        </p>
+        <div class="report-component-title">استقلال<span class="report-badge report-score-data">#field_564#<br></span></div>
+        <p class="report-paragraph">
+            استقلال به توانایی فرد در انجام کارها به صورت مستقل و بدون نیاز به کمک دیگران اشاره دارد. افرادی با نمره بالاتر در این حوزه نشان‌دهنده خودکفایی، تصمیم‌گیری مستقل و تمایل به کنترل امور شخصی هستند.
+        </p>
+        <ul class="report-list">
+            <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10147#;">
+            <strong>«متوسط»<br></strong>
+            شما ممکن است در برخی مواقع نیاز به کمک دیگران داشته باشید و در تصمیم‌گیری‌های مستقل با چالش‌هایی مواجه شوید. این ممکن است باعث شود که در برخی موارد احساس فشار و استرس کنید.
+            <div class="report-recommendation">
+                <div class="report-recommendation-title">توصیه:</div>
+                <div class="report-recommendation-text">
+                ۱. تمرین مهارت‌های تصمیم‌گیری مستقل از طریق مواجهه با چالش‌های کوچک.<br>
+                ۲. ایجاد برنامه‌های منظم برای توسعه عادات مستقل.<br>
+                ۳. استفاده از تکنیک‌های مدیریت استرس برای کاهش فشارهای روانی.<br>
+                ۴. تشویق به همکاری در پروژه‌ها برای توسعه مهارت‌های اجتماعی.<br>
+                ۵. تعیین اهداف کوتاه‌مدت برای افزایش خودکفایی.
+                </div>
+            </div>
+            </li>
+            <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10147#;">
+            <strong>«خوب»<br></strong>
+            شما به خوبی قادر به انجام کارها به صورت مستقل هستید و معمولاً نیازی به کمک دیگران ندارید، اما همواره می‌توانید در برخی زمینه‌ها پیشرفت کنید.
+            <div class="report-recommendation">
+                <div class="report-recommendation-title">توصیه:</div>
+                <div class="report-recommendation-text">
+                ۱. ادامه توسعه مهارت‌های مستقل با پذیرش چالش‌های جدید.<br>
+                ۲. تقویت توانایی تصمیم‌گیری با بررسی دقیق گزینه‌ها.<br>
+                ۳. مشارکت در پروژه‌های تیمی برای افزایش انعطاف‌پذیری.<br>
+                ۴. یادگیری تکنیک‌های مدیریت استرس برای حفظ تعادل.<br>
+                ۵. ایجاد فرصت‌های بیشتر برای خودآموزی و یادگیری مستقل.
+                </div>
+            </div>
+            </li>
+            <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10147#;">
+            <strong>«عالی»<br></strong>
+            شما دارای سطح بالایی از استقلال هستید و می‌توانید به راحتی کارها را به صورت مستقل و بدون نیاز به کمک دیگران انجام دهید. این ویژگی به شما کمک می‌کند تا در محیط‌های مختلف به خوبی عمل کنید و به سرعت با تغییرات سازگار شوید.
+            <div class="report-recommendation">
+                <div class="report-recommendation-title">توصیه:</div>
+                <div class="report-recommendation-text">
+                ۱. استفاده از استقلال بالا برای رهبری پروژه‌ها و تیم‌ها.<br>
+                ۲. مشارکت در فعالیت‌های پیشرفته و پیچیده که نیاز به تفکر مستقل دارند.<br>
+                ۳. اشتراک تجربیات و روش‌های خودکار با دیگران.<br>
+                ۴. توسعه مهارت‌های جدید برای افزایش توانایی‌های مستقل.<br>
+                ۵. ایجاد تعادل بین استقلال و همکاری برای بهره‌وری بیشتر.
+                </div>
+            </div>
+            </li>
+        </ul>
+        
+        
+        
+        
+        
+        <div class="report-component-title">انضباط 
+            <span class="report-badge report-score-data">#field_565#<br></span>
+        </div>
+        <p class="report-paragraph">
+            انضباط به ایجاد ساختار ذهنی و رفتاری منظمی اشاره دارد که ضمن برقراری تعادل روانی، به بهبود کیفیت زندگی فرد کمک می‌کند. افرادی که از سطح بالایی از انضباط برخوردارند، نه‌تنها در مدیریت زمان و وسایل شخصی خود کوشا هستند، بلکه در عملکرد حرفه‌ای و تحصیلی خود نیز موفق‌تر عمل می‌کنند.
+        </p>
+        <ul class="report-list">
+            <!-- سطح متوسط انضباط -->
+            <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10148#;">
+                <strong>«متوسط»<br></strong>
+                شما در بیشتر مواقع فرد مرتّبی هستید و تا حد قابل قبولی در مدیریت وسایل شخصی و زمان خود کوشا عمل می‌کنید. هرچند ممکن است در برخی شرایط نیاز به افزایش تعادل روانی و انگیزه بیشتری داشته باشید تا بتوانید نظم را در تمام جنبه‌های زندگی‌تان حفظ کنید.
+                <div class="report-recommendation">
+                    <div class="report-recommendation-title">توصیه:</div>
+                    <div class="report-recommendation-text">
+                        ۱. ایجاد روتین روزانه و پایبندی به آن برای تقویت عادت‌های منظم.<br>
+                        ۲. استفاده از ابزارهای مدیریت زمان (لیست کارها، تقویم دیجیتال، یادآوری‌ها).<br>
+                        ۳. تعیین اهداف کوتاه‌مدت قابل دستیابی برای افزایش انگیزه و تعادل روانی.<br>
+                        ۴. ایجاد محیط کاری و تحصیلی خلوت و مرتب به منظور تمرکز بهتر.<br>
+                        ۵. بررسی منظم عملکرد روزانه و اصلاح نقاط ضعف احتمالی.
+                    </div>
+                </div>
+            </li>
+        
+            <!-- سطح خوب انضباط -->
+            <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10148#;">
+                <strong>«خوب»<br></strong>
+                شما فرد مرتّب و منضبطی هستید و در نگهداری وسایل شخصی و وقت‌شناسی عملکرد قابل توجهی دارید. این سطح از نظم نشان‌دهنده سلامت روانی نسبتاً مطلوب و تعهد شما به اهداف فردی است.
+                <div class="report-recommendation">
+                    <div class="report-recommendation-title">توصیه:</div>
+                    <div class="report-recommendation-text">
+                        ۱. حفظ روند فعلی با ثبت دقیق فعالیت‌های روزانه و ارزیابی منظم موفقیت‌ها.<br>
+                        ۲. تمرین تکنیک‌های افزایش تمرکز (ذهن‌آگاهی، مدیتیشن، تنفس عمیق).<br>
+                        ۳. درگیر شدن در پروژه‌های گروهی برای بهبود مهارت هماهنگی و وقت‌شناسی بیشتر.<br>
+                        ۴. چالش‌های جدیدی برای خود تعریف کنید تا تعادل روانی و انگیزه بالای خود را حفظ کنید.<br>
+                        ۵. آموزش و کمک به دیگران در زمینه مدیریت زمان و نظم، برای تقویت بیشتر عادات مثبت.
+                    </div>
+                </div>
+            </li>
+        
+            <!-- سطح عالی انضباط -->
+            <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10148#;">
+                <strong>«عالی»<br></strong>
+                شما در سطح بالایی از انضباط قرار دارید؛ فردی فوق‌العاده وقت‌شناس، مرتّب و مسئولیت‌پذیر هستید. این توانایی به شما امکان می‌دهد تا در کنار حفظ سلامت روانی خود، در موقعیت‌های مختلف زندگی (تحصیلی، شغلی و شخصی) سرآمد باشید.
+                <div class="report-recommendation">
+                    <div class="report-recommendation-title">توصیه:</div>
+                    <div class="report-recommendation-text">
+                        ۱. رهبری فعالیت‌ها و پروژه‌هایی را برعهده بگیرید که نیازمند نظم و هماهنگی بالا هستند.<br>
+                        ۲. در سمینارها و کارگاه‌های تخصصی شرکت کنید تا مهارت‌های انضباطی خود را به‌روز نگه دارید.<br>
+                        ۳. به دیگران در بهبود مهارت‌های انضباطی و مدیریت زمان کمک کرده و نقش الگویی داشته باشید.<br>
+                        ۴. تلاش کنید علاوه بر تمرکز بر کارها، زمانی را هم به تفریح و استراحت اختصاص دهید تا تعادل روانی‌تان حفظ شود.<br>
+                        ۵. با استفاده از تکنیک‌های پیشرفته مدیریت پروژه، کارایی شخصی و حرفه‌ای خود را ارتقا دهید.
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div class="report-component-title">آرامش زندگی 
+            <span class="report-badge report-score-data">#field_566#<br></span>
+        </div>
+        <p class="report-paragraph">
+            آرامش زندگی، نشان‌دهنده حس سرزندگی، تعادل روانی و احساس امنیت درونی است که فرد را قادر می‌سازد بدون اضطراب و نگرانی، از لحظه‌های زندگی لذت ببرد. افرادی که از سطح بالایی از آرامش زندگی برخوردارند، معمولاً از میزان رضایت درونی بیشتری برخوردار بوده و به شکلی متعادل با چالش‌های روزمره مواجه می‌شوند.
+        </p>
+        <ul class="report-list">
+        
+            <!-- سطح متوسط آرامش زندگی -->
+            <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10149#;">
+                <strong>«متوسط»<br></strong>
+                شما در بیشتر اوقات احساس آرامش و سرزندگی می‌کنید، اما گاهی اوقات ممکن است احساس کنید که زندگی را آن‌طور که باید، تجربه نمی‌کنید. برای حفظ و ارتقای این حس مثبت، توصیه می‌شود روش‌هایی را برای تقویت سلامت روانی و آرامش درونی خود به کار بگیرید.
+                <div class="report-recommendation">
+                    <div class="report-recommendation-title">توصیه:</div>
+                    <div class="report-recommendation-text">
+                        ۱. تمرین روزانه تکنیک‌های آرام‌سازی ذهن (تنفس عمیق، مدیتیشن).<br>
+                        ۲. شرکت در فعالیت‌های لذت‌بخش مانند ورزش، پیاده‌روی، یا هنرهای خلاقانه.<br>
+                        ۳. ایجاد تعادل بین زمان کار و استراحت برای کاهش استرس روزمره.<br>
+                        ۴. مدیریت افکار منفی و جایگزین کردن آن‌ها با افکار مثبت از طریق روان‌درمانی یا مشاوره در صورت نیاز.<br>
+                        ۵. تعیین اهداف قابل دسترس و بررسی میزان پیشرفت برای ایجاد حس سرزندگی بیشتر.
+                    </div>
+                </div>
+            </li>
+        
+            <!-- سطح خوب آرامش زندگی -->
+            <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10149#;">
+                <strong>«خوب»<br></strong>
+                شما عموماً زندگی را با احساس سرزندگی و آرامش روانی تجربه می‌کنید و به‌طور کلی از شرایط زندگی خود رضایت دارید. اگرچه این امر نشان‌دهنده سطح خوبی از تعادل روانی است، اما همواره می‌توان با تمرین و استفاده از تکنیک‌های جدید، این آرامش را تقویت نمود.
+                <div class="report-recommendation">
+                    <div class="report-recommendation-title">توصیه:</div>
+                    <div class="report-recommendation-text">
+                        ۱. ادامه تکنیک‌های آرام‌سازی ذهن و افزایش خودآگاهی (خودبازبینی روزانه، نوشتن احساسات).<br>
+                        ۲. گسترش ارتباطات اجتماعی و شرکت در فعالیت‌های گروهی برای حفظ حس سرزندگی و پویایی.<br>
+                        ۳. استفاده از روش‌های کنترل استرس در زمان بروز چالش‌های پیش‌بینی‌نشده.<br>
+                        ۴. بالا بردن سطح معنویت یا ایجاد اهداف معنادار در زندگی برای تقویت احساس رضایت درونی.<br>
+                        ۵. به اشتراک گذاشتن روش‌ها و تجربیات آرامش‌بخش با اطرافیان، برای نگه‌داشتن انگیزه و علاقه.
+                    </div>
+                </div>
+            </li>
+        
+            <!-- سطح عالی آرامش زندگی -->
+            <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10149#;">
+                <strong>«عالی»<br></strong>
+                شما در سطح بالایی از آرامش زندگی قرار دارید و توانسته‌اید میان کار، خانواده و نیازهای شخصی خود تعادل روانی مطلوبی برقرار کنید. در مواجهه با چالش‌های مختلف نیز اغلب آرامش خود را حفظ کرده و راه‌حل‌های موثری پیدا می‌کنید.
+                <div class="report-recommendation">
+                    <div class="report-recommendation-title">توصیه:</div>
+                    <div class="report-recommendation-text">
+                        ۱. رهبری و مشارکت در فعالیت‌ها و گروه‌هایی که به بهبود سلامت روانی جامعه کمک می‌کنند.<br>
+                        ۲. توسعه مهارت‌های فردی (ورزشی، هنری، معنوی) برای حفظ پویایی و سرزندگی در زندگی روزمره.<br>
+                        ۳. افزایش آگاهی خود نسبت به تکنیک‌های جدید کنترل استرس و انتقال آن به دیگران برای گسترش آرامش جمعی.<br>
+                        ۴. برنامه‌ریزی برای سفرها یا فعالیت‌های تفریحی جدید جهت حفظ انگیزه و شادابی روانی.<br>
+                        ۵. بهبود دائمی سبک زندگی (تغذیه سالم، خواب کافی، فعالیت بدنی مناسب) برای ارتقای سطح کلی سلامت و حس رضایت.
+                    </div>
+                </div>
+            </li>
+        
+        </ul>
+        <div class="report-component-title">آینده‌پویی 
+            <span class="report-badge report-score-data">#field_567#<br></span>
+        </div>
+        <p class="report-paragraph">
+            آینده‌پویی بیانگر نگرشی مثبت و رو به جلو در زندگی است که فرد را به سوی پیشرفت و توسعه فردی هدایت می‌کند. کسانی که از سطح بالایی از آینده‌پویی برخوردارند، گذشته را به‌عنوان تجربیات ارزشمند می‌نگرند اما تمرکز اصلی آن‌ها بر فرصت‌ها و اهداف پیش‌ رو است. این رویکرد نه‌تنها حس امید و انگیزه را تقویت می‌کند، بلکه در کنار ایجاد تعادل روانی، فرد را در مواجهه با چالش‌های زندگی مقاوم‌تر می‌سازد.
+        </p>
+        <ul class="report-list">
+        
+            <!-- سطح متوسط آینده‌پویی -->
+            <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10150#;">
+                <strong>«متوسط»<br></strong>
+                شما تا حدی آینده‌نگر هستید و معمولاً به عقب بازنمی‌گردید، اما ممکن است در برخی شرایط، نیازمند حمایت یا محرک‌های بیرونی باشید تا نگرش خود را به زندگی تغییر دهید. گاهی ممکن است اتفاقات ناگوار گذشته یا دغدغه‌های فعلی باعث شود که به‌اندازه کافی روی مسیر پیش رو تمرکز نکنید.
+                <div class="report-recommendation">
+                    <div class="report-recommendation-title">توصیه:</div>
+                    <div class="report-recommendation-text">
+                        ۱. شناسایی نقاط قوت و ایجاد اهداف کوتاه‌مدتی که شما را به آینده امیدوارتر کنند.<br>
+                        ۲. بهره‌گیری از روش‌های مثبت‌اندیشی و گفتگو با افراد الهام‌بخش برای حفظ انگیزه و تمرکز بر آینده.<br>
+                        ۳. تحلیل تجربیات گذشته بدون غرق شدن در آن‌ها؛ درس گرفتن از شکست‌ها و پیش رفتن به سوی اهداف بعدی.<br>
+                        ۴. استفاده از تکنیک‌های آرام‌سازی ذهن (مدیتیشن، تمرین تنفس عمیق) برای تقویت تعادل روانی و رفع نگرانی‌های گذشته.<br>
+                        ۵. مرور دوره‌ای پیشرفت خود و اعمال اصلاحات در اهداف تا مسیر آینده‌تان روشن‌تر شود.
+                    </div>
+                </div>
+            </li>
+        
+            <!-- سطح خوب آینده‌پویی -->
+            <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10150#;">
+                <strong>«خوب»<br></strong>
+                شما نگرشی رو به جلو دارید و معمولاً به مسائل گذشته کمتر فکر می‌کنید. مرگ عزیزان یا تغییرات زندگی را پشت سر گذاشته‌اید و عمدتاً به سمت آینده متمرکز هستید. این رویکرد نشان‌دهنده تعادل روانی و اراده شما برای پیشروی در زندگی است.
+                <div class="report-recommendation">
+                    <div class="report-recommendation-title">توصیه:</div>
+                    <div class="report-recommendation-text">
+                        ۱. استمرار در برنامه‌ریزی بلندمدت و یادداشت‌ اهداف آینده برای حفظ مسیر پیشرفت.<br>
+                        ۲. حفظ انگیزه از طریق توسعه مهارت‌های جدید، شرکت در کارگاه‌ها و یادگیری مداوم.<br>
+                        ۳. به کارگیری روش‌های تقویت خودباوری (ذهن‌آگاهی، گفتگوی درونی مثبت) جهت تداوم حس آینده‌نگری.<br>
+                        ۴. پرورش ارتباطات جدید و مشارکت در فعالیت‌های گروهی که به رشد شخصی و حرفه‌ای شما کمک می‌کنند.<br>
+                        ۵. ارزیابی دوره‌ای موفقیت‌ها و به‌روزرسانی مسیر زندگی بر اساس تجربیات و تغییر شرایط.
+                    </div>
+                </div>
+            </li>
+        
+            <!-- سطح عالی آینده‌پویی -->
+            <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10150#;">
+                <strong>«عالی»<br></strong>
+                شما دیدگاهی بسیار مثبت و آینده‌محور دارید. رویدادهای تلخ گذشته چندان بر شما تاثیر نگذاشته و همیشه به سمت جلو حرکت می‌کنید. این توانایی منحصربه‌فرد، در کنار حفظ سلامت روانی، به شما کمک می‌کند تا در مسیر رشد فردی و شغلی سریع‌تر پیش بروید و از زندگی لذت بیشتری ببرید.
+                <div class="report-recommendation">
+                    <div class="report-recommendation-title">توصیه:</div>
+                    <div class="report-recommendation-text">
+                        ۱. رهبری پروژه‌ها و فعالیت‌های جدید که نیازمند نگرش آینده‌نگر و خلاقیت هستند.<br>
+                        ۲. نقش راهنمایی و منتورینگ برای افرادی که در پشت سر گذاشتن گذشته با مشکل مواجه‌اند.<br>
+                        ۳. ادامه به‌روزرسانی اطلاعات و مهارت‌های مورد نیاز برای آینده شغلی و شخصی بهتر.<br>
+                        ۴. تداوم سبک زندگی سالم (خواب کافی، تغذیه مناسب، ورزش) برای حفظ انرژی و انگیزه.<br>
+                        ۵. کشف فرصت‌های نوآورانه و ماجراجویی‌های تازه برای تقویت روحیه بلندپرواز و آینده‌نگر خود.
+                    </div>
+                </div>
+            </li>
+        
+        </ul>
+        <div class="report-component-title">پاکزیستی 
+            <span class="report-badge report-score-data">#field_570#<br></span>
+        </div>
+        <p class="report-paragraph">
+            پاکزیستی به معنای پایبندی به اصول اخلاقی، انسانی و معنوی است که ضمن برقراری تعادل روانی، به بهبود کیفیت زندگی و احساس آرامش درونی کمک می‌کند. افرادی که سطح بالایی از پاکزیستی دارند، از حُقه‌بازی دوری کرده، به اصالت و انسانیت توجه ویژه‌ای نشان می‌دهند و در تمامی ابعاد زندگی خود (شخصی، اجتماعی، معنوی) تلاش می‌کنند تا راستگویی و صداقت را سرلوحه کار خویش قرار دهند.
+        </p>
+        <ul class="report-list">
+            <!-- سطح متوسط پاکزیستی -->
+            <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10153#;">
+                <strong>«متوسط»<br></strong>
+                شما معمولاً در رفتار و گفتار خود به اصول اخلاقی و انسانیت توجه دارید، اما ممکن است در برخی موقعیت‌های دشوار یا تحت فشار، کمتر به پایبندی‌های معنوی و اخلاقی خود عمل کنید. گاهی احساس می‌کنید برای پیشبرد زندگی، به ترفندهای کوچک نیاز دارید یا در کنار اعتقادات معنوی خود، قدرت بازگشت به سرشت الهی را به طور کامل در زندگی حس نمی‌کنید.
+                <div class="report-recommendation">
+                    <div class="report-recommendation-title">توصیه:</div>
+                    <div class="report-recommendation-text">
+                        ۱. بازبینی دوره‌ای باورها و ارزش‌های شخصی برای تقویت اصالت و یکپارچگی درونی.<br>
+                        ۲. تمرین روزانه صداقت و راستگویی در برخورد با خود و دیگران (خودبازبینی گفتار و رفتار).<br>
+                        ۳. مطالعه و تأمل در متون معنوی و اخلاقی برای تعمیق باورها و بازگشت به سرشت الهی.<br>
+                        ۴. مشارکت در کارهای خیرخواهانه و نوع‌دوستانه برای تقویت احساس انسانیت و مسئولیت اجتماعی.<br>
+                        ۵. گفتگو با افراد مورد اعتماد یا متخصصان حوزه اخلاق و روان‌شناسی برای دریافت راهنمایی در مواقع چالش‌برانگیز.
+                    </div>
+                </div>
+            </li>
+        
+            <!-- سطح خوب پاکزیستی -->
+            <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10153#;">
+                <strong>«خوب»<br></strong>
+                شما غالباً بر اصول اخلاقی و معنوی پایبند هستید و انسانیت و صداقت را در زندگی‌تان مهم می‌دانید. در بسیاری از موقعیت‌های اجتماعی و شخصی، ریاکاری و حُقه‌بازی برایتان قابل قبول نیست و برای حفظ پاکزیستی خود تلاش می‌کنید. این سطح از اخلاق‌مداری، بیانگر سلامت روانی نسبی و تعهد شما به ارزش‌های والای انسانی است.
+                <div class="report-recommendation">
+                    <div class="report-recommendation-title">توصیه:</div>
+                    <div class="report-recommendation-text">
+                        ۱. تداوم در راستگویی و درستی رفتار برای عمیق‌تر ساختن باورهای اخلاقی و معنوی.<br>
+                        ۲. گفتگوی سازنده با اطرافیان درباره اهمیت وفاداری، انسانیت و صداقت در زندگی روزمره.<br>
+                        ۳. پرداختن به فعالیت‌های اجتماعی یا گروهی که ارزش‌های معنوی و اخلاقی را تبلیغ و تقویت می‌کنند.<br>
+                        ۴. تمرین مدیتیشن یا روش‌های معنوی دیگر برای حفظ تعادل روانی و تقویت اتصال به باورهای الهی.<br>
+                        ۵. مطالعه کتب و منابع اخلاقی و مذهبی برای به‌روز نگه‌داشتن دیدگاه‌ها و افزایش درک معنوی.
+                    </div>
+                </div>
+            </li>
+        
+            <!-- سطح عالی پاکزیستی -->
+            <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10153#;">
+                <strong>«عالی»<br></strong>
+                شما به شکل چشمگیری در رفتار، گفتار و باورهای خود، پاکزیستی را رعایت می‌کنید و همواره انسانیت و صداقت را بر منافع شخصی مقدم می‌دانید. وفاداری، درستکاری و تعهد به اصول اخلاقی اساس زندگی شما را تشکیل می‌دهد و این امر، در کنار ایجاد آرامش درونی، به شما کمک می‌کند تا در زندگی شخصی، اجتماعی و معنوی، نمونه‌ای بارز برای دیگران باشید.
+                <div class="report-recommendation">
+                    <div class="report-recommendation-title">توصیه:</div>
+                    <div class="report-recommendation-text">
+                        ۱. نقش الگو یا راهنما برای افرادی را برعهده بگیرید که در مسیر پاکزیستی نیازمند راهنمایی هستند.<br>
+                        ۲. تعمیق هرچه بیشتر باورهای معنوی و اخلاقی از طریق آموزش، مطالعه و تأمل در متون مقدس و فلسفی.<br>
+                        ۳. تداوم فعالیت‌های عام‌المنفعه و انسان‌دوستانه برای گسترش ارزش‌های اخلاقی در جامعه.<br>
+                        ۴. استفاده از شیوه‌های مدرن مدیریت زندگی (تکنولوژی‌های جدید، مدیریت زمان) برای حفظ تعادل روانی و معنوی در کنار مشغله‌های روزمره.<br>
+                        ۵. به اشتراک گذاشتن تجربه‌های مثبت خود با دیگران برای تشویق و ترویج پاکزیستی در جامعه.
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div class="report-component-title">پشتیبانی 
+            <span class="report-badge report-score-data">#field_571#<br></span>
+        </div>
+        <p class="report-paragraph">
+            پشتیبانی به احساس وجود منابع حمایتی و عاطفی از جانب اطرافیان، محیط زندگی یا حتی راهنمایان حرفه‌ای اشاره دارد. این حمایت می‌تواند در قالب همفکری، کمک عملی، یا ایجاد فضای امن و آرام برای تفریح و سرگرمی‌های موردعلاقه فرد نمود پیدا کند. برخورداری از پشتیبانی مناسب، ضمن ایجاد تعادل روانی، باعث می‌شود هنگام رویارویی با سختی‌های زندگی، احساس تنهایی یا درماندگی کمتری داشته باشید.
+        </p>
+        <ul class="report-list">
+        
+            <!-- سطح متوسط پشتیبانی -->
+            <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10154#;">
+                <strong>«متوسط»<br></strong>
+                شما تا حدی از حمایت افراد و محیط اطرافتان برخوردار هستید و گاهی هم به‌خوبی می‌توانید به راهنما یا همکاری دیگران تکیه کنید. بااین‌وجود، ممکن است در برخی شرایط خاص، احساس کنید به کمک بیشتری نیاز دارید یا تفریح و سرگرمی‌های مورد علاقه‌تان کمتر در دسترس‌اند.
+                <div class="report-recommendation">
+                    <div class="report-recommendation-title">توصیه:</div>
+                    <div class="report-recommendation-text">
+                        ۱. شناسایی و تقویت روابط حمایتی؛ با دوستان، خانواده یا همکارانی که می‌توانند راهنما و همراه شما باشند، ارتباط نزدیک‌تری برقرار کنید.<br>
+                        ۲. برنامه‌ریزی زمانی مشخص برای پرداختن به تفریحات و سرگرمی‌های موردعلاقه‌تان، جهت بهبود روحیه و کاهش استرس.<br>
+                        ۳. در مواقع سختی، درخواست کمک را به‌تعویق نیندازید؛ گاهی یک گفتگوی ساده با فردی معتمد می‌تواند مشکل را سبک‌تر کند.<br>
+                        ۴. تقویت حس پذیرش و قدردانی از دیگران برای تداوم و افزایش حمایت‌های عاطفی و اجتماعی.<br>
+                        ۵. در صورت نیاز، مشورت با کارشناسان روان‌شناسی یا مربیان حرفه‌ای را جهت برخورداری از راهنمایی تخصصی فراموش نکنید.
+                    </div>
+                </div>
+            </li>
+        
+            <!-- سطح خوب پشتیبانی -->
+            <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10154#;">
+                <strong>«خوب»<br></strong>
+                شما در اکثر جنبه‌های زندگی خود از حمایت دیگران و فضای مناسب برای تفریح و سرگرمی بهره‌مند هستید. این سطح از پشتیبانی نشان‌دهنده تعادل روانی نسبی و شبکه روابط حمایتی قدرتمند در اطراف شماست. وجود یک راهنما یا مشاور در مسیر زندگی‌تان، به شما احساس اطمینان و انگیزه می‌بخشد.
+                <div class="report-recommendation">
+                    <div class="report-recommendation-title">توصیه:</div>
+                    <div class="report-recommendation-text">
+                        ۱. حفظ ارتباط سازنده با حامیان فعلی و تشکر مداوم از آن‌ها برای افزایش تداوم حمایت.<br>
+                        ۲. مشارکت فعال در فعالیت‌های گروهی یا جمعی که می‌تواند به تقویت مهارت‌های اجتماعی و حس تعلق بیشتر کمک کند.<br>
+                        ۳. تشویق دیگران به مشارکت در تفریحات مشترک و ایجاد لحظاتی شاد در کنار هم برای تعمیق ارتباطات دوستانه و خانوادگی.<br>
+                        ۴. تعیین اهداف جدید و چالش‌برانگیز با کمک راهنمایان و حامیان، تا احساس رشد و پیشرفت در زندگی داشته باشید.<br>
+                        ۵. در مواقع تصمیم‌گیری‌های مهم، بهره‌گیری از نظرات و تجربیات افراد باتجربه را ادامه داده تا به اطمینان بیشتری برسید.
+                    </div>
+                </div>
+            </li>
+        
+            <!-- سطح عالی پشتیبانی -->
+            <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10154#;">
+                <strong>«عالی»<br></strong>
+                شما از یک شبکه حمایتی بسیار قدرتمند برخوردارید و تقریباً در تمامی جنبه‌های زندگی از راهنمایی، تشویق و کمک‌های لازم بهره می‌برید. چه در تفریح و سرگرمی، چه در مواجهه با سختی‌های زندگی، همیشه حامیانی در کنارتان هستند. این سطح از پشتیبانی، نشان‌دهنده تعادل روانی قابل‌توجه و قابلیت شما در جذب و حفظ حمایت اطرافیان است.
+                <div class="report-recommendation">
+                    <div class="report-recommendation-title">توصیه:</div>
+                    <div class="report-recommendation-text">
+                        ۱. استفاده از این حمایت گسترده برای تعیین اهداف بزرگ‌تر و پیشرفت هرچه بیشتر در مسیر زندگی شغلی و شخصی.<br>
+                        ۲. ایفای نقش حامی برای دیگران؛ انتقال تجربه و حمایت شما می‌تواند به رشد و موفقیت اطرافیان کمک زیادی کند.<br>
+                        ۳. استمرار در فعالیت‌های گروهی و اجتماعی که علاوه بر تقویت شبکه حمایتی، حس همدلی و نوع‌دوستی را ترویج می‌دهد.<br>
+                        ۴. برنامه‌ریزی منظم برای زمانی باکیفیت با خانواده و دوستان به‌منظور تقویت هرچه بیشتر پیوندهای عاطفی.<br>
+                        ۵. در کنار استفاده از حمایت دیگران، سعی کنید روحیه خوداتکایی و مسئولیت‌پذیری را نیز تقویت کرده تا در هر شرایطی احساس قدرت و آرامش داشته باشید.
+                    </div>
+                </div>
+            </li>
+        
+        </ul>
+        <div class="report-component-title">پیامدسنجی
+            <span class="report-badge report-score-data">#field_572#<br></span>
+        </div>
+        <p class="report-paragraph">
+            پیامدسنجی به معنای توانایی سنجش و ارزیابی دقیق پیامدهای احتمالی هر تصمیم یا عمل است. افرادی که از سطح بالایی از پیامدسنجی برخوردارند، پیش از انجام هر اقدام، به‌خوبی جوانب مختلف را بررسی کرده و با به‌کارگیری عقل و منطق، بهترین راه‌حل ممکن را انتخاب می‌کنند. این مهارت در کنار ایجاد تعادل روانی، باعث کاهش ریسک‌های غیرضروری و افزایش موفقیت در تصمیم‌گیری‌های روزمره می‌شود.
+        </p>
+        <ul class="report-list">
+        
+            <!-- سطح متوسط پیامدسنجی -->
+            <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10155#;">
+                <strong>«متوسط»<br></strong>
+                شما در بیشتر موقعیت‌ها سعی می‌کنید قبل از تصمیم‌گیری، جوانب کار را بسنجید و از هوش و درک خود استفاده کنید. هرچند گاهی ممکن است تحت تأثیر عوامل احساسی یا فشار بیرونی، از روش‌های منطقی فاصله بگیرید و نتوانید همهٔ جوانب را به‌طور کامل بسنجید.
+                <div class="report-recommendation">
+                    <div class="report-recommendation-title">توصیه:</div>
+                    <div class="report-recommendation-text">
+                        ۱. تهیه فهرستی از مزایا و معایب هر تصمیم پیش از اقدام نهایی.<br>
+                        ۲. مشورت با افراد باتجربه یا متخصص، برای درک بهتر زوایای پنهان مسئله.<br>
+                        ۳. تمرین روش‌های کنترل استرس (مثل تنفس عمیق، ذهن‌آگاهی) در لحظات حساس تصمیم‌گیری.<br>
+                        ۴. تحلیل و مرور نتایج تصمیم‌های گذشته برای یادگیری بهتر و تقویت حس پیامدسنجی.<br>
+                        ۵. تعیین زمان مناسب برای تصمیم‌گیری و پرهیز از عجله در انتخاب‌های مهم.
+                    </div>
+                </div>
+            </li>
+        
+            <!-- سطح خوب پیامدسنجی -->
+            <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10155#;">
+                <strong>«خوب»<br></strong>
+                شما اغلب به شکل منطقی جوانب کار را می‌سنجید و در تصمیم‌های خود از تعقل و بررسی دقیق استفاده می‌کنید. در هنگام تصمیم‌گیری، معمولاً سعی می‌کنید اطلاعات کافی به دست آورده و پیامدهای احتمالی را بسنجید. این رویکرد، نشان‌دهنده تعادل روانی مناسب و توانایی مطلوب شما در ارزیابی صحیح موقعیت‌هاست.
+                <div class="report-recommendation">
+                    <div class="report-recommendation-title">توصیه:</div>
+                    <div class="report-recommendation-text">
+                        ۱. ادامه تقویت مهارت‌های تحلیل و استدلال از طریق مطالعه و شرکت در دوره‌های آموزشی مرتبط با حل مسئله.<br>
+                        ۲. کمک به دیگران در تصمیم‌گیری‌هایشان، با ارائه دیدگاه‌های منطقی و ساختارمند.<br>
+                        ۳. مرور دوره‌ای تصمیم‌های خود برای شناخت نقاط قوت و ضعف فرایند پیامدسنجی‌تان.<br>
+                        ۴. استفاده از تکنیک‌های مدیریت زمان برای اختصاص فرصت کافی به بررسی دقیق مسائل پیچیده.<br>
+                        ۵. افزایش خودآگاهی نسبت به واکنش‌های احساسی و تأثیر آن‌ها بر روند تصمیم‌گیری.
+                    </div>
+                </div>
+            </li>
+        
+            <!-- سطح عالی پیامدسنجی -->
+            <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10155#;">
+                <strong>«عالی»<br></strong>
+                شما در سطح بسیار بالایی از پیامدسنجی قرار دارید و پیش از هر اقدامی، به شکل نظام‌مند تمامی جوانب را بررسی می‌کنید. با بهره‌گیری از هوش و درک خود، تصمیم‌هایتان را بر اساس عقل و منطق می‌گیرید. این رویکرد، در کنار حفظ سلامت روانی، شما را در مواجهه با موقعیت‌های پیچیده و پرچالش، بسیار توانمند می‌سازد.
+                <div class="report-recommendation">
+                    <div class="report-recommendation-title">توصیه:</div>
+                    <div class="report-recommendation-text">
+                        ۱. برعهده گرفتن نقش راهبری یا مشاوره در پروژه‌های مهمی که نیازمند تحلیل عمیق و پیامدسنجی حرفه‌ای هستند.<br>
+                        ۲. مشارکت در توسعه و آموزش دیگران با انتقال تجربیات و سبک تصمیم‌گیری مدبرانه‌تان.<br>
+                        ۳. به‌کارگیری تکنیک‌های پیشرفته حل مسئله و تحلیل داده برای تعمیق هرچه بیشتر پیامدسنجی در تصمیم‌ها.<br>
+                        ۴. حفظ تعادل عاطفی در تمامی مراحل تصمیم‌گیری و جلوگیری از مداخله احساسات شدید در انتخاب نهایی.<br>
+                        ۵. ادامه یادگیری و به‌روزرسانی دانش و مهارت‌های تصمیم‌گیری، برای تطبیق با شرایط و مشکلات جدید.
+                    </div>
+                </div>
+            </li>
+        
+        </ul>
+        <div class="report-component-title">تحلیل‌ورزی 
+            <span class="report-badge report-score-data">#field_573#<br></span>
+        </div>
+        <p class="report-paragraph">
+            تحلیل‌ورزی به توانایی برقراری ارتباط بین اطلاعات جدید و دانسته‌های پیشین، طبقه‌بندی و ساختاردهی داده‌ها، و ارائه ایده‌های خلاقانه بر پایه تحلیل منطقی اشاره دارد. این مهارت، در کنار ایجاد تعادل روانی، به فرد کمک می‌کند تا مفاهیم را از زوایای مختلف ببیند و درک عمیق‌تری از موضوعات داشته باشد؛ از انتخاب عنوان مناسب برای یک متن یا فیلم گرفته تا طبقه‌بندی برگ‌ها بر اساس ویژگی‌های متنوع.
+        </p>
+        <ul class="report-list">
+        
+            <!-- سطح متوسط تحلیل ورزی -->
+            <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10156#;">
+                <strong>«متوسط»<br></strong>
+                شما معمولاً می‌توانید ارتباط نسبی میان اطلاعات جدید و مطالب قبلی برقرار کنید و در طبقه‌بندی موضوعات هم عملکرد قابل قبولی دارید، اما گاهی در یافتن راهکارهای خلاقانه یا دیدگاه‌های متفاوت کمی محدود عمل می‌کنید. ممکن است در برخی مواقع، برای انتخاب عنوان مناسب برای یک متن یا فیلم، نیاز به زمان بیشتری داشته باشید.
+                <div class="report-recommendation">
+                    <div class="report-recommendation-title">توصیه:</div>
+                    <div class="report-recommendation-text">
+                        ۱. مطالعه منابع متنوع و شرکت در بحث‌های گروهی برای آشنایی با دیدگاه‌های مختلف.<br>
+                        ۲. تمرین روزانه تحلیل مطالب ساده و به‌تدریج پیچیده‌تر (مثلاً طبقه‌بندی برگ‌ها یا خلاصه‌سازی متون).<br>
+                        ۳. استفاده از ابزارهای فکری خلاق مانند نقشه‌های ذهنی (Mind Maps) برای تقویت ارتباطات مفهومی.<br>
+                        ۴. تمرین مشاهده جزئیات و پرسیدن سوال‌های تحلیلی برای توسعه مهارت عمیق‌تر در طبقه‌بندی و استنباط.<br>
+                        ۵. در صورت مواجهه با چالش‌های تحلیلی، از دیگران یا متخصصان مربوطه مشورت بگیرید تا دید خود را گسترش دهید.
+                    </div>
+                </div>
+            </li>
+        
+            <!-- سطح خوب تحلیل ورزی -->
+            <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10156#;">
+                <strong>«خوب»<br></strong>
+                شما اغلب به‌خوبی اطلاعات جدید را با دانش قبلی خود ترکیب می‌کنید و در ارائه ایده‌های خلاقانه یا انتخاب عنوان مناسب برای متون و فیلم‌ها موفق هستید. توانایی طبقه‌بندی و ساختاربندی موضوعات را در حد قابل توجهی نشان می‌دهید و عموماً از روش‌های تحلیلی منطقی برای درک بهتر مسائل استفاده می‌کنید.
+                <div class="report-recommendation">
+                    <div class="report-recommendation-title">توصیه:</div>
+                    <div class="report-recommendation-text">
+                        ۱. حفظ روند فعلی با تمرین‌های مداوم طبقه‌بندی و ایجاد ارتباط میان موضوعات جدید و گذشته.<br>
+                        ۲. درگیر شدن در فعالیت‌های پژوهشی یا پروژه‌های گروهی که نیازمند تحلیل داده و ارائه ایده‌های نوین هستند.<br>
+                        ۳. شرکت در کارگاه‌ها و دوره‌های آموزشی پیشرفته برای ارتقای بیشتر مهارت‌های تحلیلی و خلاقیت.<br>
+                        ۴. بازنگری مستمر تصمیم‌ها و فرایندهای تحلیلی جهت شناسایی نقاط قوت و ضعف.<br>
+                        ۵. آموزش و تبادل نظر با دیگران در زمینه روش‌های تحلیلی برای گسترش دیدگاه و مهارت‌های شما.
+                    </div>
+                </div>
+            </li>
+        
+            <!-- سطح عالی تحلیل ورزی -->
+            <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10156#;">
+                <strong>«عالی»<br></strong>
+                شما در سطح بسیار بالایی از تحلیل‌ورزی قرار دارید و می‌توانید به‌راحتی میان مطالب جدید و قبلی ارتباطات عمیق ایجاد کنید. همچنین، در انتخاب عنوان‌های خلاقانه برای متون یا فیلم‌ها و طبقه‌بندی موضوعات براساس ویژگی‌های گوناگون، مهارت قابل‌توجهی دارید. این قدرت تفکر تحلیلی، در کنار حفظ سلامت روانی، شما را در حل مشکلات پیچیده و ارائه ایده‌های نوآورانه بسیار توانمند می‌سازد.
+                <div class="report-recommendation">
+                    <div class="report-recommendation-title">توصیه:</div>
+                    <div class="report-recommendation-text">
+                        ۱. استفاده از این توانمندی برای رهبری پروژه‌ها و فعالیت‌های پژوهشی که نیازمند دید تحلیلی قوی هستند.<br>
+                        ۲. اشتراک‌گذاری تجربیات و روش‌های تحلیلی خود با دیگران، از طریق برگزاری کارگاه‌ها یا جلسات آموزشی.<br>
+                        ۳. بهره‌گیری از مهارت‌هایتان برای ارائه راهکارهای خلاقانه در محیط کاری و تحصیلی.<br>
+                        ۴. مطالعه مداوم و آشنایی با ابزارها و تکنیک‌های جدید برای ارتقای هرچه بیشتر توان تحلیلی شما.<br>
+                        ۵. حفظ و تقویت تعادل روانی از طریق تمرین‌های ذهن‌آگاهی (Mindfulness) و رعایت سبک زندگی سالم؛ چرا که سلامت روانی شما، کلید تداوم شکوفایی مهارت‌های تحلیل‌ورزی‌تان است.
+                    </div>
+                </div>
+            </li>
+        
+        </ul>
+<!-- تعالی طلبی -->
+<div class="report-component-title">تعالی طلبی 
+    <span class="report-badge report-score-data">#field_574#<br></span>
+</div>
+<p class="report-paragraph">
+    تعالی طلبی به معنای تمایل به رشد و پیشرفت مداوم است؛ افرادی که از تعالی طلبی بالایی برخوردارند، اغلب خود را با دیگران مقایسه می‌کنند و از هر فرصتی برای رقابت استفاده می‌کنند. این رویکرد، اگر با تعادل روانی همراه باشد، می‌تواند انگیزه‌ای قدرتمند برای دستیابی به اهداف والاتر و رضایت از زندگی فراهم کند.
+</p>
+<ul class="report-list">
+    <!-- سطح متوسط تعالی طلبی -->
+    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10157#;">
+        <strong>«متوسط»<br></strong>
+        گاه باانگیزه و رقابت‌جو هستید، اما ممکن است همیشه خودتان را درگیر مقایسه با دیگران نکنید. احتمالاً در برخی مواقع رضایت نسبی از وضعیت فعلی دارید اما هنوز فضای زیادی برای رشد و بهبود می‌بینید.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. تعیین اهداف قابل دستیابی که رقابت سالم را تشویق کند و در عین حال به تعادل روانی شما لطمه نزند.<br>
+                ۲. ارزیابی نقاط قوت و ضعف خود بدون قضاوت افراطی؛ با این روش درک بهتری از پیشرفت خواهید داشت.<br>
+                ۳. تمرین مثبت‌اندیشی و خودپذیری در کنار تلاش برای بهبود مستمر.<br>
+                ۴. برقراری تعادل میان رقابت با دیگران و رشد فردی؛ اجتناب از مقایسه‌های ناسالم که باعث فشار روانی شود.<br>
+                ۵. گفتگو با مربیان، دوستان یا متخصصان به‌منظور شناسایی مسیرهای جدید رشد و پیشرفت.
+            </div>
+        </div>
+    </li>
+    <!-- سطح خوب تعالی طلبی -->
+    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10157#;">
+        <strong>«خوب»<br></strong>
+        شما فردی جاه‌طلب و رقابت‌جو هستید و از این ویژگی برای پیشرفت در زندگی استفاده می‌کنید. در عین حال، تا حد زیادی از خودتان راضی هستید و احتمالاً از زندگی خود رضایت نسبی دارید.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. حفظ تعادل بین جاه‌طلبی و سلامت روان؛ تعیین مرزهای مشخص برای پیشگیری از فرسودگی.<br>
+                ۲. شناسایی موقعیت‌های رقابتی جدید یا چالش‌برانگیز برای حفظ انگیزه و پویایی.<br>
+                ۳. به‌اشتراک گذاشتن تجربیات و دستاوردها با دیگران؛ از حس رقابت سالم برای الهام‌بخشی استفاده کنید.<br>
+                ۴. تداوم ارزیابی رضایت از زندگی و تطبیق اهداف با ارزش‌های فردی برای حفظ هماهنگی درونی.<br>
+                ۵. ادامه یادگیری مهارت‌های جدید (فنی، رفتاری، ذهنی) برای ارتقای جایگاه فعلی.
+            </div>
+        </div>
+    </li>
+    <!-- سطح عالی تعالی طلبی -->
+    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10157#;">
+        <strong>«عالی»<br></strong>
+        شما در سطح بالایی از تعالی طلبی قرار دارید؛ دائماً به دنبال فرصت‌های رقابت و پیشرفت هستید و موفقیت‌های بزرگ را هدف خود قرار می‌دهید. این اشتیاق، همراه با تعادل روانی مناسب، می‌تواند شما را به بالاترین سطوح موفقیت برساند.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. رهبری پروژه‌ها و فعالیت‌هایی که نیازمند روحیه رقابتی و بلندپرواز هستند.<br>
+                ۲. انتقال تجربه و انگیزه خود به دیگران از طریق مربیگری یا راهنمایی افراد کم‌تجربه‌تر.<br>
+                ۳. مدیریت استرس و حفظ سلامت روان از طریق ورزش، مدیتیشن یا تکنیک‌های آرام‌سازی.<br>
+                ۴. ترسیم چشم‌اندازهای بلندمدت و تقسیم اهداف بزرگ به گام‌های عملی‌تر.<br>
+                ۵. ارج نهادن به دستاوردهای فعلی و موفقیت‌های گذشته برای تقویت اعتمادبه‌نفس و حفظ انگیزه بالا.
+            </div>
+        </div>
+    </li>
+</ul>
+
+<!-- خودپویشی -->
+<div class="report-component-title">خودپویشی 
+    <span class="report-badge report-score-data">#field_576#<br></span>
+</div>
+<p class="report-paragraph">
+    خودپویشی به معنای توانایی فرد برای پیشبرد خویش و دیگران در مسیر رشد و تعالی است. افرادی که خودپوی هستند، علاقه زیادی به پرورش دیگران، اثرگذاری مثبت در اطرافیان، و انجام کارها بدون نقص دارند. این نگرش پویا، در صورت همراهی با سلامت روانی، زمینه‌ساز دستیابی به اهداف بلندمدت و رضایت شغلی و شخصی خواهد بود.
+</p>
+<ul class="report-list">
+    <!-- سطح متوسط خودپویشی -->
+    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10159#;">
+        <strong>«متوسط»<br></strong>
+        شما اغلب مایلید به دیگران کمک کنید و در امور گروهی اثرگذار باشید، اما ممکن است همیشه این انرژی و پویایی را حفظ نکنید. گاهی در پیگیری کارها نیز کمال‌گرایی افراطی ندارید و در حد قابل قبولی تلاش می‌کنید.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. شناسایی زمینه‌های مورد علاقه برای تقویت انگیزه و حس پویایی درونی.<br>
+                ۲. تعیین اهداف مشخص و قابل سنجش برای مدیریت بهتر انرژی و تمرکز بر کارهای مهم.<br>
+                ۳. دعوت از دوستان یا همکاران برای همکاری در پروژه‌هایی که نیازمند توان رهبری و هدایت است.<br>
+                ۴. به‌کارگیری تکنیک‌های زمان‌بندی مناسب تا بتوانید پیگیری بهتر و منظم‌تری داشته باشید.<br>
+                ۵. تمرین تعادل میان کمک به دیگران و رسیدگی به نیازهای فردی، جهت پیشگیری از خستگی روانی.
+            </div>
+        </div>
+    </li>
+    <!-- سطح خوب خودپویشی -->
+    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10159#;">
+        <strong>«خوب»<br></strong>
+        شما از پویایی و انرژی قابل ملاحظه‌ای برخوردارید و معمولاً در پرورش دیگران و داشتن نفوذ مثبت میان اطرافیان موفقید. تمایل دارید کارهایتان بدون نقص انجام شود و خود را فردی فعال و اثرگذار می‌دانید.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. حفظ و تقویت روحیه همیاری با اطرافیان از طریق به‌اشتراک‌گذاری دانش و مهارت‌ها.<br>
+                ۲. استفاده از تکنیک‌های کمال‌گرایی مثبت؛ تمرکز بر کیفیت، اما بدون استرس و فشار روانی زیاد.<br>
+                ۳. تعریف پروژه‌های جدید یا همکاری با گروه‌های تازه برای حفظ تنوع و جلوگیری از روزمرّگی.<br>
+                ۴. ادامه ارتقای مهارت‌های ارتباطی و رهبری برای تأثیرگذاری مثبت در محیط کار و جامعه.<br>
+                ۵. بازبینی منظم دستاوردهایتان و تشویق خود به تلاش بیشتر با حفظ سلامت روانی.
+            </div>
+        </div>
+    </li>
+    <!-- سطح عالی خودپویشی -->
+    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10159#;">
+        <strong>«عالی»<br></strong>
+        شما از سطح بالایی از خودپویشی برخوردار هستید؛ همواره در تکاپو برای پیشرفت شخصی و کمک به رشد اطرافیان بوده و تلاش می‌کنید تمامی کارها را با کیفیت و دقت عالی انجام دهید. این سطح از انرژی و پشتکار، در کنار تعادل روانی، شما را به یک الگوی الهام‌بخش تبدیل می‌کند.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. پذیرش نقش‌های رهبری یا منتورینگ در تیم‌ها و سازمان‌ها برای گسترش دامنه اثرگذاری.<br>
+                ۲. مدیریت استرس و فرسودگی شغلی با به‌کارگیری تکنیک‌های آرام‌سازی و تفریح به‌موقع.<br>
+                ۳. ارتقای مداوم مهارت‌های حرفه‌ای و استفاده از تجربه‌های موفق برای رسیدن به جایگاه‌های بالاتر.<br>
+                ۴. تشویق دیگران به خودپویشی از طریق تسهیم داستان‌ها و تجربیات موفق خود.<br>
+                ۵. برقراری توازن میان کار، زندگی شخصی و معنوی برای حفظ پویایی و نشاط در طولانی‌مدت.
+            </div>
+        </div>
+    </li>
+</ul>
+
+<!-- سرسختی شناختی -->
+<div class="report-component-title">سرسختی شناختی 
+    <span class="report-badge report-score-data">#field_578#<br></span>
+</div>
+<p class="report-paragraph">
+    سرسختی شناختی به معنای پافشاری ذهنی و تمرکز کامل بر یک مسئله تا رسیدن به درکی روشن از آن است. افرادی که این ویژگی را دارند، به‌سادگی از موضوعی که برایشان مهم است دست نمی‌کشند؛ حتی اگر این پیگیری با تنش و اضطراب نیز همراه باشد. حفظ تعادل روانی در کنار سرسختی شناختی، به فرد امکان می‌دهد فراتر از موانع رفته و راه‌حل‌های عمیق و پایدار بیابد.
+</p>
+<ul class="report-list">
+    <!-- سطح متوسط سرسختی شناختی -->
+    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10161#;">
+        <strong>«متوسط»<br></strong>
+        شما معمولاً تمایل دارید در کار یا مسئله‌ای که برایتان مهم است، تا حدی پافشاری کنید؛ اما شاید همواره حاضر نباشید تمام استرس و تنش آن را بپذیرید. گاه ممکن است در مواجهه با موانع بزرگ، مسیرتان را تغییر دهید.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. شناسایی محدوده تحمل استرس خود و برنامه‌ریزی برای استراحت ذهنی در فواصل کارهای فشرده.<br>
+                ۲. مشورت با اطرافیان یا متخصصان، در مواقعی که احساس می‌کنید تنش‌های شناختی فراتر از ظرفیت شماست.<br>
+                ۳. تمرین تکنیک‌های مقابله با اضطراب (تنفس عمیق، مدیتیشن، گفتگو با خود مثبت).<br>
+                ۴. تعیین اولویت‌ها؛ سرسختی را برای مسائل واقعاً مهم و ارزشمند نگه دارید.<br>
+                ۵. آگاهی از نشانه‌های فرسودگی و اقدام به موقع برای حفظ تعادل روانی.
+            </div>
+        </div>
+    </li>
+    <!-- سطح خوب سرسختی شناختی -->
+    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10161#;">
+        <strong>«خوب»<br></strong>
+        شما عموماً در مواجهه با مسائل مهم پافشاری و تمرکز خوبی دارید و تا رسیدن به درکی عمیق دست از تلاش برنمی‌دارید. این سطح از سرسختی شناختی نشان‌دهنده عزم ذهنی قابل توجهی است که در کنار حفظ آرامش، می‌تواند به نتایج مثبت منجر شود.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. برنامه‌ریزی منظم برای مطالعه و پیگیری مسائل پیچیده به‌منظور پرورش بیشتر ذهن تحلیلی و پافشار.<br>
+                ۲. استفاده از روش‌های ثبت پیشرفت (دفترچه یادداشت، نمودار پیشرفت) برای حفظ انگیزه در مسیر طولانی.<br>
+                ۳. تقویت مهارت‌های مدیریت استرس به‌ویژه زمانی که شدت تنش شناختی بالاست.<br>
+                ۴. درخواست بازخورد از دیگران برای اصلاح روش‌های تحقیق و جمع‌آوری داده‌ها.<br>
+                ۵. حفظ تنوع در فعالیت‌های روزانه و ایجاد وقفه‌های نشاط‌آور برای جلوگیری از خستگی ذهنی.
+            </div>
+        </div>
+    </li>
+    <!-- سطح عالی سرسختی شناختی -->
+    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10161#;">
+        <strong>«عالی»<br></strong>
+        شما در سطح بالایی از سرسختی شناختی هستید؛ وقتی با مسئله‌ای روبرو می‌شوید، سراسر وجودتان درگیر آن می‌شود و تا زمانی که به درکی روشن دست نیابید، دست برنمی‌دارید. این ویژگی، در کنار تعادل روانی، شما را در حل مشکلات پیچیده بسیار موفق می‌سازد.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. پذیرش نقش‌های تحلیلی مهم و پروژه‌های دشوار که نیازمند دقت و ثبات قدم بالا هستند.<br>
+                ۲. تدوین سیستم‌های شخصی (چک‌لیست، جدول زمانی، ابزار دیجیتال) برای مدیریت داده‌ها و ایده‌ها.<br>
+                ۳. انتقال تجربه و راهنمایی افرادی که در مواجهه با مشکلات پیچیده نیازمند حمایت و بینش شما هستند.<br>
+                ۴. رعایت زمان استراحت و مراقبت از سلامت جسمی و روانی؛ ذهن خلاق و تحلیلی به انرژی کافی نیاز دارد.<br>
+                ۵. حفظ اشتیاق در مسیر کشف و یادگیری مداوم برای گسترش مرزهای دانش و مهارت شما.
+            </div>
+        </div>
+    </li>
+</ul>
+
+<!-- کنجکاوی -->
+<div class="report-component-title">کنجکاوی 
+    <span class="report-badge report-score-data">#field_579#<br></span>
+</div>
+<p class="report-paragraph">
+    کنجکاوی نیروی محرکه‌ای است که فرد را به کشف ناشناخته‌ها، طرح پرسش‌های جدید و ورود به تجربیات متفاوت ترغیب می‌کند. هرچند کنجکاوی می‌تواند گاه خطراتی را به همراه داشته باشد، اما در صورت همراهی با تعادل روانی، موجب خلاقیت، رشد فردی و گسترش بینش می‌شود.
+</p>
+<ul class="report-list">
+    <!-- سطح متوسط کنجکاوی -->
+    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10162#;">
+        <strong>«متوسط»<br></strong>
+        شما تا حد قابل قبولی کنجکاو هستید و تمایل دارید چیزهای نو را کشف کنید، اما ممکن است همیشه ریسک‌های آن را نپذیرید. در برخی موارد شاید نگران دردسرهای احتمالی باشید و سریعاً از پیگیری کنجکاوی دست بکشید.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. تعیین محدوده‌ای امن برای کنجکاوی‌های خود تا از خطرات جدی پرهیز شود.<br>
+                ۲. جست‌وجو در منابع معتبر و مشاهده تجربه‌های دیگران برای کاهش نگرانی از ناشناخته‌ها.<br>
+                ۳. تمرین استدلال منطقی قبل از ورود به ماجراجویی‌های جدید، برای ارزیابی سود و زیان احتمالی.<br>
+                ۴. حفظ برنامه روزانه متعادل تا کنجکاوی بیش‌ازحد موجب آشفتگی روانی نشود.<br>
+                ۵. در صورت نیاز، همفکری با دوستان یا مشاوران برای افزایش اعتماد به نفس در مسیر کشف و یادگیری.
+            </div>
+        </div>
+    </li>
+    <!-- سطح خوب کنجکاوی -->
+    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10162#;">
+        <strong>«خوب»<br></strong>
+        شما از حس کنجکاوی سالمی برخوردارید؛ علاقه‌مند به کاوش در حوزه‌های جدید هستید و در عین حال، به ریسک‌ها و پیامدهای احتمالی نیز توجه دارید. این سطح از کنجکاوی می‌تواند زمینه‌ساز یادگیری مؤثر و گسترش دیدگاه شما باشد.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. اختصاص زمان‌های معین در طول هفته برای مطالعه یا تجربه حوزه‌های نو و جالب.<br>
+                ۲. شرکت در جمع‌های تبادل نظر یا گروه‌های پژوهشی برای تحریک بیشتر ذهن کنجکاو شما.<br>
+                ۳. تشویق خود به نوشتن سوالات و مسائل تازه در یک دفترچه یا ابزار دیجیتالی برای پیگیری بعدی.<br>
+                ۴. حفظ تعادل میان کنجکاوی و مسئولیت‌های روزمره، تا از فشارهای روانی جلوگیری شود.<br>
+                ۵. ایده‌پردازی و خلاقیت در حل مسائل روزمره با استفاده از قدرت کنجکاوی و کاوشگری.
+            </div>
+        </div>
+    </li>
+    <!-- سطح عالی کنجکاوی -->
+    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10162#;">
+        <strong>«عالی»<br></strong>
+        شما کنجکاوی بسیار بالایی دارید و حتی ممکن است با وجود خطرات احتمالی نیز از پیگیری سوالات و ایده‌های جدید دست برندارید. این نگاه جسورانه، در صورت برخورداری از مهارت‌های مدیریت ریسک و سلامت روانی، می‌تواند شما را به اکتشافات و دستاوردهای منحصربه‌فردی برساند.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. بهره‌گیری از ظرفیت بالای کنجکاوی در مسیرهای علمی، پژوهشی یا خلاقانه برای کسب نتایج ارزشمند.<br>
+                ۲. مدیریت ایمن کنجکاوی از طریق ارزیابی ریسک‌ها، مشاوره با متخصصان یا همراهی افراد معتمد در ماجراجویی‌ها.<br>
+                ۳. مستندسازی ایده‌ها و کشف‌های جدید؛ ممکن است این مشاهدات بعدها کاربردی شوند.<br>
+                ۴. تفکیک ایده‌های جسورانه از ایده‌های غیرعملی از طریق همفکری و تحلیل منطقی.<br>
+                ۵. حفظ تعادل روانی با ایجاد تعادل میان جست‌وجوی بی‌پایان و استراحت کافی برای ذهن.
+            </div>
+        </div>
+    </li>
+</ul>
+
+<!-- کوشایی -->
+<div class="report-component-title">کوشایی 
+    <span class="report-badge report-score-data">#field_580#<br></span>
+</div>
+<p class="report-paragraph">
+    کوشایی بیانگر میزان پشتکار و سختکوشی فرد در انجام وظایف و یادگیری مهارت‌هاست. افرادی که کوشایی بالایی دارند، معمولاً با جدیت بیشتری به وظایفشان می‌پردازند و تمایل دارند کار را به بهترین شکل ممکن انجام دهند. همراهی این ویژگی با تعادل روانی، ضمن دستیابی به موفقیت‌های بیشتر، از فرسودگی و خستگی مفرط جلوگیری می‌کند.
+</p>
+<ul class="report-list">
+    <!-- سطح متوسط کوشایی -->
+    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10163#;">
+        <strong>«متوسط»<br></strong>
+        شما تلاش قابل قبولی در کارهایتان دارید اما همیشه تا سرحدّ توان برای پشتکار و سختکوشی پیش نمی‌روید. ممکن است در برخی مواقع با موانع یا خستگی زودهنگام روبه‌رو شوید و انگیزه کافی برای ادامه کار نداشته باشید.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. تعیین هدف‌های کوچک و قابل دسترس به‌جای هدف‌های کلان و دور از ذهن برای افزایش انگیزه.<br>
+                ۲. تقسیم وظایف بزرگ به مراحل کوتاه‌تر؛ این روش از خستگی مفرط جلوگیری می‌کند.<br>
+                ۳. خودارزیابی روزانه یا هفتگی و شناسایی لحظاتی که انرژی یا انگیزه افت می‌کند.<br>
+                ۴. برخورداری از پشتیبانی دوستان، همکاران یا مشاوران برای گذر از موانع و افزایش پشتکار.<br>
+                ۵. تمرین روش‌های استراحت فعال (مانند ورزش سبک بین کارها) برای بازیابی انرژی ذهنی.
+            </div>
+        </div>
+    </li>
+    <!-- سطح خوب کوشایی -->
+    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10163#;">
+        <strong>«خوب»<br></strong>
+        شما در انجام وظایفتان پشتکار و سختکوشی قابل توجهی دارید و یادگیری مهارت‌های جدید را جدی می‌گیرید. این سطح از کوشایی نشان‌دهنده تعهد و اراده شما در مسیر دستیابی به اهداف است.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. حفظ روند مثبت فعلی از طریق یادداشت پیشرفت‌ها و دستاوردهای روزانه یا هفتگی.<br>
+                ۲. شناسایی حوزه‌های جدید برای یادگیری و توسعه مهارت به‌منظور جلوگیری از تکراری شدن کارها.<br>
+                ۳. به‌کارگیری روش‌های مدیریت زمان (مثل تایم‌بلاکینگ) برای افزایش تمرکز و بهره‌وری.<br>
+                ۴. تشویق خود با پاداش‌های کوچک پس از دست‌یابی به هر مرحله از اهداف بزرگ‌تر.<br>
+                ۵. برقراری تعامل با افراد موفق و الهام‌بخش برای تبادل تجربیات و افزایش انگیزه.
+            </div>
+        </div>
+    </li>
+    <!-- سطح عالی کوشایی -->
+    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10163#;">
+        <strong>«عالی»<br></strong>
+        شما در بالاترین سطح کوشایی قرار دارید؛ با پشتکار فراوان و حساسیت نسبت به یادگیری و انجام دقیق کارها، برای موفقیت‌های بزرگ‌تر تلاش می‌کنید. تعادل روانی در این مسیر به شما کمک می‌کند تا از فرسودگی در امان باشید و به نتایج درخشان دست یابید.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. پذیرش مسئولیت‌های مهم‌تر یا پروژه‌های بزرگ‌تر به‌منظور استفاده حداکثری از توان کوشایی شما.<br>
+                2. انتقال تجربیات مثبت و روش‌های کارآمد به دیگران برای ایجاد فرهنگ سختکوشی در محیط پیرامون.<br>
+                ۳. طراحی و رعایت برنامه استراحت و تفریح منظم برای حفظ سلامت روان و جسم.<br>
+                ۴. ادامه یادگیری مهارت‌های نو و ارتقای توان حرفه‌ای یا تحصیلی خود برای حفظ پویایی.<br>
+                ۵. مرور دوره‌ای موفقیت‌ها و شکست‌ها؛ از هر دو برای یافتن راه‌های بهینه جهت آینده بهره بگیرید.
+            </div>
+        </div>
+    </li>
+</ul>
+
+<!-- معنویت -->
+<div class="report-component-title">معنویت 
+    <span class="report-badge report-score-data">#field_581#<br></span>
+</div>
+<p class="report-paragraph">
+    معنویت به معناهای عمیق زندگی، باورها و ارزش‌های دینی یا فرادینی اشاره دارد که فرد را به تعالی و آرامش روانی نزدیک می‌کند. رعایت ارزش‌های معنوی و دینی می‌تواند نقش مؤثری در پیشگیری از سردرگمی و افزایش احساس رضایت از زندگی داشته باشد.
+</p>
+<ul class="report-list">
+    <!-- سطح متوسط معنویت -->
+    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10164#;">
+        <strong>«متوسط»<br></strong>
+        شما تا حدی به ارزش‌های معنوی پایبند هستید و در موقعیت‌های مختلف، آن‌ها را در نظر می‌گیرید، اما شاید هنوز عمق کافی را در باورهایتان احساس نکنید یا به‌طور مستمر آن‌ها را دنبال نکنید.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. مطالعه متون دینی و فلسفی برای تعمیق باورهای معنوی و یافتن آرامش بیشتر.<br>
+                ۲. مشارکت در فعالیت‌های خیرخواهانه یا مراسم مذهبی برای تقویت حس همدلی و پیوند معنوی.<br>
+                ۳. گفتگوی صمیمانه با افرادی که تجربه و باورهای معنوی قوی‌تری دارند و استفاده از نقطه‌نظرات آنان.<br>
+                ۴. مدیریت تردیدها و پرسش‌های ذهنی از طریق مشاوره یا مطالعه گسترده برای تقویت ثبات اعتقادی.<br>
+                ۵. استفاده از تکنیک‌های مراقبه و نیایش برای حفظ تعادل روانی و ارتقای ارتباط درونی.
+            </div>
+        </div>
+    </li>
+    <!-- سطح خوب معنویت -->
+    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10164#;">
+        <strong>«خوب»<br></strong>
+        شما باورهای معنوی ریشه‌داری دارید و در بسیاری از جنبه‌های زندگی، ارزش‌های معنوی را رعایت می‌کنید. این رویکرد، به‌ویژه در لحظات دشوار، به شما آرامش و معنا می‌بخشد.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. استمرار در اجرای آیین‌ها و اعمال معنوی که اثربخشی آن‌ها را تجربه کرده‌اید.<br>
+                ۲. گسترش فعالیت‌های اجتماعی و خیرخواهانه، با تکیه بر باورهای معنوی برای افزایش حس مسئولیت جمعی.<br>
+                ۳. استفاده از اساتید معنوی یا راهنمایان دینی برای پاسخگویی به سوالات عمیق فکری و تقویت باورها.<br>
+                ۴. شرکت در نشست‌ها و گروه‌های بحث معنوی برای تبادل تجربیات و دغدغه‌های مشترک.<br>
+                ۵. تمرین شکرگزاری و قدردانی در زندگی روزمره به‌منظور حفظ حس رضایت و آرامش درونی.
+            </div>
+        </div>
+    </li>
+    <!-- سطح عالی معنویت -->
+    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10164#;">
+        <strong>«عالی»<br></strong>
+        شما در سطح بالایی از معنویت قرار دارید و باورها و ارزش‌های معنوی در عمق زندگی‌تان ریشه دوانده‌اند. این پیوند قوی، به شما کمک می‌کند تا حتی در چالش‌های بزرگ نیز احساس آرامش و امید داشته باشید.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. ترویج ارزش‌های معنوی از طریق آموزش، نوشتن یا فعالیت در گروه‌های مذهبی و اجتماعی.<br>
+                ۲. اختصاص زمانی منظم برای نیایش و مراقبه عمیق‌تر به‌منظور تقویت ارتباط درونی خود.<br>
+                ۳. حمایت معنوی از کسانی که در لحظات دشوار زندگی نیازمند تسلی و راهنمایی هستند.<br>
+                ۴. مشارکت در برنامه‌های نوع‌دوستانه و بشردوستانه برای گسترش حس معنویت در جامعه.<br>
+                ۵. ادامه یادگیری و مطالعه مداوم در حوزه‌های مختلف معنوی به‌منظور رشد بیشتر و تثبیت آرامش روانی.
+            </div>
+        </div>
+    </li>
+</ul>
+
+<!-- نیروی روانی -->
+<div class="report-component-title">نیروی روانی 
+    <span class="report-badge report-score-data">#field_582#<br></span>
+</div>
+<p class="report-paragraph">
+    نیروی روانی ترکیبی از انرژی ذهنی، هیجان مثبت و تمایل به انجام کارهای بزرگ است. افرادی که نیروی روانی بالایی دارند، به موضوعات جدید و هیجان‌انگیز علاقه نشان می‌دهند و از شوخ‌طبعی برای حفظ روحیه استفاده می‌کنند. وجود تعادل روانی در کنار این انرژی، از بروز رفتارهای تکانشی و خستگی زودرس جلوگیری می‌کند.
+</p>
+<ul class="report-list">
+    <!-- سطح متوسط نیروی روانی -->
+    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10165#;">
+        <strong>«متوسط»<br></strong>
+        شما در بسیاری از موقعیت‌ها پرانرژی هستید، اما ممکن است همواره آن هیجان و اشتیاق مداوم را در زندگی نداشته باشید. گاهی شرایط روزمره بر شما غلبه می‌کند و احساس می‌کنید به یک نیروی محرک قوی‌تر نیاز دارید.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. شناسایی علایق واقعی خود و برنامه‌ریزی برای پرداختن منظم به آن‌ها برای تقویت انگیزه درونی.<br>
+                ۲. استفاده از شوخ‌طبعی و معاشرت با افراد خوش‌انرژی برای بالا بردن روحیه در مواقع کسالت.<br>
+                ۳. تعیین اهداف کوتاه‌مدت و جذاب که بتوانند شما را به حرکت و پویایی وادار کنند.<br>
+                ۴. ارزیابی سطح استرس و فشارهای روانی، و اقدام به موقع برای مدیریت آن‌ها (ورزش، استراحت کافی، گفتگو با مشاور).<br>
+                ۵. در نظر گرفتن فرصت‌های ماجراجویانه یا چالش‌های جدید برای تزریق هیجان سالم به زندگی.
+            </div>
+        </div>
+    </li>
+    <!-- سطح خوب نیروی روانی -->
+    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10165#;">
+        <strong>«خوب»<br></strong>
+        شما اغلب پرانرژی و خلاق هستید و از تازگی و تنوع در زندگی لذت می‌برید. تمایل دارید کارهای هیجان‌انگیز انجام دهید و از شوخ‌طبعی خود برای بهبود حال و هوای خود و اطرافیانتان استفاده کنید.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. حفظ این روحیه مثبت از طریق انجام فعالیت‌های تفریحی و اجتماعی با افراد هم‌انرژی.<br>
+                ۲. شرکت در برنامه‌ها یا پروژه‌هایی که نیازمند خلاقیت و هیجان مثبت هستند.<br>
+                ۳. مدیریت حد و مرز شور و شوق، تا از تکانش‌های ناگهانی یا خستگی مفرط پیشگیری شود.<br>
+                ۴. ایجاد تنوع در کارهای روزمره (تغییر روال‌ها، یادگیری مهارت‌های تازه) برای تحریک انرژی ذهنی.<br>
+                ۵. استعدادیابی در حوزه‌های هنری یا ورزشی برای تخلیه انرژی روانی به شکل سازنده.
+            </div>
+        </div>
+    </li>
+    <!-- سطح عالی نیروی روانی -->
+    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10165#;">
+        <strong>«عالی»<br></strong>
+        شما سرشار از نیروی روانی هستید و همواره به دنبال ایده‌های نو، چالش‌های تازه و خلق لحظات هیجان‌انگیز در زندگی می‌گردید. این ویژگی، در کنار حفظ سلامت روانی، شما را به فردی الهام‌بخش تبدیل می‌کند که دیگران نیز از حضور و نشاط شما انرژی می‌گیرند.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. نقش رهبری یا هدایت در فعالیت‌های گروهی برای انتقال شور و انرژی مثبت به دیگران.<br>
+                ۲. ایجاد تعادل میان هیجان‌طلبی و استراحت کافی؛ ذهن پرانرژی نیز نیاز به آرامش دارد.<br>
+                ۳. برنامه‌ریزی برای کارهای خلاقانه یا پروژه‌های بزرگ که به نیروی روانی و ایده‌های جدید شما نیاز دارد.<br>
+                ۴. آگاهی از مرزهای خود و احترام به محدودیت‌های دیگران، برای جلوگیری از سوءتفاهم یا زیاده‌روی.<br>
+                ۵. به اشتراک‌گذاری تجربیات موفق و ماجراجویانه خود با دیگران، جهت الهام‌بخشی و ایجاد فضای مثبت.
+            </div>
+        </div>
+    </li>
+</ul>
+
+<!-- هدفمندی -->
+<div class="report-component-title">هدفمندی 
+    <span class="report-badge report-score-data">#field_583#<br></span>
+</div>
+<p class="report-paragraph">
+    هدفمندی به داشتن طرح و برنامه‌ای روشن برای زندگی و احساس کارآمدی در مسیر دستیابی به آن اهداف اشاره دارد. افرادی که از هدفمندی بالایی برخوردارند، غالباً جایگاه شایسته‌ای برای خود قائل‌اند و در تصمیم‌گیری‌هایشان حس جهت‌دار بودن دارند. این رویکرد، در صورت هماهنگی با سلامت روانی، منجر به رضایت عمیق و پیشرفت می‌شود.
+</p>
+<ul class="report-list">
+    <!-- سطح متوسط هدفمندی -->
+    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10166#;">
+        <strong>«متوسط»<br></strong>
+        شما در اکثر جنبه‌های زندگی هدفتان را مشخص می‌کنید، اما گاه ممکن است دچار تردید یا سردرگمی شوید و احساس کنید جایگاه مشخصی ندارید. به‌صورت کلی فردی هستید که ارزش هدفمند بودن را درک می‌کنید ولی در پیگیری اهداف ثبات صددرصد ندارید.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. بازنگری دوره‌ای اهداف و تنظیم مجدد آن‌ها بر اساس شرایط و علایق جدید.<br>
+                ۲. شفاف‌سازی مسیر دستیابی به هدف از طریق تدوین گام‌های عملی کوتاه‌مدت، میان‌مدت و بلندمدت.<br>
+                ۳. مشورت با افراد باتجربه یا استفاده از کوچینگ/مشاوره برای تعیین مناسب‌ترین مسیر زندگی.<br>
+                ۴. ثبت دستاوردهای کوچک در مسیر اهداف برای تقویت اعتمادبه‌نفس و حفظ انگیزه.<br>
+                ۵. یادگیری مهارت‌های برنامه‌ریزی و مدیریت زمان برای ساختن زیربنای مستحکم هدفمندی.
+            </div>
+        </div>
+    </li>
+    <!-- سطح خوب هدفمندی -->
+    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10166#;">
+        <strong>«خوب»<br></strong>
+        شما عموماً فردی هدفمند هستید و در مسیر زندگی، احساس می‌کنید جایگاه شایسته‌ای دارید. تصمیم‌های شما معمولاً جهت‌دار هستند و در بسیاری مواقع، خود را فردی کارآمد می‌بینید.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. ادامه ارزیابی و بهبود هدف‌ها؛ ایجاد اهداف جدید و بزرگ‌تر به محض رسیدن به اهداف قبلی.<br>
+                ۲. حفظ و تقویت حس کارآمدی از طریق مشارکت در پروژه‌های متنوع و مسئولیت‌های جدید.<br>
+                ۳. مدیریت هوشمندانه ریسک‌ها برای جلوگیری از سردرگمی در مواجهه با تغییرات.<br>
+                ۴. اشتراک تجربیات موفقیت و شکست با دیگران، تا از هم‌فکری آن‌ها بهره‌مند شوید.<br>
+                ۵. متعادل ساختن میان کار، زندگی شخصی و تفریح برای جلوگیری از خستگی مفرط و افت انگیزه.
+            </div>
+        </div>
+    </li>
+    <!-- سطح عالی هدفمندی -->
+    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10166#;">
+        <strong>«عالی»<br></strong>
+        شما در سطح بسیار بالایی از هدفمندی قرار دارید؛ جایگاه فعلی خود را شایسته می‌بینید و دائماً در پی ارتقای آن هستید. این جهت‌دار بودن در تصمیم‌ها و فعالیت‌هایتان، شما را به فردی کارآمد و موفق تبدیل می‌کند.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. پذیرش نقش‌های کلیدی و مسئولیت‌های بزرگ‌تر برای بهره‌گیری حداکثری از توانمندی‌تان.<br>
+                ۲. الهام‌بخشی دیگران از طریق بیان داستان‌های موفقیت و شرح مسیری که طی کرده‌اید.<br>
+                ۳. برنامه‌ریزی انعطاف‌پذیر برای مواجهه با تغییرات غیرمنتظره و حفظ تمرکز بر اهداف اصلی.<br>
+                ۴. استفاده از تکنیک‌های هدف‌گذاری پیشرفته (SMART، OKR، و...) برای حفظ وضوح و کارآمدی در مسیرها.<br>
+                ۵. مراقبت از سلامت جسمی و روانی برای حفظ انگیزه و کیفیت عملکرد در سطح بالا.
+            </div>
+        </div>
+    </li>
+</ul>
+
+<!-- هیجانی -->
+<div class="report-component-title">هیجانی 
+    <span class="report-badge report-score-data">#field_584#<br></span>
+</div>
+<p class="report-paragraph">
+    هیجانی بودن نشان‌دهنده تأثیرپذیری بیشتر از احساسات در تصمیم‌گیری‌ها و رفتارهای روزمره است. این ویژگی می‌تواند به فرد کمک کند عواطف و نیازهای دیگران را بهتر درک کند، اما اگر به‌درستی مدیریت نشود، ممکن است باعث انتخاب‌های شتابزده یا تأثیرپذیری شدید از دیگران شود. همراهی این ویژگی با تعادل روانی، منجر به درک عمیق‌تر احساسات و انتخاب‌های هوشمندانه‌تر می‌گردد.
+</p>
+<ul class="report-list">
+    <!-- سطح متوسط هیجانی -->
+    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10167#;">
+        <strong>«متوسط»<br></strong>
+        شما تا حدی تحت تأثیر هیجاناتتان هستید و گاه ممکن است در تصمیم‌هایتان به احساس بیش از منطق تکیه کنید. هرچند به‌طور کل سعی می‌کنید از دخالت بیش از حد دیگران پرهیز کنید، اما در برخی موارد کنترل هیجانات برایتان چالش‌برانگیز می‌شود.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. تمرین مهارت‌های مدیریت احساسات (همچون ذهن‌آگاهی و تنفس عمیق) در لحظات تصمیم‌گیری حساس.<br>
+                ۲. تشخیص موقعیت‌هایی که هیجانات به‌شدت تحت تأثیر دیگران قرار می‌گیرد و تعیین حدومرز برای حفظ استقلال رأی.<br>
+                ۳. ثبت و بازبینی تصمیم‌های احساسی گذشته جهت شناسایی الگوهای تکرارشونده و اصلاح آن‌ها.<br>
+                ۴. گفتگوی صادقانه با نزدیکان درباره تأثیر هیجانات بر روابط و تصمیم‌هایتان.<br>
+                ۵. مطالعه یا مشاوره با متخصصان حوزه روان‌شناسی برای تقویت هوش هیجانی و کنترل احساسات نامطلوب.
+            </div>
+        </div>
+    </li>
+    <!-- سطح خوب هیجانی -->
+    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10167#;">
+        <strong>«خوب»<br></strong>
+        شما به شکل متعادلی از احساسات خود در تصمیم‌گیری استفاده می‌کنید و معمولاً اجازه نمی‌دهید هیجانات منفی یا فشارهای بیرونی، تصمیم‌های مهمتان را مختل کند. این رویکرد نشان‌دهنده هوش هیجانی قابل قبولی است.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. ادامه تقویت توانایی تشخیص و درک احساسات خود و اطرافیان، برای ایجاد روابط نزدیک‌تر و کارآمدتر.<br>
+                ۲. استفاده از روش‌های علمی و منطقی در کنار حس شهودی برای تصمیم‌گیری‌های مهم.<br>
+                ۳. شرکت در کارگاه‌ها یا برنامه‌های توسعه هوش هیجانی، جهت بهبود مهارت‌های ارتباطی و تنظیم احساسات.<br>
+                ۴. پرهیز از انباشته شدن عواطف منفی؛ تخلیه مناسب هیجانات از طریق گفتگو، نگارش یا فعالیت‌های خلاق.<br>
+                ۵. مدیتیشن، یوگا یا ورزش منظم برای کاهش استرس و افزایش تسلط بر واکنش‌های احساسی.
+            </div>
+        </div>
+    </li>
+    <!-- سطح عالی هیجانی -->
+    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10167#;">
+        <strong>«عالی»<br></strong>
+        شما از سطح بسیار بالایی از درک هیجانات برخوردارید و معمولاً با حساسیت و همدلی نسبت به احساسات دیگران واکنش نشان می‌دهید. در عین حال، توانایی خوبی در مدیریت هیجانات دارید و به‌ندرت دچار تأثیرپذیری ناخواسته می‌شوید.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. پذیرش نقش راهنما یا حامی عاطفی برای اطرافیان یا همکاران؛ شما قادر به همدلی عمیق هستید.<br>
+                ۲. تقویت بیشتر مهارت‌های ارتباطی با استفاده از مطالعات روان‌شناختی و تمرین‌های کاربردی.<br>
+                ۳. توجه به حفظ مرزهای روانی و جسمی؛ حتی اگر همدل و حساس باشید، لازم است مراقب خود نیز باشید.<br>
+                ۴. حمایت از خودباوری و اعتمادبه‌نفس دیگران با انتقال حس آرامش و اطمینان از طریق رفتار و گفتار مناسب.<br>
+                ۵. تداوم شیوه‌های سالم مدیریت احساسات، همچون مدیتیشن، ورزش و گفتگوی منظم با دوستان صمیمی یا متخصصان.
+            </div>
+        </div>
+    </li>
+</ul>
+   <!-- بی‌تعادلی (عامل معکوس) -->
+<div class="report-component-title">بی تعادلی
+    <span class="report-badge report-score-data">#field_568#<br></span>
+</div>
+<p class="report-paragraph">
+    بی‌تعادلی نشان‌دهنده عدم مدیریت کافی بر هیجانات و رفتارهای فرد است؛ افرادی که سطوح بالایی از بی‌تعادلی را تجربه می‌کنند، در تصمیم‌گیری‌ها و چشم‌انداز آینده خود دچار سردرگمی بیشتری هستند. توجه به این عامل منفی و تلاش برای کاهش آن، باعث ایجاد ثبات در رفتار و بهبود سلامت روانی می‌شود.
+</p>
+<ul class="report-list">
+    <!-- سطح پایین بی‌تعادلی (خوشبختانه نشانگر وضعیت بهتر است) -->
+    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10151#;">
+        <strong>«سطح پایین»<br></strong>
+        شما کنترل مناسبی بر هیجانات خود دارید و معمولاً رفتارهای متعادلی نشان می‌دهید. اگرچه ممکن است گهگاه تحت تأثیر احساسات قرار بگیرید، اما به‌طور کلی آینده‌نگر هستید و کمتر دچار بی‌برنامگی می‌شوید.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. حفظ روند فعلی با انجام فعالیت‌های آرام‌سازی ذهن و مدیریت استرس.<br>
+                ۲. یادداشت کردن و بررسی رفتارها در مواقع احساسی برای جلوگیری از شکل‌گیری عادت‌های نامتعادل.<br>
+                ۳. برنامه‌ریزی دوره‌ای برای اهداف کوتاه‌مدت و بلندمدت، جهت حفظ چشم‌انداز آینده.<br>
+                ۴. همفکری با دوستان و متخصصان در صورت احساس لغزش یا خروج از ثبات رفتاری.<br>
+                ۵. استمرار در تمرین مهارت‌های خودتنظیمی (ذهن‌آگاهی، مدیتیشن، ورزش) برای افزایش تعادل روانی.
+            </div>
+        </div>
+    </li>
+    <!-- سطح متوسط بی‌تعادلی -->
+    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10151#;">
+        <strong>«سطح متوسط»<br></strong>
+        شما گاهی در کنترل هیجانات یا تنظیم رفتارهای خود با مشکل مواجه می‌شوید و ممکن است در برخی موقعیت‌ها از آینده‌نگری فاصله بگیرید. این وضعیت می‌تواند منجر به احساس سردرگمی یا اقدامات شتاب‌زده شود.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. شناسایی الگوهای تکرارشونده نامتعادل در افکار و رفتارهایتان و تلاش برای اصلاح آن‌ها.<br>
+                ۲. تقویت مهارت‌های حل مسئله و تصمیم‌گیری با استفاده از مشاوره یا مطالعه منابع مرتبط.<br>
+                ۳. تعریف اهداف مشخص و قابل دستیابی برای جلوگیری از احساس پوچی و بی‌برنامگی در آینده.<br>
+                ۴. تمرین مدیریت هیجانات از طریق روش‌هایی نظیر تنفس عمیق، نوشتن احساسات و گفتگوی درونی مثبت.<br>
+                ۵. پیگیری مداوم سلامت روانی؛ مشاوره روان‌شناسی در صورت تداوم احساس ناپایداری رفتاری و هیجانی.
+            </div>
+        </div>
+    </li>
+    <!-- سطح بالا بی‌تعادلی -->
+    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10151#;">
+        <strong>«سطح بالا»<br></strong>
+        شما در وضعیت قابل توجهی از بی‌تعادلی قرار دارید و ممکن است مدیریت هیجانات و رفتارهایتان دشوار شود. همچنین احتمال دارد نگاه روشنی به آینده نداشته باشید و مکرراً احساس کنید کنترل شرایط از دستتان خارج شده است.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. مراجعه به متخصصان سلامت روان (روان‌شناس یا روان‌پزشک) برای بررسی عمیق‌تر و درمان احتمالی.<br>
+                ۲. به‌کارگیری تکنیک‌های آرام‌سازی فوری (مانند شمارش معکوس، کنترل تنفس) در لحظات اوج هیجانی.<br>
+                ۳. شرکت در کارگاه‌های مهارت‌های زندگی و خودمدیریتی برای بازیابی و حفظ ثبات رفتاری.<br>
+                ۴. اولویت‌بندی اهداف و برنامه‌های روزمره برای کاهش حس پراکندگی و سردرگمی.<br>
+                ۵. پیگیری درمان بلندمدت (گروه‌درمانی، دوره‌های آموزشی) برای کاهش بی‌تعادلی و ارتقای سلامت روانی.
+            </div>
+        </div>
+    </li>
+</ul>
+
+<!-- بیتابی (عامل معکوس) -->
+<div class="report-component-title">بیتابی
+    <span class="report-badge report-score-data">#field_569#<br></span>
+</div>
+<p class="report-paragraph">
+    بیتابی نشان‌دهنده احساس خستگی، ناتوانی و دل‌مشغولی دائمی است که می‌تواند به نگرانی، شک و تردید و احساس ناامنی در حل مسائل منجر شود. هرچه بیتابی بالاتر باشد، فرد ممکن است فرسودگی روانی بیشتری را تجربه کند. کاهش این عامل منفی از طریق مداخلات روان‌شناختی و راهکارهای آرام‌سازی، به بهبود سلامت روانی می‌انجامد.
+</p>
+<ul class="report-list">
+    <!-- سطح پایین بیتابی -->
+    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10152#;">
+        <strong>«سطح پایین»<br></strong>
+        شما به‌ندرت احساس فرسودگی و نگرانی بیش از حد دارید و معمولاً با آرامش نسبی و امیدواری به مسائل نگاه می‌کنید. در مواجهه با مشکلات، می‌توانید با مدیریت استرس و اعتمادبه‌نفس، آرامش خود را حفظ کنید.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. حفظ و تقویت حس مثبت‌نگری از طریق شکرگزاری و تمرین قدردانی روزانه.<br>
+                ۲. اختصاص زمان کافی به استراحت و سرگرمی‌هایی که انرژی روانی شما را شارژ می‌کنند.<br>
+                ۳. بررسی روش‌های مثبت مدیریت مسائل چالش‌برانگیز و الگوبرداری از تجربیات گذشته.<br>
+                ۴. تشویق اطرافیان به آرامش و امیدواری؛ تأثیر مثبت شما بر آن‌ها نیز می‌تواند حس خوبی ایجاد کند.<br>
+                ۵. مراقبت از سلامت جسمی (خواب کافی، تغذیه مناسب، تحرک) برای پایداری روحیه و کاهش خستگی.
+            </div>
+        </div>
+    </li>
+    <!-- سطح متوسط بیتابی -->
+    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10152#;">
+        <strong>«سطح متوسط»<br></strong>
+        شما گاه احساس دل‌نگرانی و شک و تردید در حل مشکلات دارید و ممکن است دچار خستگی روحی شوید. با این حال، همچنان توانایی‌های لازم برای مدیریت شرایط را دارید و می‌توانید با برنامه‌ریزی و حمایت اطرافیان بهبود یابید.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. شناسایی عوامل استرس‌زا و تلاش برای رفع یا کاهش آن‌ها (مثلاً تقسیم کار، گفتگوی سازنده).<br>
+                ۲. یادگیری تکنیک‌های آرام‌سازی ذهن (مدیتیشن، تنفس عمیق، ذهن‌آگاهی) برای مقابله با دل‌مشغولی.<br>
+                ۳. ایجاد لیستی از مشکلات فعلی و اولویت‌بندی آن‌ها به‌منظور حل گام‌به‌گام و پرهیز از آشفتگی.<br>
+                ۴. درخواست کمک از افرادی که به آن‌ها اعتماد دارید؛ صحبت با یک دوست یا مشاور می‌تواند بسیار آرامش‌بخش باشد.<br>
+                ۵. تنظیم اهداف واقع‌بینانه و مرور دوره‌ای پیشرفت‌ها برای حفظ انگیزه و جلوگیری از ناامیدی.
+            </div>
+        </div>
+    </li>
+    <!-- سطح بالا بیتابی -->
+    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10152#;">
+        <strong>«سطح بالا»<br></strong>
+        شما به میزان قابل توجهی احساس خستگی، ناتوانی و نگرانی را تجربه می‌کنید و دائماً با دلشورگی و ترس از آینده روبه‌رو هستید. این وضعیت می‌تواند با فرسودگی روانی و افت عملکرد روزمره همراه باشد.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. مداخله تخصصی روان‌شناسی یا روان‌پزشکی برای کاهش اضطراب و بهبود سلامت ذهنی.<br>
+                ۲. تمرکز بر روی فعالیت‌های شادی‌آور و کاهش‌دهنده استرس (هنر، موسیقی، ورزش‌های سبک).<br>
+                ۳. پیگیری جلسات مشاوره یا گروه‌درمانی برای دریافت حمایت و همدلی از افرادی با شرایط مشابه.<br>
+                ۴. بازنگری کلی در سبک زندگی؛ ایجاد تعادل بین کار و استراحت، اصلاح عادات خواب و تغذیه سالم.<br>
+                ۵. مدیریت افکار منفی و جایگزینی آن‌ها با افکار واقعی و مثبت از طریق روان‌درمانی شناختی-رفتاری.
+            </div>
+        </div>
+    </li>
+</ul>
+
+<!-- روان آوارگی (عامل معکوس) -->
+<div class="report-component-title">روان آوارگی
+    <span class="report-badge report-score-data">#field_577#<br></span>
+</div>
+<p class="report-paragraph">
+    روان آوارگی به معنای احساس سردرگمی، دورافتادگی از معنویت و نگرانی عمیق درباره بقا و مسیر زندگی است. سطوح بالای روان آوارگی می‌تواند با تنهایی، عدم حمایت مناسب از سوی دیگران و گم‌گشتگی در اهداف همراه باشد. کاهش این عامل منفی، گامی اساسی در دستیابی به آرامش درونی و پیدا کردن مسیر مشخص در زندگی است.
+</p>
+<ul class="report-list">
+    <!-- سطح پایین روان آوارگی -->
+    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10160#;">
+        <strong>«سطح پایین»<br></strong>
+        شما معمولاً در ارتباط با خود و ارزش‌های معنوی‌تان قرار دارید و در زندگی‌تان از همراهی فرد یا افرادی مناسب برخوردار هستید. احساس سردرگمی یا دورافتادگی از معنویت در شما چندان قوی نیست.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. تقویت پیوند با باورهای معنوی و ارزش‌های والای شخصی برای حفظ انسجام درونی.<br>
+                ۲. قدردانی از حمایت اطرافیان و ادامه تعامل سازنده با آن‌ها در لحظات دشوار.<br>
+                ۳. تعریف اهداف معنوی یا اخلاقی برای حفظ حس جهت‌مندی در زندگی.<br>
+                ۴. مشارکت در فعالیت‌های فرهنگی، اجتماعی یا مذهبی که به رشد معنوی و همدلی کمک می‌کند.<br>
+                ۵. تداوم خودارزیابی و مراقبت از سلامت روان برای جلوگیری از افت احتمالی در آینده.
+            </div>
+        </div>
+    </li>
+    <!-- سطح متوسط روان آوارگی -->
+    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10160#;">
+        <strong>«سطح متوسط»<br></strong>
+        شما گاه احساس دوری از معنویت یا نگرانی درباره آینده و بقای خود دارید. ممکن است در برخی شرایط دچار سردرگمی شوید، اما همچنان می‌توانید به کمک اطرافیان یا تکیه بر ارزش‌های درونی، راه خود را بیابید.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. گفتگوی بیشتر با افراد معتمد و بهره‌گیری از حمایت و همفکری آنان در لحظات پریشانی.<br>
+                ۲. مرور تجارب معنوی یا شخصی که در گذشته به شما احساس آرامش و هدایت داده‌اند.<br>
+                ۳. شرکت در کارگاه‌ها یا جلسات مرتبط با معنویت و خودشناسی برای تعمیق آگاهی درونی.<br>
+                ۴. نوشتن اهداف و ارزش‌های زندگی در قالب یک بیانیه شخصی برای کمک به حفظ مسیر و دوری از سردرگمی.<br>
+                ۵. شناسایی عوامل بیرونی (محیطی، اجتماعی) که احساس تنهایی یا دوری از معنویت را تشدید می‌کنند و تلاش برای رفع آن‌ها.
+            </div>
+        </div>
+    </li>
+    <!-- سطح بالا روان آوارگی -->
+    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10160#;">
+        <strong>«سطح بالا»<br></strong>
+        شما احساس شدیدی از سردرگمی و دوری از معنویت تجربه می‌کنید؛ ممکن است در دشواری‌های زندگی احساس تنهایی کنید و راه مشخصی برای خود نیافته باشید. این وضعیت می‌تواند منجر به ناامیدی و احساس عدم امنیت عمیق شود.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. مشاوره تخصصی یا روان‌درمانی برای بررسی ریشه‌های این سردرگمی و ترس از بقا.<br>
+                ۲. ایجاد شبکه حمایتی قوی (خانواده، دوستان، گروه‌های معنوی یا اجتماعی) برای کاهش احساس تنهایی.<br>
+                ۳. مطالعه و شرکت در فعالیت‌های معنوی یا برنامه‌های خودشناسی جهت احیای ارزش‌ها و باورهای درونی.<br>
+                ۴. استفاده از تکنیک‌های آرام‌سازی و مراقبه برای بازیابی ارتباط ذهنی و عاطفی با خود.<br>
+                ۵. تدوین برنامه‌ای عملی برای یافتن شغل، مسیر تحصیلی یا اهداف شخصی روشن، به‌منظور کاهش حس آوارگی روانی.
+            </div>
+        </div>
+    </li>
+</ul>
+                                              
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+            <div class="report-section-title">جمع‌بندی</div>
+            <div class="report-paragraph">
+            <p>این گزارش ارزیابی مهارت‌های شما شامل تحلیل تعهد، نیرومندی، ظرفیت تحلیلی، بیتابی روانی، استقلال و سازش است. این بررسی نقاط قوت و زمینه‌های نیازمند بهبود شما را نشان داده و توصیه‌های کاربردی برای توسعه مهارت‌های شما ارائه می‌دهد.</p>
+            
+            <p><b>نقاط قوت: </b>شما در برخی از حوزه‌ها عملکرد برجسته‌ای دارید که نشان‌دهنده توانایی‌های قوی در مدیریت مسئولیت‌ها، انرژی بالا، تحلیل مسائل پیچیده، آرامش روانی، خودکفایی و تطبیق‌پذیری است. به عنوان مثال، در حوزه‌های "تعهد" و "ظرفیت تحلیلی"، شما توانایی زیادی در مدیریت وظایف و تحلیل مسائل نشان داده‌اید که می‌تواند به پیشرفت حرفه‌ای و رشد فردی شما کمک کند.</p>
+            
+            <p><b>حوزه‌های نیازمند بهبود:</b> در برخی از بخش‌ها نیاز به تمرکز بیشتر وجود دارد. به عنوان مثال، در حوزه‌های "بیتابی روانی" و "استقلال"، شما می‌توانید با تمرین‌های منظم و فعالیت‌های هدفمند مانند تکنیک‌های مدیریت استرس و برنامه‌ریزی منظم مهارت‌های خود را بهبود بخشید. همچنین، افزایش تعاملات اجتماعی و تمرین مهارت‌های تصمیم‌گیری مستقل می‌تواند تأثیر مثبتی بر عملکرد شما داشته باشد.</p>
+            
+            <p><b>گام‌های بعدی:</b> برای تقویت مهارت‌های خود، پیشنهاد می‌شود که به توصیه‌های ارائه‌شده در هر بخش توجه ویژه‌ای کنید و در صورت نیاز از خدمات مشاوره تخصصی استفاده نمایید. همچنین، ارزیابی منظم و پیگیری مداوم می‌تواند به توسعه پایدار و موفقیت شما در تمامی ابعاد زندگی کمک کند.</p>
+            </div>
+        
+        <footer class="report-footer-custom">
+            <div class="report-footer-content">
+                <img src="../panel/file?type=picture&amp;v=3&amp;mode=filemanager&amp;file=%7eDB3gfQUls%2bt2iiMYKbsRAxrtFhcHKUIUUo7pPtO17bHCzNxwU4zNh3UVor6QMtl7Y6EWX8dD0PSvzZOYkRrXlfejPn4lNTj6" class="report-footer-img" alt="لوگو">
+            </div>
+            <p class="report-footer-paragraph">مؤسّسه تعاملی هیجان اندیشه | تماس: 02188174100 | ایمیل: info@eot.ir</p>
+            <p class="report-footer-paragraph yellow-text">© ۱۴۰۳ تمامی حقوق محفوظ است.</p>
+            <ul class="report-footer-menu">
+                <li><a href="https://www.eot.ir/" class="report-footer-menu-link">صفحه اصلی</a></li>
+                <li><a href="https://www.eot.ir/contact" class="report-footer-menu-link">تماس با ما</a></li>
+                <li><a href="https://www.eot.ir/about" class="report-footer-menu-link">درباره ما</a></li>
+            </ul>
+            <address class="report-footer-address">تهران، سهروردی، خرمشهر، عربعلی، کوچه ششم، شماره ۴۴</address>
+        </footer>
+    </div>
