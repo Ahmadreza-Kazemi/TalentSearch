@@ -56,7 +56,9 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }
 
-        menuToggle.addEventListener("click", toggleMenu);
+        if (menuToggle) {
+            menuToggle.addEventListener("click", toggleMenu);
+        }
         document.addEventListener("click", handleClickOutside);
         document.addEventListener("keydown", handleEscapeKey);
     }
