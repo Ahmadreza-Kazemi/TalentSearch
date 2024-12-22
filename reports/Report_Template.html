@@ -1,7 +1,7 @@
 <div class="ravesh-editor-html" style="direction:rtl">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>گزارش تحلیل فهرست جامع تشخیص تعاملی کودک</title>
+    <title>گزارش تحلیل فهرست تشخیص تعاملی شخصیت</title>
     <style>
         @font-face {
             font-family: 'IRANSansWeb';
@@ -99,6 +99,7 @@
             font-family: 'BYekan', sans-serif;
             flex: 1;
             min-width: 300px;
+            margin-right: 10px; /* Add space between columns */
         }
         .report-info-item strong, .report-score-item strong {
             color: #0DA3B8;
@@ -170,6 +171,10 @@
             margin-top: 10px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            box-sizing: border-box;
         }
         .report-recommendation-title {
             font-weight: bold;
@@ -188,6 +193,8 @@
             padding: 20px;
             text-align: center;
             font-family: 'IRANSansWeb', sans-serif;
+            border-top: 1px solid #E0E0E0;
+            font-size: 16px; /* Increased font size */
         }
         .report-footer-content {
             margin-bottom: 20px;
@@ -197,7 +204,7 @@
             height: 80px;
         }
         .report-footer-paragraph {
-            background-color: #FFFFFF;
+            margin: 5px 0;
         }
         .report-footer-paragraph.yellow-text {
             color: #DBCF93;
@@ -208,18 +215,19 @@
             display: flex;
             justify-content: center;
             gap: 15px;
+            margin: 10px 0;
         }
         .report-footer-menu-link {
             color: #0DA3B8;
             text-decoration: none;
+            transition: color 0.3s;
         }
-        .report-footer-social {
+        .report-footer-menu-link:hover {
+            color: #007B8A;
+        }
+        .report-footer-address {
             margin-top: 10px;
-        }
-        .report-footer-social-link {
-            color: #4A9B8C;
-            margin: 0 10px;
-            text-decoration: none;
+            font-size: 14px;
         }
         .report-summary-container {
             max-width: 800px;
@@ -246,191 +254,104 @@
             display: block;
         }
         .report-conditional-display[style*="--score-rate1: 1"] {
-            display: block;
-            background-color: #FFA500; /* Lime Orange */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #FF9999; /* Moderate */
         }
         .report-conditional-display[style*="--score-rate2: 2"] {
-            display: block;
-            background-color: #00FF00; /* Bright Green */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #FFD580; /* Good */
         }
         .report-conditional-display[style*="--score-rate3: 3"] {
-            display: block;
-            background-color: #FFD700; /* Brilliant Diamond Gold */
-            box-shadow: 0 0 10px rgba(255, 215, 0, 0.8); /* Golden shiny glowy effect */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #99FF99; /* Excellent */
         }
     </style>
     <div class="report-report-container">
         <header class="report-header-custom">
             <div class="report-header-inner">
                 <img src="../panel/file?type=picture&amp;v=3&amp;mode=filemanager&amp;file=%7eDB3gfQUls%2bt2iiMYKbsRAxrtFhcHKUIUUo7pPtO17bHCzNxwU4zNh3UVor6QMtl7Y6EWX8dD0PSvzZOYkRrXlfejPn4lNTj6" class="report-header-img" alt="لوگو">
-                <h1 class="report-header-title">گزارش تحلیل فهرست جامع تشخیص تعاملی کودک</h1>
+                <h1 class="report-header-title">گزارش تحلیل فهرست تشخیص تعاملی شخصیت</h1>
             </div>
-            <div class="report-header-date">تاریخ: #primary_createDate#</div>
-        </header>       
-        <div class="report-section-title">نیمرخ رشدی کودک</div>
+            <div class="report-header-date">تاریخ اجرا: #primary_createDate#</div>
+        </header>
+        
+        <div class="report-section-title">فهرست تشخیص تعاملی شخصیت</div>
+        <p class="report-paragraph">
+            این ارزیابی به منظور تحلیل و بررسی ویژگی‌های شخصیتی فرد در حوزه‌های مختلف از جمله تعهد، نیرومندی، ظرفیت تحلیلی، بیتابی روانی، استقلال و سازش انجام شده است. هدف از این ارزیابی شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد.
+        </p><p></p>
+               
+        <div class="report-section-title">اطلاعات فردی</div>
         <div class="report-info-container">
-            <div class="report-info-item"><strong>نام والد:</strong> <span class="report-info-data">#field_6615#</span></div>
-            <div class="report-info-item"><strong>نام خانوادگی والد:</strong> <span class="report-info-data">#field_6861#</span></div>
-            <div class="report-info-item"><strong>کد ملی والد:</strong> <span class="report-info-data">#field_6862#</span></div>
-            <div class="report-info-item"><strong>موبایل:</strong> <span class="report-info-data">#field_6616#</span></div>
-            <div class="report-info-item"><strong>ایمیل:</strong> <span class="report-info-data">#field_6617#</span></div>
-        </div>
-        <div class="report-section-title">نمرات کسب شده</div>
-        <div class="report-score-container">
-            <div class="report-score-item report-conditional-display" style="--score-rate1: 1;"><strong>1. تحلیلی:</strong> <span class="report-badge">#field_6894#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate3: 3;"><strong>2. کاوشگر:</strong> <span class="report-badge">#field_6897#</span></div></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate2: 2;"><strong>2. کاوشگر:</strong> <span class="report-badge">#field_6897#</span></div></div>
+            <div class="report-info-item"><strong>نام:</strong> <span class="report-info-data">#field_349#</span></div>
+            <div class="report-info-item"><strong>نام خانوادگی:</strong> <span class="report-info-data">#field_1712#</span></div>
+            <div class="report-info-item"><strong>موبایل:</strong> <span class="report-info-data">#field_350#</span></div>
+            <div class="report-info-item"><strong>ایمیل:</strong> <span class="report-info-data">#field_351#</span></div></div>
 
-            <div class="report-section-title">تفسیر نمرات</div>
-        <p class="report-paragraph">این بخش به بررسی جامع توانایی‌ها و مهارت‌های کودک شما می‌پردازد. نتایج ارزیابی بر اساس عملکرد کودک در عوامل مختلف طبقه‌بندی شده است. هر عامل با توجه به نمره کسب‌شده، به‌طور دقیق تحلیل شده و توصیه‌هایی متناسب با سطح عملکرد کودک ارائه شده است. این تحلیل‌ها به شما کمک می‌کنند تا نقاط قوت کودک را بهتر درک کنید و برای تقویت مهارت‌هایی که نیاز به بهبود دارند، برنامه‌ریزی کنید.</p>
-        
-        <p class="report-paragraph">توصیه می‌شود که نمرات کودک خود را در هر یک از عوامل بررسی کنید و توضیحات مربوط به آن سطح را به دقت مطالعه نمایید. این بخش شامل پیشنهادهای کاربردی برای بهبود عملکرد کودک در زمینه‌های مختلف است که می‌تواند در رشد تحصیلی، اجتماعی و فردی او تأثیر مثبتی داشته باشد.</p>
-        
-        <p class="report-paragraph">هدف این ارزیابی، ارائه یک تصویر جامع از مهارت‌های فعلی کودک و فراهم کردن راهکارهایی برای ارتقای این مهارت‌ها است. در نظر داشته باشید که هر کودک با توانایی‌ها و نیازهای منحصربه‌فرد خود متفاوت است و این گزارش می‌تواند به‌عنوان یک ابزار راهنما برای توسعه متوازن و همه‌جانبه او مورد استفاده قرار گیرد.</p>
-        
-        <div class="report-section-title">مهارت‌های شناختی و خلاقانه</div>
-        <p class="report-paragraph">این بخش به ارزیابی جامع مهارت‌های شناختی و خلاقانه کودک شما می‌پردازد. عوامل مختلفی مانند حل‌کننده هوشمند، کاوشگر عملی، ارتباط‌پذیر، مسئول‌کار، فعال بدنی، خلاق، ریاضی‌دان، کلامی‌بر و هنرمند خلاق در این بخش بررسی شده‌اند. نتایج نشان‌دهنده توانایی کودک در تحلیل مسائل، یادگیری از طریق تجربه، برقراری ارتباط مؤثر، مسئولیت‌پذیری، فعالیت بدنی، خلاقیت، مهارت‌های ریاضی، توانایی‌های کلامی و هنری است. توصیه‌هایی برای تقویت این مهارت‌ها ارائه شده است تا بتوانید نقاط قوت کودک را بهتر درک کرده و مهارت‌هایی که نیاز به بهبود دارند را تقویت کنید.</p>
-        
-        <div class="report-component-title">1. تحلیلگر<span class="report-badge report-score-data">#field_6894#<br></span></div>
-        <p class="report-paragraph">این عامل به توانایی کودک در تحلیل موقعیت‌ها و یافتن راه‌حل‌های مناسب برای مسائل مختلف اشاره دارد. کودکان با نمره بالاتر در این حوزه قادرند با تحلیل دقیق‌تر مشکلات و یافتن راه‌حل‌های مؤثرتر، موقعیت‌ها را به خوبی مدیریت کنند.</p>
-        <ul class="report-list">
-            <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10102#;">
-                <strong>متوسط:<br></strong>شما ممکن است در موقعیت‌های چالش‌برانگیز دچار سردرگمی شوید و نتوانید راه‌حل‌های مناسبی پیدا کنید. این ممکن است باعث شود که کودک احساس ناامیدی و ضعف در مواجهه با مشکلات کند.
-                <div class="report-recommendation">
-                    <div class="report-recommendation-title">توصیه:</div>
-                    <div class="report-recommendation-text">
-                        ۱. به کودک کمک کنید تا موقعیت‌ها را با سوالات ساده تحلیل کند و گام‌ به گام به راه‌حل‌ها برسد.<br>
-                        ۲. بازی‌های فکری که نیاز به تحلیل دارند را معرفی کنید تا مهارت‌های حل مسئله به تدریج تقویت شوند.<br>
-                        ۳. به کودک فرصت بدهید تا در موقعیت‌های روزمره تصمیمات کوچکی بگیرد و نتایج آن را بررسی کند.<br>
-                        ۴. مهارت‌های تفکر انتقادی و تجزیه و تحلیل موقعیت‌ها را با آموزش بازی‌های پازل و معماهای مختلف تقویت کنید.<br>
-                        ۵. گفتگوهای انتقادی و تحلیلی با کودک داشته باشید تا دیدگاه‌های مختلف را بررسی و راه‌حل‌های متنوعی ارائه دهید.
-                    </div>
-                </div>
-            </li>
-            <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10102#;">
-                <strong>خوب:<br></strong>کودک به طور متوسط قادر است موقعیت‌ها را تحلیل کند، اما ممکن است نیاز به زمان و راهنمایی بیشتر برای یافتن بهترین راه‌حل داشته باشد. این می‌تواند نشان‌دهنده درک نسبی از مشکلات و تلاش برای پیدا کردن راه‌حل‌ها باشد.
-                <div class="report-recommendation">
-                    <div class="report-recommendation-title">توصیه:</div>
-                    <div class="report-recommendation-text">
-                        ۱. به کودک کمک کنید تا در موقعیت‌های پیچیده‌تر با راه‌حل‌های متفاوت آزمایش کند.<br>
-                        ۲. از مشاوره‌های ساده و سوالات هدایت‌کننده برای کمک به تحلیل مسائل استفاده کنید.<br>
-                        ۳. در کنار کودک حضور داشته باشید تا احساس امنیت و حمایت از تلاش‌های فکری او ایجاد شود.<br>
-                        ۴. در موقعیت‌های مختلف کودک را به تفکر درونی و ارزیابی مجدد مسائل تشویق کنید.<br>
-                        ۵. از منابع آموزشی تعاملی استفاده کنید که کودک را به بررسی و تحلیل مسائل در شرایط مختلف ترغیب کند.
-                    </div>
-                </div>
-            </li>
-            <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10102#;">
-                <strong>عالی:<br></strong>کودک در تحلیل موقعیت‌ها و پیدا کردن راه‌حل‌های مؤثر بسیار ماهر است. او به راحتی می‌تواند مشکلات پیچیده را تجزیه و تحلیل کرده و راه‌حل‌های مناسبی برای آن‌ها ارائه دهد.
-                <div class="report-recommendation">
-                    <div class="report-recommendation-title">توصیه:</div>
-                    <div class="report-recommendation-text">
-                        ۱. فرصت‌های چالش‌برانگیز بیشتری به کودک بدهید تا از توانایی‌های حل مسئله خود استفاده کند.<br>
-                        ۲. در کنار کودک باشید تا او را تشویق به اشتراک‌گذاری راه‌حل‌ها و روش‌های خود برای حل مسائل کند.<br>
-                        ۳. به کودک آموزش دهید تا مسائل را از جنبه‌های مختلف بررسی کرده و متنوع‌ترین راه‌حل‌ها را پیدا کند.<br>
-                        ۴. به کودک پیشنهاد دهید که به عنوان مشاور برای دوستان یا اعضای خانواده در حل مسائل کمک کند.<br>
-                        ۵. کودک را به تمرینات فکری پیشرفته‌تر تشویق کنید که شامل تحلیل‌های پیچیده‌تر و راه‌حل‌های خلاقانه باشد.
-                    </div>
-                </div>
-            </li>
-        </ul>
-        <div class="report-component-title">1. تحلیلگر<span class="report-badge report-score-data">#field_6894#<br></span></div>
-        <p class="report-paragraph">این عامل به توانایی کودک در تحلیل موقعیت‌ها و یافتن راه‌حل‌های مناسب برای مسائل مختلف اشاره دارد. کودکان با نمره بالاتر در این حوزه قادرند با تحلیل دقیق‌تر مشکلات و یافتن راه‌حل‌های مؤثرتر، موقعیت‌ها را به خوبی مدیریت کنند.</p>
-        <ul class="report-list">
-            <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10102#;">
-                <strong>متوسط:<br></strong>شما ممکن است در موقعیت‌های چالش‌برانگیز دچار سردرگمی شوید و نتوانید راه‌حل‌های مناسبی پیدا کنید. این ممکن است باعث شود که کودک احساس ناامیدی و ضعف در مواجهه با مشکلات کند.
-                <div class="report-recommendation">
-                    <div class="report-recommendation-title">توصیه:</div>
-                    <div class="report-recommendation-text">
-                        ۱. به کودک کمک کنید تا موقعیت‌ها را با سوالات ساده تحلیل کند و گام‌ به گام به راه‌حل‌ها برسد.<br>
-                        ۲. بازی‌های فکری که نیاز به تحلیل دارند را معرفی کنید تا مهارت‌های حل مسئله به تدریج تقویت شوند.<br>
-                        ۳. به کودک فرصت بدهید تا در موقعیت‌های روزمره تصمیمات کوچکی بگیرد و نتایج آن را بررسی کند.<br>
-                        ۴. مهارت‌های تفکر انتقادی و تجزیه و تحلیل موقعیت‌ها را با آموزش بازی‌های پازل و معماهای مختلف تقویت کنید.<br>
-                        ۵. گفتگوهای انتقادی و تحلیلی با کودک داشته باشید تا دیدگاه‌های مختلف را بررسی و راه‌حل‌های متنوعی ارائه دهید.
-                    </div>
-                </div>
-            </li>
-            <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10102#;">
-                <strong>خوب:<br></strong>کودک به طور متوسط قادر است موقعیت‌ها را تحلیل کند، اما ممکن است نیاز به زمان و راهنمایی بیشتر برای یافتن بهترین راه‌حل داشته باشد. این می‌تواند نشان‌دهنده درک نسبی از مشکلات و تلاش برای پیدا کردن راه‌حل‌ها باشد.
-                <div class="report-recommendation">
-                    <div class="report-recommendation-title">توصیه:</div>
-                    <div class="report-recommendation-text">
-                        ۱. به کودک کمک کنید تا در موقعیت‌های پیچیده‌تر با راه‌حل‌های متفاوت آزمایش کند.<br>
-                        ۲. از مشاوره‌های ساده و سوالات هدایت‌کننده برای کمک به تحلیل مسائل استفاده کنید.<br>
-                        ۳. در کنار کودک حضور داشته باشید تا احساس امنیت و حمایت از تلاش‌های فکری او ایجاد شود.<br>
-                        ۴. در موقعیت‌های مختلف کودک را به تفکر درونی و ارزیابی مجدد مسائل تشویق کنید.<br>
-                        ۵. از منابع آموزشی تعاملی استفاده کنید که کودک را به بررسی و تحلیل مسائل در شرایط مختلف ترغیب کند.
-                    </div>
-                </div>
-            </li>
-            <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10102#;">
-                <strong>عالی:<br></strong>کودک در تحلیل موقعیت‌ها و پیدا کردن راه‌حل‌های مؤثر بسیار ماهر است. او به راحتی می‌تواند مشکلات پیچیده را تجزیه و تحلیل کرده و راه‌حل‌های مناسبی برای آن‌ها ارائه دهد.
-                <div class="report-recommendation">
-                    <div class="report-recommendation-title">توصیه:</div>
-                    <div class="report-recommendation-text">
-                        ۱. فرصت‌های چالش‌برانگیز بیشتری به کودک بدهید تا از توانایی‌های حل مسئله خود استفاده کند.<br>
-                        ۲. در کنار کودک باشید تا او را تشویق به اشتراک‌گذاری راه‌حل‌ها و روش‌های خود برای حل مسائل کند.<br>
-                        ۳. به کودک آموزش دهید تا مسائل را از جنبه‌های مختلف بررسی کرده و متنوع‌ترین راه‌حل‌ها را پیدا کند.<br>
-                        ۴. به کودک پیشنهاد دهید که به عنوان مشاور برای دوستان یا اعضای خانواده در حل مسائل کمک کند.<br>
-                        ۵. کودک را به تمرینات فکری پیشرفته‌تر تشویق کنید که شامل تحلیل‌های پیچیده‌تر و راه‌حل‌های خلاقانه باشد.
-                    </div>
-                </div>
-            </li>
-        </ul>        <div class="report-component-title">1. تحلیلگر<span class="report-badge report-score-data">#field_6894#<br></span></div>
-        <p class="report-paragraph">این عامل به توانایی کودک در تحلیل موقعیت‌ها و یافتن راه‌حل‌های مناسب برای مسائل مختلف اشاره دارد. کودکان با نمره بالاتر در این حوزه قادرند با تحلیل دقیق‌تر مشکلات و یافتن راه‌حل‌های مؤثرتر، موقعیت‌ها را به خوبی مدیریت کنند.</p>
-        <ul class="report-list">
-            <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10102#;">
-                <strong>متوسط:<br></strong>شما ممکن است در موقعیت‌های چالش‌برانگیز دچار سردرگمی شوید و نتوانید راه‌حل‌های مناسبی پیدا کنید. این ممکن است باعث شود که کودک احساس ناامیدی و ضعف در مواجهه با مشکلات کند.
-                <div class="report-recommendation">
-                    <div class="report-recommendation-title">توصیه:</div>
-                    <div class="report-recommendation-text">
-                        ۱. به کودک کمک کنید تا موقعیت‌ها را با سوالات ساده تحلیل کند و گام‌ به گام به راه‌حل‌ها برسد.<br>
-                        ۲. بازی‌های فکری که نیاز به تحلیل دارند را معرفی کنید تا مهارت‌های حل مسئله به تدریج تقویت شوند.<br>
-                        ۳. به کودک فرصت بدهید تا در موقعیت‌های روزمره تصمیمات کوچکی بگیرد و نتایج آن را بررسی کند.<br>
-                        ۴. مهارت‌های تفکر انتقادی و تجزیه و تحلیل موقعیت‌ها را با آموزش بازی‌های پازل و معماهای مختلف تقویت کنید.<br>
-                        ۵. گفتگوهای انتقادی و تحلیلی با کودک داشته باشید تا دیدگاه‌های مختلف را بررسی و راه‌حل‌های متنوعی ارائه دهید.
-                    </div>
-                </div>
-            </li>
-            <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10102#;">
-                <strong>خوب:<br></strong>کودک به طور متوسط قادر است موقعیت‌ها را تحلیل کند، اما ممکن است نیاز به زمان و راهنمایی بیشتر برای یافتن بهترین راه‌حل داشته باشد. این می‌تواند نشان‌دهنده درک نسبی از مشکلات و تلاش برای پیدا کردن راه‌حل‌ها باشد.
-                <div class="report-recommendation">
-                    <div class="report-recommendation-title">توصیه:</div>
-                    <div class="report-recommendation-text">
-                        ۱. به کودک کمک کنید تا در موقعیت‌های پیچیده‌تر با راه‌حل‌های متفاوت آزمایش کند.<br>
-                        ۲. از مشاوره‌های ساده و سوالات هدایت‌کننده برای کمک به تحلیل مسائل استفاده کنید.<br>
-                        ۳. در کنار کودک حضور داشته باشید تا احساس امنیت و حمایت از تلاش‌های فکری او ایجاد شود.<br>
-                        ۴. در موقعیت‌های مختلف کودک را به تفکر درونی و ارزیابی مجدد مسائل تشویق کنید.<br>
-                        ۵. از منابع آموزشی تعاملی استفاده کنید که کودک را به بررسی و تحلیل مسائل در شرایط مختلف ترغیب کند.
-                    </div>
-                </div>
-            </li>
-            <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10102#;">
-                <strong>عالی:<br></strong>کودک در تحلیل موقعیت‌ها و پیدا کردن راه‌حل‌های مؤثر بسیار ماهر است. او به راحتی می‌تواند مشکلات پیچیده را تجزیه و تحلیل کرده و راه‌حل‌های مناسبی برای آن‌ها ارائه دهد.
-                <div class="report-recommendation">
-                    <div class="report-recommendation-title">توصیه:</div>
-                    <div class="report-recommendation-text">
-                        ۱. فرصت‌های چالش‌برانگیز بیشتری به کودک بدهید تا از توانایی‌های حل مسئله خود استفاده کند.<br>
-                        ۲. در کنار کودک باشید تا او را تشویق به اشتراک‌گذاری راه‌حل‌ها و روش‌های خود برای حل مسائل کند.<br>
-                        ۳. به کودک آموزش دهید تا مسائل را از جنبه‌های مختلف بررسی کرده و متنوع‌ترین راه‌حل‌ها را پیدا کند.<br>
-                        ۴. به کودک پیشنهاد دهید که به عنوان مشاور برای دوستان یا اعضای خانواده در حل مسائل کمک کند.<br>
-                        ۵. کودک را به تمرینات فکری پیشرفته‌تر تشویق کنید که شامل تحلیل‌های پیچیده‌تر و راه‌حل‌های خلاقانه باشد.
-                    </div>
-                </div>
-            </li>
-        </ul>        
-        <div class="report-summary-container">
-            <div class="report-summary-heading">جمع‌بندی</div>
-            <div class="report-summary-content">
-                <p>این گزارش ارزیابی مهارت‌های کودک شامل تحلیل موقعیت‌ها، استدلال منطقی، تفکر خلاق، خلاقیت مستقل، تمرکز و حافظه، یادگیری سریع، مدیریت وظایف و توانایی سازگاری است. این بررسی نقاط قوت و زمینه‌های نیازمند بهبود کودک را نشان داده و توصیه‌های کاربردی برای توسعه مهارت‌های او ارائه می‌دهد.</p>
-                
-                <p><b>نقاط قوت: </b>کودک در برخی از حوزه‌ها عملکرد برجسته‌ای دارد که نشان‌دهنده توانایی‌های قوی در حل مسائل، خلاقیت در تفکر و مدیریت چالش‌ها است. به عنوان مثال، در حوزه‌های "تحلیل موقعیت‌ها" و "تفکر خلاق"، کودک توانایی زیادی در ارائه ایده‌های نوآورانه و مدیریت موقعیت‌های پیچیده نشان داده است که می‌تواند به پیشرفت تحصیلی و رشد فردی او کمک کند.</p>
-                
-                <p><b>حوزه‌های نیازمند بهبود:</b> در برخی از بخش‌ها نیاز به تمرکز بیشتر وجود دارد. به عنوان مثال، در حوزه‌های "تمرکز و حافظه" و "مدیریت وظایف"، کودک می‌تواند با تمرین‌های منظم و فعالیت‌های هدفمند مانند بازی‌های فکری و پروژه‌های گروهی مهارت‌های خود را بهبود بخشد. همچنین، افزایش انعطاف‌پذیری و تمرین مهارت‌های برنامه‌ریزی می‌تواند تأثیر مثبتی بر عملکرد او داشته باشد.</p>
-                
-                <p><b>گام‌های بعدی:</b> برای تقویت مهارت‌های کودک، پیشنهاد می‌شود که به توصیه‌های ارائه‌شده در هر بخش توجه ویژه‌ای شود و در صورت نیاز از خدمات مشاوره تخصصی استفاده گردد. همچنین، ارزیابی منظم و پیگیری مداوم می‌تواند به توسعه پایدار و موفقیت کودک در تمامی ابعاد زندگی او کمک کند.</p>
-            </div>
         </div>
+        <div class="report-section-title">نتیجه</div>
+        <div class="report-score-container">
+            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10147#;"><strong>استقلال:</strong> <span class="report-badge">#field_564#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10147#;"><strong>استقلال:</strong> <span class="report-badge">#field_564#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10147#;"><strong>استقلال:</strong> <span class="report-badge">#field_564#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10148#;"><strong>انضباط:</strong> <span class="report-badge">#field_565#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10148#;"><strong>انضباط:</strong> <span class="report-badge">#field_565#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10148#;"><strong>انضباط:</strong> <span class="report-badge">#field_565#</span></div>
+
+        </div>
+        <div class="report-section-title">تفسیر</div>
+        <p class="report-paragraph">
+            این بخش به تحلیل و تفسیر نتایج ارزیابی روان‌شناختی فرد می‌پردازد. تحلیل روان‌شناختی شامل بررسی ویژگی‌های شخصیتی مختلف است. هدف از این تحلیل شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد. نتایج این تحلیل می‌تواند به فرد کمک کند تا با شناخت بهتر از خود، برنامه‌های توسعه فردی و حرفه‌ای موثرتری را دنبال کند.
+        </p>
+
+
+
+        
+
+
+
+                                              
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+            <div class="report-section-title">جمع‌بندی</div>
+            <div class="report-paragraph">
+            <p>این گزارش ارزیابی مهارت‌های شما شامل تحلیل تعهد، نیرومندی، ظرفیت تحلیلی، بیتابی روانی، استقلال و سازش است. این بررسی نقاط قوت و زمینه‌های نیازمند بهبود شما را نشان داده و توصیه‌های کاربردی برای توسعه مهارت‌های شما ارائه می‌دهد.</p>
+            
+            <p><b>نقاط قوت: </b>شما در برخی از حوزه‌ها عملکرد برجسته‌ای دارید که نشان‌دهنده توانایی‌های قوی در مدیریت مسئولیت‌ها، انرژی بالا، تحلیل مسائل پیچیده، آرامش روانی، خودکفایی و تطبیق‌پذیری است. به عنوان مثال، در حوزه‌های "تعهد" و "ظرفیت تحلیلی"، شما توانایی زیادی در مدیریت وظایف و تحلیل مسائل نشان داده‌اید که می‌تواند به پیشرفت حرفه‌ای و رشد فردی شما کمک کند.</p>
+            
+            <p><b>حوزه‌های نیازمند بهبود:</b> در برخی از بخش‌ها نیاز به تمرکز بیشتر وجود دارد. به عنوان مثال، در حوزه‌های "بیتابی روانی" و "استقلال"، شما می‌توانید با تمرین‌های منظم و فعالیت‌های هدفمند مانند تکنیک‌های مدیریت استرس و برنامه‌ریزی منظم مهارت‌های خود را بهبود بخشید. همچنین، افزایش تعاملات اجتماعی و تمرین مهارت‌های تصمیم‌گیری مستقل می‌تواند تأثیر مثبتی بر عملکرد شما داشته باشد.</p>
+            
+            <p><b>گام‌های بعدی:</b> برای تقویت مهارت‌های خود، پیشنهاد می‌شود که به توصیه‌های ارائه‌شده در هر بخش توجه ویژه‌ای کنید و در صورت نیاز از خدمات مشاوره تخصصی استفاده نمایید. همچنین، ارزیابی منظم و پیگیری مداوم می‌تواند به توسعه پایدار و موفقیت شما در تمامی ابعاد زندگی کمک کند.</p>
+            </div>
         
         <footer class="report-footer-custom">
             <div class="report-footer-content">
@@ -443,12 +364,6 @@
                 <li><a href="https://www.eot.ir/contact" class="report-footer-menu-link">تماس با ما</a></li>
                 <li><a href="https://www.eot.ir/about" class="report-footer-menu-link">درباره ما</a></li>
             </ul>
-            <div class="report-footer-social">
-                <a href="#" class="report-footer-social-link">اینستاگرام</a>
-                <a href="#" class="report-footer-social-link">لینکدین</a>
-                <a href="#" class="report-footer-social-link">تلگرام</a>
-            </div>
             <address class="report-footer-address">تهران، سهروردی، خرمشهر، عربعلی، کوچه ششم، شماره ۴۴</address>
         </footer>
     </div>
-</div>

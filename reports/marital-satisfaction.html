@@ -1,0 +1,595 @@
+<div class="ravesh-editor-html" style="direction:rtl">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>گزارش تحلیل فهرست تشخیص تعاملی شخصیت</title>
+    <style>
+        @font-face {
+            font-family: 'IRANSansWeb';
+            src: url('fonts/IRANSansWeb.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'BTitrBold';
+            src: url('fonts/BTitrBold.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'BKoodakBold';
+            src: url('fonts/BKoodakBold.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'BHoma';
+            src: url('fonts/BHoma.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'BYekan';
+            src: url('fonts/BYekan.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'Tahoma';
+            src: url('fonts/Tahoma.woff2') format('woff2');
+        }
+        .report-container {
+            font-family: 'BYekan', sans-serif;
+            direction: rtl;
+            line-height: 1.8;
+            background-color: #F5F5F5;
+            color: #333333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            max-width: 800px;
+            width: 100%;
+            margin: auto;
+            background-color: #F5F5F5;
+            padding: 40px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+        }
+        .report-header-custom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #0DA3B8;
+            border-radius: 20px 20px 0 0;
+        }
+        .report-header-inner {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .report-header-img {
+            width: 40px;
+            height: 40px;
+        }
+        .report-header-title {
+            margin: 0;
+            font-size: 1.8em;
+            color: #ffffff;
+            font-family: 'IRANSansWeb', sans-serif;
+            font-weight: normal;
+        }
+        .report-header-date {
+            color: #ffffff;
+            font-size: 1em;
+        }
+        .report-title {
+            text-align: center;
+            color: #0DA3B8;
+            font-family: 'IRANSansWeb', sans-serif;
+            font-weight: bold;
+            font-size: 32px;
+            margin-bottom: 25px;
+        }
+        .report-info-container, .report-score-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .report-info-item, .report-score-item {
+            background-color: #F8F9FA;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            font-size: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'BYekan', sans-serif;
+            flex: 1;
+            min-width: 300px;
+            margin-right: 10px; /* Add space between columns */
+        }
+        .report-info-item strong, .report-score-item strong {
+            color: #0DA3B8;
+            font-family: 'IRANSansWeb', sans-serif;
+        }
+        .report-info-data, .report-score-data {
+            font-family: 'IRANSansWeb', sans-serif;
+        }
+        .report-section-title {
+            font-size: 22px;
+            color: #CC3333;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #CC3333;
+            font-family: 'IRANSansWeb', sans-serif;
+            font-weight: bold;
+            text-align: center;
+        }
+        .report-component-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 22px;
+            color: #DBCF93;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #DBCF93;
+            font-family: 'IRANSansWeb', sans-serif;
+        }
+        .report-paragraph {
+            background-color: #E0F7FA;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .report-list {
+            list-style-type: none;
+            padding: 0;
+            font-size: 16px;
+        }
+        .report-list-item {
+            background: #F8F9FA;
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+        }
+        .report-list-item strong {
+            font-size: 18px;
+            color: #0DA3B8;
+            margin-bottom: 5px;
+        }
+        .report-badge {
+            display: inline-block;
+            padding: 8px 15px;
+            font-size: 14px;
+            color: #FFFFFF;
+            background-color: #4A9B8C;
+            border-radius: 10px;
+        }
+        .report-recommendation {
+            background-color: #EAEAEA;
+            padding: 20px;
+            margin-top: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .report-recommendation-title {
+            font-weight: bold;
+            color: #CC3333;
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
+        .report-recommendation-text {
+            margin-bottom: 5px;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+        .report-footer-custom {
+            background-color: #F5F5F5;
+            color: #333333;
+            padding: 20px;
+            text-align: center;
+            font-family: 'IRANSansWeb', sans-serif;
+            border-top: 1px solid #E0E0E0;
+            font-size: 16px; /* Increased font size */
+        }
+        .report-footer-content {
+            margin-bottom: 20px;
+        }
+        .report-footer-img {
+            width: 80px;
+            height: 80px;
+        }
+        .report-footer-paragraph {
+            margin: 5px 0;
+        }
+        .report-footer-paragraph.yellow-text {
+            color: #DBCF93;
+        }
+        .report-footer-menu {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 10px 0;
+        }
+        .report-footer-menu-link {
+            color: #0DA3B8;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .report-footer-menu-link:hover {
+            color: #007B8A;
+        }
+        .report-footer-address {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .report-summary-container {
+            max-width: 800px;
+            margin: auto;
+            background-color: #FFFFFF;
+            padding: 40px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+            border-radius: 10px;
+        }
+        .report-summary-heading {
+            text-align: center;
+            color: #0DA3B8;
+            font-family: 'IRANSansWeb', sans-serif;
+            font-weight: bold;
+            font-size: 32px;
+            margin-bottom: 25px;
+        }
+        .report-summary-content {
+            color: #333333;
+            font-family: 'IRANSansWeb', sans-serif;
+            line-height: 1.8;
+        }
+        .report-conditional-display {
+            display: block;
+        }
+        .report-conditional-display[style*="--score-rate1: 1"] {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #FF9999; /* Moderate */
+        }
+        .report-conditional-display[style*="--score-rate2: 2"] {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #FFD580; /* Good */
+        }
+        .report-conditional-display[style*="--score-rate3: 3"] {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #99FF99; /* Excellent */
+        }
+    </style>
+    <div class="report-report-container">
+        <header class="report-header-custom">
+            <div class="report-header-inner">
+                <img src="../panel/file?type=picture&amp;v=3&amp;mode=filemanager&amp;file=%7eDB3gfQUls%2bt2iiMYKbsRAxrtFhcHKUIUUo7pPtO17bHCzNxwU4zNh3UVor6QMtl7Y6EWX8dD0PSvzZOYkRrXlfejPn4lNTj6" class="report-header-img" alt="لوگو">
+                <h1 class="report-header-title">گزارش تحلیل فهرست تشخیص تعاملی رضایت زناشویی</h1>
+            </div>
+            <div class="report-header-date">تاریخ اجرا: #primary_createDate#</div>
+        </header>
+        
+        <div class="report-section-title">فهرست تشخیص تعاملی رضایت زناشویی</div>
+        <p class="report-paragraph">
+            این آزمون به منظور ارزیابی رضایت زناشویی و تحلیل تعاملات بین همسران طراحی شده است. این ارزیابی شامل پنج عامل اصلی است: ارزندگی، پیمانداری، همراهی، همکاری و پشتیبانی. هر یک از این عوامل به بررسی جنبه‌های مختلف روابط زناشویی پرداخته و نقاط قوت و زمینه‌های نیازمند بهبود را شناسایی می‌کند.
+        </p>
+        <p class="report-paragraph">
+            عامل ارزندگی به توانایی همسر در گذشت از لغزش‌ها، توجه به خواسته‌ها و ارج نهادن به عقاید و نظرات اشاره دارد. پیمانداری به سطح صداقت، اعتماد و وفاداری همسر می‌پردازد. همراهی به توانایی همسر در ایجاد آرامش خاطر و اعتماد در زندگی مشترک اشاره دارد. همکاری به پذیرش مسؤولیت‌ها و اهمیت دادن به رابطهٔ زناشویی مربوط می‌شود. پشتیبانی نیز به توانایی همسر در حمایت عاطفی و وقت‌گذاری برای گفت‌وگو اشاره دارد.
+        </p>
+        <p class="report-paragraph">
+            توصیه‌های ارائه‌شده در این گزارش به منظور بهبود مهارت‌های زناشویی و تقویت روابط بین همسران است. این توصیه‌ها شامل تکنیک‌های مدیریت استرس، تقویت مهارت‌های ارتباطی و شنیداری، برنامه‌ریزی برای وقت‌گذاری منظم و ایجاد محیطی امن و حمایت‌کننده برای بیان احساسات می‌باشد. با پیگیری این توصیه‌ها، همسران می‌توانند روابط خود را بهبود بخشیده و به رضایت زناشویی بیشتری دست یابند.
+        </p>
+               
+        <div class="report-section-title">اطلاعات فردی</div>
+        <div class="report-info-container">
+            <div class="report-info-item"><strong>نام و نام خانوادگی:</strong> <span class="report-info-data">#field_458_html#</span></div>
+            <div class="report-info-item"><strong>موبایل:</strong> <span class="report-info-data">#field_459_html#</span></div>
+            <div class="report-info-item"><strong>ایمیل:</strong> <span class="report-info-data">#field_460_html#</span></div>
+
+        </div>
+        <div class="report-section-title">نتیجه</div>
+        <div class="report-score-container">
+            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10141#;"><strong>ارزندگی:</strong> <span class="report-badge">#field_734#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10141#;"><strong>ارزندگی:</strong> <span class="report-badge">#field_734#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10141#;"><strong>ارزندگی:</strong> <span class="report-badge">#field_734#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10142#;"><strong>پیمانداری:</strong> <span class="report-badge">#field_735#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10142#;"><strong>پیمانداری:</strong> <span class="report-badge">#field_735#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10142#;"><strong>پیمانداری:</strong> <span class="report-badge">#field_735#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10143#;"><strong>همراهی:</strong> <span class="report-badge">#field_736#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10143#;"><strong>همراهی:</strong> <span class="report-badge">#field_736#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10143#;"><strong>همراهی:</strong> <span class="report-badge">#field_736#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10144#;"><strong>همکاری:</strong> <span class="report-badge">#field_737#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10144#;"><strong>همکاری:</strong> <span class="report-badge">#field_737#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10144#;"><strong>همکاری:</strong> <span class="report-badge">#field_737#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10145#;"><strong>پشتیبانی:</strong> <span class="report-badge">#field_738#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10145#;"><strong>پشتیبانی:</strong> <span class="report-badge">#field_738#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10145#;"><strong>پشتیبانی:</strong> <span class="report-badge">#field_738#</span></div>
+
+        </div>
+        <div class="report-section-title">تفسیر</div>
+        <p class="report-paragraph">
+            این بخش به تحلیل و تفسیر نتایج ارزیابی روان‌شناختی فرد می‌پردازد. تحلیل روان‌شناختی شامل بررسی ویژگی‌های شخصیتی مختلف است. هدف از این تحلیل شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد. نتایج این تحلیل می‌تواند به فرد کمک کند تا با شناخت بهتر از خود، برنامه‌های توسعه فردی و حرفه‌ای موثرتری را دنبال کند.
+        </p>
+        <div class="report-component-title">پشتیبانی<span class="report-badge report-score-data">#field_738#<br></span></div>
+        <p class="report-paragraph">
+            این عامل به توانایی همسر در حمایت و پشتیبانی از شریک زندگی خود در موقعیت‌های مختلف اشاره دارد. افرادی با نمره بالاتر در این حوزه نشان‌دهنده توانایی بالای حمایت عاطفی، وقت‌گذاری برای گفت‌وگو، تشویق پیشرفت‌ها و پذیرش شریک زندگی به همان شکلی که هست، می‌باشند.
+        </p>
+        <ul class="report-list">
+            <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10145#;">
+            <strong>«متوسط»<br></strong>
+            همسر شما ممکن است در برخی مواقع در ارائه حمایت عاطفی و وقت‌گذاری برای گفت‌وگو با چالش‌هایی مواجه شود. این ممکن است باعث شود که در برخی موارد احساس کنید که نیاز به حمایت بیشتری دارید.
+            <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+            ۱. تشویق به برقراری ارتباطات باز و صادقانه برای بهبود تعاملات.<br>
+            ۲. برنامه‌ریزی برای وقت‌گذاری منظم جهت گفت‌وگو و تبادل نظر.<br>
+            ۳. تشویق به شناخت و پذیرش احساسات و نیازهای یکدیگر.<br>
+            ۴. ایجاد محیطی امن و حمایت‌کننده برای بیان احساسات.<br>
+            ۵. تمرین تکنیک‌های مدیریت استرس و افزایش خودآگاهی.
+            </div>
+            </div>
+            </li>
+            <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10145#;">
+            <strong>«خوب»<br></strong>
+            همسر شما به طور متوسط قادر به ارائه حمایت عاطفی و وقت‌گذاری برای گفت‌وگو است، اما ممکن است در مواقع فشار نیاز به تقویت این مهارت‌ها داشته باشد. این نشان‌دهنده تعهد قابل قبول و تلاش برای بهبود است.
+            <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+            ۱. تقویت مهارت‌های ارتباطی و شنیداری برای بهبود تعاملات.<br>
+            ۲. تعیین اهداف مشترک برای تقویت حمایت و پشتیبانی.<br>
+            ۳. استفاده از روش‌های انگیزشی برای تشویق پیشرفت‌ها.<br>
+            ۴. تمرین تکنیک‌های مدیریت استرس و افزایش خودآگاهی.<br>
+            ۵. ایجاد فرصت‌های بیشتر برای وقت‌گذاری و گفت‌وگو.
+            </div>
+            </div>
+            </li>
+            <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10145#;">
+            <strong>«عالی»<br></strong>
+            همسر شما در ارائه حمایت عاطفی و وقت‌گذاری برای گفت‌وگو بسیار ماهر است. توانایی بالای او در حمایت، تشویق پیشرفت‌ها و پذیرش شما به همان شکلی که هستید، باعث شده تا در زندگی مشترک به بهترین نحو عمل کند.
+            <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+            ۱. استفاده از توانایی‌های بالا برای تقویت روابط و حمایت بیشتر.<br>
+            ۲. به عنوان نمونه‌ای برای دیگران در زمینه حمایت و پشتیبانی عمل کنید.<br>
+            ۳. مهارت‌های خود را در زمینه‌های پیچیده‌تر و پیشرفته‌تر توسعه دهید.<br>
+            ۴. به دنبال چالش‌های جدید باشید تا توانایی‌های خود را به کار ببرید.<br>
+            ۵. به اشتراک‌گذاری تجربیات و راهکارهای خود در حمایت و پشتیبانی با دیگران بپردازید.
+            </div>
+            </div>
+            </li>
+        </ul>
+        <div class="report-component-title">پیمانداری<span class="report-badge report-score-data">#field_735#<br></span></div>
+        <p class="report-paragraph">
+            پیمانداری به سطح صداقت، اعتماد و وفاداری همسر اشاره دارد. افرادی با نمره بالاتر در این حوزه نشان‌دهنده صداقت بالا، قابلیت اعتماد و وفاداری بیشتر هستند.
+        </p>
+        <ul class="report-list">
+            <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10142#;">
+            <strong>«متوسط»<br></strong>
+            همسر شما در برخی مواقع صداقت و وفاداری خود را نشان می‌دهد، اما ممکن است در برخی موارد نیاز به تقویت این ویژگی‌ها داشته باشد.
+            <div class="report-recommendation">
+                <div class="report-recommendation-title">توصیه:</div>
+                <div class="report-recommendation-text">
+                ۱. تشویق به برقراری ارتباطات باز و صادقانه برای بهبود اعتماد.<br>
+                ۲. برنامه‌ریزی برای وقت‌گذاری منظم جهت گفت‌وگو و تبادل نظر.<br>
+                ۳. تشویق به شناخت و پذیرش احساسات و نیازهای یکدیگر.<br>
+                ۴. ایجاد محیطی امن و حمایت‌کننده برای بیان احساسات.<br>
+                ۵. تمرین تکنیک‌های مدیریت استرس و افزایش خودآگاهی.
+                </div>
+            </div>
+            </li>
+            <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10142#;">
+            <strong>«خوب»<br></strong>
+            همسر شما به طور متوسط صداقت و وفاداری خود را نشان می‌دهد، اما ممکن است در مواقع فشار نیاز به تقویت این مهارت‌ها داشته باشد. این نشان‌دهنده تعهد قابل قبول و تلاش برای بهبود است.
+            <div class="report-recommendation">
+                <div class="report-recommendation-title">توصیه:</div>
+                <div class="report-recommendation-text">
+                ۱. تقویت مهارت‌های ارتباطی و شنیداری برای بهبود تعاملات.<br>
+                ۲. تعیین اهداف مشترک برای تقویت اعتماد و وفاداری.<br>
+                ۳. استفاده از روش‌های انگیزشی برای تشویق پیشرفت‌ها.<br>
+                ۴. تمرین تکنیک‌های مدیریت استرس و افزایش خودآگاهی.<br>
+                ۵. ایجاد فرصت‌های بیشتر برای وقت‌گذاری و گفت‌وگو.
+                </div>
+            </div>
+            </li>
+            <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10142#;">
+            <strong>«عالی»<br></strong>
+            همسر شما در صداقت و وفاداری بسیار ماهر است. توانایی بالای او در ایجاد اعتماد و وفاداری باعث شده تا در زندگی مشترک به بهترین نحو عمل کند.
+            <div class="report-recommendation">
+                <div class="report-recommendation-title">توصیه:</div>
+                <div class="report-recommendation-text">
+                ۱. استفاده از توانایی‌های بالا برای تقویت روابط و اعتماد بیشتر.<br>
+                ۲. به عنوان نمونه‌ای برای دیگران در زمینه صداقت و وفاداری عمل کنید.<br>
+                ۳. مهارت‌های خود را در زمینه‌های پیچیده‌تر و پیشرفته‌تر توسعه دهید.<br>
+                ۴. به دنبال چالش‌های جدید باشید تا توانایی‌های خود را به کار ببرید.<br>
+                ۵. به اشتراک‌گذاری تجربیات و راهکارهای خود در ایجاد اعتماد و وفاداری با دیگران بپردازید.
+                </div>
+            </div>
+            </li>
+        </ul>
+        <div class="report-component-title">همراهی<span class="report-badge report-score-data">#field_736#<br></span></div>
+        <p class="report-paragraph">
+            همراهی به توانایی همسر در ایجاد آرامش خاطر، اعتماد و همراهی در زندگی مشترک اشاره دارد. افرادی با نمره بالاتر در این حوزه نشان‌دهنده توانایی بالای ایجاد اعتماد، آرامش و همراهی در زندگی مشترک هستند.
+        </p>
+        <ul class="report-list">
+            <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10143#;">
+                <strong>«متوسط»<br></strong>
+                همسر شما ممکن است در برخی مواقع در ایجاد آرامش خاطر و اعتماد با چالش‌هایی مواجه شود. این ممکن است باعث شود که در برخی موارد احساس کنید که نیاز به همراهی بیشتری دارید.
+                <div class="report-recommendation">
+                    <div class="report-recommendation-title">توصیه:</div>
+                    <div class="report-recommendation-text">
+                        ۱. تشویق به برقراری ارتباطات باز و صادقانه برای بهبود تعاملات.<br>
+                        ۲. برنامه‌ریزی برای وقت‌گذاری منظم جهت گفت‌وگو و تبادل نظر.<br>
+                        ۳. تشویق به شناخت و پذیرش احساسات و نیازهای یکدیگر.<br>
+                        ۴. ایجاد محیطی امن و حمایت‌کننده برای بیان احساسات.<br>
+                        ۵. تمرین تکنیک‌های مدیریت استرس و افزایش خودآگاهی.
+                    </div>
+                </div>
+            </li>
+            <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10143#;">
+                <strong>«خوب»<br></strong>
+                همسر شما به طور متوسط قادر به ایجاد آرامش خاطر و اعتماد است، اما ممکن است در مواقع فشار نیاز به تقویت این مهارت‌ها داشته باشد. این نشان‌دهنده تعهد قابل قبول و تلاش برای بهبود است.
+                <div class="report-recommendation">
+                    <div class="report-recommendation-title">توصیه:</div>
+                    <div class="report-recommendation-text">
+                        ۱. تقویت مهارت‌های ارتباطی و شنیداری برای بهبود تعاملات.<br>
+                        ۲. تعیین اهداف مشترک برای تقویت اعتماد و همراهی.<br>
+                        ۳. استفاده از روش‌های انگیزشی برای تشویق پیشرفت‌ها.<br>
+                        ۴. تمرین تکنیک‌های مدیریت استرس و افزایش خودآگاهی.<br>
+                        ۵. ایجاد فرصت‌های بیشتر برای وقت‌گذاری و گفت‌وگو.
+                    </div>
+                </div>
+            </li>
+            <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10143#;">
+                <strong>«عالی»<br></strong>
+                همسر شما در ایجاد آرامش خاطر، اعتماد و همراهی بسیار ماهر است. توانایی بالای او در ایجاد اعتماد و همراهی باعث شده تا در زندگی مشترک به بهترین نحو عمل کند.
+                <div class="report-recommendation">
+                    <div class="report-recommendation-title">توصیه:</div>
+                    <div class="report-recommendation-text">
+                        ۱. استفاده از توانایی‌های بالا برای تقویت روابط و همراهی بیشتر.<br>
+                        ۲. به عنوان نمونه‌ای برای دیگران در زمینه ایجاد آرامش و اعتماد عمل کنید.<br>
+                        ۳. مهارت‌های خود را در زمینه‌های پیچیده‌تر و پیشرفته‌تر توسعه دهید.<br>
+                        ۴. به دنبال چالش‌های جدید باشید تا توانایی‌های خود را به کار ببرید.<br>
+                        ۵. به اشتراک‌گذاری تجربیات و راهکارهای خود در ایجاد آرامش و اعتماد با دیگران بپردازید.
+                    </div>
+                </div>
+            </li>
+        </ul>
+<div class="report-component-title">همکاری<span class="report-badge report-score-data">#field_737#<br></span></div>
+<p class="report-paragraph">
+    همکاری به توانایی همسر در پذیرش مسؤولیت‌ها، ارزش‌گذاری به شریک زندگی و اهمیت دادن به رابطهٔ زناشویی اشاره دارد. افرادی با نمره بالاتر در این حوزه نشان‌دهنده توانایی بالای همکاری و تعهد به رابطه هستند.
+</p>
+<ul class="report-list">
+    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10144#;">
+        <strong>«عالی»<br></strong>
+        همسر شما دارای سطح بالایی از همکاری است. او مسؤولیت‌پذیر است، برای شما ارزش قائل است و به رابطهٔ زناشویی اهمیت می‌دهد.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. حفظ و تقویت عادات مثبت همکاری.<br>
+                ۲. ادامه فعالیت‌های مشترک که به تقویت رابطه کمک می‌کنند.<br>
+                ۳. به اشتراک‌گذاری تجربیات مثبت خود با دیگران.<br>
+                ۴. پیگیری فرصت‌های جدید برای توسعه رابطه.<br>
+                ۵. مراقبت از سلامت رابطه از طریق فعالیت‌های تفریحی و وقت‌گذاری کافی.
+            </div>
+        </div>
+    </li>
+    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10144#;">
+        <strong>«خوب»<br></strong>
+        همسر شما دارای سطح مناسبی از همکاری است و معمولاً می‌توانید روی همکاری او حساب کنید، اما در برخی مواقع ممکن است نیاز به تقویت مهارت‌های همکاری داشته باشد.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. یادگیری تکنیک‌های بهبود همکاری و تعامل.<br>
+                ۲. افزایش خودآگاهی از طریق بازخوردهای سازنده.<br>
+                ۳. شرکت در فعالیت‌های مشترک برای تقویت تعاملات.<br>
+                ۴. تمرین تعادل بین فعالیت‌های فردی و مشترک.<br>
+                ۵. مشاوره با متخصصین در صورت نیاز.
+            </div>
+        </div>
+    </li>
+    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10144#;">
+        <strong>«متوسط»<br></strong>
+        همسر شما ممکن است در پذیرش مسؤولیت‌ها و همکاری با چالش‌هایی مواجه شود. این ممکن است باعث شود که در برخی موارد احساس کنید که نیاز به همکاری بیشتری دارید.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. یادگیری تکنیک‌های بهبود همکاری و تعامل.<br>
+                ۲. تمرین خودآگاهی برای شناسایی و بهبود نقاط ضعف.<br>
+                ۳. ایجاد برنامه‌های روزانه منظم برای تقویت همکاری.<br>
+                ۴. مشارکت در فعالیت‌های مشترک برای تقویت رابطه.<br>
+                ۵. مشاوره با متخصصین برای حمایت بیشتر.
+            </div>
+        </div>
+    </li>
+</ul>
+<div class="report-component-title">ارزندگی<span class="report-badge report-score-data">#field_734#<br></span></div>
+<p class="report-paragraph">
+    ارزندگی به توانایی همسر در گذشت از لغزش‌ها، توجه به خواسته‌ها، ارج نهادن به عقاید و نظرات، نادیده گرفتن خطاها، خوش خلقی، بردباری در روابط، تغییر رفتارهای منفی و برطرف کردن ناآرامی‌ها اشاره دارد. افرادی با نمره بالاتر در این حوزه نشان‌دهنده توانایی بالای همسر در این موارد هستند.
+</p>
+<ul class="report-list">
+    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10141#;">
+        <strong>«متوسط»<br></strong>
+        همسر شما ممکن است در برخی مواقع در گذشت از لغزش‌ها و توجه به خواسته‌ها با چالش‌هایی مواجه شود. این ممکن است باعث شود که در برخی موارد احساس کنید که نیاز به توجه بیشتری دارید.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. تشویق به برقراری ارتباطات باز و صادقانه برای بهبود تعاملات.<br>
+                ۲. برنامه‌ریزی برای وقت‌گذاری منظم جهت گفت‌وگو و تبادل نظر.<br>
+                ۳. تشویق به شناخت و پذیرش احساسات و نیازهای یکدیگر.<br>
+                ۴. ایجاد محیطی امن و حمایت‌کننده برای بیان احساسات.<br>
+                ۵. تمرین تکنیک‌های مدیریت استرس و افزایش خودآگاهی.
+            </div>
+        </div>
+    </li>
+    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10141#;">
+        <strong>«خوب»<br></strong>
+        همسر شما به طور متوسط قادر به گذشت از لغزش‌ها و توجه به خواسته‌ها است، اما ممکن است در مواقع فشار نیاز به تقویت این مهارت‌ها داشته باشد. این نشان‌دهنده تعهد قابل قبول و تلاش برای بهبود است.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. تقویت مهارت‌های ارتباطی و شنیداری برای بهبود تعاملات.<br>
+                ۲. تعیین اهداف مشترک برای تقویت توجه و گذشت.<br>
+                ۳. استفاده از روش‌های انگیزشی برای تشویق پیشرفت‌ها.<br>
+                ۴. تمرین تکنیک‌های مدیریت استرس و افزایش خودآگاهی.<br>
+                ۵. ایجاد فرصت‌های بیشتر برای وقت‌گذاری و گفت‌وگو.
+            </div>
+        </div>
+    </li>
+    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10141#;">
+        <strong>«عالی»<br></strong>
+        همسر شما در گذشت از لغزش‌ها، توجه به خواسته‌ها و ارج نهادن به عقاید و نظرات بسیار ماهر است. توانایی بالای او در این موارد باعث شده تا در زندگی مشترک به بهترین نحو عمل کند.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. استفاده از توانایی‌های بالا برای تقویت روابط و توجه بیشتر.<br>
+                ۲. به عنوان نمونه‌ای برای دیگران در زمینه گذشت و توجه عمل کنید.<br>
+                ۳. مهارت‌های خود را در زمینه‌های پیچیده‌تر و پیشرفته‌تر توسعه دهید.<br>
+                ۴. به دنبال چالش‌های جدید باشید تا توانایی‌های خود را به کار ببرید.<br>
+                ۵. به اشتراک‌گذاری تجربیات و راهکارهای خود در گذشت و توجه با دیگران بپردازید.
+            </div>
+        </div>
+    </li>
+</ul>    
+            <div class="report-section-title">جمع‌بندی</div>
+            <div class="report-paragraph">
+            <p>این گزارش ارزیابی مهارت‌های شما شامل تحلیل ارزندگی، پیمانداری، همراهی، همکاری و پشتیبانی است. این بررسی نقاط قوت و زمینه‌های نیازمند بهبود شما را نشان داده و توصیه‌های کاربردی برای توسعه مهارت‌های شما ارائه می‌دهد.</p>
+            
+            <p><b>نقاط قوت: </b>شما در برخی از حوزه‌ها عملکرد برجسته‌ای دارید که نشان‌دهنده توانایی‌های قوی در حمایت عاطفی، صداقت، ایجاد آرامش، پذیرش مسؤولیت‌ها و گذشت از لغزش‌ها است. به عنوان مثال، در حوزه‌های "پشتیبانی" و "پیمانداری"، شما توانایی زیادی در حمایت عاطفی و ایجاد اعتماد نشان داده‌اید که می‌تواند به پیشرفت حرفه‌ای و رشد فردی شما کمک کند.</p>
+            
+            <p><b>حوزه‌های نیازمند بهبود:</b> در برخی از بخش‌ها نیاز به تمرکز بیشتر وجود دارد. به عنوان مثال، در حوزه‌های "همراهی" و "همکاری"، شما می‌توانید با تمرین‌های منظم و فعالیت‌های هدفمند مانند تکنیک‌های مدیریت استرس و برنامه‌ریزی منظم مهارت‌های خود را بهبود بخشید. همچنین، افزایش تعاملات اجتماعی و تمرین مهارت‌های ارتباطی می‌تواند تأثیر مثبتی بر عملکرد شما داشته باشد.</p>
+            
+            <p><b>گام‌های بعدی:</b> برای تقویت مهارت‌های خود، پیشنهاد می‌شود که به توصیه‌های ارائه‌شده در هر بخش توجه ویژه‌ای کنید و در صورت نیاز از خدمات مشاوره تخصصی استفاده نمایید. همچنین، ارزیابی منظم و پیگیری مداوم می‌تواند به توسعه پایدار و موفقیت شما در تمامی ابعاد زندگی کمک کند.</p>
+            </div>
+        
+        <footer class="report-footer-custom">
+            <div class="report-footer-content">
+                <img src="../panel/file?type=picture&amp;v=3&amp;mode=filemanager&amp;file=%7eDB3gfQUls%2bt2iiMYKbsRAxrtFhcHKUIUUo7pPtO17bHCzNxwU4zNh3UVor6QMtl7Y6EWX8dD0PSvzZOYkRrXlfejPn4lNTj6" class="report-footer-img" alt="لوگو">
+            </div>
+            <p class="report-footer-paragraph">مؤسّسه تعاملی هیجان اندیشه | تماس: 02188174100 | ایمیل: info@eot.ir</p>
+            <p class="report-footer-paragraph yellow-text">© ۱۴۰۳ تمامی حقوق محفوظ است.</p>
+            <ul class="report-footer-menu">
+                <li><a href="https://www.eot.ir/" class="report-footer-menu-link">صفحه اصلی</a></li>
+                <li><a href="https://www.eot.ir/contact" class="report-footer-menu-link">تماس با ما</a></li>
+                <li><a href="https://www.eot.ir/about" class="report-footer-menu-link">درباره ما</a></li>
+            </ul>
+            <address class="report-footer-address">تهران، سهروردی، خرمشهر، عربعلی، کوچه ششم، شماره ۴۴</address>
+        </footer>
+    </div>
