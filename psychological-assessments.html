@@ -6,7 +6,285 @@
     <title>استعدادیاب | معرفی ارزیابی‌های روان‌شناختی</title>
     <meta name="description" content="با استعدادیاب، با ارزیابی‌های روان‌شناختی پیشرفته آشنا شوید و توانمندی‌های خود را بشناسید.">
     <link rel="stylesheet" href="/assets/css/styles.css">
-    <style>/* Shallow, Sharp, Girlish, Calm, Modern, and Professional Styles */
+    <style>
+        
+                :root {
+            --font-family: 'Vazir', sans-serif;
+            --color-bg: #1a1a2e;
+            --color-text: #eaeaea;
+            --color-primary: #FFA500;
+            --color-secondary: #4ecdc4;
+            --color-accent: #556270;
+            --header-height: 80px;
+            --border-radius: 8px;
+            --spacing-medium: 20px;
+            --spacing-large: 40px;
+            --transition-speed: 0.3s;
+            --transition-type: ease
+        }
+
+        @font-face {
+            font-family: 'Vazir';
+            src: url('assets/fonts/Vazir.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        body, html {
+            font-family: var(--font-family);
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            direction: rtl;
+            scroll-behavior: smooth;
+            height: 100%;
+            overflow-x: hidden
+        }
+
+        h1, h2, h3 {
+            margin-bottom: var(--spacing-medium)
+        }
+
+        h2 {
+            font-size: 1.8em;
+            color: var(--color-primary);
+            text-shadow: 0 0 10px var(--color-primary);
+            margin-bottom: 10px
+        }
+
+        p {
+            font-size: 1em;
+            color: var(--color-text);
+            max-width: 90%;
+            margin: 0 auto var(--spacing-medium);
+            line-height: 1.6;
+            text-align: center
+        }
+
+        .header {
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.95), rgba(26, 26, 46, 0.85));
+            padding: 0 var(--spacing-medium);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            height: var(--header-height);
+            width: 100%;
+            z-index: 1000
+        }
+
+        .logo {
+            font-size: 1.8em;
+            color: var(--color-primary);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color var(--transition-speed) var(--transition-type)
+        }
+
+        .logo:hover, .logo:focus {
+            color: var(--color-secondary)
+        }
+
+        .navbar {
+            position: relative
+        }
+
+        .menu-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 35px;
+            height: 24px;
+            padding: 0;
+            z-index: 1001
+        }
+
+        .menu-toggle .hamburger {
+            width: 100%;
+            height: 4px;
+            background-color: var(--color-text);
+            border-radius: 2px;
+            transition: all var(--transition-speed) var(--transition-type)
+        }
+
+        .menu-toggle.active .hamburger:nth-child(1) {
+            transform: translateY(10px) rotate(45deg)
+        }
+
+        .menu-toggle.active .hamburger:nth-child(2) {
+            opacity: 0
+        }
+
+        .menu-toggle.active .hamburger:nth-child(3) {
+            transform: translateY(-10px) rotate(-45deg)
+        }
+
+        .nav-links {
+            position: fixed;
+            top: var(--header-height);
+            left: 0;
+            width: 80%;
+            max-width: 320px;
+            background-color: rgba(26, 26, 46, 0.95);
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            gap: var(--spacing-large);
+            box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
+            list-style: none;
+            padding: var(--spacing-medium);
+            box-sizing: border-box;
+            overflow-y: auto;
+            transition: transform 0.3s ease-in-out, top 0.3s ease-in-out
+        }
+
+        .nav-links.active {
+            display: flex;
+            transform: translateX(0)
+        }
+
+        .nav-links a {
+            font-size: 1.6em;
+            color: var(--color-text);
+            text-decoration: none;
+            position: relative;
+            padding: 8px 0;
+            transition: color var(--transition-speed) var(--transition-type);
+            white-space: nowrap
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            left: 50%;
+            bottom: -4px;
+            background-color: var(--color-secondary);
+            transition: width var(--transition-speed) var(--transition-type), left var(--transition-speed) var(--transition-type)
+        }
+
+        .nav-links a:hover::after, .nav-links a:focus::after {
+            width: 100%;
+            left: 0
+        }
+
+        .nav-links a:hover, .nav-links a:focus {
+            color: var(--color-secondary)
+        }
+
+        @media (min-width:992px) {
+            .menu-toggle {
+                display: none
+            }
+
+            .nav-links {
+                position: static;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                height: auto;
+                background-color: transparent;
+                transform: translateX(0);
+                gap: 0;
+                box-shadow: none;
+                padding: 0;
+                display: flex;
+                width: 100%;
+                box-sizing: border-box;
+                overflow: hidden;
+                justify-content: space-between;
+                min-width: max-content
+            }
+
+            .nav-links a {
+                font-size: 1.2em;
+                padding: 0 15px;
+                white-space: nowrap;
+                position: relative;
+                transition: color var(--transition-speed) var(--transition-type)
+            }
+
+            .nav-links a::after {
+                content: '';
+                position: absolute;
+                width: 0%;
+                height: 2px;
+                left: 50%;
+                bottom: -4px;
+                background-color: var(--color-secondary);
+                transition: width var(--transition-speed) var(--transition-type), left var(--transition-speed) var(--transition-type)
+            }
+
+            .nav-links a:hover::after, .nav-links a:focus::after {
+                width: 100%;
+                left: 0
+            }
+
+            .nav-links a:hover, .nav-links a:focus {
+                color: var(--color-secondary)
+            }
+        }
+
+        .hero {
+            height: calc(100vh - var(--header-height));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            position: relative;
+            overflow: hidden;
+            text-align: center
+        }
+
+        .hero h2 {
+            font-size: 3em;
+            color: var(--color-primary);
+            text-shadow: 0 0 10px var(--color-primary)
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            margin-bottom: var(--spacing-large)
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--color-accent);
+            color: var(--color-text);
+            padding: 12px 30px;
+            border-radius: var(--border-radius);
+            font-size: 1em;
+            box-shadow: 0 0 10px var(--color-accent);
+            text-decoration: none
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #fff;
+            color: #000;
+            padding: 8px;
+            z-index: 100
+        }
+
+        .skip-link:focus {
+            top: 0
+        }
+        /* Shallow, Sharp, Girlish, Calm, Modern, and Professional Styles */
 
 /* Section Styles */
 .batteries-section,
