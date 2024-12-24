@@ -1,0 +1,489 @@
+<div class="ravesh-editor-html" style="direction:rtl">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>گزارش تحلیل فهرست تشخیص تعاملی شخصیت</title>
+    <style>
+        @font-face {
+            font-family: 'IRANSansWeb';
+            src: url('fonts/IRANSansWeb.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'BTitrBold';
+            src: url('fonts/BTitrBold.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'BKoodakBold';
+            src: url('fonts/BKoodakBold.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'BHoma';
+            src: url('fonts/BHoma.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'BYekan';
+            src: url('fonts/BYekan.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'Tahoma';
+            src: url('fonts/Tahoma.woff2') format('woff2');
+        }
+        .report-container {
+            font-family: 'BYekan', sans-serif;
+            direction: rtl;
+            line-height: 1.8;
+            background-color: #F5F5F5;
+            color: #333333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            max-width: 800px;
+            width: 100%;
+            margin: auto;
+            background-color: #F5F5F5;
+            padding: 40px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+        }
+        .report-header-custom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #0DA3B8;
+            border-radius: 20px 20px 0 0;
+        }
+        .report-header-inner {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .report-header-img {
+            width: 40px;
+            height: 40px;
+        }
+        .report-header-title {
+            margin: 0;
+            font-size: 1.8em;
+            color: #ffffff;
+            font-family: 'IRANSansWeb', sans-serif;
+            font-weight: normal;
+        }
+        .report-header-date {
+            color: #ffffff;
+            font-size: 1em;
+        }
+        .report-title {
+            text-align: center;
+            color: #0DA3B8;
+            font-family: 'IRANSansWeb', sans-serif;
+            font-weight: bold;
+            font-size: 32px;
+            margin-bottom: 25px;
+        }
+        .report-info-container, .report-score-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .report-info-item, .report-score-item {
+            background-color: #F8F9FA;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            font-size: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'BYekan', sans-serif;
+            flex: 1;
+            min-width: 300px;
+            margin-right: 10px; /* Add space between columns */
+        }
+        .report-info-item strong, .report-score-item strong {
+            color: #0DA3B8;
+            font-family: 'IRANSansWeb', sans-serif;
+        }
+        .report-info-data, .report-score-data {
+            font-family: 'IRANSansWeb', sans-serif;
+        }
+        .report-section-title {
+            font-size: 22px;
+            color: #CC3333;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #CC3333;
+            font-family: 'IRANSansWeb', sans-serif;
+            font-weight: bold;
+            text-align: center;
+        }
+        .report-component-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 22px;
+            color: #DBCF93;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #DBCF93;
+            font-family: 'IRANSansWeb', sans-serif;
+        }
+        .report-paragraph {
+            background-color: #E0F7FA;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .report-list {
+            list-style-type: none;
+            padding: 0;
+            font-size: 16px;
+        }
+        .report-list-item {
+            background: #F8F9FA;
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+        }
+        .report-list-item strong {
+            font-size: 18px;
+            color: #0DA3B8;
+            margin-bottom: 5px;
+        }
+        .report-badge {
+            display: inline-block;
+            padding: 8px 15px;
+            font-size: 14px;
+            color: #FFFFFF;
+            background-color: #4A9B8C;
+            border-radius: 10px;
+        }
+        .report-recommendation {
+            background-color: #EAEAEA;
+            padding: 20px;
+            margin-top: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .report-recommendation-title {
+            font-weight: bold;
+            color: #CC3333;
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
+        .report-recommendation-text {
+            margin-bottom: 5px;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+        .report-footer-custom {
+            background-color: #F5F5F5;
+            color: #333333;
+            padding: 20px;
+            text-align: center;
+            font-family: 'IRANSansWeb', sans-serif;
+            border-top: 1px solid #E0E0E0;
+            font-size: 16px; /* Increased font size */
+        }
+        .report-footer-content {
+            margin-bottom: 20px;
+        }
+        .report-footer-img {
+            width: 80px;
+            height: 80px;
+        }
+        .report-footer-paragraph {
+            margin: 5px 0;
+        }
+        .report-footer-paragraph.yellow-text {
+            color: #DBCF93;
+        }
+        .report-footer-menu {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 10px 0;
+        }
+        .report-footer-menu-link {
+            color: #0DA3B8;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .report-footer-menu-link:hover {
+            color: #007B8A;
+        }
+        .report-footer-address {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .report-summary-container {
+            max-width: 800px;
+            margin: auto;
+            background-color: #FFFFFF;
+            padding: 40px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+            border-radius: 10px;
+        }
+        .report-summary-heading {
+            text-align: center;
+            color: #0DA3B8;
+            font-family: 'IRANSansWeb', sans-serif;
+            font-weight: bold;
+            font-size: 32px;
+            margin-bottom: 25px;
+        }
+        .report-summary-content {
+            color: #333333;
+            font-family: 'IRANSansWeb', sans-serif;
+            line-height: 1.8;
+        }
+        .report-conditional-display {
+            display: block;
+        }
+        .report-conditional-display[style*="--score-rate1: 1"] {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #FF9999; /* Moderate */
+        }
+        .report-conditional-display[style*="--score-rate2: 2"] {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #FFD580; /* Good */
+        }
+        .report-conditional-display[style*="--score-rate3: 3"] {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #99FF99; /* Excellent */
+        }
+    </style>
+    <div class="report-report-container">
+        <header class="report-header-custom">
+            <div class="report-header-inner">
+                <img src="../panel/file?type=picture&amp;v=3&amp;mode=filemanager&amp;file=%7eDB3gfQUls%2bt2iiMYKbsRAxrtFhcHKUIUUo7pPtO17bHCzNxwU4zNh3UVor6QMtl7Y6EWX8dD0PSvzZOYkRrXlfejPn4lNTj6" class="report-header-img" alt="لوگو">
+                <h1 class="report-header-title">گزارش تحلیل فهرست تشخیص تعاملی شخصیت</h1>
+            </div>
+            <div class="report-header-date">تاریخ اجرا: #primary_createDate#</div>
+        </header>
+        
+        <div class="report-section-title">فهرست تشخیص تعاملی شخصیت</div>
+        <p class="report-paragraph">
+            این ارزیابی به منظور تحلیل و بررسی ویژگی‌های شخصیتی فرد در حوزه‌های مختلف از جمله تعهد، نیرومندی، ظرفیت تحلیلی، بیتابی روانی، استقلال و سازش انجام شده است. هدف از این ارزیابی شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد.
+        </p><p></p>
+               
+        <div class="report-section-title">اطلاعات فردی</div>
+        <div class="report-info-container">
+            <div class="report-info-item"><strong>نام:</strong> <span class="report-info-data">#field_349#</span></div>
+            <div class="report-info-item"><strong>نام خانوادگی:</strong> <span class="report-info-data">#field_1712#</span></div>
+            <div class="report-info-item"><strong>موبایل:</strong> <span class="report-info-data">#field_350#</span></div>
+            <div class="report-info-item"><strong>ایمیل:</strong> <span class="report-info-data">#field_351#</span></div></div>
+
+        </div>
+        <div class="report-section-title">نتیجه</div>
+        <div class="report-score-container">
+            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10272#;"><strong>بالندگی متعالی:</strong> <span class="report-badge">#field_5860#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10272#;"><strong>بالندگی متعالی:</strong> <span class="report-badge">#field_5860#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10272#;"><strong>بالندگی متعالی:</strong> <span class="report-badge">#field_5860#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10273#;"><strong>پشتیبانی موجه:</strong> <span class="report-badge">#field_5861#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10273#;"><strong>پشتیبانی موجه:</strong> <span class="report-badge">#field_5861#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10273#;"><strong>پشتیبانی موجه:</strong> <span class="report-badge">#field_5861#</span></div>
+
+        </div>
+        <div class="report-section-title">تفسیر</div>
+        <p class="report-paragraph">
+            این بخش به تحلیل و تفسیر نتایج ارزیابی روان‌شناختی فرد می‌پردازد. تحلیل روان‌شناختی شامل بررسی ویژگی‌های شخصیتی مختلف است. هدف از این تحلیل شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد. نتایج این تحلیل می‌تواند به فرد کمک کند تا با شناخت بهتر از خود، برنامه‌های توسعه فردی و حرفه‌ای موثرتری را دنبال کند.
+        </p>
+
+
+
+        
+
+
+
+
+        
+
+
+        
+        <!-- بالندگی متعالی (حس رسیدن به اوج پیشرفت و خشنودی از جایگاه زندگی) -->
+<div class="report-component-title">بالندگی متعالی
+    <span class="report-badge report-score-data">#field_5860#<br></span>
+</div>
+<p class="report-paragraph">
+    بالندگی متعالی به معنای دستیابی به سطح بالایی از پیشرفت، احساس معناداری در زندگی و قرار گرفتن در جایگاه شایسته است. افرادی که در این حوزه نمره بالاتری کسب می‌کنند، خود را فردی پویا، هدفمند و کارآمد می‌بینند و معمولاً حس موفقیت و خشنودی بالایی از وضعیت کنونی زندگی دارند.
+</p>
+<ul class="report-list">
+    <!-- سطح متوسط بالندگی متعالی -->
+    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10272#;">
+        <strong>«متوسط»<br></strong>
+        شما در بسیاری از جنبه‌های زندگی‌تان احساس پیشرفت و رضایت دارید، اما ممکن است همواره حس نکنید که به جایگاه ایدئال رسیده‌اید. گاهی فقدان شهرت مورد انتظارتان یا دستیابی به معنای عمیق زندگی می‌تواند مانع از رسیدن شما به بالندگی کامل شود.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. تعریف مجدد اهداف خود و همسو کردن آن‌ها با ارزش‌های شخصی؛ شاید لازم باشد اولویت‌هایتان را بازنگری کنید.<br>
+                ۲. ارزیابی دوره‌ای مسیر پیشرفت و بررسی اینکه کدام عامل‌ها مانع از احساس رضایت کامل می‌شوند (مثلاً شغل، روابط اجتماعی، تحصیلات).<br>
+                ۳. مطالعه و الهام گرفتن از الگوهای موفق یا کسانی که به سطح بالایی از معنا و موفقیت در زندگی دست یافته‌اند.<br>
+                ۴. تلاش برای افزایش خودشناسی؛ شناخت نقاط قوت و ضعف می‌تواند مسیر بالندگی را روشن‌تر کند.<br>
+                ۵. تمرین ذهن‌آگاهی (Mindfulness) و مراقبت‌های روزانه برای حفظ شادابی روانی و پرهیز از افت انگیزه.
+            </div>
+        </div>
+    </li>
+
+    <!-- سطح خوب بالندگی متعالی -->
+    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10272#;">
+        <strong>«خوب»<br></strong>
+        شما غالباً به احساسی از پیشرفت و موفقیت دست یافته‌اید؛ خود را فردی بالنده و هدفمند می‌بینید و به معنای زندگی‌تان کم‌وبیش پی برده‌اید. این وضعیت، نشان‌دهنده مسیر رو به رشد و رضایت‌بخشی است که بر اساس تعهد شما به پیشرفت شکل گرفته است.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. حفظ این روند با تعیین اهداف جدید و چالش‌برانگیزتر، در عین رعایت مرزهای روانی و استراحت کافی.<br>
+                ۲. گسترش دیدگاه از طریق مطالعه منابع متنوع (کتاب، سخنرانی‌، کارگاه‌های آموزشی) برای عمق‌بخشی به معنای زندگی.<br>
+                ۳. مشارکت در فعالیت‌های جمعی، گروهی یا پروژه‌های جامعه‌محور که می‌تواند حس بالندگی‌تان را در سطح اجتماعی گسترش دهد.<br>
+                ۴. انتقال تجربه‌های موفق‌ به دیگران؛ ممکن است نقش الگویی شما در شکل‌گیری انگیزه و بالندگی دیگران مؤثر باشد.<br>
+                ۵. ارزیابی تداوم‌دار از میزان رضایت و خشنودی؛ گاهی تغییراتی اندک در سبک زندگی می‌تواند رضایت را به سطح بالاتری ارتقا دهد.
+            </div>
+        </div>
+    </li>
+
+    <!-- سطح عالی بالندگی متعالی -->
+    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10272#;">
+        <strong>«عالی»<br></strong>
+        شما در اوج بالندگی متعالی قرار دارید؛ حس می‌کنید جایگاه عالی‌ای را در زندگی کسب کرده‌اید و به معنای عمیق‌تری از وجودتان دست یافته‌اید. این احساس هدفمندی بالا، شما را به فردی بسیار پویاتر، کارآمدتر و موفق‌تر تبدیل می‌کند.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. پذیرش نقش‌های مهم در کار و زندگی؛ شما می‌توانید با رهبری پروژه‌های برجسته یا کارهای گروهی، اثربخشی‌تان را به حداکثر برسانید.<br>
+                ۲. انتشار تجارب و افکار خود از طریق سخنرانی، نوشتن یا مربیگری؛ دیگران می‌توانند از مسیر بالندگی شما الهام بگیرند.<br>
+                ۳. حفظ تواضع و فروتنی در عین موفقیت؛ این ویژگی به شما کمک می‌کند محبوبیت و پذیرش بیشتری میان اطرافیان داشته باشید.<br>
+                ۴. انتخاب هدف‌های کلان و راهبردی؛ وقتی حس می‌کنید به جایگاه عالی رسیده‌اید، تمرکز بر اهداف جامعه‌محور یا جهانی می‌تواند انگیزه‌تان را حفظ کند.<br>
+                ۵. مراقبت از سلامت جسمی و ذهنی؛ سطح بالای بالندگی ممکن است استرس‌ها و توقعات پیرامونی را نیز افزایش دهد.
+            </div>
+        </div>
+    </li>
+</ul>
+
+<!-- پشتیبانی موجه (حمایت و پذیرش محیطی در مسیر زندگی) -->
+<div class="report-component-title">پشتیبانی موجه
+    <span class="report-badge report-score-data">#field_5861#<br></span>
+</div>
+<p class="report-paragraph">
+    پشتیبانی موجه به معنای احساس راحتی و برخورداری از حمایت اطرافیان، مورد احترام واقع شدن باورها و عقاید و احساس همراهی در لحظات دشوار است. این حمایت می‌تواند در ایجاد آرامش روانی و تقویت انگیزه مؤثر باشد و زندگی فرد را غنی‌تر و معنادارتر کند.
+</p>
+<ul class="report-list">
+
+    <!-- سطح متوسط پشتیبانی موجه -->
+    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10273#;">
+        <strong>«متوسط»<br></strong>
+        شما در بسیاری از مواقع احساس پذیرش از سوی اطرافیان دارید، اما بعضی اوقات ممکن است به اندازه‌ای که انتظار دارید مورد تشویق یا همراهی قرار نگیرید. این شرایط گاه احساس تنهایی یا کم‌توجهی را به همراه دارد.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. شفاف‌سازی انتظارات و بیان نیازهای واقعی به دوستان، خانواده یا همکاران؛ گاه دیگران نمی‌دانند چگونه می‌توانند حمایت کنند.<br>
+                ۲. بررسی و تقویت مهارت‌های ارتباطی؛ گوش دادن فعال و گفت‌وگوی سازنده می‌تواند فضای احترام و همراهی را پررنگ‌تر کند.<br>
+                ۳. یافتن محافل یا گروه‌های تازه که باورها و ایده‌های شما را بیشتر ارج می‌نهند و حس ارزشمندی را بالاتر می‌برند.<br>
+                ۴. احترام گذاشتن به عقاید و دیدگاه‌های دیگران؛ این امر اغلب احترام متقابل را نیز افزایش می‌دهد.<br>
+                ۵. ارزیابی گاه‌به‌گاه سطح رضایت از حمایت دریافتی و در صورت نیاز، مشاوره با متخصصان روان‌شناسی برای تقویت احساس همراهی.
+            </div>
+        </div>
+    </li>
+
+    <!-- سطح خوب پشتیبانی موجه -->
+    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10273#;">
+        <strong>«خوب»<br></strong>
+        شما عموماً از سوی اطرافیان مورد حمایت قرار می‌گیرید و عقایدتان ارزشمند شمرده می‌شود. این محیط پذیرش و مشارکت، به شما انگیزه می‌دهد و در سختی‌ها، احساس تنهایی چندانی نمی‌کنید؛ وضعیتی که بیانگر پشتیبانی نسبتاً متعادلی است.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. حفظ این همراهی با تعامل مثبت و سازنده؛ به اشتراک‌گذاری خواسته‌ها، اهداف و نگرانی‌ها با اطرافیان به تقویت ارتباط منجر می‌شود.<br>
+                ۲. تشویق خود و دیگران به ایجاد محیطی باز برای طرح ایده‌ها و دیدگاه‌های متفاوت؛ این اقدام حس ارزشمندی جمعی را افزایش می‌دهد.<br>
+                ۳. درگیر شدن در کارهای گروهی یا پروژه‌های مشترک؛ همکاری با افراد هم‌فکر یا حتی مخالف می‌تواند به گسترش افق دیدتان کمک کند.<br>
+                ۴. بازخورد دادن صادقانه در روابط؛ گفتن «متشکرم» یا اعلام رضایت می‌تواند حمایت دیگران را پایدار و صمیمی‌تر کند.<br>
+                ۵. بررسی منظم رابطه‌هایتان؛ آیا همه نیازهای روانی شما را تأمین می‌کنند؟ اگر نه، می‌توانید ارتباط با دیگر گروه‌ها را هم بررسی کنید.
+            </div>
+        </div>
+    </li>
+
+    <!-- سطح عالی پشتیبانی موجه -->
+    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10273#;">
+        <strong>«عالی»<br></strong>
+        شما در سطحی بسیار بالایی از حمایت و همراهی قرار دارید؛ احساس راحتی، احترام عمیق به عقاید و همراهی در دشواری‌ها از ویژگی‌های روابط شماست. این پشتیبانی محیطی و اجتماعی، بستری ایدئال برای رشد و تحقق آرزوهای شخصی و حرفه‌ای‌تان فراهم می‌نماید.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. قدردانی مداوم از اطرافیانی که در موفقیت‌ها و لحظات چالش‌برانگیز در کنار شما هستند؛ این عمل حس ارزشمندی طرفین را افزایش می‌دهد.<br>
+                ۲. استفاده از این فضای پشتیبان برای رشد بیشتر؛ مطرح‌کردن ایده‌های بلندپروازانه و پیگیری آن‌ها با خیال آسوده‌تر.<br>
+                ۳. انتقال تجربه‌های مثبت به دیگران؛ حتی یک جمله ساده می‌تواند دیگران را به حمایتگر بودن و همدلی بیشتر ترغیب کند.<br>
+                ۴. ایجاد یا پیوستن به گروه‌های حمایتی برای گسترش این فرهنگ پذیرش و احترام؛ به‌ویژه در محیط کار یا فضاهای آموزشی.<br>
+                ۵. مراقبت از خودمختاری؛ تعادل میان دریافت حمایت و حفظ استقلال می‌تواند پایدارترین مدل همراهی را رقم بزند.
+            </div>
+        </div>
+    </li>
+</ul>
+                                      
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+            <div class="report-section-title">جمع‌بندی</div>
+            <div class="report-paragraph">
+            <p>این گزارش ارزیابی مهارت‌های شما شامل تحلیل تعهد، نیرومندی، ظرفیت تحلیلی، بیتابی روانی، استقلال و سازش است. این بررسی نقاط قوت و زمینه‌های نیازمند بهبود شما را نشان داده و توصیه‌های کاربردی برای توسعه مهارت‌های شما ارائه می‌دهد.</p>
+            
+            <p><b>نقاط قوت: </b>شما در برخی از حوزه‌ها عملکرد برجسته‌ای دارید که نشان‌دهنده توانایی‌های قوی در مدیریت مسئولیت‌ها، انرژی بالا، تحلیل مسائل پیچیده، آرامش روانی، خودکفایی و تطبیق‌پذیری است. به عنوان مثال، در حوزه‌های "تعهد" و "ظرفیت تحلیلی"، شما توانایی زیادی در مدیریت وظایف و تحلیل مسائل نشان داده‌اید که می‌تواند به پیشرفت حرفه‌ای و رشد فردی شما کمک کند.</p>
+            
+            <p><b>حوزه‌های نیازمند بهبود:</b> در برخی از بخش‌ها نیاز به تمرکز بیشتر وجود دارد. به عنوان مثال، در حوزه‌های "بیتابی روانی" و "استقلال"، شما می‌توانید با تمرین‌های منظم و فعالیت‌های هدفمند مانند تکنیک‌های مدیریت استرس و برنامه‌ریزی منظم مهارت‌های خود را بهبود بخشید. همچنین، افزایش تعاملات اجتماعی و تمرین مهارت‌های تصمیم‌گیری مستقل می‌تواند تأثیر مثبتی بر عملکرد شما داشته باشد.</p>
+            
+            <p><b>گام‌های بعدی:</b> برای تقویت مهارت‌های خود، پیشنهاد می‌شود که به توصیه‌های ارائه‌شده در هر بخش توجه ویژه‌ای کنید و در صورت نیاز از خدمات مشاوره تخصصی استفاده نمایید. همچنین، ارزیابی منظم و پیگیری مداوم می‌تواند به توسعه پایدار و موفقیت شما در تمامی ابعاد زندگی کمک کند.</p>
+            </div>
+        
+        <footer class="report-footer-custom">
+            <div class="report-footer-content">
+                <img src="../panel/file?type=picture&amp;v=3&amp;mode=filemanager&amp;file=%7eDB3gfQUls%2bt2iiMYKbsRAxrtFhcHKUIUUo7pPtO17bHCzNxwU4zNh3UVor6QMtl7Y6EWX8dD0PSvzZOYkRrXlfejPn4lNTj6" class="report-footer-img" alt="لوگو">
+            </div>
+            <p class="report-footer-paragraph">مؤسّسه تعاملی هیجان اندیشه | تماس: 02188174100 | ایمیل: info@eot.ir</p>
+            <p class="report-footer-paragraph yellow-text">© ۱۴۰۳ تمامی حقوق محفوظ است.</p>
+            <ul class="report-footer-menu">
+                <li><a href="https://www.eot.ir/" class="report-footer-menu-link">صفحه اصلی</a></li>
+                <li><a href="https://www.eot.ir/contact" class="report-footer-menu-link">تماس با ما</a></li>
+                <li><a href="https://www.eot.ir/about" class="report-footer-menu-link">درباره ما</a></li>
+            </ul>
+            <address class="report-footer-address">تهران، سهروردی، خرمشهر، عربعلی، کوچه ششم، شماره ۴۴</address>
+        </footer>
+    </div>
