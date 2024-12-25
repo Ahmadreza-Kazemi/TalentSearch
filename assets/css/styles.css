@@ -1234,3 +1234,451 @@ p {
             color: var(--primaryGold);
         }
     }
+    <style>
+        /* Root Variables */
+        :root {
+            /* Font Family */
+            --font-family: 'Vazir', sans-serif;
+            
+            /* Primary Colors */
+            --primaryGold: #F4C553;             /* Highlights, Buttons, Icons, CTAs */
+            --primaryDeepBlue: #1F3B73;         /* Trust, Headers, Primary Text */
+            
+            /* Secondary Colors */
+            --secondaryTealGreen: #4FBDBA;      /* Growth, Secondary Buttons, Accents */
+            --secondaryElectricBlue: #007BFF;   /* Dynamic Interactions, Links, Active States */
+            
+            /* Neutral Colors */
+            --neutralWhite: #FFFFFF;            /* Backgrounds, Text Contrast, Open Spaces */
+            --neutralCoolGray: #F0F0F5;         /* Section Dividers, Form Fields, Subtle Contrasts */
+            --neutralDarkGray: #888888;         /* General Text and Icons */
+            
+            /* Accent Colors */
+            --accentGoldenYellow: #FFD77B;      /* Hover Effects, Gradients, Embellishments */
+            
+            /* Text Colors */
+            --textPrimary: var(--primaryDeepBlue); /* Main Text */
+            --textSecondary: var(--neutralDarkGray); /* Secondary Text */
+            
+            /* Button Colors */
+            --buttonPrimary: var(--primaryGold);      /* Primary Buttons */
+            --buttonSecondary: var(--secondaryTealGreen); /* Secondary Buttons */
+            
+            /* Spacing */
+            --header-height: 80px;
+            --spacing-xs: 4px;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+            --spacing-xl: 32px;
+            --border-radius: 8px;
+            
+            /* Shadows */
+            --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Importing Vazir Font - Thin */
+        @font-face {
+            font-family: 'Vazir';
+            src: url('assets/fonts/Vazir-Thin-UI.eot');
+            src: url('assets/fonts/Vazir-Thin-UI.eot?#iefix') format('embedded-opentype'),
+                 url('assets/fonts/Vazir-Thin-UI.woff2') format('woff2'),
+                 url('assets/fonts/Vazir-Thin-UI.woff') format('woff'),
+                 url('assets/fonts/Vazir-Thin-UI.ttf') format('truetype');
+            font-weight: 100;
+            font-style: normal;
+        }
+
+        /* Importing Vazir Font - Light */
+        @font-face {
+            font-family: 'Vazir';
+            src: url('assets/fonts/Vazir-Light-UI.eot');
+            src: url('assets/fonts/Vazir-Light-UI.eot?#iefix') format('embedded-opentype'),
+                 url('assets/fonts/Vazir-Light-UI.woff2') format('woff2'),
+                 url('assets/fonts/Vazir-Light-UI.woff') format('woff'),
+                 url('assets/fonts/Vazir-Light-UI.ttf') format('truetype');
+            font-weight: 300;
+            font-style: normal;
+        }
+
+        /* Importing Vazir Font - Regular */
+        @font-face {
+            font-family: 'Vazir';
+            src: url('assets/fonts/Vazir-Regular-UI.eot');
+            src: url('assets/fonts/Vazir-Regular-UI.eot?#iefix') format('embedded-opentype'),
+                 url('assets/fonts/Vazir-Regular-UI.woff2') format('woff2'),
+                 url('assets/fonts/Vazir-Regular-UI.woff') format('woff'),
+                 url('assets/fonts/Vazir-Regular-UI.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        /* Importing Vazir Font - Medium */
+        @font-face {
+            font-family: 'Vazir';
+            src: url('assets/fonts/Vazir-Medium-UI.eot');
+            src: url('assets/fonts/Vazir-Medium-UI.eot?#iefix') format('embedded-opentype'),
+                 url('assets/fonts/Vazir-Medium-UI.woff2') format('woff2'),
+                 url('assets/fonts/Vazir-Medium-UI.woff') format('woff'),
+                 url('assets/fonts/Vazir-Medium-UI.ttf') format('truetype');
+            font-weight: 500;
+            font-style: normal;
+        }
+
+        /* Importing Vazir Font - Bold */
+        @font-face {
+            font-family: 'Vazir';
+            src: url('assets/fonts/Vazir-Bold-UI.eot');
+            src: url('assets/fonts/Vazir-Bold-UI.eot?#iefix') format('embedded-opentype'),
+                 url('assets/fonts/Vazir-Bold-UI.woff2') format('woff2'),
+                 url('assets/fonts/Vazir-Bold-UI.woff') format('woff'),
+                 url('assets/fonts/Vazir-Bold-UI.ttf') format('truetype');
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        /* Importing Vazir Font - Black */
+        @font-face {
+            font-family: 'Vazir';
+            src: url('assets/fonts/Vazir-Black-UI.eot');
+            src: url('assets/fonts/Vazir-Black-UI.eot?#iefix') format('embedded-opentype'),
+                 url('assets/fonts/Vazir-Black-UI.woff2') format('woff2'),
+                 url('assets/fonts/Vazir-Black-UI.woff') format('woff'),
+                 url('assets/fonts/Vazir-Black-UI.ttf') format('truetype');
+            font-weight: 900;
+            font-style: normal;
+        }
+
+        /* Reset and Base Styles */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: var(--font-family);
+            background-color: var(--neutralWhite);
+            color: var(--textPrimary);
+            direction: rtl;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primaryDeepBlue);
+        }
+
+        /* Header Styles */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--header-height);
+            background: var(--neutralWhite);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 var(--spacing-md);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primaryDeepBlue);
+        }
+
+        /* Navigation Styles */
+        .navbar {
+            position: relative;
+        }
+
+        .menu-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 22px;
+            padding: 0;
+            z-index: 1001;
+        }
+
+        .menu-toggle .hamburger {
+            width: 100%;
+            height: 4px;
+            background-color: var(--primaryDeepBlue);
+            border-radius: 2px;
+        }
+
+        .menu-toggle.active .hamburger:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+            background-color: var(--primaryGold);
+        }
+
+        .menu-toggle.active .hamburger:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active .hamburger:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+            background-color: var(--primaryGold);
+        }
+
+        .nav-links {
+            position: fixed;
+            top: var(--header-height);
+            right: 0;
+            width: 100%;
+            height: calc(100% - var(--header-height));
+            background-color: var(--neutralWhite);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: var(--spacing-lg);
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .nav-links.active {
+            transform: translateX(0);
+        }
+
+        .nav-links a {
+            font-size: 1.5rem;
+            color: var(--textPrimary);
+            position: relative;
+            padding: var(--spacing-sm) 0;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            left: 50%;
+            bottom: -6px;
+            background-color: var(--primaryGold);
+            transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+        }
+
+        .nav-links a:hover::after, .nav-links a:focus::after {
+            width: 100%;
+            left: 0;
+        }
+
+        .nav-links a:hover, .nav-links a:focus {
+            color: var(--primaryGold);
+        }
+
+        /* Skip Link for Accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--primaryDeepBlue);
+            color: var(--neutralWhite);
+            padding: var(--spacing-xs) var(--spacing-sm);
+            z-index: 100;
+            border-radius: var(--border-radius);
+            transition: top 0.3s ease-in-out;
+        }
+
+        .skip-link:focus {
+            top: var(--spacing-md);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: calc(100vh - var(--header-height));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            padding: var(--spacing-md);
+        }
+
+        .hero h2 {
+            font-size: 3em;
+            color: var(--color-primary);
+            text-shadow: 0 0 10px var(--color-primary);
+            margin-bottom: var(--spacing-md);
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--color-accent);
+            color: var(--color-text);
+            padding: 12px 30px;
+            border-radius: var(--border-radius);
+            font-size: 1em;
+            box-shadow: 0 0 10px var(--color-accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* Services Section */
+        .services {
+            padding: var(--spacing-lg);
+            background-color: var(--neutralWhite);
+            color: var(--textPrimary);
+            text-align: center;
+        }
+
+        .services h2 {
+            font-size: 2em;
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-lg);
+            text-shadow: 0 0 5px var(--color-primary);
+        }
+
+        .service-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-lg);
+        }
+
+        .service-item {
+            background-color: var(--neutralCoolGray);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-card);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-item h3 {
+            font-size: 1.5em;
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-md);
+            font-weight: 700;
+        }
+
+        .service-item p {
+            font-size: 1em;
+            color: var(--textSecondary);
+            line-height: 1.6;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: var(--neutralWhite);
+            color: var(--textPrimary);
+            padding: var(--spacing-lg);
+            text-align: center;
+            border-top: 1px solid var(--neutralCoolGray);
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding-bottom: var(--spacing-md);
+        }
+
+        .footer .about-info h2 {
+            font-size: 2em;
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-md);
+            font-weight: 700;
+        }
+
+        .footer .about-info p {
+            font-size: 1em;
+            color: var(--textSecondary);
+            margin-bottom: var(--spacing-md);
+            line-height: 1.6;
+        }
+
+        .contact-info p {
+            font-size: 1em;
+            color: var(--textSecondary);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .powered-by {
+            margin-top: var(--spacing-lg);
+            font-size: 0.9em;
+            color: var(--textPrimary);
+        }
+
+        .powered-by a {
+            color: var(--color-primary);
+            font-weight: 500;
+        }
+
+        /* Responsive Styles */
+        @media (min-width: 600px) {
+            .service-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 992px) {
+            .service-list {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .menu-toggle {
+                display: none;
+            }
+
+            .nav-links {
+                position: static;
+                flex-direction: row;
+                height: auto;
+                background-color: transparent;
+                transform: translateX(0);
+                gap: var(--spacing-md);
+                box-shadow: none;
+                padding: 0;
+                display: flex;
+                width: 100%;
+                box-sizing: border-box;
+                overflow: hidden;
+                justify-content: space-between;
+                min-width: max-content;
+            }
+
+            .nav-links a {
+                font-size: 1rem;
+                color: var(--primaryDeepBlue);
+            }
+
+            .nav-links a::after {
+                background-color: var(--primaryGold);
+            }
+
+            .nav-links a:hover::after, .nav-links a:focus::after {
+                width: 100%;
+                left: 0;
+            }
+
+            .nav-links a:hover, .nav-links a:focus {
+                color: var(--primaryGold);
+            }
+        }
+    </style>
