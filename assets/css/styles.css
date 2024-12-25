@@ -336,7 +336,8 @@ p {
 
 /* Hero Section */
 .hero {
-    height: calc(100vh - var(--header-height));
+    height: calc(100vh - var(--header-height)); /* Adjust height for fixed header */
+    padding-top: var(--header-height); /* Add gap for header */
     display: flex;
     flex-direction: column;
     align-items: center;
