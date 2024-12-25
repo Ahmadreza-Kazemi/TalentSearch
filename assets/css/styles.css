@@ -19,7 +19,10 @@ html, body {
     scroll-behavior: smooth;
     overflow-x: hidden;
 }
-
+ body {
+   
+   padding-top: var(--header-height); /* Added to prevent header overlap */
+}
 /* Base styles for anchor tags */
 a {
     text-decoration: none;
