@@ -513,70 +513,75 @@ p {
     color: var(--text-primary);
     line-height: 1.6;
 }
-
 /* ---------------------------------------------------
-   6.4. Footer - Redesigned
+   6.4. Footer
 --------------------------------------------------- */
 .footer {
-    background-color: var(--neutral-cool-gray);
-    padding: var(--spacing-lg) var(--spacing-md);
+    background-color: var(--neutral-white);
+    padding: var(--spacing-lg);
     color: var(--text-primary);
-    border-top: 1px solid var(--neutral-dark-gray);
+    text-align: center;
+    border-top: 1px solid var(--neutral-cool-gray);
     position: relative;
 }
 
 .footer-content {
     max-width: 1200px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--spacing-lg);
     padding-bottom: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
 }
 
 .about-info,
 .contact-info,
 .powered-by {
-    background-color: var(--neutral-white);
-    padding: var(--spacing-md);
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow-card);
+    flex: 1;
 }
 
-.about-info h2,
-.contact-info h2,
-.powered-by h2 {
-    font-size: 1.8em;
+.about-info h2 {
+    font-size: 2em;
     font-weight: 700;
     color: var(--primary-deep-blue);
     margin-bottom: var(--spacing-md);
     position: relative;
 }
 
-.about-info h2::after,
-.contact-info h2::after,
-.powered-by h2::after {
+.about-info h2::after {
     content: '';
     display: block;
-    width: 60px;
-    height: 3px;
+    width: 80px;
+    height: 4px;
     background-color: var(--secondary-teal-green);
-    margin: var(--spacing-sm) auto 0;
+    margin: var(--spacing-sm) auto var(--spacing-md);
     border-radius: 2px;
 }
 
-.about-info p,
-.contact-info p,
-.powered-by p {
-    font-size: 1em;
+.about-info p {
+    font-size: 1.1em;
     color: var(--text-secondary);
-    line-height: 1.6;
+    line-height: 1.8;
     text-align: left;
     margin-bottom: var(--spacing-md);
 }
 
+.contact-info {
+    text-align: left;
+}
+
+.contact-info p {
+    font-size: 1em;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.contact-info p strong {
+    color: var(--primary-gold);
+}
+
 .contact-info a {
-    color: var(--primary-deep-blue);
+    color: var(--primary-gold);
     text-decoration: none;
     transition: color var(--transition-speed) var(--transition-type);
 }
@@ -588,8 +593,9 @@ p {
 }
 
 .powered-by {
-    text-align: center;
     margin-top: var(--spacing-lg);
+    font-size: 0.95em;
+    color: var(--text-primary);
 }
 
 .powered-by a {
@@ -607,34 +613,18 @@ p {
 
 /* Decorative Line in Footer */
 .footer .decorative-line {
-    width: 80px;
+    width: 100px;
     height: 2px;
     background-color: var(--secondary-teal-green);
     margin: var(--spacing-sm) auto;
     border-radius: 1px;
-    opacity: 0.8;
+    opacity: 0.7;
     transition: opacity var(--transition-speed) var(--transition-type);
 }
 
 .footer .decorative-line:hover {
     opacity: 1;
 }
-
-/* ---------------------------------------------------
-   6.4. Footer - Responsive Enhancements
---------------------------------------------------- */
-@media (min-width: 768px) {
-    .footer-content {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (max-width: 767px) {
-    .powered-by {
-        margin-top: var(--spacing-md);
-    }
-}
-
 
 /* =======================================================
    7. Components
