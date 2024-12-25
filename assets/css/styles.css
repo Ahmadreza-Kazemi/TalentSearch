@@ -1,64 +1,81 @@
-/* Reset and Base Styles */
-*,
-*::before,
-*::after {
+/* =======================================================
+   1. Reset and Base Styles
+======================================================= */
+
+/* Resetting box-sizing, margin, and padding for all elements */
+*, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+/* Base styles for html and body */
 html, body {
     height: 100%;
     font-family: var(--font-family);
-    background-color: var(--neutralWhite);
-    color: var(--textPrimary);
+    background-color: var(--neutral-white);
+    color: var(--text-primary);
     direction: rtl;
     scroll-behavior: smooth;
     overflow-x: hidden;
 }
 
+/* Base styles for anchor tags */
 a {
     text-decoration: none;
-    color: var(--primaryDeepBlue);
+    color: var(--primary-deep-blue);
     transition: color var(--transition-speed) var(--transition-type);
 }
 
 a:hover,
 a:focus {
-    color: var(--primaryGold);
+    color: var(--primary-gold);
     text-decoration: underline;
 }
 
-/* Root Variables */
+/* =======================================================
+   2. Root Variables
+======================================================= */
 :root {
-    /* Font Family */
+    /* ---------------------------------------------------
+       2.1. Font Family
+    --------------------------------------------------- */
     --font-family: 'Vazir', sans-serif;
 
+    /* ---------------------------------------------------
+       2.2. Color Palette
+    --------------------------------------------------- */
     /* Primary Colors */
-    --primaryGold: #F4C553;             /* Highlights, Buttons, Icons, CTAs */
-    --primaryDeepBlue: #1F3B73;         /* Trust, Headers, Primary Text */
+    --primary-gold: #F4C553;             /* Highlights, Buttons, Icons, CTAs */
+    --primary-deep-blue: #1F3B73;       /* Trust, Headers, Primary Text */
 
     /* Secondary Colors */
-    --secondaryTealGreen: #4FBDBA;      /* Growth, Secondary Buttons, Accents */
-    --secondaryElectricBlue: #007BFF;   /* Dynamic Interactions, Links, Active States */
+    --secondary-teal-green: #4FBDBA;    /* Growth, Secondary Buttons, Accents */
+    --secondary-electric-blue: #007BFF; /* Dynamic Interactions, Links, Active States */
 
     /* Neutral Colors */
-    --neutralWhite: #FFFFFF;            /* Backgrounds, Text Contrast, Open Spaces */
-    --neutralCoolGray: #F0F0F5;         /* Section Dividers, Form Fields, Subtle Contrasts */
-    --neutralDarkGray: #888888;         /* General Text and Icons */
+    --neutral-white: #FFFFFF;            /* Backgrounds, Text Contrast, Open Spaces */
+    --neutral-cool-gray: #F0F0F5;       /* Section Dividers, Form Fields, Subtle Contrasts */
+    --neutral-dark-gray: #888888;       /* General Text and Icons */
 
     /* Accent Colors */
-    --accentGoldenYellow: #FFD77B;      /* Hover Effects, Gradients, Embellishments */
+    --accent-golden-yellow: #FFD77B;     /* Hover Effects, Gradients, Embellishments */
 
-    /* Text Colors */
-    --textPrimary: var(--primaryDeepBlue); /* Main Text */
-    --textSecondary: var(--neutralDarkGray); /* Secondary Text */
+    /* ---------------------------------------------------
+       2.3. Text Colors
+    --------------------------------------------------- */
+    --text-primary: var(--primary-deep-blue); /* Main Text */
+    --text-secondary: var(--neutral-dark-gray); /* Secondary Text */
 
-    /* Button Colors */
-    --buttonPrimary: var(--primaryGold);      /* Primary Buttons */
-    --buttonSecondary: var(--secondaryTealGreen); /* Secondary Buttons */
+    /* ---------------------------------------------------
+       2.4. Button Colors
+    --------------------------------------------------- */
+    --button-primary: var(--primary-gold);      /* Primary Buttons */
+    --button-secondary: var(--secondary-teal-green); /* Secondary Buttons */
 
-    /* Spacing */
+    /* ---------------------------------------------------
+       2.5. Spacing
+    --------------------------------------------------- */
     --header-height: 80px;
     --spacing-xs: 4px;
     --spacing-sm: 8px;
@@ -69,19 +86,29 @@ a:focus {
     --spacing-medium: 20px;
     --spacing-large: 40px;
 
-    /* Border Radius */
+    /* ---------------------------------------------------
+       2.6. Border Radius
+    --------------------------------------------------- */
     --border-radius: 8px;
 
-    /* Shadows */
+    /* ---------------------------------------------------
+       2.7. Shadows
+    --------------------------------------------------- */
     --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.1);
     --shadow-hover: 0 6px 18px rgba(0, 0, 0, 0.15);
 
-    /* Transitions */
+    /* ---------------------------------------------------
+       2.8. Transitions
+    --------------------------------------------------- */
     --transition-speed: 0.3s;
     --transition-type: ease;
 }
 
-/* Importing Vazir Font */
+/* =======================================================
+   3. Font Imports
+======================================================= */
+
+/* Importing Vazir Font with different weights */
 @font-face {
     font-family: 'Vazir';
     src: url('/assets/fonts/Vazir-Thin-UI.eot');
@@ -148,7 +175,11 @@ a:focus {
     font-style: normal;
 }
 
-/* Typography */
+/* =======================================================
+   4. Typography
+======================================================= */
+
+/* Headings */
 h1, h2, h3, h4 {
     margin-bottom: var(--spacing-large);
 }
@@ -156,56 +187,63 @@ h1, h2, h3, h4 {
 h1 {
     font-size: 2.5em;
     font-weight: 700;
-    color: var(--primaryDeepBlue);
-    text-shadow: 0 0 10px var(--primaryGold);
+    color: var(--primary-deep-blue);
+    text-shadow: 0 0 10px var(--primary-gold);
 }
 
 h2 {
     font-size: 1.8em;
     font-weight: 700;
-    color: var(--primaryDeepBlue);
-    text-shadow: 0 0 10px var(--primaryGold);
+    color: var(--primary-deep-blue);
+    text-shadow: 0 0 10px var(--primary-gold);
     margin-bottom: var(--spacing-md);
 }
 
 h3 {
     font-size: 1.5em;
     font-weight: 700;
-    color: var(--primaryDeepBlue);
+    color: var(--primary-deep-blue);
     margin-bottom: var(--spacing-md);
 }
 
 h4 {
     font-size: 1.2em;
     font-weight: 700;
-    color: var(--primaryDeepBlue);
+    color: var(--primary-deep-blue);
     margin: var(--spacing-lg) 0 var(--spacing-md);
 }
 
+/* Paragraphs */
 p {
     font-size: 1em;
     max-width: 90%;
     margin: 0 auto var(--spacing-medium);
     line-height: 1.6;
     text-align: center;
-    color: var(--textPrimary);
+    color: var(--text-primary);
 }
 
-/* Error Message */
+/* Error Messages */
 .error-message {
     color: red;
     margin-top: var(--spacing-md);
     font-size: 1em;
 }
 
-/* Header Styles */
+/* =======================================================
+   5. Layout Sections
+======================================================= */
+
+/* ---------------------------------------------------
+   5.1. Header
+--------------------------------------------------- */
 .header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: var(--header-height);
-    background: var(--neutralWhite);
+    background: var(--neutral-white);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -217,16 +255,18 @@ p {
 .logo {
     font-size: 1.8rem;
     font-weight: 700;
-    color: var(--primaryDeepBlue);
+    color: var(--primary-deep-blue);
     transition: color var(--transition-speed) var(--transition-type);
 }
 
 .logo:hover,
 .logo:focus {
-    color: var(--primaryGold);
+    color: var(--primary-gold);
 }
 
-/* Navigation Styles */
+/* ---------------------------------------------------
+   5.2. Navigation
+--------------------------------------------------- */
 .navbar {
     position: relative;
 }
@@ -247,14 +287,14 @@ p {
 .menu-toggle .hamburger {
     width: 100%;
     height: 4px;
-    background-color: var(--primaryDeepBlue);
+    background-color: var(--primary-deep-blue);
     border-radius: 2px;
     transition: all var(--transition-speed) var(--transition-type);
 }
 
 .menu-toggle.active .hamburger:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
-    background-color: var(--primaryGold);
+    background-color: var(--primary-gold);
 }
 
 .menu-toggle.active .hamburger:nth-child(2) {
@@ -263,7 +303,7 @@ p {
 
 .menu-toggle.active .hamburger:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -5px);
-    background-color: var(--primaryGold);
+    background-color: var(--primary-gold);
 }
 
 .nav-links {
@@ -272,7 +312,7 @@ p {
     right: 0;
     width: 100%;
     height: calc(100% - var(--header-height));
-    background-color: var(--neutralWhite);
+    background-color: var(--neutral-white);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -288,7 +328,7 @@ p {
 
 .nav-links a {
     font-size: 1.5rem;
-    color: var(--textPrimary);
+    color: var(--text-primary);
     position: relative;
     padding: var(--spacing-sm) 0;
     border-bottom: 2px solid transparent;
@@ -302,7 +342,7 @@ p {
     height: 2px;
     left: 50%;
     bottom: -6px;
-    background-color: var(--primaryGold);
+    background-color: var(--primary-gold);
     transition: width var(--transition-speed) var(--transition-type), left var(--transition-speed) var(--transition-type);
 }
 
@@ -314,16 +354,18 @@ p {
 
 .nav-links a:hover,
 .nav-links a:focus {
-    color: var(--primaryGold);
+    color: var(--primary-gold);
 }
 
-/* Skip Link for Accessibility */
+/* ---------------------------------------------------
+   5.3. Skip Link for Accessibility
+--------------------------------------------------- */
 .skip-link {
     position: absolute;
     top: -40px;
     left: 0;
-    background: var(--primaryDeepBlue);
-    color: var(--neutralWhite);
+    background: var(--primary-deep-blue);
+    color: var(--neutral-white);
     padding: var(--spacing-xs) var(--spacing-sm);
     z-index: 100;
     border-radius: var(--border-radius);
@@ -334,7 +376,9 @@ p {
     top: var(--spacing-md);
 }
 
-/* Hero Section */
+/* ---------------------------------------------------
+   5.4. Hero Section
+--------------------------------------------------- */
 .hero {
     height: calc(100vh - var(--header-height)); /* Adjust height for fixed header */
     padding-top: var(--header-height); /* Add gap for header */
@@ -342,8 +386,8 @@ p {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: var(--neutralCoolGray);
-    color: var(--textPrimary);
+    background-color: var(--neutral-cool-gray);
+    color: var(--text-primary);
     position: relative;
     overflow: hidden;
     text-align: center;
@@ -353,8 +397,8 @@ p {
 .hero h2 {
     font-size: 3em;
     font-weight: 700;
-    color: var(--primaryDeepBlue);
-    text-shadow: 0 0 10px var(--primaryGold);
+    color: var(--primary-deep-blue);
+    text-shadow: 0 0 10px var(--primary-gold);
     margin-bottom: var(--spacing-md);
 }
 
@@ -365,12 +409,12 @@ p {
 
 .cta-button {
     display: inline-block;
-    background-color: var(--buttonPrimary);
-    color: var(--neutralWhite);
+    background-color: var(--button-primary);
+    color: var(--neutral-white);
     padding: 12px 30px;
     border-radius: var(--border-radius);
     font-size: 1em;
-    box-shadow: 0 0 10px var(--accentGoldenYellow);
+    box-shadow: 0 0 10px var(--accent-golden-yellow);
     text-decoration: none;
     font-weight: 600;
     transition: background-color var(--transition-speed) var(--transition-type),
@@ -380,24 +424,26 @@ p {
 
 .cta-button:hover,
 .cta-button:focus {
-    background-color: var(--buttonSecondary);
+    background-color: var(--button-secondary);
     transform: translateY(-5px);
-    box-shadow: 0 0 20px var(--buttonSecondary);
+    box-shadow: 0 0 20px var(--button-secondary);
 }
 
-/* Services Section */
+/* ---------------------------------------------------
+   5.5. Services Section
+--------------------------------------------------- */
 .services {
     padding: var(--spacing-lg);
-    background-color: var(--neutralWhite);
-    color: var(--textPrimary);
+    background-color: var(--neutral-white);
+    color: var(--text-primary);
     text-align: center;
 }
 
 .services h2 {
     font-size: 2em;
     font-weight: 700;
-    color: var(--primaryDeepBlue);
-    text-shadow: 0 0 5px var(--primaryGold);
+    color: var(--primary-deep-blue);
+    text-shadow: 0 0 5px var(--primary-gold);
     margin-bottom: var(--spacing-lg);
 }
 
@@ -409,7 +455,7 @@ p {
 }
 
 .service-item {
-    background-color: var(--neutralCoolGray);
+    background-color: var(--neutral-cool-gray);
     padding: var(--spacing-md);
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-card);
@@ -426,19 +472,21 @@ p {
 .service-item h3 {
     font-size: 1.5em;
     font-weight: 700;
-    color: var(--primaryDeepBlue);
+    color: var(--primary-deep-blue);
     margin-bottom: var(--spacing-md);
 }
 
 .service-item p {
     font-size: 1em;
-    color: var(--textSecondary);
+    color: var(--text-secondary);
     line-height: 1.6;
 }
 
-/* Getting Started Section */
+/* ---------------------------------------------------
+   5.6. Getting Started Section
+--------------------------------------------------- */
 .getting-started {
-    background-color: var(--neutralWhite);
+    background-color: var(--neutral-white);
     padding: var(--spacing-lg) var(--spacing-md);
     box-shadow: var(--shadow-card);
     max-width: 800px;
@@ -450,23 +498,25 @@ p {
 .getting-started h2 {
     font-size: 2em;
     font-weight: 700;
-    color: var(--primaryDeepBlue);
+    color: var(--primary-deep-blue);
     margin-bottom: var(--spacing-md);
 }
 
 .getting-started p {
     font-size: 1em;
-    color: var(--textPrimary);
+    color: var(--text-primary);
     line-height: 1.6;
 }
 
-/* Footer Styles */
+/* ---------------------------------------------------
+   5.7. Footer
+--------------------------------------------------- */
 .footer {
-    background-color: var(--neutralWhite);
+    background-color: var(--neutral-white);
     padding: var(--spacing-lg);
-    color: var(--textPrimary);
+    color: var(--text-primary);
     text-align: center;
-    border-top: 1px solid var(--neutralCoolGray);
+    border-top: 1px solid var(--neutral-cool-gray);
     position: relative;
 }
 
@@ -488,7 +538,7 @@ p {
 .about-info h2 {
     font-size: 2em;
     font-weight: 700;
-    color: var(--primaryDeepBlue);
+    color: var(--primary-deep-blue);
     margin-bottom: var(--spacing-md);
     position: relative;
 }
@@ -498,14 +548,14 @@ p {
     display: block;
     width: 80px;
     height: 4px;
-    background-color: var(--secondaryTealGreen);
+    background-color: var(--secondary-teal-green);
     margin: var(--spacing-sm) auto var(--spacing-md);
     border-radius: 2px;
 }
 
 .about-info p {
     font-size: 1.1em;
-    color: var(--textSecondary);
+    color: var(--text-secondary);
     line-height: 1.8;
     text-align: left;
     margin-bottom: var(--spacing-md);
@@ -517,34 +567,34 @@ p {
 
 .contact-info p {
     font-size: 1em;
-    color: var(--textSecondary);
+    color: var(--text-secondary);
     margin-bottom: var(--spacing-sm);
 }
 
 .contact-info p strong {
-    color: var(--primaryGold);
+    color: var(--primary-gold);
 }
 
 .contact-info a {
-    color: var(--primaryGold);
+    color: var(--primary-gold);
     text-decoration: none;
     transition: color var(--transition-speed) var(--transition-type);
 }
 
 .contact-info a:hover,
 .contact-info a:focus {
-    color: var(--secondaryTealGreen);
+    color: var(--secondary-teal-green);
     text-decoration: underline;
 }
 
 .powered-by {
     margin-top: var(--spacing-lg);
     font-size: 0.95em;
-    color: var(--textPrimary);
+    color: var(--text-primary);
 }
 
 .powered-by a {
-    color: var(--primaryDeepBlue);
+    color: var(--primary-deep-blue);
     text-decoration: none;
     font-weight: 500;
     transition: color var(--transition-speed) var(--transition-type);
@@ -552,7 +602,7 @@ p {
 
 .powered-by a:hover,
 .powered-by a:focus {
-    color: var(--secondaryTealGreen);
+    color: var(--secondary-teal-green);
     text-decoration: underline;
 }
 
@@ -560,7 +610,7 @@ p {
 .footer .decorative-line {
     width: 100px;
     height: 2px;
-    background-color: var(--secondaryTealGreen);
+    background-color: var(--secondary-teal-green);
     margin: var(--spacing-sm) auto;
     border-radius: 1px;
     opacity: 0.7;
@@ -571,13 +621,17 @@ p {
     opacity: 1;
 }
 
+/* =======================================================
+   6. Components
+======================================================= */
+
 /* Scroll to Top Button */
 .scroll-to-top {
     position: fixed;
     bottom: 40px;
     right: 40px;
-    background-color: var(--primaryGold);
-    color: var(--neutralWhite);
+    background-color: var(--primary-gold);
+    color: var(--neutral-white);
     border: none;
     padding: 10px 15px;
     border-radius: 50%;
@@ -597,7 +651,7 @@ p {
 /* Loader */
 .loader {
     border: 8px solid #f3f3f3;
-    border-top: 8px solid var(--secondaryElectricBlue);
+    border-top: 8px solid var(--secondary-electric-blue);
     border-radius: 50%;
     width: 60px;
     height: 60px;
@@ -640,14 +694,14 @@ p {
 }
 
 .article-title-link {
-    color: var(--primaryDeepBlue);
+    color: var(--primary-deep-blue);
     font-size: 1.2em;
     transition: color var(--transition-speed) var(--transition-type);
 }
 
 .article-title-link:hover,
 .article-title-link:focus {
-    color: var(--secondaryElectricBlue);
+    color: var(--secondary-electric-blue);
     text-decoration: underline;
 }
 
@@ -668,8 +722,8 @@ p {
 }
 
 .category-button {
-    background-color: var(--secondaryElectricBlue);
-    color: var(--neutralWhite);
+    background-color: var(--secondary-electric-blue);
+    color: var(--neutral-white);
     padding: 8px 16px;
     border: none;
     border-radius: var(--border-radius);
@@ -680,9 +734,112 @@ p {
 
 .category-button:hover,
 .category-button:focus {
-    background-color: var(--primaryGold);
+    background-color: var(--primary-gold);
     outline: none;
 }
+
+/* Decorative Components */
+.batteries-section {
+    padding: var(--spacing-lg) var(--spacing-md);
+    background-color: var(--neutral-cool-gray);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-card);
+    margin: var(--spacing-lg) auto;
+}
+
+.batteries-section h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: var(--spacing-md);
+    color: var(--primary-deep-blue);
+}
+
+.section-description {
+    text-align: center;
+    font-size: 1em;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-lg);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.batteries-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+}
+
+.battery-card {
+    background-color: var(--neutral-white);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
+    box-shadow: var(--shadow-card);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 2px solid var(--primary-deep-blue);
+    transition: transform var(--transition-speed) var(--transition-type), box-shadow var(--transition-speed) var(--transition-type);
+}
+
+.battery-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.battery-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--primary-deep-blue);
+    font-weight: 700;
+}
+
+.battery-card p.description {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.6;
+}
+
+.battery-card p.id {
+    font-size: 0.9rem;
+    color: var(--primary-gold);
+    margin-bottom: var(--spacing-md);
+}
+
+.battery-links {
+    display: flex;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+}
+
+.battery-btn {
+    flex: 1;
+    padding: var(--spacing-sm) var(--spacing-md);
+    text-align: center;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    color: var(--neutral-white);
+    cursor: pointer;
+    background-color: var(--button-primary);
+    border: 2px solid var(--button-primary);
+    transition: background-color var(--transition-speed) var(--transition-type);
+}
+
+.battery-btn:last-child {
+    background-color: var(--button-secondary);
+    border: 2px solid var(--button-secondary);
+}
+
+.battery-btn:last-child:hover,
+.battery-btn:last-child:focus {
+    background-color: var(--button-secondary);
+}
+
+/* =======================================================
+   7. Utilities
+======================================================= */
 
 /* Scrollbar Styling */
 ::-webkit-scrollbar {
@@ -709,108 +866,13 @@ p {
     background: #f1f1f1;
 }
 
-/* Decorative Components */
-.batteries-section {
-    padding: var(--spacing-lg) var(--spacing-md);
-    background-color: var(--neutralCoolGray);
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow-card);
-    margin: var(--spacing-lg) auto;
-}
+/* =======================================================
+   8. Media Queries
+======================================================= */
 
-.batteries-section h2 {
-    text-align: center;
-    font-size: 2em;
-    margin-bottom: var(--spacing-md);
-    color: var(--primaryDeepBlue);
-}
-
-.section-description {
-    text-align: center;
-    font-size: 1em;
-    color: var(--textSecondary);
-    margin-bottom: var(--spacing-lg);
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.6;
-}
-
-.batteries-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--spacing-md);
-}
-
-.battery-card {
-    background-color: var(--neutralWhite);
-    border-radius: var(--border-radius);
-    padding: var(--spacing-md);
-    box-shadow: var(--shadow-card);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border: 2px solid var(--primaryDeepBlue);
-    transition: transform var(--transition-speed) var(--transition-type), box-shadow var(--transition-speed) var(--transition-type);
-}
-
-.battery-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-hover);
-}
-
-.battery-card h3 {
-    font-size: 1.3rem;
-    margin-bottom: var(--spacing-sm);
-    color: var(--primaryDeepBlue);
-    font-weight: 700;
-}
-
-.battery-card p.description {
-    font-size: 1rem;
-    color: var(--textSecondary);
-    margin-bottom: var(--spacing-sm);
-    line-height: 1.6;
-}
-
-.battery-card p.id {
-    font-size: 0.9rem;
-    color: var(--primaryGold);
-    margin-bottom: var(--spacing-md);
-}
-
-.battery-links {
-    display: flex;
-    gap: var(--spacing-sm);
-    flex-wrap: wrap;
-}
-
-.battery-btn {
-    flex: 1;
-    padding: var(--spacing-sm) var(--spacing-md);
-    text-align: center;
-    border-radius: var(--border-radius);
-    font-weight: 600;
-    color: var(--neutralWhite);
-    cursor: pointer;
-    background-color: var(--buttonPrimary);
-    border: 2px solid var(--buttonPrimary);
-    transition: background-color var(--transition-speed) var(--transition-type);
-}
-
-.battery-btn:last-child {
-    background-color: var(--buttonSecondary);
-    border: 2px solid var(--buttonSecondary);
-}
-
-.battery-btn:last-child:hover,
-.battery-btn:last-child:focus {
-    background-color: var(--buttonSecondary);
-}
-
-/* Media Queries */
-
-/* Small Devices (Mobile) */
+/* ---------------------------------------------------
+   8.1. Small Devices (Mobile)
+--------------------------------------------------- */
 @media (max-width: 576px) {
     .footer-content {
         padding: 60px 15px;
@@ -837,14 +899,18 @@ p {
     }
 }
 
-/* Medium Devices (Tablet) */
+/* ---------------------------------------------------
+   8.2. Medium Devices (Tablet)
+--------------------------------------------------- */
 @media (min-width: 577px) and (max-width: 768px) {
     .service-list {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-/* Large Devices (Desktop) */
+/* ---------------------------------------------------
+   8.3. Large Devices (Desktop)
+--------------------------------------------------- */
 @media (min-width: 769px) and (max-width: 992px) {
     .nav-links {
         display: none;
@@ -859,7 +925,9 @@ p {
     }
 }
 
-/* Extra Large Devices (Desktop) */
+/* ---------------------------------------------------
+   8.4. Extra Large Devices (Desktop)
+--------------------------------------------------- */
 @media (min-width: 993px) {
     .service-list {
         grid-template-columns: repeat(3, 1fr);
@@ -888,11 +956,11 @@ p {
 
     .nav-links a {
         font-size: 1rem;
-        color: var(--primaryDeepBlue);
+        color: var(--primary-deep-blue);
     }
 
     .nav-links a::after {
-        background-color: var(--primaryGold);
+        background-color: var(--primary-gold);
     }
 
     .nav-links a:hover::after,
@@ -903,7 +971,7 @@ p {
 
     .nav-links a:hover,
     .nav-links a:focus {
-        color: var(--primaryGold);
+        color: var(--primary-gold);
     }
 
     .footer-content {
@@ -920,7 +988,9 @@ p {
     }
 }
 
-/* Additional Responsive Styles for Batteries Section */
+/* ---------------------------------------------------
+   8.5. Additional Responsive Styles for Batteries Section
+--------------------------------------------------- */
 @media (min-width: 600px) {
     .batteries-grid {
         grid-template-columns: repeat(2, 1fr);
