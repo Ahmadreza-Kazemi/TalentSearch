@@ -18,6 +18,7 @@ html, body {
     direction: rtl;
     scroll-behavior: smooth;
     overflow-x: hidden;
+    padding-top: var(--header-height); /* Added to prevent header overlap */
 }
 
 /* Base styles for anchor tags */
