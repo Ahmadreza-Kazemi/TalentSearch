@@ -176,66 +176,11 @@ a:focus {
 }
 
 /* =======================================================
-   4. Typography
-======================================================= */
-
-/* Headings */
-h1, h2, h3, h4 {
-    margin-bottom: var(--spacing-large);
-}
-
-h1 {
-    font-size: 2.5em;
-    font-weight: 700;
-    color: var(--primary-deep-blue);
-    text-shadow: 0 0 10px var(--primary-gold);
-}
-
-h2 {
-    font-size: 1.8em;
-    font-weight: 700;
-    color: var(--primary-deep-blue);
-    text-shadow: 0 0 10px var(--primary-gold);
-    margin-bottom: var(--spacing-md);
-}
-
-h3 {
-    font-size: 1.5em;
-    font-weight: 700;
-    color: var(--primary-deep-blue);
-    margin-bottom: var(--spacing-md);
-}
-
-h4 {
-    font-size: 1.2em;
-    font-weight: 700;
-    color: var(--primary-deep-blue);
-    margin: var(--spacing-lg) 0 var(--spacing-md);
-}
-
-/* Paragraphs */
-p {
-    font-size: 1em;
-    max-width: 90%;
-    margin: 0 auto var(--spacing-medium);
-    line-height: 1.6;
-    text-align: center;
-    color: var(--text-primary);
-}
-
-/* Error Messages */
-.error-message {
-    color: red;
-    margin-top: var(--spacing-md);
-    font-size: 1em;
-}
-
-/* =======================================================
-   5. Layout Sections
+   4. Layout Sections
 ======================================================= */
 
 /* ---------------------------------------------------
-   5.1. Header
+   4.1. Header
 --------------------------------------------------- */
 .header {
     position: fixed;
@@ -265,7 +210,7 @@ p {
 }
 
 /* ---------------------------------------------------
-   5.2. Navigation
+   4.2. Navigation
 --------------------------------------------------- */
 .navbar {
     position: relative;
@@ -358,7 +303,7 @@ p {
 }
 
 /* ---------------------------------------------------
-   5.3. Skip Link for Accessibility
+   4.3. Skip Link for Accessibility
 --------------------------------------------------- */
 .skip-link {
     position: absolute;
@@ -376,8 +321,67 @@ p {
     top: var(--spacing-md);
 }
 
+/* =======================================================
+   5. Typography
+======================================================= */
+
+/* Headings */
+h1, h2, h3, h4 {
+    margin-bottom: var(--spacing-large);
+}
+
+h1 {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: var(--primary-deep-blue);
+    text-shadow: 0 0 10px var(--primary-gold);
+}
+
+h2 {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--primary-deep-blue);
+    text-shadow: 0 0 10px var(--primary-gold);
+    margin-bottom: var(--spacing-md);
+}
+
+h3 {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: var(--primary-deep-blue);
+    margin-bottom: var(--spacing-md);
+}
+
+h4 {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: var(--primary-deep-blue);
+    margin: var(--spacing-lg) 0 var(--spacing-md);
+}
+
+/* Paragraphs */
+p {
+    font-size: 1em;
+    max-width: 90%;
+    margin: 0 auto var(--spacing-medium);
+    line-height: 1.6;
+    text-align: center;
+    color: var(--text-primary);
+}
+
+/* Error Messages */
+.error-message {
+    color: red;
+    margin-top: var(--spacing-md);
+    font-size: 1em;
+}
+
+/* =======================================================
+   6. Layout Sections
+======================================================= */
+
 /* ---------------------------------------------------
-   5.4. Hero Section
+   6.1. Hero Section
 --------------------------------------------------- */
 .hero {
     height: calc(100vh - var(--header-height)); /* Adjust height for fixed header */
@@ -430,7 +434,7 @@ p {
 }
 
 /* ---------------------------------------------------
-   5.5. Services Section
+   6.2. Services Section
 --------------------------------------------------- */
 .services {
     padding: var(--spacing-lg);
@@ -483,7 +487,7 @@ p {
 }
 
 /* ---------------------------------------------------
-   5.6. Getting Started Section
+   6.3. Getting Started Section
 --------------------------------------------------- */
 .getting-started {
     background-color: var(--neutral-white);
@@ -509,7 +513,7 @@ p {
 }
 
 /* ---------------------------------------------------
-   5.7. Footer
+   6.4. Footer
 --------------------------------------------------- */
 .footer {
     background-color: var(--neutral-white);
@@ -622,7 +626,7 @@ p {
 }
 
 /* =======================================================
-   6. Components
+   7. Components
 ======================================================= */
 
 /* Scroll to Top Button */
@@ -838,7 +842,7 @@ p {
 }
 
 /* =======================================================
-   7. Utilities
+   8. Utilities
 ======================================================= */
 
 /* Scrollbar Styling */
@@ -867,11 +871,11 @@ p {
 }
 
 /* =======================================================
-   8. Media Queries
+   9. Media Queries
 ======================================================= */
 
 /* ---------------------------------------------------
-   8.1. Small Devices (Mobile)
+   9.1. Small Devices (Mobile)
 --------------------------------------------------- */
 @media (max-width: 576px) {
     .footer-content {
@@ -900,7 +904,7 @@ p {
 }
 
 /* ---------------------------------------------------
-   8.2. Medium Devices (Tablet)
+   9.2. Medium Devices (Tablet)
 --------------------------------------------------- */
 @media (min-width: 577px) and (max-width: 768px) {
     .service-list {
@@ -909,7 +913,7 @@ p {
 }
 
 /* ---------------------------------------------------
-   8.3. Large Devices (Desktop)
+   9.3. Large Devices (Desktop)
 --------------------------------------------------- */
 @media (min-width: 769px) and (max-width: 992px) {
     .nav-links {
@@ -926,7 +930,7 @@ p {
 }
 
 /* ---------------------------------------------------
-   8.4. Extra Large Devices (Desktop)
+   9.4. Extra Large Devices (Desktop)
 --------------------------------------------------- */
 @media (min-width: 993px) {
     .service-list {
@@ -989,7 +993,7 @@ p {
 }
 
 /* ---------------------------------------------------
-   8.5. Additional Responsive Styles for Batteries Section
+   9.5. Additional Responsive Styles for Batteries Section
 --------------------------------------------------- */
 @media (min-width: 600px) {
     .batteries-grid {
