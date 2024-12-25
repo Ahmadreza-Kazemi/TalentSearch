@@ -520,7 +520,7 @@ p {
     background-color: var(--neutral-white);
     padding: var(--spacing-lg);
     color: var(--text-primary);
-    text-align: center;
+    text-align: center; /* Center all text in the footer */
     border-top: 1px solid var(--neutral-cool-gray);
     position: relative;
 }
@@ -532,12 +532,14 @@ p {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-lg);
+    text-align: center; /* Center content inside footer-content */
 }
 
 .about-info,
 .contact-info,
 .powered-by {
     flex: 1;
+    text-align: center; /* Center text for these sections */
 }
 
 .about-info h2 {
@@ -546,6 +548,7 @@ p {
     color: var(--primary-deep-blue);
     margin-bottom: var(--spacing-md);
     position: relative;
+    text-align: center; /* Center heading text */
 }
 
 .about-info h2::after {
@@ -562,18 +565,19 @@ p {
     font-size: 1.1em;
     color: var(--text-secondary);
     line-height: 1.8;
-    text-align: left;
+    text-align: center; /* Center paragraph text */
     margin-bottom: var(--spacing-md);
 }
 
 .contact-info {
-    text-align: left;
+    text-align: center; /* Center contact-info text */
 }
 
 .contact-info p {
     font-size: 1em;
     color: var(--text-secondary);
     margin-bottom: var(--spacing-sm);
+    text-align: center; /* Center paragraph text */
 }
 
 .contact-info p strong {
@@ -596,6 +600,7 @@ p {
     margin-top: var(--spacing-lg);
     font-size: 0.95em;
     color: var(--text-primary);
+    text-align: center; /* Center powered-by text */
 }
 
 .powered-by a {
@@ -625,6 +630,7 @@ p {
 .footer .decorative-line:hover {
     opacity: 1;
 }
+
 
 /* =======================================================
    7. Components
