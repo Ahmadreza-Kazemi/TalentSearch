@@ -19,10 +19,12 @@ html, body {
     scroll-behavior: smooth;
     overflow-x: hidden;
 }
- body {
-   
-   padding-top: var(--header-height); /* Added to prevent header overlap */
+
+body {
+    padding-top: var(--header-height); /* Added to prevent header overlap */
+    padding-bottom: 60px; /* Added to prevent content overlap with mobile navbar */
 }
+
 /* Base styles for anchor tags */
 a {
     text-decoration: none;
@@ -104,7 +106,7 @@ a:focus {
        2.8. Transitions
     --------------------------------------------------- */
     --transition-speed: 0.3s;
-    --transition-type: ease;
+    --transition-type: ease-in-out;
 }
 
 /* =======================================================
@@ -200,6 +202,7 @@ a:focus {
     z-index: 1000;
 }
 
+/* Logo Styles */
 .logo {
     font-size: 1.8rem;
     font-weight: 700;
@@ -216,35 +219,15 @@ a:focus {
    4.2. Navigation - Responsive Navbar
 --------------------------------------------------- */
 
-/* Root Variables (Ensure these are defined in your :root selector) */
-:root {
-    --primary-deep-blue: #1E3A8A;
-    --primary-gold: #D4AF37;
-    --neutral-white: #FFFFFF;
-    --text-primary: #333333;
-    --transition-speed: 0.3s;
-    --transition-type: ease-in-out;
-    --header-height: 60px; /* Adjust as needed */
-    --spacing-sm: 8px;
-    --spacing-lg: 24px;
-}
-
 /* Navbar Container */
 .navbar {
-    position: fixed; /* Fixed positioning */
-    top: 0;          /* Position at the top */
-    left: 0;
     width: 100%;
-    height: var(--header-height);
     background-color: var(--neutral-white);
-    display: flex;
-    align-items: center;
-    justify-content: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     z-index: 1000;
 }
 
-/* Navigation Links - Desktop */
+/* Navigation Links */
 .nav-links {
     display: flex;
     justify-content: center;
@@ -267,6 +250,34 @@ a:focus {
     position: relative;
     padding: var(--spacing-sm) 0;
     transition: color var(--transition-speed) var(--transition-type);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Link Text */
+.nav-links a .link-text {
+    display: inline; /* Visible on desktop */
+    transition: color var(--transition-speed) var(--transition-type);
+}
+
+/* Icon Styles */
+.nav-links a .icon {
+    display: none; /* Hidden on desktop */
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    transition: color var(--transition-speed) var(--transition-type);
+}
+
+/* Hover and Focus Effects */
+.nav-links a:hover .link-text,
+.nav-links a:focus .link-text {
+    color: var(--primary-gold);
+}
+
+.nav-links a:hover .icon,
+.nav-links a:focus .icon {
+    color: var(--primary-gold);
 }
 
 /* Underline Effect */
@@ -287,18 +298,14 @@ a:focus {
     left: 0;
 }
 
-.nav-links a:hover,
-.nav-links a:focus {
-    color: var(--primary-gold);
-}
-
 /* Mobile Styles */
 @media (max-width: 768px) {
+    /* Navbar Positioning */
     .navbar {
-        top: auto;          /* Remove top positioning */
-        bottom: 0;          /* Fix to bottom */
-        height: 60px;       /* Adjust height if needed */
-        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        bottom: 0;
+        top: auto;
+        height: 60px;
     }
 
     /* Navigation Links - Mobile */
@@ -307,61 +314,50 @@ a:focus {
         justify-content: space-around;
         align-items: center;
         width: 100%;
-        padding: 0;
     }
 
     /* Navigation Link Items - Mobile */
     .nav-links li {
         margin: 0;
+        flex: 1;
+        text-align: center;
     }
 
     /* Navigation Links - Mobile */
     .nav-links a {
-        display: flex;
         flex-direction: column;
-        align-items: center;
         font-size: 0.75rem; /* Smaller font size for labels */
         color: var(--text-primary);
+        padding: 5px 0;
     }
 
-    /* Icons within Links */
+    /* Icon Styles - Mobile */
     .nav-links a .icon {
-        font-size: 1.5rem; /* Icon size */
+        display: block; /* Show icons on mobile */
+        font-size: 1.5rem; /* Larger icons for better visibility */
         margin-bottom: 4px; /* Space between icon and label */
-        transition: color var(--transition-speed) var(--transition-type);
     }
 
-    /* Icon Hover Effect */
+    /* Link Text Styles - Mobile */
+    .nav-links a .link-text {
+        display: block;
+    }
+
+    /* Hover and Focus Effects - Mobile */
+    .nav-links a:hover .link-text,
+    .nav-links a:focus .link-text {
+        color: var(--primary-gold);
+    }
+
     .nav-links a:hover .icon,
     .nav-links a:focus .icon {
         color: var(--primary-gold);
     }
 
-    /* Underline Effect - Mobile */
+    /* Remove Underline Effect on Mobile */
     .nav-links a::after {
-        content: none; /* Remove underline on mobile */
+        content: none;
     }
-}
-
-}
-
-/* ---------------------------------------------------
-   4.3. Skip Link for Accessibility
---------------------------------------------------- */
-.skip-link {
-    position: absolute;
-    top: -40px;
-    left: 0;
-    background: var(--primary-deep-blue);
-    color: var(--neutral-white);
-    padding: var(--spacing-xs) var(--spacing-sm);
-    z-index: 100;
-    border-radius: var(--border-radius);
-    transition: top var(--transition-speed) var(--transition-type);
-}
-
-.skip-link:focus {
-    top: var(--spacing-md);
 }
 
 /* =======================================================
@@ -553,6 +549,7 @@ p {
     color: var(--text-primary);
     line-height: 1.6;
 }
+
 /* ---------------------------------------------------
    6.4. Footer
 --------------------------------------------------- */
@@ -670,7 +667,6 @@ p {
 .footer .decorative-line:hover {
     opacity: 1;
 }
-
 
 /* =======================================================
    7. Components
@@ -963,14 +959,6 @@ p {
    9.3. Large Devices (Desktop)
 --------------------------------------------------- */
 @media (min-width: 769px) and (max-width: 992px) {
-    .nav-links {
-        display: none;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
     .service-list {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -982,47 +970,6 @@ p {
 @media (min-width: 993px) {
     .service-list {
         grid-template-columns: repeat(3, 1fr);
-    }
-
-    .menu-toggle {
-        display: none;
-    }
-
-    .nav-links {
-        position: static;
-        flex-direction: row;
-        height: auto;
-        background-color: transparent;
-        transform: translateX(0);
-        gap: var(--spacing-md);
-        box-shadow: none;
-        padding: 0;
-        display: flex;
-        width: 100%;
-        box-sizing: border-box;
-        overflow: hidden;
-        justify-content: flex-end;
-        min-width: max-content;
-    }
-
-    .nav-links a {
-        font-size: 1rem;
-        color: var(--primary-deep-blue);
-    }
-
-    .nav-links a::after {
-        background-color: var(--primary-gold);
-    }
-
-    .nav-links a:hover::after,
-    .nav-links a:focus::after {
-        width: 100%;
-        left: 0;
-    }
-
-    .nav-links a:hover,
-    .nav-links a:focus {
-        color: var(--primary-gold);
     }
 
     .footer-content {
@@ -1051,9 +998,5 @@ p {
 @media (min-width: 992px) {
     .batteries-grid {
         grid-template-columns: repeat(3, 1fr);
-    }
-
-    .nav-links {
-        justify-content: space-between;
     }
 }
