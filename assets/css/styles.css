@@ -21,8 +21,8 @@ html, body {
 }
 
 body {
-    padding-top: var(--header-height); /* Added to prevent header overlap */
-    padding-bottom: 60px; /* Added to prevent content overlap with mobile navbar */
+    padding-top: var(--header-height); /* Prevent content overlap with header */
+    padding-bottom: 60px; /* Prevent content overlap with mobile navbar */
 }
 
 /* Base styles for anchor tags */
@@ -219,14 +219,6 @@ a:focus {
    4.2. Navigation - Responsive Navbar
 --------------------------------------------------- */
 
-/* Navbar Container */
-.navbar {
-    width: 100%;
-    background-color: var(--neutral-white);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-}
-
 /* Navigation Links */
 .nav-links {
     display: flex;
@@ -300,16 +292,29 @@ a:focus {
 
 /* Mobile Styles */
 @media (max-width: 768px) {
-    /* Navbar Positioning */
-    .navbar {
-        position: fixed;
-        bottom: 0;
-        top: auto;
-        height: 60px;
+    /* Hide navigation links in header */
+    .nav-links {
+        display: none;
     }
 
-    /* Navigation Links - Mobile */
-    .nav-links {
+    /* Fixed Bottom Navbar */
+    .navbar {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 10px; /* Left offset */
+        width: calc(100% - 20px); /* Adjust width with offset */
+        height: 60px;
+        background-color: var(--neutral-white);
+        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        justify-content: space-around;
+        align-items: center;
+        z-index: 999;
+    }
+
+    /* Show navigation links in mobile navbar */
+    .navbar .nav-links {
+        display: flex;
         flex-direction: row;
         justify-content: space-around;
         align-items: center;
@@ -317,14 +322,14 @@ a:focus {
     }
 
     /* Navigation Link Items - Mobile */
-    .nav-links li {
+    .navbar .nav-links li {
         margin: 0;
         flex: 1;
         text-align: center;
     }
 
     /* Navigation Links - Mobile */
-    .nav-links a {
+    .navbar .nav-links a {
         flex-direction: column;
         font-size: 0.75rem; /* Smaller font size for labels */
         color: var(--text-primary);
@@ -332,30 +337,30 @@ a:focus {
     }
 
     /* Icon Styles - Mobile */
-    .nav-links a .icon {
+    .navbar .nav-links a .icon {
         display: block; /* Show icons on mobile */
         font-size: 1.5rem; /* Larger icons for better visibility */
         margin-bottom: 4px; /* Space between icon and label */
     }
 
     /* Link Text Styles - Mobile */
-    .nav-links a .link-text {
+    .navbar .nav-links a .link-text {
         display: block;
     }
 
     /* Hover and Focus Effects - Mobile */
-    .nav-links a:hover .link-text,
-    .nav-links a:focus .link-text {
+    .navbar .nav-links a:hover .link-text,
+    .navbar .nav-links a:focus .link-text {
         color: var(--primary-gold);
     }
 
-    .nav-links a:hover .icon,
-    .nav-links a:focus .icon {
+    .navbar .nav-links a:hover .icon,
+    .navbar .nav-links a:focus .icon {
         color: var(--primary-gold);
     }
 
     /* Remove Underline Effect on Mobile */
-    .nav-links a::after {
+    .navbar .nav-links a::after {
         content: none;
     }
 }
