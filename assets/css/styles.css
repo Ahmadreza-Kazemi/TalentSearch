@@ -298,13 +298,6 @@ a:focus {
     left: 0;
 }
 
-/* Adjustments for Alignment */
-@media (min-width: 769px) {
-    .navbar .nav-links {
-        margin-left: auto;
-    }
-}
-
 /* =======================================================
    5. Typography
 ======================================================= */
@@ -863,91 +856,17 @@ p {
 ======================================================= */
 
 /* ---------------------------------------------------
-   9.1. Small Devices (Mobile)
+   9.1. Desktop Navbar Alignment
 --------------------------------------------------- */
-@media (max-width: 576px) {
-    .footer-content {
-        padding: 60px 15px;
-    }
-
-    .about-info h2 {
-        font-size: 2em;
-    }
-
-    .about-info h2::after {
-        width: 60px;
-    }
-
-    .about-info p {
-        font-size: 1em;
-    }
-
-    .contact-info p {
-        font-size: 0.95em;
-    }
-
-    .powered-by {
-        font-size: 0.85em;
+@media (min-width: 769px) {
+    /* Navbar Alignment with Logo */
+    .navbar {
+        margin-left: auto;
     }
 }
 
 /* ---------------------------------------------------
-   9.2. Medium Devices (Tablet)
---------------------------------------------------- */
-@media (min-width: 577px) and (max-width: 768px) {
-    .service-list {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* ---------------------------------------------------
-   9.3. Large Devices (Desktop)
---------------------------------------------------- */
-@media (min-width: 769px) and (max-width: 992px) {
-    .service-list {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-/* ---------------------------------------------------
-   9.4. Extra Large Devices (Desktop)
---------------------------------------------------- */
-@media (min-width: 993px) {
-    .service-list {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .footer-content {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-start;
-        gap: 60px;
-    }
-
-    .about-info,
-    .contact-info,
-    .powered-by {
-        text-align: left;
-    }
-}
-
-/* ---------------------------------------------------
-   9.5. Additional Responsive Styles for Batteries Section
---------------------------------------------------- */
-@media (min-width: 600px) {
-    .batteries-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (min-width: 992px) {
-    .batteries-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-/* ---------------------------------------------------
-   9.6. Mobile Navbar Fix
+   9.2. Mobile Navbar Fix
 --------------------------------------------------- */
 @media (max-width: 768px) {
     /* Hide navigation links in header */
@@ -960,8 +879,8 @@ p {
         display: flex;
         position: fixed;
         bottom: 0;
-        left: 0; /* Remove left offset */
-        width: 100%; /* Full width */
+        left: 0; /* Full width, no offset */
+        width: 100%;
         height: 60px;
         background-color: var(--neutral-white);
         box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
@@ -1021,5 +940,89 @@ p {
     /* Remove Underline Effect on Mobile */
     .navbar .nav-links a::after {
         content: none;
+    }
+}
+
+/* ---------------------------------------------------
+   9.3. Small Devices (Mobile)
+--------------------------------------------------- */
+@media (max-width: 576px) {
+    .footer-content {
+        padding: 60px 15px;
+    }
+
+    .about-info h2 {
+        font-size: 2em;
+    }
+
+    .about-info h2::after {
+        width: 60px;
+    }
+
+    .about-info p {
+        font-size: 1em;
+    }
+
+    .contact-info p {
+        font-size: 0.95em;
+    }
+
+    .powered-by {
+        font-size: 0.85em;
+    }
+}
+
+/* ---------------------------------------------------
+   9.4. Medium Devices (Tablet)
+--------------------------------------------------- */
+@media (min-width: 577px) and (max-width: 768px) {
+    .service-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ---------------------------------------------------
+   9.5. Large Devices (Desktop)
+--------------------------------------------------- */
+@media (min-width: 769px) and (max-width: 992px) {
+    .service-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* ---------------------------------------------------
+   9.6. Extra Large Devices (Desktop)
+--------------------------------------------------- */
+@media (min-width: 993px) {
+    .service-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 60px;
+    }
+
+    .about-info,
+    .contact-info,
+    .powered-by {
+        text-align: left;
+    }
+}
+
+/* ---------------------------------------------------
+   9.7. Additional Responsive Styles for Batteries Section
+--------------------------------------------------- */
+@media (min-width: 600px) {
+    .batteries-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .batteries-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
