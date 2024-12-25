@@ -6,95 +6,111 @@
     <title>استعدادیاب | معرفی ارزیابی‌های روان‌شناختی</title>
     <meta name="description" content="با استعدادیاب، با ارزیابی‌های روان‌شناختی پیشرفته آشنا شوید و توانمندی‌های خود را بشناسید.">
     <style>
-        
-                :root {
+        /* Root Variables */
+        :root {
+            /* Font Family */
             --font-family: 'Vazir', sans-serif;
-            --color-bg: #1a1a2e;
-            --color-text: #eaeaea;
-            --color-primary: #FFA500;
-            --color-secondary: #4ecdc4;
-            --color-accent: #556270;
-            --header-height: 80px;
+            
+            /* Primary Colors */
+            --primaryGold: #F4C553;             /* Highlights, Buttons, Icons, CTAs */
+            --primaryDeepBlue: #1F3B73;         /* Trust, Headers, Primary Text */
+            
+            /* Secondary Colors */
+            --secondaryTealGreen: #4FBDBA;      /* Growth, Secondary Buttons, Accents */
+            --secondaryElectricBlue: #007BFF;   /* Dynamic Interactions, Links, Active States */
+            
+            /* Neutral Colors */
+            --neutralWhite: #FFFFFF;            /* Backgrounds, Text Contrast, Open Spaces */
+            --neutralCoolGray: #F0F0F5;         /* Section Dividers, Form Fields, Subtle Contrasts */
+            --neutralDarkGray: #888888;         /* General Text and Icons */
+            
+            /* Accent Colors */
+            --accentGoldenYellow: #FFD77B;      /* Hover Effects, Gradients, Embellishments */
+            
+            /* Text Colors */
+            --textPrimary: var(--primaryDeepBlue); /* Main Text */
+            --textSecondary: var(--neutralDarkGray); /* Secondary Text */
+            
+            /* Button Colors */
+            --buttonPrimary: var(--primaryGold);      /* Primary Buttons */
+            --buttonPrimaryHover: var(--accentGoldenYellow); /* Primary Button Hover */
+            --buttonSecondary: var(--secondaryTealGreen); /* Secondary Buttons */
+            --buttonSecondaryHover: var(--secondaryElectricBlue); /* Secondary Button Hover */
+            
+            /* Spacing */
+            --header-height: 70px;
+            --spacing-xs: 4px;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+            --spacing-xl: 32px;
             --border-radius: 8px;
-            --spacing-medium: 20px;
-            --spacing-large: 40px;
             --transition-speed: 0.3s;
-            --transition-type: ease
+            --transition-ease: ease-in-out;
+            
+            /* Shadows */
+            --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 6px 18px rgba(0, 0, 0, 0.15);
         }
-
+    
+        /* Importing Vazir Font */
         @font-face {
             font-family: 'Vazir';
             src: url('assets/fonts/Vazir.woff2') format('woff2');
             font-weight: normal;
             font-style: normal;
-            font-display: swap
+            font-display: swap;
         }
-
+    
+        /* Reset and Base Styles */
         *, *::before, *::after {
             box-sizing: border-box;
             margin: 0;
-            padding: 0
+            padding: 0;
         }
-
+    
         body, html {
+            height: 100%;
             font-family: var(--font-family);
-            background-color: var(--color-bg);
-            color: var(--color-text);
+            background-color: var(--neutralWhite);
+            color: var(--textPrimary);
             direction: rtl;
             scroll-behavior: smooth;
-            height: 100%;
-            overflow-x: hidden
+            overflow-x: hidden;
         }
-
-        h1, h2, h3 {
-            margin-bottom: var(--spacing-medium)
+    
+        a {
+            text-decoration: none;
+            color: var(--primaryDeepBlue);
         }
-
-        h2 {
-            font-size: 1.8em;
-            color: var(--color-primary);
-            text-shadow: 0 0 10px var(--color-primary);
-            margin-bottom: 10px
-        }
-
-        p {
-            font-size: 1em;
-            color: var(--color-text);
-            max-width: 90%;
-            margin: 0 auto var(--spacing-medium);
-            line-height: 1.6;
-            text-align: center
-        }
-
+    
+        /* Header Styles */
         .header {
-            background: linear-gradient(135deg, rgba(26, 26, 46, 0.95), rgba(26, 26, 46, 0.85));
-            padding: 0 var(--spacing-medium);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--header-height);
+            background: var(--neutralWhite);
             display: flex;
             align-items: center;
             justify-content: space-between;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            position: relative;
-            height: var(--header-height);
-            width: 100%;
-            z-index: 1000
+            padding: 0 var(--spacing-md);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            z-index: 1000;
         }
-
+    
         .logo {
-            font-size: 1.8em;
-            color: var(--color-primary);
-            text-decoration: none;
+            font-size: 1.8rem;
             font-weight: bold;
-            transition: color var(--transition-speed) var(--transition-type)
+            color: var(--primaryDeepBlue);
         }
-
-        .logo:hover, .logo:focus {
-            color: var(--color-secondary)
-        }
-
+    
+        /* Navigation Styles */
         .navbar {
-            position: relative
+            position: relative;
         }
-
+    
         .menu-toggle {
             background: none;
             border: none;
@@ -102,338 +118,259 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            width: 35px;
-            height: 24px;
+            width: 30px;
+            height: 22px;
             padding: 0;
-            z-index: 1001
+            z-index: 1001;
         }
-
+    
         .menu-toggle .hamburger {
             width: 100%;
             height: 4px;
-            background-color: var(--color-text);
+            background-color: var(--primaryDeepBlue);
             border-radius: 2px;
-            transition: all var(--transition-speed) var(--transition-type)
         }
-
+    
         .menu-toggle.active .hamburger:nth-child(1) {
-            transform: translateY(10px) rotate(45deg)
+            transform: rotate(45deg) translate(5px, 5px);
+            background-color: var(--primaryGold);
         }
-
+    
         .menu-toggle.active .hamburger:nth-child(2) {
-            opacity: 0
+            opacity: 0;
         }
-
+    
         .menu-toggle.active .hamburger:nth-child(3) {
-            transform: translateY(-10px) rotate(-45deg)
+            transform: rotate(-45deg) translate(5px, -5px);
+            background-color: var(--primaryGold);
         }
-
+    
         .nav-links {
             position: fixed;
             top: var(--header-height);
-            left: 0;
-            width: 80%;
-            max-width: 320px;
-            background-color: rgba(26, 26, 46, 0.95);
-            display: none;
+            right: 0;
+            width: 100%;
+            height: calc(100% - var(--header-height));
+            background-color: var(--neutralWhite);
+            display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start;
-            gap: var(--spacing-large);
-            box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
-            list-style: none;
-            padding: var(--spacing-medium);
-            box-sizing: border-box;
-            overflow-y: auto;
-            transition: transform 0.3s ease-in-out, top 0.3s ease-in-out
+            justify-content: center;
+            gap: var(--spacing-lg);
+            transform: translateX(100%);
         }
-
+    
         .nav-links.active {
-            display: flex;
-            transform: translateX(0)
+            transform: translateX(0);
         }
-
+    
         .nav-links a {
-            font-size: 1.6em;
-            color: var(--color-text);
-            text-decoration: none;
+            font-size: 1.5rem;
+            color: var(--textPrimary);
             position: relative;
-            padding: 8px 0;
-            transition: color var(--transition-speed) var(--transition-type);
-            white-space: nowrap
+            padding: var(--spacing-sm) 0;
+            border-bottom: 2px solid transparent;
         }
-
+    
         .nav-links a::after {
             content: '';
             position: absolute;
             width: 0%;
             height: 2px;
             left: 50%;
-            bottom: -4px;
-            background-color: var(--color-secondary);
-            transition: width var(--transition-speed) var(--transition-type), left var(--transition-speed) var(--transition-type)
+            bottom: -6px;
+            background-color: var(--primaryGold);
         }
-
+    
         .nav-links a:hover::after, .nav-links a:focus::after {
             width: 100%;
-            left: 0
+            left: 0;
         }
-
+    
         .nav-links a:hover, .nav-links a:focus {
-            color: var(--color-secondary)
+            color: var(--primaryGold);
         }
-
-        @media (min-width:992px) {
-            .menu-toggle {
-                display: none
-            }
-
-            .nav-links {
-                position: static;
-                flex-direction: row;
-                flex-wrap: nowrap;
-                height: auto;
-                background-color: transparent;
-                transform: translateX(0);
-                gap: 0;
-                box-shadow: none;
-                padding: 0;
-                display: flex;
-                width: 100%;
-                box-sizing: border-box;
-                overflow: hidden;
-                justify-content: space-between;
-                min-width: max-content
-            }
-
-            .nav-links a {
-                font-size: 1.2em;
-                padding: 0 15px;
-                white-space: nowrap;
-                position: relative;
-                transition: color var(--transition-speed) var(--transition-type)
-            }
-
-            .nav-links a::after {
-                content: '';
-                position: absolute;
-                width: 0%;
-                height: 2px;
-                left: 50%;
-                bottom: -4px;
-                background-color: var(--color-secondary);
-                transition: width var(--transition-speed) var(--transition-type), left var(--transition-speed) var(--transition-type)
-            }
-
-            .nav-links a:hover::after, .nav-links a:focus::after {
-                width: 100%;
-                left: 0
-            }
-
-            .nav-links a:hover, .nav-links a:focus {
-                color: var(--color-secondary)
-            }
-        }
-
-        .hero {
-            height: calc(100vh - var(--header-height));
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background-color: var(--color-bg);
-            color: var(--color-text);
-            position: relative;
-            overflow: hidden;
-            text-align: center
-        }
-
-        .hero h2 {
-            font-size: 3em;
-            color: var(--color-primary);
-            text-shadow: 0 0 10px var(--color-primary)
-        }
-
-        .hero p {
-            font-size: 1.5em;
-            margin-bottom: var(--spacing-large)
-        }
-
-        .cta-button {
-            display: inline-block;
-            background-color: var(--color-accent);
-            color: var(--color-text);
-            padding: 12px 30px;
-            border-radius: var(--border-radius);
-            font-size: 1em;
-            box-shadow: 0 0 10px var(--color-accent);
-            text-decoration: none
-        }
-
+    
+        /* Skip Link for Accessibility */
         .skip-link {
             position: absolute;
             top: -40px;
             left: 0;
-            background: #fff;
-            color: #000;
-            padding: 8px;
-            z-index: 100
+            background: var(--primaryDeepBlue);
+            color: var(--neutralWhite);
+            padding: var(--spacing-xs) var(--spacing-sm);
+            z-index: 100;
+            border-radius: var(--border-radius);
         }
-
+    
         .skip-link:focus {
-            top: 0
+            top: var(--spacing-md);
         }
-        /* Shallow, Sharp, Girlish, Calm, Modern, and Professional Styles */
-
-/* Section Styles */
-.batteries-section,
-.inventory-section {
-    margin-bottom: 60px;
-    padding: 30px 20px;
-    background-color: #F5F5F5; /* Very Light Gray background for sections */
-    border-radius: 15px; /* Sharp and smooth corners */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
-}
-
-/* Section Headers */
-.batteries-section h2,
-.inventory-section h2 {
-    text-align: center;
-    font-size: 2.5em;
-    margin-bottom: 15px;
-    color: #2F4F4F; /* Dark Slate Gray for headers */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 700;
-}
-
-/* Section Description */
-.section-description {
-    text-align: center;
-    font-size: 1.1em;
-    color: #696969; /* Gray for descriptions */
-    margin-bottom: 30px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.6;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-/* Grid Layout */
-.batteries-grid,
-.inventory-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 25px;
-}
-
-/* Card Styles */
-.battery-card,
-.inventory-card {
-    background-color: #FFFFFF; /* White background for cards */
-    border-radius: 12px; /* Smooth corners */
-    padding: 25px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Light shadow */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-/* Hover Effects for Cards */
-.battery-card:hover,
-.inventory-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Enhanced shadow on hover */
-}
-
-/* Card Headers */
-.battery-card h3,
-.inventory-card h3 {
-    font-size: 1.6em;
-    margin-bottom: 10px;
-    color: #FFC0CB; /* Soft Pink for card titles */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 600;
-}
-
-/* Card Descriptions */
-.battery-card p,
-.inventory-card p.description {
-    font-size: 1em;
-    color: #696969; /* Gray for descriptions */
-    margin-bottom: 20px;
-    line-height: 1.5;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-/* Inventory ID */
-.inventory-card p.id {
-    font-size: 0.9em;
-    color: #A9A9A9; /* Dark Gray for IDs */
-    margin-bottom: 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-/* Button Containers */
-.battery-links,
-.cta-buttons {
-    display: flex;
-    gap: 10px;
-}
-
-/* Button Styles */
-.battery-btn,
-.cta-btn {
-    flex: 1;
-    padding: 12px;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 8px; /* Sharp corners for buttons */
-    font-weight: 600;
-    color: #FFFFFF; /* White text on buttons */
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    cursor: pointer;
-}
-
-/* Primary Buttons */
-.battery-btn:first-child,
-.cta-test {
-    background-color: #FF7F50; /* Coral for primary buttons */
-}
-
-.battery-btn:first-child:hover,
-.cta-test:hover {
-    background-color: #FF6347; /* Darker Coral on hover */
-    transform: scale(1.02);
-}
-
-/* Secondary Buttons */
-.battery-btn:last-child,
-.cta-introduction {
-    background-color: #E6E6FA; /* Soft Lavender for secondary buttons */
-    color: #2F4F4F; /* Dark Slate Gray text for contrast */
-    border: 1px solid #D8BFD8; /* Light border for definition */
-}
-
-.battery-btn:last-child:hover,
-.cta-introduction:hover {
-    background-color: #DDA0DD; /* Medium Purple on hover */
-    transform: scale(1.02);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .batteries-grid,
-    .inventory-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
+    
+        /* Main Content Styles */
+        main {
+            padding: calc(var(--header-height) + var(--spacing-lg)) var(--spacing-md) var(--spacing-lg);
+        }
+    
+        /* Batteries Section */
+        .batteries-section {
+            padding: var(--spacing-lg) var(--spacing-md);
+            background-color: var(--neutralCoolGray);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-card);
+            margin-bottom: var(--spacing-lg);
+        }
+    
+        .batteries-section h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: var(--spacing-md);
+            color: var(--primaryDeepBlue);
+        }
+    
+        .section-description {
+            text-align: center;
+            font-size: 1rem;
+            color: var(--textSecondary);
+            margin-bottom: var(--spacing-lg);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+    
+        /* Batteries Grid */
+        .batteries-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-md);
+        }
+    
+        /* Battery Card */
+        .battery-card {
+            background-color: var(--neutralWhite);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-md);
+            box-shadow: var(--shadow-card);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: 2px solid var(--primaryDeepBlue);
+        }
+    
+        .battery-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+    
+        .battery-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: var(--spacing-sm);
+            color: var(--primaryDeepBlue);
+        }
+    
+        .battery-card p.description {
+            font-size: 1rem;
+            color: var(--textSecondary);
+            margin-bottom: var(--spacing-sm);
+            line-height: 1.6;
+        }
+    
+        .battery-card p.id {
+            font-size: 0.9rem;
+            color: var(--primaryGold);
+            margin-bottom: var(--spacing-md);
+        }
+    
+        .battery-links {
+            display: flex;
+            gap: var(--spacing-sm);
+            flex-wrap: wrap;
+        }
+    
+        .battery-btn {
+            flex: 1;
+            padding: var(--spacing-sm) var(--spacing-md);
+            text-align: center;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            color: var(--neutralWhite);
+            cursor: pointer;
+            background-color: var(--buttonPrimary);
+            border: 2px solid var(--buttonPrimary);
+        }
+    
+        .battery-btn:last-child {
+            background-color: var(--buttonSecondary);
+            border: 2px solid var(--buttonSecondary);
+        }
+    
+        /* Adjust Button Hover for Secondary Button */
+        .battery-btn:last-child:hover, .battery-btn:last-child:focus {
+            background-color: var(--buttonSecondaryHover);
+        }
+    
+        /* Mobile-First Styles */
+        @media (min-width: 600px) {
+            .batteries-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    
+        @media (min-width: 992px) {
+            .batteries-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+    
+            .menu-toggle {
+                display: none;
+            }
+    
+            .nav-links {
+                position: static;
+                flex-direction: row;
+                height: auto;
+                background-color: transparent;
+                transform: translateX(0);
+                gap: var(--spacing-md);
+                box-shadow: none;
+                padding: 0;
+                justify-content: flex-end;
+            }
+    
+            .nav-links a {
+                font-size: 1rem;
+                color: var(--primaryDeepBlue);
+            }
+    
+            .nav-links a::after {
+                background-color: var(--primaryGold);
+            }
+    
+            .nav-links a:hover::after, .nav-links a:focus::after {
+                width: 100%;
+                left: 0;
+            }
+    
+            .nav-links a:hover, .nav-links a:focus {
+                color: var(--primaryGold);
+            }
+        }
     </style>
-        <link rel="preload" href="assets/css/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="assets/css/styles.css"></noscript>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 </head>
 <body>
 <header class="header">
@@ -460,572 +397,570 @@
         </p> 
         <div class="batteries-grid">
             <!-- Battery 1: Job Satisfaction Battery -->
-            <div class="battery-card">
-                <h3>بسته رضایت شغلی</h3>
-                <p><strong>نام فارسی:</strong> فهرست جامع تشخیص تعاملی رضایت شغلی</p>
-                <div class="battery-links">
-                    <a href="/take/Job-Satisfaction" class="battery-btn">فرم ارزیابی</a>
-                    <a href="/assessment/Job-Satisfaction" class="battery-btn">صفحه ارزیابی</a>
-                </div>
+            <div class="battery-card" id="battery-job-satisfaction">
+            <h3>بسته رضایت شغلی</h3>
+            <p class="description">این ارزیابی به بررسی میزان رضایت شما از شغل و محیط کاری می‌پردازد.</p>
+            <p class="id">ID: 110001</p>
+            <div class="battery-links">
+                <a href="/take/Job-Satisfaction" class="battery-btn">شروع ارزیابی</a>
+                <a href="/assessment/Job-Satisfaction" class="battery-btn">معرفی ارزیابی</a>
+            </div>
             </div>
 
             <!-- Battery 2: Marriage Satisfaction Battery -->
-            <div class="battery-card">
-                <h3>بسته رضایت زناشویی</h3>
-                <p><strong>نام فارسی:</strong> فهرست جامع تشخیص تعاملی رضایت زناشویی</p>
-                <div class="battery-links">
-                    <a href="/take/Marriage-Satisfaction" class="battery-btn">فرم ارزیابی</a>
-                    <a href="/assessment/Marriage-Satisfaction" class="battery-btn">صفحه ارزیابی</a>
-                </div>
+            <div class="battery-card" id="battery-marriage-satisfaction">
+            <h3>بسته رضایت زناشویی</h3>
+            <p class="description">این ارزیابی به بررسی میزان رضایت شما از زندگی زناشویی می‌پردازد.</p>
+            <p class="id">ID: 110002</p>
+            <div class="battery-links">
+                <a href="/take/Marriage-Satisfaction" class="battery-btn">شروع ارزیابی</a>
+                <a href="/assessment/Marriage-Satisfaction" class="battery-btn">معرفی ارزیابی</a>
+            </div>
             </div>
 
             <!-- Battery 3: Individual Satisfaction Battery -->
-            <div class="battery-card">
-                <h3>بسته رضایت فردی</h3>
-                <p><strong>نام فارسی:</strong> فهرست جامع تشخیص تعاملی فردی</p>
-                <div class="battery-links">
-                    <a href="/take/Individual-Satisfaction" class="battery-btn">فرم ارزیابی</a>
-                    <a href="/assessment/Individual-Satisfaction" class="battery-btn">صفحه ارزیابی</a>
-                </div>
+            <div class="battery-card" id="battery-individual-satisfaction">
+            <h3>بسته رضایت فردی</h3>
+            <p class="description">این ارزیابی به بررسی میزان رضایت شما از جنبه‌های مختلف زندگی فردی می‌پردازد.</p>
+            <p class="id">ID: 110003</p>
+            <div class="battery-links">
+                <a href="/take/Individual-Satisfaction" class="battery-btn">شروع ارزیابی</a>
+                <a href="/assessment/Individual-Satisfaction" class="battery-btn">معرفی ارزیابی</a>
+            </div>
             </div>
 
             <!-- Battery 4: Marriage Readiness Battery -->
-            <div class="battery-card">
-                <h3>بسته آمادگی ازدواج</h3>
-                <p><strong>نام فارسی:</strong> فهرست جامع تشخیص تعاملی آمادگی ازدواج</p>
-                <div class="battery-links">
-                    <a href="/take/Marriage-Readiness" class="battery-btn">فرم ارزیابی</a>
-                    <a href="/assessment/Marriage-Readiness" class="battery-btn">صفحه ارزیابی</a>
-                </div>
+            <div class="battery-card" id="battery-marriage-readiness">
+            <h3>بسته آمادگی ازدواج</h3>
+            <p class="description">این ارزیابی به بررسی میزان آمادگی شما برای ازدواج می‌پردازد.</p>
+            <p class="id">ID: 110004</p>
+            <div class="battery-links">
+                <a href="/take/Marriage-Readiness" class="battery-btn">شروع ارزیابی</a>
+                <a href="/assessment/Marriage-Readiness" class="battery-btn">معرفی ارزیابی</a>
+            </div>
             </div>
 
             <!-- Battery 5: Adolescent Battery -->
-            <div class="battery-card">
-                <h3>بسته نوجوان</h3>
-                <p><strong>نام فارسی:</strong> فهرست جامع تشخیص تعاملی نوجوان</p>
-                <div class="battery-links">
-                    <a href="/take/Adolescent" class="battery-btn">فرم ارزیابی</a>
-                    <a href="/assessment/Adolescent" class="battery-btn">صفحه ارزیابی</a>
-                </div>
+            <div class="battery-card" id="battery-adolescent">
+            <h3>بسته نوجوان</h3>
+            <p class="description">این ارزیابی به بررسی جنبه‌های مختلف رشد و توسعه نوجوانان می‌پردازد.</p>
+            <p class="id">ID: 110005</p>
+            <div class="battery-links">
+                <a href="/take/Adolescent" class="battery-btn">شروع ارزیابی</a>
+                <a href="/assessment/Adolescent" class="battery-btn">معرفی ارزیابی</a>
+            </div>
             </div>
 
             <!-- Battery 6: General Battery -->
-            <div class="battery-card">
-                <h3>بسته عمومی</h3>
-                <p><strong>نام فارسی:</strong> فهرست جامع تشخیصی ج</p>
-                <div class="battery-links">
-                    <a href="/take/General" class="battery-btn">فرم ارزیابی</a>
-                    <a href="/assessment/General" class="battery-btn">صفحه ارزیابی</a>
-                </div>
+            <div class="battery-card" id="battery-general">
+            <h3>بسته عمومی</h3>
+            <p class="description">این ارزیابی به بررسی جنبه‌های مختلف زندگی عمومی شما می‌پردازد.</p>
+            <p class="id">ID: 110006</p>
+            <div class="battery-links">
+                <a href="/take/General" class="battery-btn">شروع ارزیابی</a>
+                <a href="/assessment/General" class="battery-btn">معرفی ارزیابی</a>
+            </div>
             </div>
 
             <!-- Battery 7: Talent Battery -->
-            <div class="battery-card">
-                <h3>بسته استعداد</h3>
-                <p><strong>نام فارسی:</strong> فهرست جامع تشخیص تعاملی استعداد</p>
-                <div class="battery-links">
-                    <a href="/take/Talent" class="battery-btn">فرم ارزیابی</a>
-                    <a href="/assessment/Talent" class="battery-btn">صفحه ارزیابی</a>
-                </div>
+            <div class="battery-card" id="battery-talent">
+            <h3>بسته استعداد</h3>
+            <p class="description">این ارزیابی به شناسایی و توسعه استعدادهای شما می‌پردازد.</p>
+            <p class="id">ID: 110007</p>
+            <div class="battery-links">
+                <a href="/take/Talent" class="battery-btn">شروع ارزیابی</a>
+                <a href="/assessment/Talent" class="battery-btn">معرفی ارزیابی</a>
+            </div>
             </div>
 
             <!-- Battery 8: Child Battery -->
-            <div class="battery-card">
-                <h3>بسته کودک</h3>
-                <p><strong>نام فارسی:</strong> فهرست جامع تشخیص تعاملی کودک</p>
-                <div class="battery-links">
-                    <a href="/take/Child" class="battery-btn">فرم ارزیابی</a>
-                    <a href="/assessment/Child" class="battery-btn">صفحه ارزیابی</a>
-                </div>
+            <div class="battery-card" id="battery-child">
+            <h3>بسته کودک</h3>
+            <p class="description">این ارزیابی به بررسی تعاملات و رفتارهای کودکان در محیط‌های مختلف می‌پردازد.</p>
+            <p class="id">ID: 110008</p>
+            <div class="battery-links">
+                <a href="/take/Child" class="battery-btn">شروع ارزیابی</a>
+                <a href="/assessment/Child" class="battery-btn">معرفی ارزیابی</a>
             </div>
-        </div>
-    </section>
-
-    <!-- Inventory Section -->
-    <section class="inventory-section">
-        <h2>فهرست ارزیابی‌ها</h2>
-        <p class="section-description">
-            در این بخش می‌توانید به ارزیابی‌های مختلف دسترسی پیدا کنید که هر کدام به بررسی جنبه‌های خاصی از روان‌شناسی شما می‌پردازند. انتخاب ارزیابی مناسب می‌تواند به شما در شناخت بهتر خود و توسعه مهارت‌هایتان کمک کند.
-        </p>
-             <div class="inventory-grid">
+            </div>
                 <!-- Inventory 1 -->
-                <div class="inventory-card">
+                <div class="battery-card">
                     <div>
                         <h3>فهرست آرامش روانی - 33</h3>
                         <p class="description">این ارزیابی به سنجش میزان آرامش روانی و توانایی مدیریت استرس شما می‌پردازد.</p>
                         <p class="id">ID: 110001</p>
                     </div>
-                    <div class="cta-buttons">
-                        <a href="/take/mental-tranquility" class="cta-btn cta-test">شروع ارزیابی</a>
-                        <a href="/assessment/mental-tranquility" class="cta-btn cta-introduction">معرفی ارزیابی</a>
+                    <div class="battery-links">
+                        <a href="/take/mental-tranquility" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/assessment/mental-tranquility" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
 
                 <!-- Inventory 2 -->
-                <div class="inventory-card">
+                <div class="battery-card">
                     <div>
                         <h3>فهرست ارجمندی - 17</h3>
                         <p class="description">این ارزیابی به بررسی سطح ارجمندی و خودارزیابی مثبت شما می‌پردازد.</p>
                         <p class="id">ID: 110002</p>
                     </div>
-                    <div class="cta-buttons">
-                        <a href="/take/esteem" class="cta-btn cta-test">شروع ارزیابی</a>
-                        <a href="/assessment/esteem" class="cta-btn cta-introduction">معرفی ارزیابی</a>
+                    <div class="battery-links">
+                        <a href="/take/esteem" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/assessment/esteem" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
 
                 <!-- Inventory 3 -->
-                <div class="inventory-card">
+                <div class="battery-card">
                     <div>
                         <h3>فهرست استعداد کودک - 48</h3>
                         <p class="description">این ارزیابی برای شناسایی استعدادهای بالقوه کودکان طراحی شده است.</p>
                         <p class="id">ID: 110003</p>
                     </div>
-                    <div class="cta-buttons">
-                        <a href="/take/child-talent-48" class="cta-btn cta-test">شروع ارزیابی</a>
-                        <a href="/assessment/child-talent-48" class="cta-btn cta-introduction">معرفی ارزیابی</a>
+                    <div class="battery-links">
+                        <a href="/take/child-talent-48" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/assessment/child-talent-48" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
 
                 <!-- Inventory 4 -->
-                <div class="inventory-card">
+                <div class="battery-card">
                     <div>
                         <h3>فهرست استعداد کودک - 72</h3>
                         <p class="description">این ارزیابی برای بررسی و توسعه استعدادهای ویژه کودکان مورد استفاده قرار می‌گیرد.</p>
                         <p class="id">ID: 110004</p>
                     </div>
-                    <div class="cta-buttons">
-                        <a href="/take/child-talent-72" class="cta-btn cta-test">شروع ارزیابی</a>
-                        <a href="/assessment/child-talent-72" class="cta-btn cta-introduction">معرفی ارزیابی</a>
+                    <div class="battery-links">
+                        <a href="/take/child-talent-72" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/assessment/child-talent-72" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
 
                 <!-- Inventory 5 -->
-                <div class="inventory-card">
+                <div class="battery-card">
                     <div>
                         <h3>فهرست استواری پویش - 32</h3>
                         <p class="description">این ارزیابی میزان استواری و پویایی شما در مواجهه با چالش‌ها را سنجش می‌کند.</p>
                         <p class="id">ID: 110005</p>
                     </div>
-                    <div class="cta-buttons">
-                        <a href="/take/persistence" class="cta-btn cta-test">شروع ارزیابی</a>
-                        <a href="/assessment/persistence" class="cta-btn cta-introduction">معرفی ارزیابی</a>
+                    <div class="battery-links">
+                        <a href="/take/persistence" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/assessment/persistence" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
 
                 <!-- Inventory 6 -->
-                <div class="inventory-card">
+                <div class="battery-card">
                     <div>
                         <h3>فهرست بهداشت روان نوجوان - 46</h3>
                         <p class="description">این ارزیابی به بررسی سلامت روانی و بهداشت روانی نوجوانان می‌پردازد.</p>
                         <p class="id">ID: 110006</p>
                     </div>
-                    <div class="cta-buttons">
-                        <a href="/take/adolescent-mental-hygiene" class="cta-btn cta-test">شروع ارزیابی</a>
-                        <a href="/assessment/adolescent-mental-hygiene" class="cta-btn cta-introduction">معرفی ارزیابی</a>
+                    <div class="battery-links">
+                        <a href="/take/adolescent-mental-hygiene" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/assessment/adolescent-mental-hygiene" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
 
                 <!-- Inventory 7 -->
-                <div class="inventory-card">
+                <div class="battery-card">
                     <div>
                         <h3>فهرست پاکزیستی - 20</h3>
                         <p class="description">این ارزیابی به بررسی میزان پاکیزگی و بهداشت شخصی شما می‌پردازد.</p>
                         <p class="id">ID: 110007</p>
                     </div>
-                    <div class="cta-buttons">
-                        <a href="/take/purification" class="cta-btn cta-test">شروع ارزیابی</a>
-                        <a href="/assessment/purification" class="cta-btn cta-introduction">معرفی ارزیابی</a>
+                    <div class="battery-links">
+                        <a href="/take/purification" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/assessment/purification" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
 
                 <!-- Inventory 8 -->
-                <div class="inventory-card">
+                <div class="battery-card">
                     <div>
                         <h3>فهرست پایایی - 29</h3>
                         <p class="description">این ارزیابی به سنجش میزان پایایی و ثبات احساسی شما می‌پردازد.</p>
                         <p class="id">ID: 110008</p>
                     </div>
-                    <div class="cta-buttons">
-                        <a href="/take/stability" class="cta-btn cta-test">شروع ارزیابی</a>
-                        <a href="/assessment/stability" class="cta-btn cta-introduction">معرفی ارزیابی</a>
+                    <div class="battery-links">
+                        <a href="/take/stability" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/assessment/stability" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
 
                 <!-- Inventory 9 -->
-                <div class="inventory-card">
+                <div class="battery-card">
                     <div>
                         <h3>فهرست تحلیلی تجربی - 42</h3>
                         <p class="description">این ارزیابی توانایی‌های تحلیلی و تجربی شما را بررسی می‌کند.</p>
                         <p class="id">ID: 110009</p>
                     </div>
-                    <div class="cta-buttons">
-                        <a href="/take/empirical-analytical" class="cta-btn cta-test">شروع ارزیابی</a>
-                        <a href="/assessment/empirical-analytical" class="cta-btn cta-introduction">معرفی ارزیابی</a>
+                    <div class="battery-links">
+                        <a href="/take/empirical-analytical" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/assessment/empirical-analytical" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
 
                 <!-- Inventory 10 -->
-                <div class="inventory-card">
+                <div class="battery-card">
                     <div>
                         <h3>فهرست تعادل - 38</h3>
                         <p class="description">این ارزیابی به بررسی تعادل میان زندگی شخصی و حرفه‌ای شما می‌پردازد.</p>
                         <p class="id">ID: 110010</p>
                     </div>
-                    <div class="cta-buttons">
-                        <a href="/take/balance" class="cta-btn cta-test">شروع ارزیابی</a>
-                        <a href="/assessment/balance" class="cta-btn cta-introduction">معرفی ارزیابی</a>
+                    <div class="battery-links">
+                        <a href="/take/balance" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/assessment/balance" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
 
                 <!-- Inventory 11 -->
-                <div class="inventory-card">
+                <div class="battery-card">
                     <div>
                         <h3>فهرست تعادل روان - 94</h3>
                         <p class="description">این ارزیابی به سنجش تعادل روانی و سلامت روان شما می‌پردازد.</p>
                         <p class="id">ID: 110011</p>
                     </div>
-                    <div class="cta-buttons">
-                        <a href="/take/mental-balance" class="cta-btn cta-test">شروع ارزیابی</a>
-                        <a href="/assessment/mental-balance" class="cta-btn cta-introduction">معرفی ارزیابی</a>
+                    <div class="battery-links">
+                        <a href="/take/mental-balance" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/assessment/mental-balance" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
 
                 <!-- Inventory 12 -->
-                <div class="inventory-card">
+                <div class="battery-card">
                     <div>
                         <h3>فهرست تعالی فردی - 37</h3>
                         <p class="description">این ارزیابی به بررسی سطح تعالی و رشد شخصی شما می‌پردازد.</p>
                         <p class="id">ID: 110012</p>
                     </div>
-                    <div class="cta-buttons">
-                        <a href="/take/personal-excellence" class="cta-btn cta-test">شروع ارزیابی</a>
-                        <a href="/assessment/personal-excellence" class="cta-btn cta-introduction">معرفی ارزیابی</a>
+                    <div class="battery-links">
+                        <a href="/take/personal-excellence" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/assessment/personal-excellence" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
 
                 <!-- Inventory 13 -->
-                <div class="inventory-card">
+                <div class="battery-card">
                     <div>
                         <h3>فهرست تعاملی شخصیت - 62</h3>
                         <p class="description">این ارزیابی به بررسی تعامل شخصیت شما با دیگران می‌پردازد.</p>
                         <p class="id">ID: 110013</p>
                     </div>
-                    <div class="cta-buttons">
-                        <a href="/take/personality-interaction" class="cta-btn cta-test">شروع ارزیابی</a>
-                        <a href="/assessment/personality-interaction" class="cta-btn cta-introduction">معرفی ارزیابی</a>
+                    <div class="battery-links">
+                        <a href="/take/personality-interaction" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/assessment/personality-interaction" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
 
                 <!-- Inventory 14 -->
-                <div class="inventory-card">
+                <div class="battery-card">
                     <div>
                         <h3>فهرست تعهد فردی - 12</h3>
                         <p class="description">این ارزیابی میزان تعهد شما به اهداف و مسئولیت‌ها را سنجش می‌کند.</p>
                         <p class="id">ID: 110014</p>
                     </div>
-                    <div class="cta-buttons">
-                        <a href="/take/personal-commitment" class="cta-btn cta-test">شروع ارزیابی</a>
-                        <a href="/assessment/personal-commitment" class="cta-btn cta-introduction">معرفی ارزیابی</a>
+                    <div class="battery-links">
+                        <a href="/take/personal-commitment" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/assessment/personal-commitment" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
 
                 <!-- Inventory 15 -->
-                <div class="inventory-card">
+                <div class="battery-card">
                     <div>
                         <h3>فهرست حریم فردی - 24</h3>
                         <p class="description">این ارزیابی به بررسی نیازها و احترام به حریم شخصی شما می‌پردازد.</p>
                         <p class="id">ID: 110015</p>
                     </div>
-                    <div class="cta-buttons">
-                        <a href="/take/personal-space" class="cta-btn cta-test">شروع ارزیابی</a>
-                        <a href="/assessment/personal-space" class="cta-btn cta-introduction">معرفی ارزیابی</a>
+                    <div class="battery-links">
+                        <a href="/take/personal-space" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/assessment/personal-space" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
 
                 <!-- Inventory 16 -->
-                <div class="inventory-card">
+                <div class="battery-card">
                     <div>
                         <h3>فهرست حمایت معنوی - 28</h3>
                         <p class="description">این ارزیابی میزان حمایت معنوی و روانی شما را بررسی می‌کند.</p>
                         <p class="id">ID: 110016</p>
                     </div>
-                    <div class="cta-buttons">
-                        <a href="/take/spiritual-support" class="cta-btn cta-test">شروع ارزیابی</a>
-                        <a href="/assessment/spiritual-support" class="cta-btn cta-introduction">معرفی ارزیابی</a>
+                    <div class="battery-links">
+                        <a href="/take/spiritual-support" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/assessment/spiritual-support" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
 
                 <!-- Inventory 17 -->
-                <div class="inventory-card">
+                <div class="battery-card">
                     <div>
                         <h3>فهرست خردمندی - 25</h3>
                         <p class="description">این ارزیابی به سنجش میزان خردمندی و درک عمیق شما می‌پردازد.</p>
                         <p class="id">ID: 110017</p>
                     </div>
-                    <div class="cta-buttons">
-                        <a href="/take/wisdom" class="cta-btn cta-test">شروع ارزیابی</a>
-                        <a href="/assessment/wisdom" class="cta-btn cta-introduction">معرفی ارزیابی</a>
+                    <div class="battery-links">
+                        <a href="/take/wisdom" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/assessment/wisdom" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
 
                 <!-- Inventory 18 -->
-                <div class="inventory-card">
+                <div class="battery-card">
                     <div>
                         <h3>فهرست خود گستری - 62</h3>
                         <p class="description">این ارزیابی به بررسی میزان خودگسترایی و توسعه شخصی شما می‌پردازد.</p>
                         <p class="id">ID: 110018</p>
                     </div>
-                    <div class="cta-buttons">
-                        <a href="/take/self-expansion" class="cta-btn cta-test">شروع ارزیابی</a>
-                        <a href="/assessment/self-expansion" class="cta-btn cta-introduction">معرفی ارزیابی</a>
+                    <div class="battery-links">
+                        <a href="/take/self-expansion" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/assessment/self-expansion" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
 
                 <!-- Inventory 19 -->
-                <div class="inventory-card">
+                <div class="battery-card">
                     <div>
                         <h3>فهرست درستی - 17</h3>
                         <p class="description">این ارزیابی به سنجش دقت و صحت در تفکر و عمل شما می‌پردازد.</p>
                         <p class="id">ID: 110019</p>
                     </div>
-                    <div class="cta-buttons">
-                        <a href="/take/accuracy" class="cta-btn cta-test">شروع ارزیابی</a>
-                        <a href="/assessment/accuracy" class="cta-btn cta-introduction">معرفی ارزیابی</a>
+                    <div class="battery-links">
+                        <a href="/take/accuracy" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/assessment/accuracy" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
 
                 <!-- Inventory 20 -->
-                <div class="inventory-card">
+                <div class="battery-card">
                     <div>
                         <h3>فهرست رضایت از زندگی - 24</h3>
                         <p class="description">این ارزیابی میزان رضایت شما از جنبه‌های مختلف زندگی را بررسی می‌کند.</p>
                         <p class="id">ID: 110020</p>
                     </div>
-                    <div class="cta-buttons">
-                        <a href="/take/life-satisfaction" class="cta-btn cta-test">شروع ارزیابی</a>
-                        <a href="/assessment/life-satisfaction" class="cta-btn cta-introduction">معرفی ارزیابی</a>
+                    <div class="battery-links">
+                        <a href="/take/life-satisfaction" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/assessment/life-satisfaction" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
 
                 <!-- Inventory 21 -->
-                <div class="inventory-card">
+                <div class="battery-card">
                     <div>
                         <h3>فهرست رضایت زناشویی - 38</h3>
                         <p class="description">این ارزیابی به بررسی رضایت شما از زندگی زناشویی می‌پردازد.</p>
                         <p class="id">ID: 110021</p>
                     </div>
-                    <div class="cta-buttons">
-                        <a href="/take/marital-satisfaction" class="cta-btn cta-test">شروع ارزیابی</a>
-                        <a href="/assessment/marital-satisfaction" class="cta-btn cta-introduction">معرفی ارزیابی</a>
+                    <div class="battery-links">
+                        <a href="/take/marital-satisfaction" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/assessment/marital-satisfaction" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
 
                 <!-- Inventory 22 -->
-                <div class="inventory-card">
+                <div class="battery-card">
                     <div>
                         <h3>فهرست رضایت شغلی - 29</h3>
                         <p class="description">این ارزیابی میزان رضایت شما از محیط و شرایط کاری را سنجش می‌کند.</p>
                         <p class="id">ID: 110022</p>
                     </div>
-                    <div class="cta-buttons">
-                        <a href="/take/job-satisfaction" class="cta-btn cta-test">شروع ارزیابی</a>
-                        <a href="/assessment/job-satisfaction" class="cta-btn cta-introduction">معرفی ارزیابی</a>
+                    <div class="battery-links">
+                        <a href="/take/job-satisfaction" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/assessment/job-satisfaction" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
 
                 <!-- Inventory 23 -->
-                <div class="inventory-card">
+                <div class="battery-card">
                     <div>
                         <h3>فهرست سر زندگی - 24</h3>
                         <p class="description">این ارزیابی به بررسی نقاط اوج و دستاوردهای زندگی شما می‌پردازد.</p>
                         <p class="id">ID: 110023</p>
                     </div>
-                    <div class="cta-buttons">
-                        <a href="/take/life-summit" class="cta-btn cta-test">شروع ارزیابی</a>
-                        <a href="/assessment/life-summit" class="cta-btn cta-introduction">معرفی ارزیابی</a>
+                    <div class="battery-links">
+                        <a href="/take/life-summit" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/assessment/life-summit" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
 
                 <!-- Inventory 24 -->
-                <div class="inventory-card">
+                <div class="battery-card">
                     <div>
                         <h3>فهرست شخصیت - 79</h3>
                         <p class="description">این ارزیابی به بررسی ویژگی‌ها و ابعاد مختلف شخصیت شما می‌پردازد.</p>
                         <p class="id">ID: 110024</p>
                     </div>
-                    <div class="cta-buttons">
-                        <a href="/take/personality" class="cta-btn cta-test">شروع ارزیابی</a>
-                        <a href="/assessment/personality" class="cta-btn cta-introduction">معرفی ارزیابی</a>
+                    <div class="battery-links">
+                        <a href="/take/personality" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/assessment/personality" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
 
                 <!-- Inventory 25 -->
-                <div class="inventory-card">
+                <div class="battery-card">
                     <div>
                         <h3>فهرست شخصیت کودکان - 50</h3>
                         <p class="description">این ارزیابی به بررسی ویژگی‌های شخصیتی کودکان می‌پردازد.</p>
                         <p class="id">ID: 110025</p>
                     </div>
-                    <div class="cta-buttons">
-                        <a href="/take/childrens-personality" class="cta-btn cta-test">شروع ارزیابی</a>
-                        <a href="/assessment/childrens-personality" class="cta-btn cta-introduction">معرفی ارزیابی</a>
+                    <div class="battery-links">
+                        <a href="/take/childrens-personality" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/assessment/childrens-personality" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
 
                 <!-- Inventory 26 -->
-                <div class="inventory-card">
+                <div class="battery-card">
                     <div>
                         <h3>فهرست شناختی - 24</h3>
                         <p class="description">این ارزیابی به سنجش توانایی‌های شناختی و ذهنی شما می‌پردازد.</p>
                         <p class="id">ID: 110026</p>
                     </div>
-                    <div class="cta-buttons">
-                        <a href="/take/cognitive-24" class="cta-btn cta-test">شروع ارزیابی</a>
-                        <a href="/assessment/cognitive-24" class="cta-btn cta-introduction">معرفی ارزیابی</a>
+                    <div class="battery-links">
+                        <a href="/take/cognitive-24" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/assessment/cognitive-24" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
 
                 <!-- Inventory 27 -->
-                <div class="inventory-card">
+                <div class="battery-card">
                     <div>
                         <h3>فهرست ظرفیت تجربی - 63</h3>
                         <p class="description">این ارزیابی به بررسی ظرفیت‌های تجربی و عملی شما می‌پردازد.</p>
                         <p class="id">ID: 110027</p>
                     </div>
-                    <div class="cta-buttons">
-                        <a href="/take/empirical-capacity" class="cta-btn cta-test">شروع ارزیابی</a>
-                        <a href="/assessment/empirical-capacity" class="cta-btn cta-introduction">معرفی ارزیابی</a>
+                    <div class="battery-links">
+                        <a href="/take/empirical-capacity" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/assessment/empirical-capacity" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
 
                 <!-- Inventory 28 -->
-                <div class="inventory-card">
+                <div class="battery-card">
                     <div>
                         <h3>فهرست ظرفیتهای شناختی - 35</h3>
                         <p class="description">این ارزیابی به بررسی توانایی‌های شناختی پیشرفته شما می‌پردازد.</p>
                         <p class="id">ID: 110028</p>
                     </div>
-                    <div class="cta-buttons">
-                        <a href="/take/cognitive-capacities" class="cta-btn cta-test">شروع ارزیابی</a>
-                        <a href="/assessment/cognitive-capacities" class="cta-btn cta-introduction">معرفی ارزیابی</a>
+                    <div class="battery-links">
+                        <a href="/take/cognitive-capacities" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/assessment/cognitive-capacities" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
 
                 <!-- Inventory 29 -->
-                <div class="inventory-card">
+                <div class="battery-card">
                     <div>
                         <h3>فهرست کرونا - 26</h3>
                         <p class="description">این ارزیابی به بررسی تأثیرات کروناویروس بر زندگی و روان شما می‌پردازد.</p>
                         <p class="id">ID: 110029</p>
                     </div>
-                    <div class="cta-buttons">
-                        <a href="/take/corona" class="cta-btn cta-test">شروع ارزیابی</a>
-                        <a href="/assessment/corona" class="cta-btn cta-introduction">معرفی ارزیابی</a>
+                    <div class="battery-links">
+                        <a href="/take/corona" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/assessment/corona" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
 
                 <!-- Inventory 30 -->
-                <div class="inventory-card">
+                <div class="battery-card">
                     <div>
                         <h3>فهرست نیازها - 18</h3>
                         <p class="description">این ارزیابی به بررسی نیازهای اساسی و اولویت‌های شما می‌پردازد.</p>
                         <p class="id">ID: 110030</p>
                     </div>
-                    <div class="cta-buttons">
-                        <a href="/take/needs" class="cta-btn cta-test">شروع ارزیابی</a>
-                        <a href="/assessment/needs" class="cta-btn cta-introduction">معرفی ارزیابی</a>
+                    <div class="battery-links">
+                        <a href="/take/needs" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/assessment/needs" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
 
                 <!-- Inventory 31 -->
-                <div class="inventory-card">
+                <div class="battery-card">
                     <div>
                         <h3>فهرست وظیفه مندی - 11</h3>
                         <p class="description">این ارزیابی به بررسی سطح وظیفه‌مندی و مسئولیت‌پذیری شما می‌پردازد.</p>
                         <p class="id">ID: 110031</p>
                     </div>
-                    <div class="cta-buttons">
-                        <a href="/take/duty" class="cta-btn cta-test">شروع ارزیابی</a>
-                        <a href="/assessment/duty" class="cta-btn cta-introduction">معرفی ارزیابی</a>
+                    <div class="battery-links">
+                        <a href="/take/duty" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/assessment/duty" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
 
                 <!-- Inventory 32 -->
-                <div class="inventory-card">
+                <div class="battery-card">
                     <div>
                         <h3>فهرست هدفمندی - 25</h3>
                         <p class="description">این ارزیابی به بررسی تمرکز و هدفمندی شما در رسیدن به اهداف می‌پردازد.</p>
                         <p class="id">ID: 110032</p>
                     </div>
-                    <div class="cta-buttons">
-                        <a href="/take/goal-oriented" class="cta-btn cta-test">شروع ارزیابی</a>
-                        <a href="/assessment/goal-oriented" class="cta-btn cta-introduction">معرفی ارزیابی</a>
+                    <div class="battery-links">
+                        <a href="/take/goal-oriented" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/assessment/goal-oriented" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
 
                 <!-- Inventory 33 -->
-                <div class="inventory-card">
+                <div class="battery-card">
                     <div>
                         <h3>فهرست هوش موفق - 49</h3>
                         <p class="description">این ارزیابی به بررسی هوش موفق و توانایی‌های موفقیت‌آمیز شما می‌پردازد.</p>
                         <p class="id">ID: 110033</p>
                     </div>
-                    <div class="cta-buttons">
-                        <a href="/take/successful-intelligence" class="cta-btn cta-test">شروع ارزیابی</a>
-                        <a href="/assessment/successful-intelligence" class="cta-btn cta-introduction">معرفی ارزیابی</a>
+                    <div class="battery-links">
+                        <a href="/take/successful-intelligence" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/assessment/successful-intelligence" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
 
                 <!-- Inventory 34 -->
-                <div class="inventory-card">
+                <div class="battery-card">
                     <div>
                         <h3>فهرست هیجان اندیشه - 69</h3>
                         <p class="description">این ارزیابی به بررسی ارتباط میان افکار و احساسات شما می‌پردازد.</p>
                         <p class="id">ID: 110034</p>
                     </div>
-                    <div class="cta-buttons">
-                        <a href="/take/thought-emotion" class="cta-btn cta-test">شروع ارزیابی</a>
-                        <a href="/assessment/thought-emotion" class="cta-btn cta-introduction">معرفی ارزیابی</a>
+                    <div class="battery-links">
+                        <a href="/take/thought-emotion" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/assessment/thought-emotion" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
 
                 <!-- Inventory 35 -->
-                <div class="inventory-card">
+                <div class="battery-card">
                     <div>
                         <h3>فهرست یکپارچگی شناختی - 14</h3>
                         <p class="description">این ارزیابی به بررسی میزان یکپارچگی و انسجام در تفکر شما می‌پردازد.</p>
                         <p class="id">ID: 110035</p>
                     </div>
-                    <div class="cta-buttons">
-                        <a href="/take/cognitive-integration" class="cta-btn cta-test">شروع ارزیابی</a>
-                        <a href="/assessment/cognitive-integration" class="cta-btn cta-introduction">معرفی ارزیابی</a>
+                    <div class="battery-links">
+                        <a href="/take/cognitive-integration" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/assessment/cognitive-integration" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
 
                 <!-- Inventory 36 -->
-                <div class="inventory-card">
+                <div class="battery-card">
                     <div>
                         <h3>فهرست رضایت از زندگی - 25</h3>
                         <p class="description">این ارزیابی به بررسی سطح رضایت شما از جنبه‌های مختلف زندگی می‌پردازد.</p>
                         <p class="id">ID: 110036</p>
                     </div>
-                    <div class="cta-buttons">
-                        <a href="/take/life-satisfaction-25" class="cta-btn cta-test">شروع ارزیابی</a>
-                        <a href="/assessment/life-satisfaction-25" class="cta-btn cta-introduction">معرفی ارزیابی</a>
+                    <div class="battery-links">
+                        <a href="/take/life-satisfaction-25" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/assessment/life-satisfaction-25" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
 
                 <!-- Inventory 37 -->
-                <div class="inventory-card">
+                <div class="battery-card">
                     <div>
                         <h3>فهرست تعاملی استعداد - 15</h3>
                         <p class="description">این ارزیابی به بررسی نحوه تعامل استعدادهای شما با محیط اطراف می‌پردازد.</p>
                         <p class="id">ID: 110037</p>
                     </div>
-                    <div class="cta-buttons">
-                        <a href="/take/talent-interaction" class="cta-btn cta-test">شروع ارزیابی</a>
-                        <a href="/assessment/talent-interaction" class="cta-btn cta-introduction">معرفی ارزیابی</a>
+                    <div class="battery-links">
+                        <a href="/take/talent-interaction" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/assessment/talent-interaction" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
             </div>
