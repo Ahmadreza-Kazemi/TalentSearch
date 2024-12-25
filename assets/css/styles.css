@@ -238,7 +238,7 @@ a:focus {
 }
 
 .menu-toggle.active .hamburger:nth-child(1) {
-    transform: rotate(45deg);
+    transform: translateY(10px) rotate(45deg);
     background-color: var(--primary-gold);
 }
 
@@ -247,7 +247,7 @@ a:focus {
 }
 
 .menu-toggle.active .hamburger:nth-child(3) {
-    transform: rotate(-45deg);
+    transform: translateY(-10px) rotate(-45deg);
     background-color: var(--primary-gold);
 }
 
