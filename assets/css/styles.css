@@ -183,7 +183,6 @@ a:focus {
 /* =======================================================
    4. Layout Sections
 ======================================================= */
-
 /* ---------------------------------------------------
    4.1. Header
 --------------------------------------------------- */
@@ -200,6 +199,7 @@ a:focus {
     padding: 0 var(--spacing-md);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     z-index: 1000;
+    direction: rtl; /* Ensure RTL alignment */
 }
 
 /* Logo Styles */
@@ -222,7 +222,7 @@ a:focus {
 /* Navigation Links */
 .nav-links {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start; /* Align links to the start (left in RTL) */
     align-items: center;
     list-style: none;
     margin: 0;
@@ -255,7 +255,7 @@ a:focus {
 
 /* Icon Styles */
 .nav-links a .icon {
-    display: none; /* Hidden on desktop */
+    display: none; /* Hidden on desktop by default */
     font-size: 1.2rem;
     color: var(--text-primary);
     transition: color var(--transition-speed) var(--transition-type);
@@ -297,6 +297,23 @@ a:focus {
     width: 100%;
     left: 0;
 }
+
+/* ---------------------------------------------------
+   Desktop-Specific Styles
+--------------------------------------------------- */
+@media (min-width: 768px) {
+    /* Show icons on desktop if desired */
+    .nav-links a .icon {
+        display: inline-block; /* Show icons on desktop */
+    }
+    
+    /* Optional: Adjust nav-links alignment further if needed */
+    /* For example, ensure nav-links occupy the full width */
+    .nav-links {
+        width: auto; /* Adjust as per design */
+    }
+}
+
 
 /* =======================================================
    5. Typography
