@@ -4,660 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>استعدادیاب | درباره ما</title>
-    <meta name="description" content="با استعدادیاب، به ارزیابی‌های روان‌شناختی دسترسی پیدا کنید و تصمیمات آگاهانه‌تری بگیرید.">
-    
-    <!-- Embedded CSS Styles -->
-    <style>
-        /* Reset and Base Styles */
-        *, ::after, ::before {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        
-        body, html {
-            font-family: var(--primary-font);
-            background-color: var(--background-color);
-            color: var(--text-color);
-            direction: rtl;
-            scroll-behavior: smooth;
-            height: 100%;
-            overflow-x: hidden;
-        }
-        
-        /* Root Variables */
-        :root {
-            --primary-font: 'Vazir', sans-serif;
-            --background-color: #1a1a2e;
-            --text-color: #eaeaea;
-            --accent-color: #FFA500;
-            --secondary-color: #4ecdc4;
-            --tertiary-color: #556270;
-            --header-height: 80px;
-            --border-radius: 8px;
-            --spacing-small: 10px;
-            --spacing-medium: 20px;
-            --spacing-large: 40px;
-            --transition-duration: 0.3s;
-            --transition-ease: ease;
-            --muted-color: #c7c7c7;
-            --breakpoint-mobile: 576px;
-            --breakpoint-tablet: 768px;
-            --breakpoint-desktop: 992px;
-            --breakpoint-xl: 1200px;
-        }
-        
-        /* Typography */
-        .heading-primary, .heading-secondary, .heading-tertiary {
-            margin-bottom: var(--spacing-large);
-        }
-        
-        .heading-primary {
-            text-shadow: 0 0 10px var(--accent-color), 0 0 20px var(--accent-color);
-        }
-        
-        .heading-secondary {
-            font-size: 1.8em;
-            color: var(--accent-color);
-            text-shadow: 0 0 10px var(--accent-color);
-            margin-bottom: 10px;
-        }
-        
-        .heading-tertiary {
-            font-size: 1.5em;
-        }
-        
-        .paragraph {
-            font-size: 1em;
-            max-width: 90%;
-            margin: 0 auto var(--spacing-medium);
-            line-height: 1.6;
-            text-align: center;
-        }
-        
-        .error-alert {
-            color: red;
-            margin-top: 20px;
-            font-size: 1em;
-        }
-        
-        /* Header */
-        .site-header {
-            background: linear-gradient(135deg, rgba(26, 26, 46, .95), rgba(26, 26, 46, .85));
-            padding: 0 var(--spacing-medium);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, .1);
-            height: var(--header-height);
-            width: 100%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-        }
-        
-        .site-logo {
-            font-size: 1.8em;
-            color: var(--accent-color);
-            text-decoration: none;
-            font-weight: bold;
-            transition: color var(--transition-duration) var(--transition-ease);
-        }
-        
-        .site-logo:focus, .site-logo:hover {
-            color: var(--secondary-color);
-        }
-        
-        .navbar-container {
-            position: relative;
-        }
-        
-        /* Navigation */
-        .navigation-menu {
-            position: fixed;
-            top: var(--header-height);
-            left: 0;
-            width: 80%;
-            max-width: 320px;
-            background-color: rgba(26, 26, 46, .95);
-            display: none;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            gap: var(--spacing-large);
-            box-shadow: 2px 0 8px rgba(0, 0, 0, .2);
-            list-style: none;
-            padding: var(--spacing-medium);
-            box-sizing: border-box;
-            overflow-y: auto;
-            transition: transform var(--transition-duration) var(--transition-ease), top var(--transition-duration) var(--transition-ease);
-        }
-        
-        .navigation-menu.active {
-            display: flex;
-            transform: translateX(0);
-        }
-        
-        .navigation-menu a {
-            font-size: 1.6em;
-            padding: 8px 0;
-            white-space: nowrap;
-            transition: color var(--transition-duration) var(--transition-ease);
-            text-decoration: none;
-            position: relative;
-        }
-        
-        .navigation-menu a::after {
-            content: '';
-            width: 0%;
-            height: 2px;
-            left: 50%;
-            bottom: -4px;
-            background-color: var(--secondary-color);
-            transition: width var(--transition-duration) var(--transition-ease), left var(--transition-duration) var(--transition-ease);
-        }
-        
-        .navigation-menu a:focus::after, .navigation-menu a:hover::after {
-            width: 100%;
-            left: 0;
-        }
-        
-        .navigation-menu a:focus, .navigation-menu a:hover {
-            color: var(--secondary-color);
-        }
-        
-        .menu-button {
-            display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 35px;
-            height: 24px;
-            padding: 0;
-            z-index: 1001;
-        }
-        
-        .menu-button .bar {
-            width: 100%;
-            height: 4px;
-            background-color: var(--text-color);
-            border-radius: 2px;
-            transition: all var(--transition-duration) var(--transition-ease);
-        }
-        
-        .menu-button.active .bar:first-child {
-            transform: translateY(10px) rotate(45deg);
-        }
-        
-        .menu-button.active .bar:nth-child(2) {
-            opacity: 0;
-        }
-        
-        .menu-button.active .bar:last-child {
-            transform: translateY(-10px) rotate(-45deg);
-        }
-        
-        /* Hero Section */
-        .hero-section {
-            height: calc(100vh - var(--header-height));
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background-color: var(--background-color);
-            color: var(--text-color);
-            position: relative;
-            overflow: hidden;
-            text-align: center;
-            padding-top: var(--header-height);
-        }
-        
-        .hero-section .hero-title {
-            font-size: 3em;
-            color: var(--accent-color);
-            text-shadow: 0 0 10px var(--accent-color);
-        }
-        
-        .hero-section .hero-description {
-            font-size: 1.5em;
-            margin-bottom: var(--spacing-large);
-        }
-        
-        .hero-section .cta-link {
-            display: inline-block;
-            background-color: var(--tertiary-color);
-            color: var(--text-color);
-            padding: 12px 30px;
-            border-radius: var(--border-radius);
-            font-size: 1em;
-            box-shadow: 0 0 10px var(--tertiary-color);
-            text-decoration: none;
-            transition: background-color var(--transition-duration) var(--transition-ease), transform var(--transition-duration) var(--transition-ease), box-shadow var(--transition-duration) var(--transition-ease);
-        }
-        
-        .hero-section .cta-link:focus, .hero-section .cta-link:hover {
-            background-color: var(--secondary-color);
-            transform: translateY(-5px);
-            box-shadow: 0 0 20px var(--secondary-color);
-        }
-        
-        /* Main Content */
-        .main-content .container {
-            padding: var(--spacing-large) var(--spacing-medium);
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        /* Section Headers */
-        .section-header {
-            font-size: 2em;
-            color: #2980b9;
-            margin-bottom: 20px;
-            border-bottom: 3px solid #2980b9;
-            display: inline-block;
-            padding-bottom: 5px;
-        }
-        
-        /* Sections */
-        .company-section, .foundation-story-section, .mission-vision-section, .customer-segmentation-section, .value-proposition-section, .future-plans-section {
-            margin-bottom: var(--spacing-large);
-        }
-        
-        /* Customer Groups */
-        .customer-group, .value-group {
-            margin-top: var(--spacing-medium);
-        }
-        
-        .sub-section-header {
-            font-size: 1.5em;
-            color: var(--secondary-color);
-            margin-bottom: var(--spacing-small);
-        }
-        
-        ul {
-            list-style-type: disc;
-            margin-right: var(--spacing-medium);
-            margin-bottom: var(--spacing-medium);
-        }
-        
-        ul li {
-            margin-bottom: var(--spacing-small);
-            font-size: 1em;
-            line-height: 1.6;
-        }
-        
-        /* Footer */
-        .site-footer {
-            background: linear-gradient(135deg, #1a1a2e, #16213e);
-            color: #eaeaea;
-            padding: 80px 20px;
-            font-family: var(--primary-font);
-            position: relative;
-        }
-        
-        .site-footer::before {
-            content: '';
-            position: absolute;
-            top: -50px;
-            left: 50%;
-            width: 300px;
-            height: 300px;
-            background: rgba(255, 255, 255, .05);
-            border-radius: 50%;
-            transform: translateX(-50%) rotate(45deg);
-            z-index: 0;
-        }
-        
-        .site-footer .footer-content {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: flex-start;
-            max-width: 1200px;
-            margin: 0 auto;
-            z-index: 1;
-            gap: 60px;
-        }
-        
-        .site-footer .footer-about, .site-footer .footer-contact {
-            flex: 1;
-            min-width: 280px;
-        }
-        
-        .site-footer .footer-title {
-            font-size: 2.5em;
-            color: var(--accent-color);
-            margin-bottom: 20px;
-            position: relative;
-        }
-        
-        .site-footer .footer-title::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background-color: var(--secondary-color);
-            position: absolute;
-            bottom: -15px;
-            left: 0;
-            border-radius: 2px;
-        }
-        
-        .site-footer .footer-about p, .site-footer .footer-contact p {
-            color: #eaeaea;
-            text-align: left;
-            transition: color 0.3s;
-            font-size: 1.1em;
-            line-height: 1.8;
-            margin-bottom: 25px;
-        }
-        
-        .site-footer .footer-about p:hover, 
-        .site-footer .footer-contact a:focus, 
-        .site-footer .footer-contact a:hover, 
-        .site-footer .footer-powered a:focus, 
-        .site-footer .footer-powered a:hover {
-            color: var(--secondary-color);
-        }
-        
-        .site-footer .footer-contact {
-            margin-top: 20px;
-        }
-        
-        .site-footer .footer-contact p strong {
-            color: var(--accent-color);
-        }
-        
-        .site-footer .footer-contact a {
-            color: var(--accent-color);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .site-footer .footer-powered {
-            margin-top: 50px;
-            font-size: 0.95em;
-            color: #c7c7c7;
-            z-index: 1;
-            transition: color 0.3s;
-        }
-        
-        .site-footer .footer-powered a {
-            color: var(--accent-color);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .site-footer .decorative-line {
-            width: 100px;
-            height: 2px;
-            background-color: var(--secondary-color);
-            margin: 10px auto;
-            border-radius: 1px;
-            opacity: 0.7;
-            transition: opacity 0.3s;
-        }
-        
-        .site-footer .decorative-line:hover {
-            opacity: 1;
-        }
-        
-        .footer-text {
-            text-align: center;
-            position: relative;
-            z-index: 1;
-        }
-        
-        /* Scroll to Top Button */
-        .scroll-top-button {
-            position: fixed;
-            bottom: 40px;
-            right: 40px;
-            background-color: var(--accent-color);
-            color: var(--text-color);
-            border: none;
-            padding: 10px 15px;
-            border-radius: 50%;
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity var(--transition-duration) var(--transition-ease), visibility var(--transition-duration) var(--transition-ease);
-            z-index: 1000;
-            font-size: 1em;
-        }
-        
-        .scroll-top-button.show {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        /* Loader */
-        .loading-spinner {
-            border: 8px solid #f3f3f3;
-            border-top: 8px solid #3498db;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            animation: spin 1s linear infinite;
-            margin: 50px auto;
-        }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        /* Media Queries */
-        @media (min-width: 576px) and (max-width: 768px) {
-            .navigation-menu {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
-        @media (min-width: 992px) {
-            .menu-button {
-                display: none;
-            }
-        
-            .navigation-menu {
-                position: static;
-                flex-direction: row;
-                flex-wrap: nowrap;
-                height: auto;
-                background-color: transparent;
-                transform: translateX(0);
-                gap: 0;
-                box-shadow: none;
-                padding: 0;
-                display: flex;
-                width: 100%;
-                box-sizing: border-box;
-                overflow: hidden;
-                justify-content: space-between;
-                min-width: max-content;
-            }
-        
-            .navigation-menu a {
-                font-size: 1.2em;
-                padding: 0 15px;
-                white-space: nowrap;
-                position: relative;
-                transition: color var(--transition-duration) var(--transition-ease);
-            }
-        
-            .navigation-menu a::after {
-                content: '';
-                position: absolute;
-                width: 0%;
-                height: 2px;
-                left: 50%;
-                bottom: -4px;
-                background-color: var(--secondary-color);
-                transition: width var(--transition-duration) var(--transition-ease), left var(--transition-duration) var(--transition-ease);
-            }
-        
-            .navigation-menu a:focus::after, .navigation-menu a:hover::after {
-                width: 100%;
-                left: 0;
-            }
-        
-            .navigation-menu a:focus, .navigation-menu a:hover {
-                color: var(--secondary-color);
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .menu-button {
-                display: flex;
-            }
-            .navigation-menu {
-                display: none;
-            }
-            .navigation-menu.active {
-                display: flex;
-            }
-        }
-        
-        @media (max-width: 992px) {
-            .site-footer .footer-about p, 
-            .site-footer .footer-contact p, 
-            .site-footer .footer-content {
-                text-align: center;
-            }
-        
-            .site-footer .footer-content {
-                flex-direction: column;
-                align-items: center;
-                gap: 40px;
-            }
-        
-            .site-footer .footer-about, 
-            .site-footer .footer-powered {
-                flex: 1 1 100%;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .site-footer {
-                padding: 60px 15px;
-            }
-        
-            .site-footer .footer-title {
-                font-size: 2em;
-            }
-        
-            .site-footer .footer-title::after {
-                width: 60px;
-            }
-        
-            .site-footer .footer-about p {
-                font-size: 1em;
-            }
-        
-            .site-footer .footer-contact p {
-                font-size: 0.95em;
-            }
-        
-            .site-footer .footer-powered {
-                font-size: 0.85em;
-            }
-        }
-        
-        /* Font Face */
-        @font-face {
-            font-family: 'Vazir';
-            src: url('assets/fonts/Vazir.woff2') format('woff2');
-            font-weight: normal;
-            font-style: normal;
-            font-display: swap;
-        }
-        
-        /* Skip Link */
-        .skip-navigation {
-            position: absolute;
-            top: -40px;
-            left: 0;
-            background: #fff;
-            color: #000;
-            padding: 8px;
-            z-index: 100;
-            transition: top 0.3s;
-        }
-        
-        .skip-navigation:focus {
-            top: 0;
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-    <!-- Skip Link -->
-    <a href="#main-content" class="skip-navigation">پرش به محتوا</a>
-
     <!-- Header -->
-    <header class="site-header">
-        <a href="/" class="site-logo">استعدادیاب</a>
-        <nav class="navbar-container">
-            <button class="menu-button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navigation-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
-            <ul class="navigation-menu" id="navigation-menu">
-                <li><a href="/">خانه</a></li>
-                <li><a href="/services">خدمات</a></li>
-                <li><a href="/about-us">درباره ما</a></li>
-                <li><a href="/contact">تماس با ما</a></li>
-            </ul>
-        </nav>
-    </header>
+    <header class="header">  </header>
 
     <!-- Main Content -->
-    <main id="main-content" class="main-content">
-        <div class="container">
-            <!-- شرکت استعدادیاب -->
-            <section class="company-section">
-                <h2 class="section-header">استعدادیاب</h2>
-                <p class="paragraph">
-                    استعدادیاب یک پلتفرم قابل دسترس و مقرون به صرفه است که ارزیابی‌های روان‌شناختی با کیفیت بالا را ارائه می‌دهد. هدف ما کمک به افراد، خانواده‌ها و سازمان‌ها در اتخاذ تصمیمات آگاهانه است. با ارائه راه‌حل‌های مقیاس‌پذیر، ابزارهای کاربرپسند و تعهد به امنیت داده‌ها، استعدادیاب در مسیر تبدیل شدن به یک رهبر در صنعت ارزیابی‌های روان‌شناختی آنلاین قرار دارد. با رشد ما، به بهبود خدمات خود ادامه خواهیم داد تا نیازهای متنوع مشتریان خود را برآورده کنیم.
-                </p>
-            </section>
+    <main id="main-content">
+        <section class="hero">
+            <div class="hero-content">
+                <h2>استعدادیاب</h2>
+                <p>با استعدادیاب، به ارزیابی‌های روان‌شناختی دسترسی پیدا کنید و تصمیمات آگاهانه‌تری بگیرید.</p>
+                <a href="/getting-started" class="cta-button">شروع کنید</a>
+            </div>
+        </section>
 
-            <!-- داستان تاسیس -->
-            <section class="foundation-story-section">
-                <h2 class="section-header">داستان تاسیس</h2>
-                <p class="paragraph">
-                    استعدادیاب از تجربه مدیریت یک موسسه روان‌شناختی شکل گرفت که در آن به طور منظم ارزیابی‌های روان‌شناختی برای مشتریان در زمینه‌های مختلف از جمله استعداد، شخصیت، رضایت شغلی، رضایت زناشویی و سلامت روان انجام می‌دادیم. ما به افراد در تمامی سنین، از کودکان تا بزرگسالان خدمات ارائه می‌دادیم و همچنین با مدارس و کسب‌وکارها همکاری می‌کردیم تا ارزیابی‌هایی برای دانش‌آموزان و کارمندان ارائه دهیم.
-                </p>
-                <p class="paragraph">
-                    با اینکه این ارزیابی‌ها ارزشمند بودند، یک مشکل عمده مشخص شد: مشتریان تنها نتایج خود را از طریق روان‌شناسان دریافت می‌کردند و دسترسی مستقیمی برای درک یا به کارگیری این نتایج به شکل معنادار نداشتند. این موضوع باعث نارضایتی می‌شد، زیرا مشتریان می‌خواستند با نتایج خود به صورت واضح و قابل اقدام، توانمند شوند.
-                </p>
-                <p class="paragraph">
-                    با تشخیص این خلأ، تصمیم گرفتم خدمات ارزیابی را از کلینیک جدا کنم و استعدادیاب را به عنوان یک پلتفرم کاملاً آنلاین و کاربرپسند راه‌اندازی کنم. هدف ما ارائه ارزیابی‌های روان‌شناختی قابل دسترس، مقرون به صرفه و علمی با گزارش‌های دقیق و قابل فهم به صورت آنلاین است. این پلتفرم به ما امکان می‌دهد تا به مشتریان فعلی خود بهتر خدمت کنیم و همچنین به مخاطبان گسترده‌تری دست یابیم و ارزیابی‌های با کیفیت بالا را به افراد، مدارس و کسب‌وکارها ارائه دهیم.
-                </p>
-            </section>
+        <section class="services">
+            <h2>درباره ما</h2>
+            <div class="service-list">
+                <!-- شرکت استعدادیاب -->
+                <div class="service-item">
+                    <h3>استعدادیاب</h3>
+                    <p>
+                        استعدادیاب یک پلتفرم قابل دسترس و مقرون به صرفه است که ارزیابی‌های روان‌شناختی با کیفیت بالا را ارائه می‌دهد. هدف ما کمک به افراد، خانواده‌ها و سازمان‌ها در اتخاذ تصمیمات آگاهانه است. با ارائه راه‌حل‌های مقیاس‌پذیر، ابزارهای کاربرپسند و تعهد به امنیت داده‌ها، استعدادیاب در مسیر تبدیل شدن به یک رهبر در صنعت ارزیابی‌های روان‌شناختی آنلاین قرار دارد. با رشد ما، به بهبود خدمات خود ادامه خواهیم داد تا نیازهای متنوع مشتریان خود را برآورده کنیم.
+                    </p>
+                </div>
 
-            <!-- ماموریت و چشم‌انداز -->
-            <section class="mission-vision-section">
-                <h2 class="section-header">ماموریت و چشم‌انداز</h2>
-                <p class="paragraph">
-                    ماموریت ما در استعدادیاب، توانمندسازی افراد، خانواده‌ها و سازمان‌ها برای اتخاذ تصمیمات آگاهانه درباره رشد شخصی، توسعه حرفه‌ای و سلامت روانی است. این هدف را از طریق ارائه ارزیابی‌های روان‌شناختی قابل دسترس، مقرون به صرفه و علمی پشتوانه داده شده دنبال می‌کنیم. با ارائه گزارش‌های واضح و قابل اقدام و مشاوره‌های اختیاری، ما به پر کردن خلأ بین بینش‌های حرفه‌ای روان‌شناختی و کاربردهای دنیای واقعی می‌پردازیم تا اطمینان حاصل کنیم که هر کسی ابزارهای لازم برای درک خود و کشف پتانسیل کامل خود را دارد.
-                </p>
-            </section>
+                <!-- داستان تاسیس -->
+                <div class="service-item">
+                    <h3>داستان تاسیس</h3>
+                    <p>
+                        استعدادیاب از تجربه مدیریت یک موسسه روان‌شناختی شکل گرفت که در آن به طور منظم ارزیابی‌های روان‌شناختی برای مشتریان در زمینه‌های مختلف از جمله استعداد، شخصیت، رضایت شغلی، رضایت زناشویی و سلامت روان انجام می‌دادیم. ما به افراد در تمامی سنین، از کودکان تا بزرگسالان خدمات ارائه می‌دادیم و همچنین با مدارس و کسب‌وکارها همکاری می‌کردیم تا ارزیابی‌هایی برای دانش‌آموزان و کارمندان ارائه دهیم.
+                    </p>
+                    <p>
+                        با اینکه این ارزیابی‌ها ارزشمند بودند، یک مشکل عمده مشخص شد: مشتریان تنها نتایج خود را از طریق روان‌شناسان دریافت می‌کردند و دسترسی مستقیمی برای درک یا به کارگیری این نتایج به شکل معنادار نداشتند. این موضوع باعث نارضایتی می‌شد، زیرا مشتریان می‌خواستند با نتایج خود به صورت واضح و قابل اقدام، توانمند شوند.
+                    </p>
+                    <p>
+                        با تشخیص این خلأ، تصمیم گرفتم خدمات ارزیابی را از کلینیک جدا کنم و استعدادیاب را به عنوان یک پلتفرم کاملاً آنلاین و کاربرپسند راه‌اندازی کنم. هدف ما ارائه ارزیابی‌های روان‌شناختی قابل دسترس، مقرون به صرفه و علمی با گزارش‌های دقیق و قابل فهم به صورت آنلاین است. این پلتفرم به ما امکان می‌دهد تا به مشتریان فعلی خود بهتر خدمت کنیم و همچنین به مخاطبان گسترده‌تری دست یابیم و ارزیابی‌های با کیفیت بالا را به افراد، مدارس و کسب‌وکارها ارائه دهیم.
+                    </p>
+                </div>
 
-            <!-- تقسیم‌بندی مشتریان -->
-            <section class="customer-segmentation-section">
-                <h2 class="section-header">تقسیم‌بندی مشتریان</h2>
-                <p class="paragraph">
-                    استعدادیاب به سه دسته اصلی مشتری خدمت‌رسانی می‌کند: بزرگسالان، نوجوانان و والدین. با تمرکز بر این گروه‌ها، ما ارزیابی‌های روان‌شناختی شخصی‌سازی شده‌ای را ارائه می‌دهیم که متناسب با نیازهای خاص آن‌ها است و تصمیم‌گیری در مورد توسعه شخصی، رشد حرفه‌ای و رفاه خانواده را آسان‌تر می‌کند. به عنوان یک پلتفرم آنلاین، استعدادیاب برای دسترسی به خدمات در هر زمان و مکان طراحی شده است که راحتی و دسترسی‌پذیری را افزایش می‌دهد.
-                </p>
+                <!-- ماموریت و چشم‌انداز -->
+                <div class="service-item">
+                    <h3>ماموریت و چشم‌انداز</h3>
+                    <p>
+                        ماموریت ما در استعدادیاب، توانمندسازی افراد، خانواده‌ها و سازمان‌ها برای اتخاذ تصمیمات آگاهانه درباره رشد شخصی، توسعه حرفه‌ای و سلامت روانی است. این هدف را از طریق ارائه ارزیابی‌های روان‌شناختی قابل دسترس، مقرون به صرفه و علمی پشتوانه داده شده دنبال می‌کنیم. با ارائه گزارش‌های واضح و قابل اقدام و مشاوره‌های اختیاری، ما به پر کردن خلأ بین بینش‌های حرفه‌ای روان‌شناختی و کاربردهای دنیای واقعی می‌پردازیم تا اطمینان حاصل کنیم که هر کسی ابزارهای لازم برای درک خود و کشف پتانسیل کامل خود را دارد.
+                    </p>
+                </div>
 
-                <!-- بزرگسالان -->
-                <div class="customer-group">
-                    <h3 class="sub-section-header">بزرگسالان</h3>
-                    <p class="paragraph">
+                <!-- تقسیم‌بندی مشتریان -->
+                <div class="service-item">
+                    <h3>تقسیم‌بندی مشتریان</h3>
+                    <p>
+                        استعدادیاب به سه دسته اصلی مشتری خدمت‌رسانی می‌کند: بزرگسالان، نوجوانان و والدین. با تمرکز بر این گروه‌ها، ما ارزیابی‌های روان‌شناختی شخصی‌سازی شده‌ای را ارائه می‌دهیم که متناسب با نیازهای خاص آن‌ها است و تصمیم‌گیری در مورد توسعه شخصی، رشد حرفه‌ای و رفاه خانواده را آسان‌تر می‌کند. به عنوان یک پلتفرم آنلاین، استعدادیاب برای دسترسی به خدمات در هر زمان و مکان طراحی شده است که راحتی و دسترسی‌پذیری را افزایش می‌دهد.
+                    </p>
+
+                    <h4>بزرگسالان</h4>
+                    <p>
                         استعدادیاب ارزیابی‌هایی برای بزرگسالان ارائه می‌دهد که از توسعه شخصی، رشد حرفه‌ای، روابط و رفاه روانی حمایت می‌کند:
                     </p>
                     <ul>
@@ -665,12 +69,9 @@
                         <li><strong>حمایت روابط:</strong> ارزیابی‌های رضایت زناشویی و سازگاری شریک برای تقویت روابط.</li>
                         <li><strong>رشد شخصی:</strong> ارزیابی‌های روان‌شناختی برای خودآگاهی و رفاه عاطفی.</li>
                     </ul>
-                </div>
 
-                <!-- نوجوانان -->
-                <div class="customer-group">
-                    <h3 class="sub-section-header">نوجوانان</h3>
-                    <p class="paragraph">
+                    <h4>نوجوانان</h4>
+                    <p>
                         نوجوانان با تصمیمات مهمی درباره آینده و رشد شخصی مواجه هستند. استعدادیاب راهنمایی‌هایی برای ساختن پایه‌ای قوی برای موفقیت ارائه می‌دهد:
                     </p>
                     <ul>
@@ -678,12 +79,9 @@
                         <li><strong>کشف خود و توسعه شخصی:</strong> ارزیابی‌های شخصیت، استعداد و سلامت روان برای افزایش اعتماد به نفس و تصمیم‌گیری بهتر.</li>
                         <li><strong>رفاه عاطفی:</strong> ارزیابی‌هایی که از سلامت روان و مهارت‌های اجتماعی حمایت می‌کنند.</li>
                     </ul>
-                </div>
 
-                <!-- والدین -->
-                <div class="customer-group">
-                    <h3 class="sub-section-header">والدین</h3>
-                    <p class="paragraph">
+                    <h4>والدین</h4>
+                    <p>
                         والدینی که می‌خواهند از رشد و توسعه فرزندان خود حمایت کنند، می‌توانند بر استعدادیاب برای دریافت بینش‌های شخصی‌سازی شده درباره استعدادها، شخصیت‌ها و سلامت عاطفی فرزندان خود تکیه کنند:
                     </p>
                     <ul>
@@ -692,19 +90,16 @@
                         <li><strong>حمایت خانوادگی و عاطفی:</strong> ارزیابی‌هایی که به تقویت دینامیک‌های سالم خانوادگی و ارتباط مثبت کمک می‌کنند.</li>
                     </ul>
                 </div>
-            </section>
 
-            <!-- پیشنهاد ارزش -->
-            <section class="value-proposition-section">
-                <h2 class="section-header">پیشنهاد ارزش</h2>
-                <p class="paragraph">
-                    استعدادیاب یک پلتفرم آنلاین نوآورانه است که ارزیابی‌های روان‌شناختی شخصی‌سازی شده و علمی را برای افراد، نوجوانان و والدین ارائه می‌دهد. پلتفرم ما به کاربران این امکان را می‌دهد تا از طریق گزارش‌های کاربرپسند و قابل اقدام، بینش‌هایی درباره رفاه روانی، توسعه حرفه‌ای و روابط خود به دست آورند. در اینجا نحوه ارائه ارزش به هر یک از دسته‌بندی‌های مشتریان ما آورده شده است:
-                </p>
+                <!-- پیشنهاد ارزش -->
+                <div class="service-item">
+                    <h3>پیشنهاد ارزش</h3>
+                    <p>
+                        استعدادیاب یک پلتفرم آنلاین نوآورانه است که ارزیابی‌های روان‌شناختی شخصی‌سازی شده و علمی را برای افراد، نوجوانان و والدین ارائه می‌دهد. پلتفرم ما به کاربران این امکان را می‌دهد تا از طریق گزارش‌های کاربرپسند و قابل اقدام، بینش‌هایی درباره رفاه روانی، توسعه حرفه‌ای و روابط خود به دست آورند. در اینجا نحوه ارائه ارزش به هر یک از دسته‌بندی‌های مشتریان ما آورده شده است:
+                    </p>
 
-                <!-- بزرگسالان -->
-                <div class="value-group">
-                    <h3 class="sub-section-header">بزرگسالان</h3>
-                    <p class="paragraph">
+                    <h4>بزرگسالان</h4>
+                    <p>
                         استعدادیاب ابزارهایی را در اختیار بزرگسالان قرار می‌دهد تا تصمیمات مطمئنی درباره حرفه و رشد شخصی خود بگیرند:
                     </p>
                     <ul>
@@ -712,12 +107,9 @@
                         <li><strong>بینش‌های سلامت روان و رفاه:</strong> شناسایی حوزه‌های نگرانی و دریافت مشاوره‌های قابل اقدام برای ارتقای سلامت عاطفی.</li>
                         <li><strong>حمایت روابط:</strong> ارزیابی و بهبود رضایت زناشویی و سازگاری شریک.</li>
                     </ul>
-                </div>
 
-                <!-- نوجوانان و جوانان -->
-                <div class="value-group">
-                    <h3 class="sub-section-header">نوجوانان و جوانان</h3>
-                    <p class="paragraph">
+                    <h4>نوجوانان و جوانان</h4>
+                    <p>
                         نوجوانان و جوانان می‌توانند از استعدادیاب برای پیمایش چالش‌های تحصیلی، حرفه‌ای و شخصی استفاده کنند:
                     </p>
                     <ul>
@@ -725,12 +117,9 @@
                         <li><strong>توسعه شخصی و سلامت روان:</strong> ارزیابی‌هایی برای ساختن اعتماد به نفس، مقاومت و رفاه عاطفی.</li>
                         <li><strong>انتخاب‌های تحصیلی:</strong> بینش‌هایی برای اتخاذ تصمیمات آگاهانه درباره رشته تحصیلی و تحصیلات آینده.</li>
                     </ul>
-                </div>
 
-                <!-- والدین -->
-                <div class="value-group">
-                    <h3 class="sub-section-header">والدین</h3>
-                    <p class="paragraph">
+                    <h4>والدین</h4>
+                    <p>
                         استعدادیاب به والدین در پرورش رشد فرزندانشان با ارائه بینش‌های شخصی‌سازی شده درباره استعدادها و نیازهای عاطفی فرزندانشان کمک می‌کند:
                     </p>
                     <ul>
@@ -739,87 +128,661 @@
                         <li><strong>حمایت خانواده:</strong> ارزیابی‌های روابطی که دینامیک‌های سالم خانوادگی را تقویت و ارتباطات را بهبود می‌بخشند.</li>
                     </ul>
                 </div>
-            </section>
 
-            <!-- برنامه‌های آینده -->
-            <section class="future-plans-section">
-                <h2 class="section-header">برنامه‌های آینده</h2>
-                <p class="paragraph">
-                    استعدادیاب به گونه‌ای طراحی شده است که قابل مقیاس‌پذیر باشد و اطمینان حاصل کنیم که می‌توانیم به نوآوری ادامه دهیم و نیازهای در حال تحول کاربران خود را برآورده کنیم. ما خدمات و ابزارهای خود را در طول زمان گسترش خواهیم داد، ارزیابی‌های جدید، برنامه‌های رفاهی و برنامه‌های بهبود شخصی‌سازی شده معرفی خواهیم کرد. با رشد، به مناطق جدید گسترش خواهیم یافت، پشتیبانی چندزبانه را معرفی خواهیم کرد و قابلیت‌های پلتفرم خود را با بینش‌های مبتنی بر هوش مصنوعی و یکپارچه‌سازی برنامه‌های موبایل بیشتر توسعه خواهیم داد.
-                </p>
-            </section>
+                <!-- برنامه‌های آینده -->
+                <div class="service-item">
+                    <h3>برنامه‌های آینده</h3>
+                    <p>
+                        استعدادیاب به گونه‌ای طراحی شده است که قابل مقیاس‌پذیر باشد و اطمینان حاصل کنیم که می‌توانیم به نوآوری ادامه دهیم و نیازهای در حال تحول کاربران خود را برآورده کنیم. ما خدمات و ابزارهای خود را در طول زمان گسترش خواهیم داد، ارزیابی‌های جدید، برنامه‌های رفاهی و برنامه‌های بهبود شخصی‌سازی شده معرفی خواهیم کرد. با رشد، به مناطق جدید گسترش خواهیم یافت، پشتیبانی چندزبانه را معرفی خواهیم کرد و قابلیت‌های پلتفرم خود را با بینش‌های مبتنی بر هوش مصنوعی و یکپارچه‌سازی برنامه‌های موبایل بیشتر توسعه خواهیم داد.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- طرح توسعه استعدادهای سازمانی -->
+        <section class="services">
+            <h2 class="main-title">طرح توسعه استعدادهای سازمانی</h2>
+
+            <div class="service-list">
+                <div class="service-item">
+                    <h3>مقدمه</h3>
+                    <p>
+                        طرح استعدادیابی فدراسیون به منظور شناسایی و پرورش استعدادهای ذهنی و روانی افراد، تدوین شده است. این طرح با هدف ارتقاء کیفیت عملکرد و افزایش سطح رقابت‌ها در حوزه‌های مختلف طراحی شده و بر اساس تحلیل‌های دقیق و استفاده از ابزارهای تخصصی روانشناختی اجرا خواهد شد.
+                    </p>
+                    <p>
+                        اهمیت این طرح در ایجاد یک بنیان قوی برای توسعه پایدار در زمینه‌های مختلف نهفته است، که با تمرکز بر توانمندی‌های روانی افراد می‌تواند به موفقیت‌های بلندمدت در سطوح ملی و بین‌المللی دست یابد. همچنین، این طرح با ارائه برنامه‌های آموزشی و توسعه‌ای مناسب به مربیان و مدیران، به بهبود فرآیند آموزش و هدایت کمک خواهد کرد.
+                    </p>
+                </div>
+
+                <div class="service-item">
+                    <h3>مفهوم استعداد</h3>
+                    <div class="proposal-component">
+                        <h4>مفهوم روانی استعداد</h4>
+                        <p>
+                            مفهوم روانی استعداد به ویژگی‌ها و توانمندی‌های ذهنی و روان‌شناختی اشاره دارد که یک فرد را قادر می‌سازد تا عملکرد بهینه‌ای در حوزه‌های مختلف ارائه دهد. این نیازمند ترکیبی از قدرت ذهنی، تمرکز، استقامت روانی و توانایی مدیریت استرس است. این جنبه‌ها به فرد کمک می‌کنند تا در شرایط سخت و چالش‌برانگیز بهترین عملکرد را نشان دهد.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="service-item">
+                    <h3>اجزای روانی استعداد</h3>
+                    <ul>
+                        <li>
+                            <strong>پایداری روانی</strong>
+                            <ul>
+                                <li>استقامت در مواجهه با شکست یا ضربه‌های روانی.</li>
+                                <li>حفظ انگیزه برای ادامه تلاش در بلندمدت.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>انعطاف‌پذیری روانی</strong>
+                            <ul>
+                                <li>توانایی تطبیق سریع با شرایط غیرمنتظره.</li>
+                                <li>یادگیری از اشتباهات و اصلاح استراتژی‌ها در جریان فعالیت.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>خودپایایی</strong>
+                            <ul>
+                                <li>باور به توانایی‌ها و مهارت‌های خود در برابر چالش‌ها.</li>
+                                <li>برخورداری از روحیه قوی حتی در صورت شکست یا دشواری‌های مسیر.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>قدرت ذهنی</strong>
+                            <ul>
+                                <li>توانایی تحمل فشار و شرایط سخت.</li>
+                                <li>حفظ تمرکز در زمان‌های بحرانی.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>چیرگی هیجانی</strong>
+                            <ul>
+                                <li>مدیریت خشم، ترس یا هیجان در طول فعالیت.</li>
+                                <li>استفاده مثبت از انرژی احساسی برای تقویت عملکرد.</li>
+                                <li>مدیریت استرس ناشی از موقعیت‌های حساس و محیط‌های پرتنش.</li>
+                                <li>استفاده از استراتژی‌های آرام‌سازی ذهنی مانند تنفس عمیق یا تجسم موفقیت.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>تمرکز و توجه</strong>
+                            <ul>
+                                <li>توانایی تمرکز بر تکنیک‌ها و تاکتیک‌های مورد نیاز.</li>
+                                <li>جلوگیری از حواس‌پرتی به دلیل عوامل بیرونی یا داخلی.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>روحیه رقابتی</strong>
+                            <ul>
+                                <li>میل به رقابت و تلاش برای بهترین بودن.</li>
+                                <li>شور و اشتیاق برای برتری در چارچوب قواعد و اخلاق حرفه‌ای.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="service-item">
+                    <h3>ضرورت و اهداف</h3>
+                    <div class="proposal-component">
+                        <h4>ضرورت استعدادیابی روانی</h4>
+                        <p>
+                            استعدادیابی روانی از اهمیت بالایی برخوردار است، زیرا توانمندی‌های ذهنی و روان‌شناختی خاصی هستند که عملکرد فیزیکی و عملی را پشتیبانی و تقویت می‌کنند. در هر حوزه‌ای، علاوه بر مهارت‌های فنی و تخصصی، عوامل روانی مانند تمرکز، مدیریت استرس، و استقامت ذهنی نقش حیاتی در موفقیت دارند. عدم توجه به جنبه‌های روانی در استعدادیابی ممکن است منجر به شناسایی ناقص استعدادها و ناکامی در پرورش افرادی با عملکرد پایدار و موفقیت‌آمیز شود.
+                        </p>
+                        <p>
+                            استعدادیابی روانی به‌عنوان یک ضرورت کلیدی، تضمین می‌کند که افراد با ویژگی‌های مناسب ذهنی و روان‌شناختی شناسایی و پرورش یابند. این فرآیند نه‌تنها به موفقیت کوتاه‌مدت کمک می‌کند، بلکه توانایی ایجاد نسل‌هایی از افراد پایدار و مقاوم را در زمینه‌های مختلف فراهم می‌کند.
+                        </p>
+                    </div>
+                    <div class="proposal-component">
+                        <h4>ویژگی‌های روانی مورد نیاز</h4>
+                        <ul>
+                            <li>در هر حوزه‌ای تصمیم‌گیری سریع و لحظه‌ای اهمیت بالایی دارد.</li>
+                            <li>فشار روانی ناشی از رقابت‌ها و چالش‌ها می‌تواند تأثیرات منفی بر عملکرد افراد داشته باشد.</li>
+                            <li>استعدادیابی روانی، افرادی را شناسایی می‌کند که توانایی مدیریت این فشارها را دارند.</li>
+                            <li>
+                                <strong>افزایش تاب‌آوری و انگیزه</strong>
+                                <ul>
+                                    <li>افرادی که توانایی روانی بالایی دارند، پس از شکست یا چالش‌های دشوار بهتر بازیابی می‌شوند.</li>
+                                    <li>این ویژگی در محیط‌هایی که سخت و چالش‌برانگیز هستند، بسیار ضروری است.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>بهبود عملکرد در موقعیت‌های حساس</strong>
+                                <ul>
+                                    <li>مدیریت استرس و حفظ تمرکز در شرایط بحرانی، عامل تمایز یک فرد موفق است.</li>
+                                    <li>استعدادیابی روانی می‌تواند افرادی را شناسایی کند که در موقعیت‌های حساس و شرایط پرتنش عملکرد مطلوبی دارند.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>پیشگیری از فرسودگی روانی</strong>
+                                <ul>
+                                    <li>در محیط‌های پر فشار و چالش‌برانگیز، افراد مستعد ایجاد فرسودگی ذهنی هستند.</li>
+                                    <li>استعدادیابی روانی به شناسایی افرادی کمک می‌کند که تاب‌آوری روانی بالایی دارند.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>تأثیر روان‌شناختی بر عملکرد تخصصی</strong>
+                                <ul>
+                                    <li>افرادی که تمرکز بالایی دارند، می‌توانند مهارت‌ها و دانش خود را بهتر یاد بگیرند و اجرا کنند.</li>
+                                    <li>استعدادیابی روانی تضمین می‌کند که افراد با قابلیت‌های ذهنی قوی برای آموزش تخصصی انتخاب شوند.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>کاهش هزینه‌ها و افزایش بازدهی در پرورش استعدادها</strong>
+                                <ul>
+                                    <li>شناسایی دقیق افرادی که علاوه بر ویژگی‌های فنی، از توانایی‌های روانی مناسب برخوردارند، باعث صرفه‌جویی در زمان و هزینه پرورش افراد می‌شود.</li>
+                                    <li>مدیران می‌توانند انرژی و منابع خود را روی افرادی متمرکز کنند که توانایی‌های روانی و فنی لازم برای موفقیت دارند.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="service-item">
+                    <h3>مزایای استعدادیابی روانی</h3>
+                    <ul>
+                        <li>
+                            <strong>مدیریت رقابت سالم</strong>
+                            <p>افرادی که توانایی روانی قوی دارند، می‌توانند رقابت سالم و اخلاقی را در تیم و فعالیت‌ها ترویج دهند.</p>
+                        </li>
+                        <li>
+                            <strong>شناسایی افراد با توان روانی بالا</strong>
+                            <p>افرادی که توانایی روانی قوی دارند، حتی در مواجهه با شکست نیز انگیزه خود را حفظ می‌کنند.</p>
+                        </li>
+                        <li>
+                            <strong>بهبود تیم‌سازی</strong>
+                            <p>انتخاب افرادی با ویژگی‌های روانی مناسب می‌تواند همدلی و همکاری بهتری در تیم ایجاد کند.</p>
+                        </li>
+                        <li>
+                            <strong>حمایت از توسعه پایدار</strong>
+                            <p>با شناسایی زودهنگام توانایی‌های روانی، می‌توان افرادی با ظرفیت پیشرفت بلندمدت تربیت کرد.</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="service-item">
+                    <h3>اهداف استعدادیابی روانی</h3>
+                    <p>
+                        اهداف استعدادیابی روانی بر شناسایی، توسعه و به‌کارگیری توانایی‌های روان‌شناختی افراد متمرکز است تا عملکرد بهینه‌ای در فعالیت‌ها داشته باشند. این فرآیند به مدیران کمک می‌کند تا با شناسایی ویژگی‌های ذهنی و روانی برجسته، استعدادهایی را انتخاب کنند که در شرایط سخت توانایی ماندگاری و موفقیت دارند.
+                    </p>
+                    <p>
+                        اهداف استعدادیابی روانی به شناسایی، تقویت و به‌کارگیری توانایی‌های ذهنی افراد کمک می‌کند تا علاوه بر موفقیت در فعالیت‌ها، مسیر رشد پایدار و حرفه‌ای را طی کنند. این فرآیند، مدیران و رهبران را قادر می‌سازد تا تیم‌هایی قوی‌تر و با عملکرد روانی مطلوب‌تر بسازند و پایه‌گذار موفقیت‌های آینده باشند.
+                    </p>
+                    <ul>
+                        <li>
+                            <strong>شناسایی ویژگی‌های روانی کلیدی برای موفقیت</strong>
+                            <ul>
+                                <li>تعیین افرادی که دارای استقامت ذهنی، تمرکز بالا و روحیه رقابتی هستند.</li>
+                                <li>شناسایی مهارت‌های روانی مانند کنترل استرس، تصمیم‌گیری سریع و اعتماد به نفس که ضروری‌اند.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>ایجاد زمینه برای بهبود عملکرد</strong>
+                            <ul>
+                                <li>شناسایی نقاط ضعف روانی که ممکن است عملکرد افراد را تحت تأثیر قرار دهد.</li>
+                                <li>تدوین برنامه‌های آموزشی و توسعه‌ای برای تقویت جنبه‌های روانی شناسایی‌شده.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>کاهش احتمال شکست روانی در موقعیت‌های حساس</strong>
+                            <ul>
+                                <li>انتخاب افرادی که توانایی مدیریت استرس و فشار را دارند.</li>
+                                <li>اطمینان از اینکه افراد می‌توانند در شرایط حساس بهترین عملکرد را ارائه دهند.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>بهبود یادگیری مهارت‌ها و دانش</strong>
+                            <ul>
+                                <li>شناسایی افرادی که از لحاظ روانی توانایی یادگیری سریع و به‌کارگیری مهارت‌ها را دارند.</li>
+                                <li>انتخاب افرادی که دارای تمرکز و هوش تاکتیکی بالا هستند.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>افزایش انگیزه و روحیه در افراد</strong>
+                            <ul>
+                                <li>شناسایی افرادی که دارای انگیزه درونی قوی برای موفقیت هستند.</li>
+                                <li>کمک به ایجاد روحیه پایدار برای مواجهه با شکست‌ها و چالش‌ها.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>پیشگیری از فرسودگی ذهنی و روانی</strong>
+                            <ul>
+                                <li>انتخاب افرادی که توانایی تحمل تمرینات سخت و چالش‌های مکرر را دارند.</li>
+                                <li>پیشگیری از فرسودگی ذهنی با شناسایی افرادی که تاب‌آوری روانی بالایی دارند.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>توسعه ویژگی‌های اخلاقی و حرفه‌ای</strong>
+                            <ul>
+                                <li>شناسایی افرادی با روحیه همکاری تیمی و احترام به قوانین و اصول اخلاقی.</li>
+                                <li>تقویت ارزش‌های اخلاقی در کنار مهارت‌های حرفه‌ای.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>ایجاد تیم‌های قدرتمند و هماهنگ</strong>
+                            <ul>
+                                <li>انتخاب افرادی که به لحاظ روانی، توانایی سازگاری با محیط تیمی و همدلی با هم‌تیمی‌ها را دارند.</li>
+                                <li>تضمین اینکه اعضای تیم، انگیزه و نگرش مثبتی در فعالیت‌ها دارند.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>پایداری و موفقیت بلندمدت</strong>
+                            <ul>
+                                <li>شناسایی افرادی که قابلیت توسعه روانی و پیشرفت در طول زمان را دارند.</li>
+                                <li>تمرکز بر افرادی که تعهد و اراده لازم برای موفقیت‌های بلندمدت را نشان می‌دهند.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>کمک به تدوین برنامه‌های روان‌شناختی ویژه</strong>
+                            <ul>
+                                <li>استفاده از نتایج استعدادیابی برای طراحی برنامه‌های آموزشی روان‌شناختی مانند مدیریت استرس، تقویت اعتماد به نفس و تمرکز.</li>
+                                <li>بهبود شرایط روانی افراد برای مقابله با چالش‌های زندگی حرفه‌ای.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="service-item">
+                    <h3>انواع نخبگی</h3>
+                    <p>
+                        نخبگی‌های مورد توجه مرکّب از توانایی‌های بنیادین پنج‌گانه (هوش تجربی، هوش تحصیلی، هوش تحلیلی، وظیفه‌مندی کنشی و سودمندی کنشی)، استعدادهای بافتی پنج‌گانه (اجتماعی، ریاضی، هنری، کلامی، حرکتی) و تیزهوشی‌های سه‌گانه (آفرینندگی، سازماندهی و پیشرفتگی) هستند که باید در طول اجرای برنامه برای هریک از 144 نفر جامعه مورد هدف احراز شوند.
+                    </p>
+
+                    <div class="service-item">
+                        <h4>هوش تجربی</h4>
+                        <p>
+                            به معنای ظرفیت یکپارچگی حسّی-حرکتی برای شناخت و توانایی در تجربهٔ دانسته‌ها برای روشن شدن مطلب است که طبعا با تیزحسّی و فعالیّت در محیط همراهی دارد.
+                        </p>
+                    </div>
+
+                    <div class="service-item">
+                        <h4>هوش تحصیلی</h4>
+                        <p>
+                            این هوش به معنای توانایی یاد‌گیری دقیق موادّ درسی و مباحث تحصیلی و فهم آنها برای انجام دقیق کار و افزایش دقت عمل است که منجر به موفقیت در واحدهای عملی طی دوران تحصیل می‌شود.
+                        </p>
+                    </div>
+
+                    <div class="service-item">
+                        <h4>هوش تحلیلی</h4>
+                        <p>
+                            این نوع هوش به معنای توانایی فهم، دریافت و گیرایی تیز در محوریابی، ریشه‌یابی سادهٔ مفاهیم، تجزیه و تحلیل مطالب، طبقه‌بندی راحت مفاهیم به شیوه‌های نوین، ارایهٔ آسان دسته‌بندی‌های جدید از مفاهیم و سرانجام، سازماندهی مباحث است.
+                        </p>
+                    </div>
+
+                    <div class="service-item">
+                        <h4>وظیفه‌مندی</h4>
+                        <p>
+                            انجام درست و دقیق آنچه از فرد خواسته می‌شود بر پایهٔ یادگیری، به گونه‌ای که به خوبی از عهدهٔ وظیفهٔ تعیین شده بر می‌آید در واقع تمرکز فرد در انجام دقیق و درست کارهای محوله است. پس کنش وظیفه‌مندی بر انجام دقیق و درست وظیفه و مسؤولیّت تأکید می‌ورزد.
+                        </p>
+                    </div>
+
+                    <div class="service-item">
+                        <h4>نوسودمندی</h4>
+                        <p>
+                            توانایی «نوسودمندی» اصطلاحاً به معنای «توانایی ارائۀ طرح‌های سودمند به سادگی با شیوۀ نوین‌ که راه‌حل‌ جدید، آسان و مؤثری برای مسائل دشوار باشد و به توانایی انجام کار سودمند در سطح برجسته منجر می‌شود. دوستی انجام کار بزرگ و تازه به اندازه‌ای است که فکر همیشگی لزوم انجامش فرد را رها نمی‌کند و جنب‌ و جوش‌ کنجکاوانه‌ای در وی بروز می‌یابد».
+                        </p>
+                    </div>
+
+                    <div class="service-item">
+                        <h4>استعداد ریاضی</h4>
+                        <p>
+                            این فرد به دلیل علاقه‌مندی به ریاضیات و کار با اعداد، با ویژگی "علاقه‌مند به ریاضیات" شناخته می‌شود. او لذت می‌برد از محاسبه و کار با اعداد و به راحتی محاسبات را یاد می‌گیرد. با داشتن مهارت‌های بالایی در این زمینه، در انجام فعالیت‌های ریاضی و محاسبات، به دقت عمل می‌کند و مسائل را به آسانی حل می‌کند.
+                        </p>
+                    </div>
+
+                    <div class="service-item">
+                        <h4>استعداد کلامی</h4>
+                        <p>
+                            این فرد از صحبت کردن، سخنرانی کردن و نوشتن لذت می‌برد و توانایی خوبی در یادگیری و استفاده از کلمات و لغات دارد. او قادر است که آنچه را که می‌شنوده یا مطالعه می‌کند، به خوبی حفظ کند و به راحتی و با دقت واژه‌ها و لغات را یاد بگیرد و حفظ کند.
+                        </p>
+                    </div>
+
+                    <div class="service-item">
+                        <h4>استعداد هنری</h4>
+                        <p>
+                            این فرد با استفاده از مهارت‌های بالا و دقت در یادگیری و انجام فعالیت‌های هنری، لذت می‌برد. او با سرعت و آسانی کارهای هنری را یاد می‌گیرد و به راحتی آن‌ها را انجام می‌دهد. به عنوان یک هنرمند، توانایی‌های خود را در زمینهٔ هنر به نمایش می‌گذارد و از این فعالیت‌ها لذت می‌برد.
+                        </p>
+                    </div>
+
+                    <div class="service-item">
+                        <h4>استعداد اجتماعی</h4>
+                        <p>
+                            این فرد با انرژی و لذت از معاشرت با دیگران لذت می‌برد و توانایی برقراری روابط اجتماعی موثر و آسان را دارد. او از پیش‌بینی رویدادها برای اتخاذ تصمیمات خود استفاده می‌کند و با دقت و حوصله خودش را بشناسانده و به دیگران معرفی می‌کند. همچنین، به سادگی و با شخصیت شوخ‌طبعی، با افراد جدید رابطه برقرار می‌کند و به سرعت جذب شخصیت‌های جدید می‌شود.
+                        </p>
+                    </div>
+
+                    <div class="service-item">
+                        <h4>استعداد حرکتی</h4>
+                        <p>
+                            لذت از جنب و جوش و فعّالیت‌های بدنی و تحرّک که همراه با یادگیری دقیق فعالیت‌های بدنی و برخورداری از مهارت‌های بالا در انجام این فعالیت‌هاست و موجب انجام راحت حرکات می‌شود.
+                        </p>
+                    </div>
+
+                    <div class="service-item">
+                        <h4>تیزهوشی آفرینندگی</h4>
+                        <p>
+                            تیزهوشی آفرینندگی مبتنی بر هوش تجربی برجسته شامل سه جلوهٔ خلّاقیّت است:
+                        </p>
+                        <ul>
+                            <li>
+                                <strong>نظریه پردازی</strong>
+                                <p>توانایی‌ پدید‌آوری چیز بدیع، اندیشهٔ نو و یا نظر جدید. این جلوه از خلّاقیّت به پدیدآوری و به وجود آوردن چیزهای تازه، بدیع و جدید، توانایی پدیدآوری فکر و اندیشهٔ جدید و نو، استفاده از اندیشه برای ارایهٔ نظرهای جدید و متنوع، و نیز نوآوری در کارها، افکار یا عقاید اشاره دارد.</p>
+                            </li>
+                            <li>
+                                <strong>نوآوری</strong>
+                                <p>ارائهٔ طرحی سودمند برای اوّلین بار یا ابتکار چیزهای نو که راه‌حل جدید، آسان و مؤثری برای مسائل دشوار در جهت بهبود زندگی باشد. این جلوه از خلّاقیّت به ارائهٔ طرحی سودمند برای اوّلین بار که راه‌حل جدید، آسان و مؤثری برای مسائل دشوار باشد، ابتکار چیزهای نو و جدید یا ابداع روش‌های تازه در زمینه‌های مختلف و ایجاد کار جدید یا چیز نو بر پایهٔ هوش و دانش اشاره دارد.</p>
+                            </li>
+                            <li>
+                                <strong>استنباط</strong>
+                                <p>نگاه‌ همه‌جانبه برای استنباط مفهوم جدید از ترکیب مفاهیم آموخته شده. این جلوه از خلّاقیّت به سعی در خوب نگاه کردن و ایجاد چیز جدید، داشتن فکر و اندیشهٔ باز برای نگاه کردن به همهٔ جوانب و نیز استنباط مفهوم جدید از ترکیب مفاهیم آموخته شده با تکیه بر هوش اشاره دارد.</p>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                </div>
+
+                <div class="service-item">
+                    <h4>تیزهوشی پیشرفتگی</h4>
+                    <p>
+                        پیشرفتگی به معنای توانایی استثنایی در گیرایی تیز با سرعت بالا، پیگیری دقیق، درک و فهم بهینه در مواد آموزشی، تحصیل پیشرفته، انجام کار با دستیابی به مهارت یا دانش، مهارت ذاتی خاص در یک زمینه، طرح‌احراز راه‌حل جدید یا ابتکار چیز نو که برای بهبود زندگی سودمند است.
+                    </p>
+                    <p>
+                        پیشرفتگی شامل پنج زیر عامل اساسی است:
+                    </p>
+                    <ul>
+                        <li>توانایی گیرایی استثنایی در گیرایی تیز و استعداد بی‌نظیر و منحصر به‌فرد</li>
+                        <li>فهم و دریافت سریع و دقیق و موشکافانهٔ مطالب</li>
+                        <li>پیشرفت تحصیلی توانایی موفقیت در روند یادگیری و فهم مواد آموزشی و کسب مدارج تحصیلی بالا بر اساس آزمون‌های معتبر</li>
+                        <li>ورزیدگی توانایی ویژه یا مهارت ذاتی خاص در انجام کاری در یک زمینه</li>
+                        <li>نوآوری ارائهٔ طرحی سودمند برای اوّلین بار که راه‌حل جدید، آسان و مؤثری برای مسائل دشوار در جهت بهبود زندگی باشد</li>
+                    </ul>
+                </div>
+
+                <div class="service-item">
+                    <h4>تیزهوشی سازماندهی</h4>
+                    <p>
+                        در خوشهٔ «سازماندهی» دو جلوهٔ خلّاقیّت جای می‌گیرد:
+                    </p>
+                    <ul>
+                        <li>
+                            <strong>مفهوم‌یابی</strong>
+                            <p>توانایی درک، یادگیری و شناخت مفاهیم و طبقه‌بندی آنها. این جلوه از خلّاقیّت به توانایی دریافت مفاهیم نو و طبقه‌بندی مفاهیم اشاره دارد.</p>
+                        </li>
+                        <li>
+                            <strong>رهیابی تحلیلی</strong>
+                            <p>پیدا کردن راه انجام هر کاری در سطح برجسته بر اساس فهم، ریشه‌یابی، تجزیه و تحلیل و موقعیت‌سنجی. این جلوه از خلّاقیّت به پیدا کردن راه انجام هر کاری مبتنی بر فهم و پی‌بردن به حقیقت پدیده‌ها و ریشه‌ها از روی نشانه‌های ظاهری اشاره دارد.</p>
+                            <p>چنین امری از طریق موقعیت‌سنجی، توانایی تجزیه و تحلیل مطالب به گونهٔ متفاوت، توانایی یادگیری و شناخت معانی چیزها صورت می‌پذیرد که به فرد، توانایی انجام کار در سطح برجسته را می‌دهد.</p>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
         </div>
-    </main>
+    </section>
+
+    <section class="services">
+        <h2 class="proposal-section-title">نیمرخ بالینی استعدادی هدف</h2>
+        <div class="service-list">
+            <div class="service-item">
+                <h3>ویژگی‌های روانشناختی گروه‌های مختلف</h3>
+                <p>
+                    گروه‌های مورد بررسی از ویژگی‌های روانشناختی مختلف برخوردارند:
+                </p>
+                <ul>
+                    <li>
+                        <strong>مدیر</strong>
+                        <ul>
+                            <li>آرامش درونی و چیرگی هیجانی</li>
+                            <li>روحیه انعطاف‌پذیری</li>
+                            <li>پیوندجویی و ظرفیت ارتباطی</li>
+                            <li>تعهد به یادگیری و رشد مستمر</li>
+                            <li>رهبری و الهام‌بخشی</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>کارشناس</strong>
+                        <ul>
+                            <li>تصمیم‌گیری قاطع و سریع</li>
+                            <li>چالش‌پذیری</li>
+                            <li>چیرگی هیجانی و خویشتنداری</li>
+                            <li>دقت و تمرکز بالا</li>
+                            <li>عدالت‌محوری</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>کارمند</strong>
+                        <ul>
+                            <li>انعطاف‌پذیری روانی</li>
+                            <li>پشتکار و اراده قوی</li>
+                            <li>تمرکز و دقت</li>
+                            <li>خودپایایی و چیرگی هیجانی</li>
+                            <li>روحیه همکاری و چالش‌پذیری</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="services">
+        <h2 class="proposal-section-title">توانایی‌های پنج‌گانه مدیر</h2>
+        <div class="service-list">
+            <div class="service-item">
+                <p>
+                    ویژگی‌های روانی مدیر را نیز مانند ویژگی‌های روانی سایر گروه‌ها می‌توان با توانایی‌های پنج‌گانه (هوش تجربی، هوش تحصیلی، هوش تحلیلی، وظیفه‌مندی و نوسودمندی) انطباق داد. در ادامه، هر ویژگی روانی مدیر با توانایی‌های مرتبط تبیین می‌شود:
+                </p>
+                <ul>
+                    <li>
+                        <strong>آرامش درونی و چیرگی هیجانی</strong>
+                        <p>هوش تجربی، وظیفه‌مندی، هوش تحلیلی</p>
+                    </li>
+                    <li>
+                        <strong>روحیه انعطاف‌پذیری</strong>
+                        <p>هوش تجربی، هوش تحلیلی، نوسودمندی</p>
+                    </li>
+                    <li>
+                        <strong>پیوندجویی و ظرفیت ارتباطی</strong>
+                        <p>هوش تجربی، هوش تحصیلی، وظیفه‌مندی</p>
+                    </li>
+                    <li>
+                        <strong>تعهد به یادگیری و رشد مستمر</strong>
+                        <p>هوش تحصیلی، هوش تجربی، هوش تحلیلی</p>
+                    </li>
+                    <li>
+                        <strong>رهبری و الهام‌بخشی</strong>
+                        <p>نوسودمندی، هوش تجربی، هوش تحلیلی، وظیفه‌مندی</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="services">
+        <h2 class="proposal-section-title">توانایی‌های پنج‌گانه کارشناس</h2>
+        <div class="service-list">
+            <div class="service-item">
+                <p>
+                    ویژگی‌های روانی کارشناس را نیز مانند سایر گروه‌ها می‌توان با توانایی‌های پنج‌گانه (هوش تجربی، هوش تحصیلی، هوش تحلیلی، وظیفه‌مندی و نوسودمندی) انطباق داد. در ادامه، هر ویژگی روانی کارشناس با توانایی‌های مرتبط تبیین می‌شود:
+                </p>
+                <ul>
+                    <li>
+                        <strong>تصمیم‌گیری قاطع و سریع</strong>
+                        <p>هوش تحلیلی، هوش تجربی</p>
+                    </li>
+                    <li>
+                        <strong>چالش‌پذیری</strong>
+                        <p>نوسودمندی، هوش تجربی</p>
+                    </li>
+                    <li>
+                        <strong>چیرگی هیجانی و خویشتنداری</strong>
+                        <p>وظیفه‌مندی، هوش تحلیلی، هوش تجربی</p>
+                    </li>
+                    <li>
+                        <strong>دقت و تمرکز بالا</strong>
+                        <p>هوش تحصیلی، وظیفه‌مندی، هوش تحلیلی</p>
+                    </li>
+                    <li>
+                        <strong>عدالت‌محوری</strong>
+                        <p>وظیفه‌مندی، هوش تحلیلی، هوش تحصیلی</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="services">
+        <h2 class="proposal-section-title">توضیح فناوری و نوآوری</h2>
+        <div class="service-list">
+            <div class="service-item">
+                <h3>فناوری‌های نوین در استعدادیابی روانی</h3>
+                <p>
+                    این پروژه با استفاده از «ابزارهای تخصصی روانشناختی و هوش مصنوعی» در فرآیند استعدادیابی، قابلیت شناسایی دقیق‌تر و سریع‌تر استعدادهای ذهنی و روانی را فراهم می‌آورد. استفاده از «تحلیل داده‌های بزرگ» و «مدل‌های پیش‌بینی»، نوآوری‌های اصلی این پروژه هستند که به ارتقاء کیفیت و دقت فرآیند استعدادیابی کمک می‌کنند.
+                </p>
+                <p>
+                    سطح فناوری این پروژه در TRL 6 قرار دارد، به این معنی که فناوری در محیط واقعی آزمایش و ارزیابی شده و نیاز به بهبود نهایی قبل از تولید صنعتی دارد. این پروژه با توسعه و بهینه‌سازی ابزارهای موجود، سطح فناوری را به TRL 7 ارتقا خواهد داد.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="services">
+        <h2 class="proposal-section-title">ارزش افزوده اقتصادی</h2>
+        <div class="service-list">
+            <div class="service-item">
+                <h3>ایجاد ارزش افزوده از طریق کاهش هزینه‌ها و افزایش بهره‌وری</h3>
+                <p>
+                    با استفاده از ابزارهای نوین روانشناختی و تحلیل داده‌ها، این پروژه قادر است «هزینه‌های مرتبط با فرآیند استعدادیابی» را تا ۲۰٪ کاهش دهد. علاوه بر این، «افزایش دقت در شناسایی استعدادها» منجر به بهبود عملکرد افراد و کاهش هزینه‌های ناشی از ناکامی در انتخاب افراد مناسب خواهد شد.
+                </p>
+            </div>
+            <div class="service-item">
+                <h3>توسعه صادرات دانش‌بنیان</h3>
+                <p>
+                    محصول نهایی این پروژه دارای قابلیت صادرات به دیگر کشورها است. با توجه به نیاز جهانی به ابزارهای پیشرفته در استعدادیابی، انتظار می‌رود که تا سال پنجم، «۲ میلیون دلار صادرات» از این پروژه حاصل شود که به افزایش درآمد ارزی کشور کمک می‌کند.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="services">
+        <h2 class="proposal-section-title">فعالیت‌های تحقیق و توسعه (R&D)</h2>
+        <div class="service-list">
+            <div class="service-item">
+                <h3>بودجه و زمان‌بندی تحقیق و توسعه</h3>
+                <p>
+                    در این پروژه، «۳۰٪ از بودجه کل» به فعالیت‌های تحقیق و توسعه اختصاص یافته است. این فعالیت‌ها شامل توسعه الگوریتم‌های تحلیل داده، آزمایش و ارزیابی ابزارهای روانشناختی و بهینه‌سازی فرآیند استعدادیابی می‌باشند.
+                </p>
+            </div>
+            <div class="service-item">
+                <h3>تیم تحقیقاتی</h3>
+                <p>
+                    تیم تحقیقاتی شامل ۸ متخصص در حوزه‌های روانشناسی، تحلیل داده‌ها و هوش مصنوعی است. اعضای تیم دارای «تجربه‌های علمی و پژوهشی» در زمینه استعدادیابی و بهینه‌سازی فرآیندهای روانشناسی هستند.
+                </p>
+            </div>
+            <div class="service-item">
+                <h3>استفاده از نتایج پژوهشی</h3>
+                <p>
+                    نتایج حاصل از فعالیت‌های تحقیق و توسعه به طور مستقیم در **توسعه و بهبود ابزارهای استعدادیابی** و **افزایش دقت فرآیند شناسایی استعدادها** استفاده خواهد شد. همچنین، این نتایج می‌توانند در **انتشار مقالات علمی** و **دریافت گواهینامه‌های فنی** نقش مهمی ایفا کنند.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="services">
+        <h2 class="proposal-section-title">تحلیل بازار و پتانسیل تجاری‌سازی</h2>
+        <div class="service-list">
+            <div class="service-item">
+                <h3>اندازه بازار هدف</h3>
+                <p>
+                    بازار هدف این پروژه شامل **سازمان‌ها و موسسات مختلف** در ایران و کشورهای همسایه است. بر اساس تحلیل‌های انجام‌شده، اندازه بازار سالانه این ابزارها **۵۰۰ میلیون دلار** تخمین زده شده است.
+                </p>
+            </div>
+            <div class="service-item">
+                <h3>مشتریان بالقوه و نیازهای آن‌ها</h3>
+                <p>
+                    مشتریان بالقوه شامل **سازمان‌های آموزشی و تحقیقاتی**، **مراکز توسعه منابع انسانی** و **موسسات مشاوره‌ای** هستند که نیاز به ابزارهای دقیق و پیشرفته در استعدادیابی دارند. این ابزارها می‌توانند به آن‌ها در **شناسایی و پرورش استعدادهای سازمانی** کمک کنند.
+                </p>
+            </div>
+            <div class="service-item">
+                <h3>رقبا و مزیت رقابتی</h3>
+                <p>
+                    در بازار فعلی، ابزارهای محدود و غیرتخصصی در زمینه استعدادیابی وجود دارد. **مزیت رقابتی** این پروژه در استفاده از **هوش مصنوعی و تحلیل داده‌های بزرگ** برای افزایش دقت و سرعت فرآیند است. همچنین، **پشتیبانی فنی و علمی قوی** از سوی تیم تحقیقاتی، این پروژه را از رقبا متمایز می‌کند.
+                </p>
+            </div>
+            <div class="service-item">
+                <h3>برنامه تجاری‌سازی</h3>
+                <p>
+                    برنامه تجاری‌سازی شامل **بازاریابی دیجیتال**، **شرکت در نمایشگاه‌های بین‌المللی** و **همکاری با سازمان‌ها و موسسات مختلف** برای معرفی و فروش ابزارها خواهد بود. همچنین، **ارائه نسخه‌های سفارشی** برای نیازهای خاص مشتریان نیز در نظر گرفته شده است.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="services">
+        <h2 class="proposal-section-title">تأثیر اجتماعی و زیست‌محیطی</h2>
+        <div class="service-list">
+            <div class="service-item">
+                <h3>تأثیرات اجتماعی</h3>
+                <p>
+                    این پروژه با **ایجاد فرصت‌های شغلی** در حوزه‌های روانشناسی و تحلیل داده‌ها، به **اشتغال‌زایی** و **کاهش نابرابری‌های اقتصادی** کمک می‌کند. همچنین، **افزایش کیفیت منابع انسانی** و **توسعه استعدادهای سازمانی** منجر به **افزایش بهره‌وری ملی** و **بهبود روحیه جامعه** خواهد شد.
+                </p>
+            </div>
+            <div class="service-item">
+                <h3>تأثیرات زیست‌محیطی</h3>
+                <p>
+                    فرآیندهای دیجیتالی و استفاده از **ابزارهای آنلاین** در این پروژه به **کاهش مصرف کاغذ** و **بهینه‌سازی منابع طبیعی** کمک می‌کنند. همچنین، **کمتر کردن نیاز به جلسات حضوری** و **حمل و نقل** می‌تواند به **کاهش انتشار گازهای گلخانه‌ای** منجر شود.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="services">
+        <h2 class="proposal-section-title">مدارک و گواهینامه‌ها</h2>
+        <div class="service-list">
+            <div class="service-item">
+                <h3>ثبت اختراعات</h3>
+                <p>
+                    این پروژه دارای **چندین اختراع ثبت‌شده** در حوزه ابزارهای روانشناختی و تحلیل داده‌ها است که **حمایت حقوقی** از نوآوری‌های ارائه‌شده را تضمین می‌کند.
+                </p>
+            </div>
+            <div class="service-item">
+                <h3>مقالات علمی</h3>
+                <p>
+                    تیم تحقیقاتی تا کنون **ده مقاله علمی معتبر** در زمینه روانشناسی منتشر کرده است که نشان‌دهنده **تخصص و تجربه** تیم در این حوزه می‌باشد.
+                </p>
+            </div>
+            <div class="service-item">
+                <h3>تأییدیه‌های فنی</h3>
+                <p>
+                    ابزارهای مورد استفاده در این پروژه دارای **تأییدیه‌های فنی** از مراجع معتبر داخلی و بین‌المللی هستند که اعتبار و قابلیت اطمینان آن‌ها را تضمین می‌کند.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="services">
+        <h2 class="proposal-section-title">نتیجه‌گیری</h2>
+        <div class="service-list">
+            <div class="service-item">
+                <p>
+                    این پروژه با استفاده از فناوری‌های نوین و رویکردهای علمی در استعدادیابی روانی، می‌تواند تأثیرات مثبت قابل‌توجهی بر بازار، اقتصاد و جامعه داشته باشد. با کاهش هزینه‌ها، افزایش بهره‌وری و ایجاد ارزش افزوده اقتصادی، این پروژه ارزش سرمایه‌گذاری و حمایت‌های مالی را داراست. همچنین، تأثیرات اجتماعی و زیست‌محیطی آن در بهبود کیفیت زندگی و ارتقاء استانداردهای سازمانی، این پروژه را به یک طرح دانش‌بنیان ارزشمند تبدیل کرده است.
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- End of Main Content -->
 
     <!-- Footer -->
-    <footer class="site-footer">
+    <footer class="footer">
         <div class="footer-content">
-            <div class="footer-about">
-                <h2 class="footer-title">درباره ما</h2>
-                <p>
-                    استعدادیاب یک پلتفرم پیشرفته است که به افراد کمک می‌کند تا از طریق ارزیابی‌های روان‌شناختی، پتانسیل‌های خود را کشف و توسعه دهند. ما متعهد به ارائه خدمات با کیفیت و دسترسی آسان به ابزارهای علمی برای بهبود زندگی شما هستیم.
-                </p>
-            </div>
-            <div class="footer-contact">
-                <h2 class="footer-title">تماس با ما</h2>
-                <p><strong>ایمیل:</strong> support@estedadyaab.com</p>
-                <p><strong>تلفن:</strong> 123-456-7890</p>
-                <p><strong>آدرس:</strong> تهران، خیابان ولیعصر</p>
+            <div class="about-info">
+                <h2>درباره ما</h2>
+                <p>استعدادیاب با استفاده از بیش از چهل سال تجربه مؤسسه هیجان اندیشه در روان‌شناسی و ارزیابی‌های تخصصی، با بهره‌گیری از هوش مصنوعی به شما کمک می‌کند تا استعدادهای بالقوه خود را در مسیر دستیابی به تعالی فردی و رضایت از زندگی کشف کنید.</p>
+                <div class="contact-info">
+                    <p><strong>آدرس:</strong> تهران، سهروردی، خرمشهر، عربعلی، ششم، ۴۴</p>
+                    <p><strong>تلفن:</strong> <a href="tel:+982188174100">۰۲۱۸۸۱۷۴۱۰۰</a></p>
+                    <p><strong>ایمیل:</strong> <a href="mailto:info@talentsearch.ir">info@talentsearch.ir</a></p>
+                </div>
             </div>
         </div>
-        <div class="footer-powered">
-            <p>Powered by <a href="#">استعدادیاب</a></p>
-        </div>
-        <div class="decorative-line"></div>
-        <div class="footer-text">
-            <p>&copy; 2024 استعدادیاب. تمامی حقوق محفوظ است.</p>
-        </div>
+        <div class="powered-by">توسعه داده شده توسط <a href="https://eot.ir" target="_blank">مؤسسه تعاملی هیجان اندیشه</a></div>
     </footer>
+    <script src="assets/js/header-footer-inject.js"></script>
 
-    <!-- Scroll to Top Button -->
-    <button class="scroll-top-button" aria-label="Scroll to top">&#8679;</button>
-
-    <!-- Loader -->
-    <div class="loading-spinner"></div>
-
-    <!-- JavaScript -->
-    <script>
-        // Toggle Navigation Menu
-        const menuButton = document.querySelector('.menu-button');
-        const navigationMenu = document.querySelector('.navigation-menu');
-
-        menuButton.addEventListener('click', () => {
-            menuButton.classList.toggle('active');
-            navigationMenu.classList.toggle('active');
-            const expanded = menuButton.classList.contains('active');
-            menuButton.setAttribute('aria-expanded', expanded);
-        });
-
-        // Scroll to Top Button
-        const scrollTopButton = document.querySelector('.scroll-top-button');
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                scrollTopButton.classList.add('show');
-            } else {
-                scrollTopButton.classList.remove('show');
-            }
-        });
-
-        scrollTopButton.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        // Loader (Example: Hide loader after content loads)
-        window.addEventListener('load', () => {
-            const loader = document.querySelector('.loading-spinner');
-            if (loader) {
-                loader.style.display = 'none';
-            }
-        });
-    </script>
 </body>
 </html>
