@@ -200,6 +200,9 @@ a:focus {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     z-index: 1000;
     direction: rtl; /* Ensure RTL alignment */
+    flex-wrap: nowrap; /* Prevent wrapping */
+    box-sizing: border-box; /* Include padding in width calculations */
+    overflow: hidden; /* Prevent any overflow */
 }
 
 /* Logo Styles */
@@ -208,6 +211,8 @@ a:focus {
     font-weight: 700;
     color: var(--primary-deep-blue);
     transition: color var(--transition-speed) var(--transition-type);
+    white-space: nowrap; /* Prevent logo text from wrapping */
+    flex-shrink: 0; /* Prevent logo from shrinking */
 }
 
 .logo:hover,
@@ -219,6 +224,16 @@ a:focus {
    4.2. Navigation - Responsive Navbar
 ======================================================= */
 
+/* Navigation Styles */
+.navbar {
+    display: flex;
+    flex: 1; /* Allow navbar to take up remaining space */
+    justify-content: flex-start; /* Align nav-links to the left in RTL */
+    align-items: center;
+    overflow: hidden; /* Prevent overflow issues */
+    flex-shrink: 1; /* Allow navbar to shrink if necessary */
+}
+
 /* Navigation Links */
 .nav-links {
     display: flex;
@@ -227,6 +242,7 @@ a:focus {
     list-style: none;
     margin: 0;
     padding: 0;
+    white-space: nowrap; /* Prevent links from wrapping */
 }
 
 /* Navigation Link Items */
@@ -245,6 +261,8 @@ a:focus {
     display: flex;
     align-items: center;
     gap: 5px;
+    white-space: nowrap; /* Prevent link text from wrapping */
+    flex-shrink: 0; /* Prevent link from shrinking */
 }
 
 /* Link Text */
@@ -311,6 +329,15 @@ a:focus {
     /* For example, ensure nav-links occupy the full width */
     .nav-links {
         width: auto; /* Adjust as per design */
+    }
+    
+    /* Optional: Adjust padding/margins for desktop */
+    .header {
+        padding: 0 var(--spacing-lg);
+    }
+
+    .nav-links li {
+        margin: 0 var(--spacing-xl);
     }
 }
 
