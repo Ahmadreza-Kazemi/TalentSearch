@@ -1080,22 +1080,7 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <!-- Logo -->
-        <div class="logo">
-            استعدادیاب
-        </div>
-        <!-- Navigation (Placeholder: You can populate this with your navigation links) -->
-        <nav class="navbar">
-            <ul class="nav-links">
-                <li><a href="#main-content"><span class="link-text">خانه</span></a></li>
-                <li><a href="#about"><span class="link-text">درباره ما</span></a></li>
-                <li><a href="#services"><span class="link-text">خدمات</span></a></li>
-                <li><a href="#contact"><span class="link-text">تماس</span></a></li>
-            </ul>
-        </nav>
-    </header>
+    <header class="header"></header>
 
     <!-- Main Content -->
     <main id="main-content">
@@ -1851,53 +1836,12 @@
             </div>
         </div>
     </section>
-    <!-- End of Main Content -->
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="about-info">
-                <h2>درباره ما</h2>
-                <p>استعدادیاب با استفاده از بیش از چهل سال تجربه مؤسسه هیجان اندیشه در روان‌شناسی و ارزیابی‌های تخصصی، با بهره‌گیری از هوش مصنوعی به شما کمک می‌کند تا استعدادهای بالقوه خود را در مسیر دستیابی به تعالی فردی و رضایت از زندگی کشف کنید.</p>
-                <div class="contact-info">
-                    <p><strong>آدرس:</strong> تهران، سهروردی، خرمشهر، عربعلی، ششم، ۴۴</p>
-                    <p><strong>تلفن:</strong> <a href="tel:+982188174100">۰۲۱۸۸۱۷۴۱۰۰</a></p>
-                    <p><strong>ایمیل:</strong> <a href="mailto:info@talentsearch.ir">info@talentsearch.ir</a></p>
-                </div>
-            </div>
-        </div>
-        <div class="powered-by">توسعه داده شده توسط <a href="https://eot.ir" target="_blank">مؤسسه تعاملی هیجان اندیشه</a></div>
-    </footer>
-    <!-- End of Footer -->
+    <!-- Footer will be dynamically injected here -->
+    <div class="footer"></div>
 
-    <!-- Optional: Scroll to Top Button -->
-    <button class="scroll-to-top" aria-label="بازگشت به بالای صفحه">↑</button>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/header-footer-inject.js"></script>
 
-    <!-- Loader (Optional) -->
-    <div class="loader"></div>
-
-    <!-- JavaScript -->
-    <script>
-        // Example JavaScript for Scroll to Top Button
-        const scrollToTopButton = document.querySelector('.scroll-to-top');
-
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                scrollToTopButton.classList.add('show');
-            } else {
-                scrollToTopButton.classList.remove('show');
-            }
-        });
-
-        scrollToTopButton.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        // Example JavaScript for Header/Footer Injection (if needed)
-        // Ensure that the script functionality matches your requirements
-    </script>
 </body>
 </html>
