@@ -55,31 +55,31 @@
 
         @font-face {
             font-family: 'IRANSansWeb';
-            src: url('fonts/IRANSansWeb.woff2') format('woff2');
+            src: url('/assets/fonts/IRANSansWeb.woff2') format('woff2');
         }
         @font-face {
             font-family: 'BTitrBold';
-            src: url('fonts/BTitrBold.woff2') format('woff2');
+            src: url('/assets/fonts/BTitrBold.woff2') format('woff2');
         }
         @font-face {
             font-family: 'BKoodakBold';
-            src: url('fonts/BKoodakBold.woff2') format('woff2');
+            src: url('/assets/fonts/BKoodakBold.woff2') format('woff2');
         }
         @font-face {
             font-family: 'BHoma';
-            src: url('fonts/BHoma.woff2') format('woff2');
+            src: url('/assets/fonts/BHoma.woff2') format('woff2');
         }
         @font-face {
             font-family: 'BYekan';
-            src: url('fonts/BYekan.woff2') format('woff2');
+            src: url('/assets/fonts/BYekan.woff2') format('woff2');
         }
         @font-face {
             font-family: 'Tahoma';
-            src: url('fonts/Tahoma.woff2') format('woff2');
+            src: url('/assets/fonts/Tahoma.woff2') format('woff2');
         }
 
         /* =======================================================
-           4. Typography
+           3. Typography
         ======================================================= */
         h1, h2, h3, h4 {
             font-family: 'Vazir', sans-serif;
@@ -139,7 +139,7 @@
         }
 
         /* =======================================================
-           5. Hero Section
+           4. Hero Section
         ======================================================= */
         .hero {
             height: calc(100vh - 80px);
@@ -187,7 +187,7 @@
         }
 
         /* =======================================================
-           6. Content Sections
+           5. Content Sections
         ======================================================= */
         .content-section {
             padding: 60px 16px;
@@ -204,7 +204,7 @@
         }
 
         /* =======================================================
-           10. Additional Styles for Report Integration
+           6. Sample Report Section Styles
         ======================================================= */
         /* Report Styles */
         .report-container {
@@ -219,7 +219,6 @@
             border-radius: 20px;
             max-width: 800px;
         }
-
         .report-header-custom {
             display: flex;
             align-items: center;
@@ -228,18 +227,15 @@
             background-color: #0DA3B8;
             border-radius: 20px 20px 0 0;
         }
-
         .report-header-inner {
             display: flex;
             align-items: center;
             gap: 20px;
         }
-
         .report-header-img {
             width: 40px;
             height: 40px;
         }
-
         .report-header-title {
             margin: 0;
             font-size: 1.8em;
@@ -247,12 +243,10 @@
             font-family: 'IRANSansWeb', sans-serif;
             font-weight: normal;
         }
-
         .report-header-date {
             color: #ffffff;
             font-size: 1em;
         }
-
         .report-section-title {
             font-size: 22px;
             color: #CC3333;
@@ -264,7 +258,6 @@
             font-weight: bold;
             text-align: center;
         }
-
         .report-paragraph {
             background-color: #E0F7FA;
             padding: 15px;
@@ -272,14 +265,12 @@
             font-size: 16px;
             margin-bottom: 20px;
         }
-
         .report-info-container, .report-score-container {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
             justify-content: center;
         }
-
         .report-info-item, .report-score-item {
             background-color: #F8F9FA;
             padding: 15px;
@@ -293,16 +284,13 @@
             flex: 1;
             min-width: 300px;
         }
-
         .report-info-item strong, .report-score-item strong {
             color: #0DA3B8;
             font-family: 'IRANSansWeb', sans-serif;
         }
-
         .report-info-data, .report-score-data {
             font-family: 'IRANSansWeb', sans-serif;
         }
-
         .report-component-title {
             display: flex;
             justify-content: space-between;
@@ -315,7 +303,6 @@
             border-bottom: 1px solid #DBCF93;
             font-family: 'IRANSansWeb', sans-serif;
         }
-
         .report-badge {
             display: inline-block;
             padding: 8px 15px;
@@ -324,7 +311,6 @@
             background-color: #4A9B8C;
             border-radius: 10px;
         }
-
         .report-recommendation {
             background-color: #EAEAEA;
             padding: 20px;
@@ -336,26 +322,22 @@
             width: 100%;
             box-sizing: border-box;
         }
-
         .report-recommendation-title {
             font-weight: bold;
             color: #CC3333;
             margin-bottom: 5px;
             font-size: 18px;
         }
-
         .report-recommendation-text {
             margin-bottom: 5px;
             line-height: 1.6;
             font-size: 16px;
         }
-
         .report-list {
             list-style-type: none;
             padding: 0;
             font-size: 16px;
         }
-
         .report-list-item {
             background: #F8F9FA;
             margin-bottom: 10px;
@@ -365,13 +347,11 @@
             display: flex;
             flex-direction: column;
         }
-
         .report-list-item strong {
             font-size: 18px;
             color: #0DA3B8;
             margin-bottom: 5px;
         }
-
         /* Report Conditional Display Styles */
         .report-conditional-display {
             display: block;
@@ -401,7 +381,72 @@
             background-color: #99FF99; /* Excellent */
         }
 
-        /* Additional Styles for Report Integration */
+        /* =======================================================
+           7. Contact Form Styles
+        ======================================================= */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #FFFFFF;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form h3 {
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #CCCCCC;
+            border-radius: 4px;
+            font-size: 1em;
+            font-family: 'Vazir', sans-serif;
+            resize: vertical;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #4FBDBA;
+            outline: none;
+        }
+
+        .submit-button {
+            display: block;
+            width: 100%;
+            background-color: #1F3B73;
+            color: #FFFFFF;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .submit-button:hover,
+        .submit-button:focus {
+            background-color: #4FBDBA;
+        }
+
+        /* =======================================================
+           8. Additional Styles for Report Integration
+        ======================================================= */
         .test-section {
             margin-bottom: 40px;
         }
@@ -461,12 +506,13 @@
 </head>
 <body>
     <header class="header">
-        <!-- می‌توانید محتوای سربرگ را اینجا اضافه کنید -->
+        <!-- محتوای سربرگ را اینجا اضافه کنید (لوگو، منو و غیره) -->
     </header>
 
     <!-- Main Content -->
     <main id="main-content">
-        <!-- Hero Section -->
+        <!-- Test Name and Headline -->
+        <!-- بخش معرفی نام آزمون و عنوان جذاب -->
         <section class="hero">
             <div class="hero-content">
                 <h1>تحلیل فهرست تشخیص تعاملی شخصیت</h1>
@@ -475,7 +521,8 @@
             </div>
         </section>
 
-        <!-- Test Purpose Section -->
+        <!-- Purpose of the Test -->
+        <!-- توضیح مختصر درباره هدف و اهمیت آزمون -->
         <section class="content-section test-section" id="test-purpose">
             <div class="content-container">
                 <h2>هدف از آزمون</h2>
@@ -485,7 +532,8 @@
             </div>
         </section>
 
-        <!-- Key Features Section -->
+        <!-- Key Features of the Test -->
+        <!-- لیستی از ویژگی‌های کلیدی آزمون -->
         <section class="content-section test-section" id="key-features">
             <div class="content-container">
                 <h2>ویژگی‌های کلیدی آزمون</h2>
@@ -498,7 +546,8 @@
             </div>
         </section>
 
-        <!-- Benefits Section -->
+        <!-- Benefits of Taking This Test -->
+        <!-- توضیحاتی درباره مزایای انجام آزمون -->
         <section class="content-section test-section" id="benefits">
             <div class="content-container">
                 <h2>مزایای شرکت در این آزمون</h2>
@@ -512,7 +561,8 @@
             </div>
         </section>
 
-        <!-- How It Works Section -->
+        <!-- How the Test Works -->
+        <!-- توضیح مراحل انجام آزمون -->
         <section class="content-section test-section" id="how-it-works">
             <div class="content-container">
                 <h2>نحوه انجام آزمون</h2>
@@ -527,7 +577,8 @@
             </div>
         </section>
 
-        <!-- Who Should Take This Test Section -->
+        <!-- Who Should Take This Test? -->
+        <!-- تعیین گروه‌های هدف آزمون -->
         <section class="content-section test-section" id="who-should-take">
             <div class="content-container">
                 <h2>چه کسانی باید این آزمون را انجام دهند؟</h2>
@@ -542,17 +593,17 @@
         </section>
 
         <!-- Sample Report Section -->
+        <!-- نمایش نمونه گزارش تحلیل شخصیت -->
         <section class="content-section test-section" id="sample-report">
             <div class="content-container">
                 <h2>نمونه گزارش</h2>
                 <p>
                     در ادامه یک نمونه از گزارش تحلیل فهرست تشخیص تعاملی شخصیت را مشاهده می‌کنید:
                 </p>
-                <!-- Report Sample Start -->
                 <div class="report-container">
                     <header class="report-header-custom">
                         <div class="report-header-inner">
-                            <img src="../panel/file?type=picture&amp;v=3&amp;mode=filemanager&amp;file=%7eDB3gfQUls%2bt2iiMYKbsRAxrtFhcHKUIUUo7pPtO17bHCzNxwU4zNh3UVor6QMtl7Y6EWX8dD0PSvzZOYkRrXlfejPn4lNTj6" class="report-header-img" alt="لوگو">
+                            <img src="/panel/file?type=picture&amp;v=3&amp;mode=filemanager&amp;file=%7eDB3gfQUls%2bt2iiMYKbsRAxrtFhcHKUIUUo7pPtO17bHCzNxwU4zNh3UVor6QMtl7Y6EWX8dD0PSvzZOYkRrXlfejPn4lNTj6" class="report-header-img" alt="لوگو">
                             <h1 class="report-header-title">گزارش تحلیل فهرست تشخیص تعاملی شخصیت</h1>
                         </div>
                         <div class="report-header-date">تاریخ اجرا: #primary_createDate#</div>
@@ -593,6 +644,7 @@
                     </p>
 
                     <!-- انضباط (مرتب بودن و وقت‌شناسی در امور شخصی) -->
+                    <!-- توضیح در مورد انضباط و پیشنهادات -->
                     <div class="report-component-title">انضباط
                         <span class="report-badge report-score-data">#field_5770#<br></span>
                     </div>
@@ -650,6 +702,7 @@
                     </ul>
                     
                     <!-- آینده پویی (توانایی پیش‌بینی و برنامه‌ریزی برای آینده) -->
+                    <!-- توضیح در مورد آینده پویی و پیشنهادات -->
                     <div class="report-component-title">آینده پویی
                         <span class="report-badge report-score-data">#field_5771#<br></span>
                     </div>
@@ -707,6 +760,7 @@
                     </ul>
                     
                     <!-- پاکی (تمایل به صداقت و پاکیزگی در محیط کار) -->
+                    <!-- توضیح در مورد پاکی و پیشنهادات -->
                     <div class="report-component-title">پاکی
                         <span class="report-badge report-score-data">#field_5772#<br></span>
                     </div>
@@ -764,6 +818,7 @@
                     </ul>
                     
                     <!-- شایستگی (توانایی‌ها و مهارت‌های حرفه‌ای) -->
+                    <!-- توضیح در مورد شایستگی و پیشنهادات -->
                     <div class="report-component-title">شایستگی
                         <span class="report-badge report-score-data">#field_5773#<br></span>
                     </div>
@@ -820,11 +875,11 @@
                         </li>
                     </ul>
                 </div>
-                <!-- Report Sample End -->
             </div>
         </section>
 
         <!-- Credentials and Validity Section -->
+        <!-- توضیح در مورد اعتبار و صحت آزمون -->
         <section class="content-section test-section" id="credentials">
             <div class="content-container">
                 <h2>اعتبار و صحت آزمون</h2>
@@ -840,6 +895,7 @@
         </section>
 
         <!-- Testimonials Section -->
+        <!-- نمایش نظرات و تجربیات افراد -->
         <section class="content-section test-section" id="testimonials">
             <div class="content-container">
                 <h2>توصیه‌نامه‌ها</h2>
@@ -855,6 +911,7 @@
         </section>
 
         <!-- Call-to-Action Section -->
+        <!-- دعوت به اقدام برای شروع آزمون -->
         <section class="content-section test-section" id="start-test">
             <div class="content-container">
                 <h2>آیا آماده‌اید تا شروع کنید؟</h2>
@@ -862,12 +919,13 @@
                     با انجام این آزمون، گامی مهم در جهت شناخت بهتر از خود و توسعه مهارت‌های فردی و حرفه‌ای خود بردارید.
                 </p>
                 <div style="text-align: center; margin-top: 20px;">
-                    <a href="test-page.html" class="cta-button">شروع آزمون</a>
+                    <a href="/test-page.html" class="cta-button">شروع آزمون</a>
                 </div>
             </div>
         </section>
 
         <!-- FAQ Section (Optional) -->
+        <!-- بخش سوالات متداول درباره آزمون -->
         <section class="content-section test-section" id="faq">
             <div class="content-container">
                 <h2>سوالات متداول</h2>
