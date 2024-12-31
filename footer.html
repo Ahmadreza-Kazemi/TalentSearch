@@ -69,8 +69,7 @@
         }
 
         .about-info,
-        .contact-info,
-        .powered-by {
+        .contact-info {
             flex: 1;
             text-align: center; /* Center text for these sections */
         }
@@ -129,6 +128,7 @@
             text-decoration: underline;
         }
 
+        /* Powered By Section */
         .powered-by {
             margin-top: var(--spacing-lg);
             font-size: 0.95em;
@@ -149,7 +149,7 @@
             text-decoration: underline;
         }
 
-        /* Decorative Line in Footer */
+        /* Decorative Line in Footer (If Needed) */
         .footer .decorative-line {
             width: 100px;
             height: 2px;
@@ -208,9 +208,14 @@
             }
 
             .about-info,
-            .contact-info,
-            .powered-by {
+            .contact-info {
                 text-align: left;
+            }
+
+            .powered-by {
+                text-align: center; /* Ensure centered on desktop */
+                width: 100%; /* Take full width to center */
+                margin-top: var(--spacing-lg);
             }
         }
     </style>
@@ -223,7 +228,10 @@
                     <p><strong>آدرس:</strong> تهران، سهروردی، خرمشهر، عربعلی، ششم، ۴۴</p>
                     <p><strong>تلفن:</strong> <a href="tel:+982188174100">۰۲۱۸۸۱۷۴۱۰۰</a></p>
                     <p><strong>ایمیل:</strong> <a href="mailto:info@talentsearch.ir">info@talentsearch.ir</a></p>
-                                <div class="powered-by">توسعه داده شده توسط <a href="https://eot.ir" target="_blank">مؤسسه تعاملی هیجان اندیشه v1.1</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="powered-by">
+            توسعه داده شده توسط <a href="https://eot.ir" target="_blank">مؤسسه تعاملی هیجان اندیشه v1.1</a>
+        </div>
 
-                </div>              
-            </div>        </div>
