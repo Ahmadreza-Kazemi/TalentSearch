@@ -5,11 +5,213 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>استعدادیاب | شروع به کار</title>
     <meta name="description" content="با استعدادیاب، شروع به کار با ارزیابی‌های روان‌شناختی پیشرفته و فناوری هوش مصنوعی را آغاز کنید.">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    
+    <!-- Embedded Styles -->
+    <style>
+        /* =======================================================
+           1. Reset and Base Styles
+        ======================================================= */
+        
+        /* Resetting box-sizing, margin, and padding for all elements */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Base styles for html and body */
+        html, body {
+            height: 100%;
+            font-family: 'Vazir', sans-serif;
+            background-color: #FFFFFF; /* Neutral White */
+            color: #1F3B73; /* Primary Deep Blue */
+            direction: rtl;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            padding-top: 80px; /* Header Height */
+            padding-bottom: 60px; /* Prevent content overlap with mobile navbar */
+        }
+
+        /* Base styles for anchor tags */
+        a {
+            text-decoration: none;
+            color: #1F3B73; /* Primary Deep Blue */
+            transition: color 0.3s ease-in-out;
+        }
+
+        a:hover,
+        a:focus {
+            color: #F4C553; /* Primary Gold */
+            text-decoration: underline;
+        }
+
+        /* =======================================================
+           3. Getting Started Section Styles
+        ======================================================= */
+        .section {
+            padding: 24px;
+        }
+
+        .getting-started {
+            background-color: #FFFFFF;
+            text-align: center;
+        }
+
+        .getting-started script {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* =======================================================
+           4. Footer Styles
+        ======================================================= */
+        .footer {
+            background-color: #FFFFFF;
+            padding: 24px;
+            color: #1F3B73;
+            text-align: center;
+            border-top: 1px solid #F0F0F5;
+            position: relative;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .about-info {
+            text-align: center;
+        }
+
+        .about-info h2 {
+            font-size: 2em;
+            font-weight: 700;
+            color: #1F3B73;
+            margin-bottom: 16px;
+            position: relative;
+        }
+
+        .about-info h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: #4FBDBA; /* Secondary Teal Green */
+            margin: 8px auto 16px;
+            border-radius: 2px;
+        }
+
+        .about-info p {
+            font-size: 1.1em;
+            color: #888888;
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .contact-info {
+            text-align: center;
+        }
+
+        .contact-info p {
+            font-size: 1em;
+            color: #888888;
+            margin-bottom: 8px;
+        }
+
+        .contact-info p strong {
+            color: #F4C553; /* Primary Gold */
+        }
+
+        .contact-info a {
+            color: #F4C553; /* Primary Gold */
+            text-decoration: none;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .contact-info a:hover,
+        .contact-info a:focus {
+            color: #4FBDBA; /* Secondary Teal Green */
+        }
+
+        .powered-by {
+            font-size: 0.95em;
+            color: #1F3B73;
+        }
+
+        .powered-by a {
+            color: #1F3B73;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .powered-by a:hover,
+        .powered-by a:focus {
+            color: #4FBDBA; /* Secondary Teal Green */
+            text-decoration: underline;
+        }
+
+        /* =======================================================
+           5. Media Queries
+        ======================================================= */
+        
+
+
+        /* ---------------------------------------------------
+           5.2. Small Devices (Mobile)
+        --------------------------------------------------- */
+        @media (max-width: 576px) {
+            .footer-content {
+                padding: 60px 15px;
+            }
+
+            .about-info h2 {
+                font-size: 2em;
+            }
+
+            .about-info h2::after {
+                width: 60px;
+            }
+
+            .about-info p {
+                font-size: 1em;
+            }
+
+            .contact-info p {
+                font-size: 0.95em;
+            }
+
+            .powered-by {
+                font-size: 0.85em;
+            }
+        }
+
+        /* ---------------------------------------------------
+           5.3. Medium Devices (Tablet)
+        --------------------------------------------------- */
+        @media (min-width: 577px) and (max-width: 768px) {
+            /* If needed, add tablet-specific styles here */
+        }
+    </style>
 </head>
 <body>
     <!-- Header will be dynamically injected here -->
-    <div class="header"></div>
+    <header class="header">
+        <a href="/" class="logo">استعدادیاب</a>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="/getting-started">شروع استعدادیابی</a></li>
+                <li><a href="/about-us">معرفی</a></li>
+                <li><a href="/contact-us">تماس</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <main class="main-content">
         <section id="getting-started" class="section getting-started">
@@ -18,10 +220,23 @@
     </main>
 
     <!-- Footer will be dynamically injected here -->
-    <div class="footer"></div>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="about-info">
+                <h2>درباره ما</h2>
+                <p>استعدادیاب با استفاده از تجربه مؤسسه هیجان اندیشه به شما کمک می‌کند تا استعدادهای بالقوه خود را کشف کنید.</p>
+                <div class="contact-info">
+                    <p><strong>آدرس:</strong> تهران، خیابان مثال</p>
+                    <p><strong>تلفن:</strong> <a href="tel:+982188174100">۰۲۱۸۸۱۷۴۱۰۰</a></p>
+                    <p><strong>ایمیل:</strong> <a href="mailto:info@talentsearch.ir">info@talentsearch.ir</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="powered-by">توسعه داده شده توسط <a href="https://eot.ir" target="_blank">مؤسسه تعاملی هیجان اندیشه</a></div>
+    </footer>
 
+    <!-- Scripts -->
     <script src="assets/js/script.js"></script>
     <script src="assets/js/header-footer-inject.js"></script>
-
 </body>
 </html>
