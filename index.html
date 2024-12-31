@@ -4,25 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>استعدادیاب | ارزیابی‌های روان‌شناختی برای تعالی فردی شما</title>
-    <meta name="description" content="با استعدادیاب، رگه‌های طلایی خود را با ارزیابی‌های روان‌شناختی پیشرفته و فناوری هوش مصنوعی کشف کنید.">
     <style>
-        /* General Reset */
+        /* =======================================================
+           1. Reset and Base Styles
+        ======================================================= */
         *, *::before, *::after {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
 
         html, body {
+            height: 100%;
             font-family: 'Vazir', sans-serif;
-            direction: rtl;
-            background-color: #fff;
+            background-color: #FFFFFF;
             color: #1F3B73;
+            direction: rtl;
             scroll-behavior: smooth;
+            overflow-x: hidden;
         }
 
         body {
             padding-top: 80px;
+            padding-bottom: 60px;
         }
 
         a {
@@ -31,187 +35,626 @@
             transition: color 0.3s ease-in-out;
         }
 
-        a:hover {
+        a:hover,
+        a:focus {
             color: #F4C553;
+            text-decoration: underline;
         }
 
-        /* Header */
+        /* =======================================================
+           2. Root Variables
+        ======================================================= */
+        :root {
+            /* Font Family */
+            --font-family: 'Vazir', sans-serif;
+
+            /* Color Palette */
+            --primary-gold: #F4C553;
+            --primary-deep-blue: #1F3B73;
+            --secondary-teal-green: #4FBDBA;
+            --secondary-electric-blue: #007BFF;
+            --neutral-white: #FFFFFF;
+            --neutral-cool-gray: #F0F0F5;
+            --neutral-dark-gray: #888888;
+            --accent-golden-yellow: #FFD77B;
+
+            /* Text Colors */
+            --text-primary: var(--primary-deep-blue);
+            --text-secondary: var(--neutral-dark-gray);
+
+            /* Button Colors */
+            --button-primary: var(--primary-gold);
+            --button-secondary: var(--secondary-teal-green);
+
+            /* Spacing */
+            --header-height: 80px;
+            --spacing-xs: 4px;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+            --spacing-xl: 32px;
+            --spacing-small: 10px;
+            --spacing-medium: 20px;
+            --spacing-large: 40px;
+
+            /* Border Radius */
+            --border-radius: 8px;
+
+            /* Shadows */
+            --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 6px 18px rgba(0, 0, 0, 0.15);
+
+            /* Transitions */
+            --transition-speed: 0.3s;
+            --transition-type: ease-in-out;
+        }
+
+        /* =======================================================
+           3. Font Imports
+        ======================================================= */
+        @font-face {
+            font-family: 'Vazir';
+            src: url('/assets/fonts/Vazir-Thin-UI.eot');
+            src: url('/assets/fonts/Vazir-Thin-UI.eot?#iefix') format('embedded-opentype'),
+                 url('/assets/fonts/Vazir-Thin-UI.woff2') format('woff2'),
+                 url('/assets/fonts/Vazir-Thin-UI.woff') format('woff'),
+                 url('/assets/fonts/Vazir-Thin-UI.ttf') format('truetype');
+            font-weight: 100;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Vazir';
+            src: url('/assets/fonts/Vazir-Light-UI.eot');
+            src: url('/assets/fonts/Vazir-Light-UI.eot?#iefix') format('embedded-opentype'),
+                 url('/assets/fonts/Vazir-Light-UI.woff2') format('woff2'),
+                 url('/assets/fonts/Vazir-Light-UI.woff') format('woff'),
+                 url('/assets/fonts/Vazir-Light-UI.ttf') format('truetype');
+            font-weight: 300;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Vazir';
+            src: url('/assets/fonts/Vazir-Regular-UI.eot');
+            src: url('/assets/fonts/Vazir-Regular-UI.eot?#iefix') format('embedded-opentype'),
+                 url('/assets/fonts/Vazir-Regular-UI.woff2') format('woff2'),
+                 url('/assets/fonts/Vazir-Regular-UI.woff') format('woff'),
+                 url('/assets/fonts/Vazir-Regular-UI.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Vazir';
+            src: url('/assets/fonts/Vazir-Medium-UI.eot');
+            src: url('/assets/fonts/Vazir-Medium-UI.eot?#iefix') format('embedded-opentype'),
+                 url('/assets/fonts/Vazir-Medium-UI.woff2') format('woff2'),
+                 url('/assets/fonts/Vazir-Medium-UI.woff') format('woff'),
+                 url('/assets/fonts/Vazir-Medium-UI.ttf') format('truetype');
+            font-weight: 500;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Vazir';
+            src: url('/assets/fonts/Vazir-Bold-UI.eot');
+            src: url('/assets/fonts/Vazir-Bold-UI.eot?#iefix') format('embedded-opentype'),
+                 url('/assets/fonts/Vazir-Bold-UI.woff2') format('woff2'),
+                 url('/assets/fonts/Vazir-Bold-UI.woff') format('woff'),
+                 url('/assets/fonts/Vazir-Bold-UI.ttf') format('truetype');
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Vazir';
+            src: url('/assets/fonts/Vazir-Black-UI.eot');
+            src: url('/assets/fonts/Vazir-Black-UI.eot?#iefix') format('embedded-opentype'),
+                 url('/assets/fonts/Vazir-Black-UI.woff2') format('woff2'),
+                 url('/assets/fonts/Vazir-Black-UI.woff') format('woff'),
+                 url('/assets/fonts/Vazir-Black-UI.ttf') format('truetype');
+            font-weight: 900;
+            font-style: normal;
+        }
+
+        /* =======================================================
+           4. Layout Sections
+        ======================================================= */
+
+        /* ---------------------------------------------------
+           4.1. Header
+        --------------------------------------------------- */
         .header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            height: 80px;
-            background: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-        }
-
-        /* Hero Section */
-        .hero {
+            height: var(--header-height);
+            background: var(--neutral-white);
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: space-between;
+            padding: 0 var(--spacing-md);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+            overflow: hidden;
+        }
+
+        /* Logo Styles */
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-deep-blue);
+            transition: color var(--transition-speed) var(--transition-type);
+        }
+
+        .logo:hover,
+        .logo:focus {
+            color: var(--primary-gold);
+        }
+
+        /* Navigation Styles */
+        .navbar {
+            display: flex;
+            flex: 1;
+            justify-content: flex-start;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* Navigation Links */
+        .nav-links {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            list-style: none;
+        }
+
+        /* Navigation Link Items */
+        .nav-links li {
+            margin: 0 var(--spacing-lg);
+        }
+
+        /* Navigation Links */
+        .nav-links a {
+            color: var(--text-primary);
+            font-size: 1rem;
+            position: relative;
+            padding: var(--spacing-sm) 0;
+            transition: color var(--transition-speed) var(--transition-type);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Underline Effect */
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            left: 50%;
+            bottom: -4px;
+            background-color: var(--primary-gold);
+            transition: width var(--transition-speed) var(--transition-type), left var(--transition-speed) var(--transition-type);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a:focus::after {
+            width: 100%;
+            left: 0;
+        }
+
+        /* ---------------------------------------------------
+           4.2. Hero Section
+        --------------------------------------------------- */
+        .hero {
+            height: calc(100vh - var(--header-height));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--neutral-cool-gray);
+            color: var(--text-primary);
             text-align: center;
-            background-color: #F0F0F5;
-            padding: 40px 16px;
+            padding: var(--spacing-md);
         }
 
-        .hero h2 {
-            font-size: 2rem;
-            margin-bottom: 16px;
-            color: #1F3B73;
+        .hero-content h2 {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: var(--primary-deep-blue);
+            text-shadow: 0 0 10px var(--primary-gold);
+            margin-bottom: var(--spacing-md);
         }
 
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 24px;
-            color: #888888;
+        .hero-content p {
+            font-size: 1.5em;
+            margin-bottom: var(--spacing-lg);
+            line-height: 1.6;
         }
 
         .cta-button {
             display: inline-block;
+            background-color: var(--button-primary);
+            color: var(--neutral-white);
             padding: 12px 30px;
-            background-color: #F4C553;
-            color: #fff;
-            font-size: 1rem;
-            border-radius: 8px;
-            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: var(--border-radius);
+            font-size: 1em;
+            box-shadow: 0 0 10px var(--accent-golden-yellow);
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color var(--transition-speed) var(--transition-type),
+                        transform var(--transition-speed) var(--transition-type),
+                        box-shadow var(--transition-speed) var(--transition-type);
         }
 
-        .cta-button:hover {
-            background-color: #DDA833;
-            transform: translateY(-3px);
+        .cta-button:hover,
+        .cta-button:focus {
+            background-color: var(--button-secondary);
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px var(--button-secondary);
         }
 
-        /* Services Section */
+        /* ---------------------------------------------------
+           4.3. Services Section
+        --------------------------------------------------- */
         .services {
-            padding: 40px 16px;
-            background-color: #fff;
+            padding: var(--spacing-lg);
+            background-color: var(--neutral-white);
+            color: var(--text-primary);
             text-align: center;
         }
 
         .services h2 {
-            font-size: 1.8rem;
-            margin-bottom: 24px;
-            color: #1F3B73;
+            font-size: 2em;
+            font-weight: 700;
+            color: var(--primary-deep-blue);
+            text-shadow: 0 0 5px var(--primary-gold);
+            margin-bottom: var(--spacing-lg);
         }
 
         .service-list {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
-            margin-top: 16px;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-lg);
+            padding: var(--spacing-lg) var(--spacing-md);
         }
 
         .service-item {
-            background-color: #F0F0F5;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            background-color: var(--neutral-cool-gray);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-card);
+            transition: transform var(--transition-speed) var(--transition-type),
+                        box-shadow var(--transition-speed) var(--transition-type);
         }
 
-        .service-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        .service-item:hover,
+        .service-item:focus-within {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
         }
 
         .service-item h3 {
-            font-size: 1.5rem;
-            margin-bottom: 16px;
-            color: #1F3B73;
+            font-size: 1.5em;
+            font-weight: 700;
+            color: var(--primary-deep-blue);
+            margin-bottom: var(--spacing-md);
         }
 
         .service-item p {
-            font-size: 1rem;
-            color: #888888;
+            font-size: 1em;
+            color: var(--text-secondary);
             line-height: 1.6;
         }
 
-        /* Footer */
+        /* ---------------------------------------------------
+           4.4. Footer
+        --------------------------------------------------- */
         .footer {
-            background-color: #fff;
-            padding: 40px 16px;
+            background-color: var(--neutral-white);
+            padding: var(--spacing-lg);
+            color: var(--text-primary);
             text-align: center;
             border-top: 1px solid #F0F0F5;
         }
 
         .footer-content {
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
-            color: #888888;
+            padding-bottom: var(--spacing-md);
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-lg);
+            text-align: center;
+        }
+
+        .about-info,
+        .contact-info,
+        .powered-by {
+            flex: 1;
+            text-align: center;
         }
 
         .about-info h2 {
-            font-size: 1.8rem;
-            margin-bottom: 16px;
-            color: #1F3B73;
+            font-size: 2em;
+            font-weight: 700;
+            color: var(--primary-deep-blue);
+            margin-bottom: var(--spacing-md);
+            position: relative;
+        }
+
+        .about-info h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary-teal-green);
+            margin: var(--spacing-sm) auto var(--spacing-md);
+            border-radius: 2px;
         }
 
         .about-info p {
-            font-size: 1rem;
-            margin-bottom: 24px;
-            line-height: 1.6;
+            font-size: 1.1em;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: var(--spacing-md);
         }
 
         .contact-info p {
-            font-size: 1rem;
-            margin-bottom: 8px;
-            color: #888888;
+            font-size: 1em;
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .contact-info p strong {
+            color: var(--primary-gold);
         }
 
         .contact-info a {
-            color: #F4C553;
+            color: var(--primary-gold);
+            text-decoration: none;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .contact-info a:hover,
+        .contact-info a:focus {
+            color: var(--secondary-teal-green);
+            text-decoration: underline;
         }
 
         .powered-by {
-            font-size: 0.9rem;
-            margin-top: 24px;
-            color: #888888;
+            margin-top: var(--spacing-lg);
+            font-size: 0.95em;
+            color: var(--text-primary);
         }
 
         .powered-by a {
-            color: #1F3B73;
+            color: var(--primary-deep-blue);
             text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .powered-by a:hover,
+        .powered-by a:focus {
+            color: var(--secondary-teal-green);
+            text-decoration: underline;
+        }
+
+        .footer .decorative-line {
+            width: 100px;
+            height: 2px;
+            background-color: var(--secondary-teal-green);
+            margin: var(--spacing-sm) auto;
+            border-radius: 1px;
+            opacity: 0.7;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .footer .decorative-line:hover {
+            opacity: 1;
+        }
+
+        /* =======================================================
+           5. Media Queries
+        ======================================================= */
+        @media (min-width: 769px) {
+            /* Show icons on desktop if desired */
+            .nav-links a .icon {
+                display: inline-block;
+            }
+
+            /* Adjust nav-links alignment */
+            .nav-links {
+                width: auto;
+            }
+
+            /* Adjust padding for desktop */
+            .header {
+                padding: 0 var(--spacing-lg);
+            }
+
+            .nav-links li {
+                margin: 0 var(--spacing-xl);
+            }
+
+            /* Services Grid for Large Devices */
+            .service-list {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            /* Hide navigation links in header */
+            .header .nav-links {
+                display: none;
+            }
+
+            /* Fixed Bottom Navbar */
+            .navbar {
+                display: flex;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 60px;
+                background-color: var(--neutral-white);
+                box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+                justify-content: space-around;
+                align-items: center;
+                padding: 0 var(--spacing-md);
+                z-index: 999;
+            }
+
+            /* Show navigation links in mobile navbar */
+            .navbar .nav-links {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: center;
+                width: 100%;
+            }
+
+            /* Navigation Link Items - Mobile */
+            .navbar .nav-links li {
+                margin: 0;
+                flex: 1;
+                text-align: center;
+            }
+
+            /* Navigation Links - Mobile */
+            .navbar .nav-links a {
+                flex-direction: column;
+                font-size: 0.75rem;
+                color: var(--text-primary);
+                padding: 5px 0;
+            }
+
+            /* Icon Styles - Mobile */
+            .navbar .nav-links a .icon {
+                display: block;
+                font-size: 1.5rem;
+                margin-bottom: 4px;
+            }
+
+            /* Link Text Styles - Mobile */
+            .navbar .nav-links a .link-text {
+                display: block;
+            }
+
+            /* Hover and Focus Effects - Mobile */
+            .navbar .nav-links a:hover .link-text,
+            .navbar .nav-links a:focus .link-text {
+                color: var(--primary-gold);
+            }
+
+            .navbar .nav-links a:hover .icon,
+            .navbar .nav-links a:focus .icon {
+                color: var(--primary-gold);
+            }
+
+            /* Remove Underline Effect on Mobile */
+            .navbar .nav-links a::after {
+                content: none;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .footer-content {
+                padding: 60px 15px;
+            }
+
+            .about-info h2::after {
+                width: 60px;
+            }
+
+            .about-info p {
+                font-size: 1em;
+            }
+
+            .contact-info p {
+                font-size: 0.95em;
+            }
+
+            .powered-by {
+                font-size: 0.85em;
+            }
+        }
+
+        @media (min-width: 577px) and (max-width: 768px) {
+            .service-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
     </style>
 </head>
 <body>
-<header class="header"></header>
-<main id="main-content">
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h2>رگه‌های طلایی استعداد خود را کشف کنید!</h2>
-            <p>ارائه ارزیابی‌های روان‌شناختی پیشرفته برای تعالی فردی شما</p>
-            <a href="/getting-started" class="cta-button">شروع کنید</a>
-        </div>
-    </section>
-    <section id="services" class="services">
-        <h2>ارزیابی‌های ما</h2>
-        <div class="service-list">
-            <div class="service-item">
-                <h3>هوش تحلیلی</h3>
-                <p>این نوع هوش به شما این امکان را می‌دهد که اطلاعات را به خوبی فهمیده و به دقت تجزیه و تحلیل کنید.</p>
+    <!-- Header -->
+    <header class="header">
+        <!-- Content injected via scripts -->
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section id="home" class="section hero">
+            <div class="hero-content">
+                <h2>رگه‌های طلایی استعداد خود را کشف کنید!</h2>
+                <p>ارائه ارزیابی‌های روان‌شناختی پیشرفته برای تعالی فردی شما</p>
+                <a href="/getting-started" class="cta-button">شروع کنید</a>
             </div>
-            <div class="service-item">
-                <h3>هوش تجربی</h3>
-                <p>این هوش به کارگیری تجربیات عملی در یادگیری و فهم بهتر موضوعات است.</p>
+        </section>
+        
+        <!-- Services Section -->
+        <section id="services" class="section services">
+            <h2>ارزیابی‌های ما</h2>
+            <div class="service-list">
+                <div class="service-item">
+                    <h3>هوش تحلیلی</h3>
+                    <p>این نوع هوش به شما این امکان را می‌دهد که اطلاعات را به خوبی فهمیده و به دقت تجزیه و تحلیل کنید. فردی با هوش تحلیلی بالا قادر است اطلاعات را به روش‌های نو و مؤثر سازماندهی کند.</p>
+                </div>
+                <div class="service-item">
+                    <h3>هوش تجربی</h3>
+                    <p>این هوش به کارگیری تجربیات عملی در یادگیری و فهم بهتر موضوعات است. کسانی که این نوع هوش را دارند، از طریق تجربه و مشاهده مهارت‌های خود را توسعه داده و به دنبال یادگیری مستمر هستند.</p>
+                </div>
+                <div class="service-item">
+                    <h3>هوش تحصیلی</h3>
+                    <p>این هوش به توانایی یادگیری سریع و دقیق مطالب درسی اشاره دارد. فرد با هوش تحصیلی بالا معمولاً در دروس عملی و نظری عملکرد خوبی دارد.</p>
+                </div>
+                <div class="service-item">
+                    <h3>مهارت نوآوری</h3>
+                    <p>این مهارت به توانایی ارائه راه‌حل‌های جدید و خلاقانه برای مشکلات اطلاق می‌شود. فردی با این مهارت قادر است در شرایط دشوار، ایده‌های نوآورانه‌ای ارائه دهد.</p>
+                </div>
+                <div class="service-item">
+                    <h3>مهارت وظیفه‌مندی</h3>
+                    <p>این مهارت به قابلیت انجام دقیق و مؤثر کارهایی که به شما سپرده شده است، اشاره دارد. کسی که در این مهارت قوی است، وظایف خود را با دقت و کیفیت بالا انجام می‌دهد.</p>
+                </div>
+                <div class="service-item">
+                    <h3>خلاقیت</h3>
+                    <p>خلاقیت به توانایی ایجاد ایده‌های جدید و نوآورانه اشاره دارد. فردی خلاق می‌تواند راه‌حل‌های منحصر به فردی برای مشکلات ارائه دهد و ایده‌های نو را به واقعیت تبدیل کند.</p>
+                </div>
+                <div class="service-item">
+                    <h3>تیزهوشی</h3>
+                    <p>تیزهوشی به توانایی سریع و دقیق در درک مفاهیم پیچیده و حل مسائل اشاره دارد. افراد با تیزهوشی بالا قادرند به سرعت اطلاعات جدید را پردازش و اعمال کنند.</p>
+                </div>
+                <div class="service-item">
+                    <h3>نبوغ</h3>
+                    <p>نبوغ به توانایی فوق‌العاده در درک و حل مسائل پیچیده و خلق آثار هنری یا علمی اشاره دارد. نبوغ اغلب با ابتکار و خلاقیت ترکیب می‌شود.</p>
+                </div>
             </div>
-            <div class="service-item">
-                <h3>هوش تحصیلی</h3>
-                <p>این هوش به توانایی یادگیری سریع و دقیق مطالب درسی اشاره دارد.</p>
-            </div>
-            <div class="service-item">
-                <h3>مهارت نوآوری</h3>
-                <p>این مهارت به توانایی ارائه راه‌حل‌های جدید و خلاقانه برای مشکلات اطلاق می‌شود.</p>
-            </div>
-        </div>
-    </section>
-</main>
-    <div class="footer"></div>
-    <script src="assets/js/script.js"></script>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer id="footer" class="footer">
+        <!-- Content injected via scripts -->
+    </footer>
+    
+    <!-- Scripts -->
     <script src="assets/js/header-footer-inject.js"></script>
+    <script src="assets/js/script.js" defer></script>
 </body>
 </html>
