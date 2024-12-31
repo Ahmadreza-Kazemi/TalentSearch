@@ -25,8 +25,8 @@
         }
 
         body {
-            padding-top: 80px;
-            padding-bottom: 60px;
+            padding-top: 80px; /* Height of the fixed header */
+            padding-bottom: 60px; /* Space for mobile navbar */
         }
 
         a {
@@ -73,31 +73,91 @@
             z-index: 1000;
         }
 
+        /* Logo Styles */
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1F3B73;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .logo:hover,
+        .logo:focus {
+            color: #F4C553;
+        }
+
+        /* Navigation Styles */
+        .navbar {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 24px;
+        }
+
+        .nav-links li a {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #1F3B73;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .nav-links li a:hover,
+        .nav-links li a:focus {
+            color: #F4C553;
+        }
+
         /* =======================================================
            4. Typography
         ======================================================= */
-        h2 {
-            font-size: 2em;
-            font-weight: 700;
-            text-shadow: 0 0 10px #F4C553;
-            margin-bottom: 24px;
+        h2, h3, h4 {
+            text-align: center; /* Center all headings */
             color: #1F3B73;
         }
 
+        h2 {
+            font-size: 2.5em;
+            font-weight: 700;
+            text-shadow: 0 0 10px #F4C553;
+            margin-bottom: 24px;
+        }
+
         h3 {
-            font-size: 1.5em;
+            font-size: 2em;
             font-weight: 600;
             margin-bottom: 16px;
+        }
+
+        h4 {
+            font-size: 1.5em;
+            font-weight: 600;
+            margin-top: 24px;
+            margin-bottom: 12px;
             color: #1F3B73;
         }
 
         p {
-            font-size: 1em;
+            font-size: 1.1em;
             max-width: 800px;
             margin: 0 auto 16px;
             line-height: 1.6;
-            text-align: justify;
+            text-align: center; /* Center all paragraphs */
             color: #1F3B73;
+        }
+
+        ul {
+            max-width: 800px;
+            margin: 0 auto 24px;
+            padding: 0 20px;
+            list-style: disc;
+            text-align: right; /* Align list items correctly in RTL */
+        }
+
+        li {
+            margin-bottom: 8px;
         }
 
         /* =======================================================
@@ -118,6 +178,7 @@
             font-size: 3em;
             margin-bottom: 16px;
             color: #1F3B73;
+            text-shadow: 0 0 10px #F4C553;
         }
 
         .hero p {
@@ -241,15 +302,34 @@
                 font-size: 1.1em;
             }
         }
+
+        /* Additional Media Queries for Enhanced Responsiveness */
+        @media (max-width: 768px) {
+            .navbar {
+                display: none; /* Hide navbar on smaller screens */
+            }
+
+            /* Mobile Footer Adjustments */
+            .footer-content {
+                flex-direction: column;
+                gap: 24px;
+            }
+
+            .powered-by {
+                margin-top: 24px;
+            }
+        }
     </style>
 </head>
 <body>
-    <header class="header">  </header>
+    <!-- Header -->
+    <header class="header">
+    </header>
 
     <!-- Main Content -->
     <main id="main-content">
         <!-- Hero Section -->
-        <section class="hero">
+        <section class="hero" id="hero">
             <div class="hero-content">
                 <h2>استعدادیاب</h2>
                 <p>با استعدادیاب، به ارزیابی‌های روان‌شناختی دسترسی پیدا کنید و تصمیمات آگاهانه‌تری بگیرید.</p>
@@ -258,7 +338,7 @@
         </section>
 
         <!-- About Us Section -->
-        <section class="about-section">
+        <section class="about-section" id="about">
             <div class="about-container">
                 <h2>درباره ما</h2>
                 <p>استعدادیاب یک پلتفرم پیشرو و قابل اعتماد در ارائه ارزیابی‌های روان‌شناختی آنلاین است. ما با هدف ارتقاء کیفیت تصمیم‌گیری افراد، خانواده‌ها و سازمان‌ها، ابزارهایی علمی، مقرون‌به‌صرفه و کاربرپسند را در اختیار شما قرار می‌دهیم. با تعهد به امنیت داده‌ها و ارائه راه‌حل‌های مقیاس‌پذیر، استعدادیاب در مسیر تبدیل شدن به یکی از رهبران صنعت ارزیابی‌های روان‌شناختی آنلاین گام برمی‌دارد. ما همواره در حال بهبود و گسترش خدمات خود هستیم تا بتوانیم به نیازهای متنوع مشتریان خود پاسخ دهیم.</p>
@@ -284,11 +364,12 @@
         </section>
 
         <!-- Our Services Section -->
-        <section class="about-section">
+        <section class="about-section" id="services">
             <div class="about-container">
                 <h3>خدمات ما</h3>
                 <p>استعدادیاب به سه دسته اصلی مشتریان خدمت‌رسانی می‌کند:</p>
                 
+                <!-- Services for Adults -->
                 <h4>بزرگسالان</h4>
                 <ul>
                     <li>توسعه حرفه‌ای: ارزیابی‌های انتخاب حرفه، رضایت شغلی و رشد شخصیت.</li>
@@ -296,6 +377,7 @@
                     <li>رشد شخصی: ارزیابی‌های روان‌شناختی برای خودآگاهی و رفاه عاطفی.</li>
                 </ul>
 
+                <!-- Services for Adolescents -->
                 <h4>نوجوانان</h4>
                 <ul>
                     <li>برنامه‌ریزی تحصیلی و حرفه‌ای: تست‌های انتخاب حرفه و دانشگاه بر اساس نقاط قوت و اهداف شخصی.</li>
@@ -303,6 +385,7 @@
                     <li>رفاه عاطفی: ارزیابی‌هایی که از سلامت روان و مهارت‌های اجتماعی حمایت می‌کنند.</li>
                 </ul>
 
+                <!-- Services for Parents -->
                 <h4>والدین</h4>
                 <ul>
                     <li>توسعه اولیه کودکی: ارزیابی‌های توسعه شناختی، سبک‌های یادگیری و استعدادها برای راهنمایی تصمیمات آموزشی.</li>
@@ -338,7 +421,8 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer">    </footer>
+    <footer class="footer">
+    </footer>
 
     <!-- Scripts -->
     <script src="assets/js/script.js"></script>
