@@ -5,74 +5,213 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>استعدادیاب | ارزیابی‌های روان‌شناختی برای تعالی فردی شما</title>
     <meta name="description" content="با استعدادیاب، رگه‌های طلایی خود را با ارزیابی‌های روان‌شناختی پیشرفته و فناوری هوش مصنوعی کشف کنید.">
-    <link rel="preload" href="assets/fonts/Vazir.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="assets/css/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="assets/css/styles.css"></noscript>
+    <style>
+        /* General Reset */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            font-family: 'Vazir', sans-serif;
+            direction: rtl;
+            background-color: #fff;
+            color: #1F3B73;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            padding-top: 80px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #1F3B73;
+            transition: color 0.3s ease-in-out;
+        }
+
+        a:hover {
+            color: #F4C553;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: #F0F0F5;
+            padding: 40px 16px;
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            margin-bottom: 16px;
+            color: #1F3B73;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 24px;
+            color: #888888;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #F4C553;
+            color: #fff;
+            font-size: 1rem;
+            border-radius: 8px;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-button:hover {
+            background-color: #DDA833;
+            transform: translateY(-3px);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 40px 16px;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .services h2 {
+            font-size: 1.8rem;
+            margin-bottom: 24px;
+            color: #1F3B73;
+        }
+
+        .service-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-top: 16px;
+        }
+
+        .service-item {
+            background-color: #F0F0F5;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .service-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+            color: #1F3B73;
+        }
+
+        .service-item p {
+            font-size: 1rem;
+            color: #888888;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #fff;
+            padding: 40px 16px;
+            text-align: center;
+            border-top: 1px solid #F0F0F5;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+            color: #888888;
+        }
+
+        .about-info h2 {
+            font-size: 1.8rem;
+            margin-bottom: 16px;
+            color: #1F3B73;
+        }
+
+        .about-info p {
+            font-size: 1rem;
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+
+        .contact-info p {
+            font-size: 1rem;
+            margin-bottom: 8px;
+            color: #888888;
+        }
+
+        .contact-info a {
+            color: #F4C553;
+        }
+
+        .powered-by {
+            font-size: 0.9rem;
+            margin-top: 24px;
+            color: #888888;
+        }
+
+        .powered-by a {
+            color: #1F3B73;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
 <header class="header"></header>
 <main id="main-content">
-    <section id="home" class="section hero">
+    <section id="home" class="hero">
         <div class="hero-content">
             <h2>رگه‌های طلایی استعداد خود را کشف کنید!</h2>
             <p>ارائه ارزیابی‌های روان‌شناختی پیشرفته برای تعالی فردی شما</p>
             <a href="/getting-started" class="cta-button">شروع کنید</a>
         </div>
     </section>
-    <section id="services" class="section services">
+    <section id="services" class="services">
         <h2>ارزیابی‌های ما</h2>
         <div class="service-list">
             <div class="service-item">
                 <h3>هوش تحلیلی</h3>
-                <p>این نوع هوش به شما این امکان را می‌دهد که اطلاعات را به خوبی فهمیده و به دقت تجزیه و تحلیل کنید. فردی با هوش تحلیلی بالا قادر است اطلاعات را به روش‌های نو و مؤثر سازماندهی کند.</p>
+                <p>این نوع هوش به شما این امکان را می‌دهد که اطلاعات را به خوبی فهمیده و به دقت تجزیه و تحلیل کنید.</p>
             </div>
             <div class="service-item">
                 <h3>هوش تجربی</h3>
-                <p>این هوش به کارگیری تجربیات عملی در یادگیری و فهم بهتر موضوعات است. کسانی که این نوع هوش را دارند، از طریق تجربه و مشاهده مهارت‌های خود را توسعه داده و به دنبال یادگیری مستمر هستند.</p>
+                <p>این هوش به کارگیری تجربیات عملی در یادگیری و فهم بهتر موضوعات است.</p>
             </div>
             <div class="service-item">
                 <h3>هوش تحصیلی</h3>
-                <p>این هوش به توانایی یادگیری سریع و دقیق مطالب درسی اشاره دارد. فرد با هوش تحصیلی بالا معمولاً در دروس عملی و نظری عملکرد خوبی دارد.</p>
+                <p>این هوش به توانایی یادگیری سریع و دقیق مطالب درسی اشاره دارد.</p>
             </div>
             <div class="service-item">
                 <h3>مهارت نوآوری</h3>
-                <p>این مهارت به توانایی ارائه راه‌حل‌های جدید و خلاقانه برای مشکلات اطلاق می‌شود. فردی با این مهارت قادر است در شرایط دشوار، ایده‌های نوآورانه‌ای ارائه دهد.</p>
-            </div>
-            <div class="service-item">
-                <h3>مهارت وظیفه‌مندی</h3>
-                <p>این مهارت به قابلیت انجام دقیق و مؤثر کارهایی که به شما سپرده شده است، اشاره دارد. کسی که در این مهارت قوی است، وظایف خود را با دقت و کیفیت بالا انجام می‌دهد.</p>
-            </div>
-            <div class="service-item">
-                <h3>خلاقیت</h3>
-                <p>خلاقیت به توانایی ایجاد ایده‌های جدید و نوآورانه اشاره دارد. فردی خلاق می‌تواند راه‌حل‌های منحصر به فردی برای مشکلات ارائه دهد و ایده‌های نو را به واقعیت تبدیل کند.</p>
-            </div>
-            <div class="service-item">
-                <h3>تیزهوشی</h3>
-                <p>تیزهوشی به توانایی سریع و دقیق در درک مفاهیم پیچیده و حل مسائل اشاره دارد. افراد با تیزهوشی بالا قادرند به سرعت اطلاعات جدید را پردازش و اعمال کنند.</p>
-            </div>
-            <div class="service-item">
-                <h3>نبوغ</h3>
-                <p>نبوغ به توانایی فوق‌العاده در درک و حل مسائل پیچیده و خلق آثار هنری یا علمی اشاره دارد. نبوغ اغلب با ابتکار و خلاقیت ترکیب می‌شود.</p>
+                <p>این مهارت به توانایی ارائه راه‌حل‌های جدید و خلاقانه برای مشکلات اطلاق می‌شود.</p>
             </div>
         </div>
     </section>
 </main>
-<footer id="footer" class="footer">
-    <div class="footer-content">
-        <div class="about-info">
-            <h2>درباره ما</h2>
-            <p>استعدادیاب با استفاده از بیش از چهل سال تجربه مؤسسه هیجان اندیشه در روان‌شناسی و ارزیابی‌های تخصصی، با بهره‌گیری از هوش مصنوعی به شما کمک می‌کند تا استعدادهای بالقوه خود را در مسیر دستیابی به تعالی فردی و رضایت از زندگی کشف کنید.</p>
-            <div class="contact-info">
-                <p><strong>آدرس:</strong> تهران، سهروردی، خرمشهر، عربعلی، ششم، ۴۴</p>
-                <p><strong>تلفن:</strong> <a href="tel:+982188174100">۰۲۱۸۸۱۷۴۱۰۰</a></p>
-                <p><strong>ایمیل:</strong> <a href="mailto:info@talentsearch.ir">info@talentsearch.ir</a></p>
-            </div>
-        </div>
-    </div>
-    <div class="powered-by">توسعه داده شده توسط <a href="https://eot.ir" target="_blank">مؤسسه تعاملی هیجان اندیشه</a></div>
-</footer>
-            <script src="assets/js/header-footer-inject.js"></script>
-
-<script src="assets/js/script.js" defer></script>
+    <div class="footer"></div>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/header-footer-inject.js"></script>
 </body>
 </html>
