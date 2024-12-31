@@ -1,12 +1,229 @@
-  <div class="footer-content">
-    <div class="about-info">
-      <h2>درباره ما</h2>
-      <p>استعدادیاب با استفاده از بیش از چهل سال تجربه مؤسسه هیجان اندیشه در روان‌شناسی و ارزیابی‌های تخصصی، با بهره‌گیری از هوش مصنوعی به شما کمک می‌کند تا استعدادهای بالقوه خود را در مسیر دستیابی به تعالی فردی و رضایت از زندگی کشف کنید.</p>
-      <div class="contact-info">
-        <p><strong>آدرس:</strong> تهران، سهروردی، خرمشهر، عربعلی، ششم، ۴۴</p>
-        <p><strong>تلفن:</strong> <a href="tel:+982188174100">۰۲۱۸۸۱۷۴۱۰۰</a></p>
-        <p><strong>ایمیل:</strong> <a href="mailto:info@talentsearch.ir">info@talentsearch.ir</a></p>
-      </div>
-    </div>
-  </div>
-  <div class="powered-by">توسعه داده شده توسط <a href="https://eot.ir" target="_blank">مؤسسه تعاملی هیجان اندیشه v1.1</a></div>
+    <style>
+        /* =======================================================
+           2. Root Variables (Extracted Variables for Footer)
+        ======================================================= */
+        :root {
+            /* ---------------------------------------------------
+               2.2. Color Palette
+            --------------------------------------------------- */
+            /* Primary Colors */
+            --primary-gold: #F4C553;             /* Highlights, Buttons, Icons, CTAs */
+            --primary-deep-blue: #1F3B73;       /* Trust, Headers, Primary Text */
+
+            /* Secondary Colors */
+            --secondary-teal-green: #4FBDBA;    /* Growth, Secondary Buttons, Accents */
+
+            /* Neutral Colors */
+            --neutral-white: #FFFFFF;            /* Backgrounds, Text Contrast, Open Spaces */
+            --neutral-cool-gray: #F0F0F5;       /* Section Dividers, Form Fields, Subtle Contrasts */
+
+            /* ---------------------------------------------------
+               2.3. Text Colors
+            --------------------------------------------------- */
+            --text-primary: var(--primary-deep-blue); /* Main Text */
+            --text-secondary: #888888; /* Secondary Text */
+
+            /* ---------------------------------------------------
+               2.5. Spacing
+            --------------------------------------------------- */
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+
+            /* ---------------------------------------------------
+               2.6. Border Radius
+            --------------------------------------------------- */
+            --border-radius: 8px;
+
+            /* ---------------------------------------------------
+               2.8. Transitions
+            --------------------------------------------------- */
+            --transition-speed: 0.3s;
+            --transition-type: ease-in-out;
+        }
+
+        /* =======================================================
+           4. Layout Sections
+           6.4. Footer (Extracted Footer Styles)
+        ======================================================= */
+        /* ---------------------------------------------------
+           4.4. Footer
+        --------------------------------------------------- */
+        .footer {
+            background-color: var(--neutral-white);
+            padding: var(--spacing-lg);
+            color: var(--text-primary);
+            text-align: center; /* Center all text in the footer */
+            border-top: 1px solid var(--neutral-cool-gray);
+            position: relative;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-bottom: var(--spacing-md);
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-lg);
+            text-align: center; /* Center content inside footer-content */
+        }
+
+        .about-info,
+        .contact-info,
+        .powered-by {
+            flex: 1;
+            text-align: center; /* Center text for these sections */
+        }
+
+        .about-info h2 {
+            font-size: 2em;
+            font-weight: 700;
+            color: var(--primary-deep-blue);
+            margin-bottom: var(--spacing-md);
+            position: relative;
+            text-align: center; /* Center heading text */
+        }
+
+        .about-info h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary-teal-green);
+            margin: var(--spacing-sm) auto var(--spacing-md);
+            border-radius: 2px;
+        }
+
+        .about-info p {
+            font-size: 1.1em;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            text-align: center; /* Center paragraph text */
+            margin-bottom: var(--spacing-md);
+        }
+
+        .contact-info {
+            text-align: center; /* Center contact-info text */
+        }
+
+        .contact-info p {
+            font-size: 1em;
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-sm);
+            text-align: center; /* Center paragraph text */
+        }
+
+        .contact-info p strong {
+            color: var(--primary-gold);
+        }
+
+        .contact-info a {
+            color: var(--primary-gold);
+            text-decoration: none;
+            transition: color var(--transition-speed) var(--transition-type);
+        }
+
+        .contact-info a:hover,
+        .contact-info a:focus {
+            color: var(--secondary-teal-green);
+            text-decoration: underline;
+        }
+
+        .powered-by {
+            margin-top: var(--spacing-lg);
+            font-size: 0.95em;
+            color: var(--text-primary);
+            text-align: center; /* Center powered-by text */
+        }
+
+        .powered-by a {
+            color: var(--primary-deep-blue);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color var(--transition-speed) var(--transition-type);
+        }
+
+        .powered-by a:hover,
+        .powered-by a:focus {
+            color: var(--secondary-teal-green);
+            text-decoration: underline;
+        }
+
+        /* Decorative Line in Footer */
+        .footer .decorative-line {
+            width: 100px;
+            height: 2px;
+            background-color: var(--secondary-teal-green);
+            margin: var(--spacing-sm) auto;
+            border-radius: 1px;
+            opacity: 0.7;
+            transition: opacity var(--transition-speed) var(--transition-type);
+        }
+
+        .footer .decorative-line:hover {
+            opacity: 1;
+        }
+
+        /* =======================================================
+           9. Media Queries (Extracted Media Queries for Footer)
+        ======================================================= */
+        /* ---------------------------------------------------
+           9.3. Small Devices (Mobile)
+        --------------------------------------------------- */
+        @media (max-width: 576px) {
+            .footer-content {
+                padding: 60px 15px;
+            }
+
+            .about-info h2 {
+                font-size: 2em;
+            }
+
+            .about-info h2::after {
+                width: 60px;
+            }
+
+            .about-info p {
+                font-size: 1em;
+            }
+
+            .contact-info p {
+                font-size: 0.95em;
+            }
+
+            .powered-by {
+                font-size: 0.85em;
+            }
+        }
+
+        /* ---------------------------------------------------
+           9.6. Extra Large Devices (Desktop)
+        --------------------------------------------------- */
+        @media (min-width: 993px) {
+            .footer-content {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-start;
+                gap: 60px;
+            }
+
+            .about-info,
+            .contact-info,
+            .powered-by {
+                text-align: left;
+            }
+        }
+    </style>
+
+        <div class="footer-content">
+            <div class="about-info">
+                <h2>درباره ما</h2>
+                <p>استعدادیاب با استفاده از بیش از چهل سال تجربه مؤسسه هیجان اندیشه در روان‌شناسی و ارزیابی‌های تخصصی، با بهره‌گیری از هوش مصنوعی به شما کمک می‌کند تا استعدادهای بالقوه خود را در مسیر دستیابی به تعالی فردی و رضایت از زندگی کشف کنید.</p>
+                <div class="contact-info">
+                    <p><strong>آدرس:</strong> تهران، سهروردی، خرمشهر، عربعلی، ششم، ۴۴</p>
+                    <p><strong>تلفن:</strong> <a href="tel:+982188174100">۰۲۱۸۸۱۷۴۱۰۰</a></p>
+                    <p><strong>ایمیل:</strong> <a href="mailto:info@talentsearch.ir">info@talentsearch.ir</a></p>
+                </div>
+            </div>
+            <div class="powered-by">توسعه داده شده توسط <a href="https://eot.ir" target="_blank">مؤسسه تعاملی هیجان اندیشه v1.1</a></div>
+        </div>
