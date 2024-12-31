@@ -374,28 +374,7 @@
             opacity: 1;
         }
 
-        /* =======================================================
-           5. Media Queries
-        ======================================================= */
-        @media (min-width: 769px) {
-            /* Show icons on desktop if desired */
-            .nav-links a .icon {
-                display: inline-block;
-            }
 
-            /* Adjust nav-links alignment */
-            .nav-links {
-                width: auto;
-            }
-
-            /* Adjust padding for desktop */
-            .header {
-                padding: 0 var(--spacing-lg);
-            }
-
-            .nav-links li {
-                margin: 0 var(--spacing-xl);
-            }
 
             /* Services Grid for Large Devices */
             .service-list {
@@ -403,80 +382,7 @@
             }
         }
 
-        @media (max-width: 768px) {
-            /* Hide navigation links in header */
-            .header .nav-links {
-                display: none;
-            }
 
-            /* Fixed Bottom Navbar */
-            .navbar {
-                display: flex;
-                position: fixed;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                height: 60px;
-                background-color: var(--neutral-white);
-                box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-                justify-content: space-around;
-                align-items: center;
-                padding: 0 var(--spacing-md);
-                z-index: 999;
-            }
-
-            /* Show navigation links in mobile navbar */
-            .navbar .nav-links {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-around;
-                align-items: center;
-                width: 100%;
-            }
-
-            /* Navigation Link Items - Mobile */
-            .navbar .nav-links li {
-                margin: 0;
-                flex: 1;
-                text-align: center;
-            }
-
-            /* Navigation Links - Mobile */
-            .navbar .nav-links a {
-                flex-direction: column;
-                font-size: 0.75rem;
-                color: var(--text-primary);
-                padding: 5px 0;
-            }
-
-            /* Icon Styles - Mobile */
-            .navbar .nav-links a .icon {
-                display: block;
-                font-size: 1.5rem;
-                margin-bottom: 4px;
-            }
-
-            /* Link Text Styles - Mobile */
-            .navbar .nav-links a .link-text {
-                display: block;
-            }
-
-            /* Hover and Focus Effects - Mobile */
-            .navbar .nav-links a:hover .link-text,
-            .navbar .nav-links a:focus .link-text {
-                color: var(--primary-gold);
-            }
-
-            .navbar .nav-links a:hover .icon,
-            .navbar .nav-links a:focus .icon {
-                color: var(--primary-gold);
-            }
-
-            /* Remove Underline Effect on Mobile */
-            .navbar .nav-links a::after {
-                content: none;
-            }
-        }
 
         @media (max-width: 576px) {
             .footer-content {
