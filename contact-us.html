@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>استعدادیاب | تماس با ما</title>
+    <style>
+        /* =======================================================
+           1. Reset and Base Styles
+        ======================================================= */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100%;
+            font-family: 'Vazir', sans-serif;
+            background-color: #FFFFFF;
+            color: #1F3B73;
+            direction: rtl;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            padding-top: 80px;
+            padding-bottom: 60px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #1F3B73;
+            transition: color 0.3s ease-in-out;
+        }
+
+        a:hover,
+        a:focus {
+            color: #F4C553;
+            text-decoration: underline;
+        }
+
+        /* =======================================================
+           2. Font Imports
+        ======================================================= */
+        @font-face {
+            font-family: 'Vazir';
+            src: url('/assets/fonts/Vazir-Regular-UI.woff2') format('woff2'),
+                 url('/assets/fonts/Vazir-Regular-UI.woff') format('woff'),
+                 url('/assets/fonts/Vazir-Regular-UI.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        /* =======================================================
+           3. Layout Sections
+        ======================================================= */
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 16px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+        }
+
+        /* =======================================================
+           4. Typography
+        ======================================================= */
+        h2 {
+            font-size: 2em;
+            font-weight: 700;
+            text-shadow: 0 0 10px #F4C553;
+            margin-bottom: 24px;
+            color: #1F3B73;
+        }
+
+        h3 {
+            font-size: 1.5em;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #1F3B73;
+        }
+
+        h4 {
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-top: 16px;
+            color: #1F3B73;
+        }
+
+        p {
+            font-size: 1em;
+            max-width: 800px;
+            margin: 0 auto 16px;
+            line-height: 1.6;
+            text-align: justify;
+            color: #1F3B73;
+        }
+
+        ul {
+            max-width: 800px;
+            margin: 0 auto 16px;
+            padding-right: 20px;
+            color: #1F3B73;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* =======================================================
+           5. Hero Section
+        ======================================================= */
+        .hero {
+            height: calc(100vh - 80px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #F0F0F5;
+            padding: 16px;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 3em;
+            margin-bottom: 16px;
+            color: #1F3B73;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            margin-bottom: 24px;
+            color: #1F3B73;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #F4C553;
+            color: #FFFFFF;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 1em;
+            box-shadow: 0 0 10px #FFD77B;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease-in-out,
+                        transform 0.3s ease-in-out,
+                        box-shadow 0.3s ease-in-out;
+        }
+
+        .cta-button:hover,
+        .cta-button:focus {
+            background-color: #4FBDBA;
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px #4FBDBA;
+        }
+
+        /* =======================================================
+           6. Content Sections
+        ======================================================= */
+        .content-section {
+            padding: 60px 16px;
+            background-color: #FFFFFF;
+        }
+
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .content-section:nth-child(even) {
+            background-color: #F9F9F9;
+        }
+
+        /* =======================================================
+           7. Contact Form Styles
+        ======================================================= */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #FFFFFF;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form h3 {
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #CCCCCC;
+            border-radius: 4px;
+            font-size: 1em;
+            font-family: 'Vazir', sans-serif;
+            resize: vertical;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #4FBDBA;
+            outline: none;
+        }
+
+        .submit-button {
+            display: block;
+            width: 100%;
+            background-color: #1F3B73;
+            color: #FFFFFF;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .submit-button:hover,
+        .submit-button:focus {
+            background-color: #4FBDBA;
+        }
+
+        /* =======================================================
+           8. Footer
+        ======================================================= */
+        .footer {
+            background-color: #FFFFFF;
+            padding: 32px;
+            color: #1F3B73;
+            text-align: center;
+            border-top: 1px solid #F0F0F5;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            text-align: center;
+        }
+
+        .footer-section h2 {
+            font-size: 1.5em;
+            margin-bottom: 8px;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            font-size: 1em;
+            color: #888888;
+        }
+
+        .footer-section a:hover,
+        .footer-section a:focus {
+            color: #4FBDBA;
+            text-decoration: underline;
+        }
+
+        .powered-by {
+            margin-top: 32px;
+            font-size: 0.95em;
+        }
+
+        .powered-by a {
+            color: #1F3B73;
+            font-weight: 500;
+        }
+
+        .powered-by a:hover,
+        .powered-by a:focus {
+            color: #4FBDBA;
+        }
+
+        /* =======================================================
+           9. Media Queries
+        ======================================================= */
+        @media (min-width: 769px) {
+            .footer-content {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-start;
+                gap: 60px;
+                text-align: left;
+            }
+
+            .content-section {
+                padding: 80px 16px;
+            }
+
+            .content-section h3 {
+                font-size: 2em;
+            }
+
+            .content-section p {
+                font-size: 1.1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">     </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h2>تماس با ما</h2>
+                <p>ما همیشه آماده‌ایم تا به سوالات شما پاسخ دهیم و به شما کمک کنیم.</p>
+            </div>
+        </section>
+
+        <!-- Contact Information Section -->
+        <section class="content-section">
+            <div class="content-container">
+                <h2>اطلاعات تماس</h2>
+                <p>در صورتی که سوالی دارید یا نیاز به پشتیبانی دارید، می‌توانید از طریق اطلاعات زیر با ما تماس بگیرید.</p>
+                <p><strong>ایمیل:</strong> info@estedadyaab.com</p>
+                <p><strong>تلفن:</strong> +98 21 1234 5678</p>
+                <p><strong>آدرس:</strong> تهران، خیابان ولیعصر، پلاک ۱۲۳</p>
+            </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section class="content-section">
+            <div class="content-container">
+                <div class="contact-form">
+                    <h3>فرم تماس</h3>
+                    <form action="/submit-contact" method="POST">
+                        <div class="form-group">
+                            <label for="name">نام شما</label>
+                            <input type="text" id="name" name="name" required placeholder="نام خود را وارد کنید">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">ایمیل شما</label>
+                            <input type="email" id="email" name="email" required placeholder="ایمیل خود را وارد کنید">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">موضوع</label>
+                            <input type="text" id="subject" name="subject" required placeholder="موضوع پیام">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">پیام</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="پیام خود را بنویسید"></textarea>
+                        </div>
+                        <button type="submit" class="submit-button">ارسال پیام</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/header-footer-inject.js"></script>
+</body>
+</html>
