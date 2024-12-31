@@ -1,608 +1,402 @@
-<div class="ravesh-editor-html" style="direction:rtl">
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>گزارش تحلیل فهرست تشخیص تعاملی شخصیت</title>
+    <title>استعدادیاب | معرفی آزمون</title>
     <style>
-        @font-face {
-            font-family: 'IRANSansWeb';
-            src: url('fonts/IRANSansWeb.woff2') format('woff2');
-        }
-        @font-face {
-            font-family: 'BTitrBold';
-            src: url('fonts/BTitrBold.woff2') format('woff2');
-        }
-        @font-face {
-            font-family: 'BKoodakBold';
-            src: url('fonts/BKoodakBold.woff2') format('woff2');
-        }
-        @font-face {
-            font-family: 'BHoma';
-            src: url('fonts/BHoma.woff2') format('woff2');
-        }
-        @font-face {
-            font-family: 'BYekan';
-            src: url('fonts/BYekan.woff2') format('woff2');
-        }
-        @font-face {
-            font-family: 'Tahoma';
-            src: url('fonts/Tahoma.woff2') format('woff2');
-        }
-        .report-container {
-            font-family: 'BYekan', sans-serif;
-            direction: rtl;
-            line-height: 1.8;
-            background-color: #F5F5F5;
-            color: #333333;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            max-width: 800px;
-            width: 100%;
-            margin: auto;
-            background-color: #F5F5F5;
-            padding: 40px;
-            box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
-            border-radius: 20px;
-        }
-        .report-header-custom {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 20px;
-            background-color: #0DA3B8;
-            border-radius: 20px 20px 0 0;
-        }
-        .report-header-inner {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-        .report-header-img {
-            width: 40px;
-            height: 40px;
-        }
-        .report-header-title {
-            margin: 0;
-            font-size: 1.8em;
-            color: #ffffff;
-            font-family: 'IRANSansWeb', sans-serif;
-            font-weight: normal;
-        }
-        .report-header-date {
-            color: #ffffff;
-            font-size: 1em;
-        }
-        .report-title {
-            text-align: center;
-            color: #0DA3B8;
-            font-family: 'IRANSansWeb', sans-serif;
-            font-weight: bold;
-            font-size: 32px;
-            margin-bottom: 25px;
-        }
-        .report-info-container, .report-score-container {
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .report-info-item, .report-score-item {
-            background-color: #F8F9FA;
-            padding: 15px;
-            border-radius: 10px;
-            margin-bottom: 15px;
-            font-size: 16px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-family: 'BYekan', sans-serif;
-            flex: 1;
-            min-width: 300px;
-            margin-right: 10px; /* Add space between columns */
-        }
-        .report-info-item strong, .report-score-item strong {
-            color: #0DA3B8;
-            font-family: 'IRANSansWeb', sans-serif;
-        }
-        .report-info-data, .report-score-data {
-            font-family: 'IRANSansWeb', sans-serif;
-        }
-        .report-section-title {
-            font-size: 22px;
-            color: #CC3333;
-            margin-top: 30px;
-            margin-bottom: 10px;
-            padding-bottom: 5px;
-            border-bottom: 1px solid #CC3333;
-            font-family: 'IRANSansWeb', sans-serif;
-            font-weight: bold;
-            text-align: center;
-        }
-        .report-component-title {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 22px;
-            color: #DBCF93;
-            margin-top: 30px;
-            margin-bottom: 10px;
-            padding-bottom: 5px;
-            border-bottom: 1px solid #DBCF93;
-            font-family: 'IRANSansWeb', sans-serif;
-        }
-        .report-paragraph {
-            background-color: #E0F7FA;
-            padding: 15px;
-            border-radius: 10px;
-            font-size: 16px;
-            margin-bottom: 20px;
-        }
-        .report-list {
-            list-style-type: none;
-            padding: 0;
-            font-size: 16px;
-        }
-        .report-list-item {
-            background: #F8F9FA;
-            margin-bottom: 10px;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-            display: flex;
-            flex-direction: column;
-        }
-        .report-list-item strong {
-            font-size: 18px;
-            color: #0DA3B8;
-            margin-bottom: 5px;
-        }
-        .report-badge {
-            display: inline-block;
-            padding: 8px 15px;
-            font-size: 14px;
-            color: #FFFFFF;
-            background-color: #4A9B8C;
-            border-radius: 10px;
-        }
-        .report-recommendation {
-            background-color: #EAEAEA;
-            padding: 20px;
-            margin-top: 10px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-            display: flex;
-            flex-direction: column;
-            width: 100%;
+        /* =======================================================
+           1. Reset and Base Styles
+        ======================================================= */
+        *, *::before, *::after {
             box-sizing: border-box;
-        }
-        .report-recommendation-title {
-            font-weight: bold;
-            color: #CC3333;
-            margin-bottom: 5px;
-            font-size: 18px;
-        }
-        .report-recommendation-text {
-            margin-bottom: 5px;
-            line-height: 1.6;
-            font-size: 16px;
-        }
-        .report-footer-custom {
-            background-color: #F5F5F5;
-            color: #333333;
-            padding: 20px;
-            text-align: center;
-            font-family: 'IRANSansWeb', sans-serif;
-            border-top: 1px solid #E0E0E0;
-            font-size: 16px; /* Increased font size */
-        }
-        .report-footer-content {
-            margin-bottom: 20px;
-        }
-        .report-footer-img {
-            width: 80px;
-            height: 80px;
-        }
-        .report-footer-paragraph {
-            margin: 5px 0;
-        }
-        .report-footer-paragraph.yellow-text {
-            color: #DBCF93;
-        }
-        .report-footer-menu {
-            list-style: none;
+            margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin: 10px 0;
         }
-        .report-footer-menu-link {
-            color: #0DA3B8;
+
+        html, body {
+            height: 100%;
+            font-family: 'Vazir', sans-serif;
+            background-color: #FFFFFF;
+            color: #1F3B73;
+            direction: rtl;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            padding-top: 80px;
+            padding-bottom: 60px;
+        }
+
+        a {
             text-decoration: none;
-            transition: color 0.3s;
+            color: #1F3B73;
+            transition: color 0.3s ease-in-out;
         }
-        .report-footer-menu-link:hover {
-            color: #007B8A;
+
+        a:hover,
+        a:focus {
+            color: #F4C553;
+            text-decoration: underline;
         }
-        .report-footer-address {
-            margin-top: 10px;
-            font-size: 14px;
+
+        /* =======================================================
+           2. Font Imports
+        ======================================================= */
+        @font-face {
+            font-family: 'Vazir';
+            src: url('/assets/fonts/Vazir-Regular-UI.woff2') format('woff2'),
+                 url('/assets/fonts/Vazir-Regular-UI.woff') format('woff'),
+                 url('/assets/fonts/Vazir-Regular-UI.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
         }
-        .report-summary-container {
+
+        /* =======================================================
+           4. Typography
+        ======================================================= */
+        h2 {
+            font-size: 2em;
+            font-weight: 700;
+            text-shadow: 0 0 10px #F4C553;
+            margin-bottom: 24px;
+            color: #1F3B73;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 1.5em;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #1F3B73;
+            text-align: center;
+        }
+
+        h4 {
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-top: 16px;
+            color: #1F3B73;
+            text-align: center;
+        }
+
+        p {
+            font-size: 1em;
             max-width: 800px;
-            margin: auto;
+            margin: 0 auto 16px;
+            line-height: 1.6;
+            text-align: justify;
+            color: #1F3B73;
+            text-align: center;
+        }
+
+        ul {
+            max-width: 800px;
+            margin: 0 auto 16px;
+            padding-right: 20px;
+            color: #1F3B73;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* =======================================================
+           5. Hero Section
+        ======================================================= */
+        .hero {
+            height: calc(100vh - 80px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #F0F0F5;
+            padding: 16px;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 3em;
+            margin-bottom: 16px;
+            color: #1F3B73;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            margin-bottom: 24px;
+            color: #1F3B73;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #F4C553;
+            color: #FFFFFF;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 1em;
+            box-shadow: 0 0 10px #FFD77B;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease-in-out,
+                        transform 0.3s ease-in-out,
+                        box-shadow 0.3s ease-in-out;
+        }
+
+        .cta-button:hover,
+        .cta-button:focus {
+            background-color: #4FBDBA;
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px #4FBDBA;
+        }
+
+        /* =======================================================
+           6. Content Sections
+        ======================================================= */
+        .content-section {
+            padding: 60px 16px;
+            background-color: #FFFFFF;
+        }
+
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .content-section:nth-child(even) {
+            background-color: #F9F9F9;
+        }
+
+        /* =======================================================
+           7. Contact Form Styles
+        ======================================================= */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
             background-color: #FFFFFF;
             padding: 40px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
-            border-radius: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
-        .report-summary-heading {
+
+        .contact-form h3 {
+            margin-bottom: 24px;
             text-align: center;
-            color: #0DA3B8;
-            font-family: 'IRANSansWeb', sans-serif;
-            font-weight: bold;
-            font-size: 32px;
-            margin-bottom: 25px;
         }
-        .report-summary-content {
-            color: #333333;
-            font-family: 'IRANSansWeb', sans-serif;
-            line-height: 1.8;
+
+        .form-group {
+            margin-bottom: 20px;
         }
-        .report-conditional-display {
+
+        .form-group label {
             display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
         }
-        .report-conditional-display[style*="--score-rate1: 1"] {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-            border-radius: 10px;
-            background-color: #FF9999; /* Moderate */
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #CCCCCC;
+            border-radius: 4px;
+            font-size: 1em;
+            font-family: 'Vazir', sans-serif;
+            resize: vertical;
         }
-        .report-conditional-display[style*="--score-rate2: 2"] {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-            border-radius: 10px;
-            background-color: #FFD580; /* Good */
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #4FBDBA;
+            outline: none;
         }
-        .report-conditional-display[style*="--score-rate3: 3"] {
+
+        .submit-button {
+            display: block;
+            width: 100%;
+            background-color: #1F3B73;
+            color: #FFFFFF;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .submit-button:hover,
+        .submit-button:focus {
+            background-color: #4FBDBA;
+        }
+
+        /* =======================================================
+           8. Footer
+        ======================================================= */
+        .footer {
+            background-color: #FFFFFF;
+            padding: 32px;
+            color: #1F3B73;
+            text-align: center;
+            border-top: 1px solid #F0F0F5;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-            border-radius: 10px;
-            background-color: #99FF99; /* Excellent */
+            flex-direction: column;
+            gap: 32px;
+            text-align: center;
+        }
+
+        .footer-section h2 {
+            font-size: 1.5em;
+            margin-bottom: 8px;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            font-size: 1em;
+            color: #888888;
+        }
+
+        .footer-section a:hover,
+        .footer-section a:focus {
+            color: #4FBDBA;
+            text-decoration: underline;
+        }
+
+        .powered-by {
+            margin-top: 32px;
+            font-size: 0.95em;
+        }
+
+        .powered-by a {
+            color: #1F3B73;
+            font-weight: 500;
+        }
+
+        .powered-by a:hover,
+        .powered-by a:focus {
+            color: #4FBDBA;
+        }
+
+        /* =======================================================
+           9. Media Queries
+        ======================================================= */
+        @media (min-width: 769px) {
+            .footer-content {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-start;
+                gap: 60px;
+                text-align: left;
+            }
+
+            .content-section {
+                padding: 80px 16px;
+            }
+
+            .content-section h3 {
+                font-size: 2em;
+            }
+
+            .content-section p {
+                font-size: 1.1em;
+            }
         }
     </style>
-    <div class="report-report-container">
-        <header class="report-header-custom">
-            <div class="report-header-inner">
-                <img src="../panel/file?type=picture&amp;v=3&amp;mode=filemanager&amp;file=%7eDB3gfQUls%2bt2iiMYKbsRAxrtFhcHKUIUUo7pPtO17bHCzNxwU4zNh3UVor6QMtl7Y6EWX8dD0PSvzZOYkRrXlfejPn4lNTj6" class="report-header-img" alt="لوگو">
-                <h1 class="report-header-title">گزارش تحلیل فهرست تشخیص تعاملی شخصیت</h1>
+</head>
+<body>
+    <header class="header">
+        <!-- می‌توانید محتوای سربرگ را اینجا اضافه کنید -->
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h2>معرفی آزمون تحلیل فهرست تشخیص تعاملی شخصیت</h2>
+                <p>کشف ویژگی‌های شخصیتی شما و توسعه مهارت‌های فردی و حرفه‌ای</p>
+                <a href="#about" class="cta-button">شروع آزمون</a>
             </div>
-            <div class="report-header-date">تاریخ اجرا: #primary_createDate#</div>
-        </header>
-        
-        <div class="report-section-title">فهرست تشخیص تعاملی شخصیت</div>
-        <p class="report-paragraph">
-            این ارزیابی به منظور تحلیل و بررسی ویژگی‌های شخصیتی فرد در حوزه‌های مختلف از جمله تعهد، نیرومندی، ظرفیت تحلیلی، بیتابی روانی، استقلال و سازش انجام شده است. هدف از این ارزیابی شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد.
-        </p><p></p>
-               
-        <div class="report-section-title">اطلاعات فردی</div>
-        <div class="report-info-container">
-            <div class="report-info-item"><strong>نام:</strong> <span class="report-info-data">#field_349#</span></div>
-            <div class="report-info-item"><strong>نام خانوادگی:</strong> <span class="report-info-data">#field_1712#</span></div>
-            <div class="report-info-item"><strong>موبایل:</strong> <span class="report-info-data">#field_350#</span></div>
-            <div class="report-info-item"><strong>ایمیل:</strong> <span class="report-info-data">#field_351#</span></div></div>
+        </section>
 
-        </div>
-        <div class="report-section-title">نتیجه</div>
-        <div class="report-score-container">
-            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10281#;"><strong>انضباط:</strong> <span class="report-badge">#field_5770#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10281#;"><strong>انضباط:</strong> <span class="report-badge">#field_5770#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10281#;"><strong>انضباط:</strong> <span class="report-badge">#field_5770#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10282#;"><strong>آینده پویی:</strong> <span class="report-badge">#field_5771#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10282#;"><strong>آینده پویی:</strong> <span class="report-badge">#field_5771#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10282#;"><strong>آینده پویی:</strong> <span class="report-badge">#field_5771#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10283#;"><strong>پاکی:</strong> <span class="report-badge">#field_5772#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10283#;"><strong>پاکی:</strong> <span class="report-badge">#field_5772#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10283#;"><strong>پاکی:</strong> <span class="report-badge">#field_5772#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10284#;"><strong>شایستگی:</strong> <span class="report-badge">#field_5773#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10284#;"><strong>شایستگی:</strong> <span class="report-badge">#field_5773#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10284#;"><strong>شایستگی:</strong> <span class="report-badge">#field_5773#</span></div>
-
-        </div>
-        <div class="report-section-title">تفسیر</div>
-        <p class="report-paragraph">
-            این بخش به تحلیل و تفسیر نتایج ارزیابی روان‌شناختی فرد می‌پردازد. تحلیل روان‌شناختی شامل بررسی ویژگی‌های شخصیتی مختلف است. هدف از این تحلیل شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد. نتایج این تحلیل می‌تواند به فرد کمک کند تا با شناخت بهتر از خود، برنامه‌های توسعه فردی و حرفه‌ای موثرتری را دنبال کند.
-        </p>
-
-
-
-        
-
-
-
-<!-- انضباط (مرتب بودن و وقت‌شناسی در امور شخصی) -->
-<div class="report-component-title">انضباط
-    <span class="report-badge report-score-data">#field_5770#<br></span>
-</div>
-<p class="report-paragraph">
-    انضباط در «فهرست رضایت شغلی» به معنای توانایی فرد در حفظ نظم، مدیریت زمان و مسئولیت‌پذیری در محیط کار است. افرادی که امتیاز بالایی در این حوزه کسب می‌کنند، نه تنها در امور شخصی خود منظم هستند، بلکه در انجام وظایف شغلی نیز به طور مؤثری عمل می‌کنند.
-</p>
-<ul class="report-list">
-    <!-- سطح متوسط انضباط -->
-    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10281#;">
-        <strong>«متوسط»<br></strong>
-        شما در اغلب مواقع منظم و وقت‌شناس هستید، اما گاهی ممکن است در مدیریت زمان یا نگهداری وسایل شخصی خود دچار مشکل شوید. این وضعیت ممکن است ناشی از فشارهای شغلی یا شرایط محیطی باشد که نیاز به افزایش تعادل روانی و انگیزه بیشتری را مطرح می‌کند.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. ایجاد روتین روزانه و پایبندی به آن برای تقویت عادت‌های منظم.<br>
-                ۲. استفاده از ابزارهای مدیریت زمان (لیست کارها، تقویم دیجیتال، یادآوری‌ها).<br>
-                ۳. تعیین اهداف کوتاه‌مدت قابل دستیابی برای افزایش انگیزه و تعادل روانی.<br>
-                ۴. ایجاد محیط کاری خلوت و مرتب به منظور تمرکز بهتر.<br>
-                ۵. بررسی منظم عملکرد روزانه و اصلاح نقاط ضعف احتمالی.
+        <!-- About Section -->
+        <section class="content-section" id="about">
+            <div class="content-container">
+                <h2>درباره آزمون</h2>
+                <p>
+                    آزمون تحلیل فهرست تشخیص تعاملی شخصیت یک ابزار روان‌شناختی معتبر است که به منظور شناسایی و تحلیل ویژگی‌های شخصیتی فرد در حوزه‌های مختلف طراحی شده است. این آزمون به شما کمک می‌کند تا نقاط قوت و زمینه‌های نیازمند بهبود خود را بشناسید و راهکارهای مناسبی برای توسعه مهارت‌های خود ارائه دهید.
+                </p>
             </div>
-        </div>
-    </li>
+        </section>
 
-    <!-- سطح خوب انضباط -->
-    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10281#;">
-        <strong>«خوب»<br></strong>
-        شما فردی منظم و وقت‌شناس هستید که در نگهداری وسایل شخصی و مدیریت زمان عملکرد قابل توجهی دارید. این سطح از انضباط نشان‌دهنده تعهد شما به اهداف شغلی و توانایی حفظ تعادل روانی است.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. حفظ روند فعلی با ثبت دقیق فعالیت‌های روزانه و ارزیابی منظم موفقیت‌ها.<br>
-                ۲. تمرین تکنیک‌های افزایش تمرکز (ذهن‌آگاهی، مدیتیشن، تنفس عمیق).<br>
-                ۳. درگیر شدن در پروژه‌های گروهی برای بهبود مهارت هماهنگی و وقت‌شناسی بیشتر.<br>
-                ۴. تعریف چالش‌های جدید برای خود تا تعادل روانی و انگیزه بالای خود را حفظ کنید.<br>
-                ۵. آموزش و کمک به دیگران در زمینه مدیریت زمان و نظم، برای تقویت بیشتر عادات مثبت.
+        <!-- Features Section -->
+        <section class="content-section">
+            <div class="content-container">
+                <h2>ویژگی‌های آزمون</h2>
+                <ul>
+                    <li><strong>تعهد:</strong> بررسی میزان تعهد و مسئولیت‌پذیری شما در محیط‌های مختلف.</li>
+                    <li><strong>نیرومندی:</strong> ارزیابی قدرت تحمل و مقاومت در برابر فشارهای روحی و جسمی.</li>
+                    <li><strong>ظرفیت تحلیلی:</strong> سنجش توانایی شما در تحلیل و حل مسائل پیچیده.</li>
+                    <li><strong>بیتابی روانی:</strong> اندازه‌گیری سطح بیتابی و اضطراب روانی شما.</li>
+                    <li><strong>استقلال:</strong> ارزیابی میزان استقلال و خودکفایی شما در تصمیم‌گیری‌ها.</li>
+                    <li><strong>سازش:</strong> سنجش توانایی شما در سازش و همکاری با دیگران.</li>
+                </ul>
             </div>
-        </div>
-    </li>
+        </section>
 
-    <!-- سطح عالی انضباط -->
-    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10281#;">
-        <strong>«عالی»<br></strong>
-        شما در بالاترین سطح انضباط قرار دارید؛ فردی فوق‌العاده وقت‌شناس، منظم و مسئولیت‌پذیر هستید. این توانایی به شما امکان می‌دهد تا در محیط‌های مختلف کاری به طور مؤثری عمل کرده و موفقیت‌های قابل توجهی کسب کنید.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. رهبری فعالیت‌ها و پروژه‌هایی که نیازمند نظم و هماهنگی بالا هستند.<br>
-                ۲. شرکت در سمینارها و کارگاه‌های تخصصی برای به‌روز نگه داشتن مهارت‌های انضباطی.<br>
-                ۳. کمک به دیگران در بهبود مهارت‌های انضباطی و مدیریت زمان و ایفای نقش الگویی.<br>
-                ۴. اختصاص زمانی به تفریح و استراحت برای حفظ تعادل روانی.<br>
-                ۵. استفاده از تکنیک‌های پیشرفته مدیریت پروژه برای ارتقا کارایی شخصی و حرفه‌ای.
+        <!-- Benefits Section -->
+        <section class="content-section">
+            <div class="content-container">
+                <h2>مزایای شرکت در آزمون</h2>
+                <ul>
+                    <li>شناخت دقیق از ویژگی‌های شخصیتی شما</li>
+                    <li>شناسایی نقاط قوت و ضعف فردی</li>
+                    <li>دریافت توصیه‌های کاربردی برای بهبود مهارت‌ها</li>
+                    <li>افزایش آگاهی از نیازهای توسعه فردی و حرفه‌ای</li>
+                    <li>بهبود عملکرد در محیط‌های کاری و شخصی</li>
+                </ul>
             </div>
-        </div>
-    </li>
-</ul>
+        </section>
 
-<!-- آینده پویی (توانایی پیش‌بینی و برنامه‌ریزی برای آینده) -->
-<div class="report-component-title">آینده پویی
-    <span class="report-badge report-score-data">#field_5771#<br></span>
-</div>
-<p class="report-paragraph">
-    آینده پویی در «فهرست رضایت شغلی» به معنای توانایی فرد در پیش‌بینی، برنامه‌ریزی و آماده‌سازی برای آینده شغلی خود است. افرادی که در این حوزه امتیاز بالایی دارند، دارای دیدگاه روشن نسبت به اهداف بلندمدت خود هستند و به طور مستمر در جهت دستیابی به آن‌ها تلاش می‌کنند.
-</p>
-<ul class="report-list">
-    <!-- سطح متوسط آینده پویی -->
-    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10282#;">
-        <strong>«متوسط»<br></strong>
-        شما تا حدی توانایی پیش‌بینی و برنامه‌ریزی برای آینده شغلی خود را دارید، اما ممکن است گاهی در ایجاد ارتباط بین مطالب جدید و قبلی یا در تصمیم‌گیری تحت تأثیر دیگران دچار مشکل شوید. این وضعیت نیاز به افزایش تمرکز و استقلال در انتخاب‌ها دارد.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. تقویت ارتباط بین مطالب جدید و قبلی از طریق مطالعه و یادداشت‌برداری.<br>
-                ۲. توسعه مهارت‌های تفکر انتقادی و تحلیلی برای تصمیم‌گیری مستقل.<br>
-                ۳. تعیین اهداف شغلی بلندمدت و کوتاه‌مدت و پیگیری مستمر آن‌ها.<br>
-                ۴. شرکت در دوره‌های توسعه فردی و حرفه‌ای برای افزایش توانایی پیش‌بینی.<br>
-                ۵. ایجاد برنامه‌های منظم برای بررسی پیشرفت و تنظیم مجدد اهداف در صورت نیاز.
+        <!-- How It Works Section -->
+        <section class="content-section">
+            <div class="content-container">
+                <h2>نحوه انجام آزمون</h2>
+                <p>
+                    آزمون تحلیل فهرست تشخیص تعاملی شخصیت شامل مجموعه‌ای از سوالات متنوع است که به شما کمک می‌کند تا به بهترین نحو ویژگی‌های شخصیتی خود را کشف کنید. این آزمون به صورت آنلاین و در مدت زمان کوتاهی قابل انجام است.
+                </p>
+                <ul>
+                    <li>ثبت نام و ورود به حساب کاربری</li>
+                    <li>پاسخ به سوالات آزمون</li>
+                    <li>دریافت گزارش تحلیلی جامع از نتایج</li>
+                </ul>
             </div>
-        </div>
-    </li>
+        </section>
 
-    <!-- سطح خوب آینده پویی -->
-    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10282#;">
-        <strong>«خوب»<br></strong>
-        شما به طور کلی دارای توانایی خوبی در پیش‌بینی و برنامه‌ریزی برای آینده شغلی خود هستید. ارتباط میان دانش جدید و تجربیات گذشته به خوبی برقرار است و شما معمولاً در تصمیم‌گیری‌های خود مستقل و با اطمینان عمل می‌کنید.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. حفظ روند فعلی با تعیین اهداف بلندمدت و کوتاه‌مدت مشخص.<br>
-                ۲. شرکت در کارگاه‌ها و دوره‌های تخصصی برای افزایش مهارت‌های پیش‌بینی و برنامه‌ریزی.<br>
-                ۳. تقویت استقلال در تصمیم‌گیری از طریق تمرین مستقل بودن در مسائل کوچک.<br>
-                ۴. ارزیابی منظم پیشرفت در مسیر اهداف تعیین‌شده.<br>
-                ۵. به اشتراک‌گذاری تجربیات و موفقیت‌ها با همکاران برای ایجاد انگیزه و حمایت متقابل.
+        <!-- Call to Action Section -->
+        <section class="content-section">
+            <div class="content-container">
+                <h2>آیا آماده‌اید تا شروع کنید؟</h2>
+                <p>
+                    با شرکت در این آزمون، گامی مهم در جهت شناخت بهتر از خود و توسعه مهارت‌های فردی و حرفه‌ای خود بردارید.
+                </p>
+                <div style="text-align: center; margin-top: 20px;">
+                    <a href="test-page.html" class="cta-button">شروع آزمون</a>
+                </div>
             </div>
-        </div>
-    </li>
+        </section>
+    </main>
 
-    <!-- سطح عالی آینده پویی -->
-    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10282#;">
-        <strong>«عالی»<br></strong>
-        شما در بالاترین سطح آینده پویی قرار دارید؛ دارای دیدگاه روشن و جامع نسبت به آینده شغلی خود هستید و توانایی بالایی در پیش‌بینی و برنامه‌ریزی برای دستیابی به اهداف بلندمدت خود دارید. این توانایی به شما کمک می‌کند تا به طور مستمر در مسیر رشد و پیشرفت قرار بگیرید.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. پذیرش نقش‌های رهبری در پروژه‌های بزرگ و پیچیده که نیازمند برنامه‌ریزی دقیق هستند.<br>
-                ۲. توسعه مهارت‌های پیشرفته در زمینه مدیریت زمان و منابع برای افزایش کارایی.<br>
-                ۳. مشارکت در شبکه‌سازی حرفه‌ای برای دستیابی به فرصت‌های جدید و توسعه چشم‌انداز شغلی.<br>
-                ۴. ایجاد نقشه راه شخصی برای پیشرفت‌های حرفه‌ای و یادگیری مستمر.<br>
-                ۵. استفاده از تجربیات گذشته برای بهینه‌سازی استراتژی‌های آینده‌پویی و رسیدن به اهداف بلندمدت.
-            </div>
-        </div>
-    </li>
-</ul>
+    <!-- Footer -->
+    <footer class="footer">     </footer>
 
-<!-- پاکی (تمایل به صداقت و پاکیزگی در محیط کار) -->
-<div class="report-component-title">پاکی
-    <span class="report-badge report-score-data">#field_5772#<br></span>
-</div>
-<p class="report-paragraph">
-    پاکی در «فهرست رضایت شغلی» به معنای تمایل فرد به حفظ صداقت، اخلاقیات و رفتار پاکیزه در محیط کار است. این ویژگی نشان‌دهنده اهمیت ارزش‌های درونی و تمایل به ایجاد محیط کاری سالم و شفاف است.
-</p>
-<ul class="report-list">
-    <!-- سطح متوسط پاکی -->
-    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10283#;">
-        <strong>«متوسط»<br></strong>
-        شما به طور کلی به صداقت و پاکیزگی اهمیت می‌دهید، اما در برخی مواقع ممکن است در شرایط سخت یا تحت فشار به دلیل نیازهای شخصی از این اصول دور شوید. این وضعیت نیازمند تقویت تعهد به ارزش‌های اخلاقی و مدیریت استرس است.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. تقویت تعهد به ارزش‌های اخلاقی از طریق مطالعه و آموزش‌های مرتبط.<br>
-                ۲. مدیریت استرس با استفاده از تکنیک‌های آرام‌سازی مانند مدیتیشن و تنفس عمیق.<br>
-                ۳. ایجاد سیستم‌های حمایتی در محیط کار برای حفظ رفتارهای اخلاقی.<br>
-                ۴. برگزاری جلسات گروهی برای بحث و تبادل نظر درباره اهمیت پاکیزگی و صداقت.<br>
-                ۵. تعیین معیارهای مشخص برای رفتارهای اخلاقی و پایبندی به آن‌ها.
-            </div>
-        </div>
-    </li>
-
-    <!-- سطح خوب پاکی -->
-    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10283#;">
-        <strong>«خوب»<br></strong>
-        شما به طور قابل توجهی به حفظ صداقت و پاکیزگی در محیط کار پایبند هستید. این رفتار مثبت نه تنها به شما اعتبار می‌بخشد، بلکه به ایجاد یک محیط کاری سالم و شفاف کمک می‌کند.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. حفظ تعهد به صداقت و پاکیزگی در تمام تعاملات شغلی.<br>
-                ۲. تشویق همکاران به رفتارهای اخلاقی و پاکیزه.<br>
-                ۳. شرکت در دوره‌ها و کارگاه‌های اخلاقیات حرفه‌ای.<br>
-                ۴. ارائه بازخورد مثبت به افرادی که رفتارهای اخلاقی دارند.<br>
-                ۵. ایجاد فرهنگ سازمانی که ارزش‌های پاکیزگی و صداقت را تقویت کند.
-            </div>
-        </div>
-    </li>
-
-    <!-- سطح عالی پاکی -->
-    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10283#;">
-        <strong>«عالی»<br></strong>
-        شما در بالاترین سطح پاکی قرار دارید؛ همواره به صداقت و رفتار پاکیزه پایبند هستید و این ویژگی باعث شده تا در محیط کار به عنوان فردی قابل اعتماد و اخلاقی شناخته شوید. این رفتار مثبت به ایجاد یک فضای کاری سالم و شفاف کمک می‌کند.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. ایفای نقش الگو در سازمان برای ترویج رفتارهای اخلاقی.<br>
-                ۲. مشارکت در تدوین و بهبود سیاست‌های اخلاقی سازمان.<br>
-                ۳. ارائه مشاوره و راهنمایی به همکاران در زمینه اخلاقیات حرفه‌ای.<br>
-                ۴. حفظ تعادل بین صداقت و انعطاف‌پذیری در شرایط چالش‌برانگیز.<br>
-                ۵. توسعه برنامه‌های آموزشی برای تقویت فرهنگ پاکیزگی و صداقت در سازمان.
-            </div>
-        </div>
-    </li>
-</ul>
-
-<!-- شایستگی (توانایی‌ها و مهارت‌های حرفه‌ای) -->
-<div class="report-component-title">شایستگی
-    <span class="report-badge report-score-data">#field_5773#<br></span>
-</div>
-<p class="report-paragraph">
-    شایستگی در «فهرست رضایت شغلی» به معنای توانایی‌های حرفه‌ای و مهارت‌های فرد در انجام وظایف شغلی است. این ویژگی نشان‌دهنده سطح توانمندی، تخصص و کارآمدی فرد در محیط کار است.
-</p>
-<ul class="report-list">
-    <!-- سطح متوسط شایستگی -->
-    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10284#;">
-        <strong>«متوسط»<br></strong>
-        شما در بسیاری از وظایف شغلی خود شایستگی دارید، اما ممکن است در برخی حوزه‌ها نیاز به بهبود و ارتقاء مهارت‌ها داشته باشید. این وضعیت نیازمند تمرکز بر توسعه مهارت‌های تخصصی و افزایش تجربه کاری است.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. تعیین حوزه‌هایی که نیاز به بهبود دارند و شرکت در دوره‌های آموزشی مرتبط.<br>
-                ۲. جستجوی فرصت‌های جدید برای کسب تجربه بیشتر در زمینه‌های مختلف.<br>
-                ۳. دریافت بازخورد از همکاران و مدیران برای شناسایی نقاط ضعف و قوت.<br>
-                ۴. ایجاد برنامه‌های توسعه فردی برای ارتقای مهارت‌های حرفه‌ای.<br>
-                ۵. مشارکت در پروژه‌های چالش‌برانگیز برای افزایش تجربه و شایستگی.
-            </div>
-        </div>
-    </li>
-
-    <!-- سطح خوب شایستگی -->
-    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10284#;">
-        <strong>«خوب»<br></strong>
-        شما در انجام وظایف شغلی خود دارای شایستگی بالایی هستید و مهارت‌های لازم را به خوبی به کار می‌برید. این سطح از شایستگی باعث می‌شود که همکاران و مدیران به شما اعتماد داشته باشند و از توانمندی‌های شما بهره‌مند شوند.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. حفظ و تقویت مهارت‌های فعلی از طریق آموزش‌های مستمر.<br>
-                ۲. انتقال دانش و مهارت‌های خود به همکاران دیگر.<br>
-                ۳. شرکت در سمینارها و کارگاه‌های تخصصی برای به‌روز نگه داشتن توانمندی‌ها.<br>
-                ۴. پذیرش وظایف جدید و چالش‌برانگیز برای افزایش تجربه و شایستگی.<br>
-                ۵. ایجاد فرصت‌های یادگیری در محیط کار برای خود و دیگران.
-            </div>
-        </div>
-    </li>
-
-    <!-- سطح عالی شایستگی -->
-    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10284#;">
-        <strong>«عالی»<br></strong>
-        شما در بالاترین سطح شایستگی قرار دارید؛ دارای مهارت‌های حرفه‌ای بسیار بالا و توانایی اجرای وظایف پیچیده هستید. این ویژگی باعث شده تا شما در محیط کار به عنوان یک فرد متخصص و کارآمد شناخته شوید و نقش مهمی در موفقیت‌های سازمان ایفا کنید.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. پذیرش نقش‌های رهبری و مدیریت پروژه‌های بزرگ.<br>
-                ۲. توسعه مهارت‌های نوآورانه و خلاقانه برای پیشبرد پروژه‌های جدید.<br>
-                ۳. انتقال دانش و تخصص خود به نسل‌های جدید یا همکاران جدید.<br>
-                ۴. شرکت در کنفرانس‌ها و سمینارهای بین‌المللی برای به اشتراک‌گذاری تجربیات.<br>
-                ۵. ایجاد برنامه‌های تخصصی برای ارتقای مستمر مهارت‌های حرفه‌ای.
-            </div>
-        </div>
-    </li>
-</ul>
-
-        
-
-
-        
-                                              
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-
-
-            <div class="report-section-title">جمع‌بندی</div>
-            <div class="report-paragraph">
-            <p>این گزارش ارزیابی مهارت‌های شما شامل تحلیل تعهد، نیرومندی، ظرفیت تحلیلی، بیتابی روانی، استقلال و سازش است. این بررسی نقاط قوت و زمینه‌های نیازمند بهبود شما را نشان داده و توصیه‌های کاربردی برای توسعه مهارت‌های شما ارائه می‌دهد.</p>
-            
-            <p><b>نقاط قوت: </b>شما در برخی از حوزه‌ها عملکرد برجسته‌ای دارید که نشان‌دهنده توانایی‌های قوی در مدیریت مسئولیت‌ها، انرژی بالا، تحلیل مسائل پیچیده، آرامش روانی، خودکفایی و تطبیق‌پذیری است. به عنوان مثال، در حوزه‌های "تعهد" و "ظرفیت تحلیلی"، شما توانایی زیادی در مدیریت وظایف و تحلیل مسائل نشان داده‌اید که می‌تواند به پیشرفت حرفه‌ای و رشد فردی شما کمک کند.</p>
-            
-            <p><b>حوزه‌های نیازمند بهبود:</b> در برخی از بخش‌ها نیاز به تمرکز بیشتر وجود دارد. به عنوان مثال، در حوزه‌های "بیتابی روانی" و "استقلال"، شما می‌توانید با تمرین‌های منظم و فعالیت‌های هدفمند مانند تکنیک‌های مدیریت استرس و برنامه‌ریزی منظم مهارت‌های خود را بهبود بخشید. همچنین، افزایش تعاملات اجتماعی و تمرین مهارت‌های تصمیم‌گیری مستقل می‌تواند تأثیر مثبتی بر عملکرد شما داشته باشد.</p>
-            
-            <p><b>گام‌های بعدی:</b> برای تقویت مهارت‌های خود، پیشنهاد می‌شود که به توصیه‌های ارائه‌شده در هر بخش توجه ویژه‌ای کنید و در صورت نیاز از خدمات مشاوره تخصصی استفاده نمایید. همچنین، ارزیابی منظم و پیگیری مداوم می‌تواند به توسعه پایدار و موفقیت شما در تمامی ابعاد زندگی کمک کند.</p>
-            </div>
-        
-        <footer class="report-footer-custom">
-            <div class="report-footer-content">
-                <img src="../panel/file?type=picture&amp;v=3&amp;mode=filemanager&amp;file=%7eDB3gfQUls%2bt2iiMYKbsRAxrtFhcHKUIUUo7pPtO17bHCzNxwU4zNh3UVor6QMtl7Y6EWX8dD0PSvzZOYkRrXlfejPn4lNTj6" class="report-footer-img" alt="لوگو">
-            </div>
-            <p class="report-footer-paragraph">مؤسّسه تعاملی هیجان اندیشه | تماس: 02188174100 | ایمیل: info@eot.ir</p>
-            <p class="report-footer-paragraph yellow-text">© ۱۴۰۳ تمامی حقوق محفوظ است.</p>
-            <ul class="report-footer-menu">
-                <li><a href="https://www.eot.ir/" class="report-footer-menu-link">صفحه اصلی</a></li>
-                <li><a href="https://www.eot.ir/contact" class="report-footer-menu-link">تماس با ما</a></li>
-                <li><a href="https://www.eot.ir/about" class="report-footer-menu-link">درباره ما</a></li>
-            </ul>
-            <address class="report-footer-address">تهران، سهروردی، خرمشهر، عربعلی، کوچه ششم، شماره ۴۴</address>
-        </footer>
-    </div>
+    <!-- Scripts -->
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/header-footer-inject.js"></script>
+</body>
+</html>
