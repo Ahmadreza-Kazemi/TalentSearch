@@ -1,0 +1,1080 @@
+<div class="ravesh-editor-html" style="direction:rtl">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>گزارش تحلیل فهرست تشخیص تعاملی شخصیت</title>
+    <style>
+        @font-face {
+            font-family: 'IRANSansWeb';
+            src: url('fonts/IRANSansWeb.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'BTitrBold';
+            src: url('fonts/BTitrBold.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'BKoodakBold';
+            src: url('fonts/BKoodakBold.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'BHoma';
+            src: url('fonts/BHoma.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'BYekan';
+            src: url('fonts/BYekan.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'Tahoma';
+            src: url('fonts/Tahoma.woff2') format('woff2');
+        }
+        .report-container {
+            font-family: 'BYekan', sans-serif;
+            direction: rtl;
+            line-height: 1.8;
+            background-color: #F5F5F5;
+            color: #333333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            max-width: 800px;
+            width: 100%;
+            margin: auto;
+            background-color: #F5F5F5;
+            padding: 40px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+        }
+        .report-header-custom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #0DA3B8;
+            border-radius: 20px 20px 0 0;
+        }
+        .report-header-inner {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .report-header-img {
+            width: 40px;
+            height: 40px;
+        }
+        .report-header-title {
+            margin: 0;
+            font-size: 1.8em;
+            color: #ffffff;
+            font-family: 'IRANSansWeb', sans-serif;
+            font-weight: normal;
+        }
+        .report-header-date {
+            color: #ffffff;
+            font-size: 1em;
+        }
+        .report-title {
+            text-align: center;
+            color: #0DA3B8;
+            font-family: 'IRANSansWeb', sans-serif;
+            font-weight: bold;
+            font-size: 32px;
+            margin-bottom: 25px;
+        }
+        .report-info-container, .report-score-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .report-info-item, .report-score-item {
+            background-color: #F8F9FA;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            font-size: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'BYekan', sans-serif;
+            flex: 1;
+            min-width: 300px;
+            margin-right: 10px; /* Add space between columns */
+        }
+        .report-info-item strong, .report-score-item strong {
+            color: #0DA3B8;
+            font-family: 'IRANSansWeb', sans-serif;
+        }
+        .report-info-data, .report-score-data {
+            font-family: 'IRANSansWeb', sans-serif;
+        }
+        .report-section-title {
+            font-size: 22px;
+            color: #CC3333;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #CC3333;
+            font-family: 'IRANSansWeb', sans-serif;
+            font-weight: bold;
+            text-align: center;
+        }
+        .report-component-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 22px;
+            color: #DBCF93;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #DBCF93;
+            font-family: 'IRANSansWeb', sans-serif;
+        }
+        .report-paragraph {
+            background-color: #E0F7FA;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .report-list {
+            list-style-type: none;
+            padding: 0;
+            font-size: 16px;
+        }
+        .report-list-item {
+            background: #F8F9FA;
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+        }
+        .report-list-item strong {
+            font-size: 18px;
+            color: #0DA3B8;
+            margin-bottom: 5px;
+        }
+        .report-badge {
+            display: inline-block;
+            padding: 8px 15px;
+            font-size: 14px;
+            color: #FFFFFF;
+            background-color: #4A9B8C;
+            border-radius: 10px;
+        }
+        .report-recommendation {
+            background-color: #EAEAEA;
+            padding: 20px;
+            margin-top: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .report-recommendation-title {
+            font-weight: bold;
+            color: #CC3333;
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
+        .report-recommendation-text {
+            margin-bottom: 5px;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+        .report-footer-custom {
+            background-color: #F5F5F5;
+            color: #333333;
+            padding: 20px;
+            text-align: center;
+            font-family: 'IRANSansWeb', sans-serif;
+            border-top: 1px solid #E0E0E0;
+            font-size: 16px; /* Increased font size */
+        }
+        .report-footer-content {
+            margin-bottom: 20px;
+        }
+        .report-footer-img {
+            width: 80px;
+            height: 80px;
+        }
+        .report-footer-paragraph {
+            margin: 5px 0;
+        }
+        .report-footer-paragraph.yellow-text {
+            color: #DBCF93;
+        }
+        .report-footer-menu {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 10px 0;
+        }
+        .report-footer-menu-link {
+            color: #0DA3B8;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .report-footer-menu-link:hover {
+            color: #007B8A;
+        }
+        .report-footer-address {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .report-summary-container {
+            max-width: 800px;
+            margin: auto;
+            background-color: #FFFFFF;
+            padding: 40px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+            border-radius: 10px;
+        }
+        .report-summary-heading {
+            text-align: center;
+            color: #0DA3B8;
+            font-family: 'IRANSansWeb', sans-serif;
+            font-weight: bold;
+            font-size: 32px;
+            margin-bottom: 25px;
+        }
+        .report-summary-content {
+            color: #333333;
+            font-family: 'IRANSansWeb', sans-serif;
+            line-height: 1.8;
+        }
+        .report-conditional-display {
+            display: block;
+        }
+        .report-conditional-display[style*="--score-rate1: 1"] {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #FF9999; /* Moderate */
+        }
+        .report-conditional-display[style*="--score-rate2: 2"] {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #FFD580; /* Good */
+        }
+        .report-conditional-display[style*="--score-rate3: 3"] {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #99FF99; /* Excellent */
+        }
+    </style>
+    <div class="report-report-container">
+        <header class="report-header-custom">
+            <div class="report-header-inner">
+                <img src="../panel/file?type=picture&amp;v=3&amp;mode=filemanager&amp;file=%7eDB3gfQUls%2bt2iiMYKbsRAxrtFhcHKUIUUo7pPtO17bHCzNxwU4zNh3UVor6QMtl7Y6EWX8dD0PSvzZOYkRrXlfejPn4lNTj6" class="report-header-img" alt="لوگو">
+                <h1 class="report-header-title">گزارش تحلیل فهرست تشخیص تعاملی شخصیت</h1>
+            </div>
+            <div class="report-header-date">تاریخ اجرا: #primary_createDate#</div>
+        </header>
+        
+        <div class="report-section-title">فهرست تشخیص تعاملی شخصیت</div>
+        <p class="report-paragraph">
+            این ارزیابی به منظور تحلیل و بررسی ویژگی‌های شخصیتی فرد در حوزه‌های مختلف از جمله تعهد، نیرومندی، ظرفیت تحلیلی، بیتابی روانی، استقلال و سازش انجام شده است. هدف از این ارزیابی شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد.
+        </p><p></p>
+               
+        <div class="report-section-title">اطلاعات فردی</div>
+        <div class="report-info-container">
+            <div class="report-info-item"><strong>نام:</strong> <span class="report-info-data">#field_349#</span></div>
+            <div class="report-info-item"><strong>نام خانوادگی:</strong> <span class="report-info-data">#field_1712#</span></div>
+            <div class="report-info-item"><strong>موبایل:</strong> <span class="report-info-data">#field_350#</span></div>
+            <div class="report-info-item"><strong>ایمیل:</strong> <span class="report-info-data">#field_351#</span></div></div>
+
+        </div>
+        <div class="report-section-title">نتیجه</div>
+        <div class="report-score-container">
+            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10191#;"><strong>بیتابی روانی:</strong> <span class="report-badge">#field_1105#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10191#;"><strong>بیتابی روانی:</strong> <span class="report-badge">#field_1105#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10191#;"><strong>بیتابی روانی:</strong> <span class="report-badge">#field_1105#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10192#;"><strong>بدن لرزی:</strong> <span class="report-badge">#field_1106#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10192#;"><strong>بدن لرزی:</strong> <span class="report-badge">#field_1106#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10192#;"><strong>بدن لرزی:</strong> <span class="report-badge">#field_1106#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10193#;"><strong>پیگیری:</strong> <span class="report-badge">#field_1107#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10193#;"><strong>پیگیری:</strong> <span class="report-badge">#field_1107#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10193#;"><strong>پیگیری:</strong> <span class="report-badge">#field_1107#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10194#;"><strong>تجدّد:</strong> <span class="report-badge">#field_1108#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10194#;"><strong>تجدّد:</strong> <span class="report-badge">#field_1108#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10194#;"><strong>تجدّد:</strong> <span class="report-badge">#field_1108#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10195#;"><strong>تجربه کنجکاوانه:</strong> <span class="report-badge">#field_1109#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10195#;"><strong>تجربه کنجکاوانه:</strong> <span class="report-badge">#field_1109#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10195#;"><strong>تجربه کنجکاوانه:</strong> <span class="report-badge">#field_1109#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10196#;"><strong>تشنگی گرسنگی:</strong> <span class="report-badge">#field_1110#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10196#;"><strong>تشنگی گرسنگی:</strong> <span class="report-badge">#field_1110#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10196#;"><strong>تشنگی گرسنگی:</strong> <span class="report-badge">#field_1110#</span></div>
+
+        </div>
+        <div class="report-section-title">تفسیر</div>
+        <p class="report-paragraph">
+            این بخش به تحلیل و تفسیر نتایج ارزیابی روان‌شناختی فرد می‌پردازد. تحلیل روان‌شناختی شامل بررسی ویژگی‌های شخصیتی مختلف است. هدف از این تحلیل شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد. نتایج این تحلیل می‌تواند به فرد کمک کند تا با شناخت بهتر از خود، برنامه‌های توسعه فردی و حرفه‌ای موثرتری را دنبال کند.
+        </p>
+<!-- بیتابی روانی (احتمالاً عامل منفی) -->
+<div class="report-component-title">بیتابی روانی
+    <span class="report-badge report-score-data">#field_1105#<br></span>
+</div>
+<p class="report-paragraph">
+    بیتابی روانی اشاره به احساس خستگی ذهنی، فرسودگی تدریجی و درگیری شدید فکری دارد که می‌تواند فرد را نسبت به حل مسائل روزمره یا تصمیم‌گیری‌های مهم نگران و مضطرب کند. هرچه امتیاز این عامل بالاتر باشد، نشان‌دهنده شدت بیشتر بی‌قراری و اضطراب ذهنی است.
+</p>
+<ul class="report-list">
+
+    <!-- سطح پایین بیتابی روانی (وضعیت مطلوب‌تر) -->
+    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10191#;">
+        <strong>«سطح پایین»<br></strong>
+        شما به‌ندرت دچار خستگی و درگیری ذهنی شدید می‌شوید و در اکثر مواقع می‌توانید با رویکردی منطقی و آرام مسائل را حل کنید. گفت‌وگوی ذهنی منفی چندان در شما ریشه ندوانده و این نشانگر آرامش نسبی شماست.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. تداوم در استفاده از روش‌های آرام‌سازی (مانند ذهن‌آگاهی یا تنفس عمیق).<br>
+                ۲. مرور و تشویق موفقیت‌های کوچک روزمره برای جلوگیری از شکل‌گیری اضطراب‌های ناگهانی.<br>
+                ۳. تنظیم سبک زندگی سالم (خواب کافی، تغذیه مناسب، فعالیت بدنی) برای پایداری روحیه مثبت.<br>
+                ۴. در صورت بروز کمترین احساس دل‌شورگی یا ناامنی روانی، گفتگو با دوستان یا متخصص را فراموش نکنید.<br>
+                ۵. مشارکت در فعالیت‌های تفریحی و گروهی برای حفظ نشاط ذهنی و اجتماعی.
+            </div>
+        </div>
+    </li>
+
+    <!-- سطح متوسط بیتابی روانی -->
+    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10191#;">
+        <strong>«سطح متوسط»<br></strong>
+        شما گاهی احساس خستگی یا فرسودگی ذهنی می‌کنید و ممکن است در حل مسائل مهم شک و تردید داشته باشید. بااین‌وجود، توان بازگشت به آرامش نسبی را دارید و می‌توانید با مدیریت مناسب، از اضطراب طولانی‌مدت جلوگیری کنید.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. تعریف اهداف کوتاه‌مدت برای دستیابی به حس موفقیت و کاهش ناامیدی.<br>
+                ۲. تمرین روزانه تکنیک‌های ریلکسیشن (مدیتیشن، موسیقی آرام، یا نوشتن افکار منفی).<br>
+                ۳. شناسایی عوامل استرس‌زا و گفتگوی سازنده با اطرافیان یا متخصص برای پیشگیری از انباشت استرس.<br>
+                ۴. ثبت پیشرفت و دستاوردهای کوچک برای تقویت اعتمادبه‌نفس و کاهش سردرگمی ذهنی.<br>
+                ۵. در صورت تداوم افکار منفی یا کمبود انرژی روانی، مشاوره با روان‌شناس می‌تواند بسیار مفید باشد.
+            </div>
+        </div>
+    </li>
+
+    <!-- سطح بالا بیتابی روانی (وضعیت نامطلوب‌تر) -->
+    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10191#;">
+        <strong>«سطح بالا»<br></strong>
+        شما در وضعیت قابل توجهی از بیتابی روانی قرار دارید؛ ممکن است پیوسته احساس خستگی ذهنی یا اضطراب شدید کنید و گفت‌وگوی ذهنی فراوانی داشته باشید. این وضعیت می‌تواند مانع از تصمیم‌گیری صحیح و احساس آرامش روزمره شود.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. مراجعه به متخصصان سلامت روان برای ارزیابی عمیق‌تر و دریافت تکنیک‌های تخصصی کنترل اضطراب و شک و تردید.<br>
+                ۲. تمرین مستمر روش‌های آرام‌سازی (مانند ریلکسیشن پیشرونده، یوگا یا مشاوره گروهی).<br>
+                ۳. اولویت‌بندی وظایف و کاهش حجم کاری یا درسی در صورت امکان، برای جلوگیری از فرسودگی روانی.<br>
+                ۴. گفت‌وگوی مستقیم با یک فرد معتمد در مورد افکار منفی و دستاوردهای احتمالی برای مقابله با ناامیدی.<br>
+                ۵. برنامه‌ریزی هفتگی تفریح و استراحت، تا ذهن فرصتی برای بازسازی و کاهش تنش داشته باشد.
+            </div>
+        </div>
+    </li>
+
+</ul>
+
+<!-- بدن لرزی (احتمالاً عامل منفی) -->
+<div class="report-component-title">بدن لرزی
+    <span class="report-badge report-score-data">#field_1106#<br></span>
+</div>
+<p class="report-paragraph">
+    بدن لرزی به معنای تجربه فیزیکی لرزش در هنگام مواجهه با مسائل ذهنی پیچیده یا هنگام فرو رفتن عمیق در فکر است. این لرزش‌ها می‌تواند ناشی از استرس، هیجان یا فشار روانی باشد. هرچه میزان بدن لرزی بالاتر باشد، نشان‌دهنده حساسیت بدنی بیشتر در واکنش به چالش‌های ذهنی است.
+</p>
+<ul class="report-list">
+    <!-- سطح پایین بدن لرزی (وضعیت مطلوب‌تر) -->
+    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10192#;">
+        <strong>«سطح پایین»<br></strong>
+        شما به‌ندرت با لرزش بدنی در مواجهه با مسائل ذهنی مواجه می‌شوید. این به آن معناست که معمولاً فشارهای روانی تأثیر فیزیکی شدید بر شما ندارند و می‌توانید با آرامش بیشتری مسائل را بررسی کنید.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. حفظ این رویکرد مثبت با به‌کارگیری روش‌های مدیریت استرس و ذهنت‌آگاهی.<br>
+                ۲. ارزیابی منظم سلامت جسمی (تغذیه، خواب کافی، ورزش منظم) برای حفظ این ثبات فیزیکی.<br>
+                ۳. توجه به نشانه‌های ابتدایی استرس (مثل تپش قلب یا انقباض عضلات) و واکنش سریع برای جلوگیری از تشدید آن‌ها.<br>
+                ۴. حمایت از دوستان یا اعضای خانواده‌ای که در شرایط پر استرس هستند؛ تجربه آرامش شما می‌تواند الهام‌بخش آن‌ها باشد.<br>
+                ۵. در صورت ایجاد موقعیت تنش‌زا، حفظ روند آرامش فعلی از طریق تنفس عمیق و مکث ذهنی.
+            </div>
+        </div>
+    </li>
+
+    <!-- سطح متوسط بدن لرزی -->
+    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10192#;">
+        <strong>«متوسط»<br></strong>
+        شما گاه با لرزش خفیف یا متوسط در بدن هنگام تفکر عمیق یا رویارویی با مسائل پیچیده روبه‌رو می‌شوید. این حالت نشان می‌دهد که فشار ذهنی تأثیر جسمی هم بر شما دارد، اما هنوز توانایی مدیریت آن را تا حدی دارید.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. تمرین تکنیک‌های آرام‌سازی (مثل ریلکسیشن عضلانی یا ماساژ ملایم) پس از جلسات فکری شدید.<br>
+                ۲. تقسیم مسئله یا فعالیت ذهنی به بخش‌های کوچک‌تر، تا از فشار ناگهانی بر ذهن و بدن جلوگیری شود.<br>
+                ۳. گفت‌وگو با یک مشاور یا دوست آگاه در مواقع بحرانی برای کاهش اضطراب ناشی از افکار پیچیده.<br>
+                ۴. ادغام روش‌های آزادسازی استرس (موسیقی، ورزش سبک، پیاده‌روی در طبیعت) در برنامه روزانه.<br>
+                ۵. پیگیری موارد فیزیکی نگران‌کننده (مثل لرزش طولانی یا شدید) با متخصص در صورت تداوم.
+            </div>
+        </div>
+    </li>
+
+    <!-- سطح بالا بدن لرزی (وضعیت نامطلوب‌تر) -->
+    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10192#;">
+        <strong>«سطح بالا»<br></strong>
+        شما با لرزش قابل توجه بدن هنگام تفکر یا مواجهه با مسائل دشوار روبه‌رو می‌شوید. این حالت نشانه حساسیت بدنی بالا در برابر استرس است و می‌تواند تمرکز شما را تحت تأثیر قرار دهد.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. مراجعه به متخصص سلامت روان یا پزشک برای بررسی دقیق‌تر علل لرزش بدن و ارائه راهکارهای تخصصی.<br>
+                ۲. استفاده از روش‌های تنفس عمیق و آرام‌سازی فوری (مثلاً شمارش معکوس) به محض احساس لرزش اولیه.<br>
+                ۳. مدیریت حجم کاری یا درسی و پرهیز از درگیر شدن ناگهانی با موضوعات بسیار پیچیده بدون آمادگی مقدماتی.<br>
+                ۴. برنامه‌ریزی برای استراحت‌های کوتاه در حین کارهای فکری طولانی تا از انباشت تنش جلوگیری شود.<br>
+                ۵. تقویت مهارت‌های ذهن‌آگاهی و آرام‌سازی عضلانی، جهت کاهش حساسیت بدنی و بازگشت سریع‌تر به حالت پایدار.
+            </div>
+        </div>
+    </li>
+
+</ul>
+
+<!-- پیگیری (فاکتور مثبت) -->
+<div class="report-component-title">پیگیری 
+    <span class="report-badge report-score-data">#field_1107#<br></span>
+</div>
+<p class="report-paragraph">
+    پیگیری بیانگر روحیه جست‌وجوگر و پژوهش‌محور در فرد است؛ تمایلی که او را وا می‌دارد تا هنگام روبه‌رو شدن با مسئله‌ای مبهم، تا روشن شدن حقیقت و راه‌حل نهایی دست از تلاش نکشد. این ویژگی، اغلب به موفقیت در فعالیت‌های تحصیلی، تحقیقاتی و حتی حل مسائل روزمره می‌انجامد.
+</p>
+<ul class="report-list">
+
+    <!-- سطح متوسط پیگیری -->
+    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10193#;">
+        <strong>«متوسط»<br></strong>
+        شما معمولاً برای یافتن حقیقت یا حل مسائل وقت می‌گذارید، اما ممکن است گاهی با وجود نرسیدن به نتیجه قطعی، از ادامه دادن دست بکشید. این سطح از پیگیری قابل قبول است اما فضا برای توسعه بیشتر وجود دارد.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. تقسیم مسائل پیچیده به پرسش‌های کوچک‌تر، تا بتوانید با هر پاسخ، انگیزه بیشتری برای ادامه به دست آورید.<br>
+                ۲. مطالعه منابع کمکی یا گفتگو با افرادی که دیدگاه جامع‌تری دارند، پیش از رها کردن موضوع.<br>
+                ۳. شرکت در کارگاه‌های پژوهشی یا گروه‌های تحقیقاتی برای آشنایی با روش‌های حرفه‌ای‌تر دنبال کردن مسائل.<br>
+                ۴. ارزیابی مستمر پیشرفت خود؛ اگر حس رکود یا بن‌بست داشتید، شناسایی عواملی که باعث آن می‌شوند، مهم است.<br>
+                ۵. تعیین حد و مرز زمانی برای هر پروژه؛ تلاش بیش‌ازحد بدون راهکار جدید، ممکن است فرسودگی ایجاد کند.
+            </div>
+        </div>
+    </li>
+
+    <!-- سطح خوب پیگیری -->
+    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10193#;">
+        <strong>«خوب»<br></strong>
+        شما اغلب تا زمانی که به روشن‌شدن مسأله یا کشف حقیقت دست نیابید، از پا نمی‌نشینید. این رویکرد تحقیقاتی بیانگر علاقه شما به یادگیری و درک عمیق‌تر موضوعات است و می‌تواند در حوزه‌های تحصیلی و کاری موفقیت‌آفرین باشد.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. تداوم در پژوهش و یادگیری؛ به‌ویژه در موضوعات پیچیده‌تر که نیازمند پشتکار هستند.<br>
+                ۲. استفاده از تکنیک‌های حرفه‌ای تحقیق (مانند مستندسازی، طراحی پرسشنامه یا مصاحبه) برای ساختارمندکردن فرایند جست‌وجو.<br>
+                ۳. مشارکت در پروژه‌های مشترک؛ همفکری با دیگر افراد علاقه‌مند به پژوهش، ایده‌های جدیدی به شما خواهد داد.<br>
+                ۴. حفظ و تقویت انگیزه با مرور دستاوردهای قبلی یا ایجاد فرصت‌هایی برای ارائه نتایج مطالعه یا پژوهش به دیگران.<br>
+                ۵. پرهیز از کمال‌گرایی افراطی؛ گاه شناسایی و پذیرش نقطه توقف منطقاً ضروری است.
+            </div>
+        </div>
+    </li>
+
+    <!-- سطح عالی پیگیری -->
+    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10193#;">
+        <strong>«عالی»<br></strong>
+        شما در بالاترین سطح پیگیری قرار دارید؛ تا پاسخ قطعی و شفاف یک مسأله را نیابید، آن را رها نمی‌کنید و با اشتیاقی فراوان بر روی دشوارترین موضوعات تمرکز می‌کنید. این پشتکار ویژه، می‌تواند شما را در زمینه‌های تحقیقاتی، علمی و حتی شغلی بسیار متمایز سازد.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. پذیرش نقش‌های کلیدی در پروژه‌های تحقیقاتی یا گروه‌های پژوهشی که نیازمند روحیه جست‌وجوگرانه شما هستند.<br>
+                ۲. به کارگیری روش‌های پیشرفته پژوهش (تحلیل داده، مدل‌سازی، متاآنالیز) برای پاسخ‌دهی به مسائل پیچیده‌تر.<br>
+                ۳. اشتراک‌گذاری تجارب با دیگران از طریق آموزش، مقاله‌نویسی یا کارگاه‌های تخصصی تا دیگران نیز از روند پیگیری شما بهره‌مند شوند.<br>
+                ۴. دقت در مدیریت زمان و انرژی؛ پشتکار فراوان بدون استراحت کافی ممکن است منجر به خستگی روانی شود.<br>
+                ۵. انتخاب اهداف چالش‌برانگیز و بلندمدت، چراکه سطح بالای پیگیری شما را در تحقق ایده‌های بزرگ موفق می‌کند.
+            </div>
+        </div>
+    </li>
+
+</ul>
+
+<!-- تجدّد (فاکتور مثبت) -->
+<div class="report-component-title">تجدّد 
+    <span class="report-badge report-score-data">#field_1108#<br></span>
+</div>
+<p class="report-paragraph">
+    تجدّد به معنای تمایل به دنبال کردن تازگی، نوآوری و ایجاد کارهای جدید است. افرادی که نمره بالایی در تجدّد دارند، اغلب ایده‌های خلاقانه را ترجیح می‌دهند و از یکنواختی و تکرار دوری می‌کنند. این ویژگی می‌تواند محرک ارزشمندی برای رشد شخصی و خلاقیت باشد.
+</p>
+<ul class="report-list">
+
+    <!-- سطح متوسط تجدّد -->
+    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10194#;">
+        <strong>«متوسط»<br></strong>
+        شما در برخی زمینه‌ها به ایده‌ها یا روش‌های نو علاقه‌مند هستید، اما گاهی هم به سنت‌ها و روش‌های قدیمی احساس وابستگی می‌کنید. این حد از تجدّد نشان می‌دهد هنوز میان تازگی و امنیت روش‌های گذشته در حال نوسان هستید.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. شناسایی حوزه‌هایی که تغییر در آن‌ها برای شما ساده‌تر است (مثلاً فناوری جدید، روش‌های یادگیری متنوع).<br>
+                ۲. گفتگو با افراد خلاق و نوآور برای آشنایی با تجربیات و چالش‌های آن‌ها در اجرای ایده‌های جدید.<br>
+                ۳. افزودن اندک‌اندک تغییرات کوچک و قابل کنترل در سبک زندگی یا کار، تا به فرایند نوگرایی عادت کنید.<br>
+                ۴. مقایسه نتایج روش‌های جدید با قدیمی، برای ارزیابی سودمندی و تشویق خود به حفظ روند نوگرایی.<br>
+                ۵. شرکت در رویدادهای مرتبط با ایده‌های نو (نمایشگاه‌های استارت‌آپی یا جشنواره‌های خلاقیت) برای تقویت انگیزه.
+            </div>
+        </div>
+    </li>
+
+    <!-- سطح خوب تجدّد -->
+    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10194#;">
+        <strong>«خوب»<br></strong>
+        شما علاقه‌مند به تغییر و تازه‌سازی هستید و معمولاً با اشتیاق به سراغ ایده‌های نو می‌روید. این رویکرد نشانه پذیرش تحول و آمادگی برای مواجهه با شیوه‌های نو در زندگی شخصی و حرفه‌ای است.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. حفظ و تقویت رویکرد نوگرایی با دنبال کردن اخبار و مجلات تخصصی در زمینه‌های نوین (فناوری، هنر، سبک زندگی).<br>
+                ۲. ارائه پیشنهادهای خلاقانه در جمع‌های کاری یا تحصیلی، و تشویق دیگران به مشارکت در تغییرات مثبت.<br>
+                ۳. مدیریت ریسک‌های مرتبط با نوآوری؛ ارزیابی‌های ابتدایی و آزمایشی قبل از اجرای گسترده ایده‌ها.<br>
+                ۴. بهره‌گیری از شبکه‌های اجتماعی تخصصی و گروه‌های آنلاین برای تبادل نظر و الهام‌گیری از تجربیات دیگران.<br>
+                ۵. پیاده‌سازی طرح‌های جدید در مقیاس کوچک ابتدا، برای اطمینان از کارایی و پذیرش آن، سپس گسترش.
+            </div>
+        </div>
+    </li>
+
+    <!-- سطح عالی تجدّد -->
+    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10194#;">
+        <strong>«عالی»<br></strong>
+        شما دائماً به دنبال تازگی و انجام کارهای جدید هستید. از تکرار بیزارید و همواره در تلاشید تا خلاقیت را در جنبه‌های مختلف زندگی بگنجانید. این ویژگی می‌تواند شما را در جایگاه یک فرد پیشرو و نوآور قرار دهد.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. نقش راهبری یا مدیریت در پروژه‌های خلاقانه و نوآورانه را برعهده بگیرید؛ شما توان رهبری تغییر را دارید.<br>
+                ۲. ایجاد فرهنگ نوگرایی در محیط کار یا تحصیل با برگزاری نشست‌های ایده‌پردازی و تشویق دیگران به فکر جدید.<br>
+                ۳. کنترل تعادل میان هیجان ناشی از نوآوری و شرایط محیطی؛ برخی ایده‌ها ممکن است نیازمند زمان بیشتری برای پذیرش باشند.<br>
+                ۴. حفظ خودانگیختگی با یادگیری‌های مستمر، شرکت در کنفرانس‌ها و رویدادهای فناورانه یا هنری.<br>
+                ۵. مدیریت احتمال فرسودگی روانی به دلیل درگیری مداوم با تغییرات؛ زمانی را هم به استراحت و بازنگری ایده‌ها اختصاص دهید.
+            </div>
+        </div>
+    </li>
+
+</ul>
+
+<!-- تجربه کنجکاوانه (فاکتور مثبت) -->
+<div class="report-component-title">تجربه کنجکاوانه 
+    <span class="report-badge report-score-data">#field_1109#<br></span>
+</div>
+<p class="report-paragraph">
+    تجربه کنجکاوانه نشان‌دهنده تمایل فرد به درگیر شدن عمیق با مسائلی است که او را جذب می‌کنند؛ اینکه صرفاً دانستن تئوری‌ها کافی نباشد و بخواهد حتماً به شکل عملی آن را بیازماید. البته این سطح از کنجکاوی ممکن است گاه منجر به ریسک‌ها یا دردسرهایی شود، اما در صورت مدیریت مناسب، منبعی پرقدرت برای یادگیری و خلاقیت است.
+</p>
+<ul class="report-list">
+    <!-- سطح متوسط تجربه کنجکاوانه -->
+    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10195#;">
+        <strong>«متوسط»<br></strong>
+        شما گرایش دارید بخشی از دانسته‌هایتان را عملاً تجربه کنید، اما ممکن است همیشه و در همه موضوعات این تمایل را نداشته باشید. گاهی با مواجهه با خطر یا پیچیدگی، زودتر دست می‌کشید و به دانستن نظری بسنده می‌کنید.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. انتخاب موضوعاتی که امنیت بیشتری دارند یا حداقل ریسک را برای تمرین تجربه عملی.<br>
+                ۲. گفتگو و همفکری با افرادی که در همان حوزه تجربه عملی موفق داشته‌اند، برای الهام و کاهش نگرانی‌ها.<br>
+                ۳. ثبت مشاهدات یا نتایج هر بار آزمایش یا تجربه، برای تحلیل و برنامه‌ریزی بهتر در آینده.<br>
+                ۴. تقسیم پروژه‌های پرریسک به گام‌های کنترل‌شده؛ ابتدا آزمایش‌های ساده‌تر و سپس قدم‌های پیچیده‌تر.<br>
+                ۵. حفظ تعادل میان علاقه به تجربه عملی و ارزیابی منطقی خطرات یا هزینه‌های بالقوه.
+            </div>
+        </div>
+    </li>
+
+    <!-- سطح خوب تجربه کنجکاوانه -->
+    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10195#;">
+        <strong>«خوب»<br></strong>
+        شما اغلب به شکل عملی مباحثی را که می‌آموزید، امتحان می‌کنید و از مواجهه با مشکلات یا پیچیدگی‌های آن ابایی ندارید. این حس کنجکاوی عملی باعث می‌شود در بسیاری از زمینه‌ها بینش عمیق‌تری کسب کنید.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. ادامه ماجراجویی در حوزه‌های جدیدی که هنوز تجربه عملی کافی در آن ندارید؛ این کار یادگیری را غنی می‌کند.<br>
+                ۲. مستندسازی کامل فرایندها و نتایج، تا از خطاهای گذشته درس بگیرید و روش‌هایتان را بهبود بخشید.<br>
+                ۳. تعامل با گروه‌های همفکر یا انجمن‌هایی که افراد علاقه‌مند به تجربه عملی در آن حضور دارند، برای تبادل تجربه.<br>
+                ۴. استفاده از ابزارها و فناوری‌های نوین (مانند آزمایشگاه‌های مجازی یا نرم‌افزارهای شبیه‌سازی) برای کاهش ریسک در مراحل اولیه.<br>
+                ۵. مدیریت اشتیاق و زمان؛ گرایش شدید به تجربه عملی ممکن است گاهی شما را از اولویت‌های دیگر دور کند.
+            </div>
+        </div>
+    </li>
+
+    <!-- سطح عالی تجربه کنجکاوانه -->
+    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10195#;">
+        <strong>«عالی»<br></strong>
+        شما در بالاترین سطح از تجربه کنجکاوانه قرار دارید؛ هر موضوع پیچیده‌ای که یاد می‌گیرید، باید آن را به‌صورت عملی بیازمایید و از تلاش یا خطرات احتمالی نیز ابایی ندارید. این ویژگی به شما امکان می‌دهد تا درک عمیقی از مسائل پیدا کنید و خلاقیت بالایی داشته باشید.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. استفاده از این ویژگی در پروژه‌های تحقیقاتی یا نوآورانه که نیازمند آزمون و خطا و رویکرد تجربی قدرتمند هستند.<br>
+                ۲. تشکیل یا عضویت در گروه‌های تجربه‌محور برای همکاری و تبادل نظر در پروژه‌های عملی بزرگ‌تر.<br>
+                ۳. رعایت نکات ایمنی و ارزیابی ریسک، به‌ویژه زمانی که کنجکاوی شما را به حوزه‌های خطرناک می‌کشاند.<br>
+                ۴. توسعه مهارت‌های مدیریت پروژه برای ساماندهی حجم بالای آزمایش‌ها و ایده‌هایتان.<br>
+                ۵. به اشتراک‌گذاری یافته‌ها و تجارب با دیگران از طریق آموزش یا نوشته‌های تخصصی، تا ارزش عملی رویکردتان بیشتر آشکار شود.
+            </div>
+        </div>
+    </li>
+
+</ul>
+
+<!-- تشنگی گرسنگی (احتمالاً فاکتور خنثی یا نشانه فشار ذهنی) -->
+<div class="report-component-title">تشنگی گرسنگی 
+    <span class="report-badge report-score-data">#field_1110#<br></span>
+</div>
+<p class="report-paragraph">
+    تشنگی گرسنگی در این context به احساس فیزیکی ناشی از فشار ذهنی یا فکری اشاره دارد که ممکن است پس از تفکر طولانی یا عمیق ایجاد شود. برخی افراد پس از فعالیت ذهنی شدید، احساس گرسنگی شدید یا خشکی دهان می‌کنند؛ این نشانه‌ها می‌تواند ناشی از فعالیت بالای سیستم عصبی باشد.
+</p>
+<ul class="report-list">
+    <!-- سطح پایین تشنگی گرسنگی -->
+    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10196#;">
+        <strong>«سطح پایین»<br></strong>
+        شما به‌ندرت پس از فعالیت‌های فکری، دچار احساس تشنگی یا گرسنگی شدید می‌شوید. این امر نشان می‌دهد که ذهنتان در اکثر مواقع بدون فشار افراطی کار می‌کند و فعالیت‌ فکریتان تعادل نسبی دارد.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. حفظ این تعادل با مدیریت مناسب کار فکری و گنجاندن استراحت‌های کوتاه در میان کارها.<br>
+                ۲. پایبندی به رژیم غذایی سالم و منظم؛ هرچند فشار ذهنی زیادی احساس نمی‌کنید، اما تغذیه صحیح همچنان مهم است.<br>
+                ۳. داشتن آب کافی در دسترس هنگام انجام کارهای فکری طولانی، برای اطمینان از پیشگیری از کم‌آبی بدن.<br>
+                ۴. نظارت بر تغییرات احتمالی؛ اگر ناگهان حس تشنگی یا گرسنگی شدید پیداکردید، می‌تواند نشانه افزایش فشار ذهنی باشد.<br>
+                ۵. تداوم ورزش سبک و حرکات کششی برای بهبود جریان خون و اکسیژن‌رسانی به مغز.
+            </div>
+        </div>
+    </li>
+
+    <!-- سطح متوسط تشنگی گرسنگی -->
+    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10196#;">
+        <strong>«متوسط»<br></strong>
+        شما گاهی پس از فعالیت ذهنی یا تفکر عمیق، احساس گرسنگی یا تشنگی قابل توجه دارید. این امر بیانگر آن است که ذهن و بدن شما به هم مرتبط بوده و در هنگام فشار فکری، نیاز به انرژی بیشتری پیدا می‌کنید.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. آماده نگه داشتن خوراکی‌های سالم و سبک (مانند میوه، مغزیجات) برای تأمین سریع انرژی در مواقع نیاز.<br>
+                ۲. نوشیدن منظم آب در طول کارهای ذهنی فشرده؛ کم‌آبی می‌تواند تمرکز را کاهش دهد.<br>
+                ۳. تقسیم کارهای پیچیده به بازه‌های زمانی کوتاه‌تر و استراحت فعال بین آن‌ها برای جلوگیری از افزایش فشار روانی و جسمی.<br>
+                ۴. ثبت میزان و زمان گرسنگی یا تشنگی در طول روز برای بررسی الگوی فشار ذهنی شما.<br>
+                ۵. مشورت با متخصص تغذیه در صورت احساس نیاز به برنامه غذایی خاص جهت تقویت انرژی ذهنی.
+            </div>
+        </div>
+    </li>
+
+    <!-- سطح بالا تشنگی گرسنگی -->
+    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10196#;">
+        <strong>«سطح بالا»<br></strong>
+        شما پس از اندک زمانی فعالیت ذهنی، دچار احساس شدید گرسنگی یا تشنگی می‌شوید. این موضوع نشان می‌دهد فشار ذهنی شما روی بدن نیز تأثیر می‌گذارد و ممکن است تعادل فیزیکی‌تان زودتر بر هم بخورد.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. برنامه‌ریزی برای استراحت‌های منظم و مصرف میان‌وعده‌های سالم در حین کارهای فکری شدید.<br>
+                ۲. ارزیابی دلایل فشار ذهنی بالا؛ ممکن است نیاز به کاهش حجم کار یا برنامه‌ریزی دقیق‌تر داشته باشید.<br>
+                ۳. تنفس عمیق و حرکات کششی کوتاه میان کارها برای مدیریت بهتر استرس ذهنی و جلوگیری از خستگی.<br>
+                ۴. مصرف آب کافی و متعادل؛ نوشیدنی‌های حاوی کافئین را با احتیاط و در حد متعادل استفاده کنید.<br>
+                ۵. در صورت ادامه احساس گرسنگی یا تشنگی مفرط و بروز علائم جسمانی دیگر، مشاوره با پزشک عمومی یا متخصص تغذیه توصیه می‌شود.
+            </div>
+        </div>
+    </li>
+
+</ul>
+<!-- تکاپو -->
+<div class="report-component-title">تکاپو 
+    <span class="report-badge report-score-data">#field_1111#<br></span>
+</div>
+<p class="report-paragraph">
+    تکاپو نشان‌دهنده حس پویایی، بی‌قراری سازنده و میل به فعالیت مداوم است. افرادی که نمره بالایی در این عامل کسب می‌کنند، معمولاً همواره به دنبال انجام کاری جدید هستند و احساس می‌کنند انرژی یا فشاری درونی برای جنب‌وجوش دارند. گاه این ویژگی می‌تواند به چالش‌هایی مثل عدم تمرکز در یک مسیر منجر شود؛ اما در صورت مدیریت صحیح، موتور محرک پیشرفت خواهد بود.
+</p>
+<ul class="report-list">
+
+    <!-- سطح متوسط تکاپو -->
+    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10197#;">
+        <strong>«متوسط»<br></strong>
+        شما گاه احساس می‌کنید باید فعال‌تر باشید و دیگران نیز ممکن است در برخی موارد حس کنند جنب‌وجوش بیشتری در شما وجود دارد. بااین‌حال، این حس همیشه در اوج نیست و در بعضی مقاطع ترجیح می‌دهید کمی آرام‌تر پیش بروید.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. شناسایی زمان‌ها و موقعیت‌هایی که نیاز به تکاپوی بالاتری دارید و مدیریت انرژی در آن بازه‌ها.<br>
+                ۲. تعیین فعالیت‌های جذاب و متنوع برای جلوگیری از خستگی ذهنی و حفظ انگیزه.<br>
+                ۳. تعریف اهداف کوتاه‌مدت برای به کارگیری بهتر حس پویایی و جلوگیری از بی‌قراری بیهوده.<br>
+                ۴. گفتگو با متخصص یا فرد باتجربه در صورت احساس «درجا زدن» یا فقدان جهت مشخص در تکاپو.<br>
+                ۵. ایجاد تعادل میان لحظات استراحت و دوران اوج فعالیت برای پایداری روحیه و کارایی.
+            </div>
+        </div>
+    </li>
+
+    <!-- سطح خوب تکاپو -->
+    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10197#;">
+        <strong>«خوب»<br></strong>
+        شما از تحرک و پویایی نسبی خوبی برخوردارید و دیگران نیز شما را فردی پرتلاش و فعال می‌بینند. این سطح از تکاپو کمک می‌کند تا در موقعیت‌های مختلف به‌سرعت وارد عمل شوید و کارها را پیش ببرید.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. حفظ این انرژی در کنار مدیریت آن برای جلوگیری از پراکنده‌کاری یا خستگی مفرط.<br>
+                ۲. برنامه‌ریزی دقیق روزانه و هفتگی، تا تکاپوی شما در راستای اهداف معنادار قرار گیرد.<br>
+                ۳. مشارکت در کارهای گروهی که نیازمند روحیه بالا و پویایی هستند، برای الهام‌بخشی به دیگران.<br>
+                ۴. تقسیم وظایف چالش‌برانگیز به مراحل کوچک‌تر، تا تمرکز و کیفیت کار حفظ شود.<br>
+                ۵. مطالعه و یادگیری روش‌های مؤثر استراحت و بازیابی انرژی (مثل مدیتیشن یا ورزش) برای تداوم بازدهی.
+            </div>
+        </div>
+    </li>
+
+    <!-- سطح عالی تکاپو -->
+    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10197#;">
+        <strong>«عالی»<br></strong>
+        شما سرشار از انرژی و جنب‌وجوش هستید و همیشه در جست‌وجوی فعالیت‌ها و چالش‌های جدید. دیگران احتمالاً شما را فردی بسیار پرتحرک و بی‌قرار می‌بینند که به‌سرعت وارد پروژه‌ها و ایده‌های تازه می‌شود.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. پذیرش نقش‌های رهبری یا مسئولیت‌های کلیدی که نیازمند مدیریت چندکار (Multitasking) و انگیزه بالاست.<br>
+                ۲. پایش مستمر سطح استرس و اضطراب؛ تکاپوی زیاد ممکن است به فرسودگی روانی منجر شود.<br>
+                ۳. تعریف چشم‌اندازهای بلندمدت برای هدایت مناسب انرژی و اجتناب از ورود به پروژه‌های کم‌اهمیت یا پراکنده.<br>
+                ۴. زمان‌بندی دوره‌های استراحت واقعی (مانند سفرهای کوتاه یا تفریحات منظم) برای پیشگیری از خستگی مفرط.<br>
+                ۵. تشویق اطرافیان به حفظ نشاط از طریق الگوسازی مثبت، ولی با در نظر گرفتن تفاوت‌های فردی در سطح انرژی.
+            </div>
+        </div>
+    </li>
+
+</ul>
+
+<!-- توانش -->
+<div class="report-component-title">توانش 
+    <span class="report-badge report-score-data">#field_1112#<br></span>
+</div>
+<p class="report-paragraph">
+    توانش نشان‌دهنده احساس قدرت ذهنی و مهارتی است که فرد در مواجهه با فعالیت‌های مورد علاقه یا چالش‌های ذهنی دارد. افرادی با توانش بالا، معمولاً در حوزه‌های دلخواهشان حس تسلط و انرژی فراوانی دارند و در مواجهه با مسائل بزرگ، کمتر احساس درماندگی می‌کنند.
+</p>
+<ul class="report-list">
+
+    <!-- سطح متوسط توانش -->
+    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10198#;">
+        <strong>«متوسط»<br></strong>
+        شما در زمینه‌های مورد علاقه خود حس قدرت ذهنی دارید، اما ممکن است در حوزه‌های جدید یا پیچیده زودتر احساس خستگی یا از دست دادن تسلط کنید. این سطح نشان می‌دهد قابلیت رشد چشمگیری دارید.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. کشف زمینه‌های جدید برای افزایش دامنه مهارت و اعتمادبه‌نفس شما.<br>
+                ۲. تمرین منظم در حوزه‌های مورد علاقه، تا توانش ذهنی و عملی شما پایدار بماند.<br>
+                ۳. در صورت احساس ضعف در حوزه‌های تازه، استفاده از راهنما یا منابع آموزشی برای یادگیری سریع‌تر.<br>
+                ۴. نوشتن اهداف مشخص و قابل اندازه‌گیری تا میزان پیشرفت در حوزه‌های مختلف عیان شود.<br>
+                ۵. مشارکت در فعالیت‌های گروهی یا پروژه‌هایی که زمینه تقویت مهارت‌ها را فراهم می‌کنند.
+            </div>
+        </div>
+    </li>
+
+    <!-- سطح خوب توانش -->
+    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10198#;">
+        <strong>«خوب»<br></strong>
+        شما اغلب هنگام کار روی موضوعات مورد علاقه خود احساس نیرومندی و تسلط دارید. این حس توانش، منجر به بروز خلاقیت و کارآمدی در فعالیت‌های روزمره می‌شود و باعث پیشرفت پایدار می‌گردد.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. حفظ روحیه بالای توانش با دنبال کردن پروژه‌های جدید و چالش‌برانگیز برای رشد مداوم.<br>
+                ۲. ارتقای دانش و مهارت تخصصی از طریق کارگاه‌ها، دوره‌های آموزشی یا مطالعه منابع عمیق.<br>
+                ۳. تبدیل حس تسلط به منبع الهام برای دیگران؛ آموزش یا راهنمایی کسانی که نیازمند توانمندی شما هستند.<br>
+                ۴. پرهیز از ترس از مواجهه با حوزه‌های ناآشنا؛ توانش کنونی شما می‌تواند چراغ راهی برای یادگیری مهارت‌های جدید باشد.<br>
+                ۵. حفظ توازن میان سرگرمی و کار؛ تبدیل اوقات فراغت به زمانی برای رشد مهارت‌های جذاب‌تر.
+            </div>
+        </div>
+    </li>
+
+    <!-- سطح عالی توانش -->
+    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10198#;">
+        <strong>«عالی»<br></strong>
+        شما در حوزه‌های مورد علاقه خود حس توانایی و تسلط بسیار بالایی دارید و مسائل بزرگ نیز مانعی جدی برایتان نیستند. این درجه از توانش می‌تواند شما را به سوی موفقیت‌های چشمگیر در مسیر کاری یا تحصیلی هدایت کند.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. پذیرش پروژه‌ها و مسئولیت‌های چالش‌برانگیز که در آن‌ها نیاز به توانش سطح بالا باشد.<br>
+                ۲. تبدیل مهارت‌هایتان به فرصت‌های جدید شغلی یا پژوهشی؛ در حوزه‌های پیشرفته یا بین‌رشته‌ای نیز توانایی بالقوه دارید.<br>
+                ۳. منتورینگ یا آموزش افراد کم‌تجربه برای گسترش فرهنگ یادگیری و افزایش مهارت‌های رهبری شما.<br>
+                ۴. توسعه شبکه ارتباطی با متخصصان و افراد توانمند دیگر، برای هم‌افزایی در رسیدن به اهداف بزرگ‌تر.<br>
+                ۵. پیشگیری از غرور یا درجا زدن؛ همواره در جست‌وجوی یادگیری‌های بیشتر و حفظ فروتنی در عین قدرت.
+            </div>
+        </div>
+    </li>
+
+</ul>
+
+<!-- جدید (اشاره به تپش قلب بالا یا واکنش فیزیولوژیک هنگام مواجهه با مسائل جدی) -->
+<div class="report-component-title">جدید 
+    <span class="report-badge report-score-data">#field_1113#<br></span>
+</div>
+<p class="report-paragraph">
+    در اینجا «جدید» به تجربه هیجان و افزایش ضربان قلب در مواجهه با مسائل جدی یا شرایط تازه اشاره دارد. برخی افراد هنگام برهم‌کنش با رخدادهای جدید یا چالش‌های جدی، شور و حرارت بالایی احساس می‌کنند که می‌تواند هم محرک و هم چالش‌زا باشد.
+</p>
+<ul class="report-list">
+
+    <!-- سطح متوسط جدید -->
+    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10199#;">
+        <strong>«متوسط»<br></strong>
+        شما گاهی در شرایط جدید یا مواجهه با مسأله جدی، افزایش ضربان قلب و هیجان را احساس می‌کنید؛ اما این حس همیشه در اوج خود نیست. بخشی از انگیزه شما از این هیجان تأمین می‌شود، هرچند گاهی هم ترجیح می‌دهید محیط آرام‌تری داشته باشید.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. به رسمیت شناختن این هیجان و استفاده از آن به‌عنوان نیروی محرک برای اقدام سریع و سازنده.<br>
+                ۲. برنامه‌ریزی برای استراحت یا فاصله‌گیری کوتاه در مواقعی که احساس می‌کنید تپش قلب و اضطراب بیش‌ازحد است.<br>
+                ۳. یادگیری روش‌های کنترل تنش بدنی (تنفس عمیق، ریلکسیشن) پیش از ورود به موقعیت‌های جدی یا جدید.<br>
+                ۴. نگاه مثبت به هیجان؛ می‌توانید آن را نشانه تمرکز ذهنی و آمادگی بدنی برای رویداد جدید بدانید.<br>
+                ۵. پرسش از خود: «آیا واقعاً لازم است نگران باشم یا می‌توانم با یک برنامه‌ریزی منطقی، هیجان را مهار کنم؟»
+            </div>
+        </div>
+    </li>
+
+    <!-- سطح خوب جدید -->
+    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10199#;">
+        <strong>«خوب»<br></strong>
+        شما در مواجهه با مسائل جدی یا موقعیت‌های جدید، ضربان قلب و هیجان مثبتی را تجربه می‌کنید که کمک می‌کند انگیزه بالایی داشته باشید. این سطح از هیجان، اغلب منجر به شادابی و اشتیاق لازم برای رویارویی با چالش‌ها می‌شود.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. استقبال از پروژه‌های چالش‌برانگیز که نیازمند انرژی و تمرکز بالاست.<br>
+                ۲. یادگیری تکنیک‌های بهبود عملکرد در شرایط تحت فشار، مثل مدیریت استرس و زمان برای تضمین کیفیت نتایج.<br>
+                ۳. تبدیل این شور و هیجان به قدرت خلاقیت؛ هنگام اوج انرژی، ایده‌های تازه و راهکارهای متنوع بیشتری بیابید.<br>
+                ۴. تنظیم مرز میان هیجان سالم و فشار عصبی؛ هیجان بیش‌ازحد گاهی می‌تواند به استرس منجر شود.<br>
+                ۵. مشارکت در فعالیت‌های گروهی یا اجتماعی که از این شور مثبت شما سود می‌برند و فضای شاداب‌تری ایجاد می‌کنند.
+            </div>
+        </div>
+    </li>
+
+    <!-- سطح عالی جدید -->
+    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10199#;">
+        <strong>«عالی»<br></strong>
+        شما به شدت با مسائل جدید و چالش‌های جدی درگیر می‌شوید و ضربان قلب و هیجان بالایی را در این مواقع تجربه می‌کنید. این حس می‌تواند موتور پیش‌برنده شما باشد تا سرسختانه به استقبال ماجراجویی‌ها و موفقیت‌های بزرگ بروید.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. به کارگیری این هیجان در حوزه‌هایی مانند مسابقات، پروژه‌های نوآورانه یا رویدادهای کارآفرینی، جایی که انرژی بالا ضروری است.<br>
+                ۲. پایش سطح استرس؛ هیجان بیش‌ازحد ممکن است به اضطراب یا خستگی عاطفی منجر شود.<br>
+                ۳. یادگیری تکنیک‌های حرفه‌ای کنترل تنفس و تمرکز ذهنی برای مدیریت اوج هیجانات در لحظات حساس.<br>
+                ۴. به اشتراک‌گذاری تجربه‌هایتان با دیگران برای ایجاد انگیزه در آن‌ها و گسترش فضای مثبت در محیط پیرامون.<br>
+                ۵. حفظ تنوع در برنامه‌هایتان تا این شور و ضربان قلب بالا همواره در مسیرهای سازنده به کار گرفته شود.
+            </div>
+        </div>
+    </li>
+
+</ul>
+
+<!-- فعالیت -->
+<div class="report-component-title">فعالیت 
+    <span class="report-badge report-score-data">#field_1114#<br></span>
+</div>
+<p class="report-paragraph">
+    فعالیت به معنای میل به پرکاری و تلاش مداوم است. افرادی که از سطح بالایی از «فعالیت» برخوردارند، کمتر دچار سکون یا بیکاری می‌شوند و همواره به دنبال وظایف جدید یا کارهای متنوع برای انجام دادن هستند. گاه این ویژگی می‌تواند با خستگی مفرط همراه شود، اما در حالت متعادل، نشانگر روحیه‌ای پرنشاط و پویا است.
+</p>
+<ul class="report-list">
+
+    <!-- سطح متوسط فعالیت -->
+    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10200#;">
+        <strong>«متوسط»<br></strong>
+        شما اغلب اوقات در حال کار و فعالیت هستید، ولی گاهی هم ترجیح می‌دهید به استراحت و وقت آزاد بپردازید. این سطح از فعالیت نشان می‌دهد که اگرچه عموماً مایل به مشغول بودن هستید، اما همیشه خودتان را مجبور به کار نمی‌کنید.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. ایجاد برنامه روزانه منعطف که بتوانید در صورت نیاز استراحت کافی داشته باشید.<br>
+                ۲. انتخاب فعالیت‌های چندمنظوره یا ترکیبی برای جلوگیری از کسل‌شدن در یک مسیر.<br>
+                ۳. اولویت‌بندی وظایف تا از پراکندگی زیاد کارها و هدررفت انرژی جلوگیری شود.<br>
+                ۴. ثبت و ارزیابی میزان کار روزانه برای رسیدن به تعادلی مطلوب بین فعالیت و تفریح.<br>
+                ۵. تشویق خود پس از دستیابی به دستاوردهای کوچک و استراحت کافی پس از دوره‌های کاری فشرده.
+            </div>
+        </div>
+    </li>
+
+    <!-- سطح خوب فعالیت -->
+    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10200#;">
+        <strong>«خوب»<br></strong>
+        شما از پرکاری و فعالیت مداوم لذت می‌برید و معمولاً نمی‌گذارید وقتتان به بطالت بگذرد. این رویکرد باعث می‌شود در بسیاری از امور پیشتاز باشید و به نتایج مطلوبی دست یابید.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. حفظ روند فعلی با تعریف اهدافی که نیازمند تلاش و پشتکار مداوم هستند.<br>
+                ۲. تقویت مهارت مدیریت زمان برای بیشترین بهره‌وری از انرژی بالای خود.<br>
+                ۳. درگیر شدن در پروژه‌های گروهی که به حضور افراد پرانرژی مثل شما نیاز دارند.<br>
+                ۴. مراقب نشانه‌های فرسودگی باشید؛ پرکاری پیوسته بدون وقفه، خطر خستگی مفرط را افزایش می‌دهد.<br>
+                ۵. اختصاص زمانی برای دوره‌های استراحت و لذت‌های شخصی، تا انرژی ذهنی و جسمی شما پایدار بماند.
+            </div>
+        </div>
+    </li>
+
+    <!-- سطح عالی فعالیت -->
+    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10200#;">
+        <strong>«عالی»<br></strong>
+        شما در اوج فعالیت قرار دارید؛ همواره در حال کار و تلاش هستید و کمتر از توقف یا بیکاری لذت می‌برید. این ویژگی در کنار برنامه‌ریزی مناسب، می‌تواند منجر به دستاوردهای چشمگیر شود.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. پذیرش مسئولیت‌های چالش‌برانگیز در محیط کار یا تحصیل؛ انرژی بالای شما در حل سریع‌تر مسائل نقش بسزایی دارد.<br>
+                ۲. توجه به حفظ تعادل روانی و جسمی؛ پرکاری مداوم به زمان استراحت و دوری از استرس نیز نیاز دارد.<br>
+                ۳. به اشتراک گذاشتن الگوهای مثبت کاری خود با دیگران برای ایجاد فرهنگ بهره‌وری در گروه‌ها یا سازمان.<br>
+                ۴. اختصاص زمانی به تفریح سالم و سبک زندگی فعال (ورزش منظم، تغذیه مناسب) برای حفظ انرژی بلندمدت.<br>
+                ۵. برنامه‌ریزی برای رسیدن به اهداف بلندمدت در کنار انجام پروژه‌های کوتاه‌مدت متوالی، تا همواره حس پیشرفت داشته باشید.
+            </div>
+        </div>
+    </li>
+
+</ul>
+
+<!-- ورزش -->
+<div class="report-component-title">ورزش 
+    <span class="report-badge report-score-data">#field_1116#<br></span>
+</div>
+<p class="report-paragraph">
+    ورزش به میزان علاقه و مهارت فرد در فعالیت‌های بدنی و تحرکی اشاره دارد. افرادی با نمره بالاتر در این عامل، معمولاً از انجام حرکات ورزشی و جسمانی لذت می‌برند و در یادگیری مهارت‌های حرکتی سرعت و کیفیت خوبی نشان می‌دهند.
+</p>
+<ul class="report-list">
+
+    <!-- سطح متوسط ورزش -->
+    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10202#;">
+        <strong>«متوسط»<br></strong>
+        شما گاهی اوقات از انجام ورزش و فعالیت‌های حرکتی لذت می‌برید، اما شاید همیشه در اولویت کارهای روزمره‌تان نباشد. مهارت حرکتی قابل قبولی دارید، اما جای پیشرفت و تقویت بیشتری نیز وجود دارد.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. تعیین زمانی مشخص در طول هفته برای فعالیت بدنی منظم (مثلاً پیاده‌روی، دویدن سبک یا ورزش گروهی).<br>
+                ۲. انتخاب رشته‌های ورزشی دلخواه و انگیزشی برای حفظ شور و انگیزه بیشتر (مثل شنا یا بدنسازی سبک).<br>
+                ۳. استفاده از تمرین‌های مبتدی و آموزشی آنلاین برای ارتقای مهارت و هماهنگی بدنی.<br>
+                ۴. تمرین حرکات کششی یا یوگا برای افزایش انعطاف و پیشگیری از آسیب‌های حرکتی در فعالیت‌های روزمره.<br>
+                ۵. ایجاد گروه دوستانه یا خانوادگی برای انجام ورزش مشترک، تا حس رقابت سالم یا هم‌افزایی ایجاد شود.
+            </div>
+        </div>
+    </li>
+
+    <!-- سطح خوب ورزش -->
+    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10202#;">
+        <strong>«خوب»<br></strong>
+        شما به شکل منظم به ورزش یا فعالیت‌های بدنی می‌پردازید و مهارت‌های حرکتی خوبی دارید. این علاقه و توانایی، منجر به حفظ سلامت جسمی و تقویت روحیه شما می‌شود.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. ادامه تمرینات فعلی و تنوع بخشی به برنامه ورزشی (مثلاً اضافه کردن ورزش‌های گروهی یا نرمش‌های تخصصی).<br>
+                ۲. پیگیری اهداف تمرینی واضح (مثل افزایش استقامت یا یادگیری مهارت‌های جدید بدنی).<br>
+                ۳. مشارکت در مسابقات یا رویدادهای ورزشی محلی برای حفظ انگیزه و ارتقای توانمندی‌هایتان.<br>
+                ۴. دقت در تغذیه مناسب و زمان‌بندی استراحت، جهت بهبود عملکرد و پیشگیری از خستگی عضلانی یا آسیب.<br>
+                ۵. آموزش و ترغیب اطرافیان به فعالیت بدنی منظم، از طریق دعوت به ورزش‌های گروهی یا باشگاه.
+            </div>
+        </div>
+    </li>
+
+    <!-- سطح عالی ورزش -->
+    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10202#;">
+        <strong>«عالی»<br></strong>
+        شما در بالاترین سطح از نظر علاقه و مهارت ورزشی قرار دارید؛ حرکات بدنی را با مهارت و سرعت بسیار خوبی انجام می‌دهید و از تنوع در فعالیت‌های ورزشی لذت می‌برید.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. رقابت در سطوح بالاتر یا باشگاه‌های حرفه‌ای‌تر که توان ورزشی شما را به چالش بکشد.<br>
+                ۲. انتقال تجربه و آموزش افراد مبتدی یا علاقه‌مند به رشته ورزشی شما، برای گسترش فرهنگ تحرک و سلامت جسمی.<br>
+                ۳. توجه به تعادل میان تمرین شدید و استراحت کافی؛ عضلات و ذهن به ریکاوری نیاز دارند.<br>
+                ۴. تنوع دادن به برنامه تمرینی (افزودن ورزش‌های مختلف یا تمرینات مکمل) برای جلوگیری از تکراری شدن روند ورزش.<br>
+                ۵. تعیین اهداف بلندمدت و چالش‌برانگیز؛ شما ظرفیت پیشرفت در سطوح حرفه‌ای‌تر را دارید.
+            </div>
+        </div>
+    </li>
+
+</ul>
+
+<!-- هیجان (دقت در تعیین مثبت یا منفی بودن) -->
+<div class="report-component-title">هیجان 
+    <span class="report-badge report-score-data">#field_1115#<br></span>
+</div>
+<p class="report-paragraph">
+    هیجان در اینجا به معنای داشتن احساسات قوی، لذت بردن از ماجراجویی‌ها و ابراز راحت احساسات است. افرادی که امتیاز بالایی در این بخش می‌گیرند، معمولاً عاشق تجربیات پرشور هستند و تمایل دارند احساسات خود را آشکار کنند. بااین‌حال، اگر این ویژگی به‌درستی مدیریت نشود، ممکن است به بی‌قراری یا تصمیم‌های شتاب‌زده منجر شود.
+</p>
+<ul class="report-list">
+    <!-- سطح متوسط هیجان -->
+    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10201#;">
+        <strong>«متوسط»<br></strong>
+        شما گاه به دنبال هیجان و ماجراجویی هستید، اما همیشه آن را در اولویت قرار نمی‌دهید. در برخی شرایط احساس دلشورگی و نگرانی سراغتان می‌آید، اما معمولاً می‌توانید هیجان‌های روزمره را کنترل کنید.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. شناسایی موقعیت‌های مهیج مورد علاقه و پرداختن به آن‌ها برای حفظ شور در زندگی.<br>
+                ۲. تمرین کنترل هیجانات ناگهانی با استفاده از تکنیک‌های تنفس عمیق و ذهن‌آگاهی.<br>
+                ۳. برنامه‌ریزی ماجراجویی‌های کوچک (مثل سفرهای کوتاه، فعالیت‌های جدید) برای حفظ تعادل میان هیجان و زندگی روزمره.<br>
+                ۴. جلوگیری از تصمیم‌گیری شتاب‌زده در لحظات اوج هیجان؛ گاهی یک مکث کوتاه می‌تواند خطاهای احتمالی را کاهش دهد.<br>
+                ۵. به اشتراک گذاشتن تجربیات هیجان‌انگیز با دوستان یا خانواده، برای تقویت حس مثبت جمعی.
+            </div>
+        </div>
+    </li>
+
+    <!-- سطح خوب هیجان -->
+    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10201#;">
+        <strong>«خوب»<br></strong>
+        شما از ماجراجویی و احساسات پرشور استقبال می‌کنید و دیگران نیز احتمالاً شما را فردی پرانرژی می‌شناسند. به راحتی احساسات خود را بروز می‌دهید و معمولاً از مزایای این رویکرد در روابط اجتماعی و شخصی بهره‌مند می‌شوید.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. حفظ این شور و هیجان با انجام فعالیت‌های گوناگون (ورزشی، هنری، گردش) که روان شما را شاداب نگه می‌دارد.<br>
+                ۲. توجه به مرز میان هیجان سازنده و تصمیم‌گیری‌های ریسکی؛ ارزیابی دقیق شرایط قبل از اقدام بزرگ.<br>
+                ۳. ارائه حس مثبت و پرشور خود به اطرافیان؛ شما می‌توانید در جمع‌ها موجی از نشاط ایجاد کنید.<br>
+                ۴. کنترل تنش‌های احتمالی؛ تمرین روش‌های مدیریت استرس در لحظات اوج هیجان می‌تواند از برخوردهای ناخواسته پیشگیری کند.<br>
+                ۵. تداوم تبادل تجربه با افراد ماجراجو و پرانرژی، برای گسترش ایده‌های خلاق و جدید.
+            </div>
+        </div>
+    </li>
+
+    <!-- سطح عالی هیجان -->
+    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10201#;">
+        <strong>«عالی»<br></strong>
+        شما سرشار از احساسات قوی و ماجراجویی هستید؛ لحظات پرشور و هیجان‌انگیز را دوست دارید و در موقعیت‌های اجتماعی اغلب به سرعت مرکز توجه می‌شوید. ابراز احساسات برایتان آسان است و این امر می‌تواند در صورت مدیریت صحیح، به پیشرفت قابل توجهی در زندگی شخصی و شغلی منجر شود.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. پذیرش نقش‌های پرانرژی در محیط کار یا جمع‌های دوستانه؛ شما با شور خود می‌توانید دیگران را نیز ترغیب کنید.<br>
+                ۲. مدیریت ابراز احساسات؛ همه محیط‌ها مناسب تخلیه ناگهانی هیجان نیستند و نیاز به توازن دارند.<br>
+                ۳. در نظر گرفتن خطرات بالقوه فعالیت‌های ماجراجویانه شدید و انجام ارزیابی ریسک پیش از اقدام.<br>
+                ۴. ایجاد تعادل میان «هیجان» و «منطق» در تصمیم‌های حساس؛ هیجان بالا گاهی می‌تواند قدرت تحلیل را کاهش دهد.<br>
+                ۵. اشتراک‌گذاری موفقیت‌هایتان با دیگران و الگوسازی مثبت در زمینه داشتن روحیه پرنشاط و مسوولیت‌پذیر.
+            </div>
+        </div>
+    </li>
+
+</ul>
+
+
+
+
+                                              
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+            <div class="report-section-title">جمع‌بندی</div>
+            <div class="report-paragraph">
+            <p>این گزارش ارزیابی مهارت‌های شما شامل تحلیل تعهد، نیرومندی، ظرفیت تحلیلی، بیتابی روانی، استقلال و سازش است. این بررسی نقاط قوت و زمینه‌های نیازمند بهبود شما را نشان داده و توصیه‌های کاربردی برای توسعه مهارت‌های شما ارائه می‌دهد.</p>
+            
+            <p><b>نقاط قوت: </b>شما در برخی از حوزه‌ها عملکرد برجسته‌ای دارید که نشان‌دهنده توانایی‌های قوی در مدیریت مسئولیت‌ها، انرژی بالا، تحلیل مسائل پیچیده، آرامش روانی، خودکفایی و تطبیق‌پذیری است. به عنوان مثال، در حوزه‌های "تعهد" و "ظرفیت تحلیلی"، شما توانایی زیادی در مدیریت وظایف و تحلیل مسائل نشان داده‌اید که می‌تواند به پیشرفت حرفه‌ای و رشد فردی شما کمک کند.</p>
+            
+            <p><b>حوزه‌های نیازمند بهبود:</b> در برخی از بخش‌ها نیاز به تمرکز بیشتر وجود دارد. به عنوان مثال، در حوزه‌های "بیتابی روانی" و "استقلال"، شما می‌توانید با تمرین‌های منظم و فعالیت‌های هدفمند مانند تکنیک‌های مدیریت استرس و برنامه‌ریزی منظم مهارت‌های خود را بهبود بخشید. همچنین، افزایش تعاملات اجتماعی و تمرین مهارت‌های تصمیم‌گیری مستقل می‌تواند تأثیر مثبتی بر عملکرد شما داشته باشد.</p>
+            
+            <p><b>گام‌های بعدی:</b> برای تقویت مهارت‌های خود، پیشنهاد می‌شود که به توصیه‌های ارائه‌شده در هر بخش توجه ویژه‌ای کنید و در صورت نیاز از خدمات مشاوره تخصصی استفاده نمایید. همچنین، ارزیابی منظم و پیگیری مداوم می‌تواند به توسعه پایدار و موفقیت شما در تمامی ابعاد زندگی کمک کند.</p>
+            </div>
+        
+        <footer class="report-footer-custom">
+            <div class="report-footer-content">
+                <img src="../panel/file?type=picture&amp;v=3&amp;mode=filemanager&amp;file=%7eDB3gfQUls%2bt2iiMYKbsRAxrtFhcHKUIUUo7pPtO17bHCzNxwU4zNh3UVor6QMtl7Y6EWX8dD0PSvzZOYkRrXlfejPn4lNTj6" class="report-footer-img" alt="لوگو">
+            </div>
+            <p class="report-footer-paragraph">مؤسّسه تعاملی هیجان اندیشه | تماس: 02188174100 | ایمیل: info@eot.ir</p>
+            <p class="report-footer-paragraph yellow-text">© ۱۴۰۳ تمامی حقوق محفوظ است.</p>
+            <ul class="report-footer-menu">
+                <li><a href="https://www.eot.ir/" class="report-footer-menu-link">صفحه اصلی</a></li>
+                <li><a href="https://www.eot.ir/contact" class="report-footer-menu-link">تماس با ما</a></li>
+                <li><a href="https://www.eot.ir/about" class="report-footer-menu-link">درباره ما</a></li>
+            </ul>
+            <address class="report-footer-address">تهران، سهروردی، خرمشهر، عربعلی، کوچه ششم، شماره ۴۴</address>
+        </footer>
+    </div>
