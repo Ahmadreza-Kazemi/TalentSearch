@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>استعدادیاب | معرفی آزمون</title>
+    <title>استعدادیاب | معرفی آزمون تحلیل فهرست تشخیص تعاملی شخصیت</title>
     <style>
         /* =======================================================
            1. Reset and Base Styles
@@ -56,11 +56,23 @@
         /* =======================================================
            4. Typography
         ======================================================= */
+        h1, h2, h3, h4 {
+            font-family: 'Vazir', sans-serif;
+            color: #1F3B73;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px #F4C553;
+        }
+
         h2 {
             font-size: 2em;
             font-weight: 700;
-            text-shadow: 0 0 10px #F4C553;
             margin-bottom: 24px;
+            text-shadow: 0 0 10px #F4C553;
             color: #1F3B73;
             text-align: center;
         }
@@ -86,9 +98,8 @@
             max-width: 800px;
             margin: 0 auto 16px;
             line-height: 1.6;
-            text-align: justify;
             color: #1F3B73;
-            text-align: center;
+            text-align: justify;
         }
 
         ul {
@@ -116,7 +127,7 @@
             text-align: center;
         }
 
-        .hero h2 {
+        .hero h1 {
             font-size: 3em;
             margin-bottom: 16px;
             color: #1F3B73;
@@ -230,69 +241,12 @@
             background-color: #4FBDBA;
         }
 
-        /* =======================================================
-           8. Footer
-        ======================================================= */
-        .footer {
-            background-color: #FFFFFF;
-            padding: 32px;
-            color: #1F3B73;
-            text-align: center;
-            border-top: 1px solid #F0F0F5;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 32px;
-            text-align: center;
-        }
-
-        .footer-section h2 {
-            font-size: 1.5em;
-            margin-bottom: 8px;
-        }
-
-        .footer-section p,
-        .footer-section a {
-            font-size: 1em;
-            color: #888888;
-        }
-
-        .footer-section a:hover,
-        .footer-section a:focus {
-            color: #4FBDBA;
-            text-decoration: underline;
-        }
-
-        .powered-by {
-            margin-top: 32px;
-            font-size: 0.95em;
-        }
-
-        .powered-by a {
-            color: #1F3B73;
-            font-weight: 500;
-        }
-
-        .powered-by a:hover,
-        .powered-by a:focus {
-            color: #4FBDBA;
-        }
 
         /* =======================================================
            9. Media Queries
         ======================================================= */
         @media (min-width: 769px) {
-            .footer-content {
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: flex-start;
-                gap: 60px;
-                text-align: left;
-            }
+
 
             .content-section {
                 padding: 80px 16px;
@@ -306,6 +260,65 @@
                 font-size: 1.1em;
             }
         }
+
+        /* =======================================================
+           10. Additional Styles for New Sections
+        ======================================================= */
+        .test-section {
+            margin-bottom: 40px;
+        }
+
+        .sample-report {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .sample-report img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #CCCCCC;
+            border-radius: 8px;
+        }
+
+        .testimonial {
+            background-color: #F9F9F9;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+        }
+
+        .faq-item h4 {
+            cursor: pointer;
+            position: relative;
+        }
+
+        .faq-item h4::after {
+            content: '+';
+            position: absolute;
+            left: -20px;
+            top: 0;
+            font-size: 1.5em;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active h4::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-item p {
+            display: none;
+            margin-top: 10px;
+        }
+
+        .faq-item.active p {
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -318,85 +331,172 @@
         <!-- Hero Section -->
         <section class="hero">
             <div class="hero-content">
-                <h2>معرفی آزمون تحلیل فهرست تشخیص تعاملی شخصیت</h2>
-                <p>کشف ویژگی‌های شخصیتی شما و توسعه مهارت‌های فردی و حرفه‌ای</p>
-                <a href="#about" class="cta-button">شروع آزمون</a>
+                <h1>تحلیل فهرست تشخیص تعاملی شخصیت</h1>
+                <p>شناخت ویژگی‌های شخصیتی شما و توسعه مهارت‌های فردی و حرفه‌ای</p>
+                <a href="#start-test" class="cta-button">شروع آزمون</a>
             </div>
         </section>
 
-        <!-- About Section -->
-        <section class="content-section" id="about">
+        <!-- Test Purpose Section -->
+        <section class="content-section test-section" id="test-purpose">
             <div class="content-container">
-                <h2>درباره آزمون</h2>
+                <h2>هدف از آزمون</h2>
                 <p>
-                    آزمون تحلیل فهرست تشخیص تعاملی شخصیت یک ابزار روان‌شناختی معتبر است که به منظور شناسایی و تحلیل ویژگی‌های شخصیتی فرد در حوزه‌های مختلف طراحی شده است. این آزمون به شما کمک می‌کند تا نقاط قوت و زمینه‌های نیازمند بهبود خود را بشناسید و راهکارهای مناسبی برای توسعه مهارت‌های خود ارائه دهید.
+                    این آزمون برای سنجش و تحلیل ویژگی‌های شخصیتی فرد در حوزه‌های مختلف طراحی شده است. هدف اصلی این آزمون شناسایی نقاط قوت و زمینه‌های نیازمند بهبود در شخصیت شما است تا بتوانید در مسیر توسعه فردی و حرفه‌ای خود گام‌های موثری بردارید.
                 </p>
             </div>
         </section>
 
-        <!-- Features Section -->
-        <section class="content-section">
+        <!-- Key Features Section -->
+        <section class="content-section test-section" id="key-features">
             <div class="content-container">
-                <h2>ویژگی‌های آزمون</h2>
+                <h2>ویژگی‌های کلیدی آزمون</h2>
                 <ul>
-                    <li><strong>تعهد:</strong> بررسی میزان تعهد و مسئولیت‌پذیری شما در محیط‌های مختلف.</li>
-                    <li><strong>نیرومندی:</strong> ارزیابی قدرت تحمل و مقاومت در برابر فشارهای روحی و جسمی.</li>
-                    <li><strong>ظرفیت تحلیلی:</strong> سنجش توانایی شما در تحلیل و حل مسائل پیچیده.</li>
-                    <li><strong>بیتابی روانی:</strong> اندازه‌گیری سطح بیتابی و اضطراب روانی شما.</li>
-                    <li><strong>استقلال:</strong> ارزیابی میزان استقلال و خودکفایی شما در تصمیم‌گیری‌ها.</li>
-                    <li><strong>سازش:</strong> سنجش توانایی شما در سازش و همکاری با دیگران.</li>
+                    <li><strong>زمینه‌های ارزیابی:</strong> ویژگی‌های شخصیتی، مهارت‌های شناختی، هوش هیجانی</li>
+                    <li><strong>زمان مورد نیاز:</strong> 20 دقیقه</li>
+                    <li><strong>دسترسی:</strong> آنلاین و حضوری</li>
+                    <li><strong>نوع گزارش:</strong> گزارش جامع با نمودارها و توصیه‌های عملی</li>
                 </ul>
             </div>
         </section>
 
         <!-- Benefits Section -->
-        <section class="content-section">
+        <section class="content-section test-section" id="benefits">
             <div class="content-container">
-                <h2>مزایای شرکت در آزمون</h2>
+                <h2>مزایای شرکت در این آزمون</h2>
                 <ul>
-                    <li>شناخت دقیق از ویژگی‌های شخصیتی شما</li>
-                    <li>شناسایی نقاط قوت و ضعف فردی</li>
-                    <li>دریافت توصیه‌های کاربردی برای بهبود مهارت‌ها</li>
-                    <li>افزایش آگاهی از نیازهای توسعه فردی و حرفه‌ای</li>
-                    <li>بهبود عملکرد در محیط‌های کاری و شخصی</li>
+                    <li>افزایش خودآگاهی و شناخت بهتر از خود</li>
+                    <li>بهبود روابط بین‌فردی و ارتباطات</li>
+                    <li>راهنمایی در تصمیم‌گیری‌های شغلی و تحصیلی</li>
+                    <li>حمایت از رشد شخصی و بهبود سلامت روان</li>
+                    <li>افزایش عملکرد در محیط‌های کاری و شخصی</li>
                 </ul>
             </div>
         </section>
 
         <!-- How It Works Section -->
-        <section class="content-section">
+        <section class="content-section test-section" id="how-it-works">
             <div class="content-container">
                 <h2>نحوه انجام آزمون</h2>
                 <p>
-                    آزمون تحلیل فهرست تشخیص تعاملی شخصیت شامل مجموعه‌ای از سوالات متنوع است که به شما کمک می‌کند تا به بهترین نحو ویژگی‌های شخصیتی خود را کشف کنید. این آزمون به صورت آنلاین و در مدت زمان کوتاهی قابل انجام است.
+                    آزمون تحلیل فهرست تشخیص تعاملی شخصیت شامل مراحل زیر است:
                 </p>
                 <ul>
-                    <li>ثبت نام و ورود به حساب کاربری</li>
-                    <li>پاسخ به سوالات آزمون</li>
-                    <li>دریافت گزارش تحلیلی جامع از نتایج</li>
+                    <li><strong>گام اول:</strong> تکمیل پرسشنامه آنلاین به مدت 20 دقیقه</li>
+                    <li><strong>گام دوم:</strong> دریافت گزارش تحلیلی جامع با نتایج و توصیه‌ها</li>
+                    <li><strong>گام سوم:</strong> بررسی نتایج و در صورت نیاز، مشاوره با متخصصین</li>
                 </ul>
             </div>
         </section>
 
-        <!-- Call to Action Section -->
-        <section class="content-section">
+        <!-- Who Should Take This Test Section -->
+        <section class="content-section test-section" id="who-should-take">
+            <div class="content-container">
+                <h2>چه کسانی باید این آزمون را انجام دهند؟</h2>
+                <ul>
+                    <li>دانشجویان و دانش‌آموزانی که به دنبال شناخت بهتر از خود هستند</li>
+                    <li>حرفه‌ای‌ها و مدیرانی که به دنبال بهبود مهارت‌های مدیریتی و رهبری هستند</li>
+                    <li>افرادی که به دنبال رشد شخصی و حرفه‌ای هستند</li>
+                    <li>سازمان‌ها و شرکت‌ها برای ارزیابی دینامیک تیم و بهبود عملکرد کارکنان</li>
+                    <li>مشاوران و روانشناسان برای پشتیبانی از مشتریان خود</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Sample Report Section -->
+        <section class="content-section test-section" id="sample-report">
+            <div class="content-container">
+                <h2>نمونه گزارش</h2>
+                <p>
+                    در ادامه یک نمونه از گزارش تحلیل فهرست تشخیص تعاملی شخصیت را مشاهده می‌کنید:
+                </p>
+                <div class="sample-report">
+                    <img src="assets/images/sample-report.png" alt="نمونه گزارش تحلیل شخصیت">
+                </div>
+                <p>
+                    گزارش شامل نمودارها و تحلیل‌های دقیق از ویژگی‌های شخصیتی شماست که به شما کمک می‌کند تا نقاط قوت و ضعف خود را بهتر بشناسید و برنامه‌های توسعه فردی مناسبی را طراحی کنید.
+                </p>
+            </div>
+        </section>
+
+        <!-- Credentials and Validity Section -->
+        <section class="content-section test-section" id="credentials">
+            <div class="content-container">
+                <h2>اعتبار و صحت آزمون</h2>
+                <p>
+                    آزمون تحلیل فهرست تشخیص تعاملی شخصیت بر اساس روش‌شناسی تحقیقاتی معتبر و تایید شده توسط متخصصین روانشناسی طراحی شده است. این آزمون توسط دانشگاه‌ها و سازمان‌های معتبر روانشناسی مورد تأیید و توصیه قرار گرفته است.
+                </p>
+                <ul>
+                    <li>روش‌شناسی تحقیقاتی مبتنی بر مطالعات علمی روز</li>
+                    <li>تأییدیه سازمان‌های معتبر روانشناسی</li>
+                    <li>پشتیبانی توسط تیم متخصصین و روانشناسان خبره</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="content-section test-section" id="testimonials">
+            <div class="content-container">
+                <h2>توصیه‌نامه‌ها</h2>
+                <div class="testimonial">
+                    <p>"آزمون تحلیل فهرست تشخیص تعاملی شخصیت به من کمک کرد تا بهتر خودم را بشناسم و در مسیر حرفه‌ای خود قدم‌های موثرتری بردارم."</p>
+                    <p><strong>- سارا احمدی</strong></p>
+                </div>
+                <div class="testimonial">
+                    <p>"گزارش جامع و دقیق این آزمون به من امکان داد تا نقاط قوت و ضعف خود را شناسایی کنم و برای بهبود مهارت‌هایم برنامه‌ریزی کنم."</p>
+                    <p><strong>- علی رضایی</strong></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call-to-Action Section -->
+        <section class="content-section test-section" id="start-test">
             <div class="content-container">
                 <h2>آیا آماده‌اید تا شروع کنید؟</h2>
                 <p>
-                    با شرکت در این آزمون، گامی مهم در جهت شناخت بهتر از خود و توسعه مهارت‌های فردی و حرفه‌ای خود بردارید.
+                    با انجام این آزمون، گامی مهم در جهت شناخت بهتر از خود و توسعه مهارت‌های فردی و حرفه‌ای خود بردارید.
                 </p>
                 <div style="text-align: center; margin-top: 20px;">
                     <a href="test-page.html" class="cta-button">شروع آزمون</a>
                 </div>
             </div>
         </section>
+
+        <!-- FAQ Section (Optional) -->
+        <section class="content-section test-section" id="faq">
+            <div class="content-container">
+                <h2>سوالات متداول</h2>
+                <div class="faq-item">
+                    <h4>آیا این آزمون دقیق است؟</h4>
+                    <p>بله، این آزمون بر اساس روش‌شناسی تحقیقاتی معتبر و تایید شده طراحی شده است تا نتایج دقیق و قابل اعتمادی ارائه دهد.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>آیا این آزمون برای کودکان مناسب است؟</h4>
+                    <p>این آزمون بیشتر برای بزرگسالان و نوجوانان طراحی شده است و ممکن است برای کودکان جوان‌تر مناسب نباشد.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>بعد از انجام آزمون چه اتفاقی می‌افتد؟</h4>
+                    <p>پس از تکمیل آزمون، شما یک گزارش جامع با نتایج و توصیه‌های شخصی دریافت خواهید کرد که می‌توانید آن را مرور کرده و در صورت نیاز، با متخصصین مشورت کنید.</p>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
-    <footer class="footer">     </footer>
+    <footer class="footer">
+    </footer>
 
     <!-- Scripts -->
-    <script src="/assets/js/script.js"></script>
-    <script src="/assets/js/header-footer-inject.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/header-footer-inject.js"></script>
+    <script>
+        // FAQ Toggle Script
+        document.querySelectorAll('.faq-item h4').forEach(function(question) {
+            question.addEventListener('click', function() {
+                const parent = this.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+    </script>
 </body>
 </html>
