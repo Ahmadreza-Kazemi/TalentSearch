@@ -8,15 +8,12 @@
         /* =======================================================
            1. Reset and Base Styles
         ======================================================= */
-        
-        /* Resetting box-sizing, margin, and padding for all elements */
         *, *::before, *::after {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
-        
-        /* Base styles for html and body */
+
         html, body {
             height: 100%;
             font-family: var(--font-family);
@@ -26,173 +23,85 @@
             scroll-behavior: smooth;
             overflow-x: hidden;
         }
-        
+
         body {
-            padding-top: var(--header-height); /* Prevent content overlap with header */
-            padding-bottom: 60px; /* Prevent content overlap with mobile navbar */
+            padding-top: var(--header-height);
+            padding-bottom: 60px;
         }
-        
-        /* Base styles for anchor tags */
+
         a {
             text-decoration: none;
             color: var(--primary-deep-blue);
             transition: color var(--transition-speed) var(--transition-type);
         }
-        
+
         a:hover,
         a:focus {
             color: var(--primary-gold);
             text-decoration: underline;
         }
-        
+
         /* =======================================================
            2. Root Variables
         ======================================================= */
         :root {
-            /* ---------------------------------------------------
-               2.1. Font Family
-            --------------------------------------------------- */
             --font-family: 'Vazir', sans-serif;
-        
-            /* ---------------------------------------------------
-               2.2. Color Palette
-            --------------------------------------------------- */
-            /* Primary Colors */
-            --primary-gold: #F4C553;             /* Highlights, Buttons, Icons, CTAs */
-            --primary-deep-blue: #1F3B73;       /* Trust, Headers, Primary Text */
-        
-            /* Secondary Colors */
-            --secondary-teal-green: #4FBDBA;    /* Growth, Secondary Buttons, Accents */
-            --secondary-electric-blue: #007BFF; /* Dynamic Interactions, Links, Active States */
-        
-            /* Neutral Colors */
-            --neutral-white: #FFFFFF;            /* Backgrounds, Text Contrast, Open Spaces */
-            --neutral-cool-gray: #F0F0F5;       /* Section Dividers, Form Fields, Subtle Contrasts */
-            --neutral-dark-gray: #888888;       /* General Text and Icons */
-        
-            /* Accent Colors */
-            --accent-golden-yellow: #FFD77B;     /* Hover Effects, Gradients, Embellishments */
-        
-            /* ---------------------------------------------------
-               2.3. Text Colors
-            --------------------------------------------------- */
-            --text-primary: var(--primary-deep-blue); /* Main Text */
-            --text-secondary: var(--neutral-dark-gray); /* Secondary Text */
-        
-            /* ---------------------------------------------------
-               2.4. Button Colors
-            --------------------------------------------------- */
-            --button-primary: var(--primary-gold);          /* Primary Buttons */
-            --button-secondary: var(--secondary-teal-green); /* Secondary Buttons */
-        
-            /* ---------------------------------------------------
-               2.5. Spacing
-            --------------------------------------------------- */
+
+            /* Colors */
+            --primary-gold: #F4C553;
+            --primary-deep-blue: #1F3B73;
+            --secondary-teal-green: #4FBDBA;
+            --secondary-electric-blue: #007BFF;
+            --neutral-white: #FFFFFF;
+            --neutral-cool-gray: #F0F0F5;
+            --neutral-dark-gray: #888888;
+            --accent-golden-yellow: #FFD77B;
+
+            /* Text Colors */
+            --text-primary: var(--primary-deep-blue);
+            --text-secondary: var(--neutral-dark-gray);
+
+            /* Button Colors */
+            --button-primary: var(--primary-gold);
+            --button-secondary: var(--secondary-teal-green);
+
+            /* Spacing */
             --header-height: 80px;
             --spacing-xs: 4px;
             --spacing-sm: 8px;
             --spacing-md: 16px;
             --spacing-lg: 24px;
             --spacing-xl: 32px;
-            --spacing-small: 10px;
-            --spacing-medium: 20px;
-            --spacing-large: 40px;
-        
-            /* ---------------------------------------------------
-               2.6. Border Radius
-            --------------------------------------------------- */
             --border-radius: 8px;
-        
-            /* ---------------------------------------------------
-               2.7. Shadows
-            --------------------------------------------------- */
+
+            /* Shadows */
             --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.1);
             --shadow-hover: 0 6px 18px rgba(0, 0, 0, 0.15);
-        
-            /* ---------------------------------------------------
-               2.8. Transitions
-            --------------------------------------------------- */
+
+            /* Transitions */
             --transition-speed: 0.3s;
             --transition-type: ease-in-out;
         }
-        
+
         /* =======================================================
            3. Font Imports
         ======================================================= */
-        
-        /* Importing Vazir Font with different weights */
         @font-face {
             font-family: 'Vazir';
-            src: url('/assets/fonts/Vazir-Thin-UI.eot');
-            src: url('/assets/fonts/Vazir-Thin-UI.eot?#iefix') format('embedded-opentype'),
-                 url('/assets/fonts/Vazir-Thin-UI.woff2') format('woff2'),
-                 url('/assets/fonts/Vazir-Thin-UI.woff') format('woff'),
-                 url('/assets/fonts/Vazir-Thin-UI.ttf') format('truetype');
-            font-weight: 100;
-            font-style: normal;
-        }
-        
-        @font-face {
-            font-family: 'Vazir';
-            src: url('/assets/fonts/Vazir-Light-UI.eot');
-            src: url('/assets/fonts/Vazir-Light-UI.eot?#iefix') format('embedded-opentype'),
-                 url('/assets/fonts/Vazir-Light-UI.woff2') format('woff2'),
-                 url('/assets/fonts/Vazir-Light-UI.woff') format('woff'),
-                 url('/assets/fonts/Vazir-Light-UI.ttf') format('truetype');
-            font-weight: 300;
-            font-style: normal;
-        }
-        
-        @font-face {
-            font-family: 'Vazir';
-            src: url('/assets/fonts/Vazir-Regular-UI.eot');
-            src: url('/assets/fonts/Vazir-Regular-UI.eot?#iefix') format('embedded-opentype'),
-                 url('/assets/fonts/Vazir-Regular-UI.woff2') format('woff2'),
+            src: url('/assets/fonts/Vazir-Regular-UI.woff2') format('woff2'),
                  url('/assets/fonts/Vazir-Regular-UI.woff') format('woff'),
                  url('/assets/fonts/Vazir-Regular-UI.ttf') format('truetype');
             font-weight: 400;
             font-style: normal;
         }
-        
-        @font-face {
-            font-family: 'Vazir';
-            src: url('/assets/fonts/Vazir-Medium-UI.eot');
-            src: url('/assets/fonts/Vazir-Medium-UI.eot?#iefix') format('embedded-opentype'),
-                 url('/assets/fonts/Vazir-Medium-UI.woff2') format('woff2'),
-                 url('/assets/fonts/Vazir-Medium-UI.woff') format('woff'),
-                 url('/assets/fonts/Vazir-Medium-UI.ttf') format('truetype');
-            font-weight: 500;
-            font-style: normal;
-        }
-        
-        @font-face {
-            font-family: 'Vazir';
-            src: url('/assets/fonts/Vazir-Bold-UI.eot');
-            src: url('/assets/fonts/Vazir-Bold-UI.eot?#iefix') format('embedded-opentype'),
-                 url('/assets/fonts/Vazir-Bold-UI.woff2') format('woff2'),
-                 url('/assets/fonts/Vazir-Bold-UI.woff') format('woff'),
-                 url('/assets/fonts/Vazir-Bold-UI.ttf') format('truetype');
-            font-weight: 700;
-            font-style: normal;
-        }
-        
-        @font-face {
-            font-family: 'Vazir';
-            src: url('/assets/fonts/Vazir-Black-UI.eot');
-            src: url('/assets/fonts/Vazir-Black-UI.eot?#iefix') format('embedded-opentype'),
-                 url('/assets/fonts/Vazir-Black-UI.woff2') format('woff2'),
-                 url('/assets/fonts/Vazir-Black-UI.woff') format('woff'),
-                 url('/assets/fonts/Vazir-Black-UI.ttf') format('truetype');
-            font-weight: 900;
-            font-style: normal;
-        }
-        
+
+        /* Additional font weights can be imported similarly */
+
         /* =======================================================
            4. Layout Sections
         ======================================================= */
-        /* ---------------------------------------------------
-           4.1. Header
-        --------------------------------------------------- */
+
+        /* Header */
         .header {
             position: fixed;
             top: 0;
@@ -206,87 +115,78 @@
             padding: 0 var(--spacing-md);
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
             z-index: 1000;
-            direction: rtl; /* Ensure RTL alignment */
-            flex-wrap: nowrap; /* Prevent wrapping */
-            box-sizing: border-box; /* Include padding in width calculations */
-            overflow: hidden; /* Prevent any overflow */
         }
-        
+
         /* =======================================================
            5. Typography
         ======================================================= */
-        
-        /* Headings */
         h2, h3, h4 {
-            margin-bottom: var(--spacing-large);
+            margin-bottom: var(--spacing-md);
+            color: var(--primary-deep-blue);
         }
-        
+
         h2 {
             font-size: 2em;
             font-weight: 700;
-            color: var(--primary-deep-blue);
             text-shadow: 0 0 10px var(--primary-gold);
-            margin-bottom: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
         }
-        
+
         h3 {
             font-size: 1.5em;
             font-weight: 700;
-            color: var(--primary-deep-blue);
-            margin-bottom: var(--spacing-md);
         }
-        
+
         h4 {
             font-size: 1.2em;
             font-weight: 700;
-            color: var(--primary-deep-blue);
             margin: var(--spacing-lg) 0 var(--spacing-md);
         }
-        
-        /* Paragraphs */
+
         p {
             font-size: 1em;
-            max-width: 90%;
-            margin: 0 auto var(--spacing-medium);
+            max-width: 800px;
+            margin: 0 auto var(--spacing-md);
             line-height: 1.6;
             text-align: center;
             color: var(--text-primary);
         }
-        
+
+        ul {
+            list-style-type: disc;
+            padding-right: 20px;
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-md);
+        }
+
+        li {
+            margin-bottom: var(--spacing-xs);
+        }
+
         /* =======================================================
-           6. Layout Sections
+           6. Hero Section
         ======================================================= */
-        
-        /* ---------------------------------------------------
-           6.1. Hero Section
-        --------------------------------------------------- */
         .hero {
-            height: calc(100vh - var(--header-height)); /* Adjust height for fixed header */
+            height: calc(100vh - var(--header-height));
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             background-color: var(--neutral-cool-gray);
-            color: var(--text-primary);
-            position: relative;
-            overflow: hidden;
-            text-align: center;
             padding: var(--spacing-md);
+            text-align: center;
         }
-        
+
         .hero h2 {
             font-size: 3em;
-            font-weight: 700;
-            color: var(--primary-deep-blue);
-            text-shadow: 0 0 10px var(--primary-gold);
             margin-bottom: var(--spacing-md);
         }
-        
+
         .hero p {
             font-size: 1.5em;
             margin-bottom: var(--spacing-lg);
         }
-        
+
         .cta-button {
             display: inline-block;
             background-color: var(--button-primary);
@@ -301,124 +201,32 @@
                         transform var(--transition-speed) var(--transition-type),
                         box-shadow var(--transition-speed) var(--transition-type);
         }
-        
+
         .cta-button:hover,
         .cta-button:focus {
             background-color: var(--button-secondary);
             transform: translateY(-5px);
             box-shadow: 0 0 20px var(--button-secondary);
         }
-        
-        /* ---------------------------------------------------
-           6.2. Services Section
-        --------------------------------------------------- */
-        .services {
-            padding: var(--spacing-lg);
-            background-color: var(--neutral-white);
-            color: var(--text-primary);
-            text-align: center;
-        }
-        
-        .services h2 {
-            font-size: 2em;
-            font-weight: 700;
-            color: var(--primary-deep-blue);
-            text-shadow: 0 0 5px var(--primary-gold);
-            margin-bottom: var(--spacing-lg);
-        }
-        
-        .main-title {
-            font-size: 2em;
-            font-weight: 700;
-            color: var(--primary-deep-blue);
-            text-align: center;
-            margin-bottom: var(--spacing-lg);
-            text-shadow: 0 0 5px var(--primary-gold);
-        }
-        
-        .proposal-section-title {
-            font-size: 2em;
-            font-weight: 700;
-            color: var(--primary-deep-blue);
-            text-align: center;
-            margin-bottom: var(--spacing-md);
-            text-shadow: 0 0 5px var(--primary-gold);
-        }
-        
-        .service-list {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: var(--spacing-lg);
+
+        /* =======================================================
+           7. About Section
+        ======================================================= */
+        .about {
             padding: var(--spacing-lg) var(--spacing-md);
-        }
-        
-        .service-item {
-            background-color: var(--neutral-cool-gray);
-            padding: var(--spacing-md);
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow-card);
-            transition: transform var(--transition-speed) var(--transition-type),
-                        box-shadow var(--transition-speed) var(--transition-type);
-        }
-        
-        .service-item:hover,
-        .service-item:focus-within {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
-        }
-        
-        .service-item h3 {
-            font-size: 1.5em;
-            font-weight: 700;
-            color: var(--primary-deep-blue);
-            margin-bottom: var(--spacing-md);
-        }
-        
-        .service-item p {
-            font-size: 1em;
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-        
-        /* ---------------------------------------------------
-           6.3. Footer
-        --------------------------------------------------- */
-        .footer {
             background-color: var(--neutral-white);
-            padding: var(--spacing-lg);
             color: var(--text-primary);
-            text-align: center; /* Center all text in the footer */
-            border-top: 1px solid var(--neutral-cool-gray);
-            position: relative;
         }
-        
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding-bottom: var(--spacing-md);
-            display: flex;
-            flex-direction: column;
-            gap: var(--spacing-lg);
-            text-align: center; /* Center content inside footer-content */
-        }
-        
-        .about-info,
-        .contact-info,
-        .powered-by {
-            flex: 1;
-            text-align: center; /* Center text for these sections */
-        }
-        
-        .about-info h2 {
+
+        .about .section-title {
             font-size: 2em;
             font-weight: 700;
-            color: var(--primary-deep-blue);
-            margin-bottom: var(--spacing-md);
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
             position: relative;
-            text-align: center; /* Center heading text */
         }
-        
-        .about-info h2::after {
+
+        .about .section-title::after {
             content: '';
             display: block;
             width: 80px;
@@ -427,60 +235,97 @@
             margin: var(--spacing-sm) auto var(--spacing-md);
             border-radius: 2px;
         }
-        
-        .about-info p {
-            font-size: 1.1em;
-            color: var(--text-secondary);
-            line-height: 1.8;
-            text-align: center; /* Center paragraph text */
+
+        .service-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-lg);
+        }
+
+        .service-item {
+            background-color: var(--neutral-cool-gray);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-card);
+            transition: transform var(--transition-speed) var(--transition-type),
+                        box-shadow var(--transition-speed) var(--transition-type);
+        }
+
+        .service-item:hover,
+        .service-item:focus-within {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .service-item h3 {
+            font-size: 1.5em;
+            font-weight: 700;
             margin-bottom: var(--spacing-md);
         }
-        
-        .contact-info p {
+
+        .service-item p {
             font-size: 1em;
             color: var(--text-secondary);
-            margin-bottom: var(--spacing-sm);
-            text-align: center; /* Center paragraph text */
+            line-height: 1.6;
         }
-        
-        .contact-info p strong {
-            color: var(--primary-gold);
+
+        /* =======================================================
+           8. Footer
+        ======================================================= */
+        .footer {
+            background-color: var(--neutral-white);
+            padding: var(--spacing-lg);
+            color: var(--text-primary);
+            text-align: center;
+            border-top: 1px solid var(--neutral-cool-gray);
         }
-        
-        .contact-info a {
-            color: var(--primary-gold);
-            text-decoration: none;
-            transition: color var(--transition-speed) var(--transition-type);
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-lg);
+            text-align: center;
         }
-        
-        .contact-info a:hover,
-        .contact-info a:focus {
+
+        .footer-section {
+            flex: 1;
+        }
+
+        .footer-section h2 {
+            font-size: 1.5em;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .footer-section p,
+        .footer-section a {
+            font-size: 1em;
+            color: var(--text-secondary);
+        }
+
+        .footer-section a:hover,
+        .footer-section a:focus {
             color: var(--secondary-teal-green);
             text-decoration: underline;
         }
-        
+
         .powered-by {
             margin-top: var(--spacing-lg);
             font-size: 0.95em;
-            color: var(--text-primary);
-            text-align: center; /* Center powered-by text */
         }
-        
+
         .powered-by a {
             color: var(--primary-deep-blue);
-            text-decoration: none;
             font-weight: 500;
-            transition: color var(--transition-speed) var(--transition-type);
         }
-        
+
         .powered-by a:hover,
         .powered-by a:focus {
             color: var(--secondary-teal-green);
-            text-decoration: underline;
         }
-        
-        /* Decorative Line in Footer */
-        .footer .decorative-line {
+
+        .decorative-line {
             width: 100px;
             height: 2px;
             background-color: var(--secondary-teal-green);
@@ -489,94 +334,52 @@
             opacity: 0.7;
             transition: opacity var(--transition-speed) var(--transition-type);
         }
-        
-        .footer .decorative-line:hover {
+
+        .decorative-line:hover {
             opacity: 1;
         }
-        
+
         /* =======================================================
-           7. Media Queries
+           9. Media Queries
         ======================================================= */
-        
-        /* ---------------------------------------------------
-           7.1. Small Devices (Mobile)
-        --------------------------------------------------- */
-        @media (max-width: 576px) {
-            .footer-content {
-                padding: 60px 15px;
-            }
-        
-            .about-info h2 {
-                font-size: 2em;
-            }
-        
-            .about-info h2::after {
-                width: 60px;
-            }
-        
-            .about-info p {
-                font-size: 1em;
-            }
-        
-            .contact-info p {
-                font-size: 0.95em;
-            }
-        
-            .powered-by {
-                font-size: 0.85em;
-            }
-        
-            .service-list {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        /* ---------------------------------------------------
-           7.2. Medium Devices (Tablet)
-        --------------------------------------------------- */
         @media (min-width: 577px) and (max-width: 768px) {
             .service-list {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
-        
-        /* ---------------------------------------------------
-           7.3. Large Devices (Desktop)
-        --------------------------------------------------- */
-        @media (min-width: 769px) and (max-width: 992px) {
+
+        @media (min-width: 769px) {
             .service-list {
                 grid-template-columns: repeat(3, 1fr);
             }
-        }
-        
-        /* ---------------------------------------------------
-           7.4. Extra Large Devices (Desktop)
-        --------------------------------------------------- */
-        @media (min-width: 993px) {
-            .service-list {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        
+
             .footer-content {
                 flex-direction: row;
                 justify-content: space-between;
                 align-items: flex-start;
                 gap: 60px;
             }
-        
-            .about-info,
-            .contact-info,
-            .powered-by {
+
+            .footer-section {
                 text-align: left;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .service-list {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <header class="header"></header>
+    <header class="header">
+        <!-- Header Content (e.g., logo, navigation) -->
+    </header>
 
     <!-- Main Content -->
     <main id="main-content">
+        <!-- Hero Section -->
         <section class="hero">
             <div class="hero-content">
                 <h2>استعدادیاب</h2>
@@ -585,8 +388,9 @@
             </div>
         </section>
 
-        <section class="services">
-            <h2>درباره ما</h2>
+        <!-- About Us Section -->
+        <section class="about">
+            <h2 class="section-title">درباره ما</h2>
             <div class="service-list">
                 <!-- شرکت استعدادیاب -->
                 <div class="service-item">
@@ -705,9 +509,8 @@
         </section>
 
         <!-- طرح توسعه استعدادهای سازمانی -->
-        <section class="services">
-            <h2 class="main-title">طرح توسعه استعدادهای سازمانی</h2>
-
+        <section class="about">
+            <h2 class="section-title">طرح توسعه استعدادهای سازمانی</h2>
             <div class="service-list">
                 <div class="service-item">
                     <h3>مقدمه</h3>
@@ -946,12 +749,14 @@
                     </ul>
                 </div>
 
+                <!-- انواع نخبگی -->
                 <div class="service-item">
                     <h3>انواع نخبگی</h3>
                     <p>
                         نخبگی‌های مورد توجه مرکّب از توانایی‌های بنیادین پنج‌گانه (هوش تجربی، هوش تحصیلی، هوش تحلیلی، وظیفه‌مندی کنشی و سودمندی کنشی)، استعدادهای بافتی پنج‌گانه (اجتماعی، ریاضی، هنری، کلامی، حرکتی) و تیزهوشی‌های سه‌گانه (آفرینندگی، سازماندهی و پیشرفتگی) هستند که باید در طول اجرای برنامه برای هریک از 144 نفر جامعه مورد هدف احراز شوند.
                     </p>
 
+                    <!-- هوش‌ها و استعدادها -->
                     <div class="service-item">
                         <h4>هوش تجربی</h4>
                         <p>
@@ -1080,261 +885,300 @@
                     </ul>
                 </li>
             </ul>
-        </div>
-    </section>
+            </div>
+        </section>
 
-    <section class="services">
-        <h2 class="proposal-section-title">نیمرخ بالینی استعدادی هدف</h2>
-        <div class="service-list">
-            <div class="service-item">
-                <h3>ویژگی‌های روانشناختی گروه‌های مختلف</h3>
-                <p>
-                    گروه‌های مورد بررسی از ویژگی‌های روانشناختی مختلف برخوردارند:
-                </p>
-                <ul>
-                    <li>
-                        <strong>مدیر</strong>
-                        <ul>
-                            <li>آرامش درونی و چیرگی هیجانی</li>
-                            <li>روحیه انعطاف‌پذیری</li>
-                            <li>پیوندجویی و ظرفیت ارتباطی</li>
-                            <li>تعهد به یادگیری و رشد مستمر</li>
-                            <li>رهبری و الهام‌بخشی</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <strong>کارشناس</strong>
-                        <ul>
-                            <li>تصمیم‌گیری قاطع و سریع</li>
-                            <li>چالش‌پذیری</li>
-                            <li>چیرگی هیجانی و خویشتنداری</li>
-                            <li>دقت و تمرکز بالا</li>
-                            <li>عدالت‌محوری</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <strong>کارمند</strong>
-                        <ul>
-                            <li>انعطاف‌پذیری روانی</li>
-                            <li>پشتکار و اراده قوی</li>
-                            <li>تمرکز و دقت</li>
-                            <li>خودپایایی و چیرگی هیجانی</li>
-                            <li>روحیه همکاری و چالش‌پذیری</li>
-                        </ul>
-                    </li>
-                </ul>
+        <!-- نیمرخ بالینی استعدادی هدف -->
+        <section class="about">
+            <h2 class="section-title">نیمرخ بالینی استعدادی هدف</h2>
+            <div class="service-list">
+                <div class="service-item">
+                    <h3>ویژگی‌های روانشناختی گروه‌های مختلف</h3>
+                    <p>
+                        گروه‌های مورد بررسی از ویژگی‌های روانشناختی مختلف برخوردارند:
+                    </p>
+                    <ul>
+                        <li>
+                            <strong>مدیر</strong>
+                            <ul>
+                                <li>آرامش درونی و چیرگی هیجانی</li>
+                                <li>روحیه انعطاف‌پذیری</li>
+                                <li>پیوندجویی و ظرفیت ارتباطی</li>
+                                <li>تعهد به یادگیری و رشد مستمر</li>
+                                <li>رهبری و الهام‌بخشی</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>کارشناس</strong>
+                            <ul>
+                                <li>تصمیم‌گیری قاطع و سریع</li>
+                                <li>چالش‌پذیری</li>
+                                <li>چیرگی هیجانی و خویشتنداری</li>
+                                <li>دقت و تمرکز بالا</li>
+                                <li>عدالت‌محوری</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>کارمند</strong>
+                            <ul>
+                                <li>انعطاف‌پذیری روانی</li>
+                                <li>پشتکار و اراده قوی</li>
+                                <li>تمرکز و دقت</li>
+                                <li>خودپایایی و چیرگی هیجانی</li>
+                                <li>روحیه همکاری و چالش‌پذیری</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </section>
-    <section class="services">
-        <h2 class="proposal-section-title">توانایی‌های پنج‌گانه مدیر</h2>
-        <div class="service-list">
-            <div class="service-item">
-                <p>
-                    ویژگی‌های روانی مدیر را نیز مانند ویژگی‌های روانی سایر گروه‌ها می‌توان با توانایی‌های پنج‌گانه (هوش تجربی، هوش تحصیلی، هوش تحلیلی، وظیفه‌مندی و نوسودمندی) انطباق داد. در ادامه، هر ویژگی روانی مدیر با توانایی‌های مرتبط تبیین می‌شود:
-                </p>
-                <ul>
-                    <li>
-                        <strong>آرامش درونی و چیرگی هیجانی</strong>
-                        <p>هوش تجربی، وظیفه‌مندی، هوش تحلیلی</p>
-                    </li>
-                    <li>
-                        <strong>روحیه انعطاف‌پذیری</strong>
-                        <p>هوش تجربی، هوش تحلیلی، نوسودمندی</p>
-                    </li>
-                    <li>
-                        <strong>پیوندجویی و ظرفیت ارتباطی</strong>
-                        <p>هوش تجربی، هوش تحصیلی، وظیفه‌مندی</p>
-                    </li>
-                    <li>
-                        <strong>تعهد به یادگیری و رشد مستمر</strong>
-                        <p>هوش تحصیلی، هوش تجربی، هوش تحلیلی</p>
-                    </li>
-                    <li>
-                        <strong>رهبری و الهام‌بخشی</strong>
-                        <p>نوسودمندی، هوش تجربی، هوش تحلیلی، وظیفه‌مندی</p>
-                    </li>
-                </ul>
+        </section>
+        
+        <!-- توانایی‌های پنج‌گانه مدیر -->
+        <section class="about">
+            <h2 class="section-title">توانایی‌های پنج‌گانه مدیر</h2>
+            <div class="service-list">
+                <div class="service-item">
+                    <p>
+                        ویژگی‌های روانی مدیر را نیز مانند ویژگی‌های روانی سایر گروه‌ها می‌توان با توانایی‌های پنج‌گانه (هوش تجربی، هوش تحصیلی، هوش تحلیلی، وظیفه‌مندی و نوسودمندی) انطباق داد. در ادامه، هر ویژگی روانی مدیر با توانایی‌های مرتبط تبیین می‌شود:
+                    </p>
+                    <ul>
+                        <li>
+                            <strong>آرامش درونی و چیرگی هیجانی</strong>
+                            <p>هوش تجربی، وظیفه‌مندی، هوش تحلیلی</p>
+                        </li>
+                        <li>
+                            <strong>روحیه انعطاف‌پذیری</strong>
+                            <p>هوش تجربی، هوش تحلیلی، نوسودمندی</p>
+                        </li>
+                        <li>
+                            <strong>پیوندجویی و ظرفیت ارتباطی</strong>
+                            <p>هوش تجربی، هوش تحصیلی، وظیفه‌مندی</p>
+                        </li>
+                        <li>
+                            <strong>تعهد به یادگیری و رشد مستمر</strong>
+                            <p>هوش تحصیلی، هوش تجربی، هوش تحلیلی</p>
+                        </li>
+                        <li>
+                            <strong>رهبری و الهام‌بخشی</strong>
+                            <p>نوسودمندی، هوش تجربی، هوش تحلیلی، وظیفه‌مندی</p>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </section>
-    
-    <section class="services">
-        <h2 class="proposal-section-title">توانایی‌های پنج‌گانه کارشناس</h2>
-        <div class="service-list">
-            <div class="service-item">
-                <p>
-                    ویژگی‌های روانی کارشناس را نیز مانند سایر گروه‌ها می‌توان با توانایی‌های پنج‌گانه (هوش تجربی، هوش تحصیلی، هوش تحلیلی، وظیفه‌مندی و نوسودمندی) انطباق داد. در ادامه، هر ویژگی روانی کارشناس با توانایی‌های مرتبط تبیین می‌شود:
-                </p>
-                <ul>
-                    <li>
-                        <strong>تصمیم‌گیری قاطع و سریع</strong>
-                        <p>هوش تحلیلی، هوش تجربی</p>
-                    </li>
-                    <li>
-                        <strong>چالش‌پذیری</strong>
-                        <p>نوسودمندی، هوش تجربی</p>
-                    </li>
-                    <li>
-                        <strong>چیرگی هیجانی و خویشتنداری</strong>
-                        <p>وظیفه‌مندی، هوش تحلیلی، هوش تجربی</p>
-                    </li>
-                    <li>
-                        <strong>دقت و تمرکز بالا</strong>
-                        <p>هوش تحصیلی، وظیفه‌مندی، هوش تحلیلی</p>
-                    </li>
-                    <li>
-                        <strong>عدالت‌محوری</strong>
-                        <p>وظیفه‌مندی، هوش تحلیلی، هوش تحصیلی</p>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
-    <section class="services">
-        <h2 class="proposal-section-title">توضیح فناوری و نوآوری</h2>
-        <div class="service-list">
-            <div class="service-item">
-                <h3>فناوری‌های نوین در استعدادیابی روانی</h3>
-                <p>
-                    این پروژه با استفاده از «ابزارهای تخصصی روانشناختی و هوش مصنوعی» در فرآیند استعدادیابی، قابلیت شناسایی دقیق‌تر و سریع‌تر استعدادهای ذهنی و روانی را فراهم می‌آورد. استفاده از «تحلیل داده‌های بزرگ» و «مدل‌های پیش‌بینی»، نوآوری‌های اصلی این پروژه هستند که به ارتقاء کیفیت و دقت فرآیند استعدادیابی کمک می‌کنند.
-                </p>
-                <p>
-                    سطح فناوری این پروژه در TRL 6 قرار دارد، به این معنی که فناوری در محیط واقعی آزمایش و ارزیابی شده و نیاز به بهبود نهایی قبل از تولید صنعتی دارد. این پروژه با توسعه و بهینه‌سازی ابزارهای موجود، سطح فناوری را به TRL 7 ارتقا خواهد داد.
-                </p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="services">
-        <h2 class="proposal-section-title">ارزش افزوده اقتصادی</h2>
-        <div class="service-list">
-            <div class="service-item">
-                <h3>ایجاد ارزش افزوده از طریق کاهش هزینه‌ها و افزایش بهره‌وری</h3>
+        <!-- توانایی‌های پنج‌گانه کارشناس -->
+        <section class="about">
+            <h2 class="section-title">توانایی‌های پنج‌گانه کارشناس</h2>
+            <div class="service-list">
+                <div class="service-item">
+                    <p>
+                        ویژگی‌های روانی کارشناس را نیز مانند سایر گروه‌ها می‌توان با توانایی‌های پنج‌گانه (هوش تجربی، هوش تحصیلی، هوش تحلیلی، وظیفه‌مندی و نوسودمندی) انطباق داد. در ادامه، هر ویژگی روانی کارشناس با توانایی‌های مرتبط تبیین می‌شود:
+                    </p>
+                    <ul>
+                        <li>
+                            <strong>تصمیم‌گیری قاطع و سریع</strong>
+                            <p>هوش تحلیلی، هوش تجربی</p>
+                        </li>
+                        <li>
+                            <strong>چالش‌پذیری</strong>
+                            <p>نوسودمندی، هوش تجربی</p>
+                        </li>
+                        <li>
+                            <strong>چیرگی هیجانی و خویشتنداری</strong>
+                            <p>وظیفه‌مندی، هوش تحلیلی، هوش تجربی</p>
+                        </li>
+                        <li>
+                            <strong>دقت و تمرکز بالا</strong>
+                            <p>هوش تحصیلی، وظیفه‌مندی، هوش تحلیلی</p>
+                        </li>
+                        <li>
+                            <strong>عدالت‌محوری</strong>
+                            <p>وظیفه‌مندی، هوش تحلیلی، هوش تحصیلی</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- توضیح فناوری و نوآوری -->
+        <section class="about">
+            <h2 class="section-title">توضیح فناوری و نوآوری</h2>
+            <div class="service-list">
+                <div class="service-item">
+                    <h3>فناوری‌های نوین در استعدادیابی روانی</h3>
+                    <p>
+                        این پروژه با استفاده از «ابزارهای تخصصی روانشناختی و هوش مصنوعی» در فرآیند استعدادیابی، قابلیت شناسایی دقیق‌تر و سریع‌تر استعدادهای ذهنی و روانی را فراهم می‌آورد. استفاده از «تحلیل داده‌های بزرگ» و «مدل‌های پیش‌بینی»، نوآوری‌های اصلی این پروژه هستند که به ارتقاء کیفیت و دقت فرآیند استعدادیابی کمک می‌کنند.
+                    </p>
+                    <p>
+                        سطح فناوری این پروژه در TRL 6 قرار دارد، به این معنی که فناوری در محیط واقعی آزمایش و ارزیابی شده و نیاز به بهبود نهایی قبل از تولید صنعتی دارد. این پروژه با توسعه و بهینه‌سازی ابزارهای موجود، سطح فناوری را به TRL 7 ارتقا خواهد داد.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ارزش افزوده اقتصادی -->
+        <section class="about">
+            <h2 class="section-title">ارزش افزوده اقتصادی</h2>
+            <div class="service-list">
+                <div class="service-item">
+                    <h3>ایجاد ارزش افزوده از طریق کاهش هزینه‌ها و افزایش بهره‌وری</h3>
+                    <p>
+                        با استفاده از ابزارهای نوین روانشناختی و تحلیل داده‌ها، این پروژه قادر است «هزینه‌های مرتبط با فرآیند استعدادیابی» را تا ۲۰٪ کاهش دهد. علاوه بر این، «افزایش دقت در شناسایی استعدادها» منجر به بهبود عملکرد افراد و کاهش هزینه‌های ناشی از ناکامی در انتخاب افراد مناسب خواهد شد.
+                    </p>
+                </div>
+                <div class="service-item">
+                    <h3>توسعه صادرات دانش‌بنیان</h3>
+                    <p>
+                        محصول نهایی این پروژه دارای قابلیت صادرات به دیگر کشورها است. با توجه به نیاز جهانی به ابزارهای پیشرفته در استعدادیابی، انتظار می‌رود که تا سال پنجم، «۲ میلیون دلار صادرات» از این پروژه حاصل شود که به افزایش درآمد ارزی کشور کمک می‌کند.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- فعالیت‌های تحقیق و توسعه (R&D) -->
+        <section class="about">
+            <h2 class="section-title">فعالیت‌های تحقیق و توسعه (R&D)</h2>
+            <div class="service-list">
+                <div class="service-item">
+                    <h3>بودجه و زمان‌بندی تحقیق و توسعه</h3>
+                    <p>
+                        در این پروژه، «۳۰٪ از بودجه کل» به فعالیت‌های تحقیق و توسعه اختصاص یافته است. این فعالیت‌ها شامل توسعه الگوریتم‌های تحلیل داده، آزمایش و ارزیابی ابزارهای روانشناختی و بهینه‌سازی فرآیند استعدادیابی می‌باشند.
+                    </p>
+                </div>
+                <div class="service-item">
+                    <h3>تیم تحقیقاتی</h3>
+                    <p>
+                        تیم تحقیقاتی شامل ۸ متخصص در حوزه‌های روانشناسی، تحلیل داده‌ها و هوش مصنوعی است. اعضای تیم دارای «تجربه‌های علمی و پژوهشی» در زمینه استعدادیابی و بهینه‌سازی فرآیندهای روانشناسی هستند.
+                    </p>
+                </div>
+                <div class="service-item">
+                    <h3>استفاده از نتایج پژوهشی</h3>
+                    <p>
+                        نتایج حاصل از فعالیت‌های تحقیق و توسعه به طور مستقیم در **توسعه و بهبود ابزارهای استعدادیابی** و **افزایش دقت فرآیند شناسایی استعدادها** استفاده خواهد شد. همچنین، این نتایج می‌توانند در **انتشار مقالات علمی** و **دریافت گواهینامه‌های فنی** نقش مهمی ایفا کنند.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- تحلیل بازار و پتانسیل تجاری‌سازی -->
+        <section class="about">
+            <h2 class="section-title">تحلیل بازار و پتانسیل تجاری‌سازی</h2>
+            <div class="service-list">
+                <div class="service-item">
+                    <h3>اندازه بازار هدف</h3>
+                    <p>
+                        بازار هدف این پروژه شامل **سازمان‌ها و موسسات مختلف** در ایران و کشورهای همسایه است. بر اساس تحلیل‌های انجام‌شده، اندازه بازار سالانه این ابزارها **۵۰۰ میلیون دلار** تخمین زده شده است.
+                    </p>
+                </div>
+                <div class="service-item">
+                    <h3>مشتریان بالقوه و نیازهای آن‌ها</h3>
+                    <p>
+                        مشتریان بالقوه شامل **سازمان‌های آموزشی و تحقیقاتی**، **مراکز توسعه منابع انسانی** و **موسسات مشاوره‌ای** هستند که نیاز به ابزارهای دقیق و پیشرفته در استعدادیابی دارند. این ابزارها می‌توانند به آن‌ها در **شناسایی و پرورش استعدادهای سازمانی** کمک کنند.
+                    </p>
+                </div>
+                <div class="service-item">
+                    <h3>رقبا و مزیت رقابتی</h3>
+                    <p>
+                        در بازار فعلی، ابزارهای محدود و غیرتخصصی در زمینه استعدادیابی وجود دارد. **مزیت رقابتی** این پروژه در استفاده از **هوش مصنوعی و تحلیل داده‌های بزرگ** برای افزایش دقت و سرعت فرآیند است. همچنین، **پشتیبانی فنی و علمی قوی** از سوی تیم تحقیقاتی، این پروژه را از رقبا متمایز می‌کند.
+                    </p>
+                </div>
+                <div class="service-item">
+                    <h3>برنامه تجاری‌سازی</h3>
+                    <p>
+                        برنامه تجاری‌سازی شامل **بازاریابی دیجیتال**، **شرکت در نمایشگاه‌های بین‌المللی** و **همکاری با سازمان‌ها و موسسات مختلف** برای معرفی و فروش ابزارها خواهد بود. همچنین، **ارائه نسخه‌های سفارشی** برای نیازهای خاص مشتریان نیز در نظر گرفته شده است.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- تأثیر اجتماعی و زیست‌محیطی -->
+        <section class="about">
+            <h2 class="section-title">تأثیر اجتماعی و زیست‌محیطی</h2>
+            <div class="service-list">
+                <div class="service-item">
+                    <h3>تأثیرات اجتماعی</h3>
+                    <p>
+                        این پروژه با **ایجاد فرصت‌های شغلی** در حوزه‌های روانشناسی و تحلیل داده‌ها، به **اشتغال‌زایی** و **کاهش نابرابری‌های اقتصادی** کمک می‌کند. همچنین، **افزایش کیفیت منابع انسانی** و **توسعه استعدادهای سازمانی** منجر به **افزایش بهره‌وری ملی** و **بهبود روحیه جامعه** خواهد شد.
+                    </p>
+                </div>
+                <div class="service-item">
+                    <h3>تأثیرات زیست‌محیطی</h3>
+                    <p>
+                        فرآیندهای دیجیتالی و استفاده از **ابزارهای آنلاین** در این پروژه به **کاهش مصرف کاغذ** و **بهینه‌سازی منابع طبیعی** کمک می‌کنند. همچنین، **کمتر کردن نیاز به جلسات حضوری** و **حمل و نقل** می‌تواند به **کاهش انتشار گازهای گلخانه‌ای** منجر شود.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- مدارک و گواهینامه‌ها -->
+        <section class="about">
+            <h2 class="section-title">مدارک و گواهینامه‌ها</h2>
+            <div class="service-list">
+                <div class="service-item">
+                    <h3>ثبت اختراعات</h3>
+                    <p>
+                        این پروژه دارای **چندین اختراع ثبت‌شده** در حوزه ابزارهای روانشناختی و تحلیل داده‌ها است که **حمایت حقوقی** از نوآوری‌های ارائه‌شده را تضمین می‌کند.
+                    </p>
+                </div>
+                <div class="service-item">
+                    <h3>مقالات علمی</h3>
+                    <p>
+                        تیم تحقیقاتی تا کنون **ده مقاله علمی معتبر** در زمینه روانشناسی منتشر کرده است که نشان‌دهنده **تخصص و تجربه** تیم در این حوزه می‌باشد.
+                    </p>
+                </div>
+                <div class="service-item">
+                    <h3>تأییدیه‌های فنی</h3>
+                    <p>
+                        ابزارهای مورد استفاده در این پروژه دارای **تأییدیه‌های فنی** از مراجع معتبر داخلی و بین‌المللی هستند که اعتبار و قابلیت اطمینان آن‌ها را تضمین می‌کند.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- نتیجه‌گیری -->
+        <section class="about">
+            <h2 class="section-title">نتیجه‌گیری</h2>
+            <div class="service-list">
+                <div class="service-item">
+                    <p>
+                        این پروژه با استفاده از فناوری‌های نوین و رویکردهای علمی در استعدادیابی روانی، می‌تواند تأثیرات مثبت قابل‌توجهی بر بازار، اقتصاد و جامعه داشته باشد. با کاهش هزینه‌ها، افزایش بهره‌وری و ایجاد ارزش افزوده اقتصادی، این پروژه ارزش سرمایه‌گذاری و حمایت‌های مالی را داراست. همچنین، تأثیرات اجتماعی و زیست‌محیطی آن در بهبود کیفیت زندگی و ارتقاء استانداردهای سازمانی، این پروژه را به یک طرح دانش‌بنیان ارزشمند تبدیل کرده است.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section about-info">
+                <h2>درباره ما</h2>
                 <p>
-                    با استفاده از ابزارهای نوین روانشناختی و تحلیل داده‌ها، این پروژه قادر است «هزینه‌های مرتبط با فرآیند استعدادیابی» را تا ۲۰٪ کاهش دهد. علاوه بر این، «افزایش دقت در شناسایی استعدادها» منجر به بهبود عملکرد افراد و کاهش هزینه‌های ناشی از ناکامی در انتخاب افراد مناسب خواهد شد.
+                    استعدادیاب یک پلتفرم ارزیابی‌های روان‌شناختی آنلاین است که به افراد، خانواده‌ها و سازمان‌ها کمک می‌کند تا تصمیمات آگاهانه‌تری بگیرند.
                 </p>
             </div>
-            <div class="service-item">
-                <h3>توسعه صادرات دانش‌بنیان</h3>
+            <div class="footer-section contact-info">
+                <h2>تماس با ما</h2>
+                <p><strong>ایمیل:</strong> info@estedadidab.com</p>
+                <p><strong>تلفن:</strong> 123-456-7890</p>
+                <p><a href="/contact">فرم تماس</a></p>
+            </div>
+            <div class="footer-section powered-by">
+                <h2>توسط</h2>
                 <p>
-                    محصول نهایی این پروژه دارای قابلیت صادرات به دیگر کشورها است. با توجه به نیاز جهانی به ابزارهای پیشرفته در استعدادیابی، انتظار می‌رود که تا سال پنجم، «۲ میلیون دلار صادرات» از این پروژه حاصل شود که به افزایش درآمد ارزی کشور کمک می‌کند.
+                    <a href="https://openai.com" target="_blank" rel="noopener">OpenAI</a>
                 </p>
             </div>
         </div>
-    </section>
-
-    <section class="services">
-        <h2 class="proposal-section-title">فعالیت‌های تحقیق و توسعه (R&D)</h2>
-        <div class="service-list">
-            <div class="service-item">
-                <h3>بودجه و زمان‌بندی تحقیق و توسعه</h3>
-                <p>
-                    در این پروژه، «۳۰٪ از بودجه کل» به فعالیت‌های تحقیق و توسعه اختصاص یافته است. این فعالیت‌ها شامل توسعه الگوریتم‌های تحلیل داده، آزمایش و ارزیابی ابزارهای روانشناختی و بهینه‌سازی فرآیند استعدادیابی می‌باشند.
-                </p>
-            </div>
-            <div class="service-item">
-                <h3>تیم تحقیقاتی</h3>
-                <p>
-                    تیم تحقیقاتی شامل ۸ متخصص در حوزه‌های روانشناسی، تحلیل داده‌ها و هوش مصنوعی است. اعضای تیم دارای «تجربه‌های علمی و پژوهشی» در زمینه استعدادیابی و بهینه‌سازی فرآیندهای روانشناسی هستند.
-                </p>
-            </div>
-            <div class="service-item">
-                <h3>استفاده از نتایج پژوهشی</h3>
-                <p>
-                    نتایج حاصل از فعالیت‌های تحقیق و توسعه به طور مستقیم در **توسعه و بهبود ابزارهای استعدادیابی** و **افزایش دقت فرآیند شناسایی استعدادها** استفاده خواهد شد. همچنین، این نتایج می‌توانند در **انتشار مقالات علمی** و **دریافت گواهینامه‌های فنی** نقش مهمی ایفا کنند.
-                </p>
-            </div>
+        <div class="decorative-line"></div>
+        <div class="powered-by">
+            <p>&copy; 2024 استعدادیاب. تمامی حقوق محفوظ است.</p>
         </div>
-    </section>
+    </footer>
 
-    <section class="services">
-        <h2 class="proposal-section-title">تحلیل بازار و پتانسیل تجاری‌سازی</h2>
-        <div class="service-list">
-            <div class="service-item">
-                <h3>اندازه بازار هدف</h3>
-                <p>
-                    بازار هدف این پروژه شامل **سازمان‌ها و موسسات مختلف** در ایران و کشورهای همسایه است. بر اساس تحلیل‌های انجام‌شده، اندازه بازار سالانه این ابزارها **۵۰۰ میلیون دلار** تخمین زده شده است.
-                </p>
-            </div>
-            <div class="service-item">
-                <h3>مشتریان بالقوه و نیازهای آن‌ها</h3>
-                <p>
-                    مشتریان بالقوه شامل **سازمان‌های آموزشی و تحقیقاتی**، **مراکز توسعه منابع انسانی** و **موسسات مشاوره‌ای** هستند که نیاز به ابزارهای دقیق و پیشرفته در استعدادیابی دارند. این ابزارها می‌توانند به آن‌ها در **شناسایی و پرورش استعدادهای سازمانی** کمک کنند.
-                </p>
-            </div>
-            <div class="service-item">
-                <h3>رقبا و مزیت رقابتی</h3>
-                <p>
-                    در بازار فعلی، ابزارهای محدود و غیرتخصصی در زمینه استعدادیابی وجود دارد. **مزیت رقابتی** این پروژه در استفاده از **هوش مصنوعی و تحلیل داده‌های بزرگ** برای افزایش دقت و سرعت فرآیند است. همچنین، **پشتیبانی فنی و علمی قوی** از سوی تیم تحقیقاتی، این پروژه را از رقبا متمایز می‌کند.
-                </p>
-            </div>
-            <div class="service-item">
-                <h3>برنامه تجاری‌سازی</h3>
-                <p>
-                    برنامه تجاری‌سازی شامل **بازاریابی دیجیتال**، **شرکت در نمایشگاه‌های بین‌المللی** و **همکاری با سازمان‌ها و موسسات مختلف** برای معرفی و فروش ابزارها خواهد بود. همچنین، **ارائه نسخه‌های سفارشی** برای نیازهای خاص مشتریان نیز در نظر گرفته شده است.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section class="services">
-        <h2 class="proposal-section-title">تأثیر اجتماعی و زیست‌محیطی</h2>
-        <div class="service-list">
-            <div class="service-item">
-                <h3>تأثیرات اجتماعی</h3>
-                <p>
-                    این پروژه با **ایجاد فرصت‌های شغلی** در حوزه‌های روانشناسی و تحلیل داده‌ها، به **اشتغال‌زایی** و **کاهش نابرابری‌های اقتصادی** کمک می‌کند. همچنین، **افزایش کیفیت منابع انسانی** و **توسعه استعدادهای سازمانی** منجر به **افزایش بهره‌وری ملی** و **بهبود روحیه جامعه** خواهد شد.
-                </p>
-            </div>
-            <div class="service-item">
-                <h3>تأثیرات زیست‌محیطی</h3>
-                <p>
-                    فرآیندهای دیجیتالی و استفاده از **ابزارهای آنلاین** در این پروژه به **کاهش مصرف کاغذ** و **بهینه‌سازی منابع طبیعی** کمک می‌کنند. همچنین، **کمتر کردن نیاز به جلسات حضوری** و **حمل و نقل** می‌تواند به **کاهش انتشار گازهای گلخانه‌ای** منجر شود.
-                </p>
-            </div>
-        </div>
-    </section>
-    <section class="services">
-        <h2 class="proposal-section-title">مدارک و گواهینامه‌ها</h2>
-        <div class="service-list">
-            <div class="service-item">
-                <h3>ثبت اختراعات</h3>
-                <p>
-                    این پروژه دارای **چندین اختراع ثبت‌شده** در حوزه ابزارهای روانشناختی و تحلیل داده‌ها است که **حمایت حقوقی** از نوآوری‌های ارائه‌شده را تضمین می‌کند.
-                </p>
-            </div>
-            <div class="service-item">
-                <h3>مقالات علمی</h3>
-                <p>
-                    تیم تحقیقاتی تا کنون **ده مقاله علمی معتبر** در زمینه روانشناسی منتشر کرده است که نشان‌دهنده **تخصص و تجربه** تیم در این حوزه می‌باشد.
-                </p>
-            </div>
-            <div class="service-item">
-                <h3>تأییدیه‌های فنی</h3>
-                <p>
-                    ابزارهای مورد استفاده در این پروژه دارای **تأییدیه‌های فنی** از مراجع معتبر داخلی و بین‌المللی هستند که اعتبار و قابلیت اطمینان آن‌ها را تضمین می‌کند.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section class="services">
-        <h2 class="proposal-section-title">نتیجه‌گیری</h2>
-        <div class="service-list">
-            <div class="service-item">
-                <p>
-                    این پروژه با استفاده از فناوری‌های نوین و رویکردهای علمی در استعدادیابی روانی، می‌تواند تأثیرات مثبت قابل‌توجهی بر بازار، اقتصاد و جامعه داشته باشد. با کاهش هزینه‌ها، افزایش بهره‌وری و ایجاد ارزش افزوده اقتصادی، این پروژه ارزش سرمایه‌گذاری و حمایت‌های مالی را داراست. همچنین، تأثیرات اجتماعی و زیست‌محیطی آن در بهبود کیفیت زندگی و ارتقاء استانداردهای سازمانی، این پروژه را به یک طرح دانش‌بنیان ارزشمند تبدیل کرده است.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer will be dynamically injected here -->
-    <div class="footer"></div>
-
+    <!-- Scripts -->
     <script src="assets/js/script.js"></script>
     <script src="assets/js/header-footer-inject.js"></script>
-
 </body>
 </html>
