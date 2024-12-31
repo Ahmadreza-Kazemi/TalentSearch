@@ -1,4 +1,107 @@
-        <a href="/"><div class="logo">استعدادیاب</div>
+    <style>
+        /* Reset and Base Styles */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100%;
+            font-family: 'Vazir', sans-serif;
+            background-color: #FFFFFF;
+            color: #1F3B73;
+            direction: rtl;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            padding-top: 80px;
+            padding-bottom: 60px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #1F3B73;
+            transition: color 0.3s ease-in-out;
+        }
+
+        a:hover, a:focus {
+            color: #F4C553;
+            text-decoration: underline;
+        }
+
+        /* Header Styles */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 16px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1F3B73;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .logo:hover, .logo:focus {
+            color: #F4C553;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-wrap: nowrap;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin: 0 24px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #1F3B73;
+            font-size: 1rem;
+            position: relative;
+            padding: 8px 0;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a:focus::after {
+            width: 100%;
+            left: 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            left: 50%;
+            bottom: -4px;
+            background-color: #F4C553;
+            transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+        }
+    </style>
+        <a href="/" class="logo">استعدادیاب</a>
         <nav class="navbar">
             <ul class="nav-links">
                 <li><a href="/getting-started"><span class="link-text">شروع استعدادیابی</span></a></li>
