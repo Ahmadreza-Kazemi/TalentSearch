@@ -1,0 +1,484 @@
+<div class="ravesh-editor-html" style="direction:rtl">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>گزارش تحلیل فهرست تشخیص تعاملی شخصیت</title>
+    <style>
+        @font-face {
+            font-family: 'IRANSansWeb';
+            src: url('fonts/IRANSansWeb.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'BTitrBold';
+            src: url('fonts/BTitrBold.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'BKoodakBold';
+            src: url('fonts/BKoodakBold.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'BHoma';
+            src: url('fonts/BHoma.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'BYekan';
+            src: url('fonts/BYekan.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'Tahoma';
+            src: url('fonts/Tahoma.woff2') format('woff2');
+        }
+        .report-container {
+            font-family: 'BYekan', sans-serif;
+            direction: rtl;
+            line-height: 1.8;
+            background-color: #F5F5F5;
+            color: #333333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            max-width: 800px;
+            width: 100%;
+            margin: auto;
+            background-color: #F5F5F5;
+            padding: 40px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+        }
+        .report-header-custom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #0DA3B8;
+            border-radius: 20px 20px 0 0;
+        }
+        .report-header-inner {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .report-header-img {
+            width: 40px;
+            height: 40px;
+        }
+        .report-header-title {
+            margin: 0;
+            font-size: 1.8em;
+            color: #ffffff;
+            font-family: 'IRANSansWeb', sans-serif;
+            font-weight: normal;
+        }
+        .report-header-date {
+            color: #ffffff;
+            font-size: 1em;
+        }
+        .report-title {
+            text-align: center;
+            color: #0DA3B8;
+            font-family: 'IRANSansWeb', sans-serif;
+            font-weight: bold;
+            font-size: 32px;
+            margin-bottom: 25px;
+        }
+        .report-info-container, .report-score-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .report-info-item, .report-score-item {
+            background-color: #F8F9FA;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            font-size: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'BYekan', sans-serif;
+            flex: 1;
+            min-width: 300px;
+            margin-right: 10px; /* Add space between columns */
+        }
+        .report-info-item strong, .report-score-item strong {
+            color: #0DA3B8;
+            font-family: 'IRANSansWeb', sans-serif;
+        }
+        .report-info-data, .report-score-data {
+            font-family: 'IRANSansWeb', sans-serif;
+        }
+        .report-section-title {
+            font-size: 22px;
+            color: #CC3333;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #CC3333;
+            font-family: 'IRANSansWeb', sans-serif;
+            font-weight: bold;
+            text-align: center;
+        }
+        .report-component-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 22px;
+            color: #DBCF93;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #DBCF93;
+            font-family: 'IRANSansWeb', sans-serif;
+        }
+        .report-paragraph {
+            background-color: #E0F7FA;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .report-list {
+            list-style-type: none;
+            padding: 0;
+            font-size: 16px;
+        }
+        .report-list-item {
+            background: #F8F9FA;
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+        }
+        .report-list-item strong {
+            font-size: 18px;
+            color: #0DA3B8;
+            margin-bottom: 5px;
+        }
+        .report-badge {
+            display: inline-block;
+            padding: 8px 15px;
+            font-size: 14px;
+            color: #FFFFFF;
+            background-color: #4A9B8C;
+            border-radius: 10px;
+        }
+        .report-recommendation {
+            background-color: #EAEAEA;
+            padding: 20px;
+            margin-top: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .report-recommendation-title {
+            font-weight: bold;
+            color: #CC3333;
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
+        .report-recommendation-text {
+            margin-bottom: 5px;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+        .report-footer-custom {
+            background-color: #F5F5F5;
+            color: #333333;
+            padding: 20px;
+            text-align: center;
+            font-family: 'IRANSansWeb', sans-serif;
+            border-top: 1px solid #E0E0E0;
+            font-size: 16px; /* Increased font size */
+        }
+        .report-footer-content {
+            margin-bottom: 20px;
+        }
+        .report-footer-img {
+            width: 80px;
+            height: 80px;
+        }
+        .report-footer-paragraph {
+            margin: 5px 0;
+        }
+        .report-footer-paragraph.yellow-text {
+            color: #DBCF93;
+        }
+        .report-footer-menu {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 10px 0;
+        }
+        .report-footer-menu-link {
+            color: #0DA3B8;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .report-footer-menu-link:hover {
+            color: #007B8A;
+        }
+        .report-footer-address {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .report-summary-container {
+            max-width: 800px;
+            margin: auto;
+            background-color: #FFFFFF;
+            padding: 40px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+            border-radius: 10px;
+        }
+        .report-summary-heading {
+            text-align: center;
+            color: #0DA3B8;
+            font-family: 'IRANSansWeb', sans-serif;
+            font-weight: bold;
+            font-size: 32px;
+            margin-bottom: 25px;
+        }
+        .report-summary-content {
+            color: #333333;
+            font-family: 'IRANSansWeb', sans-serif;
+            line-height: 1.8;
+        }
+        .report-conditional-display {
+            display: block;
+        }
+        .report-conditional-display[style*="--score-rate1: 1"] {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #FF9999; /* Moderate */
+        }
+        .report-conditional-display[style*="--score-rate2: 2"] {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #FFD580; /* Good */
+        }
+        .report-conditional-display[style*="--score-rate3: 3"] {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #99FF99; /* Excellent */
+        }
+    </style>
+    <div class="report-report-container">
+        <header class="report-header-custom">
+            <div class="report-header-inner">
+                <img src="../panel/file?type=picture&amp;v=3&amp;mode=filemanager&amp;file=%7eDB3gfQUls%2bt2iiMYKbsRAxrtFhcHKUIUUo7pPtO17bHCzNxwU4zNh3UVor6QMtl7Y6EWX8dD0PSvzZOYkRrXlfejPn4lNTj6" class="report-header-img" alt="لوگو">
+                <h1 class="report-header-title">گزارش تحلیل فهرست تشخیص تعاملی شخصیت</h1>
+            </div>
+            <div class="report-header-date">تاریخ اجرا: #primary_createDate#</div>
+        </header>
+        
+        <div class="report-section-title">فهرست تشخیص تعاملی شخصیت</div>
+        <p class="report-paragraph">
+            این ارزیابی به منظور تحلیل و بررسی ویژگی‌های شخصیتی فرد در حوزه‌های مختلف از جمله تعهد، نیرومندی، ظرفیت تحلیلی، بیتابی روانی، استقلال و سازش انجام شده است. هدف از این ارزیابی شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد.
+        </p><p></p>
+               
+        <div class="report-section-title">اطلاعات فردی</div>
+        <div class="report-info-container">
+            <div class="report-info-item"><strong>نام:</strong> <span class="report-info-data">#field_349#</span></div>
+            <div class="report-info-item"><strong>نام خانوادگی:</strong> <span class="report-info-data">#field_1712#</span></div>
+            <div class="report-info-item"><strong>موبایل:</strong> <span class="report-info-data">#field_350#</span></div>
+            <div class="report-info-item"><strong>ایمیل:</strong> <span class="report-info-data">#field_351#</span></div></div>
+
+        </div>
+        <div class="report-section-title">نتیجه</div>
+        <div class="report-score-container">
+            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10254#;"><strong>اندیشه گردی فرایندی:</strong> <span class="report-badge">#field_6141#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10254#;"><strong>اندیشه گردی فرایندی:</strong> <span class="report-badge">#field_6141#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10254#;"><strong>اندیشه گردی فرایندی:</strong> <span class="report-badge">#field_6141#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10255#;"><strong>سنجیدگی:</strong> <span class="report-badge">#field_6142#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10255#;"><strong>سنجیدگی:</strong> <span class="report-badge">#field_6142#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10255#;"><strong>سنجیدگی:</strong> <span class="report-badge">#field_6142#</span></div>
+
+        </div>
+        <div class="report-section-title">تفسیر</div>
+        <p class="report-paragraph">
+            این بخش به تحلیل و تفسیر نتایج ارزیابی روان‌شناختی فرد می‌پردازد. تحلیل روان‌شناختی شامل بررسی ویژگی‌های شخصیتی مختلف است. هدف از این تحلیل شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد. نتایج این تحلیل می‌تواند به فرد کمک کند تا با شناخت بهتر از خود، برنامه‌های توسعه فردی و حرفه‌ای موثرتری را دنبال کند.
+        </p>
+
+
+
+        
+
+
+
+        <!-- اندیشه‌گردی فرایندی (پویایی ذهنی برای کشف و تجربه) -->
+<div class="report-component-title">اندیشه گردی فرایندی
+    <span class="report-badge report-score-data">#field_6141#<br></span>
+</div>
+<p class="report-paragraph">
+    اندیشه‌گردی فرایندی در حیطه «وظیفه‌شناسی روان‌شناختی» به معنای روحیه کاوشگری، استقبال از ایده‌های جدید، و رغبت به پیش‌بینی درست رویدادهاست. چنین افرادی نه‌تنها در مواجهه با مسائل پیچیده تمام وجود خود را به آن مشغول می‌کنند، بلکه با شوخ‌طبعی و تجربه‌گرایی، از یادگیری و کشف راه‌حل‌های نو لذت می‌برند.
+</p>
+<ul class="report-list">
+    <!-- سطح متوسط اندیشه گردی فرایندی -->
+    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10254#;">
+        <strong>«متوسط»<br></strong>
+        شما گاه اشتیاق به کارهای نو دارید و علاقه دارید مسائل را از زوایای مختلف ببینید، اما همیشه این حس در اوج نیست. ممکن است در موقعیت‌هایی از تجربه‌کردن دست بکشید یا آن را به زمانی دیگر موکول کنید.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. مشخص کردن حوزه‌های جذابی که می‌خواهید در آن‌ها ایده‌پردازی یا آزمایش کنید و آغازگام به گام در هر حوزه.<br>
+                ۲. تمرین شوخ‌طبعی در شرایط روزمره؛ نگاه متفاوت به مسائل می‌تواند ذهن کاوشگر شما را تقویت کند.<br>
+                ۳. یادداشت کردن ایده‌های خلاقانه یا سؤالاتی که هنگام تجربه مسائل جدید در ذهنتان شکل می‌گیرد، برای ثبت و بررسی بعدی.<br>
+                ۴. دریافت بازخورد از افراد کنجکاو یا با تجربه در حوزه مورد علاقه‌تان برای ارتقای پیش‌بینی‌ها و ایده‌های جدید.<br>
+                ۵. به مرور زمان حوزه‌های نوآورانه‌تر را نیز بیازمایید و از ترس شکست یا زمان کم، نهراسید.
+            </div>
+        </div>
+    </li>
+
+    <!-- سطح خوب اندیشه گردی فرایندی -->
+    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10254#;">
+        <strong>«خوب»<br></strong>
+        شما از ذهنی پویایی برخوردار هستید که به سادگی مشتاق انجام کارهای نو و کشف راهکارهای جدید است. معمولاً در مواجهه با مسائل پیچیده، همهٔ وجودتان را صرف تحلیل و پیش‌بینی درست آن می‌کنید و دیگران نیز شوخ‌طبعی و توجه دقیق شما را تحسین می‌کنند.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. گسترش دامنه علاقه‌هایتان؛ اجازه دهید کنجکاویتان در حوزه‌های بیشتری فعال شود و ایده‌های جدید شکل بگیرد.<br>
+                ۲. ادامه تعامل با افراد خلاق و مبتکر، به‌ویژه کسانی که دیدگاه‌های متفاوتی ارائه می‌دهند.<br>
+                ۳. مستندسازی و بررسی دوره‌ای روش‌های کاوش و پیش‌بینی‌تان تا بتوانید نقاط قوت و ضعف ذهن کاوشگرتان را شناسایی کنید.<br>
+                ۴. تلاش برای تبدیل ایده‌های خام به پروژه‌های کوچک عملی؛ نتیجه‌گرایی در کنار خلاقیت، به موفقیت بیشتر منجر می‌شود.<br>
+                ۵. با طنز و شوخ‌طبعی مثبت، فضای تیم‌ها یا جمع‌های کاری را شاداب و خلاق نگه دارید.
+            </div>
+        </div>
+    </li>
+
+    <!-- سطح عالی اندیشه گردی فرایندی -->
+    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10254#;">
+        <strong>«عالی»<br></strong>
+        شما در سطح بالایی از اندیشه‌گردی فرایندی قرار دارید؛ همیشه مشتاق تجربه‌های جدید، پیش‌بینی رویدادها با دقت بالا و نگاه چندجانبه به مسائل هستید. این رویکرد نه‌تنها برای خودتان لذت‌بخش است، بلکه می‌تواند به دیگران نیز بینش عمیق و الهام‌بخش بدهد.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. برعهده گرفتن نقش‌های پژوهشی یا نوآورانه در محیط‌های کاری یا تحصیلی که نیازمند ذهن تحلیلگر و کنجکاو شما هستند.<br>
+                ۲. آموزش و منتورینگ دیگران در زمینه تفکر خلاق و چندجانبه؛ شما الگوی خوبی برای تحریک حس کنجکاوی دیگران هستید.<br>
+                ۳. مستندسازی موفقیت‌هایتان در پیش‌بینی دقیق مسائل یا ارائه راه‌حل‌های بدیع، برای استفاده در آینده یا الهام‌بخشی به اطرافیان.<br>
+                ۴. شرکت در گروه‌های متنوع یا رویدادهای کارآفرینی و پژوهشی برای گسترش شبکه‌ای که از ایده‌ها و اشتیاق شما استقبال می‌کند.<br>
+                ۵. حفظ تعادل میان ذهن کاوشگر و نیاز به استراحت؛ گاهی وقفه کوتاه باعث خلاقیت تازه‌ای می‌شود.
+            </div>
+        </div>
+    </li>
+</ul>
+
+<!-- سنجیدگی (مرور جوانب مختلف و عمل بر اساس منطق و پشتکار) -->
+<div class="report-component-title">سنجیدگی
+    <span class="report-badge report-score-data">#field_6142#<br></span>
+</div>
+<p class="report-paragraph">
+    سنجیدگی در مفهوم «وظیفه‌شناسی روان‌شناختی» بیانگر رفتار بر پایه عقل و منطق، رعایت موازین، و پشتکار در آنچه فرد آموخته است. کسانی که در این حوزه قوی هستند، تمایل دارند همهٔ جوانب را بسنجند، تصمیماتشان را بر اساس تحلیل انجام دهند و ضمن احترام به قوانین، راه‌های درست را در پیش گیرند.
+</p>
+<ul class="report-list">
+
+    <!-- سطح متوسط سنجیدگی -->
+    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10255#;">
+        <strong>«متوسط»<br></strong>
+        شما تا حد زیادی در امور روزمره خود موازین و قوانین را رعایت می‌کنید و بر اساس عقل و منطق رفتار می‌کنید، اما ممکن است در مواقع پراسترس یا در برخی انتخاب‌های مهم، به‌طور کامل همه جوانب را نسنجید یا پشتکار لازم را نشان ندهید.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. تمرین تکنیک‌های تحلیل مسئله (مثلاً ماتریس مزایا و معایب) هنگام تصمیم‌های حساس برای گسترش رویکرد سنجیده‌تر.<br>
+                ۲. تنظیم چک‌لیست‌های کوتاه برای رعایت موازین و قوانین در کار یا تحصیل، تا احتمال خطا کاهش یابد.<br>
+                ۳. مرور و یادآوری قوانین و اصول اخلاقی یا حرفه‌ای در حوزه فعالیتتان برای حفظ پشتکار و جدیت.<br>
+                ۴. جست‌وجوی بازخورد از افراد امین یا مشاوران در صورت احساس تردید یا کمبود اعتماد به تصمیم‌گیری.<br>
+                ۵. افزایش سطح خودانضباطی از طریق بهبود روتین روزانه و پیگیری مستمر اهداف تعیین‌شده.
+            </div>
+        </div>
+    </li>
+
+    <!-- سطح خوب سنجیدگی -->
+    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10255#;">
+        <strong>«خوب»<br></strong>
+        شما در اغلب موارد به اصول و قوانین پایبند هستید و رفتارهایتان را با عقل و منطق هدایت می‌کنید. پیش از تصمیم‌گیری، تلاش می‌کنید همهٔ جوانب را بسنجید و پشتکار خوبی در عملی‌کردن آنچه آموخته‌اید دارید. این سطح از سنجیدگی نشان‌دهنده رفتار مسئولانه و منطقی است.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. حفظ این رویکرد مسئولانه با تداوم یادگیری مهارت‌های حل مسئله و شرکت در کارگاه‌های مدیریت تصمیم‌گیری.<br>
+                ۲. ارائه الگوی رفتار منظم و منطقی در گروه‌های دوستانه یا همکاران برای ارتقای فضای مسئولیت‌پذیری و نظم.<br>
+                ۳. آگاهی از اثرات مثبت پایبندی به قوانین و مقررات؛ این می‌تواند انگیزه بیشتری برای ادامه مسیر منظم و سنجیده باشد.<br>
+                ۴. ارزیابی دوره‌ای عملکرد؛ بررسی اینکه آیا هنوز هم تمامی جوانب را مد نظر دارید یا نیاز به بازبینی روش‌هایتان دارید.<br>
+                ۵. در صورت مواجهه با موقعیت‌های بسیار پیچیده، شکل‌گیری یک تیم مشورتی کوچک می‌تواند دیدگاه سنجیده‌تری به شما ارائه دهد.
+            </div>
+        </div>
+    </li>
+
+    <!-- سطح عالی سنجیدگی -->
+    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10255#;">
+        <strong>«عالی»<br></strong>
+        شما در سطح بسیار بالایی از سنجیدگی قرار دارید؛ همواره موازین و قوانین را رعایت کرده، با عقل و منطق رفتار می‌کنید و پشتکار قابل توجهی در اجرای آنچه آموخته‌اید نشان می‌دهید. این رویکرد شما را در جمع‌ها و محیط‌های کاری به فردی قابل اعتماد و مسئولیت‌پذیر تبدیل می‌کند.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. پذیرش نقش‌های کلیدی در پروژه‌ها یا سازمان‌هایی که به نگاه منظم و قانون‌مدار نیاز دارند؛ شما توان هدایت مناسبی دارید.<br>
+                ۲. آموزش مهارت‌های تصمیم‌گیری سنجیده به دیگران از طریق جلسات هم‌اندیشی یا منتورینگ؛ به اشتراک‌گذاری روش‌های کاربردی‌تان مفید خواهد بود.<br>
+                ۳. تشویق اطرافیان به رعایت نظم و قوانین با ارائه الگوی عملی و بیان مزایای این رویکرد در کارایی و روان‌شناسی مثبت.<br>
+                ۴. برقراری تعادل میان تکیه بر قوانین و توجه به شرایط انسانی؛ گاهی انعطاف و درک شرایط خاص نیز ضروری است.<br>
+                ۵. تداوم رشد مهارت‌های شخصی برای ارتقای بیشتر خودانضباطی و حفظ جایگاه ممتاز در رفتارهای سنجیده و منطقی.
+            </div>
+        </div>
+    </li>
+</ul>
+                                      
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+            <div class="report-section-title">جمع‌بندی</div>
+            <div class="report-paragraph">
+            <p>این گزارش ارزیابی مهارت‌های شما شامل تحلیل تعهد، نیرومندی، ظرفیت تحلیلی، بیتابی روانی، استقلال و سازش است. این بررسی نقاط قوت و زمینه‌های نیازمند بهبود شما را نشان داده و توصیه‌های کاربردی برای توسعه مهارت‌های شما ارائه می‌دهد.</p>
+            
+            <p><b>نقاط قوت: </b>شما در برخی از حوزه‌ها عملکرد برجسته‌ای دارید که نشان‌دهنده توانایی‌های قوی در مدیریت مسئولیت‌ها، انرژی بالا، تحلیل مسائل پیچیده، آرامش روانی، خودکفایی و تطبیق‌پذیری است. به عنوان مثال، در حوزه‌های "تعهد" و "ظرفیت تحلیلی"، شما توانایی زیادی در مدیریت وظایف و تحلیل مسائل نشان داده‌اید که می‌تواند به پیشرفت حرفه‌ای و رشد فردی شما کمک کند.</p>
+            
+            <p><b>حوزه‌های نیازمند بهبود:</b> در برخی از بخش‌ها نیاز به تمرکز بیشتر وجود دارد. به عنوان مثال، در حوزه‌های "بیتابی روانی" و "استقلال"، شما می‌توانید با تمرین‌های منظم و فعالیت‌های هدفمند مانند تکنیک‌های مدیریت استرس و برنامه‌ریزی منظم مهارت‌های خود را بهبود بخشید. همچنین، افزایش تعاملات اجتماعی و تمرین مهارت‌های تصمیم‌گیری مستقل می‌تواند تأثیر مثبتی بر عملکرد شما داشته باشد.</p>
+            
+            <p><b>گام‌های بعدی:</b> برای تقویت مهارت‌های خود، پیشنهاد می‌شود که به توصیه‌های ارائه‌شده در هر بخش توجه ویژه‌ای کنید و در صورت نیاز از خدمات مشاوره تخصصی استفاده نمایید. همچنین، ارزیابی منظم و پیگیری مداوم می‌تواند به توسعه پایدار و موفقیت شما در تمامی ابعاد زندگی کمک کند.</p>
+            </div>
+        
+        <footer class="report-footer-custom">
+            <div class="report-footer-content">
+                <img src="../panel/file?type=picture&amp;v=3&amp;mode=filemanager&amp;file=%7eDB3gfQUls%2bt2iiMYKbsRAxrtFhcHKUIUUo7pPtO17bHCzNxwU4zNh3UVor6QMtl7Y6EWX8dD0PSvzZOYkRrXlfejPn4lNTj6" class="report-footer-img" alt="لوگو">
+            </div>
+            <p class="report-footer-paragraph">مؤسّسه تعاملی هیجان اندیشه | تماس: 02188174100 | ایمیل: info@eot.ir</p>
+            <p class="report-footer-paragraph yellow-text">© ۱۴۰۳ تمامی حقوق محفوظ است.</p>
+            <ul class="report-footer-menu">
+                <li><a href="https://www.eot.ir/" class="report-footer-menu-link">صفحه اصلی</a></li>
+                <li><a href="https://www.eot.ir/contact" class="report-footer-menu-link">تماس با ما</a></li>
+                <li><a href="https://www.eot.ir/about" class="report-footer-menu-link">درباره ما</a></li>
+            </ul>
+            <address class="report-footer-address">تهران، سهروردی، خرمشهر، عربعلی، کوچه ششم، شماره ۴۴</address>
+        </footer>
+    </div>

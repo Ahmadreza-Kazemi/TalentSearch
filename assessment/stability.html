@@ -1,0 +1,669 @@
+<div class="ravesh-editor-html" style="direction:rtl">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>گزارش تحلیل فهرست تشخیص تعاملی شخصیت</title>
+    <style>
+        @font-face {
+            font-family: 'IRANSansWeb';
+            src: url('fonts/IRANSansWeb.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'BTitrBold';
+            src: url('fonts/BTitrBold.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'BKoodakBold';
+            src: url('fonts/BKoodakBold.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'BHoma';
+            src: url('fonts/BHoma.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'BYekan';
+            src: url('fonts/BYekan.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'Tahoma';
+            src: url('fonts/Tahoma.woff2') format('woff2');
+        }
+        .report-container {
+            font-family: 'BYekan', sans-serif;
+            direction: rtl;
+            line-height: 1.8;
+            background-color: #F5F5F5;
+            color: #333333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            max-width: 800px;
+            width: 100%;
+            margin: auto;
+            background-color: #F5F5F5;
+            padding: 40px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+        }
+        .report-header-custom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #0DA3B8;
+            border-radius: 20px 20px 0 0;
+        }
+        .report-header-inner {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .report-header-img {
+            width: 40px;
+            height: 40px;
+        }
+        .report-header-title {
+            margin: 0;
+            font-size: 1.8em;
+            color: #ffffff;
+            font-family: 'IRANSansWeb', sans-serif;
+            font-weight: normal;
+        }
+        .report-header-date {
+            color: #ffffff;
+            font-size: 1em;
+        }
+        .report-title {
+            text-align: center;
+            color: #0DA3B8;
+            font-family: 'IRANSansWeb', sans-serif;
+            font-weight: bold;
+            font-size: 32px;
+            margin-bottom: 25px;
+        }
+        .report-info-container, .report-score-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .report-info-item, .report-score-item {
+            background-color: #F8F9FA;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            font-size: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'BYekan', sans-serif;
+            flex: 1;
+            min-width: 300px;
+            margin-right: 10px; /* Add space between columns */
+        }
+        .report-info-item strong, .report-score-item strong {
+            color: #0DA3B8;
+            font-family: 'IRANSansWeb', sans-serif;
+        }
+        .report-info-data, .report-score-data {
+            font-family: 'IRANSansWeb', sans-serif;
+        }
+        .report-section-title {
+            font-size: 22px;
+            color: #CC3333;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #CC3333;
+            font-family: 'IRANSansWeb', sans-serif;
+            font-weight: bold;
+            text-align: center;
+        }
+        .report-component-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 22px;
+            color: #DBCF93;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #DBCF93;
+            font-family: 'IRANSansWeb', sans-serif;
+        }
+        .report-paragraph {
+            background-color: #E0F7FA;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .report-list {
+            list-style-type: none;
+            padding: 0;
+            font-size: 16px;
+        }
+        .report-list-item {
+            background: #F8F9FA;
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+        }
+        .report-list-item strong {
+            font-size: 18px;
+            color: #0DA3B8;
+            margin-bottom: 5px;
+        }
+        .report-badge {
+            display: inline-block;
+            padding: 8px 15px;
+            font-size: 14px;
+            color: #FFFFFF;
+            background-color: #4A9B8C;
+            border-radius: 10px;
+        }
+        .report-recommendation {
+            background-color: #EAEAEA;
+            padding: 20px;
+            margin-top: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .report-recommendation-title {
+            font-weight: bold;
+            color: #CC3333;
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
+        .report-recommendation-text {
+            margin-bottom: 5px;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+        .report-footer-custom {
+            background-color: #F5F5F5;
+            color: #333333;
+            padding: 20px;
+            text-align: center;
+            font-family: 'IRANSansWeb', sans-serif;
+            border-top: 1px solid #E0E0E0;
+            font-size: 16px; /* Increased font size */
+        }
+        .report-footer-content {
+            margin-bottom: 20px;
+        }
+        .report-footer-img {
+            width: 80px;
+            height: 80px;
+        }
+        .report-footer-paragraph {
+            margin: 5px 0;
+        }
+        .report-footer-paragraph.yellow-text {
+            color: #DBCF93;
+        }
+        .report-footer-menu {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 10px 0;
+        }
+        .report-footer-menu-link {
+            color: #0DA3B8;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .report-footer-menu-link:hover {
+            color: #007B8A;
+        }
+        .report-footer-address {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .report-summary-container {
+            max-width: 800px;
+            margin: auto;
+            background-color: #FFFFFF;
+            padding: 40px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+            border-radius: 10px;
+        }
+        .report-summary-heading {
+            text-align: center;
+            color: #0DA3B8;
+            font-family: 'IRANSansWeb', sans-serif;
+            font-weight: bold;
+            font-size: 32px;
+            margin-bottom: 25px;
+        }
+        .report-summary-content {
+            color: #333333;
+            font-family: 'IRANSansWeb', sans-serif;
+            line-height: 1.8;
+        }
+        .report-conditional-display {
+            display: block;
+        }
+        .report-conditional-display[style*="--score-rate1: 1"] {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #FF9999; /* Moderate */
+        }
+        .report-conditional-display[style*="--score-rate2: 2"] {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #FFD580; /* Good */
+        }
+        .report-conditional-display[style*="--score-rate3: 3"] {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #99FF99; /* Excellent */
+        }
+    </style>
+    <div class="report-report-container">
+        <header class="report-header-custom">
+            <div class="report-header-inner">
+                <img src="../panel/file?type=picture&amp;v=3&amp;mode=filemanager&amp;file=%7eDB3gfQUls%2bt2iiMYKbsRAxrtFhcHKUIUUo7pPtO17bHCzNxwU4zNh3UVor6QMtl7Y6EWX8dD0PSvzZOYkRrXlfejPn4lNTj6" class="report-header-img" alt="لوگو">
+                <h1 class="report-header-title">گزارش تحلیل فهرست تشخیص تعاملی شخصیت</h1>
+            </div>
+            <div class="report-header-date">تاریخ اجرا: #primary_createDate#</div>
+        </header>
+        
+        <div class="report-section-title">فهرست تشخیص تعاملی شخصیت</div>
+        <p class="report-paragraph">
+            این ارزیابی به منظور تحلیل و بررسی ویژگی‌های شخصیتی فرد در حوزه‌های مختلف از جمله تعهد، نیرومندی، ظرفیت تحلیلی، بیتابی روانی، استقلال و سازش انجام شده است. هدف از این ارزیابی شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد.
+        </p><p></p>
+               
+        <div class="report-section-title">اطلاعات فردی</div>
+        <div class="report-info-container">
+            <div class="report-info-item"><strong>نام:</strong> <span class="report-info-data">#field_349#</span></div>
+            <div class="report-info-item"><strong>نام خانوادگی:</strong> <span class="report-info-data">#field_1712#</span></div>
+            <div class="report-info-item"><strong>موبایل:</strong> <span class="report-info-data">#field_350#</span></div>
+            <div class="report-info-item"><strong>ایمیل:</strong> <span class="report-info-data">#field_351#</span></div></div>
+
+        </div>
+        <div class="report-section-title">نتیجه</div>
+        <div class="report-score-container">
+            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10301#;"><strong>بیتابی:</strong> <span class="report-badge">#field_5483#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10301#;"><strong>بیتابی:</strong> <span class="report-badge">#field_5483#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10301#;"><strong>بیتابی:</strong> <span class="report-badge">#field_5483#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10302#;"><strong>تزلزل:</strong> <span class="report-badge">#field_5484#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10302#;"><strong>تزلزل:</strong> <span class="report-badge">#field_5484#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10302#;"><strong>تزلزل:</strong> <span class="report-badge">#field_5484#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10303#;"><strong>کنجکاوی:</strong> <span class="report-badge">#field_5485#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10303#;"><strong>کنجکاوی:</strong> <span class="report-badge">#field_5485#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10303#;"><strong>کنجکاوی:</strong> <span class="report-badge">#field_5485#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10304#;"><strong>مادی گرایی:</strong> <span class="report-badge">#field_5486#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10304#;"><strong>مادی گرایی:</strong> <span class="report-badge">#field_5486#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10304#;"><strong>مادی گرایی:</strong> <span class="report-badge">#field_5486#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10305#;"><strong>هیجان پذیری:</strong> <span class="report-badge">#field_5487#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10305#;"><strong>هیجان پذیری:</strong> <span class="report-badge">#field_5487#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10305#;"><strong>هیجان پذیری:</strong> <span class="report-badge">#field_5487#</span></div>
+
+        </div>
+        <div class="report-section-title">تفسیر</div>
+        <p class="report-paragraph">
+            این بخش به تحلیل و تفسیر نتایج ارزیابی روان‌شناختی فرد می‌پردازد. تحلیل روان‌شناختی شامل بررسی ویژگی‌های شخصیتی مختلف است. هدف از این تحلیل شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد. نتایج این تحلیل می‌تواند به فرد کمک کند تا با شناخت بهتر از خود، برنامه‌های توسعه فردی و حرفه‌ای موثرتری را دنبال کند.
+        </p>
+
+
+<!-- بیتابی (نگرانی مداوم و احساس فرسودگی) -->
+<div class="report-component-title">بیتابی
+    <span class="report-badge report-score-data">#field_5483#<br></span>
+</div>
+<p class="report-paragraph">
+    بیتابی در «فهرست پایایی» به معنای وجود احساس خستگی ذهنی مداوم، نگرانی درباره آینده و شک و تردید در مواجهه با مسائل زندگی است. این حالت ممکن است با دلشورگی، سردرگمی و گاهی تنهایی همراه شود و مانع از حفظ آرامش روانی پایدار گردد.
+</p>
+<ul class="report-list">
+    <!-- سطح متوسط بیتابی -->
+    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10301#;">
+        <strong>«متوسط»<br></strong>
+        شما گاهی احساس فرسودگی و نگرانی درباره بقای خویش یا زندگی روزمره دارید، اما هنوز می‌توانید تعادلی نسبی را حفظ کنید. ممکن است در برخی شرایط، لرزش بدن یا سردرگمی کوتاه‌مدت را تجربه کنید که نشان‌دهنده بیتابی مقطعی است.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. شناسایی و اولویت‌بندی دغدغه‌هایتان؛ با تقسیم مسائل به بخش‌های کوچک‌تر، فشار روانی کاسته می‌شود.<br>
+                ۲. تقویت مهارت‌های حل مسئله از طریق مطالعه کتاب‌های تخصصی یا شرکت در دوره‌های مرتبط با مدیریت استرس.<br>
+                ۳. استفاده از تکنیک‌های آرام‌سازی جسمی و ذهنی (تنفس عمیق، ریلکسیشن، ذهن‌آگاهی) برای کاهش لرزش یا دلشورگی در لحظات اضطراب.<br>
+                ۴. گفت‌وگو با یک فرد معتمد یا متخصص درباره تردیدها و نگرانی‌ها؛ این رویکرد باعث کاهش حس تنهایی و سردرگمی می‌شود.<br>
+                ۵. ارزیابی منظم الگوی خواب، تغذیه و استراحت برای جلوگیری از تشدید بیتابی در مواقع دشوار.
+            </div>
+        </div>
+    </li>
+
+    <!-- سطح خوب بیتابی -->
+    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10301#;">
+        <strong>«خوب»<br></strong>
+        شما معمولاً قادر هستید احساس نگرانی و فرسودگی را مدیریت کنید؛ اگرچه گاهی در مواجهه با بحران‌ها دچار دلشورگی می‌شوید، اما کمتر به سردرگمی عمیق دچار می‌گردید. این وضعیت حاکی از توانایی نسبی شما در حفظ آرامش درونی است.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. حفظ روند فعلی با شناسایی علائم اولیه استرس و استفاده به‌موقع از مهارت‌های مدیریت اضطراب (مثلاً تکنیک‌های تنفسی).<br>
+                ۲. شفاف‌سازی اهداف کوتاه‌مدت و بلندمدت برای جلوگیری از احساس گم‌شدگی؛ برنامه‌ریزی واقع‌بینانه می‌تواند از دلشورگی بکاهد.<br>
+                ۳. تقویت حس خودکارآمدی با یادآوری موفقیت‌های گذشته؛ بررسی مداوم دستاوردها انگیزه و انرژی روانی را بالا نگه می‌دارد.<br>
+                ۴. گسترش شبکه پشتیبانی؛ تعامل منظم با دوستان و آشنایان و بیان احساسات کمک می‌کند بار بیتابی کمتر شود.<br>
+                ۵. بررسی دوره‌ای عوامل فرسودگی؛ موقعیت‌های تکراری استرس‌زا را شناسایی و در جهت تغییر یا تطبیق با آن‌ها تلاش کنید.
+            </div>
+        </div>
+    </li>
+
+    <!-- سطح عالی بیتابی -->
+    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10301#;">
+        <strong>«پایین» (معکوس در بیتابی یعنی عالی)<br></strong>
+        شما عملاً درگیر بیتابی مداوم یا دلشورگی‌ نیستید و اگر نگرانی یا تردیدی هم باشد، سریعاً با روش‌های سازنده آن را مدیریت می‌کنید. این سطح نشان می‌دهد توانایی بالایی در کنترل افکار منفی یا احساس تنهایی داشته و آرامش نسبی را حفظ می‌کنید.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. حفظ تکنیک‌های موفق مقابله با استرس؛ اشتراک آن‌ها با دیگران می‌تواند حس حمایت و همدلی ایجاد کند.<br>
+                ۲. توجه به علائم اولیه اضطراب؛ حتی در سطح عالی نیز لازم است مراقبت مستمر از سلامت روان را فراموش نکنید.<br>
+                ۳. گسترش توانایی‌های حل مسئله از طریق مطالعه یا شرکت در کارگاه‌های پیشرفته؛ دانش شما می‌تواند الگوی دیگران باشد.<br>
+                ۴. شرکت در فعالیت‌های داوطلبانه یا جمعی برای تقویت حس مفید بودن و مقابله با نشانه‌های احتمالی خستگی ذهنی در آینده.<br>
+                ۵. حفظ تعادل میان کار و استراحت؛ پرهیز از فشار زیاد که می‌تواند به مرور به بیتابی بیشتری منجر شود.
+            </div>
+        </div>
+    </li>
+</ul>
+
+<!-- تزلزل (عدم ثبات اخلاقی و روحی) -->
+<div class="report-component-title">تزلزل
+    <span class="report-badge report-score-data">#field_5484#<br></span>
+</div>
+<p class="report-paragraph">
+    تزلزل در «فهرست پایایی» اشاره به نوعی عدم ثبات در الگوهای رفتاری و فکری دارد؛ فرد ممکن است با لرزش‌های روحی یا اخلاقی، عدم تعهد و رفتارهای نامتعادل مواجه شود. این حالت می‌تواند مانع برنامه‌ریزی بلندمدت یا موفقیت پایدار شود.
+</p>
+<ul class="report-list">
+    <!-- سطح متوسط تزلزل -->
+    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10302#;">
+        <strong>«متوسط»<br></strong>
+        شما گاهی در حفظ ثبات اخلاقی یا آینده‌نگری دچار نوسان می‌شوید، اما هنوز توانایی مدیریت نسبی این لرزش‌ها را دارید. این امر ممکن است باعث شود در برخی تصمیم‌هایتان تردید کنید یا برای مدتی از تعهدات فاصله بگیرید.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. تعریف معیارهای مشخص اخلاقی و پایبندی به آن‌ها؛ شفاف‌سازی این معیارها مانع رفتار نامتعادل می‌شود.<br>
+                ۲. گفتگو با دوستان یا مشاوران پیرامون تردیدها و نگرانی‌ها؛ روش‌های حمایت اجتماعی می‌توانند روند تزلزل را کاهش دهند.<br>
+                ۳. تمرین تمرکز بر آینده‌نگری و تحلیل نتایج اعمال؛ آگاهی از پیامدهای بلندمدت رفتار در تصمیم‌گیری بهتر کمک می‌کند.<br>
+                ۴. فراگیری مهارت‌های خودکنترلی و برنامه‌ریزی برای پیشگیری از انحراف‌های لحظه‌ای در مسیر اخلاقی.<br>
+                ۵. رصد و مستندسازی لحظاتی که دچار نامتعادلی می‌شوید؛ بررسی دلایل و تلاش برای تغییر مثبت.
+            </div>
+        </div>
+    </li>
+
+    <!-- سطح خوب تزلزل -->
+    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10302#;">
+        <strong>«پایین» (خوب در تزلزل یعنی تزلزل کم)<br></strong>
+        شما عمدتاً در چارچوب اخلاق و آینده‌نگری ثبات دارید و کمتر دچار رفتارهای ناگهانی یا عدم تعهد می‌شوید. هرچند ممکن است گاهی نشانه‌های ناچیزی از تزلزل بروز کند، اما شما توانسته‌اید مسیر متعادل‌تر و قابل پیش‌بینی‌تری را در زندگی در پیش بگیرید.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. تقویت این ثبات از طریق یادگیری مداوم مهارت‌های خودکنترلی و برنامه‌ریزی بلندمدت.<br>
+                ۲. مشارکت در فعالیت‌های گروهی و اخلاق‌مدار؛ احساس تعلق به چنین گروه‌هایی تزلزل را بیشتر کاهش می‌دهد.<br>
+                ۳. داشتن اهداف روشن و معنادار؛ کمک می‌کند در لحظات تردید به مسیر آینده بنگرید و تصمیم‌های سنجیده‌تری بگیرید.<br>
+                ۴. مراقبت از حس خودارزشمندی؛ تزلزل معمولاً با ضعف در تصویر ذهنی فرد از خویشتن مرتبط است.<br>
+                ۵. بررسی دوره‌ای دلایلی که قبلاً ممکن بود باعث انحراف از رفتار متعادل شود و پیشگیری از تکرار آن‌ها.
+            </div>
+        </div>
+    </li>
+
+    <!-- سطح عالی تزلزل -->
+    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10302#;">
+        <strong>«خیلی پایین» (عالی در تزلزل یعنی تقریباً بدون تزلزل)<br></strong>
+        شما تقریباً هیچ لرزش اخلاقی یا دوری از چارچوب آینده‌نگری را تجربه نمی‌کنید؛ پایداری بالایی دارید و به اصول شخصی خود پایبند هستید. این ویژگی باعث می‌شود مسیر موفقیت و رشدتان قابل اعتماد باشد و در تصمیم‌گیری‌های مهم با اطمینان عمل کنید.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. تداوم حفظ چارچوب‌های اخلاقی و آینده‌نگری از طریق مطالعه، حضور در جمع‌های اندیشمند و همفکری با خبرگان.<br>
+                ۲. ایفای نقش الگو یا مربی در محیط کاری یا خانوادگی؛ کمک به دیگران برای یافتن ثبات می‌تواند بسیار ارزشمند باشد.<br>
+                ۳. استحکام بیشتر مهارت‌های رهبری؛ افرادی با تزلزل پایین معمولاً کاندیدهای خوبی برای مسئولیت‌های مهم هستند.<br>
+                ۴. جلوگیری از غرور یا خودبرتر‌بینی؛ پایین بودن تزلزل نباید احساس مصونیت کاذب ایجاد کند.<br>
+                ۵. آماده ماندن برای شرایط استرس‌زا؛ حتی بهترین‌ها هم ممکن است در معرض حوادث غیرمنتظره قرار گیرند.
+            </div>
+        </div>
+    </li>
+</ul>
+
+<!-- کنجکاوی (پویایی ذهنی و تمایل به تجربه مسائل جدید) -->
+<div class="report-component-title">کنجکاوی
+    <span class="report-badge report-score-data">#field_5485#<br></span>
+</div>
+<p class="report-paragraph">
+    کنجکاوی نشانه تمایل ذهن به جست‌وجوی حقیقت و تجربه ناشناخته‌هاست. در «فهرست پایایی»، کنجکاوی بالا می‌تواند عامل پیش‌برنده برای رشد شخصی باشد، اما اگر به شکلی افراطی و خطرناک دنبال شود، ممکن است دردسرزا شود. 
+</p>
+<ul class="report-list">
+    <!-- سطح متوسط کنجکاوی -->
+    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10303#;">
+        <strong>«متوسط»<br></strong>
+        شما تا حدی به جست‌وجوی چیزهای جدید علاقمند هستید، اما شاید همیشه ریسک پذیر نباشید یا درک ملاحظات ایمنی و نتیجه‌محوریت روی کنجکاویتان سایه بیندازد. ممکن است برخی اوقات ترس از دردسر باعث شود به دنبال پاسخ پرسش‌هایتان نروید.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. برقراری توازن بین کنجکاوی و احتیاط؛ تعیین حد و مرزهایی برای امنیت خود هنگام پیگیری ایده‌های جدید.<br>
+                ۲. پیگیری تدریجی سوالاتی که ذهنتان را درگیر کرده؛ شروع با موضوعات کم‌خطر به شما کمک می‌کند مهارت حل مسئله را افزایش دهید.<br>
+                ۳. گفتگو با افراد خلاق و نوآور؛ از تجربه‌های آن‌ها الگو بگیرید و روش‌های ایمن و مؤثر کنجکاوی را بشناسید.<br>
+                ۴. مطالعه در حوزه‌های گوناگون علمی، هنری یا فرهنگی، که حس کنجکاوی شما را تغذیه و ذهن‌تان را بازتر کند.<br>
+                ۵. بازبینی منظم دستاوردهای کنجکاوی؛ مشاهده نتایج مثبت می‌تواند جسارتتان را برای ماجراجویی‌های جدید افزایش دهد.
+            </div>
+        </div>
+    </li>
+
+    <!-- سطح خوب کنجکاوی -->
+    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10303#;">
+        <strong>«خوب»<br></strong>
+        شما از تمایل بالایی برای اکتشاف و تجربه مسائل ناشناخته برخوردارید و ریسک‌های حساب‌شده را قبول می‌کنید. این سطح از کنجکاوی معمولاً مایه پیشرفت بوده و اگرچه گاه دردسرهایی به همراه دارد، با مدیریت منطقی می‌تواند مسیر خلاقیت و یادگیری را هموار کند.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. تبدیل کنجکاوی به پروژه‌های کوچک؛ مثلاً انجام تحقیقات میدانی یا تجربیات عملی در حوزه‌های مورد علاقه.<br>
+                ۲. ایجاد ارتباط با سایر افراد نوآور و کنجکاو؛ این تبادل ایده و تجربه می‌تواند انگیزه‌هایتان را دوچندان کند.<br>
+                ۳. ارزیابی مداوم سود و زیان پیش از ورود به هر چالش جدید؛ رویکردی واقع‌بینانه می‌تواند شما را در مسیر ایمن نگه دارد.<br>
+                ۴. حفظ تعادل در انرژی ذهنی؛ پرداختن بیش از حد به ماجراجویی‌های فکری نباید فعالیت‌های اصلی زندگی‌تان را مختل کند.<br>
+                ۵. ارائه یافته‌ها و نتایج کنجکاویتان در جمع‌های دوستانه یا تخصصی؛ بازخورد گرفتن موجب تقویت مسیر یادگیری است.
+            </div>
+        </div>
+    </li>
+
+    <!-- سطح عالی کنجکاوی -->
+    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10303#;">
+        <strong>«عالی»<br></strong>
+        شما در اوج کنجکاوی قرار دارید؛ برای پاسخ به پرسش‌هایتان از هیچ تلاشی دریغ نمی‌کنید و حتی اگر خطرناک یا چالش‌برانگیز باشد، به دنبال حقیقت می‌روید. این ویژگی می‌تواند شما را به فردی بسیار خلاق و پیشرو تبدیل کند، اما مدیریت هوشمندانه ریسک نیز ضروری است.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. به اشتراک‌گذاری یافته‌های ماجراجویانه‌تان با افراد متخصص؛ ترکیب نوآوری و مشورت می‌تواند ریسک را کاهش دهد.<br>
+                ۲. آموزش دیگران درباره مزایا و مخاطرات کنجکاوی افراطی؛ آگاهی‌بخشی باعث می‌شود جامعه پویاتر اما ایمن‌تر شود.<br>
+                ۳. سازماندهی پروژه‌های تحقیقاتی یا گروه‌های اکتشافی؛ رهبری شما در این مسیر جذاب می‌تواند نتایج خلاقانه‌ای به همراه آورد.<br>
+                ۴. گوش دادن به توصیه‌های ایمنی و قوانین اخلاقی؛ آزادی در تجربه زمانی پایدار می‌ماند که از مرزهای سلامت و اخلاق عبور نکنید.<br>
+                ۵. حفظ توازن میان زندگی روزمره و دغدغه‌های ماجراجویانه؛ گاه کنار گذاشتن کنجکاوی مفرط و استراحت ذهنی نیز لازم است.
+            </div>
+        </div>
+    </li>
+</ul>
+
+<!-- مادی گرایی (تمرکز بیش از حد بر مادیات و مقایسه با دیگران) -->
+<div class="report-component-title">مادی گرایی
+    <span class="report-badge report-score-data">#field_5486#<br></span>
+</div>
+<p class="report-paragraph">
+    مادی گرایی در این فهرست، به معنای تمایل شدید فرد به رقابت بر سر جایگاه اجتماعی، کسب شهرت، مقایسه مداوم خویش با دیگران و دوری از ابعاد معنوی زندگی است. سطح بالای مادی گرایی ممکن است باعث شود فرد کمتر از معنویت و همراهی واقعی با اطرافیان بهره ببرد.
+</p>
+<ul class="report-list">
+
+    <!-- سطح متوسط مادی گرایی -->
+    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10304#;">
+        <strong>«متوسط»<br></strong>
+        شما تا اندازه‌ای به مقایسه خود با دیگران و دستیابی به جایگاه بالاتر اجتماعی تمایل دارید، اما این موضوع همواره اولویت مطلق زندگی‌تان نیست. در برخی مواقع، ممکن است بخشی از ارزش‌های معنوی را کنار بگذارید تا به هدف مادی برسید.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. ارزیابی هدف‌هایتان و شفاف‌سازی اینکه چقدر جنبه مادی بر ابعاد معنوی و شخصیتی شما سایه انداخته است.<br>
+                ۲. تعیین حد و مرز مشخص در رقابت‌ها؛ پرداختن بیش از حد به جاه‌طلبی می‌تواند باعث غفلت از دیگر اولویت‌ها شود.<br>
+                ۳. توجه به ارزش‌هایی که قبلاً داشته‌اید؛ آیا برای زندگی عمیقاً معنوی یا همراه با رضایت درونی برنامه‌ریزی کرده بودید؟<br>
+                ۴. تخصیص زمانی به کارهای خیرخواهانه یا روابط انسانی بی‌مزد و منت، تا بخشی از گرایش به مادیات تعدیل شود.<br>
+                ۵. تمرکز بر مهارت‌هایی که افزون بر درآمد، حس معنا یا شادی درونی را نیز فراهم می‌کنند.
+            </div>
+        </div>
+    </li>
+
+    <!-- سطح خوب مادی گرایی (در اینجا یعنی گرایش مادی کم) -->
+    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10304#;">
+        <strong>«پایین» (خوب یعنی مادی گرایی کمتر)<br></strong>
+        شما به‌طور کل تمایل کمتری به زندگی صرفاً مادی دارید و مقایسه با دیگران یا جاه‌طلبی افراطی برایتان دغدغه بزرگ نیست. در عوض، ممکن است به جنبه‌های معنوی یا روابط واقعی اهمیت بیشتری بدهید و همین امر شما را از استرس‌ها و فشارهای رقابتی نجات می‌دهد.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. حفظ این دیدگاه تعادلی نسبت به زندگی؛ توجه همزمان به کارایی مالی و نیازهای معنوی/شخصیتی امری سالم است.<br>
+                ۲. گسترش فعالیت‌های غیرمادی (مانند هنر، ورزش، کار داوطلبانه) که به رشد ذهنی و معنویتان کمک می‌کند.<br>
+                ۳. درک اینکه دستاوردهای مالی بدون احساس معنا یا لذت از کار و زندگی، به رضایت پایدار منجر نمی‌شوند.<br>
+                ۴. گاهی نسبت به اهداف مالی خود بازنگری کنید؛ برای این که اطمینان یابید اهداف مادی در چهارچوب ارزش‌های عمیق‌تر شما تعریف شده‌اند.<br>
+                ۵. الهام‌بخشی به دیگران در پیرامونتان که احساس می‌کنند تحت فشار مادی هستند؛ اشتراک‌گذاری تجربه‌های مثبتی که دارید.
+            </div>
+        </div>
+    </li>
+
+    <!-- سطح عالی مادی گرایی (یعنی خیلی بالا) -->
+    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10304#;">
+        <strong>«بسیار بالا» (در مادی گرایی یعنی افراط در گرایش مادی)<br></strong>
+        شما تمایل شدید به مادیات، رقابت با دیگران و جایگاه برتر اجتماعی دارید و در بسیاری از مواقع، ابعاد معنوی زندگی را نادیده می‌گیرید. این سطح از مادی گرایی می‌تواند رضایت درونی شما را تحت الشعاع قرار دهد و استرس بیشتری به زندگی اضافه کند.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. بازنگری ریشه‌های تمایل افراطی به مادیات؛ آیا این نیاز به برتری صرفاً ناشی از فشارهای اجتماعی است یا کمبودهای درونی؟<br>
+                ۲. کسب دانش در باب روان‌شناسی مثبت و معنویت؛ چه‌بسا ابعاد غیرمادی زندگی بتواند به شما آرامش و احساس معنا ببخشد.<br>
+                ۳. مشاوره یا گفتگو با افراد معتمد؛ بیان دغدغه‌ها درباره استرس رقابت و تلاش مداوم برای برتری، می‌تواند به راهکارهای سودمند منجر شود.<br>
+                ۴. تعریف اهدافی فراتر از مسائل مادی؛ مثلاً یادگیری مهارت جدید یا مشارکت در کارهای خیرخواهانه که رضایت درونی بیشتری به همراه دارند.<br>
+                ۵. ایجاد توازن تدریجی میان پیشرفت مالی و رشد فردی/معنوی؛ افراط در هر کدام بدون توجه به دیگری، به ناپایداری رضایت درونی منجر می‌شود.
+            </div>
+        </div>
+    </li>
+</ul>
+
+<!-- هیجان پذیری (تأثیر احساسات بر تصمیم‌ها و مدیریت دشوار هیجانات) -->
+<div class="report-component-title">هیجان پذیری
+    <span class="report-badge report-score-data">#field_5487#<br></span>
+</div>
+<p class="report-paragraph">
+    هیجان پذیری در «فهرست پایایی» بیانگر میزان مدیریت احساسات در تصمیم‌گیری و تشخیص رفتار درست از نادرست است. افرادی که امتیاز بالایی در هیجان پذیری دارند، ممکن است سریعاً تحت تأثیر عواطف قرار بگیرند و کنترل تصمیم‌ها برایشان دشوارتر باشد.
+</p>
+<ul class="report-list">
+    <!-- سطح متوسط هیجان پذیری -->
+    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10305#;">
+        <strong>«متوسط»<br></strong>
+        شما در شرایط عادی می‌توانید احساساتتان را مدیریت کنید، اما در موقعیت‌های پراسترس یا تصمیم‌گیری‌های دشوار، امکان دارد هیجانات منفی یا مثبت به صورت ناگهانی بر انتخاب‌هایتان تأثیر بگذارد. گاهی تشخیص خوبی از بدی نیز با گرایش احساسی تداخل می‌یابد.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. شناخت نشانه‌های اولیه فوران هیجانات؛ با تشخیص سریع علائم، می‌توانید واکنش بهتر و آرام‌تری داشته باشید.<br>
+                ۲. استفاده از روش‌های تنظیم هیجان (مثل تکنیک‌های تنفسی، بازنگری شناختی) در لحظات انتخاب یا استرس بالا.<br>
+                ۳. در تصمیم‌های مهم، نوشتن مزایا و معایب می‌تواند تمرکز منطقی را بر موضوع حفظ کند.<br>
+                ۴. مشورت با افرادی که خونسردی بیشتری دارند؛ ترکیب دیدگاه احساسی شما با منطق آن‌ها می‌تواند تصمیمی متعادل‌تر ایجاد کند.<br>
+                ۵. تجربه الگوهای رفتاری جایگزین؛ مثلاً اگر قبلاً در بحثی سریعاً عصبانی می‌شدید، حالا سعی کنید مکث کوتاهی داشته باشید و گفت‌وگو را ادامه دهید.
+            </div>
+        </div>
+    </li>
+
+    <!-- سطح خوب هیجان پذیری -->
+    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10305#;">
+        <strong>«پایین» (خوب در هیجان پذیری یعنی مدیریت هیجانات مطلوب)<br></strong>
+        شما معمولاً قادر به کنترل احساساتتان هستید و به ندرت تحت تأثیر شدید هیجانات در انتخاب‌ها و قضاوت‌ها قرار می‌گیرید. این حالت نشان‌دهنده مهارت بالاتر شما در موازنهٔ منطق و هیجان است.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. حفظ این رویکرد و استمرار یادگیری تکنیک‌های کنترل هیجان؛ گسترش آگاهی در زمینه روان‌شناسی می‌تواند سطح انعطاف شما را بیشتر کند.<br>
+                ۲. به اشتراک گذاشتن تجربیات موفق تنظیم هیجانات با دیگران؛ شما می‌توانید با هدایت افراد احساسی‌تر، اثر مثبتی بر محیط داشته باشید.<br>
+                ۳. احتیاط در تصمیم‌های ناگهانی؛ حتی با کنترل هیجان، همچنان سنجیدن ابعاد منطقی یک انتخاب ضروری است.<br>
+                ۴. درگیرشدن در فعالیت‌های گروهی که نیازمند آرامش و رهبری هیجانی است؛ در این فضا، مهارت پایین هیجان پذیری شما کارآمد خواهد بود.<br>
+                ۵. استفاده از هنر و تمرین‌های ارتباطی برای افزایش همدلی؛ مدیریت هیجان به معنای قطع کامل احساس نیست، بلکه تعادل آن با منطق مهم است.
+            </div>
+        </div>
+    </li>
+
+    <!-- سطح عالی هیجان پذیری -->
+    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10305#;">
+        <strong>«بسیار بالا» (در هیجان پذیری یعنی حساسیت شدید به احساسات)</br></strong>
+        شما حساسیت بسیاری نسبت به هیجانات دارید و احتمالاً به سرعت تحت تأثیر احساسات در انتخاب و تشخیص درست از نادرست قرار می‌گیرید. در صورت مدیریت نشدن، این وضع می‌تواند به تصمیم‌های عجولانه یا رفتارهای شتاب‌زده منجر شود.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. شناسایی سبک‌های هیجانی و درگیر شدن با روش‌های آرام‌سازی فوری؛ تمرین تنفس عمیق یا فاصله گرفتن موقت می‌تواند کارآمد باشد.<br>
+                ۲. در مواقع مهم، نظر افراد خونسردتر و منطق‌محور را هم جویا شوید؛ تکمیل دید احساسی شما با دید منطقی لازم است.<br>
+                ۳. شرکت در کارگاه‌های مدیریت هیجان یا مطالعه کتاب‌های تخصصی؛ کسب دانش آگاهی‌بخش می‌تواند از آثار منفی افراط در احساس بکاهد.<br>
+                ۴. تعیین مرزبندی بین احساسات زودگذر و ارزش‌های بلندمدت؛ این رویکرد شما را در موقعیت‌های پیچیده هدایت می‌کند.<br>
+                ۵. مراقبت از سلامت روان؛ هیجان‌های مداوم و شدید نیاز به زمان و فضا برای بازیابی انرژی ذهنی دارد.
+            </div>
+        </div>
+    </li>
+</ul>
+
+        
+
+
+
+
+        
+
+
+        
+                                              
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+            <div class="report-section-title">جمع‌بندی</div>
+            <div class="report-paragraph">
+            <p>این گزارش ارزیابی مهارت‌های شما شامل تحلیل تعهد، نیرومندی، ظرفیت تحلیلی، بیتابی روانی، استقلال و سازش است. این بررسی نقاط قوت و زمینه‌های نیازمند بهبود شما را نشان داده و توصیه‌های کاربردی برای توسعه مهارت‌های شما ارائه می‌دهد.</p>
+            
+            <p><b>نقاط قوت: </b>شما در برخی از حوزه‌ها عملکرد برجسته‌ای دارید که نشان‌دهنده توانایی‌های قوی در مدیریت مسئولیت‌ها، انرژی بالا، تحلیل مسائل پیچیده، آرامش روانی، خودکفایی و تطبیق‌پذیری است. به عنوان مثال، در حوزه‌های "تعهد" و "ظرفیت تحلیلی"، شما توانایی زیادی در مدیریت وظایف و تحلیل مسائل نشان داده‌اید که می‌تواند به پیشرفت حرفه‌ای و رشد فردی شما کمک کند.</p>
+            
+            <p><b>حوزه‌های نیازمند بهبود:</b> در برخی از بخش‌ها نیاز به تمرکز بیشتر وجود دارد. به عنوان مثال، در حوزه‌های "بیتابی روانی" و "استقلال"، شما می‌توانید با تمرین‌های منظم و فعالیت‌های هدفمند مانند تکنیک‌های مدیریت استرس و برنامه‌ریزی منظم مهارت‌های خود را بهبود بخشید. همچنین، افزایش تعاملات اجتماعی و تمرین مهارت‌های تصمیم‌گیری مستقل می‌تواند تأثیر مثبتی بر عملکرد شما داشته باشد.</p>
+            
+            <p><b>گام‌های بعدی:</b> برای تقویت مهارت‌های خود، پیشنهاد می‌شود که به توصیه‌های ارائه‌شده در هر بخش توجه ویژه‌ای کنید و در صورت نیاز از خدمات مشاوره تخصصی استفاده نمایید. همچنین، ارزیابی منظم و پیگیری مداوم می‌تواند به توسعه پایدار و موفقیت شما در تمامی ابعاد زندگی کمک کند.</p>
+            </div>
+        
+        <footer class="report-footer-custom">
+            <div class="report-footer-content">
+                <img src="../panel/file?type=picture&amp;v=3&amp;mode=filemanager&amp;file=%7eDB3gfQUls%2bt2iiMYKbsRAxrtFhcHKUIUUo7pPtO17bHCzNxwU4zNh3UVor6QMtl7Y6EWX8dD0PSvzZOYkRrXlfejPn4lNTj6" class="report-footer-img" alt="لوگو">
+            </div>
+            <p class="report-footer-paragraph">مؤسّسه تعاملی هیجان اندیشه | تماس: 02188174100 | ایمیل: info@eot.ir</p>
+            <p class="report-footer-paragraph yellow-text">© ۱۴۰۳ تمامی حقوق محفوظ است.</p>
+            <ul class="report-footer-menu">
+                <li><a href="https://www.eot.ir/" class="report-footer-menu-link">صفحه اصلی</a></li>
+                <li><a href="https://www.eot.ir/contact" class="report-footer-menu-link">تماس با ما</a></li>
+                <li><a href="https://www.eot.ir/about" class="report-footer-menu-link">درباره ما</a></li>
+            </ul>
+            <address class="report-footer-address">تهران، سهروردی، خرمشهر، عربعلی، کوچه ششم، شماره ۴۴</address>
+        </footer>
+    </div>
