@@ -26,22 +26,40 @@
         // Add description text
         ctx.fillStyle = "#1F3B73";
         ctx.font = "20px Vazir";
-        ctx.fillText("شناخت ویژگی‌های شخصیتی و توسعه مهارت‌های فردی و حرفه‌ای", canvas.width / 2, 100);
+        ctx.fillText("شناخت ویژگی‌های شخصیتی و توسعه مهارت‌های فردی و حرفه‌ای", canvas.width / 2, 90);
 
-        // Draw some design elements (circle)
+        // Add additional text
+        ctx.font = "18px Vazir";
+        ctx.fillText("زمان آزمون: ۲۰ دقیقه | گزارش جامع و عملی", canvas.width / 2, 130);
+        ctx.fillText("مناسب برای دانشجویان، مدیران و افراد حرفه‌ای", canvas.width / 2, 160);
+
+        // Add decorative circles
         ctx.fillStyle = "#FFD77B";
         ctx.beginPath();
-        ctx.arc(150, 300, 50, 0, Math.PI * 2);
+        ctx.arc(80, 300, 50, 0, Math.PI * 2);
         ctx.fill();
 
-        // Draw rectangle element
-        ctx.fillStyle = "#1F3B73";
-        ctx.fillRect(300, 250, 150, 100);
+        ctx.beginPath();
+        ctx.arc(420, 300, 50, 0, Math.PI * 2);
+        ctx.fill();
 
-        // Add CTA (Call-to-Action) text
+        // Add decorative rectangles
+        ctx.fillStyle = "#1F3B73";
+        ctx.fillRect(100, 250, 50, 50);
+        ctx.fillRect(350, 250, 50, 50);
+
+        // Add call-to-action text
         ctx.fillStyle = "#FFFFFF";
         ctx.font = "bold 20px Vazir";
-        ctx.fillText("شروع آزمون", canvas.width / 2, 400);
+        ctx.fillText("شروع آزمون", canvas.width / 2, 450);
+
+        // Draw a horizontal line for emphasis
+        ctx.strokeStyle = "#1F3B73";
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(50, 400);
+        ctx.lineTo(450, 400);
+        ctx.stroke();
 
         // Button to download the JPG
         document.getElementById("downloadButton").addEventListener("click", function () {
