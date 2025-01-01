@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banner Creator</title>
+</head>
+<body>
+    <canvas id="bannerCanvas" width="800" height="400" style="border:1px solid #000;"></canvas>
+
+    <script>
+        // Get the canvas and context
+        const canvas = document.getElementById('bannerCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Draw red background
+        ctx.fillStyle = "red";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        // Draw title text
+        ctx.fillStyle = "white";
+        ctx.font = "bold 50px Arial";
+        ctx.textAlign = "center";
+        ctx.fillText("talentsearch.ir", canvas.width / 2, canvas.height / 2);
+
+        // Draw some objects (circles)
+        ctx.fillStyle = "yellow";
+        ctx.beginPath();
+        ctx.arc(150, 150, 50, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(650, 250, 40, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Draw rectangles
+        ctx.fillStyle = "blue";
+        ctx.fillRect(300, 100, 100, 50);
+        ctx.fillRect(500, 200, 120, 70);
+
+        // Add borders to rectangles
+        ctx.strokeStyle = "black";
+        ctx.lineWidth = 3;
+        ctx.strokeRect(300, 100, 100, 50);
+        ctx.strokeRect(500, 200, 120, 70);
+
+        // Add some text decoration
+        ctx.fillStyle = "white";
+        ctx.font = "italic 20px Arial";
+        ctx.fillText("Discover your talent!", canvas.width / 2, canvas.height / 2 + 50);
+    </script>
+</body>
+</html>
