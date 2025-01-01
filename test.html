@@ -3,27 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>p5.js Banner</title>
+    <title>پست اینستاگرام با p5.js</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.min.js"></script>
     <style>
-        body { margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #1F3B73; }
-        canvas { display: block; }
+        body { 
+            margin: 0; 
+            display: flex; 
+            flex-direction: column;
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            background-color: #1F3B73; 
+        }
+        canvas { 
+            display: block; 
+        }
         #overlayText {
             position: absolute;
-            top: 10%;
+            top: 20%;
             text-align: center;
             width: 100%;
             color: white;
             font-family: 'Vazir', sans-serif;
+            pointer-events: none; /* جلوگیری از کلیک روی متن */
         }
         #title {
-            font-size: 36px;
+            font-size: 48px;
             font-weight: bold;
             text-shadow: 0 0 10px #F4C553;
         }
         #subtitle {
+            font-size: 24px;
+            margin-top: 15px;
+        }
+        #downloadBtn {
+            margin-top: 20px;
+            padding: 10px 20px;
             font-size: 18px;
-            margin-top: 10px;
+            background-color: #F4C553;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Vazir', sans-serif;
+        }
+        #downloadBtn:hover {
+            background-color: #d4b446;
         }
     </style>
 </head>
@@ -33,37 +57,57 @@
         <div id="subtitle">شناخت ویژگی‌های شخصیتی و توسعه مهارت‌های فردی و حرفه‌ای</div>
     </div>
     <script>
+        let canvasSize = 1080; // اندازه استاندارد اینستاگرام
+
         function setup() {
-            createCanvas(500, 500);
-            noLoop(); // Stops continuous draw calls for a static design
+            let cnv = createCanvas(canvasSize, canvasSize);
+            cnv.parent(document.body);
+            noLoop(); // متوقف کردن حلقه رسم برای طراحی استاتیک
         }
 
         function draw() {
-            // Background gradient
+            // پس‌زمینه گرادیان
             for (let y = 0; y < height; y++) {
                 let gradient = map(y, 0, height, color(79, 189, 186), color(31, 59, 115));
                 stroke(gradient);
                 line(0, y, width, y);
             }
 
-            // Add central circle
+            // دایره مرکزی
             noStroke();
-            fill(244, 197, 83); // Yellow
-            ellipse(width / 2, height / 2, 200);
+            fill(244, 197, 83); // زرد
+            ellipse(width / 2, height / 2, 400);
 
-            // Add modern abstract shapes
-            fill(255, 255, 255, 150); // Transparent white
-            rect(50, 400, 100, 20, 10);
-            rect(350, 100, 120, 20, 10);
+            // اشکال انتزاعی مدرن
+            fill(255, 255, 255, 150); // سفید شفاف
+            rect(100, 800, 200, 40, 20);
+            rect(800, 200, 240, 40, 20);
 
-            // Add dynamic particles
-            for (let i = 0; i < 10; i++) {
+            // ذرات دینامیک
+            for (let i = 0; i < 20; i++) {
                 let x = random(width);
                 let y = random(height);
-                fill(random(200, 255), random(200, 255), 150, 200); // Random soft colors
-                ellipse(x, y, random(20, 50));
+                fill(random(200, 255), random(200, 255), 150, 200); // رنگ‌های نرم تصادفی
+                ellipse(x, y, random(40, 100));
             }
         }
+
+        // افزودن دکمه دانلود
+        function setupDownloadButton() {
+            let btn = createButton('دانلود JPG');
+            btn.id('downloadBtn');
+            btn.parent(document.body);
+            btn.mousePressed(downloadImage);
+        }
+
+        function downloadImage() {
+            saveCanvas('instagram_banner', 'jpg');
+        }
+
+        // فراخوانی تابع setupDownloadButton پس از آماده شدن p5.js
+        window.addEventListener('load', () => {
+            setupDownloadButton();
+        });
     </script>
 </body>
 </html>
