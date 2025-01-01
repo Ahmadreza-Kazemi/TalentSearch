@@ -1,60 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Square Banner Creator</title>
+    <title>ایجاد بنر آزمون</title>
 </head>
 <body>
-    <canvas id="bannerCanvas" width="500" height="500" style="display: none;"></canvas>
-    <button id="downloadButton">Download Banner as JPG</button>
-    <script>
-        // Get the canvas and context
-        const canvas = document.getElementById('bannerCanvas');
-        const ctx = canvas.getContext('2d');
+    <canvas id="bannerCanvas" width="500" height="500" style="display:none;"></canvas>
+    <button id="downloadButton">دانلود بنر به صورت JPG</button>
 
-        // Draw red background
-        ctx.fillStyle = "red";
+    <script>
+        const canvas = document.getElementById("bannerCanvas");
+        const ctx = canvas.getContext("2d");
+
+        // Set background color
+        ctx.fillStyle = "#F4C553"; // Yellow-ish background
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-        // Draw title text
-        ctx.fillStyle = "white";
-        ctx.font = "bold 40px Arial";
+        // Add title text
+        ctx.fillStyle = "#1F3B73"; // Dark blue text color
+        ctx.font = "bold 25px Vazir";
         ctx.textAlign = "center";
-        ctx.fillText("talentsearch.ir", canvas.width / 2, canvas.height / 2);
+        ctx.fillText("معرفی آزمون تحلیل فهرست تشخیص تعاملی شخصیت", canvas.width / 2, 50);
 
-        // Draw some objects (circles)
-        ctx.fillStyle = "yellow";
+        // Add description text
+        ctx.fillStyle = "#1F3B73";
+        ctx.font = "20px Vazir";
+        ctx.fillText("شناخت ویژگی‌های شخصیتی و توسعه مهارت‌های فردی و حرفه‌ای", canvas.width / 2, 90);
+
+        // Add additional text
+        ctx.font = "18px Vazir";
+        ctx.fillText("زمان آزمون: ۲۰ دقیقه | گزارش جامع و عملی", canvas.width / 2, 130);
+        ctx.fillText("مناسب برای دانشجویان، مدیران و افراد حرفه‌ای", canvas.width / 2, 160);
+
+        // Add decorative circles
+        ctx.fillStyle = "#FFD77B";
         ctx.beginPath();
-        ctx.arc(150, 150, 50, 0, Math.PI * 2);
+        ctx.arc(80, 300, 50, 0, Math.PI * 2);
         ctx.fill();
 
         ctx.beginPath();
-        ctx.arc(350, 350, 40, 0, Math.PI * 2);
+        ctx.arc(420, 300, 50, 0, Math.PI * 2);
         ctx.fill();
 
-        // Draw rectangles
-        ctx.fillStyle = "blue";
-        ctx.fillRect(200, 100, 100, 50);
-        ctx.fillRect(300, 300, 120, 70);
+        // Add decorative rectangles
+        ctx.fillStyle = "#1F3B73";
+        ctx.fillRect(100, 250, 50, 50);
+        ctx.fillRect(350, 250, 50, 50);
 
-        // Add borders to rectangles
-        ctx.strokeStyle = "black";
-        ctx.lineWidth = 3;
-        ctx.strokeRect(200, 100, 100, 50);
-        ctx.strokeRect(300, 300, 120, 70);
+        // Add call-to-action text
+        ctx.fillStyle = "#FFFFFF";
+        ctx.font = "bold 20px Vazir";
+        ctx.fillText("شروع آزمون", canvas.width / 2, 450);
 
-        // Add a motivational line
-        ctx.fillStyle = "white";
-        ctx.font = "italic 20px Arial";
-        ctx.fillText("Discover your talent!", canvas.width / 2, canvas.height / 2 + 50);
+        // Draw a horizontal line for emphasis
+        ctx.strokeStyle = "#1F3B73";
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(50, 400);
+        ctx.lineTo(450, 400);
+        ctx.stroke();
 
-        // Add a download button to save as JPG
-        const downloadButton = document.getElementById("downloadButton");
-        downloadButton.addEventListener("click", function () {
+        // Button to download the JPG
+        document.getElementById("downloadButton").addEventListener("click", function () {
             const link = document.createElement("a");
-            link.download = "talentsearch-banner.jpg";
-            link.href = canvas.toDataURL("image/jpeg", 1.0); // Convert canvas to JPG format
+            link.download = "assessment-banner.jpg";
+            link.href = canvas.toDataURL("image/jpeg", 1.0);
             link.click();
         });
     </script>
