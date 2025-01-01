@@ -12,35 +12,40 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f3f4f6;
+            background: linear-gradient(135deg, #1F3B73, #4FBDBA);
             font-family: 'Vazir', sans-serif;
         }
         canvas {
             display: block;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
         .logo {
             position: absolute;
             top: 20px;
             left: 20px;
-            width: 100px;
+            width: 80px;
             height: auto;
             z-index: 10;
         }
         #download-btn {
             position: absolute;
             bottom: 20px;
-            background-color: #4FBDBA;
-            color: #fff;
+            right: 20px;
+            background-color: #F4C553;
+            color: #1F3B73;
             border: none;
-            padding: 10px 20px;
+            padding: 12px 24px;
             font-size: 16px;
             font-family: 'Vazir', sans-serif;
-            border-radius: 5px;
+            border-radius: 8px;
             cursor: pointer;
-            z-index: 10;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
         }
         #download-btn:hover {
-            background-color: #3a9f9a;
+            background-color: #e1b94b;
+            transform: scale(1.05);
         }
     </style>
 </head>
@@ -49,27 +54,27 @@
     <button id="download-btn">دانلود پست</button>
     <script>
         let colors = {
-            background: ['#1F3B73', '#243A73', '#3C5186'],
+            background: ['#1F3B73', '#243A73', '#4FBDBA'],
             accent: '#F4C553',
             textPrimary: '#FFFFFF',
             textSecondary: '#D9D9D9'
         };
 
         let postContent = [
-            { title: 'عنوان اصلی ۱', subtitle: 'توضیح مختصر این پست برای استفاده بهتر.' },
-            { title: 'عنوان اصلی ۲', subtitle: 'دومین توضیح مختصر برای نمایش در طراحی مدرن.' },
-            { title: 'عنوان اصلی ۳', subtitle: 'متن نهایی برای پست جدید و خاص شما.' }
+            { title: 'عنوان حرفه‌ای ۱', subtitle: 'توضیحات دقیق و تاثیرگذار برای جلب توجه مخاطب.' },
+            { title: 'عنوان حرفه‌ای ۲', subtitle: 'طراحی زیبا و مدرن با محتوای مناسب برای اینستاگرام.' },
+            { title: 'عنوان حرفه‌ای ۳', subtitle: 'ایجاد هویت بصری قوی برای برند شما.' }
         ];
 
         let currentPost = 0;
 
         function setup() {
             createCanvas(1080, 1080);
-            noLoop(); // Stop continuous drawing for static design
+            noLoop();
         }
 
         function draw() {
-            // Background Gradient
+            // Gradient Background
             for (let y = 0; y < height; y++) {
                 let gradientColor = lerpColor(
                     color(colors.background[0]),
@@ -80,32 +85,38 @@
                 line(0, y, width, y);
             }
 
-            // Add Circle Accent
+            // Central Decorative Shape
             noStroke();
             fill(colors.accent);
-            ellipse(width / 2, height / 2, 800);
+            ellipse(width / 2, height / 2, 750);
+
+            // Title Box
+            fill(255, 255, 255, 200); // Semi-transparent white
+            rectMode(CENTER);
+            rect(width / 2, height / 2 - 200, 800, 100, 20);
 
             // Title
             fill(colors.textPrimary);
             textAlign(CENTER, CENTER);
-            textSize(64);
-            text(postContent[currentPost].title, width / 2, height / 2 - 100);
+            textSize(56);
+            textStyle(BOLD);
+            text(postContent[currentPost].title, width / 2, height / 2 - 200);
+
+            // Subtitle Box
+            fill(0, 0, 0, 150); // Semi-transparent black
+            rect(width / 2, height / 2 + 50, 900, 150, 20);
 
             // Subtitle
-            fill(colors.textSecondary);
+            fill(colors.textPrimary);
+            textAlign(CENTER, CENTER);
             textSize(32);
             text(postContent[currentPost].subtitle, width / 2, height / 2 + 50);
 
-            // Footer Divider
-            stroke(colors.textSecondary);
-            strokeWeight(2);
-            line(width * 0.2, height * 0.9, width * 0.8, height * 0.9);
-
-            // Footer Text
+            // Footer Branding
             noStroke();
             fill(colors.textSecondary);
             textSize(24);
-            text('YourBrandName - Tagline or URL', width / 2, height * 0.93);
+            text('YourBrandName - tagline or URL', width / 2, height * 0.93);
         }
 
         function keyPressed() {
