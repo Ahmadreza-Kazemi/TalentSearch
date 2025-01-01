@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Banner Creator</title>
+    <title>Square Banner Creator</title>
 </head>
 <body>
-    <canvas id="bannerCanvas" width="800" height="400" style="border:1px solid #000;"></canvas>
-
+    <canvas id="bannerCanvas" width="500" height="500" style="display: none;"></canvas>
+    <button id="downloadButton">Download Banner as JPG</button>
     <script>
         // Get the canvas and context
         const canvas = document.getElementById('bannerCanvas');
@@ -19,7 +19,7 @@
 
         // Draw title text
         ctx.fillStyle = "white";
-        ctx.font = "bold 50px Arial";
+        ctx.font = "bold 40px Arial";
         ctx.textAlign = "center";
         ctx.fillText("talentsearch.ir", canvas.width / 2, canvas.height / 2);
 
@@ -30,24 +30,33 @@
         ctx.fill();
 
         ctx.beginPath();
-        ctx.arc(650, 250, 40, 0, Math.PI * 2);
+        ctx.arc(350, 350, 40, 0, Math.PI * 2);
         ctx.fill();
 
         // Draw rectangles
         ctx.fillStyle = "blue";
-        ctx.fillRect(300, 100, 100, 50);
-        ctx.fillRect(500, 200, 120, 70);
+        ctx.fillRect(200, 100, 100, 50);
+        ctx.fillRect(300, 300, 120, 70);
 
         // Add borders to rectangles
         ctx.strokeStyle = "black";
         ctx.lineWidth = 3;
-        ctx.strokeRect(300, 100, 100, 50);
-        ctx.strokeRect(500, 200, 120, 70);
+        ctx.strokeRect(200, 100, 100, 50);
+        ctx.strokeRect(300, 300, 120, 70);
 
-        // Add some text decoration
+        // Add a motivational line
         ctx.fillStyle = "white";
         ctx.font = "italic 20px Arial";
         ctx.fillText("Discover your talent!", canvas.width / 2, canvas.height / 2 + 50);
+
+        // Add a download button to save as JPG
+        const downloadButton = document.getElementById("downloadButton");
+        downloadButton.addEventListener("click", function () {
+            const link = document.createElement("a");
+            link.download = "talentsearch-banner.jpg";
+            link.href = canvas.toDataURL("image/jpeg", 1.0); // Convert canvas to JPG format
+            link.click();
+        });
     </script>
 </body>
 </html>
