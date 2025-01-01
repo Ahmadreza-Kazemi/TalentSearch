@@ -3,68 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ایجاد بنر آزمون</title>
+    <title>بنر مدرن آزمون</title>
 </head>
 <body>
     <canvas id="bannerCanvas" width="500" height="500" style="display:none;"></canvas>
-    <button id="downloadButton">دانلود بنر به صورت JPG</button>
+    <button id="downloadButton" style="font-family: 'Vazir', sans-serif; background-color: #4FBDBA; color: white; border: none; padding: 10px 20px; border-radius: 5px; font-size: 16px; cursor: pointer;">دانلود بنر به صورت JPG</button>
 
     <script>
         const canvas = document.getElementById("bannerCanvas");
         const ctx = canvas.getContext("2d");
 
-        // Set background color
-        ctx.fillStyle = "#F4C553"; // Yellow-ish background
+        // Set background gradient
+        const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+        gradient.addColorStop(0, "#4FBDBA");
+        gradient.addColorStop(1, "#1F3B73");
+        ctx.fillStyle = gradient;
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
         // Add title text
-        ctx.fillStyle = "#1F3B73"; // Dark blue text color
-        ctx.font = "bold 25px Vazir";
+        ctx.fillStyle = "#FFFFFF";
+        ctx.font = "bold 26px Vazir";
         ctx.textAlign = "center";
         ctx.fillText("معرفی آزمون تحلیل فهرست تشخیص تعاملی شخصیت", canvas.width / 2, 50);
 
-        // Add description text
-        ctx.fillStyle = "#1F3B73";
+        // Add subtitle text
+        ctx.fillStyle = "#F4C553";
         ctx.font = "20px Vazir";
         ctx.fillText("شناخت ویژگی‌های شخصیتی و توسعه مهارت‌های فردی و حرفه‌ای", canvas.width / 2, 90);
 
-        // Add additional text
+        // Add additional details
+        ctx.fillStyle = "#E0F7FA";
         ctx.font = "18px Vazir";
-        ctx.fillText("زمان آزمون: ۲۰ دقیقه | گزارش جامع و عملی", canvas.width / 2, 130);
-        ctx.fillText("مناسب برای دانشجویان، مدیران و افراد حرفه‌ای", canvas.width / 2, 160);
+        ctx.fillText("زمان آزمون: ۲۰ دقیقه", canvas.width / 2, 140);
+        ctx.fillText("گزارش جامع و عملی | مناسب برای همه افراد حرفه‌ای", canvas.width / 2, 170);
 
-        // Add decorative circles
+        // Add decorative shapes
         ctx.fillStyle = "#FFD77B";
         ctx.beginPath();
-        ctx.arc(80, 300, 50, 0, Math.PI * 2);
+        ctx.arc(100, 300, 60, 0, Math.PI * 2);
         ctx.fill();
 
-        ctx.beginPath();
-        ctx.arc(420, 300, 50, 0, Math.PI * 2);
-        ctx.fill();
-
-        // Add decorative rectangles
         ctx.fillStyle = "#1F3B73";
-        ctx.fillRect(100, 250, 50, 50);
-        ctx.fillRect(350, 250, 50, 50);
-
-        // Add call-to-action text
-        ctx.fillStyle = "#FFFFFF";
-        ctx.font = "bold 20px Vazir";
-        ctx.fillText("شروع آزمون", canvas.width / 2, 450);
-
-        // Draw a horizontal line for emphasis
-        ctx.strokeStyle = "#1F3B73";
-        ctx.lineWidth = 2;
         ctx.beginPath();
-        ctx.moveTo(50, 400);
-        ctx.lineTo(450, 400);
-        ctx.stroke();
+        ctx.arc(400, 320, 50, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Add modern abstract rectangles
+        ctx.fillStyle = "#FFFFFF";
+        ctx.fillRect(50, 250, 100, 20);
+        ctx.fillRect(350, 200, 120, 20);
+
+        // Add call-to-action section
+        ctx.fillStyle = "#FFFFFF";
+        ctx.font = "bold 22px Vazir";
+        ctx.fillText("همین حالا شروع کنید", canvas.width / 2, 450);
+
+        // Add button-like rectangle around the CTA
+        ctx.strokeStyle = "#F4C553";
+        ctx.lineWidth = 2;
+        ctx.strokeRect(canvas.width / 2 - 150, 420, 300, 40);
 
         // Button to download the JPG
         document.getElementById("downloadButton").addEventListener("click", function () {
             const link = document.createElement("a");
-            link.download = "assessment-banner.jpg";
+            link.download = "modern-assessment-banner.jpg";
             link.href = canvas.toDataURL("image/jpeg", 1.0);
             link.click();
         });
