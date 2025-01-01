@@ -3,73 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>بنر مدرن آزمون</title>
+    <title>Three.js Banner</title>
+    <style>
+        body { margin: 0; overflow: hidden; }
+        canvas { display: block; }
+        #textOverlay {
+            position: absolute;
+            top: 20%;
+            width: 100%;
+            text-align: center;
+            font-family: 'Vazir', sans-serif;
+            color: white;
+        }
+        #title {
+            font-size: 36px;
+            font-weight: bold;
+            text-shadow: 0 0 10px #F4C553;
+        }
+        #subtitle {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
-    <canvas id="bannerCanvas" width="500" height="500" style="display:none;"></canvas>
-    <button id="downloadButton" style="font-family: 'Vazir', sans-serif; background-color: #4FBDBA; color: white; border: none; padding: 10px 20px; border-radius: 5px; font-size: 16px; cursor: pointer;">دانلود بنر به صورت JPG</button>
-
+    <div id="textOverlay">
+        <div id="title">تحلیل فهرست تشخیص تعاملی شخصیت</div>
+        <div id="subtitle">شناخت ویژگی‌های شخصیتی و توسعه مهارت‌های فردی و حرفه‌ای</div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script>
-        const canvas = document.getElementById("bannerCanvas");
-        const ctx = canvas.getContext("2d");
+        // Create scene, camera, and renderer
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setClearColor(0x1F3B73); // Background color
+        document.body.appendChild(renderer.domElement);
 
-        // Set background gradient
-        const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
-        gradient.addColorStop(0, "#4FBDBA");
-        gradient.addColorStop(1, "#1F3B73");
-        ctx.fillStyle = gradient;
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        // Add a rotating cube
+        const geometry = new THREE.BoxGeometry();
+        const material = new THREE.MeshStandardMaterial({ color: 0x4FBDBA });
+        const cube = new THREE.Mesh(geometry, material);
+        scene.add(cube);
 
-        // Add title text
-        ctx.fillStyle = "#FFFFFF";
-        ctx.font = "bold 26px Vazir";
-        ctx.textAlign = "center";
-        ctx.fillText("معرفی آزمون تحلیل فهرست تشخیص تعاملی شخصیت", canvas.width / 2, 50);
+        // Add a glowing sphere
+        const sphereGeometry = new THREE.SphereGeometry(1, 32, 32);
+        const sphereMaterial = new THREE.MeshStandardMaterial({ color: 0xF4C553, emissive: 0xFFD700 });
+        const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
+        sphere.position.set(2, 1, -2);
+        scene.add(sphere);
 
-        // Add subtitle text
-        ctx.fillStyle = "#F4C553";
-        ctx.font = "20px Vazir";
-        ctx.fillText("شناخت ویژگی‌های شخصیتی و توسعه مهارت‌های فردی و حرفه‌ای", canvas.width / 2, 90);
+        // Add lighting
+        const ambientLight = new THREE.AmbientLight(0xFFFFFF, 0.5);
+        scene.add(ambientLight);
 
-        // Add additional details
-        ctx.fillStyle = "#E0F7FA";
-        ctx.font = "18px Vazir";
-        ctx.fillText("زمان آزمون: ۲۰ دقیقه", canvas.width / 2, 140);
-        ctx.fillText("گزارش جامع و عملی | مناسب برای همه افراد حرفه‌ای", canvas.width / 2, 170);
+        const pointLight = new THREE.PointLight(0xFFFFFF, 1);
+        pointLight.position.set(5, 5, 5);
+        scene.add(pointLight);
 
-        // Add decorative shapes
-        ctx.fillStyle = "#FFD77B";
-        ctx.beginPath();
-        ctx.arc(100, 300, 60, 0, Math.PI * 2);
-        ctx.fill();
+        // Camera position
+        camera.position.z = 5;
 
-        ctx.fillStyle = "#1F3B73";
-        ctx.beginPath();
-        ctx.arc(400, 320, 50, 0, Math.PI * 2);
-        ctx.fill();
+        // Animation loop
+        function animate() {
+            requestAnimationFrame(animate);
 
-        // Add modern abstract rectangles
-        ctx.fillStyle = "#FFFFFF";
-        ctx.fillRect(50, 250, 100, 20);
-        ctx.fillRect(350, 200, 120, 20);
+            // Rotate objects
+            cube.rotation.x += 0.01;
+            cube.rotation.y += 0.01;
+            sphere.rotation.y -= 0.01;
 
-        // Add call-to-action section
-        ctx.fillStyle = "#FFFFFF";
-        ctx.font = "bold 22px Vazir";
-        ctx.fillText("همین حالا شروع کنید", canvas.width / 2, 450);
-
-        // Add button-like rectangle around the CTA
-        ctx.strokeStyle = "#F4C553";
-        ctx.lineWidth = 2;
-        ctx.strokeRect(canvas.width / 2 - 150, 420, 300, 40);
-
-        // Button to download the JPG
-        document.getElementById("downloadButton").addEventListener("click", function () {
-            const link = document.createElement("a");
-            link.download = "modern-assessment-banner.jpg";
-            link.href = canvas.toDataURL("image/jpeg", 1.0);
-            link.click();
-        });
+            renderer.render(scene, camera);
+        }
+        animate();
     </script>
 </body>
 </html>
