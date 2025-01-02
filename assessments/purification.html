@@ -1,0 +1,549 @@
+<div class="ravesh-editor-html" style="direction:rtl">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>گزارش تحلیل فهرست تشخیص تعاملی شخصیت</title>
+    <style>
+        @font-face {
+            font-family: 'IRANSansWeb';
+            src: url('fonts/IRANSansWeb.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'BTitrBold';
+            src: url('fonts/BTitrBold.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'BKoodakBold';
+            src: url('fonts/BKoodakBold.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'BHoma';
+            src: url('fonts/BHoma.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'BYekan';
+            src: url('fonts/BYekan.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'Tahoma';
+            src: url('fonts/Tahoma.woff2') format('woff2');
+        }
+        .report-container {
+            font-family: 'BYekan', sans-serif;
+            direction: rtl;
+            line-height: 1.8;
+            background-color: #F5F5F5;
+            color: #333333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            max-width: 800px;
+            width: 100%;
+            margin: auto;
+            background-color: #F5F5F5;
+            padding: 40px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+        }
+        .report-header-custom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #0DA3B8;
+            border-radius: 20px 20px 0 0;
+        }
+        .report-header-inner {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .report-header-img {
+            width: 40px;
+            height: 40px;
+        }
+        .report-header-title {
+            margin: 0;
+            font-size: 1.8em;
+            color: #ffffff;
+            font-family: 'IRANSansWeb', sans-serif;
+            font-weight: normal;
+        }
+        .report-header-date {
+            color: #ffffff;
+            font-size: 1em;
+        }
+        .report-title {
+            text-align: center;
+            color: #0DA3B8;
+            font-family: 'IRANSansWeb', sans-serif;
+            font-weight: bold;
+            font-size: 32px;
+            margin-bottom: 25px;
+        }
+        .report-info-container, .report-score-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .report-info-item, .report-score-item {
+            background-color: #F8F9FA;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            font-size: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'BYekan', sans-serif;
+            flex: 1;
+            min-width: 300px;
+            margin-right: 10px; /* Add space between columns */
+        }
+        .report-info-item strong, .report-score-item strong {
+            color: #0DA3B8;
+            font-family: 'IRANSansWeb', sans-serif;
+        }
+        .report-info-data, .report-score-data {
+            font-family: 'IRANSansWeb', sans-serif;
+        }
+        .report-section-title {
+            font-size: 22px;
+            color: #CC3333;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #CC3333;
+            font-family: 'IRANSansWeb', sans-serif;
+            font-weight: bold;
+            text-align: center;
+        }
+        .report-component-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 22px;
+            color: #DBCF93;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #DBCF93;
+            font-family: 'IRANSansWeb', sans-serif;
+        }
+        .report-paragraph {
+            background-color: #E0F7FA;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .report-list {
+            list-style-type: none;
+            padding: 0;
+            font-size: 16px;
+        }
+        .report-list-item {
+            background: #F8F9FA;
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+        }
+        .report-list-item strong {
+            font-size: 18px;
+            color: #0DA3B8;
+            margin-bottom: 5px;
+        }
+        .report-badge {
+            display: inline-block;
+            padding: 8px 15px;
+            font-size: 14px;
+            color: #FFFFFF;
+            background-color: #4A9B8C;
+            border-radius: 10px;
+        }
+        .report-recommendation {
+            background-color: #EAEAEA;
+            padding: 20px;
+            margin-top: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .report-recommendation-title {
+            font-weight: bold;
+            color: #CC3333;
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
+        .report-recommendation-text {
+            margin-bottom: 5px;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+        .report-footer-custom {
+            background-color: #F5F5F5;
+            color: #333333;
+            padding: 20px;
+            text-align: center;
+            font-family: 'IRANSansWeb', sans-serif;
+            border-top: 1px solid #E0E0E0;
+            font-size: 16px; /* Increased font size */
+        }
+        .report-footer-content {
+            margin-bottom: 20px;
+        }
+        .report-footer-img {
+            width: 80px;
+            height: 80px;
+        }
+        .report-footer-paragraph {
+            margin: 5px 0;
+        }
+        .report-footer-paragraph.yellow-text {
+            color: #DBCF93;
+        }
+        .report-footer-menu {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 10px 0;
+        }
+        .report-footer-menu-link {
+            color: #0DA3B8;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .report-footer-menu-link:hover {
+            color: #007B8A;
+        }
+        .report-footer-address {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .report-summary-container {
+            max-width: 800px;
+            margin: auto;
+            background-color: #FFFFFF;
+            padding: 40px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+            border-radius: 10px;
+        }
+        .report-summary-heading {
+            text-align: center;
+            color: #0DA3B8;
+            font-family: 'IRANSansWeb', sans-serif;
+            font-weight: bold;
+            font-size: 32px;
+            margin-bottom: 25px;
+        }
+        .report-summary-content {
+            color: #333333;
+            font-family: 'IRANSansWeb', sans-serif;
+            line-height: 1.8;
+        }
+        .report-conditional-display {
+            display: block;
+        }
+        .report-conditional-display[style*="--score-rate1: 1"] {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #FF9999; /* Moderate */
+        }
+        .report-conditional-display[style*="--score-rate2: 2"] {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #FFD580; /* Good */
+        }
+        .report-conditional-display[style*="--score-rate3: 3"] {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #99FF99; /* Excellent */
+        }
+    </style>
+    <div class="report-report-container">
+        <header class="report-header-custom">
+            <div class="report-header-inner">
+                <img src="../panel/file?type=picture&amp;v=3&amp;mode=filemanager&amp;file=%7eDB3gfQUls%2bt2iiMYKbsRAxrtFhcHKUIUUo7pPtO17bHCzNxwU4zNh3UVor6QMtl7Y6EWX8dD0PSvzZOYkRrXlfejPn4lNTj6" class="report-header-img" alt="لوگو">
+                <h1 class="report-header-title">گزارش تحلیل فهرست تشخیص تعاملی شخصیت</h1>
+            </div>
+            <div class="report-header-date">تاریخ اجرا: #primary_createDate#</div>
+        </header>
+        
+        <div class="report-section-title">فهرست تشخیص تعاملی شخصیت</div>
+        <p class="report-paragraph">
+            این ارزیابی به منظور تحلیل و بررسی ویژگی‌های شخصیتی فرد در حوزه‌های مختلف از جمله تعهد، نیرومندی، ظرفیت تحلیلی، بیتابی روانی، استقلال و سازش انجام شده است. هدف از این ارزیابی شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد.
+        </p><p></p>
+               
+        <div class="report-section-title">اطلاعات فردی</div>
+        <div class="report-info-container">
+            <div class="report-info-item"><strong>نام:</strong> <span class="report-info-data">#field_349#</span></div>
+            <div class="report-info-item"><strong>نام خانوادگی:</strong> <span class="report-info-data">#field_1712#</span></div>
+            <div class="report-info-item"><strong>موبایل:</strong> <span class="report-info-data">#field_350#</span></div>
+            <div class="report-info-item"><strong>ایمیل:</strong> <span class="report-info-data">#field_351#</span></div></div>
+
+        </div>
+        <div class="report-section-title">نتیجه</div>
+        <div class="report-score-container">
+            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10296#;"><strong>باور:</strong> <span class="report-badge">#field_1078#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10296#;"><strong>باور:</strong> <span class="report-badge">#field_1078#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10296#;"><strong>باور:</strong> <span class="report-badge">#field_1078#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10297#;"><strong>پایبندی:</strong> <span class="report-badge">#field_1079#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10297#;"><strong>پایبندی:</strong> <span class="report-badge">#field_1079#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10297#;"><strong>پایبندی:</strong> <span class="report-badge">#field_1079#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10298#;"><strong>الف:</strong> <span class="report-badge">#field_1080#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10298#;"><strong>الف:</strong> <span class="report-badge">#field_1080#</span></div>
+            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10298#;"><strong>الف:</strong> <span class="report-badge">#field_1080#</span></div>
+
+        </div>
+        <div class="report-section-title">تفسیر</div>
+        <p class="report-paragraph">
+            این بخش به تحلیل و تفسیر نتایج ارزیابی روان‌شناختی فرد می‌پردازد. تحلیل روان‌شناختی شامل بررسی ویژگی‌های شخصیتی مختلف است. هدف از این تحلیل شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد. نتایج این تحلیل می‌تواند به فرد کمک کند تا با شناخت بهتر از خود، برنامه‌های توسعه فردی و حرفه‌ای موثرتری را دنبال کند.
+        </p>
+
+
+
+        
+
+
+
+<!-- باور (اعتقاد به ارزش‌های معنوی و باورهای پاکزیستی) -->
+<div class="report-component-title">باور
+    <span class="report-badge report-score-data">#field_1078#<br></span>
+</div>
+<p class="report-paragraph">
+    باور در «فهرست پاکزیستی» نشان‌دهنده اعتقادات راسخی است که فرد نسبت به اصول اخلاقی و معنوی دارد. افرادی که در این بخش نمره بالاتری می‌گیرند، تمایل دارند زندگی خود را بر مبنای صداقت، اعتماد به خدا و احترام به دیگران بنا کنند و اصول پاکزیستی را در گفتار و رفتارشان به کار ببندند.
+</p>
+<ul class="report-list">
+    <!-- سطح متوسط باور -->
+    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10296#;">
+        <strong>«متوسط»<br></strong>
+        شما به ارزش‌های اخلاقی و معنوی باور دارید، اما ممکن است همیشه به طور کامل به آن‌ها عمل نکنید یا در لحظات دشوار دچار تردید شوید. در نتیجه، ممکن است گاهی زندگی پاک و صداقت را به طور کامل در رفتار روزمره نپذیرید.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. یادآوری مداوم باورها و اعتقادات؛ مطالعه منابع اخلاقی یا معنوی می‌تواند یادآور قوت درونی شما باشد.<br>
+                ۲. تمرین خودارزیابی روزانه یا هفتگی؛ بازبینی افکار و اعمال کمک می‌کند پیوستگی بین باورها و رفتارهایتان را تقویت کنید.<br>
+                ۳. گفت‌وگو با افرادی که در پایبندی به ارزش‌های اخلاقی پیشرو هستند؛ الگوبرداری از روش‌های آن‌ها می‌تواند تردیدتان را کمتر کند.<br>
+                ۴. شرکت در جمع‌ها یا گروه‌های معنوی برای حفظ روحیه و انگیزه پایدار در مسیر رعایت اصول پاکزیستی.<br>
+                ۵. روش‌های ساده برای رعایت صداقت؛ مثلاً تمرین «عدم استفاده از دروغ مصلحتی» یا «حفظ راستگویی» در کارهای روزمره.
+            </div>
+        </div>
+    </li>
+
+    <!-- سطح خوب باور -->
+    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10296#;">
+        <strong>«خوب»<br></strong>
+        شما باورهای محکم و ارزشمندی درباره زندگی پاک و صداقت دارید و اغلب در رفتارهای روزانه این اصول را رعایت می‌کنید. این نشان می‌دهد که مهارت بالایی در پیاده‌سازی ارزش‌های معنوی در سبک زندگی‌تان دارید.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. حفظ این مسیر با یادآوری مداوم فواید داشتن باورهای قوی و اخلاق‌مداری در زندگی شخصی و اجتماعی.<br>
+                ۲. مطالعه کتاب‌ها و منابع الهام‌بخش مرتبط با صداقت و اعتماد به خدا برای تقویت بیشتر بنیه معنوی و اخلاقی.<br>
+                ۳. مشارکت در کارهای خیر و اجتماعی که پیوندی بین باورهای اخلاقی شما و اثربخشی در جامعه برقرار می‌کند.<br>
+                ۴. ترغیب دوستان یا خانواده به رعایت صداقت و اصول پاکزیستی؛ این رویکرد با ایجاد محیطی سالم‌تر به شما انگیزه می‌دهد.<br>
+                ۵. بررسی دوره‌ای رفتارهای روزانه برای اطمینان از همسویی کامل گفتار و کردارتان با باورهایتان.
+            </div>
+        </div>
+    </li>
+
+    <!-- سطح عالی باور -->
+    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10296#;">
+        <strong>«عالی»<br></strong>
+        شما در اوج باورهای معنوی قرار دارید؛ صداقت و اعتقاد به خدا به طور عمیق در سبک زندگی‌تان جریان دارد. این سطح از اطمینان درونی سبب شده تا حتی در موقعیت‌های چالش‌برانگیز نیز به اصول پاکزیستی وفادار بمانید و زندگی پاک را با همه وجود پی بگیرید.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. استفاده از این باور قوی برای راهنمایی و مشاوره به دیگران؛ انتقال تجارب خود در زمینه صداقت و پاکزیستی می‌تواند الهام‌بخش باشد.<br>
+                ۲. رهبری فعالیت‌های فرهنگی یا معنوی در جامعه یا محیط کار، چراکه باورهای شما بستری برای الگوسازی مثبت فراهم می‌کند.<br>
+                ۳. حفظ تواضع در عین پایبندی شدید به اصول؛ گاهی به‌دلیل موفقیت‌ها و تحسین‌های بیرونی ممکن است غرور ایجاد شود.<br>
+                ۴. تعمیق بیشتر معنویت با مطالعه گسترده‌تر و تعامل با اندیشمندان و اهل معنویت.<br>
+                ۵. شرکت در برنامه‌های داوطلبانه یا رویدادهای معنوی برای تثبیت و گسترش ارزش‌های پاکزیستی در جامعه.
+            </div>
+        </div>
+    </li>
+</ul>
+
+<!-- پایبندی (تعهد اخلاقی و رعایت اصول انسانیت) -->
+<div class="report-component-title">پایبندی
+    <span class="report-badge report-score-data">#field_1079#<br></span>
+</div>
+<p class="report-paragraph">
+    پایبندی در «فهرست پاکزیستی» به معنای عمل به اصول اخلاقی، رعایت حقوق دیگران و حفظ تعهد در رفتارهای روزمره است. افراد با نمره بالاتر در این حوزه، نه‌تنها به اخلاقیات پایبند هستند، بلکه جنبه‌های درستی و تعهد اجتماعی را در هر قدم از زندگی رعایت می‌کنند.
+</p>
+<ul class="report-list">
+
+    <!-- سطح متوسط پایبندی -->
+    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10297#;">
+        <strong>«متوسط»<br></strong>
+        شما در اصول اخلاقی و رعایت حقوق دیگران عملکرد قابل قبولی دارید، اما ممکن است گاهی در معرض تردید یا دوری از ارزش‌های معنوی قرار بگیرید. در نتیجه، رفتارهای پاکزیستی شما پایدار است اما همیشه به طور کامل منطبق بر آرمان‌های اخلاقی نیست.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. یادآوری اهداف بلندمدت درباره انسانیت و اخلاق؛ تمرکز بر این مسائل به شما کمک می‌کند تا در لحظات تردید پایبند بمانید.<br>
+                ۲. هم‌اندیشی با افرادی که تعهد بالایی به ارزش‌های اخلاقی دارند؛ این کار می‌تواند شک و تردیدها را به تدریج برطرف کند.<br>
+                ۳. تعریف معیارهای روشن برای رفتارهای روزمره؛ مثلاً چگونه دروغ نگفتن یا رعایت حقوق دیگران را به طور عملی انجام دهید.<br>
+                ۴. مطالعه و ارتقای آگاهی درباره اصول اخلاقی جهانی؛ شناخت دیدگاه‌های متنوع می‌تواند پایداری اعتقاداتتان را افزایش دهد.<br>
+                ۵. رصد و ارزیابی روزانه؛ آیا امروز با ارزش‌های اخلاقی خود همسو بودید؟ نوشتن خاطرات می‌تواند کمک‌کننده باشد.
+            </div>
+        </div>
+    </li>
+
+    <!-- سطح خوب پایبندی -->
+    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10297#;">
+        <strong>«خوب»<br></strong>
+        شما به طور کلی متعهد به اصول اخلاقی هستید، حقوق دیگران را رعایت می‌کنید و در زندگی روزمره به انسانیت بهای ویژه‌ای می‌دهید. این میزان پایبندی، تصویری مثبت از شما در ذهن اطرافیانتان ایجاد می‌کند و حس همدلی و اعتماد در روابط را شکل می‌دهد.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. حفظ و تقویت پایبندی به ارزش‌های اخلاقی با شرکت در فعالیت‌های گروهی که بر انسانیت و کمک به دیگران تمرکز دارند.<br>
+                ۲. تبدیل تعهدات اخلاقی به اقدام‌های عملی؛ نمونه‌های کوچک مانند مشارکت در کارهای خیر یا داوطلبانه.<br>
+                ۳. تشویق و راهنمایی اطرافیان در زمینه رعایت اصول انسانی؛ شما می‌توانید الگویی مؤثر در ترویج اخلاق باشید.<br>
+                ۴. ارزیابی دوره‌ای رفتارهای خود، برای حفظ بالاترین سطح تعهد؛ گاهی گفتگو با یک دوست یا مشاور مفید خواهد بود.<br>
+                ۵. پیگیری منابع الهام‌بخش (کتاب‌ها، سخنرانی‌ها) برای افزایش آگاهی و استحکام باورهایتان در زمینه اخلاق.
+            </div>
+        </div>
+    </li>
+
+    <!-- سطح عالی پایبندی -->
+    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10297#;">
+        <strong>«عالی»<br></strong>
+        شما در اوج پایبندی به اصول اخلاقی قرار دارید؛ تمام تلاش خود را می‌کنید تا در گفتار و رفتار، انسانیت و اخلاق را به نمایش بگذارید. این سطح از وفاداری و رعایت حقوق دیگران، شما را در جمع‌ها و محیط کاری به فردی قابل اعتماد و محترم تبدیل کرده است.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. پذیرفتن نقش راهنما یا مشاور در گروه‌هایی که به ارزش‌های اخلاقی و انسانی نیاز دارند؛ حضورتان می‌تواند بسیار کارساز باشد.<br>
+                ۲. مشارکت فعال در رویدادهای اجتماعی یا فرهنگی مرتبط با اخلاق و انسانیت؛ این کار بستر الگوسازی شما را گسترش می‌دهد.<br>
+                ۳. تشویق اطرافیان به ترویج فضیلت‌های اخلاقی؛ با توضیح منطق و فوایدشان برای ساختن جامعه سالم‌تر عمل کنید.<br>
+                ۴. مراقبت از خویشتن؛ گاه پایبندی افراطی و بی‌انعطاف به ارزش‌ها می‌تواند منجر به فرسودگی روانی شود، بنابراین توازن لازم است.<br>
+                ۵. مطالعه متون فلسفی یا معنوی عمیق‌تر برای گسترده‌ترکردن دیدگاه اخلاقی و تثبیت بیشتر باورهای پاکزیستی در رفتارتان.
+            </div>
+        </div>
+    </li>
+</ul>
+
+<!-- الف (شاخص زندگی پاک و پرهیز از انحراف‌های اخلاقی) -->
+<div class="report-component-title">الف
+    <span class="report-badge report-score-data">#field_1080#<br></span>
+</div>
+<p class="report-paragraph">
+    الف در «فهرست پاکزیستی» به عنوان شاخصی برای زندگی پاک، پرهیز از حیله و کلک و تعهد به سرشت الهی تعریف می‌شود. افرادی که در این بُعد امتیاز بالایی دارند، همواره سعی می‌کنند در رفتارهایشان صداقت و ارزش‌های معنوی را حفظ کنند و از فریب یا ریاکاری دور بمانند.
+</p>
+<ul class="report-list">
+    <!-- سطح متوسط الف -->
+    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10298#;">
+        <strong>«متوسط»<br></strong>
+        شما تا حدی سعی در زندگی پاک و دوری از حُقه‌بازی دارید، اما ممکن است گاهی در شرایط دشوار یا محیط‌های نامناسب، اصول صداقت و دوری از ریا را به‌طور کامل رعایت نکنید. در نتیجه، این امر باعث می‌شود همیشه به بالاترین سطح پاکزیستی مد نظر خود نرسید.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. ارزیابی محیط و زمان‌هایی که ممکن است به حیله‌گری یا دورویی کشانده شوید؛ سپس تلاش برای تغییر این شرایط یا مراقبت بیشتر از خود.<br>
+                ۲. شفاف‌سازی ارزش‌های معنوی و دینی، تا تصمیم‌گیری لحظه‌ای بر اساس اصول درونی باشد و نه فشار محیط.<br>
+                ۳. استفاده از روش‌های یادآوری مداوم (مانند عبارت‌های تاکیدی یا برگه‌های یادآوری) برای پیگیری زندگی پاک و پرهیز از نیرنگ.<br>
+                ۴. گفتگو با افراد متعهد به این سبک زندگی؛ تبادل تجربه و شنیدن داستان‌های موفق می‌تواند انگیزه‌تان را تقویت کند.<br>
+                ۵. توجه به عواقب مادی و معنوی هر اقدام خلاف پاکزیستی؛ بالابردن آگاهی در این زمینه احتمال لغزش‌ها را کاهش می‌دهد.
+            </div>
+        </div>
+    </li>
+
+    <!-- سطح خوب الف -->
+    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10298#;">
+        <strong>«خوب»<br></strong>
+        شما برای زندگی پاک ارزش زیادی قائلید و به‌طور معمول، از حیله و کلک دوری می‌کنید. این حالت نشان می‌دهد که هم در محیط‌های معمولی و هم در شرایط دشوار، سعی دارید صداقت و دوری از ریا را رعایت کرده و به سرشت الهی خود نزدیک باشید.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. ادامه این مسیر با تثبیت عادت‌های صحیح؛ گنجاندن مراسم معنوی یا فعالیت‌های گروهی خیرخواهانه در برنامه روزانه/هفتگی.<br>
+                ۲. آموزش و تشویق اطرافیان در زمینه رعایت اصول صداقت و پاکی؛ از طریق بیان فواید و نمونه‌های موفق.<br>
+                ۳. تحلیل رفتارها و تصمیم‌های مهم برای اطمینان از دوری از هرگونه نیرنگ و همسو بودن با ارزش‌های معنوی خود.<br>
+                ۴. ارتباط مستمر با افرادی که سبک زندگی پاکزیستی را جدی گرفته‌اند؛ محیط مثبت، پایداری شما را بیشتر می‌کند.<br>
+                5. مطلع بودن از مراحل رشد معنوی؛ هر گام کوچک در پایبندی به پاکی می‌تواند روحیه‌تان را ارتقا دهد.
+            </div>
+        </div>
+    </li>
+
+    <!-- سطح عالی الف -->
+    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10298#;">
+        <strong>«عالی»<br></strong>
+        شما در اوج شاخص الف (زندگی پاک) قرار دارید؛ از هرگونه حیله‌گری یا نیرنگ به دور هستید و برای صداقت، اصالت و بازگشت به سرشت الهی اهمیت فراوانی قائلید. این الگوی اخلاقی و معنوی، نه‌تنها آرامش درونی شما را بالا می‌برد، بلکه اعتماد و احترام فراوان دیگران را هم جلب می‌کند.
+        <div class="report-recommendation">
+            <div class="report-recommendation-title">توصیه:</div>
+            <div class="report-recommendation-text">
+                ۱. نقش رهبری معنوی در جمع‌های خانوادگی یا کاری؛ شفافیت و صداقت شما منبع الهام برای اطرافیان است.<br>
+                ۲. سازماندهی یا مشارکت در رویدادهای فرهنگی و دینی، تا روحیه پاکزیستی هم در خودتان و هم در جامعه گسترش یابد.<br>
+                ۳. تداوم مطالعه در مورد شیوه‌های عمیق‌تر پیگیری زندگی پاک؛ از منابع دینی و معنوی گوناگون بهره ببرید.<br>
+                ۴. حفظ انعطاف ذهنی؛ گاهی افراد با اعتقادات متفاوت در محیط ما حضور دارند، احترام به تفاوت‌ها می‌تواند الگوی کامل‌تری برای پاکزیستی ارائه دهد.<br>
+                ۵. مراقبت از توازن بین انجام وظایف روزمره و اهداف معنوی؛ گاهی افراط در حوزه‌های معنوی یا دینی باعث نادیده‌گرفتن نیازهای دنیوی می‌شود.
+            </div>
+        </div>
+    </li>
+</ul>
+
+        
+
+
+        
+                                              
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+            <div class="report-section-title">جمع‌بندی</div>
+            <div class="report-paragraph">
+            <p>این گزارش ارزیابی مهارت‌های شما شامل تحلیل تعهد، نیرومندی، ظرفیت تحلیلی، بیتابی روانی، استقلال و سازش است. این بررسی نقاط قوت و زمینه‌های نیازمند بهبود شما را نشان داده و توصیه‌های کاربردی برای توسعه مهارت‌های شما ارائه می‌دهد.</p>
+            
+            <p><b>نقاط قوت: </b>شما در برخی از حوزه‌ها عملکرد برجسته‌ای دارید که نشان‌دهنده توانایی‌های قوی در مدیریت مسئولیت‌ها، انرژی بالا، تحلیل مسائل پیچیده، آرامش روانی، خودکفایی و تطبیق‌پذیری است. به عنوان مثال، در حوزه‌های "تعهد" و "ظرفیت تحلیلی"، شما توانایی زیادی در مدیریت وظایف و تحلیل مسائل نشان داده‌اید که می‌تواند به پیشرفت حرفه‌ای و رشد فردی شما کمک کند.</p>
+            
+            <p><b>حوزه‌های نیازمند بهبود:</b> در برخی از بخش‌ها نیاز به تمرکز بیشتر وجود دارد. به عنوان مثال، در حوزه‌های "بیتابی روانی" و "استقلال"، شما می‌توانید با تمرین‌های منظم و فعالیت‌های هدفمند مانند تکنیک‌های مدیریت استرس و برنامه‌ریزی منظم مهارت‌های خود را بهبود بخشید. همچنین، افزایش تعاملات اجتماعی و تمرین مهارت‌های تصمیم‌گیری مستقل می‌تواند تأثیر مثبتی بر عملکرد شما داشته باشد.</p>
+            
+            <p><b>گام‌های بعدی:</b> برای تقویت مهارت‌های خود، پیشنهاد می‌شود که به توصیه‌های ارائه‌شده در هر بخش توجه ویژه‌ای کنید و در صورت نیاز از خدمات مشاوره تخصصی استفاده نمایید. همچنین، ارزیابی منظم و پیگیری مداوم می‌تواند به توسعه پایدار و موفقیت شما در تمامی ابعاد زندگی کمک کند.</p>
+            </div>
+        
+        <footer class="report-footer-custom">
+            <div class="report-footer-content">
+                <img src="../panel/file?type=picture&amp;v=3&amp;mode=filemanager&amp;file=%7eDB3gfQUls%2bt2iiMYKbsRAxrtFhcHKUIUUo7pPtO17bHCzNxwU4zNh3UVor6QMtl7Y6EWX8dD0PSvzZOYkRrXlfejPn4lNTj6" class="report-footer-img" alt="لوگو">
+            </div>
+            <p class="report-footer-paragraph">مؤسّسه تعاملی هیجان اندیشه | تماس: 02188174100 | ایمیل: info@eot.ir</p>
+            <p class="report-footer-paragraph yellow-text">© ۱۴۰۳ تمامی حقوق محفوظ است.</p>
+            <ul class="report-footer-menu">
+                <li><a href="https://www.eot.ir/" class="report-footer-menu-link">صفحه اصلی</a></li>
+                <li><a href="https://www.eot.ir/contact" class="report-footer-menu-link">تماس با ما</a></li>
+                <li><a href="https://www.eot.ir/about" class="report-footer-menu-link">درباره ما</a></li>
+            </ul>
+            <address class="report-footer-address">تهران، سهروردی، خرمشهر، عربعلی، کوچه ششم، شماره ۴۴</address>
+        </footer>
+    </div>
