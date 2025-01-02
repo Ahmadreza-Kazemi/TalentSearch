@@ -1,52 +1,225 @@
-<div class="ravesh-editor-html" style="direction:rtl">
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>گزارش تحلیل فهرست تشخیص تعاملی شخصیت</title>
+    <title>استعدادیاب | معرفی آزمون فهرست تشخیص تعاملی رضایت از زندگی</title>
     <style>
+        /* =======================================================
+           1. Reset and Base Styles
+        ======================================================= */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100%;
+            font-family: 'Vazir', sans-serif;
+            background-color: #FFFFFF;
+            color: #1F3B73;
+            direction: rtl;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            padding-top: 80px;
+            padding-bottom: 60px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #1F3B73;
+            transition: color 0.3s ease-in-out;
+        }
+
+        a:hover,
+        a:focus {
+            color: #F4C553;
+            text-decoration: underline;
+        }
+
+        /* =======================================================
+           2. Font Imports
+        ======================================================= */
+        @font-face {
+            font-family: 'Vazir';
+            src: url('/assets/fonts/Vazir-Regular-UI.woff2') format('woff2'),
+                 url('/assets/fonts/Vazir-Regular-UI.woff') format('woff'),
+                 url('/assets/fonts/Vazir-Regular-UI.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+        }
+
         @font-face {
             font-family: 'IRANSansWeb';
-            src: url('fonts/IRANSansWeb.woff2') format('woff2');
+            src: url('/assets/fonts/IRANSansWeb.woff2') format('woff2');
         }
         @font-face {
             font-family: 'BTitrBold';
-            src: url('fonts/BTitrBold.woff2') format('woff2');
+            src: url('/assets/fonts/BTitrBold.woff2') format('woff2');
         }
         @font-face {
             font-family: 'BKoodakBold';
-            src: url('fonts/BKoodakBold.woff2') format('woff2');
+            src: url('/assets/fonts/BKoodakBold.woff2') format('woff2');
         }
         @font-face {
             font-family: 'BHoma';
-            src: url('fonts/BHoma.woff2') format('woff2');
+            src: url('/assets/fonts/BHoma.woff2') format('woff2');
         }
         @font-face {
             font-family: 'BYekan';
-            src: url('fonts/BYekan.woff2') format('woff2');
+            src: url('/assets/fonts/BYekan.woff2') format('woff2');
         }
         @font-face {
             font-family: 'Tahoma';
-            src: url('fonts/Tahoma.woff2') format('woff2');
+            src: url('/assets/fonts/Tahoma.woff2') format('woff2');
         }
+
+        /* =======================================================
+           3. Typography
+        ======================================================= */
+        h1, h2, h3, h4 {
+            font-family: 'Vazir', sans-serif;
+            color: #1F3B73;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px #F4C553;
+        }
+
+        h2 {
+            font-size: 2em;
+            font-weight: 700;
+            margin-bottom: 24px;
+            text-shadow: 0 0 10px #F4C553;
+            color: #1F3B73;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 1.5em;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #1F3B73;
+            text-align: center;
+        }
+
+        h4 {
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-top: 16px;
+            color: #1F3B73;
+            text-align: center;
+        }
+
+        p {
+            font-size: 1em;
+            max-width: 800px;
+            margin: 0 auto 16px;
+            line-height: 1.6;
+            color: #1F3B73;
+            text-align: justify;
+        }
+
+        ul {
+            max-width: 800px;
+            margin: 0 auto 16px;
+            padding-right: 20px;
+            color: #1F3B73;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* =======================================================
+           4. Hero Section
+        ======================================================= */
+        .hero {
+            height: calc(100vh - 80px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #F0F0F5;
+            padding: 16px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 16px;
+            color: #1F3B73;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            margin-bottom: 24px;
+            color: #1F3B73;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #F4C553;
+            color: #FFFFFF;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 1em;
+            box-shadow: 0 0 10px #FFD77B;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease-in-out,
+                        transform 0.3s ease-in-out,
+                        box-shadow 0.3s ease-in-out;
+        }
+
+        .cta-button:hover,
+        .cta-button:focus {
+            background-color: #4FBDBA;
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px #4FBDBA;
+        }
+
+        /* =======================================================
+           5. Content Sections
+        ======================================================= */
+        .content-section {
+            padding: 60px 16px;
+            background-color: #FFFFFF;
+        }
+
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .content-section:nth-child(even) {
+            background-color: #F9F9F9;
+        }
+
+        /* =======================================================
+           6. Sample Report Section
+        ======================================================= */
+        /* Report Styles */
         .report-container {
             font-family: 'BYekan', sans-serif;
             direction: rtl;
             line-height: 1.8;
             background-color: #F5F5F5;
             color: #333333;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            max-width: 800px;
-            width: 100%;
-            margin: auto;
-            background-color: #F5F5F5;
+            margin: 40px auto;
             padding: 40px;
             box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
             border-radius: 20px;
+            max-width: 800px;
         }
+
         .report-header-custom {
             display: flex;
             align-items: center;
@@ -55,15 +228,18 @@
             background-color: #0DA3B8;
             border-radius: 20px 20px 0 0;
         }
+
         .report-header-inner {
             display: flex;
             align-items: center;
             gap: 20px;
         }
+
         .report-header-img {
             width: 40px;
             height: 40px;
         }
+
         .report-header-title {
             margin: 0;
             font-size: 1.8em;
@@ -71,22 +247,39 @@
             font-family: 'IRANSansWeb', sans-serif;
             font-weight: normal;
         }
+
         .report-header-date {
             color: #ffffff;
             font-size: 1em;
         }
-        .report-title {
-            text-align: center;
-            color: #0DA3B8;
+
+        .report-section-title {
+            font-size: 22px;
+            color: #CC3333;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #CC3333;
             font-family: 'IRANSansWeb', sans-serif;
             font-weight: bold;
-            font-size: 32px;
-            margin-bottom: 25px;
+            text-align: center;
         }
+
+        .report-paragraph {
+            background-color: #E0F7FA;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
         .report-info-container, .report-score-container {
             display: flex;
             flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
         }
+
         .report-info-item, .report-score-item {
             background-color: #F8F9FA;
             padding: 15px;
@@ -99,26 +292,17 @@
             font-family: 'BYekan', sans-serif;
             flex: 1;
             min-width: 300px;
-            margin-right: 10px; /* Add space between columns */
         }
+
         .report-info-item strong, .report-score-item strong {
             color: #0DA3B8;
             font-family: 'IRANSansWeb', sans-serif;
         }
+
         .report-info-data, .report-score-data {
             font-family: 'IRANSansWeb', sans-serif;
         }
-        .report-section-title {
-            font-size: 22px;
-            color: #CC3333;
-            margin-top: 30px;
-            margin-bottom: 10px;
-            padding-bottom: 5px;
-            border-bottom: 1px solid #CC3333;
-            font-family: 'IRANSansWeb', sans-serif;
-            font-weight: bold;
-            text-align: center;
-        }
+
         .report-component-title {
             display: flex;
             justify-content: space-between;
@@ -131,32 +315,7 @@
             border-bottom: 1px solid #DBCF93;
             font-family: 'IRANSansWeb', sans-serif;
         }
-        .report-paragraph {
-            background-color: #E0F7FA;
-            padding: 15px;
-            border-radius: 10px;
-            font-size: 16px;
-            margin-bottom: 20px;
-        }
-        .report-list {
-            list-style-type: none;
-            padding: 0;
-            font-size: 16px;
-        }
-        .report-list-item {
-            background: #F8F9FA;
-            margin-bottom: 10px;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-            display: flex;
-            flex-direction: column;
-        }
-        .report-list-item strong {
-            font-size: 18px;
-            color: #0DA3B8;
-            margin-bottom: 5px;
-        }
+
         .report-badge {
             display: inline-block;
             padding: 8px 15px;
@@ -165,6 +324,7 @@
             background-color: #4A9B8C;
             border-radius: 10px;
         }
+
         .report-recommendation {
             background-color: #EAEAEA;
             padding: 20px;
@@ -176,374 +336,487 @@
             width: 100%;
             box-sizing: border-box;
         }
+
         .report-recommendation-title {
             font-weight: bold;
             color: #CC3333;
             margin-bottom: 5px;
             font-size: 18px;
         }
+
         .report-recommendation-text {
             margin-bottom: 5px;
             line-height: 1.6;
             font-size: 16px;
         }
-        .report-footer-custom {
-            background-color: #F5F5F5;
-            color: #333333;
-            padding: 20px;
-            text-align: center;
-            font-family: 'IRANSansWeb', sans-serif;
-            border-top: 1px solid #E0E0E0;
-            font-size: 16px; /* Increased font size */
-        }
-        .report-footer-content {
-            margin-bottom: 20px;
-        }
-        .report-footer-img {
-            width: 80px;
-            height: 80px;
-        }
-        .report-footer-paragraph {
-            margin: 5px 0;
-        }
-        .report-footer-paragraph.yellow-text {
-            color: #DBCF93;
-        }
-        .report-footer-menu {
-            list-style: none;
+
+        .report-list {
+            list-style-type: none;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin: 10px 0;
+            font-size: 16px;
         }
-        .report-footer-menu-link {
-            color: #0DA3B8;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        .report-footer-menu-link:hover {
-            color: #007B8A;
-        }
-        .report-footer-address {
-            margin-top: 10px;
-            font-size: 14px;
-        }
-        .report-summary-container {
-            max-width: 800px;
-            margin: auto;
-            background-color: #FFFFFF;
-            padding: 40px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+
+        .report-list-item {
+            background: #F8F9FA;
+            margin-bottom: 10px;
+            padding: 15px;
             border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
         }
-        .report-summary-heading {
-            text-align: center;
+
+        .report-list-item strong {
+            font-size: 18px;
             color: #0DA3B8;
-            font-family: 'IRANSansWeb', sans-serif;
-            font-weight: bold;
-            font-size: 32px;
-            margin-bottom: 25px;
+            margin-bottom: 5px;
         }
-        .report-summary-content {
-            color: #333333;
-            font-family: 'IRANSansWeb', sans-serif;
-            line-height: 1.8;
-        }
+
+        /* Report Conditional Display Styles */
         .report-conditional-display {
             display: block;
         }
         .report-conditional-display[style*="--score-rate1: 1"] {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-            border-radius: 10px;
             background-color: #FF9999; /* Moderate */
         }
         .report-conditional-display[style*="--score-rate2: 2"] {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-            border-radius: 10px;
             background-color: #FFD580; /* Good */
         }
         .report-conditional-display[style*="--score-rate3: 3"] {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-            border-radius: 10px;
             background-color: #99FF99; /* Excellent */
         }
+
+        /* =======================================================
+           7. FAQ Section
+        ======================================================= */
+        .faq-item {
+            margin-bottom: 20px;
+        }
+
+        .faq-item h4 {
+            cursor: pointer;
+            position: relative;
+        }
+
+        .faq-item h4::after {
+            content: '+';
+            position: absolute;
+            left: -20px;
+            top: 0;
+            font-size: 1.5em;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active h4::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-item p {
+            display: none;
+            margin-top: 10px;
+        }
+
+        .faq-item.active p {
+            display: block;
+        }
+
+        /* =======================================================
+           8. Testimonials Section
+        ======================================================= */
+        .testimonial {
+            background-color: #F8F9FA;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+            font-style: italic;
+        }
+
+        .testimonial p strong {
+            font-style: normal;
+        }
     </style>
-    <div class="report-report-container">
-        <header class="report-header-custom">
-            <div class="report-header-inner">
-                <img src="../panel/file?type=picture&amp;v=3&amp;mode=filemanager&amp;file=%7eDB3gfQUls%2bt2iiMYKbsRAxrtFhcHKUIUUo7pPtO17bHCzNxwU4zNh3UVor6QMtl7Y6EWX8dD0PSvzZOYkRrXlfejPn4lNTj6" class="report-header-img" alt="لوگو">
-                <h1 class="report-header-title">گزارش تحلیل فهرست تشخیص تعاملی شخصیت</h1>
+</head>
+<body>
+    <header class="header">
+        <!-- می‌توانید محتوای سربرگ را اینجا اضافه کنید -->
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>فهرست تشخیص تعاملی رضایت از زندگی</h1>
+                <p>تحلیل و بررسی ویژگی‌های شخصیتی فرد برای توسعه رضایت از زندگی</p>
+                <a href="/take/fahrest-tashkhis-tamarkobi-razayat-az-zendegi" class="cta-button">شروع آزمون</a>
             </div>
-            <div class="report-header-date">تاریخ اجرا: #primary_createDate#</div>
-        </header>
-        
-        <div class="report-section-title">فهرست تشخیص تعاملی شخصیت</div>
-        <p class="report-paragraph">
-            این ارزیابی به منظور تحلیل و بررسی ویژگی‌های شخصیتی فرد در حوزه‌های مختلف از جمله تعهد، نیرومندی، ظرفیت تحلیلی، بیتابی روانی، استقلال و سازش انجام شده است. هدف از این ارزیابی شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد.
-        </p><p></p>
-               
-        <div class="report-section-title">اطلاعات فردی</div>
-        <div class="report-info-container">
-            <div class="report-info-item"><strong>نام:</strong> <span class="report-info-data">#field_349#</span></div>
-            <div class="report-info-item"><strong>نام خانوادگی:</strong> <span class="report-info-data">#field_1712#</span></div>
-            <div class="report-info-item"><strong>موبایل:</strong> <span class="report-info-data">#field_350#</span></div>
-            <div class="report-info-item"><strong>ایمیل:</strong> <span class="report-info-data">#field_351#</span></div></div>
+        </section>
 
-        </div>
-        <div class="report-section-title">نتیجه</div>
-        <div class="report-score-container">
-            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10276#;"><strong>بالندگی:</strong> <span class="report-badge">#field_5815#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10276#;"><strong>بالندگی:</strong> <span class="report-badge">#field_5815#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10276#;"><strong>بالندگی:</strong> <span class="report-badge">#field_5815#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10277#;"><strong>حمایت:</strong> <span class="report-badge">#field_5816#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10277#;"><strong>حمایت:</strong> <span class="report-badge">#field_5816#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10277#;"><strong>حمایت:</strong> <span class="report-badge">#field_5816#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10278#;"><strong>وجاهت:</strong> <span class="report-badge">#field_5817#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10278#;"><strong>وجاهت:</strong> <span class="report-badge">#field_5817#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10278#;"><strong>وجاهت:</strong> <span class="report-badge">#field_5817#</span></div>
-
-        </div>
-        <div class="report-section-title">تفسیر</div>
-        <p class="report-paragraph">
-            این بخش به تحلیل و تفسیر نتایج ارزیابی روان‌شناختی فرد می‌پردازد. تحلیل روان‌شناختی شامل بررسی ویژگی‌های شخصیتی مختلف است. هدف از این تحلیل شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد. نتایج این تحلیل می‌تواند به فرد کمک کند تا با شناخت بهتر از خود، برنامه‌های توسعه فردی و حرفه‌ای موثرتری را دنبال کند.
-        </p>
-
-
-
-        
-<!-- بالندگی (حس حرکت رو به جلو و رشد شخصی در زندگی) -->
-<div class="report-component-title">بالندگی 
-    <span class="report-badge report-score-data">#field_5815#<br></span>
-</div>
-<p class="report-paragraph">
-    بالندگی نشان‌دهنده تجربه احساس رشد، مورد احترام قرار گرفتن عقاید و حرکت رو به جلوی فرد در زندگی است. کسانی که در این سطح بالاتری دارند، معمولاً خود را پویا می‌بینند و اعتقاد دارند دیدگاه‌ها و ایده‌هایشان از سوی دیگران به رسمیت شناخته می‌شود.
-</p>
-<ul class="report-list">
-    <!-- سطح متوسط بالندگی -->
-    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10276#;">
-        <strong>«متوسط»<br></strong>
-        شما گاهی احساس رشد و بالندگی دارید، اما ممکن است همواره در جایگاهی که به نظرتان آرمانی است، نباشید. اگرچه عقایدتان بیشتر اوقات مورد توجه قرار می‌گیرد، ممکن است لزوماً حس نکنید که به تمامی آرزوهای رشد شخصی‌تان دست یافته‌اید.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. بازبینی اهداف خود؛ تعیین قدم‌های کوچک برای تقویت هرچه بیشتر حس پیشرفت و اعتمادبه‌نفس.<br>
-                ۲. درخواست بازخورد از نزدیکان و دوستان درباره ایده‌ها و توانمندی‌هایتان؛ این کار می‌تواند زمینه ایجاد تغییرات مثبت را فراهم کند.<br>
-                ۳. شرکت در کارگاه‌ها و دوره‌های توسعه فردی برای یادگیری مهارت‌ها و تکنیک‌های جدید رشد شخصی.<br>
-                ۴. به اشتراک‌گذاری نگرش‌هایتان با اطرافیان؛ گاهی یک گفت‌وگوی ساده می‌تواند دیدگاه افراد را نسبت به ارزشمندی عقایدتان تغییر دهد.<br>
-                ۵. ثبت منظم دستاوردهایتان برای مشاهده پیشرفت تدریجی و افزایش حس بالندگی در طول زمان.
+        <!-- Test Purpose Section -->
+        <section class="content-section test-section" id="test-purpose">
+            <div class="content-container">
+                <!-- هدف از آزمون -->
+                <h2>هدف از آزمون</h2>
+                <p>
+                    این آزمون برای سنجش و تحلیل ویژگی‌های شخصیتی فرد در حوزه‌های مختلف از جمله بالندگی، حمایت و وجاهت طراحی شده است. هدف اصلی این آزمون شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد.
+                </p>
             </div>
-        </div>
-    </li>
+        </section>
 
-    <!-- سطح خوب بالندگی -->
-    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10276#;">
-        <strong>«خوب»<br></strong>
-        شما از حس بالندگی خوبی برخوردارید؛ معمولاً به خود اطمینان دارید و عقاید و نظراتتان در محیط پیرامون مورد احترام است. این سطح از رشد شخصی نشان‌دهنده تعادل روانی و تعهد به پیشرفت مداوم است.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. حفظ مسیر توسعه فردی با تعیین اهداف بلندمدت و انجام بازنگری‌های دوره‌ای برای ارزیابی پیشرفت.<br>
-                ۲. شرکت در فعالیت‌های گروهی یا پروژه‌های نوآورانه برای گسترش اثرگذاری خود و یادگیری مهارت‌های نو.<br>
-                ۳. اشتراک تجربه و توصیه‌های موفقیت خود با دیگران؛ این کار نه‌تنها به آن‌ها کمک می‌کند بلکه به حس بالندگی شما نیز می‌افزاید.<br>
-                ۴. تعادل میان کار و زندگی را فراموش نکنید؛ گاهی استراحت و فعالیت‌های مفرح نیز برای رشد همه‌جانبه ضروری است.<br>
-                ۵. دقت در شناخت ظرفیت‌های جدید؛ پیگیری فرصت‌های متفاوت می‌تواند بالندگی شما را در حوزه‌های تازه نیز گسترش دهد.
+        <!-- Key Features Section -->
+        <section class="content-section test-section" id="key-features">
+            <div class="content-container">
+                <!-- ویژگی‌های کلیدی آزمون -->
+                <h2>ویژگی‌های کلیدی آزمون</h2>
+                <ul>
+                    <li><strong>زمینه‌های ارزیابی:</strong> بالندگی، حمایت، وجاهت</li>
+                    <li><strong>زمان مورد نیاز:</strong> 20 دقیقه</li>
+                    <li><strong>دسترسی:</strong> آنلاین و حضوری</li>
+                    <li><strong>نوع گزارش:</strong> گزارش جامع با نمودارها و توصیه‌های عملی</li>
+                </ul>
             </div>
-        </div>
-    </li>
+        </section>
 
-    <!-- سطح عالی بالندگی -->
-    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10276#;">
-        <strong>«عالی»<br></strong>
-        شما در نقطه اوج حس بالندگی قرار دارید؛ فردی کاملاً خودپویا، هدفمند و مورد احترام در محیط زندگی یا کاری هستید. این سطح از رشد شخصی و اعتمادبه‌نفس شما را به الگوی دیگران تبدیل کرده است.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. پذیرش چالش‌های بزرگ‌تر و نقش‌های رهبری؛ توانایی شما در گسترش ایده‌هایتان می‌تواند الهام‌بخش باشد.<br>
-                ۲. آموزش و منتورینگ دیگران؛ انتقال دیدگاه‌های موفقیت و تجربیات شما می‌تواند جامعه را رشد دهد و به شما انگیزه بیشتری ببخشد.<br>
-                ۳. شرکت در همایش‌ها و کنفرانس‌های معتبر برای تبادل نظر و ارائه ایده‌هایتان در سطوح بالاتر.<br>
-                ۴. توجه به جنبه‌های دیگر زندگی مانند تفریح و روابط بین فردی برای جلوگیری از فرسودگی و حفظ شادابی دائمی.<br>
-                ۵. پیگیری پروژه‌های بین‌رشته‌ای یا خلاقانه؛ دیدگاه باز و روحیه جست‌وجوگر شما می‌تواند به خلق تحولاتی عظیم منجر شود.
+        <!-- Benefits Section -->
+        <section class="content-section test-section" id="benefits">
+            <div class="content-container">
+                <!-- مزایای شرکت در این آزمون -->
+                <h2>مزایای شرکت در این آزمون</h2>
+                <ul>
+                    <li>افزایش خودآگاهی و شناخت بهتر از ویژگی‌های شخصیتی در حوزه رضایت از زندگی</li>
+                    <li>بهبود مهارت‌های تحلیل و بررسی عمیق مسائل زندگی</li>
+                    <li>شناسایی نقاط قوت و ضعف در حوزه‌های بالندگی، حمایت و وجاهت</li>
+                    <li>حمایت از رشد شخصی و حرفه‌ای در جنبه‌های مختلف زندگی</li>
+                    <li>افزایش رضایت و انگیزه در زندگی روزمره</li>
+                </ul>
             </div>
-        </div>
-    </li>
-</ul>
+        </section>
 
-<!-- حمایت (احساس همراهی اطرافیان و پذیرش در زندگی) -->
-<div class="report-component-title">حمایت 
-    <span class="report-badge report-score-data">#field_5816#<br></span>
-</div>
-<p class="report-paragraph">
-    حمایت در حوزه رضایت از زندگی نشان‌دهنده سطحی از همراهی و پذیرش است که فرد در محیط پیرامون خود احساس می‌کند. افرادی که از سطح بالایی از حمایت برخوردارند، هنگام دشواری‌ها کمتر احساس تنهایی کرده و به واسطه حضور اطرافیان، در راه رسیدن به اهدافشان انگیزه بیشتری دارند.
-</p>
-<ul class="report-list">
-    <!-- سطح متوسط حمایت -->
-    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10277#;">
-        <strong>«متوسط»<br></strong>
-        شما در بسیاری از مواقع از همکاری و پذیرش اطرافیان بهره‌مند هستید، اما ممکن است همیشه به شیوه‌ای که انتظار دارید یا در تمامی شرایط بحرانی این حمایت را دریافت نکنید. این مسئله گاه حس نارضایتی یا کم‌توجهی را القا می‌کند.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. بیان صریح انتظاراتتان از دیگران؛ ممکن است اطرافیان به خوبی ندانند چه کمکی برای شما مؤثرتر است.<br>
-                ۲. توجه به سبک ارتباطی؛ بهبود کیفیت گفت‌وگو و شناخت متقابل می‌تواند سطح حمایت را افزایش دهد.<br>
-                ۳. شرکت در گروه‌ها و شبکه‌های اجتماعی هم‌فکر؛ در آنجا اغلب حس پذیرش و همراهی بیشتری حس می‌شود.<br>
-                ۴. تقویت حس استقلال و خوداتکایی در کنار جست‌وجوی حمایت؛ ترکیبی از حمایت بیرونی و درونی به تعادل روانی منجر می‌شود.<br>
-                ۵. بررسی مداوم روابط و تشخیص موقعیت‌هایی که احساس کمبود حمایت دارید؛ سپس تلاش برای تقویت آن‌ها از طریق روش‌های عملی.
+        <!-- How It Works Section -->
+        <section class="content-section test-section" id="how-it-works">
+            <div class="content-container">
+                <!-- نحوه انجام آزمون -->
+                <h2>نحوه انجام آزمون</h2>
+                <p>
+                    آزمون فهرست تشخیص تعاملی رضایت از زندگی شامل مراحل زیر است:
+                </p>
+                <ul>
+                    <li><strong>گام اول:</strong> تکمیل پرسشنامه آنلاین به مدت 20 دقیقه</li>
+                    <li><strong>گام دوم:</strong> دریافت گزارش تحلیلی جامع با نتایج و توصیه‌ها</li>
+                    <li><strong>گام سوم:</strong> بررسی نتایج و در صورت نیاز، مشاوره با متخصصین</li>
+                </ul>
             </div>
-        </div>
-    </li>
+        </section>
 
-    <!-- سطح خوب حمایت -->
-    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10277#;">
-        <strong>«خوب»<br></strong>
-        شما عموماً احساس راحتی و پذیرش از سوی اطرافیان دارید و در دشواری‌ها از حمایت کافی برخوردار می‌شوید. این فضا موجب می‌شود احساس کنید که فرد مناسبی همراهتان است و در راه رسیدن به موفقیت و جایگاه شایسته‌تان تنها نیستید.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. تداوم برخورد مثبت و همدلانه با اطرافیان؛ ارتقای فضای همکارانه در محیط خانواده یا کار که منجر به تعمیق حمایت می‌شود.<br>
-                ۲. تشویق دوستان و آشنایان به بیان نگرانی‌ها و ایده‌هایشان؛ پشتیبانی دوسویه، فرهنگ حمایت را تحکیم می‌کند.<br>
-                ۳. مشارکت در پروژه‌ها یا فعالیت‌های گروهی؛ همکاری مؤثر با دیگران به حس همبستگی و همراهی بیشتر می‌انجامد.<br>
-                ۴. قدردانی از اطرافیان در موقعیت‌هایی که به شما کمک می‌کنند؛ این کار حس رضایتمندی متقابل را افزایش می‌دهد.<br>
-                ۵. در صورت بروز شرایط بحرانی، با صداقت و مهربانی به دنبال کمک‌های اضافی یا تخصصی (مشاور، روان‌شناس) باشید.
+        <!-- Who Should Take This Test Section -->
+        <section class="content-section test-section" id="who-should-take">
+            <div class="content-container">
+                <!-- چه کسانی باید این آزمون را انجام دهند؟ -->
+                <h2>چه کسانی باید این آزمون را انجام دهند؟</h2>
+                <ul>
+                    <li>افرادی که به دنبال شناخت بهتر از ویژگی‌های شخصیتی خود در زندگی هستند</li>
+                    <li>مدیران و کارمندان که به دنبال بهبود رضایت از زندگی و عملکرد خود هستند</li>
+                    <li>مشاوران و روانشناسان برای پشتیبانی از مشتریان خود در حوزه رضایت از زندگی</li>
+                    <li>سازمان‌ها و شرکت‌ها برای ارزیابی و بهبود رضایت و انگیزه کارکنان</li>
+                    <li>دانشجویان و کارجویانی که به دنبال انتخاب مسیر زندگی مناسب و افزایش رضایت خود هستند</li>
+                </ul>
             </div>
-        </div>
-    </li>
+        </section>
 
-    <!-- سطح عالی حمایت -->
-    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10277#;">
-        <strong>«عالی»<br></strong>
-        شما در سطح بسیار بالایی از همراهی و حمایت قرار دارید؛ در شرایط گوناگون، اطرافیانتان به عقاید شما احترام می‌گذارند و در دشواری‌های زندگی به‌طور چشمگیری در کنارتان هستند. این احساس پذیرش و هم‌راهی، بستری عالی برای رشد و خشنودی بیشتر فراهم می‌کند.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. نقش الگویی در ایجاد فرهنگ حمایت و پذیرش در محیط اطراف؛ تشویق دیگران به کمک کردن و همدلی متقابل.<br>
-                ۲. گسترش شبکه ارتباطی؛ شما می‌توانید با حضور در جمع‌های جدید، انرژی مثبت را به دیگران انتقال دهید و از آن‌ها یاد بگیرید.<br>
-                ۳. پشتیبانی از افرادی که نیازمند حضور و همراهی‌اند؛ این کار علاوه بر تقویت حس انسانی، به گسترش فضای حمایتی جمعی می‌انجامد.<br>
-                ۴. مدیریت مسئولانه حمایت اطرافیان؛ جلوگیری از افراط در وابستگی و حفظ استقلال فکری و شخصیتی شما اهمیت دارد.<br>
-                ۵. قدردانی منظم از اطرافیان؛ تشویق و قدردانی می‌تواند ثبات و عمق بیشتری به این رابطه حمایتی ببخشد.
+        <!-- Sample Report Section -->
+        <section class="content-section test-section" id="sample-report">
+            <div class="content-container">
+                <!-- نمونه گزارش -->
+                <h2>نمونه گزارش</h2>
+                <p>
+                    در ادامه یک نمونه از گزارش فهرست تشخیص تعاملی رضایت از زندگی را مشاهده می‌کنید:
+                </p>
+                <div class="report-container">
+                    <header class="report-header-custom">
+                        <div class="report-header-inner">
+                            <img src="../panel/file?type=picture&amp;v=3&amp;mode=filemanager&amp;file=%7eDB3gfQUls%2bt2iiMYKbsRAxrtFhcHKUIUUo7pPtO17bHCzNxwU4zNh3UVor6QMtl7Y6EWX8dD0PSvzZOYkRrXlfejPn4lNTj6" class="report-header-img" alt="لوگو">
+                            <h1 class="report-header-title">گزارش تحلیل فهرست تشخیص تعاملی رضایت از زندگی</h1>
+                        </div>
+                        <div class="report-header-date">تاریخ اجرا: #primary_createDate#</div>
+                    </header>
+                    <div class="report-section-title">فهرست تشخیص تعاملی رضایت از زندگی</div>
+                    <p class="report-paragraph">
+                        این ارزیابی به منظور تحلیل و بررسی ویژگی‌های شخصیتی فرد در حوزه‌های مختلف از جمله بالندگی، حمایت و وجاهت انجام شده است. هدف از این ارزیابی شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد.
+                    </p>
+                    <div class="report-section-title">اطلاعات فردی</div>
+                    <div class="report-info-container">
+                        <div class="report-info-item"><strong>نام:</strong> <span class="report-info-data">#field_5784#</span></div>
+                        <div class="report-info-item"><strong>نام خانوادگی:</strong> <span class="report-info-data">#field_5785#</span></div>
+                        <div class="report-info-item"><strong>موبایل:</strong> <span class="report-info-data">#field_5787#</span></div>
+                        <div class="report-info-item"><strong>ایمیل:</strong> <span class="report-info-data">#field_5786#</span></div>
+                    </div>
+                    <div class="report-section-title">نتیجه</div>
+                    <div class="report-score-container">
+                        <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10276#;"><strong>بالندگی:</strong> <span class="report-badge">#field_5815#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10276#;"><strong>بالندگی:</strong> <span class="report-badge">#field_5815#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10276#;"><strong>بالندگی:</strong> <span class="report-badge">#field_5815#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10277#;"><strong>حمایت:</strong> <span class="report-badge">#field_5816#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10277#;"><strong>حمایت:</strong> <span class="report-badge">#field_5816#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10277#;"><strong>حمایت:</strong> <span class="report-badge">#field_5816#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10278#;"><strong>وجاهت:</strong> <span class="report-badge">#field_5817#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10278#;"><strong>وجاهت:</strong> <span class="report-badge">#field_5817#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10278#;"><strong>وجاهت:</strong> <span class="report-badge">#field_5817#</span></div>
+                    </div>
+                    <div class="report-section-title">تفسیر</div>
+                    <p class="report-paragraph">
+                        این بخش به تحلیل و تفسیر نتایج ارزیابی روان‌شناختی فرد می‌پردازد. تحلیل روان‌شناختی شامل بررسی ویژگی‌های شخصیتی در حوزه‌های بالندگی، حمایت و وجاهت است. هدف از این تحلیل شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد. نتایج این تحلیل می‌تواند به فرد کمک کند تا با شناخت بهتر از خود، برنامه‌های توسعه فردی و حرفه‌ای موثرتری را دنبال کند. توصیه‌ها شامل بازبینی اهداف، درخواست بازخورد، شرکت در کارگاه‌ها، به اشتراک‌گذاری نگرش‌ها و ثبت منظم دستاوردها برای بالندگی؛ بیان صریح انتظارات، بهبود کیفیت گفت‌وگو، شرکت در گروه‌های هم‌فکر، تقویت حس استقلال و بررسی مداوم روابط برای حمایت؛ و شفاف‌سازی انتظارات، کار روی مهارت‌های ابراز وجود، جست‌وجوی موقعیت‌های مناسب، اصلاح الگوی مقایسه و مدیریت احساسات منفی برای وجاهت می‌باشد.
+                    </p>
+
+                    <!-- بالندگی (حس حرکت رو به جلو و رشد شخصی در زندگی) -->
+                    <div class="report-component-title">بالندگی 
+                        <span class="report-badge report-score-data">#field_5815#<br></span>
+                    </div>
+                    <p class="report-paragraph">
+                        بالندگی نشان‌دهنده تجربه احساس رشد، مورد احترام قرار گرفتن عقاید و حرکت رو به جلوی فرد در زندگی است. کسانی که در این سطح بالاتری دارند، معمولاً خود را پویا می‌بینند و اعتقاد دارند دیدگاه‌ها و ایده‌هایشان از سوی دیگران به رسمیت شناخته می‌شود.
+                    </p>
+                    <ul class="report-list">
+                        <!-- سطح متوسط بالندگی -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10276#;">
+                            <strong>«متوسط»<br></strong>
+                            شما گاهی احساس رشد و بالندگی دارید، اما ممکن است همواره در جایگاهی که به نظرتان آرمانی است، نباشید. اگرچه عقایدتان بیشتر اوقات مورد توجه قرار می‌گیرد، ممکن است لزوماً حس نکنید که به تمامی آرزوهای رشد شخصی‌تان دست یافته‌اید.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. بازبینی اهداف خود؛ تعیین قدم‌های کوچک برای تقویت هرچه بیشتر حس پیشرفت و اعتمادبه‌نفس.<br>
+                                    ۲. درخواست بازخورد از نزدیکان و دوستان درباره ایده‌ها و توانمندی‌هایتان؛ این کار می‌تواند زمینه ایجاد تغییرات مثبت را فراهم کند.<br>
+                                    ۳. شرکت در کارگاه‌ها و دوره‌های توسعه فردی برای یادگیری مهارت‌ها و تکنیک‌های جدید رشد شخصی.<br>
+                                    ۴. به اشتراک‌گذاری نگرش‌هایتان با اطرافیان؛ گاهی یک گفت‌وگوی ساده می‌تواند دیدگاه افراد را نسبت به ارزشمندی عقایدتان تغییر دهد.<br>
+                                    ۵. ثبت منظم دستاوردهایتان برای مشاهده پیشرفت تدریجی و افزایش حس بالندگی در طول زمان.
+                                </div>
+                            </div>
+                        </li>
+                        <!-- سطح خوب بالندگی -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10276#;">
+                            <strong>«خوب»<br></strong>
+                            شما از حس بالندگی خوبی برخوردارید؛ معمولاً به خود اطمینان دارید و عقاید و نظراتتان در محیط پیرامون مورد احترام است. این سطح از رشد شخصی نشان‌دهنده تعادل روانی و تعهد به پیشرفت مداوم است.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. حفظ مسیر توسعه فردی با تعیین اهداف بلندمدت و انجام بازنگری‌های دوره‌ای برای ارزیابی پیشرفت.<br>
+                                    ۲. شرکت در فعالیت‌های گروهی یا پروژه‌های نوآورانه برای گسترش اثرگذاری خود و یادگیری مهارت‌های نو.<br>
+                                    ۳. اشتراک تجربه و توصیه‌های موفقیت خود با دیگران؛ این کار نه‌تنها به آن‌ها کمک می‌کند بلکه به حس بالندگی شما نیز می‌افزاید.<br>
+                                    ۴. تعادل میان کار و زندگی را فراموش نکنید؛ گاهی استراحت و فعالیت‌های مفرح نیز برای رشد همه‌جانبه ضروری است.<br>
+                                    ۵. دقت در شناخت ظرفیت‌های جدید؛ پیگیری فرصت‌های متفاوت می‌تواند بالندگی شما را در حوزه‌های تازه نیز گسترش دهد.
+                                </div>
+                            </div>
+                        </li>
+                        <!-- سطح عالی بالندگی -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10276#;">
+                            <strong>«عالی»<br></strong>
+                            شما در نقطه اوج حس بالندگی قرار دارید؛ فردی کاملاً خودپویا، هدفمند و مورد احترام در محیط زندگی یا کاری هستید. این سطح از رشد شخصی و اعتمادبه‌نفس شما را به الگوی دیگران تبدیل کرده است.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. پذیرش چالش‌های بزرگ‌تر و نقش‌های رهبری؛ توانایی شما در گسترش ایده‌هایتان می‌تواند الهام‌بخش باشد.<br>
+                                    ۲. آموزش و منتورینگ دیگران؛ انتقال دیدگاه‌های موفقیت و تجربیات شما می‌تواند جامعه را رشد دهد و به شما انگیزه بیشتری ببخشد.<br>
+                                    ۳. شرکت در همایش‌ها و کنفرانس‌های معتبر برای تبادل نظر و ارائه ایده‌هایتان در سطوح بالاتر.<br>
+                                    ۴. توجه به جنبه‌های دیگر زندگی مانند تفریح و روابط بین فردی برای جلوگیری از فرسودگی و حفظ شادابی دائمی.<br>
+                                    ۵. پیگیری پروژه‌های بین‌رشته‌ای یا خلاقانه؛ دیدگاه باز و روحیه جست‌وجوگر شما می‌تواند به خلق تحولاتی عظیم منجر شود.
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <!-- حمایت (احساس همراهی اطرافیان و پذیرش در زندگی) -->
+                    <div class="report-component-title">حمایت 
+                        <span class="report-badge report-score-data">#field_5816#<br></span>
+                    </div>
+                    <p class="report-paragraph">
+                        حمایت در حوزه رضایت از زندگی نشان‌دهنده سطحی از همراهی و پذیرش است که فرد در محیط پیرامون خود احساس می‌کند. افرادی که از سطح بالایی از حمایت برخوردارند، هنگام دشواری‌ها کمتر احساس تنهایی کرده و به واسطه حضور اطرافیان، در راه رسیدن به اهدافشان انگیزه بیشتری دارند.
+                    </p>
+                    <ul class="report-list">
+                        <!-- سطح متوسط حمایت -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10277#;">
+                            <strong>«متوسط»<br></strong>
+                            شما در بسیاری از مواقع از همکاری و پذیرش اطرافیان بهره‌مند هستید، اما ممکن است همیشه به شیوه‌ای که انتظار دارید یا در تمامی شرایط بحرانی این حمایت را دریافت نکنید. این مسئله گاه حس نارضایتی یا کم‌توجهی را القا می‌کند.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. بیان صریح انتظاراتتان از دیگران؛ ممکن است اطرافیان به خوبی ندانند چه کمکی برای شما مؤثرتر است.<br>
+                                    ۲. توجه به سبک ارتباطی؛ بهبود کیفیت گفت‌وگو و شناخت متقابل می‌تواند سطح حمایت را افزایش دهد.<br>
+                                    ۳. شرکت در گروه‌ها و شبکه‌های اجتماعی هم‌فکر؛ در آنجا اغلب حس پذیرش و همراهی بیشتری حس می‌شود.<br>
+                                    ۴. تقویت حس استقلال و خوداتکایی در کنار جست‌وجوی حمایت؛ ترکیبی از حمایت بیرونی و درونی به تعادل روانی منجر می‌شود.<br>
+                                    ۵. بررسی مداوم روابط و تشخیص موقعیت‌هایی که احساس کمبود حمایت دارید؛ سپس تلاش برای تقویت آن‌ها از طریق روش‌های عملی.
+                                </div>
+                            </div>
+                        </li>
+                        <!-- سطح خوب حمایت -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10277#;">
+                            <strong>«خوب»<br></strong>
+                            شما اغلب احساس راحتی و پذیرش از سوی اطرافیان دارید و در دشواری‌ها از حمایت کافی برخوردار می‌شوید. این فضا موجب می‌شود احساس کنید که فرد مناسبی همراهتان است و در راه رسیدن به موفقیت و جایگاه شایسته‌تان تنها نیستید.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. حفظ رابطه‌های مثبت با اطرافیان و ادامه تقویت مهارت‌های ارتباطی برای افزایش همدلی و احترام متقابل.<br>
+                                    ۲. شرکت در فعالیت‌های گروهی یا پروژه‌های نوآورانه برای گسترش اثرگذاری خود و یادگیری مهارت‌های نو.<br>
+                                    ۳. اشتراک تجربه و توصیه‌های موفقیت خود با دیگران؛ این کار نه‌تنها به آن‌ها کمک می‌کند بلکه به حس حمایت شما نیز می‌افزاید.<br>
+                                    ۴. تعادل میان کار و زندگی را فراموش نکنید؛ گاهی استراحت و فعالیت‌های مفرح نیز برای رشد همه‌جانبه ضروری است.<br>
+                                    ۵. دقت در شناخت ظرفیت‌های جدید؛ پیگیری فرصت‌های متفاوت می‌تواند حمایت شما را در حوزه‌های تازه نیز گسترش دهد.
+                                </div>
+                            </div>
+                        </li>
+                        <!-- سطح عالی حمایت -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10277#;">
+                            <strong>«عالی»<br></strong>
+                            شما در سطح بسیار بالایی از همراهی و حمایت قرار دارید؛ در شرایط گوناگون، اطرافیانتان به عقاید شما احترام می‌گذارند و در دشواری‌های زندگی به‌طور چشمگیری در کنارتان هستند. این احساس پذیرش و هم‌راهی، بستری عالی برای رشد و خشنودی بیشتر فراهم می‌کند.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. نقش الگویی در ایجاد فرهنگ حمایت و پذیرش در محیط اطراف؛ تشویق دیگران به کمک کردن و همدلی متقابل.<br>
+                                    ۲. گسترش شبکه ارتباطی؛ شما می‌توانید با حضور در جمع‌های جدید، انرژی مثبت را به دیگران انتقال دهید و از آن‌ها یاد بگیرید.<br>
+                                    ۳. پشتیبانی از افرادی که نیازمند حضور و همراهی‌اند؛ این کار علاوه بر تقویت حس انسانی، به گسترش فضای حمایتی جمعی می‌انجامد.<br>
+                                    ۴. مدیریت مسئولانه حمایت اطرافیان؛ جلوگیری از افراط در وابستگی و حفظ استقلال فکری و شخصیتی شما اهمیت دارد.<br>
+                                    ۵. قدردانی منظم از اطرافیان؛ تشویق و قدردانی می‌تواند ثبات و عمق بیشتری به این رابطه حمایتی ببخشد.
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <!-- وجاهت (حس ارزشمندی و دیده‌شدن در روابط و جامعه) -->
+                    <div class="report-component-title">وجاهت 
+                        <span class="report-badge report-score-data">#field_5817#<br></span>
+                    </div>
+                    <p class="report-paragraph">
+                        وجاهت، در چارچوب رضایت از زندگی، بیانگر ارزیابی فرد از دیده‌شدن، شنیده‌شدن و ارزشمند بودن نگاه‌ها و عقاید اوست. کسانی که وجاهت بالاتری دارند، احساس می‌کنند حضورشان برای اطرافیان مهم است، به ایده‌ها و اهدافشان احترام گذاشته می‌شود و در مواقع دشوار، تنها نیستند.
+                    </p>
+                    <ul class="report-list">
+                        <!-- سطح متوسط وجاهت -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10278#;">
+                            <strong>«متوسط»<br></strong>
+                            شما در موقعیت‌های مختلف، گهگاه احساس می‌کنید از تشویق و توجه کافی برخوردار نیستید، یا اینکه ایده‌ها و عقایدتان به اندازه‌ای که انتظار دارید مورد توجه قرار نمی‌گیرد. این گاه ممکن است منجر به حس ناخوشایندی از نادیده گرفته‌شدن یا عدم درک شود.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. شفاف‌سازی انتظارات؛ توضیح صریح نیازها و خواسته‌هایتان به اطرافیان می‌تواند به افزایش احترام و درک بهتر بینجامد.<br>
+                                    ۲. کار روی مهارت‌های ابراز وجود (Assertiveness)؛ یادگیری هنر گفت‌وگوی سالم و بیان ایده‌ها با اعتمادبه‌نفس.<br>
+                                    ۳. جست‌وجوی موقعیت‌هایی که دیدگاه‌هایتان به شکل صحیح مطرح شود (سمینار، شبکه‌های اجتماعی، گروه‌های هم‌فکر).<br>
+                                    ۴. اصلاح الگوی مقایسه؛ تمرکز بر پیشرفت فردی به جای مقایسه مداوم خود با دیگران در زمینه وجاهت و تشویق.<br>
+                                    ۵. تعیین راهکارهایی برای مدیریت احساسات منفی در صورت کم‌توجهی؛ مثلاً مشاوره با روان‌شناس یا گفتگو با دوستان صمیمی.
+                                </div>
+                            </div>
+                        </li>
+                        <!-- سطح خوب وجاهت -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10278#;">
+                            <strong>«خوب»<br></strong>
+                            شما اغلب احساس می‌کنید که به عقایدتان توجه می‌شود و دیگران برای نظراتتان ارزش قائل هستند. این حالت نشانگر سطح نسبتاً خوبی از وجاهت در محیط پیرامون شماست و معمولاً باعث می‌شود احساس کنید دیده و شنیده می‌شوید.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. حفظ رابطه‌های مثبت با اطرافیان و ادامه تقویت مهارت‌های ارتباطی برای افزایش همدلی و احترام متقابل.<br>
+                                    ۲. تداوم حضور در بحث‌ها و جمع‌ها؛ به اشتراک گذاشتن ایده‌های جدید یا راهکارهای مفید.<br>
+                                    ۳. نوشتن و ثبت تجربیات شخصی؛ تحلیل این تجربیات می‌تواند به شناسایی نقاط قوت و ارتقا حس وجاهت کمک کند.<br>
+                                    ۴. حمایت از افرادی که در محیط کمتر دیده می‌شوند؛ این عمل نه‌تنها به آن‌ها کمک می‌کند بلکه شبکه روابط شما را نیز غنی‌تر می‌سازد.<br>
+                                    ۵. بررسی انتظارات؛ اطمینان پیدا کنید که سطح تشویق یا ارزشی که انتظار دارید با عمل و محیط هماهنگ باشد.
+                                </div>
+                            </div>
+                        </li>
+                        <!-- سطح عالی وجاهت -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10278#;">
+                            <strong>«عالی»<br></strong>
+                            شما در اوج وجاهت قرار دارید؛ معمولاً در هر محیطی حضور داشته باشید، دیدگاه‌ها و اهدافتان بسیار مورد توجه و تشویق دیگران است. این سطح از احترام به عقاید و احساس ارزشمندی می‌تواند خودباوری شما را تقویت کرده و به موفقیت‌های بیشتری منجر شود.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. الگوسازی در جمع‌ها؛ تشویق دیگران به بیان دیدگاه‌هایشان و ترویج فرهنگ احترام به عقاید در گروه یا محیط کاری.<br>
+                                    ۲. مدیریت تواضع و حفظ فروتنی در عین برخورداری از وجاهت بالا؛ گاهی غرور بیش از حد می‌تواند اثر معکوس بگذارد.<br>
+                                    ۳. استفاده از این وجاهت برای گسترش پروژه‌ها یا طرح‌هایی که به سود جمع یا جامعه است؛ افزایش تأثیرگذاری شما می‌تواند بازتاب مثبت بیشتری داشته باشد.<br>
+                                    ۴. مراقبت از روند روابط؛ وجود احترام و توجه فراوان نباید به اتکای محض شما به نظر دیگران منجر شود.<br>
+                                    ۵. قدردانی منظم از اطرافیان؛ تشویق و قدردانی می‌تواند ثبات و عمق بیشتری به این رابطه حمایتی ببخشد.
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </li>
-</ul>
+        </section>
 
-<!-- وجاهت (حس ارزشمندی و دیده‌شدن در روابط و جامعه) -->
-<div class="report-component-title">وجاهت 
-    <span class="report-badge report-score-data">#field_5817#<br></span>
-</div>
-<p class="report-paragraph">
-    وجاهت، در چارچوب رضایت از زندگی، بیانگر ارزیابی فرد از دیده‌شدن، شنیده‌شدن و ارزشمند بودن نگاه‌ها و عقاید اوست. کسانی که وجاهت بالاتری دارند، احساس می‌کنند حضورشان برای اطرافیان مهم است، به ایده‌ها و اهدافشان احترام گذاشته می‌شود و در مواقع دشوار، تنها نیستند.
-</p>
-<ul class="report-list">
-
-    <!-- سطح متوسط وجاهت -->
-    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10278#;">
-        <strong>«متوسط»<br></strong>
-        شما در موقعیت‌های مختلف، گهگاه احساس می‌کنید از تشویق و توجه کافی برخوردار نیستید، یا اینکه ایده‌ها و عقایدتان به اندازه‌ای که انتظار دارید مورد توجه قرار نمی‌گیرد. این گاه ممکن است منجر به حس ناخوشایندی از نادیده گرفته‌شدن یا عدم درک شود.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. شفاف‌سازی انتظارات؛ توضیح صریح نیازها و خواسته‌هایتان به اطرافیان می‌تواند به افزایش احترام و درک بهتر بینجامد.<br>
-                ۲. کار روی مهارت‌های ابراز وجود (Assertiveness)؛ یادگیری هنر گفت‌وگوی سالم و بیان ایده‌ها با اعتمادبه‌نفس.<br>
-                ۳. جست‌وجوی موقعیت‌هایی که دیدگاه‌هایتان به شکل صحیح مطرح شود (سمینار، شبکه‌های اجتماعی، گروه‌های هم‌فکر).<br>
-                ۴. اصلاح الگوی مقایسه؛ تمرکز بر پیشرفت فردی به جای مقایسه مداوم خود با دیگران در زمینه وجاهت و تشویق.<br>
-                ۵. تعیین راهکارهایی برای مدیریت احساسات منفی در صورت کم‌توجهی؛ مثلاً مشاوره با روان‌شناس یا گفتگو با دوستان صمیمی.
+        <!-- Credentials and Validity Section -->
+        <section class="content-section test-section" id="credentials">
+            <div class="content-container">
+                <!-- اعتبار و صحت آزمون -->
+                <h2>اعتبار و صحت آزمون</h2>
+                <p>
+                    آزمون فهرست تشخیص تعاملی رضایت از زندگی بر اساس روش‌شناسی تحقیقاتی معتبر و تایید شده توسط متخصصین روانشناسی طراحی شده است. این آزمون توسط دانشگاه‌ها و سازمان‌های معتبر روانشناسی مورد تأیید و توصیه قرار گرفته است.
+                </p>
+                <ul>
+                    <li>روش‌شناسی تحقیقاتی مبتنی بر مطالعات علمی روز</li>
+                    <li>تأییدیه سازمان‌های معتبر روانشناسی</li>
+                    <li>پشتیبانی توسط تیم متخصصین و روانشناسان خبره</li>
+                </ul>
             </div>
-        </div>
-    </li>
+        </section>
 
-    <!-- سطح خوب وجاهت -->
-    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10278#;">
-        <strong>«خوب»<br></strong>
-        شما اغلب احساس می‌کنید که به عقایدتان توجه می‌شود و دیگران برای نظراتتان ارزش قائل هستند. این حالت نشانگر سطح نسبتاً خوبی از وجاهت در محیط پیرامون شماست و معمولاً باعث می‌شود احساس کنید دیده و شنیده می‌شوید.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. حفظ رابطه‌های مثبت با اطرافیان و ادامه تقویت مهارت‌های ارتباطی برای افزایش همدلی و احترام متقابل.<br>
-                ۲. تداوم حضور در بحث‌ها و جمع‌ها؛ به اشتراک گذاشتن ایده‌های جدید یا راهکارهای مفید.<br>
-                ۳. نوشتن و ثبت تجربیات شخصی؛ تحلیل این تجربیات می‌تواند به شناسایی نقاط قوت و ارتقا حس وجاهت کمک کند.<br>
-                ۴. حمایت از افرادی که در محیط کمتر دیده می‌شوند؛ این عمل نه‌تنها به آن‌ها کمک می‌کند، بلکه شبکه روابط شما را نیز غنی‌تر می‌سازد.<br>
-                ۵. بررسی انتظارات؛ اطمینان پیدا کنید که سطح تشویق یا ارزشی که انتظار دارید با عمل و محیط هماهنگ باشد.
+        <!-- Testimonials Section -->
+        <section class="content-section test-section" id="testimonials">
+            <div class="content-container">
+                <!-- توصیه‌نامه‌ها -->
+                <h2>توصیه‌نامه‌ها</h2>
+                <div class="testimonial">
+                    <p>"آزمون فهرست تشخیص تعاملی رضایت از زندگی به من کمک کرد تا بهتر از رضایت خود در جنبه‌های مختلف زندگی آگاه شوم و مسیر توسعه شخصی‌ام را بهینه‌تر کنم."</p>
+                    <p><strong>- نرگس موسوی</strong></p>
+                </div>
+                <div class="testimonial">
+                    <p>"گزارش دقیق این آزمون به من امکان داد تا نقاط قوت و ضعف خود را در حوزه‌های مختلف زندگی شناسایی کنم و برای بهبود رضایت‌ام برنامه‌ریزی کنم."</p>
+                    <p><strong>- امیرحسین رضایی</strong></p>
+                </div>
             </div>
-        </div>
-    </li>
+        </section>
 
-    <!-- سطح عالی وجاهت -->
-    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10278#;">
-        <strong>«عالی»<br></strong>
-        شما در اوج وجاهت قرار دارید؛ معمولاً در هر محیطی حضور داشته باشید، دیدگاه‌ها و اهدافتان بسیار مورد توجه و تشویق دیگران است. این سطح از احترام به عقاید و احساس ارزشمندی می‌تواند خودباوری شما را تقویت کرده و به موفقیت‌های بیشتری منجر شود.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. الگوسازی در جمع‌ها؛ تشویق دیگران به بیان دیدگاه‌هایشان و ترویج فرهنگ احترام به عقاید در گروه یا محیط کاری.<br>
-                ۲. مدیریت تواضع و حفظ فروتنی در عین برخورداری از وجاهت بالا؛ گاهی غرور بیش از حد می‌تواند اثر معکوس بگذارد.<br>
-                ۳. استفاده از این وجاهت برای گسترش پروژه‌ها یا طرح‌هایی که به سود جمع یا جامعه است؛ افزایش تأثیرگذاری شما می‌تواند بازتاب مثبت بیشتری داشته باشد.<br>
-                ۴. مراقبت از روند روابط؛ وجود احترام و توجه فراوان نباید به اتکای محض شما به نظر دیگران منجر شود.<br>
-                ۵. تدریس، مشاوره یا هدایت افراد کم‌تجربه‌تر؛ انتقال دانش و تجربه به آن‌ها، ضمن حفظ حس ارزشمندی، به رشد جمعی هم کمک می‌کند.
+        <!-- Call-to-Action Section -->
+        <section class="content-section test-section" id="start-test">
+            <div class="content-container">
+                <!-- دعوت به اقدام (CTA) -->
+                <h2>آیا آماده‌اید تا شروع کنید؟</h2>
+                <p>
+                    با انجام این آزمون، گامی مهم در جهت شناخت بهتر از رضایت از زندگی و بهبود وضعیت شخصی‌تان بردارید.
+                </p>
+                <div style="text-align: center; margin-top: 20px;">
+                    <a href="/take/fahrest-tashkhis-tamarkobi-razayat-az-zendegi" class="cta-button">شروع آزمون</a>
+                </div>
             </div>
-        </div>
-    </li>
-</ul>
+        </section>
 
-
-
-
-        
-
-
-        
-                                              
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-
-
-            <div class="report-section-title">جمع‌بندی</div>
-            <div class="report-paragraph">
-            <p>این گزارش ارزیابی مهارت‌های شما شامل تحلیل تعهد، نیرومندی، ظرفیت تحلیلی، بیتابی روانی، استقلال و سازش است. این بررسی نقاط قوت و زمینه‌های نیازمند بهبود شما را نشان داده و توصیه‌های کاربردی برای توسعه مهارت‌های شما ارائه می‌دهد.</p>
-            
-            <p><b>نقاط قوت: </b>شما در برخی از حوزه‌ها عملکرد برجسته‌ای دارید که نشان‌دهنده توانایی‌های قوی در مدیریت مسئولیت‌ها، انرژی بالا، تحلیل مسائل پیچیده، آرامش روانی، خودکفایی و تطبیق‌پذیری است. به عنوان مثال، در حوزه‌های "تعهد" و "ظرفیت تحلیلی"، شما توانایی زیادی در مدیریت وظایف و تحلیل مسائل نشان داده‌اید که می‌تواند به پیشرفت حرفه‌ای و رشد فردی شما کمک کند.</p>
-            
-            <p><b>حوزه‌های نیازمند بهبود:</b> در برخی از بخش‌ها نیاز به تمرکز بیشتر وجود دارد. به عنوان مثال، در حوزه‌های "بیتابی روانی" و "استقلال"، شما می‌توانید با تمرین‌های منظم و فعالیت‌های هدفمند مانند تکنیک‌های مدیریت استرس و برنامه‌ریزی منظم مهارت‌های خود را بهبود بخشید. همچنین، افزایش تعاملات اجتماعی و تمرین مهارت‌های تصمیم‌گیری مستقل می‌تواند تأثیر مثبتی بر عملکرد شما داشته باشد.</p>
-            
-            <p><b>گام‌های بعدی:</b> برای تقویت مهارت‌های خود، پیشنهاد می‌شود که به توصیه‌های ارائه‌شده در هر بخش توجه ویژه‌ای کنید و در صورت نیاز از خدمات مشاوره تخصصی استفاده نمایید. همچنین، ارزیابی منظم و پیگیری مداوم می‌تواند به توسعه پایدار و موفقیت شما در تمامی ابعاد زندگی کمک کند.</p>
+        <!-- FAQ Section (Optional) -->
+        <section class="content-section test-section" id="faq">
+            <div class="content-container">
+                <!-- سوالات متداول -->
+                <h2>سوالات متداول</h2>
+                <div class="faq-item">
+                    <h4>آیا این آزمون دقیق است؟</h4>
+                    <p>بله، این آزمون بر اساس روش‌شناسی تحقیقاتی معتبر و تایید شده طراحی شده است تا نتایج دقیق و قابل اعتمادی ارائه دهد.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>آیا این آزمون برای کودکان مناسب است؟</h4>
+                    <p>این آزمون بیشتر برای بزرگسالان و نوجوانان طراحی شده است و ممکن است برای کودکان جوان‌تر مناسب نباشد.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>بعد از انجام آزمون چه اتفاقی می‌افتد؟</h4>
+                    <p>پس از تکمیل آزمون، شما یک گزارش جامع با نتایج و توصیه‌های شخصی دریافت خواهید کرد که می‌توانید آن را مرور کرده و در صورت نیاز، با متخصصین مشورت کنید.</p>
+                </div>
             </div>
-        
-        <footer class="report-footer-custom">
-            <div class="report-footer-content">
-                <img src="../panel/file?type=picture&amp;v=3&amp;mode=filemanager&amp;file=%7eDB3gfQUls%2bt2iiMYKbsRAxrtFhcHKUIUUo7pPtO17bHCzNxwU4zNh3UVor6QMtl7Y6EWX8dD0PSvzZOYkRrXlfejPn4lNTj6" class="report-footer-img" alt="لوگو">
-            </div>
-            <p class="report-footer-paragraph">مؤسّسه تعاملی هیجان اندیشه | تماس: 02188174100 | ایمیل: info@eot.ir</p>
-            <p class="report-footer-paragraph yellow-text">© ۱۴۰۳ تمامی حقوق محفوظ است.</p>
-            <ul class="report-footer-menu">
-                <li><a href="https://www.eot.ir/" class="report-footer-menu-link">صفحه اصلی</a></li>
-                <li><a href="https://www.eot.ir/contact" class="report-footer-menu-link">تماس با ما</a></li>
-                <li><a href="https://www.eot.ir/about" class="report-footer-menu-link">درباره ما</a></li>
-            </ul>
-            <address class="report-footer-address">تهران، سهروردی، خرمشهر، عربعلی، کوچه ششم، شماره ۴۴</address>
-        </footer>
-    </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer">
+        <!-- Content injected via scripts -->
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/assets/js/script.js"></script>
+    <script src="/assets/js/header-footer-inject.js"></script>
+    <script>
+        // FAQ Toggle Script
+        document.querySelectorAll('.faq-item h4').forEach(function(question) {
+            question.addEventListener('click', function() {
+                const parent = this.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

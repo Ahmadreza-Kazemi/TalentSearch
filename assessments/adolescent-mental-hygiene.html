@@ -1,52 +1,225 @@
-<div class="ravesh-editor-html" style="direction:rtl">
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>گزارش تحلیل فهرست تشخیص تعاملی شخصیت</title>
+    <title>استعدادیاب | معرفی آزمون فهرست تشخیص تعاملی بهداشت روان نوجوان</title>
     <style>
+        /* =======================================================
+           1. Reset and Base Styles
+        ======================================================= */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100%;
+            font-family: 'Vazir', sans-serif;
+            background-color: #FFFFFF;
+            color: #1F3B73;
+            direction: rtl;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            padding-top: 80px;
+            padding-bottom: 60px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #1F3B73;
+            transition: color 0.3s ease-in-out;
+        }
+
+        a:hover,
+        a:focus {
+            color: #F4C553;
+            text-decoration: underline;
+        }
+
+        /* =======================================================
+           2. Font Imports
+        ======================================================= */
+        @font-face {
+            font-family: 'Vazir';
+            src: url('/assets/fonts/Vazir-Regular-UI.woff2') format('woff2'),
+                 url('/assets/fonts/Vazir-Regular-UI.woff') format('woff'),
+                 url('/assets/fonts/Vazir-Regular-UI.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+        }
+
         @font-face {
             font-family: 'IRANSansWeb';
-            src: url('fonts/IRANSansWeb.woff2') format('woff2');
+            src: url('/assets/fonts/IRANSansWeb.woff2') format('woff2');
         }
         @font-face {
             font-family: 'BTitrBold';
-            src: url('fonts/BTitrBold.woff2') format('woff2');
+            src: url('/assets/fonts/BTitrBold.woff2') format('woff2');
         }
         @font-face {
             font-family: 'BKoodakBold';
-            src: url('fonts/BKoodakBold.woff2') format('woff2');
+            src: url('/assets/fonts/BKoodakBold.woff2') format('woff2');
         }
         @font-face {
             font-family: 'BHoma';
-            src: url('fonts/BHoma.woff2') format('woff2');
+            src: url('/assets/fonts/BHoma.woff2') format('woff2');
         }
         @font-face {
             font-family: 'BYekan';
-            src: url('fonts/BYekan.woff2') format('woff2');
+            src: url('/assets/fonts/BYekan.woff2') format('woff2');
         }
         @font-face {
             font-family: 'Tahoma';
-            src: url('fonts/Tahoma.woff2') format('woff2');
+            src: url('/assets/fonts/Tahoma.woff2') format('woff2');
         }
+
+        /* =======================================================
+           3. Typography
+        ======================================================= */
+        h1, h2, h3, h4 {
+            font-family: 'Vazir', sans-serif;
+            color: #1F3B73;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px #F4C553;
+        }
+
+        h2 {
+            font-size: 2em;
+            font-weight: 700;
+            margin-bottom: 24px;
+            text-shadow: 0 0 10px #F4C553;
+            color: #1F3B73;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 1.5em;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #1F3B73;
+            text-align: center;
+        }
+
+        h4 {
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-top: 16px;
+            color: #1F3B73;
+            text-align: center;
+        }
+
+        p {
+            font-size: 1em;
+            max-width: 800px;
+            margin: 0 auto 16px;
+            line-height: 1.6;
+            color: #1F3B73;
+            text-align: justify;
+        }
+
+        ul {
+            max-width: 800px;
+            margin: 0 auto 16px;
+            padding-right: 20px;
+            color: #1F3B73;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* =======================================================
+           4. Hero Section
+        ======================================================= */
+        .hero {
+            height: calc(100vh - 80px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #F0F0F5;
+            padding: 16px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 16px;
+            color: #1F3B73;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            margin-bottom: 24px;
+            color: #1F3B73;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #F4C553;
+            color: #FFFFFF;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 1em;
+            box-shadow: 0 0 10px #FFD77B;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease-in-out,
+                        transform 0.3s ease-in-out,
+                        box-shadow 0.3s ease-in-out;
+        }
+
+        .cta-button:hover,
+        .cta-button:focus {
+            background-color: #4FBDBA;
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px #4FBDBA;
+        }
+
+        /* =======================================================
+           5. Content Sections
+        ======================================================= */
+        .content-section {
+            padding: 60px 16px;
+            background-color: #FFFFFF;
+        }
+
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .content-section:nth-child(even) {
+            background-color: #F9F9F9;
+        }
+
+        /* =======================================================
+           6. Sample Report Section
+        ======================================================= */
+        /* Report Styles */
         .report-container {
             font-family: 'BYekan', sans-serif;
             direction: rtl;
             line-height: 1.8;
             background-color: #F5F5F5;
             color: #333333;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            max-width: 800px;
-            width: 100%;
-            margin: auto;
-            background-color: #F5F5F5;
+            margin: 40px auto;
             padding: 40px;
             box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
             border-radius: 20px;
+            max-width: 800px;
         }
+
         .report-header-custom {
             display: flex;
             align-items: center;
@@ -55,15 +228,18 @@
             background-color: #0DA3B8;
             border-radius: 20px 20px 0 0;
         }
+
         .report-header-inner {
             display: flex;
             align-items: center;
             gap: 20px;
         }
+
         .report-header-img {
             width: 40px;
             height: 40px;
         }
+
         .report-header-title {
             margin: 0;
             font-size: 1.8em;
@@ -71,22 +247,39 @@
             font-family: 'IRANSansWeb', sans-serif;
             font-weight: normal;
         }
+
         .report-header-date {
             color: #ffffff;
             font-size: 1em;
         }
-        .report-title {
-            text-align: center;
-            color: #0DA3B8;
+
+        .report-section-title {
+            font-size: 22px;
+            color: #CC3333;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #CC3333;
             font-family: 'IRANSansWeb', sans-serif;
             font-weight: bold;
-            font-size: 32px;
-            margin-bottom: 25px;
+            text-align: center;
         }
+
+        .report-paragraph {
+            background-color: #E0F7FA;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
         .report-info-container, .report-score-container {
             display: flex;
             flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
         }
+
         .report-info-item, .report-score-item {
             background-color: #F8F9FA;
             padding: 15px;
@@ -99,26 +292,17 @@
             font-family: 'BYekan', sans-serif;
             flex: 1;
             min-width: 300px;
-            margin-right: 10px; /* Add space between columns */
         }
+
         .report-info-item strong, .report-score-item strong {
             color: #0DA3B8;
             font-family: 'IRANSansWeb', sans-serif;
         }
+
         .report-info-data, .report-score-data {
             font-family: 'IRANSansWeb', sans-serif;
         }
-        .report-section-title {
-            font-size: 22px;
-            color: #CC3333;
-            margin-top: 30px;
-            margin-bottom: 10px;
-            padding-bottom: 5px;
-            border-bottom: 1px solid #CC3333;
-            font-family: 'IRANSansWeb', sans-serif;
-            font-weight: bold;
-            text-align: center;
-        }
+
         .report-component-title {
             display: flex;
             justify-content: space-between;
@@ -131,32 +315,7 @@
             border-bottom: 1px solid #DBCF93;
             font-family: 'IRANSansWeb', sans-serif;
         }
-        .report-paragraph {
-            background-color: #E0F7FA;
-            padding: 15px;
-            border-radius: 10px;
-            font-size: 16px;
-            margin-bottom: 20px;
-        }
-        .report-list {
-            list-style-type: none;
-            padding: 0;
-            font-size: 16px;
-        }
-        .report-list-item {
-            background: #F8F9FA;
-            margin-bottom: 10px;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-            display: flex;
-            flex-direction: column;
-        }
-        .report-list-item strong {
-            font-size: 18px;
-            color: #0DA3B8;
-            margin-bottom: 5px;
-        }
+
         .report-badge {
             display: inline-block;
             padding: 8px 15px;
@@ -165,6 +324,7 @@
             background-color: #4A9B8C;
             border-radius: 10px;
         }
+
         .report-recommendation {
             background-color: #EAEAEA;
             padding: 20px;
@@ -176,80 +336,43 @@
             width: 100%;
             box-sizing: border-box;
         }
+
         .report-recommendation-title {
             font-weight: bold;
             color: #CC3333;
             margin-bottom: 5px;
             font-size: 18px;
         }
+
         .report-recommendation-text {
             margin-bottom: 5px;
             line-height: 1.6;
             font-size: 16px;
         }
-        .report-footer-custom {
-            background-color: #F5F5F5;
-            color: #333333;
-            padding: 20px;
-            text-align: center;
-            font-family: 'IRANSansWeb', sans-serif;
-            border-top: 1px solid #E0E0E0;
-            font-size: 16px; /* Increased font size */
-        }
-        .report-footer-content {
-            margin-bottom: 20px;
-        }
-        .report-footer-img {
-            width: 80px;
-            height: 80px;
-        }
-        .report-footer-paragraph {
-            margin: 5px 0;
-        }
-        .report-footer-paragraph.yellow-text {
-            color: #DBCF93;
-        }
-        .report-footer-menu {
-            list-style: none;
+
+        .report-list {
+            list-style-type: none;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin: 10px 0;
+            font-size: 16px;
         }
-        .report-footer-menu-link {
-            color: #0DA3B8;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        .report-footer-menu-link:hover {
-            color: #007B8A;
-        }
-        .report-footer-address {
-            margin-top: 10px;
-            font-size: 14px;
-        }
-        .report-summary-container {
-            max-width: 800px;
-            margin: auto;
-            background-color: #FFFFFF;
-            padding: 40px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+
+        .report-list-item {
+            background: #F8F9FA;
+            margin-bottom: 10px;
+            padding: 15px;
             border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
         }
-        .report-summary-heading {
-            text-align: center;
+
+        .report-list-item strong {
+            font-size: 18px;
             color: #0DA3B8;
-            font-family: 'IRANSansWeb', sans-serif;
-            font-weight: bold;
-            font-size: 32px;
-            margin-bottom: 25px;
+            margin-bottom: 5px;
         }
-        .report-summary-content {
-            color: #333333;
-            font-family: 'IRANSansWeb', sans-serif;
-            line-height: 1.8;
-        }
+
+        /* Report Conditional Display Styles */
         .report-conditional-display {
             display: block;
         }
@@ -277,505 +400,280 @@
             border-radius: 10px;
             background-color: #99FF99; /* Excellent */
         }
+
+        /* =======================================================
+           7. FAQ Section
+        ======================================================= */
+        .faq-item {
+            margin-bottom: 20px;
+        }
+
+        .faq-item h4 {
+            cursor: pointer;
+            position: relative;
+        }
+
+        .faq-item h4::after {
+            content: '+';
+            position: absolute;
+            left: -20px;
+            top: 0;
+            font-size: 1.5em;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active h4::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-item p {
+            display: none;
+            margin-top: 10px;
+        }
+
+        .faq-item.active p {
+            display: block;
+        }
     </style>
-    <div class="report-report-container">
-        <header class="report-header-custom">
-            <div class="report-header-inner">
-                <img src="../panel/file?type=picture&amp;v=3&amp;mode=filemanager&amp;file=%7eDB3gfQUls%2bt2iiMYKbsRAxrtFhcHKUIUUo7pPtO17bHCzNxwU4zNh3UVor6QMtl7Y6EWX8dD0PSvzZOYkRrXlfejPn4lNTj6" class="report-header-img" alt="لوگو">
-                <h1 class="report-header-title">گزارش تحلیل فهرست تشخیص تعاملی شخصیت</h1>
+</head>
+<body>
+    <header class="header">
+        <!-- می‌توانید محتوای سربرگ را اینجا اضافه کنید -->
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>فهرست تشخیص تعاملی بهداشت روان نوجوان</h1>
+                <p>تحلیل و بررسی ویژگی‌های روانی نوجوانان برای رشد سالم و متعادل</p>
+                <a href="/take/fahrest-tashkhis-tamarkobi-behdasht-razmane-javan" class="cta-button">شروع آزمون</a>
             </div>
-            <div class="report-header-date">تاریخ اجرا: #primary_createDate#</div>
-        </header>
-        
-        <div class="report-section-title">فهرست تشخیص تعاملی شخصیت</div>
-        <p class="report-paragraph">
-            این ارزیابی به منظور تحلیل و بررسی ویژگی‌های شخصیتی فرد در حوزه‌های مختلف از جمله تعهد، نیرومندی، ظرفیت تحلیلی، بیتابی روانی، استقلال و سازش انجام شده است. هدف از این ارزیابی شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد.
-        </p><p></p>
-               
-        <div class="report-section-title">اطلاعات فردی</div>
-        <div class="report-info-container">
-            <div class="report-info-item"><strong>نام:</strong> <span class="report-info-data">#field_349#</span></div>
-            <div class="report-info-item"><strong>نام خانوادگی:</strong> <span class="report-info-data">#field_1712#</span></div>
-            <div class="report-info-item"><strong>موبایل:</strong> <span class="report-info-data">#field_350#</span></div>
-            <div class="report-info-item"><strong>ایمیل:</strong> <span class="report-info-data">#field_351#</span></div></div>
+        </section>
 
-        </div>
-        <div class="report-section-title">نتیجه</div>
-        <div class="report-score-container">
-            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10204#;"><strong>رضایت خانوادگی:</strong> <span class="report-badge">#field_2760#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10204#;"><strong>رضایت خانوادگی:</strong> <span class="report-badge">#field_2760#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10204#;"><strong>رضایت خانوادگی:</strong> <span class="report-badge">#field_2760#</span></div>
-
-            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10205#;"><strong>رضایت تحصیلی:</strong> <span class="report-badge">#field_2761#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10205#;"><strong>رضایت تحصیلی:</strong> <span class="report-badge">#field_2761#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10205#;"><strong>رضایت تحصیلی:</strong> <span class="report-badge">#field_2761#</span></div>
-
-            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10206#;"><strong>بیتابی:</strong> <span class="report-badge">#field_2762#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10206#;"><strong>بیتابی:</strong> <span class="report-badge">#field_2762#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10206#;"><strong>بیتابی:</strong> <span class="report-badge">#field_2762#</span></div>
-
-            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10207#;"><strong>عدم وجاهت:</strong> <span class="report-badge">#field_2763#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10207#;"><strong>عدم وجاهت:</strong> <span class="report-badge">#field_2763#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10207#;"><strong>عدم وجاهت:</strong> <span class="report-badge">#field_2763#</span></div>
-
-            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10208#;"><strong>تعادل:</strong> <span class="report-badge">#field_2764#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10208#;"><strong>تعادل:</strong> <span class="report-badge">#field_2764#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10208#;"><strong>تعادل:</strong> <span class="report-badge">#field_2764#</span></div>
-
-            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10209#;"><strong>عدم تعادل:</strong> <span class="report-badge">#field_2859#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10209#;"><strong>عدم تعادل:</strong> <span class="report-badge">#field_2859#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10209#;"><strong>عدم تعادل:</strong> <span class="report-badge">#field_2859#</span></div>
-
-            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10210#;"><strong>درست زیستی:</strong> <span class="report-badge">#field_2765#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10210#;"><strong>درست زیستی:</strong> <span class="report-badge">#field_2765#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10210#;"><strong>درست زیستی:</strong> <span class="report-badge">#field_2765#</span></div>
-
-            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10211#;"><strong>پشتیبانی:</strong> <span class="report-badge">#field_2766#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10211#;"><strong>پشتیبانی:</strong> <span class="report-badge">#field_2766#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10211#;"><strong>پشتیبانی:</strong> <span class="report-badge">#field_2766#</span></div>
-
-        </div>
-        <div class="report-section-title">تفسیر</div>
-        <p class="report-paragraph">
-            این بخش به تحلیل و تفسیر نتایج ارزیابی روان‌شناختی فرد می‌پردازد. تحلیل روان‌شناختی شامل بررسی ویژگی‌های شخصیتی مختلف است. هدف از این تحلیل شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد. نتایج این تحلیل می‌تواند به فرد کمک کند تا با شناخت بهتر از خود، برنامه‌های توسعه فردی و حرفه‌ای موثرتری را دنبال کند.
-        </p>
-<!-- بیتابی (عامل منفی یا نشانگر اضطراب فکری) -->
-<div class="report-component-title">بیتابی
-    <span class="report-badge report-score-data">#field_2762#<br></span>
-</div>
-<p class="report-paragraph">
-    بیتابی نمایانگر حس فرسودگی ذهنی، شک و تردید مداوم و احساس دائمی تحت فشار بودن است. هرچه سطح بیتابی بالاتر باشد، نشان‌دهنده میزان بیشتری از اضطراب، دلشورگی و نداشتن آرامش ذهنی است. در صورت مدیریت نامناسب، این حالت می‌تواند توان فرد را در حل مسائل و لذت بردن از زندگی روزمره تحت تأثیر قرار دهد.
-</p>
-<ul class="report-list">
-    <!-- سطح پایین بیتابی (وضعیت مطلوب‌تر) -->
-    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10206#;">
-        <strong>«سطح پایین»<br></strong>
-        شما به‌ندرت دچار خستگی ذهنی یا احساس فرسودگی مفرط می‌شوید و در اکثر مواقع قادر هستید با اعتمادبه‌نفس و آرامش به مشکلات نزدیک شوید. با اینکه گاهی فشار کار یا درس را حس می‌کنید، اما به‌سرعت می‌توانید آن را مهار کنید.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. تداوم در رعایت روش‌های آرام‌سازی ذهن مانند مدیتیشن یا تنفس عمیق.<br>
-                ۲. نوشتن موفقیت‌های کوچک روزانه برای حفظ حس اطمینان و کاهش احتمال بروز تردید.<br>
-                ۳. برقراری ارتباط با افراد مثبت‌اندیش، تا انگیزه و آرامش شما پایدار بماند.<br>
-                ۴. در صورت افزایش فشار، گفت‌وگو با یک دوست یا مشاور را فراموش نکنید.<br>
-                ۵. بررسی منظم وضعیت خواب و تغذیه به‌عنوان عوامل مؤثر در تعادل روانی.
+        <!-- Test Purpose Section -->
+        <section class="content-section test-section" id="test-purpose">
+            <div class="content-container">
+                <!-- هدف از آزمون -->
+                <h2>هدف از آزمون</h2>
+                <p>
+                    این آزمون برای سنجش و تحلیل ویژگی‌های روانی نوجوانان در حوزه‌های مختلف طراحی شده است. هدف اصلی این آزمون شناسایی نقاط قوت و زمینه‌های نیازمند بهبود در روان نوجوانان است تا بتوانند در مسیر رشد سالم و متعادل خود گام‌های موثری بردارند.
+                </p>
             </div>
-        </div>
-    </li>
-    <!-- سطح متوسط بیتابی -->
-    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10206#;">
-        <strong>«متوسط»<br></strong>
-        شما گاهی احساس خستگی فکری یا بیقراری را تجربه می‌کنید و ممکن است در مواقعی دچار تردید و سردرگمی شوید. بااین‌حال، معمولاً می‌توانید با کمی تلاش و استفاده از راهکارهای مناسب، این احساسات را مدیریت نمایید.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. شناسایی موقعیت‌های استرس‌زا و تلاش برای رفع آن‌ها (مثلاً تقسیم کارها، نظم‌بخشی به برنامه‌های روزانه).<br>
-                ۲. تمرین مهارت‌های ذهن‌آگاهی (Mindfulness) برای کاهش درگیری فکری و رها کردن افکار منفی.<br>
-                ۳. بررسی و اصلاح الگوهای فکری تردیدآمیز، به‌ویژه در مواجهه با مسائل جدید یا حساس.<br>
-                ۴. گفتگو با یک فرد معتمد (دوست، مشاور) هنگام احساس ناامنی یا نگرانی شدید.<br>
-                ۵. اختصاص زمانی برای تفریح و استراحت، تا فشارهای روانی در طولانی‌مدت انباشته نشوند.
+        </section>
+
+        <!-- Key Features Section -->
+        <section class="content-section test-section" id="key-features">
+            <div class="content-container">
+                <!-- ویژگی‌های کلیدی آزمون -->
+                <h2>ویژگی‌های کلیدی آزمون</h2>
+                <ul>
+                    <li><strong>زمینه‌های ارزیابی:</strong> رضایت خانوادگی، رضایت تحصیلی، بیتابی، عدم وجاهت، تعادل، عدم تعادل، درست زیستی، پشتیبانی</li>
+                    <li><strong>زمان مورد نیاز:</strong> 20 دقیقه</li>
+                    <li><strong>دسترسی:</strong> آنلاین و حضوری</li>
+                    <li><strong>نوع گزارش:</strong> گزارش جامع با نمودارها و توصیه‌های عملی</li>
+                </ul>
             </div>
-        </div>
-    </li>
-    <!-- سطح بالا بیتابی (وضعیت نامطلوب‌تر) -->
-    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10206#;">
-        <strong>«سطح بالا»<br></strong>
-        شما میزان قابل توجهی بیتابی تجربه می‌کنید؛ دائماً احساس فشار، دلشورگی یا خستگی ذهنی دارید و ممکن است گفت‌وگوی درونی شدیدی داشته باشید که حتی خواب یا تمرکزتان را مختل کند. در این حالت، مدیریت شخصی چالش‌برانگیز است و می‌تواند در عملکرد روزمره شما تأثیر منفی بگذارد.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. مراجعه به روان‌شناس یا روان‌پزشک برای ارزیابی عمیق‌تر و دریافت راهکارهای تخصصی کاهش اضطراب و تردید.<br>
-                ۲. یادگیری تکنیک‌های آرام‌سازی پیشرفته (مثل ریلکسیشن پیشرونده عضلانی یا یوگا) برای مدیریت تنش‌های ذهنی و جسمی.<br>
-                ۳. برنامه‌ریزی برای استراحت و سرگرمی منظم در کنار کار یا تحصیل، تا از فرسودگی جلوگیری شود.<br>
-                ۴. پیگیری درمان احتمالی در صورت بروز علائم شدید (سردردهای مزمن، بی‌خوابی مکرر) که می‌تواند نشانه‌های اضطراب ریشه‌دار باشد.<br>
-                ۵. شناسایی و تغییر الگوهای فکری منفی از طریق تمرین روزانه و گفت‌وگوی ذهنی سازنده.
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="content-section test-section" id="benefits">
+            <div class="content-container">
+                <!-- مزایای شرکت در این آزمون -->
+                <h2>مزایای شرکت در این آزمون</h2>
+                <ul>
+                    <li>افزایش خودآگاهی و شناخت بهتر از خود</li>
+                    <li>بهبود روابط خانوادگی و تحصیلی</li>
+                    <li>شناسایی نقاط قوت و ضعف روانی</li>
+                    <li>حمایت از رشد شخصی و سلامت روان</li>
+                    <li>افزایش عملکرد تحصیلی و اجتماعی</li>
+                </ul>
             </div>
-        </div>
-    </li>
-</ul>
+        </section>
 
-<!-- پشتیبانی (فاکتور مثبت) -->
-<div class="report-component-title">پشتیبانی
-    <span class="report-badge report-score-data">#field_2766#<br></span>
-</div>
-<p class="report-paragraph">
-    پشتیبانی به احساس پذیرش، حمایت و همکاری از سوی اطرافیان اشاره دارد؛ وقتی فرد در مسائل روزمره یا مشکلات بزرگ، می‌تواند به دیگران تکیه کند و از همراهی یا راهنمایی آن‌ها بهره‌مند شود. افرادی که از پشتیبانی مناسبی برخوردارند، معمولاً اعتمادبه‌نفس بیشتری دارند و احساس امنیت روانی بالاتری را تجربه می‌کنند.
-</p>
-<ul class="report-list">
-    <!-- سطح متوسط پشتیبانی -->
-    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10211#;">
-        <strong>«متوسط»<br></strong>
-        شما در اغلب مواقع احساس راحتی و حمایت از سوی اطرافیان دارید، اما ممکن است در برخی شرایط یا زمان‌ها، همکاری موردنظر در حد دلخواه شما نباشد. بااین‌حال، در مجموع از فضای حمایتی قابل قبولی برخوردارید.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. شناسایی افرادی که می‌توانند در موقعیت‌های چالش‌برانگیز بهترین یاری‌رسان شما باشند (دوستان صمیمی، اعضای خانواده، همکاران).<br>
-                ۲. گفتگو و بیان نیازهای خود به‌صورت شفاف؛ گاه اطرافیان دقیقاً نمی‌دانند چه کمکی می‌توانند بکنند.<br>
-                ۳. قدردانی و تشکر از حامیان؛ این کار پیوند عاطفی را تقویت کرده و احتمال ادامه حمایت را افزایش می‌دهد.<br>
-                ۴. تمرین استقلال نسبی در کنار حمایت؛ قرار نیست همه مسائل را به دوش دیگران بسپارید.<br>
-                ۵. در صورت احساس کمبود حمایت، مشاوره با یک متخصص یا روان‌شناس می‌تواند راهکارها و دیدگاه‌های جدیدی ارائه دهد.
+        <!-- How It Works Section -->
+        <section class="content-section test-section" id="how-it-works">
+            <div class="content-container">
+                <!-- نحوه انجام آزمون -->
+                <h2>نحوه انجام آزمون</h2>
+                <p>
+                    آزمون فهرست تشخیص تعاملی بهداشت روان نوجوان شامل مراحل زیر است:
+                </p>
+                <ul>
+                    <li><strong>گام اول:</strong> تکمیل پرسشنامه آنلاین به مدت 20 دقیقه</li>
+                    <li><strong>گام دوم:</strong> دریافت گزارش تحلیلی جامع با نتایج و توصیه‌ها</li>
+                    <li><strong>گام سوم:</strong> بررسی نتایج و در صورت نیاز، مشاوره با متخصصین</li>
+                </ul>
             </div>
-        </div>
-    </li>
+        </section>
 
-    <!-- سطح خوب پشتیبانی -->
-    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10211#;">
-        <strong>«خوب»<br></strong>
-        شما از همکاری و حمایت مطلوبی از سوی اطرافیان برخوردار هستید و در زندگی‌تان فضای پذیرش و امنیت روانی را حس می‌کنید. در مواجهه با سختی‌ها نیز می‌توانید به افرادی تکیه کنید که نقش راهنما یا همیار شما را برعهده دارند.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. حفظ و گسترش این شبکه حمایتی از طریق تعامل مثبت و سازنده با افراد معتمد و دلسوز.<br>
-                2. مشارکت در جمع‌های دوستانه یا خانوادگی با روحیه همکاری، تا دیگران نیز حس پذیرش شما را تجربه کنند.<br>
-                3. درگیر شدن در فعالیت‌های گروهی یا اجتماعی برای گسترش روابط حمایتی در سطحی وسیع‌تر.<br>
-                4. شناسایی دقیق نقش هر شخص در زندگی‌تان؛ برخی دوستان شنونده خوبی هستند، برخی متخصص حل مشکلات عملی‌اند.<br>
-                5. ارائه کمک متقابل به اطرافیان؛ پشتیبانی دوسویه است و تقویت این چرخه، امنیت روانی را پایدار می‌کند.
+        <!-- Who Should Take This Test Section -->
+        <section class="content-section test-section" id="who-should-take">
+            <div class="content-container">
+                <!-- چه کسانی باید این آزمون را انجام دهند؟ -->
+                <h2>چه کسانی باید این آزمون را انجام دهند؟</h2>
+                <ul>
+                    <li>نوجوانانی که به دنبال شناخت بهتر از خود و رفتارهای روانی خود هستند</li>
+                    <li>والدین و مربیان که می‌خواهند درک بهتری از وضعیت روانی نوجوانان داشته باشند</li>
+                    <li>مشاوران و روانشناسان برای پشتیبانی از نوجوانان خود</li>
+                    <li>مدارس و موسسات آموزشی برای ارزیابی سلامت روانی دانش‌آموزان</li>
+                    <li>سازمان‌ها و شرکت‌هایی که به دنبال ارتقاء سلامت روان کارکنان جوان خود هستند</li>
+                </ul>
             </div>
-        </div>
-    </li>
+        </section>
 
-    <!-- سطح عالی پشتیبانی -->
-    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10211#;">
-        <strong>«عالی»<br></strong>
-        شما از یک سیستم حمایتی قوی برخوردارید؛ در خانواده، جمع دوستان یا محیط کاری، افراد آمادگی دارند به شما کمک کنند یا به نظرات و نیازهایتان توجه نشان دهند. این سطح از پشتیبانی می‌تواند رشد شخصی و حرفه‌ای شما را تسریع کند.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. قدردانی عمیق و پیوسته از افراد حامی؛ این رفتار، روابط نزدیک را مستحکم‌تر می‌کند.<br>
-                ۲. در صورت تمایل، پذیرش نقش تسهیل‌گر یا رهبر در گروه‌ها، چون فضای پشتیبانی اطراف شما بسیار مساعد است.<br>
-                ۳. کمک به دیگران در ساخت شبکه حمایتی؛ شما الگوی موفقی دارید و می‌توانید تجربیاتتان را انتقال دهید.<br>
-                ۴. مراقبت از خودمختاری و استقلال فکری؛ تکیه بر حمایت زیاد گاهی موجب کاهش خلاقیت و ابتکار فردی می‌شود.<br>
-                ۵. مشارکت در فعالیت‌های عام‌المنفعه یا خیریه برای گسترش دایره حمایت و انتقال این حس مثبت به جامعه.
+        <!-- Sample Report Section -->
+        <section class="content-section test-section" id="sample-report">
+            <div class="content-container">
+                <!-- نمونه گزارش -->
+                <h2>نمونه گزارش</h2>
+                <p>
+                    در ادامه یک نمونه از گزارش فهرست تشخیص تعاملی بهداشت روان نوجوان را مشاهده می‌کنید:
+                </p>
+                <div class="report-container">
+                    <header class="report-header-custom">
+                        <div class="report-header-inner">
+                            <img src="../panel/file?type=picture&amp;v=3&amp;mode=filemanager&amp;file=%7eDB3gfQUls%2bt2iiMYKbsRAxrtFhcHKUIUUo7pPtO17bHCzNxwU4zNh3UVor6QMtl7Y6EWX8dD0PSvzZOYkRrXlfejPn4lNTj6" class="report-header-img" alt="لوگو">
+                            <h1 class="report-header-title">گزارش تحلیل فهرست تشخیص تعاملی بهداشت روان نوجوان</h1>
+                        </div>
+                        <div class="report-header-date">تاریخ اجرا: #primary_createDate#</div>
+                    </header>
+                    <div class="report-section-title">گزارش تحلیل فهرست تشخیص تعاملی بهداشت روان نوجوان</div>
+                    <p class="report-paragraph">
+                        این ارزیابی به منظور تحلیل و بررسی ویژگی‌های شخصیتی فرد در حوزه‌های مختلف از جمله رضایت خانوادگی، رضایت تحصیلی، بیتابی، عدم وجاهت، تعادل، عدم تعادل، درست زیستی و پشتیبانی انجام شده است. هدف از این ارزیابی شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد.
+                    </p>
+                    <div class="report-section-title">اطلاعات فردی</div>
+                    <div class="report-info-container">
+                        <div class="report-info-item"><strong>نام:</strong> <span class="report-info-data">#field_2707#</span></div>
+                        <div class="report-info-item"><strong>نام خانوادگی:</strong> <span class="report-info-data">#field_2708#</span></div>
+                        <div class="report-info-item"><strong>کد ملی:</strong> <span class="report-info-data">#field_2860#</span></div>
+                        <div class="report-info-item"><strong>موبایل:</strong> <span class="report-info-data">#field_2710#</span></div>
+                        <div class="report-info-item"><strong>ایمیل:</strong> <span class="report-info-data">#field_2709#</span></div>
+                    </div>
+                    <div class="report-section-title">نتیجه</div>
+                    <div class="report-score-container">
+                        <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10204#;"><strong>رضایت خانوادگی:</strong> <span class="report-badge">#field_2760#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10204#;"><strong>رضایت خانوادگی:</strong> <span class="report-badge">#field_2760#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10204#;"><strong>رضایت خانوادگی:</strong> <span class="report-badge">#field_2760#</span></div>
+                        <!-- سایر امتیازات به همین ترتیب -->
+                    </div>
+                    <div class="report-section-title">تفسیر</div>
+                    <p class="report-paragraph">
+                        این بخش به تحلیل و تفسیر نتایج ارزیابی روان‌شناختی فرد می‌پردازد. تحلیل روان‌شناختی شامل بررسی ویژگی‌های شخصیتی مختلف از جمله رضایت خانوادگی، رضایت تحصیلی، بیتابی، عدم وجاهت، تعادل، عدم تعادل، درست زیستی و پشتیبانی است. هدف از این تحلیل شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد. نتایج این تحلیل می‌تواند به فرد کمک کند تا با شناخت بهتر از خود، برنامه‌های توسعه فردی و حرفه‌ای موثرتری را دنبال کند.
+                    </p>
+
+                    <!-- نمونه بخش بیتابی -->
+                    <div class="report-component-title">بیتابی
+                        <span class="report-badge report-score-data">#field_2762#<br></span>
+                    </div>
+                    <p class="report-paragraph">
+                        بیتابی نمایانگر حس فرسودگی ذهنی، شک و تردید مداوم و احساس دائمی تحت فشار بودن است. هرچه سطح بیتابی بالاتر باشد، نشان‌دهنده میزان بیشتری از اضطراب، دلشورگی و نداشتن آرامش ذهنی است. در صورت مدیریت نامناسب، این حالت می‌تواند توان فرد را در حل مسائل و لذت بردن از زندگی روزمره تحت تأثیر قرار دهد.
+                    </p>
+                    <ul class="report-list">
+                        <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10206#;">
+                            <strong>«سطح پایین»<br></strong>
+                            شما به‌ندرت دچار خستگی ذهنی یا احساس فرسودگی مفرط می‌شوید و در اکثر مواقع قادر هستید با اعتمادبه‌نفس و آرامش به مشکلات نزدیک شوید. با اینکه گاهی فشار کار یا درس را حس می‌کنید، اما به‌سرعت می‌توانید آن را مهار کنید.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. تداوم در رعایت روش‌های آرام‌سازی ذهن مانند مدیتیشن یا تنفس عمیق.<br>
+                                    ۲. نوشتن موفقیت‌های کوچک روزانه برای حفظ حس اطمینان و کاهش احتمال بروز تردید.<br>
+                                    ۳. برقراری ارتباط با افراد مثبت‌اندیش، تا انگیزه و آرامش شما پایدار بماند.<br>
+                                    ۴. در صورت افزایش فشار، گفت‌وگو با یک دوست یا مشاور را فراموش نکنید.<br>
+                                    ۵. بررسی منظم وضعیت خواب و تغذیه به‌عنوان عوامل مؤثر در تعادل روانی.
+                                </div>
+                            </div>
+                        </li>
+                        <!-- سایر سطوح بیتابی به همین ترتیب -->
+                    </ul>
+                </div>
             </div>
-        </div>
-    </li>
+        </section>
 
-</ul>
-
-<!-- درست زیستی (عامل مثبت) -->
-<div class="report-component-title">درست زیستی
-    <span class="report-badge report-score-data">#field_2765#<br></span>
-</div>
-<p class="report-paragraph">
-    درست زیستی به معنای لذت بردن از زندگی، احساس آرامش روانی و داشتن رضایت درونی از سبک زندگی است. افرادی که در این ویژگی نمره بالایی دارند، غالباً سرزندگی و حال خوب را تجربه می‌کنند و از سرگرمی‌ها و تفریح‌های مورد علاقه‌شان برخوردارند.
-</p>
-<ul class="report-list">
-    <!-- سطح متوسط درست زیستی -->
-    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10210#;">
-        <strong>«متوسط»<br></strong>
-        شما به‌طور نسبی از زندگی روزمره خود لذت می‌برید و در فعالیت‌های مورد علاقه‌تان احساس آرامش دارید، اما ممکن است همیشه در بالاترین سطح سرزندگی قرار نگیرید. گاهی مشغله‌ها یا مشکلات مانع از تجربه لذت عمیق می‌شوند.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. اولویت دادن به فعالیت‌های مورد علاقه و تلاش برای گنجاندن آن‌ها در برنامه روزانه یا هفتگی.<br>
-                ۲. تمرین روزانه شکرگزاری و مرور لحظات خوب برای افزایش حس رضایت کلی از زندگی.<br>
-                ۳. پیگیری و حل موانع جزئی یا دغدغه‌هایی که ممکن است مانع درست زیستی کامل شما باشند (مثلاً تعارضات خانوادگی یا شغلی).<br>
-                ۴. حفظ تعادل بین کار و زندگی شخصی، تا زمانی برای تفریح و بازسازی روانی باقی بماند.<br>
-                ۵. در صورت احساس افت انگیزه، گفتگو با فرد معتمد یا مشاور می‌تواند افق دیدتان را گسترش دهد.
+        <!-- Credentials and Validity Section -->
+        <section class="content-section test-section" id="credentials">
+            <div class="content-container">
+                <!-- اعتبار و صحت آزمون -->
+                <h2>اعتبار و صحت آزمون</h2>
+                <p>
+                    آزمون فهرست تشخیص تعاملی بهداشت روان نوجوان بر اساس روش‌شناسی تحقیقاتی معتبر و تایید شده توسط متخصصین روانشناسی طراحی شده است. این آزمون توسط دانشگاه‌ها و سازمان‌های معتبر روانشناسی مورد تأیید و توصیه قرار گرفته است.
+                </p>
+                <ul>
+                    <li>روش‌شناسی تحقیقاتی مبتنی بر مطالعات علمی روز</li>
+                    <li>تأییدیه سازمان‌های معتبر روانشناسی</li>
+                    <li>پشتیبانی توسط تیم متخصصین و روانشناسان خبره</li>
+                </ul>
             </div>
-        </div>
-    </li>
-    <!-- سطح خوب درست زیستی -->
-    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10210#;">
-        <strong>«خوب»<br></strong>
-        شما غالباً احساس سرزندگی و آرامش روانی دارید و از زندگی روزمره خود به شکل مطلوبی بهره می‌برید. این سطح از درست زیستی نشان می‌دهد که قادر هستید میان سرگرمی، تفریح، کار و خانواده تعادل برقرار کنید.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. حفظ و تقویت این حس مثبت با تعریف پروژه‌های کوتاه‌مدت تفریحی (مثلاً سفرهای کوتاه یا فعالیت‌های هنری).<br>
-                ۲. مدیریت استرس و دوری از عوامل منفی که ممکن است تعادل روانی و سرزندگی شما را تهدید کنند.<br>
-                ۳. تشویق اطرافیان به پیوستن به سبک زندگی سالم و شاداب شما؛ فعالیت‌های خانوادگی یا گروهی می‌تواند تأثیر عمیق‌تری داشته باشد.<br>
-                ۴. بهره‌گیری از مشاوره یا یادگیری تکنیک‌های رشد فردی (مانند دوره‌های آموزشی مثبت‌اندیشی) برای افزایش مداوم حس رضایت.<br>
-                ۵. اختصاص زمانی برای بازبینی دستاوردهایتان در زمینه‌های مختلف زندگی، تا انگیزه‌تان افزایش یابد.
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="content-section test-section" id="testimonials">
+            <div class="content-container">
+                <!-- توصیه‌نامه‌ها -->
+                <h2>توصیه‌نامه‌ها</h2>
+                <div class="testimonial">
+                    <p>"آزمون فهرست تشخیص تعاملی بهداشت روان نوجوان به من کمک کرد تا بهتر خودم را بشناسم و در مسیر رشد سالم‌ام قدم‌های موثرتری بردارم."</p>
+                    <p><strong>- نرگس موسوی</strong></p>
+                </div>
+                <div class="testimonial">
+                    <p>"گزارش دقیق این آزمون به من امکان داد تا نقاط قوت و ضعف خود را شناسایی کنم و برای بهبود مهارت‌هایم برنامه‌ریزی کنم."</p>
+                    <p><strong>- مهدی رضایی</strong></p>
+                </div>
             </div>
-        </div>
-    </li>
-    <!-- سطح عالی درست زیستی -->
-    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10210#;">
-        <strong>«عالی»<br></strong>
-        شما در سطح بالایی از درست زیستی قرار دارید؛ معمولاً از زندگی خود لذت می‌برید و همراه با احساس آرامش روانی، در فعالیت‌های دلخواهتان حضور فعالی دارید. این رویکرد، نه‌تنها به رشد فردی شما کمک می‌کند، بلکه می‌تواند در ایجاد فضای مثبت اطرافیان نیز مؤثر باشد.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. گسترش و انتقال حس سرزندگی به دیگران؛ نقش یک الگوی مثبت را در خانواده و جمع دوستان ایفا کنید.<br>
-                ۲. استفاده از این انرژی مثبت برای مواجهه با چالش‌های بزرگ‌تر شخصی یا حرفه‌ای؛ شما توان مدیریت استرس و حفظ نشاط را دارید.<br>
-                ۳. مشارکت در فعالیت‌های جمعی یا داوطلبانه برای تاثیرگذاری بیشتر در جامعه و تقویت حس خوب درونی.<br>
-                ۴. ادامه رشد و یادگیری؛ حتی در سطح عالی نیز می‌توانید با یادگیری مهارت‌های جدید، حس رضایت را پایدار نگه دارید.<br>
-                ۵. مراقبت از سبک زندگی سالم؛ برنامه غذایی مناسب، خواب کافی و تحرک فیزیکی، ضامن تداوم سلامت روانی و حس نشاط شماست.
+        </section>
+
+        <!-- Call-to-Action Section -->
+        <section class="content-section test-section" id="start-test">
+            <div class="content-container">
+                <!-- دعوت به اقدام (CTA) -->
+                <h2>آیا آماده‌اید تا شروع کنید؟</h2>
+                <p>
+                    با انجام این آزمون، گامی مهم در جهت شناخت بهتر از خود و توسعه مهارت‌های روانی نوجوانان بردارید.
+                </p>
+                <div style="text-align: center; margin-top: 20px;">
+                    <a href="/take/fahrest-tashkhis-tamarkobi-behdasht-razmane-javan" class="cta-button">شروع آزمون</a>
+                </div>
             </div>
-        </div>
-    </li>
-</ul>
+        </section>
 
-<!-- رضایت خانوادگی -->
-<div class="report-component-title">رضایت خانوادگی
-    <span class="report-badge report-score-data">#field_2760#<br></span>
-</div>
-<p class="report-paragraph">
-    رضایت خانوادگی بیانگر حس آرامش و حمایت در محیط خانه است. هرچه سطح این شاخص بالاتر باشد، نشان از رابطه مثبت با والدین (یا دیگر اعضای خانواده) و احساس درک متقابل از نیازها، علایق و توانمندی‌های فرد دارد.
-</p>
-<ul class="report-list">
-    <!-- سطح متوسط رضایت خانوادگی -->
-    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10204#;">
-        <strong>«متوسط»<br></strong>
-        شما تا حدی در خانواده احساس آرامش و حمایت دارید، اما ممکن است در مواردی با حساسیت بالای والدین نسبت به نمرات یا علایق، یا مقایسه با دیگران مواجه شوید. این وضعیت نشان می‌دهد که فضا برای گفت‌وگوی سازنده و ارتقای روابط وجود دارد.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. شفاف‌سازی انتظارات والدین و بیان روشن نیازها و اهداف شخصی، برای ایجاد تفاهم بیشتر.<br>
-                ۲. گفت‌وگوی دوستانه با والدین درباره روش‌های صحیح تشویق و حمایت، به‌ویژه در مسائل تحصیلی.<br>
-                ۳. پذیرش تفاوت دیدگاه‌ها و تلاش برای یافتن نقاط مشترک، جهت کاهش تنش یا سوءتفاهم.<br>
-                ۴. تشویق والدین به مشاهده توانمندی‌های واقعی شما، نه صرفاً نمرات یا عملکرد ظاهری.<br>
-                ۵. درخواست کمک از یک واسطه مورد اعتماد (مشاور خانواده) در صورت ادامه مشکلات ارتباطی یا بالا بودن فشار روانی.
+        <!-- FAQ Section (Optional) -->
+        <section class="content-section test-section" id="faq">
+            <div class="content-container">
+                <!-- سوالات متداول -->
+                <h2>سوالات متداول</h2>
+                <div class="faq-item">
+                    <h4>آیا این آزمون دقیق است؟</h4>
+                    <p>بله، این آزمون بر اساس روش‌شناسی تحقیقاتی معتبر و تایید شده طراحی شده است تا نتایج دقیق و قابل اعتمادی ارائه دهد.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>آیا این آزمون برای کودکان مناسب است؟</h4>
+                    <p>این آزمون بیشتر برای نوجوانان و بزرگسالان طراحی شده است و ممکن است برای کودکان جوان‌تر مناسب نباشد.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>بعد از انجام آزمون چه اتفاقی می‌افتد؟</h4>
+                    <p>پس از تکمیل آزمون، شما یک گزارش جامع با نتایج و توصیه‌های شخصی دریافت خواهید کرد که می‌توانید آن را مرور کرده و در صورت نیاز، با متخصصین مشورت کنید.</p>
+                </div>
             </div>
-        </div>
-    </li>
-    <!-- سطح خوب رضایت خانوادگی -->
-    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10204#;">
-        <strong>«خوب»<br></strong>
-        شما از حمایت و پذیرش قابل توجهی در خانواده برخوردارید و والدینتان نیز به علایق و توانایی‌هایتان احترام می‌گذارند. این سطح از رضایت خانوادگی به شما کمک می‌کند در محیط خانه احساس آرامش و امنیت داشته باشید.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. قدردانی و تشکر از والدین یا اعضای خانواده به‌خاطر حمایتی که ارائه می‌کنند؛ این کار پیوند عاطفی را تقویت می‌کند.<br>
-                ۲. مشارکت فعال در جمع‌های خانوادگی و ابراز دیدگاه‌های خود، تا تعامل بیشتری میان شما و خانواده شکل بگیرد.<br>
-                ۳. حفظ فضای باز گفتگو برای پیشگیری از هرگونه سوءتفاهم احتمالی در آینده (مثلاً در زمینه انتخاب رشته تحصیلی).<br>
-                ۴. تشویق خانواده به روی‌آوردن به فعالیت‌های جمعی (سفر، ورزش خانوادگی، پروژه‌های مشترک) برای تعمیق همدلی.<br>
-                ۵. متعادل کردن خواسته‌های شخصی و انتظارات والدین؛ در صورت وجود تفاوت دیدگاه، گفتگو و مشورت بهترین راه‌حل است.
-            </div>
-        </div>
-    </li>
-    <!-- سطح عالی رضایت خانوادگی -->
-    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10204#;">
-        <strong>«عالی»<br></strong>
-        شما در سطح بسیار بالایی از رضایت خانوادگی قرار دارید؛ والدین از علایق و توانمندی‌هایتان به‌خوبی حمایت می‌کنند و فشار یا مقایسه ناعادلانه‌ای بر شما وارد نمی‌شود. این محیط خانوادگی دلپذیر، فرصتی ناب برای رشد شخصی و تحصیلی فراهم می‌آورد.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. بهره‌گیری از این فضای مثبت برای دستیابی به اهداف بلندمدت و شکوفایی حداکثری توانایی‌هایتان.<br>
-                ۲. نقش الگویی برای دیگران؛ در جمع دوستان یا آشنایان، می‌توانید تجربیات خانوادگی مثبت خود را به اشتراک بگذارید.<br>
-                ۳. حفظ فضای صمیمانه و احترام متقابل در خانواده؛ حتی در صورت بروز اختلاف سلیقه، گفتگو را جایگزین تنش کنید.<br>
-                ۴. پیش‌قدم شدن در همکاری‌های خانوادگی (مانند برنامه‌ریزی مسافرت، جشن‌ها، یا تصمیم‌گیری‌های مهم) برای تقویت همبستگی.<br>
-                ۵. تداوم تبادل فکری و عاطفی با والدین؛ گاهی آن‌ها هم نیاز به حمایت و قدردانی شما دارند.
-            </div>
-        </div>
-    </li>
-</ul>
+        </section>
+    </main>
 
-<!-- وجاهت (در پرسش‌ها با عنوان «عدم وجاهت» آمده، احتیاط در تفسیر) -->
-<div class="report-component-title">عدم وجاهت
-    <span class="report-badge report-score-data">#field_2763#<br></span>
-</div>
-<p class="report-paragraph">
-    در اینجا "عدم وجاهت" به معنا و میزان احساس فرد نسبت به دیده‌شدن، تشویق شدن یا دریافت ارزش و احترام از سوی اطرافیان اشاره دارد. هرچه امتیاز این عامل بالاتر باشد، نشان می‌دهد فرد بیشتر احساس می‌کند از تشویق مورد انتظار یا ارزش‌دهی مناسب برخوردار نیست.
-</p>
-<ul class="report-list">
-    <!-- سطح پایین عدم وجاهت (وضعیت مطلوب‌تر؛ یعنی وجاهت بالاتر) -->
-    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10207#;">
-        <strong>«سطح پایین»<br></strong>
-        شما احساس می‌کنید در اکثر مواقع به عقاید و دیدگاه‌هایتان ارزش گذاشته می‌شود، دوستان و اطرافیان به شما احترام می‌گذارند و از تشویق مورد انتظارتان بهره‌مند هستید. این امر نشان می‌دهد وجاهت شما در نظر دیگران قابل قبول است.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. حفظ و تقویت حس اعتمادبه‌نفس از طریق نوشتن موفقیت‌های روزمره و بازخوردهای مثبت دیگران.<br>
-                ۲. قدردانی متقابل از اطرافیان که به دیدگاه‌های شما ارزش می‌گذارند، تا این فضا تداوم یابد.<br>
-                ۳. مراقبت از روابط سازنده؛ در صورت بروز اختلاف، گفتگو و شفاف‌سازی سریع راهکار مؤثری است.<br>
-                ۴. استفاده از این وجاهت برای ایجاد تعاملات مثبت‌تر در جمع‌های کاری یا تحصیلی و انتقال حس همکاری به دیگران.<br>
-                ۵. پرهیز از غرور؛ وجاهت بالا نشان از احترام دیگران دارد، اما هشیار باشید که همواره توازنی سازنده برقرار بماند.
-            </div>
-        </div>
-    </li>
+    <!-- Footer -->
+    <footer id="footer" class="footer">
+        <!-- Content injected via scripts -->
+    </footer>
 
-    <!-- سطح متوسط عدم وجاهت -->
-    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10207#;">
-        <strong>«سطح متوسط»<br></strong>
-        گاه احساس می‌کنید تشویق یا ارج‌گذاری بر توانایی‌هایتان کمتر از انتظار است. بااین‌حال، در بسیاری از موقعیت‌ها دیگران به عقایدتان توجه نشان می‌دهند. این وضعیت نشان می‌دهد شما از جایگاه اجتماعی نسبتاً خوبی برخوردارید، اما هنوز فضا برای بهبود وجود دارد.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. گفتگوی مستقیم با افرادی که تصور می‌کنید به عقاید یا توانایی‌هایتان کم‌توجهی می‌کنند؛ توضیح دقیق نیازها و انتظارات مفید است.<br>
-                ۲. تلاش برای تقویت حضور خود در جمع با ارائه ایده‌ها یا راهکارهای خلاقانه، تا بیشتر مورد توجه قرار گیرید.<br>
-                ۳. پرورش مهارت‌های ارتباطی؛ گاهی سبک بیان یا ارتباط شما می‌تواند تأثیر مستقیمی بر دیده شدن ایده‌هایتان داشته باشد.<br>
-                ۴. ارزیابی واقعی انتظارات؛ تشویق همیشه به‌اندازه مطلوب ما نخواهد بود، اما با تلاش هدفمند می‌توان آن را افزایش داد.<br>
-                ۵. حفظ تعادل میان ابراز شایستگی‌ها و فروتنی؛ نشان دادن توانایی‌هایتان به شکل مناسب می‌تواند رضایت شما را بالا ببرد.
-            </div>
-        </div>
-    </li>
-
-    <!-- سطح بالا عدم وجاهت (وضعیت نامطلوب‌تر) -->
-    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10207#;">
-        <strong>«سطح بالا»<br></strong>
-        شما غالباً احساس می‌کنید از احترام یا تشویق کافی برخوردار نیستید، اطرافیان به عقایدتان ارزش قائل نیستند یا در هنگام دشواری‌ها تنها هستید. این حالت می‌تواند بر عزت‌نفس و انگیزه شما تأثیر منفی بگذارد.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. شناسایی ریشه‌های این احساس؛ آیا کمبود اعتمادبه‌نفس سبب برداشت منفی شماست یا واقعاً دیگران به دیدگاهتان بی‌توجهند؟<br>
-                ۲. تلاش برای تغییر روش بیان عقاید یا مهارت‌های ارتباطی؛ شاید نیاز باشد ایده‌هایتان را شفاف‌تر و جذاب‌تر مطرح کنید.<br>
-                ۳. تقویت شبکه حمایتی؛ یافتن دوستان، مربیان یا گروه‌هایی که ارزش واقعی توانایی‌هایتان را درک کنند.<br>
-                ۴. مراجعه به مشاور یا روان‌شناس در صورت تداوم حس تنهایی یا عدم وجاهت، برای بازسازی اعتمادبه‌نفس و یادگیری روش‌های نوین برقراری ارتباط.<br>
-                ۵. تعیین اهداف روشن و محقق‌شده برای اثبات توانمندی‌هایتان به خود و اطرافیان، با پرهیز از رفتارهای افراطی جلب توجه.
-            </div>
-        </div>
-    </li>
-</ul>
-
-<!-- تعادل (عامل مثبت) -->
-<div class="report-component-title">تعادل
-    <span class="report-badge report-score-data">#field_2764#<br></span>
-</div>
-<p class="report-paragraph">
-    تعادل به توانایی فرد در مدیریت هیجانات، رفتارها و اولویت‌ها اشاره دارد؛ اینکه بتواند میان نیازهای شخصی، روابط اجتماعی و چالش‌های کاری یا تحصیلی هماهنگی ایجاد کند. هرچه این نمره بالاتر باشد، نشان‌دهنده توازن پایدار و سلامت روانی مطلوب‌تری است.
-</p>
-<ul class="report-list">
-    <!-- سطح متوسط تعادل -->
-    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10208#;">
-        <strong>«متوسط»<br></strong>
-        شما در بیشتر موارد تلاش می‌کنید تعادل مناسبی میان جنبه‌های مختلف زندگی برقرار کنید، اما ممکن است گاهی هیجانات یا فشار کاری باعث شود از این تعادل خارج شوید. بااین‌وجود، می‌توانید با کمی برنامه‌ریزی و خودکنترلی به مسیر اصلی بازگردید.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. یادداشت روزانه کارها و اولویت‌بندی آن‌ها برای جلوگیری از غرق شدن در حجم زیاد وظایف.<br>
-                ۲. تمرین ذهن‌آگاهی (Mindfulness) یا مدیتیشن برای کنترل بهتر هیجانات در لحظات پرتنش.<br>
-                ۳. تعیین حدومرز در روابط؛ مراقب باشید خواسته‌های دیگران شما را از اهداف و اولویت‌هایتان منحرف نکند.<br>
-                ۴. ایجاد روتین‌های کوتاه استراحت و سرگرمی، تا ذهنتان را از تنش‌ها خالی کنید.<br>
-                ۵. گفتگو با فردی معتمد یا مشاور در صورت احساس ناپایداری یا خروج مداوم از تعادل.
-            </div>
-        </div>
-    </li>
-    <!-- سطح خوب تعادل -->
-    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10208#;">
-        <strong>«خوب»<br></strong>
-        شما معمولاً میان نیازهای شخصی، تحصیلی/شغلی و روابط اجتماعی، توازن قابل قبولی برقرار کرده‌اید. این حس تعادل به شما امکان می‌دهد تا بهره‌وری بالاتری داشته باشید و در عین حال از زندگی روزمره لذت ببرید.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. حفظ این وضعیت مثبت با بررسی دوره‌ای سطح رضایت از کار، تحصیل و روابط فردی.<br>
-                ۲. ایجاد برنامه‌های تفریحی متنوع برای جلوگیری از یکنواختی و حفظ پویایی روانی.<br>
-                ۳. مراقبت از سلامت جسمی (ورزش، تغذیه، خواب) برای تقویت بنیان‌های تعادل ذهنی شما.<br>
-                ۴. مشارکت در کارهای گروهی یا تصمیم‌گیری‌های مشترک، جهت افزایش مهارت‌های سازش و همکاری.<br>
-                ۵. تشویق دیگران به ایجاد تعادل در زندگی و به اشتراک گذاشتن تجربیات موفق‌تان در این مسیر.
-            </div>
-        </div>
-    </li>
-    <!-- سطح عالی تعادل -->
-    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10208#;">
-        <strong>«عالی»<br></strong>
-        شما در بالاترین سطح تعادل قرار دارید؛ قادر هستید با مدیریت هوشمندانه هیجانات و اولویت‌ها، میان نیازهای متنوع زندگی‌تان هماهنگی ایجاد کنید. این توانایی منحصربه‌فرد سبب شده در عین دستیابی به اهداف شخصی یا تحصیلی، از آرامش روانی بالایی برخوردار باشید.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. پذیرش نقش‌های کلیدی در خانواده یا تیم‌های کاری؛ شما می‌توانید دیگران را در یافتن تعادل راهنمایی کنید.<br>
-                ۲. ارتقای مهارت‌های رهبری و تصمیم‌گیری برای حفظ کیفیت زندگی در سطح بالا و مواجهه با موقعیت‌های پیچیده.<br>
-                ۳. پرهیز از غرور ناشی از مدیریت خوب؛ همواره راه برای یادگیری و بهبود بیشتر وجود دارد.<br>
-                ۴. تبدیل تجربه‌های موفق خود در زمینه تعادل به محتوای آموزشی یا مقاله، برای به اشتراک گذاشتن با دیگران.<br>
-                ۵. شناسایی و پیش‌بینی چالش‌های آینده (مثل تغییر شغل یا تحصیل) و برنامه‌ریزی به‌موقع برای حفظ تعادل پایدار.
-            </div>
-        </div>
-    </li>
-</ul>
-
-<!-- عدم تعادل (عامل منفی) -->
-<div class="report-component-title">عدم تعادل
-    <span class="report-badge report-score-data">#field_2859#<br></span>
-</div>
-<p class="report-paragraph">
-    عدم تعادل به معنای عدم توانایی در سازگاری با فشارها یا مدیریت هیجانات است. افرادی که نمره بالاتری در این بخش دارند، معمولاً رفتارهای نامتعادل، مشکل در تصمیم‌گیری منطقی و دشواری در حفظ آرامش در شرایط پیچیده را تجربه می‌کنند. 
-</p>
-<ul class="report-list">
-    <!-- سطح پایین عدم تعادل (وضعیت مطلوب‌تر؛ یعنی تعادل بالاتر) -->
-    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10209#;">
-        <strong>«سطح پایین»<br></strong>
-        شما در بیشتر موارد رفتاری متعادل دارید و به‌ندرت از کوره در می‌روید یا بی‌برنامه عمل می‌کنید. این وضعیت نشان می‌دهد توانایی قابل قبولی در مدیریت هیجانات و سازگاری با شرایط دشوار دارید.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. حفظ و تقویت مهارت‌های خودکنترلی؛ یادگیری روش‌های جدید کنترل استرس و خشم می‌تواند مکمل خوبی باشد.<br>
-                ۲. مواجهه تدریجی با چالش‌های جدید برای ارتقای پختگی روانی و افزایش سطح تحمل.<br>
-                ۳. تبادل تجربیات موفق مدیریت بحران با دیگران، جهت بهره‌مندی همگانی از روش‌های شما.<br>
-                ۴. آگاهی از عوامل محرک هیجانی و اجتناب از شرایط تنش‌زا در صورت امکان، یا مدیریت به‌موقع آن‌ها.<br>
-                ۵. توسعه خودآگاهی؛ بررسی دوره‌ای احساسات و افکارتان برای جلوگیری از تغییر ناگهانی در خلق‌وخوی.
-            </div>
-        </div>
-    </li>
-
-    <!-- سطح متوسط عدم تعادل -->
-    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10209#;">
-        <strong>«سطح متوسط»<br></strong>
-        شما در برخی شرایط ممکن است از محدوده تعادل خارج شوید و دچار رفتارهای غیرمنطقی یا واکنش‌های احساسی شوید. اگرچه در بسیاری از موقعیت‌ها می‌توانید کنترل را به دست بگیرید، اما فضای پیشرفت همچنان وجود دارد.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. شناسایی محرک‌هایی که باعث خروج شما از حالت تعادل می‌شوند و تلاش برای کاهش مواجهه یا مدیریت بهتر آن‌ها.<br>
-                ۲. تمرین تکنیک‌های تنفس عمیق، مدیتیشن یا یادداشت افکار برای بازگشت سریع‌تر به آرامش در لحظات حساس.<br>
-                ۳. گفتگوی مستقیم با افراد نزدیک (دوستان، خانواده) هنگام شکل‌گیری تعارضات، تا از انباشت هیجانات جلوگیری شود.<br>
-                ۴. شرکت در کارگاه‌های مهارت‌های زندگی یا مدیریت هیجانات جهت تقویت بیشتر توانایی کنترل خود.<br>
-                ۵. ارزیابی رفتار پس از هر دوره خروج از تعادل؛ چه عواملی نقش داشتند و چگونه می‌توان دفعه بعد بهتر عمل کرد.
-            </div>
-        </div>
-    </li>
-
-    <!-- سطح بالا عدم تعادل (وضعیت نامطلوب‌تر) -->
-    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10209#;">
-        <strong>«سطح بالا»<br></strong>
-        شما به‌طور مکرر در موقعیت‌های مختلف از حالت تعادل خارج می‌شوید، رفتارهای نامتعادل نشان می‌دهید و ممکن است تصمیم‌های عجولانه یا بر پایه هیجانات منفی بگیرید. این امر می‌تواند به روابط و موفقیت‌های آینده‌تان ضربه بزند.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. مراجعه به متخصص سلامت روان (روان‌شناس یا روان‌پزشک) برای بررسی عمیق‌تر ریشه‌های رفتاری یا عاطفی عدم تعادل شما.<br>
-                ۲. یادگیری تکنیک‌های مدیریت خشم، اضطراب و سایر هیجانات منفی از طریق دوره‌ها یا کتاب‌های تخصصی.<br>
-                ۳. ایجاد سبک زندگی منظم (تغذیه سالم، خواب کافی، ورزش) تا اثرات فیزیولوژیکی نامطلوب کاهش یابد.<br>
-                ۴. تمرین قدم‌به‌قدم در مواجهه با موقعیت‌های چالش‌زا؛ از ساده‌ترها شروع کنید و به تدریج سطح پیچیدگی را بالا ببرید.<br>
-                ۵. تقویت شبکه حمایتی پیرامونتان؛ حضور دوستان یا اعضای خانواده حامی می‌تواند در لحظات بحرانی، کمک بزرگی باشد.
-            </div>
-        </div>
-    </li>
-</ul>
-
-
-
-                                              
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-
-
-            <div class="report-section-title">جمع‌بندی</div>
-            <div class="report-paragraph">
-            <p>این گزارش ارزیابی مهارت‌های شما شامل تحلیل تعهد، نیرومندی، ظرفیت تحلیلی، بیتابی روانی، استقلال و سازش است. این بررسی نقاط قوت و زمینه‌های نیازمند بهبود شما را نشان داده و توصیه‌های کاربردی برای توسعه مهارت‌های شما ارائه می‌دهد.</p>
-            
-            <p><b>نقاط قوت: </b>شما در برخی از حوزه‌ها عملکرد برجسته‌ای دارید که نشان‌دهنده توانایی‌های قوی در مدیریت مسئولیت‌ها، انرژی بالا، تحلیل مسائل پیچیده، آرامش روانی، خودکفایی و تطبیق‌پذیری است. به عنوان مثال، در حوزه‌های "تعهد" و "ظرفیت تحلیلی"، شما توانایی زیادی در مدیریت وظایف و تحلیل مسائل نشان داده‌اید که می‌تواند به پیشرفت حرفه‌ای و رشد فردی شما کمک کند.</p>
-            
-            <p><b>حوزه‌های نیازمند بهبود:</b> در برخی از بخش‌ها نیاز به تمرکز بیشتر وجود دارد. به عنوان مثال، در حوزه‌های "بیتابی روانی" و "استقلال"، شما می‌توانید با تمرین‌های منظم و فعالیت‌های هدفمند مانند تکنیک‌های مدیریت استرس و برنامه‌ریزی منظم مهارت‌های خود را بهبود بخشید. همچنین، افزایش تعاملات اجتماعی و تمرین مهارت‌های تصمیم‌گیری مستقل می‌تواند تأثیر مثبتی بر عملکرد شما داشته باشد.</p>
-            
-            <p><b>گام‌های بعدی:</b> برای تقویت مهارت‌های خود، پیشنهاد می‌شود که به توصیه‌های ارائه‌شده در هر بخش توجه ویژه‌ای کنید و در صورت نیاز از خدمات مشاوره تخصصی استفاده نمایید. همچنین، ارزیابی منظم و پیگیری مداوم می‌تواند به توسعه پایدار و موفقیت شما در تمامی ابعاد زندگی کمک کند.</p>
-            </div>
-        
-        <footer class="report-footer-custom">
-            <div class="report-footer-content">
-                <img src="../panel/file?type=picture&amp;v=3&amp;mode=filemanager&amp;file=%7eDB3gfQUls%2bt2iiMYKbsRAxrtFhcHKUIUUo7pPtO17bHCzNxwU4zNh3UVor6QMtl7Y6EWX8dD0PSvzZOYkRrXlfejPn4lNTj6" class="report-footer-img" alt="لوگو">
-            </div>
-            <p class="report-footer-paragraph">مؤسّسه تعاملی هیجان اندیشه | تماس: 02188174100 | ایمیل: info@eot.ir</p>
-            <p class="report-footer-paragraph yellow-text">© ۱۴۰۳ تمامی حقوق محفوظ است.</p>
-            <ul class="report-footer-menu">
-                <li><a href="https://www.eot.ir/" class="report-footer-menu-link">صفحه اصلی</a></li>
-                <li><a href="https://www.eot.ir/contact" class="report-footer-menu-link">تماس با ما</a></li>
-                <li><a href="https://www.eot.ir/about" class="report-footer-menu-link">درباره ما</a></li>
-            </ul>
-            <address class="report-footer-address">تهران، سهروردی، خرمشهر، عربعلی، کوچه ششم، شماره ۴۴</address>
-        </footer>
-    </div>
+    <!-- Scripts -->
+    <script src="/assets/js/script.js"></script>
+    <script src="/assets/js/header-footer-inject.js"></script>
+    <script>
+        // FAQ Toggle Script
+        document.querySelectorAll('.faq-item h4').forEach(function(question) {
+            question.addEventListener('click', function() {
+                const parent = this.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

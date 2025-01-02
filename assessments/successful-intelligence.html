@@ -1,52 +1,224 @@
-<div class="ravesh-editor-html" style="direction:rtl">
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>گزارش تحلیل فهرست تشخیص تعاملی شخصیت</title>
+    <title>استعدادیاب | معرفی آزمون فهرست تشخیص تعاملی هوش موفق</title>
     <style>
+        /* =======================================================
+           1. Reset and Base Styles
+        ======================================================= */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100%;
+            font-family: 'Vazir', sans-serif;
+            background-color: #FFFFFF;
+            color: #1F3B73;
+            direction: rtl;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            padding-top: 80px;
+            padding-bottom: 60px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #1F3B73;
+            transition: color 0.3s ease-in-out;
+        }
+
+        a:hover,
+        a:focus {
+            color: #F4C553;
+            text-decoration: underline;
+        }
+
+        /* =======================================================
+           2. Font Imports
+        ======================================================= */
+        @font-face {
+            font-family: 'Vazir';
+            src: url('/assets/fonts/Vazir-Regular-UI.woff2') format('woff2'),
+                 url('/assets/fonts/Vazir-Regular-UI.woff') format('woff'),
+                 url('/assets/fonts/Vazir-Regular-UI.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+        }
+
         @font-face {
             font-family: 'IRANSansWeb';
-            src: url('fonts/IRANSansWeb.woff2') format('woff2');
+            src: url('/assets/fonts/IRANSansWeb.woff2') format('woff2');
         }
         @font-face {
             font-family: 'BTitrBold';
-            src: url('fonts/BTitrBold.woff2') format('woff2');
+            src: url('/assets/fonts/BTitrBold.woff2') format('woff2');
         }
         @font-face {
             font-family: 'BKoodakBold';
-            src: url('fonts/BKoodakBold.woff2') format('woff2');
+            src: url('/assets/fonts/BKoodakBold.woff2') format('woff2');
         }
         @font-face {
             font-family: 'BHoma';
-            src: url('fonts/BHoma.woff2') format('woff2');
+            src: url('/assets/fonts/BHoma.woff2') format('woff2');
         }
         @font-face {
             font-family: 'BYekan';
-            src: url('fonts/BYekan.woff2') format('woff2');
+            src: url('/assets/fonts/BYekan.woff2') format('woff2');
         }
         @font-face {
             font-family: 'Tahoma';
-            src: url('fonts/Tahoma.woff2') format('woff2');
+            src: url('/assets/fonts/Tahoma.woff2') format('woff2');
         }
+
+        /* =======================================================
+           3. Typography
+        ======================================================= */
+        h1, h2, h3, h4 {
+            font-family: 'Vazir', sans-serif;
+            color: #1F3B73;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px #F4C553;
+        }
+
+        h2 {
+            font-size: 2em;
+            font-weight: 700;
+            margin-bottom: 24px;
+            text-shadow: 0 0 10px #F4C553;
+            color: #1F3B73;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 1.5em;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #1F3B73;
+            text-align: center;
+        }
+
+        h4 {
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-top: 16px;
+            color: #1F3B73;
+            text-align: center;
+        }
+
+        p {
+            font-size: 1em;
+            max-width: 800px;
+            margin: 0 auto 16px;
+            line-height: 1.6;
+            color: #1F3B73;
+            text-align: justify;
+        }
+
+        ul {
+            max-width: 800px;
+            margin: 0 auto 16px;
+            padding-right: 20px;
+            color: #1F3B73;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* =======================================================
+           4. Hero Section
+        ======================================================= */
+        .hero {
+            height: calc(100vh - 80px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #F0F0F5;
+            padding: 16px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 16px;
+            color: #1F3B73;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            margin-bottom: 24px;
+            color: #1F3B73;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #F4C553;
+            color: #FFFFFF;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 1em;
+            box-shadow: 0 0 10px #FFD77B;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease-in-out,
+                        transform 0.3s ease-in-out,
+                        box-shadow 0.3s ease-in-out;
+        }
+
+        .cta-button:hover,
+        .cta-button:focus {
+            background-color: #4FBDBA;
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px #4FBDBA;
+        }
+
+        /* =======================================================
+           5. Content Sections
+        ======================================================= */
+        .content-section {
+            padding: 60px 16px;
+            background-color: #FFFFFF;
+        }
+
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .content-section:nth-child(even) {
+            background-color: #F9F9F9;
+        }
+
+        /* =======================================================
+           6. Report Styles
+        ======================================================= */
         .report-container {
             font-family: 'BYekan', sans-serif;
             direction: rtl;
             line-height: 1.8;
             background-color: #F5F5F5;
             color: #333333;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            max-width: 800px;
-            width: 100%;
-            margin: auto;
-            background-color: #F5F5F5;
+            margin: 40px auto;
             padding: 40px;
             box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
             border-radius: 20px;
+            max-width: 800px;
         }
+
         .report-header-custom {
             display: flex;
             align-items: center;
@@ -55,15 +227,18 @@
             background-color: #0DA3B8;
             border-radius: 20px 20px 0 0;
         }
+
         .report-header-inner {
             display: flex;
             align-items: center;
             gap: 20px;
         }
+
         .report-header-img {
             width: 40px;
             height: 40px;
         }
+
         .report-header-title {
             margin: 0;
             font-size: 1.8em;
@@ -71,22 +246,39 @@
             font-family: 'IRANSansWeb', sans-serif;
             font-weight: normal;
         }
+
         .report-header-date {
             color: #ffffff;
             font-size: 1em;
         }
-        .report-title {
-            text-align: center;
-            color: #0DA3B8;
+
+        .report-section-title {
+            font-size: 22px;
+            color: #CC3333;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #CC3333;
             font-family: 'IRANSansWeb', sans-serif;
             font-weight: bold;
-            font-size: 32px;
-            margin-bottom: 25px;
+            text-align: center;
         }
+
+        .report-paragraph {
+            background-color: #E0F7FA;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
         .report-info-container, .report-score-container {
             display: flex;
             flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
         }
+
         .report-info-item, .report-score-item {
             background-color: #F8F9FA;
             padding: 15px;
@@ -99,26 +291,17 @@
             font-family: 'BYekan', sans-serif;
             flex: 1;
             min-width: 300px;
-            margin-right: 10px; /* Add space between columns */
         }
+
         .report-info-item strong, .report-score-item strong {
             color: #0DA3B8;
             font-family: 'IRANSansWeb', sans-serif;
         }
+
         .report-info-data, .report-score-data {
             font-family: 'IRANSansWeb', sans-serif;
         }
-        .report-section-title {
-            font-size: 22px;
-            color: #CC3333;
-            margin-top: 30px;
-            margin-bottom: 10px;
-            padding-bottom: 5px;
-            border-bottom: 1px solid #CC3333;
-            font-family: 'IRANSansWeb', sans-serif;
-            font-weight: bold;
-            text-align: center;
-        }
+
         .report-component-title {
             display: flex;
             justify-content: space-between;
@@ -131,32 +314,7 @@
             border-bottom: 1px solid #DBCF93;
             font-family: 'IRANSansWeb', sans-serif;
         }
-        .report-paragraph {
-            background-color: #E0F7FA;
-            padding: 15px;
-            border-radius: 10px;
-            font-size: 16px;
-            margin-bottom: 20px;
-        }
-        .report-list {
-            list-style-type: none;
-            padding: 0;
-            font-size: 16px;
-        }
-        .report-list-item {
-            background: #F8F9FA;
-            margin-bottom: 10px;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-            display: flex;
-            flex-direction: column;
-        }
-        .report-list-item strong {
-            font-size: 18px;
-            color: #0DA3B8;
-            margin-bottom: 5px;
-        }
+
         .report-badge {
             display: inline-block;
             padding: 8px 15px;
@@ -165,6 +323,7 @@
             background-color: #4A9B8C;
             border-radius: 10px;
         }
+
         .report-recommendation {
             background-color: #EAEAEA;
             padding: 20px;
@@ -176,548 +335,650 @@
             width: 100%;
             box-sizing: border-box;
         }
+
         .report-recommendation-title {
             font-weight: bold;
             color: #CC3333;
             margin-bottom: 5px;
             font-size: 18px;
         }
+
         .report-recommendation-text {
             margin-bottom: 5px;
             line-height: 1.6;
             font-size: 16px;
         }
-        .report-footer-custom {
-            background-color: #F5F5F5;
-            color: #333333;
-            padding: 20px;
-            text-align: center;
-            font-family: 'IRANSansWeb', sans-serif;
-            border-top: 1px solid #E0E0E0;
-            font-size: 16px; /* Increased font size */
-        }
-        .report-footer-content {
-            margin-bottom: 20px;
-        }
-        .report-footer-img {
-            width: 80px;
-            height: 80px;
-        }
-        .report-footer-paragraph {
-            margin: 5px 0;
-        }
-        .report-footer-paragraph.yellow-text {
-            color: #DBCF93;
-        }
-        .report-footer-menu {
-            list-style: none;
+
+        .report-list {
+            list-style-type: none;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin: 10px 0;
+            font-size: 16px;
         }
-        .report-footer-menu-link {
-            color: #0DA3B8;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        .report-footer-menu-link:hover {
-            color: #007B8A;
-        }
-        .report-footer-address {
-            margin-top: 10px;
-            font-size: 14px;
-        }
-        .report-summary-container {
-            max-width: 800px;
-            margin: auto;
-            background-color: #FFFFFF;
-            padding: 40px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+
+        .report-list-item {
+            background: #F8F9FA;
+            margin-bottom: 10px;
+            padding: 15px;
             border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
         }
-        .report-summary-heading {
-            text-align: center;
+
+        .report-list-item strong {
+            font-size: 18px;
             color: #0DA3B8;
-            font-family: 'IRANSansWeb', sans-serif;
-            font-weight: bold;
-            font-size: 32px;
-            margin-bottom: 25px;
+            margin-bottom: 5px;
         }
-        .report-summary-content {
-            color: #333333;
-            font-family: 'IRANSansWeb', sans-serif;
-            line-height: 1.8;
-        }
+
+        /* Report Conditional Display Styles */
         .report-conditional-display {
             display: block;
         }
         .report-conditional-display[style*="--score-rate1: 1"] {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-            border-radius: 10px;
             background-color: #FF9999; /* Moderate */
         }
         .report-conditional-display[style*="--score-rate2: 2"] {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-            border-radius: 10px;
             background-color: #FFD580; /* Good */
         }
         .report-conditional-display[style*="--score-rate3: 3"] {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-            border-radius: 10px;
             background-color: #99FF99; /* Excellent */
         }
+
+        /* =======================================================
+           7. FAQ Section
+        ======================================================= */
+        .faq-item {
+            margin-bottom: 20px;
+        }
+
+        .faq-item h4 {
+            cursor: pointer;
+            position: relative;
+        }
+
+        .faq-item h4::after {
+            content: '+';
+            position: absolute;
+            left: -20px;
+            top: 0;
+            font-size: 1.5em;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active h4::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-item p {
+            display: none;
+            margin-top: 10px;
+        }
+
+        .faq-item.active p {
+            display: block;
+        }
     </style>
-    <div class="report-report-container">
-        <header class="report-header-custom">
-            <div class="report-header-inner">
-                <img src="../panel/file?type=picture&amp;v=3&amp;mode=filemanager&amp;file=%7eDB3gfQUls%2bt2iiMYKbsRAxrtFhcHKUIUUo7pPtO17bHCzNxwU4zNh3UVor6QMtl7Y6EWX8dD0PSvzZOYkRrXlfejPn4lNTj6" class="report-header-img" alt="لوگو">
-                <h1 class="report-header-title">گزارش تحلیل فهرست تشخیص تعاملی شخصیت</h1>
+</head>
+<body>
+    <header class="header">
+        <!-- محتوای سربرگ -->
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>تحلیل فهرست تشخیص تعاملی هوش موفق</h1>
+                <p>شناخت ویژگی‌های هوش موفق شما و توسعه مهارت‌های فردی و حرفه‌ای</p>
+                <a href="#start-test" class="cta-button">شروع آزمون</a>
             </div>
-            <div class="report-header-date">تاریخ اجرا: #primary_createDate#</div>
-        </header>
-        
-        <div class="report-section-title">فهرست تشخیص تعاملی شخصیت</div>
-        <p class="report-paragraph">
-            این ارزیابی به منظور تحلیل و بررسی ویژگی‌های شخصیتی فرد در حوزه‌های مختلف از جمله تعهد، نیرومندی، ظرفیت تحلیلی، بیتابی روانی، استقلال و سازش انجام شده است. هدف از این ارزیابی شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد.
-        </p><p></p>
-               
-        <div class="report-section-title">اطلاعات فردی</div>
-        <div class="report-info-container">
-            <div class="report-info-item"><strong>نام:</strong> <span class="report-info-data">#field_349#</span></div>
-            <div class="report-info-item"><strong>نام خانوادگی:</strong> <span class="report-info-data">#field_1712#</span></div>
-            <div class="report-info-item"><strong>موبایل:</strong> <span class="report-info-data">#field_350#</span></div>
-            <div class="report-info-item"><strong>ایمیل:</strong> <span class="report-info-data">#field_351#</span></div></div>
+        </section>
 
-        </div>
-        <div class="report-section-title">نتیجه</div>
-        <div class="report-score-container">
-            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10219#;"><strong>الف:</strong> <span class="report-badge">#field_1220#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10219#;"><strong>الف:</strong> <span class="report-badge">#field_1220#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10219#;"><strong>الف:</strong> <span class="report-badge">#field_1220#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10220#;"><strong>ب:</strong> <span class="report-badge">#field_1224#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10220#;"><strong>ب:</strong> <span class="report-badge">#field_1224#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10220#;"><strong>ب:</strong> <span class="report-badge">#field_1224#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10221#;"><strong>بهینگی محیطی:</strong> <span class="report-badge">#field_1225#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10221#;"><strong>بهینگی محیطی:</strong> <span class="report-badge">#field_1225#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10221#;"><strong>بهینگی محیطی:</strong> <span class="report-badge">#field_1225#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10222#;"><strong>پیشرفت رضایتمندانه:</strong> <span class="report-badge">#field_1222#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10222#;"><strong>پیشرفت رضایتمندانه:</strong> <span class="report-badge">#field_1222#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10222#;"><strong>پیشرفت رضایتمندانه:</strong> <span class="report-badge">#field_1222#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10223#;"><strong>ج:</strong> <span class="report-badge">#field_1221#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10223#;"><strong>ج:</strong> <span class="report-badge">#field_1221#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10223#;"><strong>ج:</strong> <span class="report-badge">#field_1221#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10224#;"><strong>جدیت در هدفمندی:</strong> <span class="report-badge">#field_1223#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10224#;"><strong>جدیت در هدفمندی:</strong> <span class="report-badge">#field_1223#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10224#;"><strong>جدیت در هدفمندی:</strong> <span class="report-badge">#field_1223#</span></div>
-
-        </div>
-        <div class="report-section-title">تفسیر</div>
-        <p class="report-paragraph">
-            این بخش به تحلیل و تفسیر نتایج ارزیابی روان‌شناختی فرد می‌پردازد. تحلیل روان‌شناختی شامل بررسی ویژگی‌های شخصیتی مختلف است. هدف از این تحلیل شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد. نتایج این تحلیل می‌تواند به فرد کمک کند تا با شناخت بهتر از خود، برنامه‌های توسعه فردی و حرفه‌ای موثرتری را دنبال کند.
-        </p>
-<!-- الف (عامل تحلیلی در هوش موفق) -->
-<div class="report-component-title">الف
-    <span class="report-badge report-score-data">#field_1220#<br></span>
-</div>
-<p class="report-paragraph">
-    الف در هوش موفق (Successful Intelligence) بیانگر توانایی فرد در تحلیل مفاهیم تخصصی، سازماندهی اطلاعات و یافتن راهکارهای نوآورانه در زمینه مورد علاقه است. افرادی که در این بخش نمره بالاتری کسب می‌کنند، به سادگی می‌توانند مفاهیم را ریشه‌یابی کرده، دسته‌بندی‌ها و تحلیل‌های جدیدی ارائه دهند و با ارائه ایده‌های تازه، عملکردی برجسته به نمایش بگذارند.
-</p>
-<ul class="report-list">
-
-    <!-- سطح متوسط الف -->
-    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10219#;">
-        <strong>«متوسط»<br></strong>
-        شما توانایی قابل قبولی در تفکّر و تحلیل مفاهیم مورد علاقه‌تان دارید، اما گاهی ممکن است ایده‌های نوآورانه یا ارائه مدل‌های جدید برایتان دشوار باشد. علاقه به ریشه‌یابی و سازماندهی مفاهیم وجود دارد، اما همیشه در بالاترین سطح بروز نمی‌کند.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. مطالعه و تمرین مداوم در حوزه مورد علاقه برای تقویت مهارت تحلیل و ارتقای دانش تخصصی.<br>
-                ۲. استفاده از ابزارهای فکری (مانند نقشه‌های ذهنی) برای سازماندهی بهتر مفاهیم و ایده‌ها.<br>
-                ۳. تلاش برای ارائه طرح‌های ساده‌تر و تدریجی پیش از ورود به ایده‌های کاملاً نوآورانه و چالش‌برانگیز.<br>
-                ۴. همفکری با متخصصان یا دوستان علاقه‌مند به زمینه‌تان، برای گسترش دیدگاه و الهام گرفتن از شیوه‌های جدید تحلیل.<br>
-                ۵. یادداشت و مستندسازی ایده‌ها و طبقه‌بندی مفاهیم به صورت روزانه، تا روند رشد تحلیلی‌تان را بهتر مشاهده کنید.
+        <!-- Test Purpose Section -->
+        <section class="content-section test-section" id="test-purpose">
+            <div class="content-container">
+                <!-- هدف از آزمون -->
+                <h2>هدف از آزمون</h2>
+                <p>
+                    این آزمون برای سنجش و تحلیل ویژگی‌های هوش موفق فرد در حوزه‌های مختلف طراحی شده است. هدف اصلی این آزمون شناسایی نقاط قوت و زمینه‌های نیازمند بهبود در هوش موفق شما است تا بتوانید در مسیر توسعه فردی و حرفه‌ای خود گام‌های مؤثری بردارید.
+                </p>
             </div>
-        </div>
-    </li>
+        </section>
 
-    <!-- سطح خوب الف -->
-    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10219#;">
-        <strong>«خوب»<br></strong>
-        شما در تحلیل مفاهیم زمینه مورد علاقه‌تان موفق هستید و معمولاً می‌توانید مدل‌های خلاقانه‌ای را برای طبقه‌بندی و ارائه مطالب ارائه دهید. این سطح از توانایی بیانگر هوش تحلیلی مطلوب و قدرت درک عمیق شماست.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. ادامه توسعه روش‌های تحلیل شخصی و به‌کارگیری آن‌ها در پروژه‌های جدید یا تحقیقات گسترده‌تر.<br>
-                ۲. شرکت در کارگاه‌ها و سمینارهای تخصصی برای یادگیری ابزارهای نوین تحلیل داده و مفاهیم پیچیده.<br>
-                ۳. به اشتراک گذاشتن شیوه‌های تحلیلی و مدل‌های طبقه‌بندی خود با دیگران برای گسترش ایده‌ها و دریافت بازخورد.<br>
-                ۴. تمرین ارائه طرح‌های پیچیده در قالبی ساده و قابل فهم برای تقویت مهارت‌های ارتباطی شما.<br>
-                ۵. حفظ اشتیاق و کنجکاوی برای جستجوی پیوسته روش‌های نوین و رویکردهای تازه در تحلیل مطالب.
+        <!-- Key Features Section -->
+        <section class="content-section test-section" id="key-features">
+            <div class="content-container">
+                <!-- ویژگی‌های کلیدی آزمون -->
+                <h2>ویژگی‌های کلیدی آزمون</h2>
+                <ul>
+                    <li><strong>زمینه‌های ارزیابی:</strong> تحلیل مفاهیم تخصصی، خلاقیت، بهینگی محیطی، پیشرفت رضایتمندانه، توانمندی عملی و جدیت در هدفمندی</li>
+                    <li><strong>زمان مورد نیاز:</strong> 20 دقیقه</li>
+                    <li><strong>دسترسی:</strong> آنلاین و حضوری</li>
+                    <li><strong>نوع گزارش:</strong> گزارش جامع با نمودارها و توصیه‌های عملی</li>
+                </ul>
             </div>
-        </div>
-    </li>
+        </section>
 
-    <!-- سطح عالی الف -->
-    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10219#;">
-        <strong>«عالی»<br></strong>
-        شما در سطح بسیار بالایی از توانایی تحلیل، سازماندهی و ریشه‌یابی مفاهیم قرار دارید و می‌توانید طرح‌ها و ایده‌های برجسته و نوآورانه‌ای را در زمینه مورد علاقه‌تان ارائه دهید. این قابلیت شما را در مسیر پژوهش‌ها و پروژه‌های بزرگ به موفقیت چشم‌گیری می‌رساند.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. رهبری پروژه‌های تحقیقاتی یا نوآورانه که نیازمند قدرت تحلیلی و مدل‌سازی پیچیده هستند.<br>
-                ۲. مستندسازی جامع دستاوردهای تحلیلی و انتشار آن‌ها در قالب مقالات، کتاب‌ها یا سمینارهای تخصصی.<br>
-                ۳. آموزش دیگران در زمینه تکنیک‌های تحلیلی و شیوه‌های خلاقانه طبقه‌بندی برای توسعه جمعی دانسته‌ها.<br>
-                ۴. شرکت در مسابقات یا رویدادهای علمی جهت ارزیابی و تقویت بیشتر ایده‌های نوآورانه شما.<br>
-                ۵. مدیریت استرس و حفظ تعادل زندگی شخصی، چون هوش تحلیلی بالا در کنار سلامت روانی نتایج درخشانی به همراه خواهد داشت.
+        <!-- Benefits Section -->
+        <section class="content-section test-section" id="benefits">
+            <div class="content-container">
+                <!-- مزایای شرکت در این آزمون -->
+                <h2>مزایای شرکت در این آزمون</h2>
+                <ul>
+                    <li>افزایش خودآگاهی و شناخت بهتر از هوش موفق خود</li>
+                    <li>بهبود مهارت‌های تحلیلی و خلاقانه</li>
+                    <li>راهنمایی در تصمیم‌گیری‌های شغلی و تحصیلی</li>
+                    <li>حمایت از رشد شخصی و بهبود عملکرد حرفه‌ای</li>
+                    <li>افزایش بهره‌وری و کارآمدی در محیط‌های کاری و شخصی</li>
+                </ul>
             </div>
-        </div>
-    </li>
+        </section>
 
-</ul>
-
-<!-- ب (عامل اکتشافی در هوش موفق) -->
-<div class="report-component-title">ب
-    <span class="report-badge report-score-data">#field_1224#<br></span>
-</div>
-<p class="report-paragraph">
-    ب در چارچوب هوش موفق، به جنبه خلاق و کاوشگر فرد اشاره دارد؛ افرادی که در زمینه مورد علاقه‌شان به شدت کنجکاو هستند، ایده‌های جدید را می‌آزمایند و تمایل دارند هرچه را یاد می‌گیرند تجربه کنند تا به درکی عمیق و نوآورانه برسند.
-</p>
-<ul class="report-list">
-
-    <!-- سطح متوسط ب -->
-    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10220#;">
-        <strong>«متوسط»<br></strong>
-        شما سطح قابل قبولی از کنجکاوی و خلاقیت در حوزه مورد علاقه‌تان دارید، اما ممکن است برای تجربه‌های جسورانه‌تر یا آزمودن روش‌های کاملاً نو گاهی تردید کنید. بااین‌وجود، روحیه جست‌وجوی شما قابل توجه است و می‌توانید آن را تقویت کنید.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. انتخاب پروژه‌های کوچک با ریسک کنترل‌شده برای تجربه روش‌ها یا راهکارهای جدید.<br>
-                ۲. همفکری با افراد خلاق و نوآور، جهت الهام گرفتن از شیوه‌های کاری و نگرش تازه آنان.<br>
-                ۳. مستندسازی ایده‌هایتان و تجزیه و تحلیل نتایج تجربیات برای یادگیری از موفقیت‌ها و شکست‌ها.<br>
-                ۴. ایجاد فضای ذهنی باز با مطالعه مطالب متنوع خارج از حوزه تخصصی، برای تحریک خلاقیت و گسترش چشم‌انداز.<br>
-                ۵. مدیریت ترس از شکست؛ یادآوری این نکته که هر تجربه جدید، حتی در صورت ناکامی، منبعی برای یادگیری است.
+        <!-- How It Works Section -->
+        <section class="content-section test-section" id="how-it-works">
+            <div class="content-container">
+                <!-- نحوه انجام آزمون -->
+                <h2>نحوه انجام آزمون</h2>
+                <p>
+                    آزمون فهرست تشخیص تعاملی هوش موفق شامل مراحل زیر است:
+                </p>
+                <ul>
+                    <li><strong>گام اول:</strong> تکمیل پرسشنامه آنلاین به مدت 20 دقیقه</li>
+                    <li><strong>گام دوم:</strong> دریافت گزارش تحلیلی جامع با نتایج و توصیه‌ها</li>
+                    <li><strong>گام سوم:</strong> بررسی نتایج و در صورت نیاز، مشاوره با متخصصین</li>
+                </ul>
             </div>
-        </div>
-    </li>
+        </section>
 
-    <!-- سطح خوب ب -->
-    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10220#;">
-        <strong>«خوب»<br></strong>
-        شما خلاقیت و کنجکاوی بالایی در حوزه مورد علاقه‌تان دارید و تمایل دارید آموزه‌هایتان را با روش‌های جدید تجربه کنید. این ویژگی باعث می‌شود به راه‌حل‌های نوآورانه دست یابید و از انجام کارهای تکراری خسته نشوید.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. ادامه تشویق خود به آزمودن ایده‌ها و روش‌های نو در حوزه تخصصی، برای حفظ اشتیاق و رشد مداوم.<br>
-                ۲. به‌کارگیری روش‌های ساختارشکنانه (Out-of-the-Box Thinking) در حل مسائل پیچیده یا طراحی پروژه‌های جدید.<br>
-                ۳. مشارکت در رویدادهای کارگاهی یا سمینارهای خلاقیت، جهت آشنایی با تکنیک‌های گوناگون ایده‌پردازی.<br>
-                ۴. تبدیل دستاوردهای خلاقانه به الگو یا ابزار آموزشی برای هم‌حوزه‌ای‌ها یا افراد علاقه‌مند.<br>
-                ۵. حفظ توازن میان تجربه مداوم و استراحت ذهنی؛ بعضی اوقات رها کردن موقت موضوع، ایده‌های تازه‌تری را به همراه دارد.
+        <!-- Who Should Take This Test Section -->
+        <section class="content-section test-section" id="who-should-take">
+            <div class="content-container">
+                <!-- چه کسانی باید این آزمون را انجام دهند؟ -->
+                <h2>چه کسانی باید این آزمون را انجام دهند؟</h2>
+                <ul>
+                    <li>افرادی که به دنبال شناخت بهتر از هوش موفق خود هستند</li>
+                    <li>حرفه‌ای‌ها و مدیرانی که به دنبال بهبود مهارت‌های مدیریتی و تحلیلی هستند</li>
+                    <li>دانشجویان و دانش‌آموزانی که علاقه‌مند به توسعه مهارت‌های فردی و حرفه‌ای هستند</li>
+                    <li>سازمان‌ها و شرکت‌ها برای ارزیابی و بهبود عملکرد کارکنان</li>
+                    <li>مشاوران و روانشناسان برای پشتیبانی از مشتریان خود</li>
+                </ul>
             </div>
-        </div>
-    </li>
+        </section>
 
-    <!-- سطح عالی ب -->
-    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10220#;">
-        <strong>«عالی»<br></strong>
-        شما در سطح بالایی از کاوشگری و خلاقیت قرار دارید؛ دائماً به دنبال ایده‌های نو در زمینه مورد علاقه‌تان هستید و هرچه را می‌آموزید، در عمل می‌آزمایید. این روحیه جسورانه، امکان دست‌یابی به نوآوری‌های ویژه و تمایز در بین همتایان را فراهم می‌کند.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. تمرکز بر پروژه‌های پژوهشی یا کاربردی پیچیده که نیازمند روحیه خلاق و آزمایشی شماست.<br>
-                ۲. ثبت و به اشتراک‌گذاری تجربیات موفق و ناموفق، تا دیگران نیز از فرآیند خلاقانه شما الهام بگیرند.<br>
-                ۳. شرکت در جشنواره‌ها و مسابقات خلاقیت برای ارزیابی بین‌المللی ایده‌ها و راهکارهای ابتکاری شما.<br>
-                ۴. هدایت گروه‌های تحقیقاتی یا کارآفرینی، چون انرژی و جسارت شما می‌تواند در مقیاس تیمی دستاوردهای بزرگی به همراه آورد.<br>
-                ۵. موازنه شجاعت آزمایشگری با تحلیل ریسک؛ تا حدی ماجراجویی منطقی داشته باشید و از خطرات غیرضروری پرهیز کنید.
-            </div>
-        </div>
-    </li>
+        <!-- Sample Report Section -->
+        <section class="content-section test-section" id="sample-report">
+            <div class="content-container">
+                <!-- نمونه گزارش -->
+                <h2>نمونه گزارش</h2>
+                <p>
+                    در ادامه یک نمونه از گزارش تحلیل فهرست تشخیص تعاملی هوش موفق را مشاهده می‌کنید:
+                </p>
+                <div class="report-container">
+                    <header class="report-header-custom">
+                        <div class="report-header-inner">
+                            <img src="../panel/file?type=picture&amp;v=3&amp;mode=filemanager&amp;file=%7eDB3gfQUls%2bt2iiMYKbsRAxrtFhcHKUIUUo7pPtO17bHCzNxwU4zNh3UVor6QMtl7Y6EWX8dD0PSvzZOYkRrXlfejPn4lNTj6" class="report-header-img" alt="لوگو">
+                            <h1 class="report-header-title">گزارش تحلیل فهرست تشخیص تعاملی هوش موفق</h1>
+                        </div>
+                        <div class="report-header-date">تاریخ اجرا: #primary_createDate#</div>
+                    </header>
+                    
+                    <div class="report-section-title">فهرست تشخیص تعاملی هوش موفق</div>
+                    <p class="report-paragraph">
+                        این ارزیابی به منظور تحلیل و بررسی ویژگی‌های شخصیتی فرد در حوزه‌های مختلف از جمله الف (عامل تحلیلی در هوش موفق)، ب (عامل اکتشافی در هوش موفق)، بهینگی محیطی (توانایی کاربردی در هوش موفق)، پیشرفت رضایتمندانه (جنبه رشد تدریجی در هوش موفق)، ج (توانمندی عملی / کارآمدی در هوش موفق) و جدیت در هدفمندی (پشتکار و انگیزه عمیق در هوش موفق) انجام شده است. هدف از این ارزیابی شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد.
+                    </p>
+                       
+                    <div class="report-section-title">اطلاعات فردی</div>
+                    <div class="report-info-container">
+                        <div class="report-info-item"><strong>نام:</strong> <span class="report-info-data">#field_1156#</span></div>
+                        <div class="report-info-item"><strong>نام خانوادگی:</strong> <span class="report-info-data">#field_1159#</span></div>
+                        <div class="report-info-item"><strong>موبایل:</strong> <span class="report-info-data">#field_1158#</span></div>
+                        <div class="report-info-item"><strong>ایمیل:</strong> <span class="report-info-data">#field_1157#</span></div>
+                    </div>
 
-</ul>
+                    <div class="report-section-title">نتیجه</div>
+                    <div class="report-score-container">
+                        <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10219#;"><strong>الف:</strong> <span class="report-badge">#field_1220#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10219#;"><strong>الف:</strong> <span class="report-badge">#field_1220#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10219#;"><strong>الف:</strong> <span class="report-badge">#field_1220#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10220#;"><strong>ب:</strong> <span class="report-badge">#field_1224#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10220#;"><strong>ب:</strong> <span class="report-badge">#field_1224#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10220#;"><strong>ب:</strong> <span class="report-badge">#field_1224#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10221#;"><strong>بهینگی محیطی:</strong> <span class="report-badge">#field_1225#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10221#;"><strong>بهینگی محیطی:</strong> <span class="report-badge">#field_1225#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10221#;"><strong>بهینگی محیطی:</strong> <span class="report-badge">#field_1225#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10222#;"><strong>پیشرفت رضایتمندانه:</strong> <span class="report-badge">#field_1222#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10222#;"><strong>پیشرفت رضایتمندانه:</strong> <span class="report-badge">#field_1222#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10222#;"><strong>پیشرفت رضایتمندانه:</strong> <span class="report-badge">#field_1222#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10223#;"><strong>ج:</strong> <span class="report-badge">#field_1221#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10223#;"><strong>ج:</strong> <span class="report-badge">#field_1221#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10223#;"><strong>ج:</strong> <span class="report-badge">#field_1221#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10224#;"><strong>جدیت در هدفمندی:</strong> <span class="report-badge">#field_1223#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10224#;"><strong>جدیت در هدفمندی:</strong> <span class="report-badge">#field_1223#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10224#;"><strong>جدیت در هدفمندی:</strong> <span class="report-badge">#field_1223#</span></div>
+                    </div>
+                    
+                    <div class="report-section-title">تفسیر</div>
+                    <p class="report-paragraph">
+                        این بخش به تحلیل و تفسیر نتایج ارزیابی روان‌شناختی فرد می‌پردازد. تحلیل روان‌شناختی شامل بررسی ویژگی‌های شخصیتی مختلف از جمله توانایی تحلیلی، خلاقیت، بهینگی محیطی، پیشرفت رضایتمندانه، توانمندی عملی و جدیت در هدفمندی است. هدف از این تحلیل شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد. نتایج این تحلیل می‌تواند به فرد کمک کند تا با شناخت بهتر از خود، برنامه‌های توسعه فردی و حرفه‌ای موثرتری را دنبال کند و در مسیر رشد و موفقیت گام بردارد.
+                    </p>
 
-<!-- بهینگی محیطی (توانایی کاربردی در هوش موفق) -->
-<div class="report-component-title">بهینگی محیطی 
-    <span class="report-badge report-score-data">#field_1225#<br></span>
-</div>
-<p class="report-paragraph">
-    بهینگی محیطی ناظر بر مهارت فرد در به‌کارگیری حداکثر منابع در دسترس با کمترین هزینه (زمانی، مالی، نیروی انسانی) برای رسیدن به نتایج مورد انتظار جامعه یا محیط کاری است. در چارچوب هوش موفق، این وجه نشان می‌دهد فرد چگونه در تعامل با محیطش، راهکارهای عملی و کارآمدی ارائه می‌کند.
-</p>
-<ul class="report-list">
+                    <!-- الف (عامل تحلیلی در هوش موفق) -->
+                    <div class="report-component-title">الف
+                        <span class="report-badge report-score-data">#field_1220#<br></span>
+                    </div>
+                    <p class="report-paragraph">
+                        الف در هوش موفق (Successful Intelligence) بیانگر توانایی فرد در تحلیل مفاهیم تخصصی، سازماندهی اطلاعات و یافتن راهکارهای نوآورانه در زمینه مورد علاقه است. افرادی که در این بخش نمره بالاتری کسب می‌کنند، به سادگی می‌توانند مفاهیم را ریشه‌یابی کرده، دسته‌بندی‌ها و تحلیل‌های جدیدی ارائه دهند و با ارائه ایده‌های تازه، عملکردی برجسته به نمایش بگذارند.
+                    </p>
+                    <ul class="report-list">
+                        <!-- سطح متوسط الف -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10219#;">
+                            <strong>«متوسط»<br></strong>
+                            شما توانایی قابل قبولی در تفکّر و تحلیل مفاهیم مورد علاقه‌تان دارید، اما گاهی ممکن است ایده‌های نوآورانه یا ارائه مدل‌های جدید برایتان دشوار باشد. علاقه به ریشه‌یابی و سازماندهی مفاهیم وجود دارد، اما همیشه در بالاترین سطح بروز نمی‌کند.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. مطالعه و تمرین مداوم در حوزه مورد علاقه برای تقویت مهارت تحلیل و ارتقای دانش تخصصی.<br>
+                                    ۲. استفاده از ابزارهای فکری (مانند نقشه‌های ذهنی) برای سازماندهی بهتر مفاهیم و ایده‌ها.<br>
+                                    ۳. تلاش برای ارائه طرح‌های ساده‌تر و تدریجی پیش از ورود به ایده‌های کاملاً نوآورانه و چالش‌برانگیز.<br>
+                                    ۴. همفکری با متخصصان یا دوستان علاقه‌مند به زمینه‌تان، برای گسترش دیدگاه و الهام گرفتن از شیوه‌های جدید تحلیل.<br>
+                                    ۵. یادداشت و مستندسازی ایده‌ها و طبقه‌بندی مفاهیم به صورت روزانه، تا روند رشد تحلیلی‌تان را بهتر مشاهده کنید.
+                                </div>
+                            </div>
+                        </li>
+                        <!-- سطح خوب الف -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10219#;">
+                            <strong>«خوب»<br></strong>
+                            شما در تحلیل مفاهیم زمینه مورد علاقه‌تان موفق هستید و معمولاً می‌توانید مدل‌های خلاقانه‌ای را برای طبقه‌بندی و ارائه مطالب ارائه دهید. این سطح از توانایی بیانگر هوش تحلیلی مطلوب و قدرت درک عمیق شماست.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. ادامه توسعه روش‌های تحلیل شخصی و به‌کارگیری آن‌ها در پروژه‌های جدید یا تحقیقات گسترده‌تر.<br>
+                                    ۲. شرکت در کارگاه‌ها و سمینارهای تخصصی برای یادگیری ابزارهای نوین تحلیل داده و مفاهیم پیچیده.<br>
+                                    ۳. به اشتراک گذاشتن شیوه‌های تحلیلی و مدل‌های طبقه‌بندی خود با دیگران برای گسترش ایده‌ها و دریافت بازخورد.<br>
+                                    ۴. تمرین ارائه طرح‌های پیچیده در قالبی ساده و قابل فهم برای تقویت مهارت‌های ارتباطی شما.<br>
+                                    ۵. حفظ اشتیاق و کنجکاوی برای جستجوی پیوسته روش‌های نوین و رویکردهای تازه در تحلیل مطالب.
+                                </div>
+                            </div>
+                        </li>
+                        <!-- سطح عالی الف -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10219#;">
+                            <strong>«عالی»<br></strong>
+                            شما در سطح بسیار بالایی از توانایی تحلیل، سازماندهی و ریشه‌یابی مفاهیم قرار دارید و می‌توانید طرح‌ها و ایده‌های برجسته و نوآورانه‌ای را در زمینه مورد علاقه‌تان ارائه دهید. این قابلیت شما را در مسیر پژوهش‌ها و پروژه‌های بزرگ به موفقیت چشم‌گیری می‌رساند.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. رهبری پروژه‌های تحقیقاتی یا نوآورانه که نیازمند قدرت تحلیلی و مدل‌سازی پیچیده هستند.<br>
+                                    ۲. مستندسازی جامع دستاوردهای تحلیلی و انتشار آن‌ها در قالب مقالات، کتاب‌ها یا سمینارهای تخصصی.<br>
+                                    ۳. آموزش دیگران در زمینه تکنیک‌های تحلیلی و شیوه‌های خلاقانه طبقه‌بندی برای توسعه جمعی دانسته‌ها.<br>
+                                    ۴. شرکت در مسابقات یا رویدادهای علمی جهت ارزیابی و تقویت بیشتر ایده‌های نوآورانه شما.<br>
+                                    ۵. مدیریت استرس و حفظ تعادل زندگی شخصی، چون هوش تحلیلی بالا در کنار سلامت روانی نتایج درخشانی به همراه خواهد داشت.
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
 
-    <!-- سطح متوسط بهینگی محیطی -->
-    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10221#;">
-        <strong>«متوسط»<br></strong>
-        شما به شکلی قابل قبول می‌توانید از ابزارها و منابع موجود بهره ببرید، اما ممکن است همواره بهترین یا کم‌هزینه‌ترین راه‌حل را انتخاب نکنید. با این حال، نتایج کار شما برای جامعه یا تیم، تا حدی مطلوب است.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. ارزیابی دقیق منابع در دسترس پیش از شروع هر پروژه؛ تصمیم بگیرید کدام ابزار یا روش هزینه و سود بیشتری دارد.<br>
-                ۲. تمرین مدیریت زمان با استفاده از لیست وظایف یا اپلیکیشن‌های زمان‌بندی برای کاهش هدررفت انرژی.<br>
-                ۳. گفت‌وگو با همکاران یا دوستان برای یافتن الگوهای موفق مدیریت منابع در پروژه‌های مشابه.<br>
-                ۴. دنبال کردن روش‌های ساده اما کارآمد (مانند رویکردهای مینیمالیستی) در انجام کارهای تکراری یا روتین.<br>
-                ۵. شرکت در کارگاه‌های مدیریت و برنامه‌ریزی استراتژیک برای ارتقای مهارت‌های کاربردی شما.
-            </div>
-        </div>
-    </li>
+                    <!-- ب (عامل اکتشافی در هوش موفق) -->
+                    <div class="report-component-title">ب
+                        <span class="report-badge report-score-data">#field_1224#<br></span>
+                    </div>
+                    <p class="report-paragraph">
+                        ب در چارچوب هوش موفق، به جنبه خلاق و کاوشگر فرد اشاره دارد؛ افرادی که در زمینه مورد علاقه‌شان به شدت کنجکاو هستند، ایده‌های جدید را می‌آزمایند و تمایل دارند هرچه را یاد می‌گیرند تجربه کنند تا به درکی عمیق و نوآورانه برسند.
+                    </p>
+                    <ul class="report-list">
+                        <!-- سطح متوسط ب -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10220#;">
+                            <strong>«متوسط»<br></strong>
+                            شما سطح قابل قبولی از کنجکاوی و خلاقیت در حوزه مورد علاقه‌تان دارید، اما ممکن است برای تجربه‌های جسورانه‌تر یا آزمودن روش‌های کاملاً نو گاهی تردید کنید. بااین‌وجود، روحیه جست‌وجوی شما قابل توجه است و می‌توانید آن را تقویت کنید.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. انتخاب پروژه‌های کوچک با ریسک کنترل‌شده برای تجربه روش‌ها یا راهکارهای جدید.<br>
+                                    ۲. همفکری با افراد خلاق و نوآور، جهت الهام گرفتن از شیوه‌های کاری و نگرش تازه آنان.<br>
+                                    ۳. مستندسازی ایده‌هایتان و تجزیه و تحلیل نتایج تجربیات برای یادگیری از موفقیت‌ها و شکست‌ها.<br>
+                                    ۴. ایجاد فضای ذهنی باز با مطالعه مطالب متنوع خارج از حوزه تخصصی، برای تحریک خلاقیت و گسترش چشم‌انداز.<br>
+                                    ۵. مدیریت ترس از شکست؛ یادآوری این نکته که هر تجربه جدید، حتی در صورت ناکامی، منبعی برای یادگیری است.
+                                </div>
+                            </div>
+                        </li>
+                        <!-- سطح خوب ب -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10220#;">
+                            <strong>«خوب»<br></strong>
+                            شما خلاقیت و کنجکاوی بالایی در حوزه مورد علاقه‌تان دارید و تمایل دارید آموزه‌هایتان را با روش‌های جدید تجربه کنید. این ویژگی باعث می‌شود به راه‌حل‌های نوآورانه دست یابید و از انجام کارهای تکراری خسته نشوید.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. ادامه تشویق خود به آزمودن ایده‌ها و روش‌های نو در حوزه تخصصی، برای حفظ اشتیاق و رشد مداوم.<br>
+                                    ۲. به‌کارگیری روش‌های ساختارشکنانه (Out-of-the-Box Thinking) در حل مسائل پیچیده یا طراحی پروژه‌های جدید.<br>
+                                    ۳. مشارکت در رویدادهای کارگاهی یا سمینارهای خلاقیت، جهت آشنایی با تکنیک‌های گوناگون ایده‌پردازی.<br>
+                                    ۴. تبدیل دستاوردهای خلاقانه به الگو یا ابزار آموزشی برای هم‌حوزه‌ای‌ها یا افراد علاقه‌مند.<br>
+                                    ۵. حفظ توازن میان تجربه مداوم و استراحت ذهنی؛ بعضی اوقات رها کردن موقت موضوع، ایده‌های تازه‌تری را به همراه دارد.
+                                </div>
+                            </div>
+                        </li>
+                        <!-- سطح عالی ب -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10220#;">
+                            <strong>«عالی»<br></strong>
+                            شما در سطح بالایی از کاوشگری و خلاقیت قرار دارید؛ دائماً به دنبال ایده‌های نو در زمینه مورد علاقه‌تان هستید و هرچه را می‌آموزید، در عمل می‌آزمایید. این روحیه جسورانه، امکان دست‌یابی به نوآوری‌های ویژه و تمایز در بین همتایان را فراهم می‌کند.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. تمرکز بر پروژه‌های پژوهشی یا کاربردی پیچیده که نیازمند روحیه خلاق و آزمایشی شماست.<br>
+                                    ۲. ثبت و به اشتراک‌گذاری تجربیات موفق و ناموفق، تا دیگران نیز از فرآیند خلاقانه شما الهام بگیرند.<br>
+                                    ۳. شرکت در جشنواره‌ها و مسابقات خلاقیت برای ارزیابی بین‌المللی ایده‌ها و راهکارهای ابتکاری شما.<br>
+                                    ۴. هدایت گروه‌های تحقیقاتی یا کارآفرینی، چون انرژی و جسارت شما می‌تواند در مقیاس تیمی دستاوردهای بزرگی به همراه آورد.<br>
+                                    ۵. موازنه شجاعت آزمایشگری با تحلیل ریسک؛ تا حدی ماجراجویی منطقی داشته باشید و از خطرات غیرضروری پرهیز کنید.
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
 
-    <!-- سطح خوب بهینگی محیطی -->
-    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10221#;">
-        <strong>«خوب»<br></strong>
-        شما اغلب از منابع موجود، بهترین بهره را می‌برید و در مدت زمان مناسب، خروجی مطلوبی را تحویل می‌دهید. این رویکرد بهینه سبب می‌شود جامعه یا محیط کار از تلاش‌هایتان رضایت داشته باشد و پروژه‌هایتان ارزشمند به نظر برسد.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. بررسی روش‌های پیشرفته مدیریت منابع (مثلاً روش‌های چابک یا Agile) جهت بهبود مستمر فرایندهایتان.<br>
-                ۲. انتقال تجربه و مشورت با دیگران در تیم یا جمع، به‌ویژه در انتخاب راه‌حل‌های ساده اما مؤثر برای مشکلات رایج.<br>
-                ۳. استفاده از تکنولوژی‌ها و ابزارهای نرم‌افزاری جدید که بازده کارتان را افزایش دهند.<br>
-                ۴. ارزیابی دوره‌ای عملکرد، برای اطمینان از استمرار بهره‌وری بالا و پیشگیری از کم‌دقتی در مدیریت منابع.<br>
-                ۵. ایجاد فرهنگ همفکری در تیم، تا مسئولیت استفاده بهینه از منابع میان همگان تقسیم شود.
-            </div>
-        </div>
-    </li>
+                    <!-- بهینگی محیطی (توانایی کاربردی در هوش موفق) -->
+                    <div class="report-component-title">بهینگی محیطی 
+                        <span class="report-badge report-score-data">#field_1225#<br></span>
+                    </div>
+                    <p class="report-paragraph">
+                        بهینگی محیطی ناظر بر مهارت فرد در به‌کارگیری حداکثر منابع در دسترس با کمترین هزینه (زمانی، مالی، نیروی انسانی) برای رسیدن به نتایج مورد انتظار جامعه یا محیط کاری است. در چارچوب هوش موفق، این وجه نشان می‌دهد فرد چگونه در تعامل با محیطش، راهکارهای عملی و کارآمدی ارائه می‌کند.
+                    </p>
+                    <ul class="report-list">
+                        <!-- سطح متوسط بهینگی محیطی -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10221#;">
+                            <strong>«متوسط»<br></strong>
+                            شما به شکلی قابل قبول می‌توانید از ابزارها و منابع موجود بهره ببرید، اما ممکن است همواره بهترین یا کم‌هزینه‌ترین راه‌حل را انتخاب نکنید. با این حال، نتایج کار شما برای جامعه یا تیم، تا حدی مطلوب است.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. ارزیابی دقیق منابع در دسترس پیش از شروع هر پروژه؛ تصمیم بگیرید کدام ابزار یا روش هزینه و سود بیشتری دارد.<br>
+                                    ۲. تمرین مدیریت زمان با استفاده از لیست وظایف یا اپلیکیشن‌های زمان‌بندی برای کاهش هدررفت انرژی.<br>
+                                    ۳. گفت‌وگو با همکاران یا دوستان برای یافتن الگوهای موفق مدیریت منابع در پروژه‌های مشابه.<br>
+                                    ۴. دنبال کردن روش‌های ساده اما کارآمد (مانند رویکردهای مینیمالیستی) در انجام کارهای تکراری یا روتین.<br>
+                                    ۵. شرکت در کارگاه‌های مدیریت و برنامه‌ریزی استراتژیک برای ارتقای مهارت‌های کاربردی شما.
+                                </div>
+                            </div>
+                        </li>
+                        <!-- سطح خوب بهینگی محیطی -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10221#;">
+                            <strong>«خوب»<br></strong>
+                            شما اغلب از منابع موجود، بهترین بهره را می‌برید و در مدت زمان مناسب، خروجی مطلوبی را تحویل می‌دهید. این رویکرد بهینه سبب می‌شود جامعه یا محیط کار از تلاش‌هایتان رضایت داشته باشد و پروژه‌هایتان ارزشمند به نظر برسد.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. بررسی روش‌های پیشرفته مدیریت منابع (مثلاً روش‌های چابک یا Agile) جهت بهبود مستمر فرایندهایتان.<br>
+                                    ۲. انتقال تجربه و مشورت با دیگران در تیم یا جمع، به‌ویژه در انتخاب راه‌حل‌های ساده اما مؤثر برای مشکلات رایج.<br>
+                                    ۳. استفاده از تکنولوژی‌ها و ابزارهای نرم‌افزاری جدید که بازده کارتان را افزایش دهند.<br>
+                                    ۴. ارزیابی دوره‌ای عملکرد، برای اطمینان از استمرار بهره‌وری بالا و پیشگیری از کم‌دقتی در مدیریت منابع.<br>
+                                    ۵. ایجاد فرهنگ همفکری در تیم، تا مسئولیت استفاده بهینه از منابع میان همگان تقسیم شود.
+                                </div>
+                            </div>
+                        </li>
+                        <!-- سطح عالی بهینگی محیطی -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10221#;">
+                            <strong>«عالی»<br></strong>
+                            شما در بالاترین سطح بهینگی محیطی قرار دارید؛ به شکل چشمگیری با کمترین منابع بهترین نتایج را به دست می‌آورید. این توانایی موجب می‌شود در هر پروژه‌ای که بهینه‌سازی و کارایی اهمیت دارد، نقشی کلیدی ایفا کنید.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. نقش رهبری و مشاوره در پروژه‌های مهم را برعهده بگیرید؛ توانایی شما در مدیریت مؤثر منابع می‌تواند تحول‌آفرین باشد.<br>
+                                    ۲. تدوین دستورالعمل‌ها یا راهنماهایی بر اساس تجربیات موفق خود، تا دیگران نیز بتوانند از روش‌های شما استفاده کنند.<br>
+                                    ۳. مشارکت در برنامه‌های توسعه سازمانی یا مدیریتی به‌عنوان فردی دارای مهارت بالای بهره‌وری.<br>
+                                    ۴. ارتقای مداوم دانش خود در زمینه روش‌های نوین مدیریت زمان و منابع؛ همیشه جا برای پیشرفت وجود دارد.<br>
+                                    ۵. انتقال فرهنگ بهینگی در محیط کار یا جامعه، با نشان دادن مزایای واقعی این سبک از کار و تفکر.
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
 
-    <!-- سطح عالی بهینگی محیطی -->
-    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10221#;">
-        <strong>«عالی»<br></strong>
-        شما در بالاترین سطح بهینگی محیطی قرار دارید؛ به شکل چشمگیری با کمترین منابع بهترین نتایج را به دست می‌آورید. این توانایی موجب می‌شود در هر پروژه‌ای که بهینه‌سازی و کارایی اهمیت دارد، نقشی کلیدی ایفا کنید.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. نقش رهبری و مشاوره در پروژه‌های مهم را برعهده بگیرید؛ توانایی شما در مدیریت مؤثر منابع می‌تواند تحول‌آفرین باشد.<br>
-                ۲. تدوین دستورالعمل‌ها یا راهنماهایی بر اساس تجربیات موفق خود، تا دیگران نیز بتوانند از روش‌های شما استفاده کنند.<br>
-                ۳. مشارکت در برنامه‌های توسعه سازمانی یا مدیریتی به‌عنوان فردی دارای مهارت بالای بهره‌وری.<br>
-                ۴. ارتقای مداوم دانش خود در زمینه روش‌های نوین مدیریت زمان و منابع؛ همیشه جا برای پیشرفت وجود دارد.<br>
-                ۵. انتقال فرهنگ بهینگی در محیط کار یا جامعه، با نشان دادن مزایای واقعی این سبک از کار و تفکر.
-            </div>
-        </div>
-    </li>
-</ul>
+                    <!-- پیشرفت رضایتمندانه (جنبه رشد تدریجی در هوش موفق) -->
+                    <div class="report-component-title">پیشرفت رضایتمندانه 
+                        <span class="report-badge report-score-data">#field_1222#<br></span>
+                    </div>
+                    <p class="report-paragraph">
+                        پیشرفت رضایتمندانه بیانگر احساس فرد از حرکت در مسیر درست، استفاده مطلوب از موقعیت‌ها و توأم شدن تلاش با خوشنودی درونی است. در هوش موفق، این عامل نشان می‌دهد که فرد نه‌تنها دنبال دستاوردهای بیرونی است، بلکه از فرایند تلاش هم احساس خرسندی می‌کند.
+                    </p>
+                    <ul class="report-list">
+                        <!-- سطح متوسط پیشرفت رضایتمندانه -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10222#;">
+                            <strong>«متوسط»<br></strong>
+                            شما گاهی با لذت و رضایتمندی برای رسیدن به اهدافتان تلاش می‌کنید، اما ممکن است همیشه آن احساس رضایت عمیق را تجربه نکنید. بعضی اوقات نیز شاید فرصت‌های زندگی را به طور کامل به خدمت نگیرید.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. شناسایی دلایل فقدان رضایت در برخی تلاش‌ها؛ ممکن است تمرکزتان بر نتیجه باشد تا لذت فرایند.<br>
+                                    ۲. تعیین اهدافی که واقعاً با علاقه و ارزش‌های درونی‌تان هماهنگی داشته باشند.<br>
+                                    ۳. تقسیم موفقیت به چند مرحله کوتاه‌مدت و جشن گرفتن هر گام کوچک، برای حفظ روحیه مثبت.<br>
+                                    ۴. بازبینی عادات روزمره؛ شاید چند تغییر ساده (ورزش، مدیتیشن، تفریحات سالم) بتواند حس پیشرفت را ارتقا دهد.<br>
+                                    ۵. گفت‌وگو با افرادی که در حوزه کاری یا تحصیلی شما احساس رضایت بالاتری دارند، برای تبادل تجارب و الهام.
+                                </div>
+                            </div>
+                        </li>
+                        <!-- سطح خوب پیشرفت رضایتمندانه -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10222#;">
+                            <strong>«خوب»<br></strong>
+                            شما معمولاً از راهی که برای رسیدن به اهداف پیش می‌گیرید لذت می‌برید و از انجام کارهای پیش‌برنده احساس رضایت دارید. این رویکرد، انگیزه درونی شما را تقویت کرده و باعث می‌شود به شکل پایدارتری در مسیر توسعه فردی حرکت کنید.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. حفظ روحیه مثبت با مکتوب کردن دستاوردهای روزانه و یادآوری نقاط قوت خود.<br>
+                                    ۲. به‌اشتراک‌گذاری احساس موفقیت با دوستان یا خانواده، تا حس خوب به صورت جمعی تقویت شود.<br>
+                                    ۳. حفظ و ارتقای مهارت‌هایتان در جهت ایجاد فرصت‌های جدید و ایجاد تنوع در مسیر پیشرفت.<br>
+                                    ۴. کمک به دیگران در برنامه‌ریزی مسیر پیشرفتشان؛ با این کار حس مفید بودن و رضایت شما نیز بالاتر می‌رود.<br>
+                                    ۵. ساخت یک چشم‌انداز بلندمدت؛ نگرش آینده‌نگر در کنار لذت از لحظه حال، انگیزه را دوچندان می‌کند.
+                                </div>
+                            </div>
+                        </li>
+                        <!-- سطح عالی پیشرفت رضایتمندانه -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10222#;">
+                            <strong>«عالی»<br></strong>
+                            شما در اوج لذت از فرایند پیشرفت قرار دارید؛ تمام تلاشتان را با حس خوشنودی و هیجان پیگیری می‌کنید و از فرصت‌های زندگی به بهترین شکل بهره می‌برید. این دیدگاه باعث می‌شود در کنار دستیابی به اهداف بزرگ، احساس شادی و موفقیت عمیق داشته باشید.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. پذیرش نقش‌های الهام‌بخش؛ شما می‌توانید دیگران را در مسیر پیشرفت ترغیب و حمایت کنید.<br>
+                                    ۲. همواره در جست‌وجوی پروژه‌ها و چالش‌های تازه باشید تا با انگیزه زیادتان به اوج خرسندی برسید.<br>
+                                    ۳. مستندسازی و انتشار تجربه‌هایتان در وبلاگ، شبکه‌های اجتماعی یا جلسات انگیزشی، برای گسترش این حس مثبت به دیگران.<br>
+                                    ۴. حفظ تعادل میان کار و زندگی شخصی، تا تداوم این حس رضایتمندانه را تضمین کنید.<br>
+                                    ۵. با شرکت در دوره‌های رهبری و مدیریت، مهارت‌های سازماندهی و هدایت تیم‌ها را بیاموزید و به موفقیت‌های بزرگ‌تری برسید.
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
 
-<!-- پیشرفت رضایتمندانه (جنبه رشد تدریجی در هوش موفق) -->
-<div class="report-component-title">پیشرفت رضایتمندانه 
-    <span class="report-badge report-score-data">#field_1222#<br></span>
-</div>
-<p class="report-paragraph">
-    پیشرفت رضایتمندانه بیانگر احساس فرد از حرکت در مسیر درست، استفاده مطلوب از موقعیت‌ها و توأم شدن تلاش با خوشنودی درونی است. در هوش موفق، این عامل نشان می‌دهد که فرد نه‌تنها دنبال دستاوردهای بیرونی است، بلکه از فرایند تلاش هم احساس خرسندی می‌کند.
-</p>
-<ul class="report-list">
+                    <!-- ج (توانمندی عملی / کارآمدی در هوش موفق) -->
+                    <div class="report-component-title">ج 
+                        <span class="report-badge report-score-data">#field_1221#<br></span>
+                    </div>
+                    <p class="report-paragraph">
+                        ج در چارچوب هوش موفق، بیانگر مهارت کاربردی و توانایی انجام صحیح و دقیق وظایف در زمینه مورد علاقه است. چنین افرادی معمولاً دقت بالایی دارند و تلاش می‌کنند با تمرکز و جدیت، خروجی باکیفیتی ارائه دهند. این ویژگی می‌تواند در محیط‌های تحصیلی و شغلی به موفقیت‌های قابل توجهی منجر شود.
+                    </p>
+                    <ul class="report-list">
+                        <!-- سطح متوسط ج -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10223#;">
+                            <strong>«متوسط»<br></strong>
+                            شما توانایی قابل قبولی در انجام وظایف عملی دارید، اما ممکن است همواره به بالاترین سطح دقت یا کیفیت نرسید. گاه تمرکزتان دچار افت می‌شود یا شرایط محیطی بر عملکردتان تأثیر می‌گذارد.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. ایجاد برنامه مشخص برای انجام کارهای عملی؛ تقسیم وظایف به گام‌های کوچک‌تر می‌تواند تمرکز را بالا ببرد.<br>
+                                    ۲. درخواست بازخورد از اساتید یا همکاران در مورد کیفیت عملکرد؛ شناسایی نقاط ضعف و تلاش برای بهبود آن‌ها.<br>
+                                    ۳. تمرین دقت از طریق تمرین‌های ذهنی (مثل حل پازل یا مطالعه روش‌های خطاناپذیری).<br>
+                                    ۴. آماده‌سازی محیط کار یا تحصیل به شکلی که کمترین حواس‌پرتی ممکن رخ دهد.<br>
+                                    ۵. ارتقای مهارت‌های فنی و کاربردی مرتبط با رشته یا زمینه علاقه‌تان، برای افزایش اعتمادبه‌نفس عملی.
+                                </div>
+                            </div>
+                        </li>
+                        <!-- سطح خوب ج -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10223#;">
+                            <strong>«خوب»<br></strong>
+                            شما در انجام وظایف عملی، از دقت و مسئولیت‌پذیری خوبی برخوردارید و اغلب در تحصیلات یا کار عملی خود موفق عمل می‌کنید. این تعهد و جدیت می‌تواند به دستاوردهای قابل توجهی در بلندمدت منجر شود.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. ادامه تقویت مهارت‌های عملی از طریق شرکت در دوره‌های تخصصی یا مطالعه منابع عملی و کاربردی.<br>
+                                    ۲. به‌کارگیری روش‌های ارزیابی کیفیت کاری (چک‌لیست یا مستندسازی فرآیند) برای تشخیص نقاط قابل بهبود.<br>
+                                    ۳. استفاده از تجربیات موفق گذشته برای انگیزه‌بخشی به خود و تعریف اهداف جدید در زمینه مورد علاقه‌تان.<br>
+                                    ۴. اشتراک‌گذاری نتایج و دستاوردهایتان با دوستان یا همکاران برای یادگیری جمعی و ترویج کار دقیق و منظم.<br>
+                                    ۵. حفظ روند منظم و جدی خود، در عین اختصاص زمانی به استراحت و سرگرمی برای جلوگیری از فرسودگی.
+                                </div>
+                            </div>
+                        </li>
+                        <!-- سطح عالی ج -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10223#;">
+                            <strong>«عالی»<br></strong>
+                            شما در سطح بالایی از توانمندی عملی و دقت قرار دارید؛ وظایف را با وسواس مثبت و تمرکز بالا انجام می‌دهید و معمولاً خروجی کارتان کم‌نقص و خلاقانه است. این رویکرد شما را به فردی مطمئن و توانمند در هر تیمی تبدیل می‌کند.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. پذیرش پروژه‌ها یا نقش‌هایی که نیازمند کیفیت و دقت بالاست؛ از این طریق می‌توانید سرآمدی خود را نشان دهید.<br>
+                                    ۲. آموزش و هدایت دیگران در زمینه مهارت‌های عملی و دقت؛ از تجربه‌تان برای ارتقای سطح کل گروه استفاده کنید.<br>
+                                    ۳. شرکت در مسابقات یا برنامه‌های تخصصی عملی برای به چالش کشیدن توانایی‌ها و رشد بیشتر.<br>
+                                    ۴. مراقبت از سلامت جسمی و ذهنی؛ دقت بالا نیازمند ذهنی آرام و بدنی سالم است.<br>
+                                    ۵. توسعه مهارت‌های ارتباطی برای ارائه و نمایش بهتر کارهای باکیفیت شما، تا بیشتر مورد توجه و تقدیر قرار گیرید.
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
 
-    <!-- سطح متوسط پیشرفت رضایتمندانه -->
-    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10222#;">
-        <strong>«متوسط»<br></strong>
-        شما گاهی با لذت و رضایتمندی برای رسیدن به اهدافتان تلاش می‌کنید، اما ممکن است همیشه آن احساس رضایت عمیق را تجربه نکنید. بعضی اوقات نیز شاید فرصت‌های زندگی را به طور کامل به خدمت نگیرید.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. شناسایی دلایل فقدان رضایت در برخی تلاش‌ها؛ ممکن است تمرکزتان بر نتیجه باشد تا لذت فرایند.<br>
-                ۲. تعیین اهدافی که واقعاً با علاقه و ارزش‌های درونی‌تان هماهنگی داشته باشند.<br>
-                ۳. تقسیم موفقیت به چند مرحله کوتاه‌مدت و جشن گرفتن هر گام کوچک، برای حفظ روحیه مثبت.<br>
-                ۴. بازبینی عادات روزمره؛ شاید چند تغییر ساده (ورزش، مدیتیشن، تفریحات سالم) بتواند حس پیشرفت را ارتقا دهد.<br>
-                ۵. گفت‌وگو با افرادی که در حوزه کاری یا تحصیلی شما احساس رضایت بالاتری دارند، برای تبادل تجارب و الهام.
-            </div>
-        </div>
-    </li>
+                    <!-- جدیت در هدفمندی (پشتکار و انگیزه عمیق در هوش موفق) -->
+                    <div class="report-component-title">جدیت در هدفمندی 
+                        <span class="report-badge report-score-data">#field_1223#<br></span>
+                    </div>
+                    <p class="report-paragraph">
+                        جدیت در هدفمندی بر پشتکار فراوان، اراده بالا و هم‌سویی با اهدافی ارزشمند دلالت دارد. افرادی که امتیاز بالایی در این بخش می‌گیرند، معمولاً با احساس نزدیکی به هدف، از تلاش‌هایشان نتیجه مثبت می‌گیرند و به طور مستمر در پی یافتن راه درست رسیدن به خواسته‌ها هستند.
+                    </p>
+                    <ul class="report-list">
+                        <!-- سطح متوسط جدیت در هدفمندی -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10224#;">
+                            <strong>«متوسط»<br></strong>
+                            شما اغلب برای رسیدن به اهدافتان تلاش می‌کنید و پشتکار نسبتاً خوبی دارید، اما ممکن است مواقعی باشد که خستگی یا تردید بر شما غلبه کند. در این شرایط، اراده‌تان تحت تأثیر قرار می‌گیرد و پیشرفتتان کندتر می‌شود.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. مرور مداوم چشم‌انداز و علت‌های اصلی انتخاب هدف برای تقویت انگیزه در لحظات سخت.<br>
+                                    ۲. تعیین گام‌های کوتاه‌مدت و قابل دستیابی، تا حس پیشرفت پیوسته حفظ شود.<br>
+                                    ۳. گفت‌وگو با دوستان یا مربی مورد اعتماد برای دریافت حمایت عاطفی و فکری در زمان افت روحیه.<br>
+                                    ۴. تنظیم عادت‌های روزانه (مانند بیدار شدن به موقع، ورزش منظم) که به ثبات اراده و پشتکار کمک می‌کنند.<br>
+                                    ۵. تقویت مهارت تصمیم‌گیری صحیح؛ اراده قوی با انتخاب‌های هوشمندانه تکمیل می‌شود.
+                                </div>
+                            </div>
+                        </li>
+                        <!-- سطح خوب جدیت در هدفمندی -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10224#;">
+                            <strong>«خوب»<br></strong>
+                            شما پشتکار و انگیزه بالایی دارید و به‌طور مستمر احساس می‌کنید به هدفتان نزدیک‌تر می‌شوید. این رویکرد مثبت موجب می‌شود در اکثر مواقع نتیجه مطلوبی از تلاش‌هایتان بگیرید و احساس رضایت بیشتری را تجربه کنید.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. تعریف اهداف بلندمدت به موازات اهداف کوتاه‌مدت، برای حفظ انگیزه پایدار در مسیر رشد.<br>
+                                    ۲. به اشتراک‌گذاری داستان موفقیت و تلاش‌های خود با دیگران، تا به آن‌ها الهام ببخشید و خودتان را نیز تشویق کنید.<br>
+                                    ۳. ادامه تحلیل نتایج و دلایل موفقیت‌ها یا شکست‌های مقطعی، برای یادگیری و بهبود مستمر.<br>
+                                    ۴. مدیریت زمان و تعیین اولویت‌ها برای اجتناب از درگیری همزمان در فعالیت‌های متعدد و افت تمرکز.<br>
+                                    ۵. مراقبت از سلامت جسمی و روانی؛ پشتکار بالا بدون استراحت و تفریح کافی می‌تواند منجر به فرسودگی شود.
+                                </div>
+                            </div>
+                        </li>
+                        <!-- سطح عالی جدیت در هدفمندی -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10224#;">
+                            <strong>«عالی»<br></strong>
+                            شما در بالاترین سطح جدیت در هدفمندی قرار دارید؛ با پشتکار و اراده مثال‌زدنی در راستای اهداف ارزشمندتان قدم برمی‌دارید و از تلاشی که برای رسیدن به موفقیت انجام می‌دهید لذت می‌برید. این ویژگی، محرک قوی‌ای است که می‌تواند شما را به دستاوردهای بزرگی برساند.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. پذیرش نقش راهبری در گروه‌ها یا پروژه‌هایی که نیازمند پایداری و تعهد بالا هستند.<br>
+                                    ۲. تنظیم چشم‌اندازهای بلندمدت و تفکیک آن‌ها به اهداف مرحله‌ای برای ایجاد درک بهتر از مسیر پیش رو.<br>
+                                    ۳. آموزش و منتورینگ دیگران در زمینه تعیین هدف و پایبندی به آن؛ شما الگوی بسیار خوبی هستید.<br>
+                                    ۴. مطالعه و آشنایی با الگوهای ذهنی موفق؛ ممکن است دیدگاه‌های جدیدی در تقویت اراده و مدیریت سختی‌ها بیابید.<br>
+                                    ۵. حفظ تعادل میان تعهد به هدف و حساسیت به تغییر شرایط؛ گاهی لازم است مسیر را بازبینی یا اصلاح کنید.
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
 
-    <!-- سطح خوب پیشرفت رضایتمندانه -->
-    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10222#;">
-        <strong>«خوب»<br></strong>
-        شما معمولاً از راهی که برای رسیدن به اهداف پیش می‌گیرید لذت می‌برید و از انجام کارهای پیش‌برنده احساس رضایت دارید. این رویکرد، انگیزه درونی شما را تقویت کرده و باعث می‌شود به شکل پایدارتری در مسیر توسعه فردی حرکت کنید.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. حفظ روحیه مثبت با مکتوب کردن دستاوردهای روزانه و یادآوری نقاط قوت خود.<br>
-                ۲. به‌اشتراک‌گذاری احساس موفقیت با دوستان یا خانواده، تا حس خوب به صورت جمعی تقویت شود.<br>
-                ۳. حفظ و ارتقای مهارت‌هایتان در جهت ایجاد فرصت‌های جدید و ایجاد تنوع در مسیر پیشرفت.<br>
-                ۴. کمک به دیگران در برنامه‌ریزی مسیر پیشرفتشان؛ با این کار حس مفید بودن و رضایت شما نیز بالاتر می‌رود.<br>
-                ۵. ساخت یک چشم‌انداز بلندمدت؛ نگرش آینده‌نگر در کنار لذت از لحظه حال، انگیزه را دوچندان می‌کند.
-            </div>
-        </div>
-    </li>
+            <!-- Credentials and Validity Section -->
+            <section class="content-section test-section" id="credentials">
+                <div class="content-container">
+                    <!-- اعتبار و صحت آزمون -->
+                    <h2>اعتبار و صحت آزمون</h2>
+                    <p>
+                        آزمون فهرست تشخیص تعاملی هوش موفق بر اساس روش‌شناسی تحقیقاتی معتبر و تایید شده توسط متخصصین روانشناسی طراحی شده است. این آزمون توسط دانشگاه‌ها و سازمان‌های معتبر روانشناسی مورد تأیید و توصیه قرار گرفته است.
+                    </p>
+                    <ul>
+                        <li>روش‌شناسی تحقیقاتی مبتنی بر مطالعات علمی روز</li>
+                        <li>تأییدیه سازمان‌های معتبر روانشناسی</li>
+                        <li>پشتیبانی توسط تیم متخصصین و روانشناسان خبره</li>
+                    </ul>
+                </div>
+            </section>
 
-    <!-- سطح عالی پیشرفت رضایتمندانه -->
-    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10222#;">
-        <strong>«عالی»<br></strong>
-        شما در اوج لذت از فرایند پیشرفت قرار دارید؛ تمام تلاشتان را با حس خوشنودی و هیجان پیگیری می‌کنید و از فرصت‌های زندگی به بهترین شکل بهره می‌برید. این دیدگاه باعث می‌شود در کنار دستیابی به اهداف بزرگ، احساس شادی و موفقیت عمیق داشته باشید.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. پذیرش نقش‌های الهام‌بخش؛ شما می‌توانید دیگران را در مسیر پیشرفت ترغیب و حمایت کنید.<br>
-                ۲. همواره در جست‌وجوی پروژه‌ها و چالش‌های تازه باشید تا با انگیزه زیادتان به اوج خرسندی برسید.<br>
-                ۳. مستندسازی و انتشار تجربه‌هایتان در وبلاگ، شبکه‌های اجتماعی یا جلسات انگیزشی، برای گسترش این حس مثبت به دیگران.<br>
-                ۴. حفظ تعادل میان کار و زندگی شخصی، تا تداوم این حس رضایتمندانه را تضمین کنید.<br>
-                ۵. با شرکت در دوره‌های رهبری و مدیریت، مهارت‌های سازماندهی و هدایت تیم‌ها را بیاموزید و به موفقیت‌های بزرگ‌تری برسید.
-            </div>
-        </div>
-    </li>
-</ul>
+            <!-- Testimonials Section -->
+            <section class="content-section test-section" id="testimonials">
+                <div class="content-container">
+                    <!-- توصیه‌نامه‌ها -->
+                    <h2>توصیه‌نامه‌ها</h2>
+                    <div class="testimonial">
+                        <p>"گزارش تحلیل فهرست تشخیص تعاملی هوش موفق به من کمک کرد تا بهتر ویژگی‌های هوش موفق و نقاط قوت و ضعف خود را بشناسم و در مسیر پیشرفت شخصی‌ام گام‌های مؤثرتری بردارم."</p>
+                        <p><strong>- مریم حسینی</strong></p>
+                    </div>
+                    <div class="testimonial">
+                        <p>"نتایج دقیق این آزمون به من امکان داد تا میزان توانمندی‌های تحلیلی و خلاقانه خود را در هوش موفق شناسایی کرده و برای بهبود آن گام‌های مؤثرتری بردارم."</p>
+                        <p><strong>- حسین رضایی</strong></p>
+                    </div>
+                </div>
+            </section>
 
-<!-- ج (توانمندی عملی / کارآمدی در هوش موفق) -->
-<div class="report-component-title">ج 
-    <span class="report-badge report-score-data">#field_1221#<br></span>
-</div>
-<p class="report-paragraph">
-    ج در چهارچوب هوش موفق، بیانگر مهارت کاربردی و توانایی انجام صحیح و دقیق وظایف در زمینه مورد علاقه است. چنین افرادی معمولاً دقت بالایی دارند و تلاش می‌کنند با تمرکز و جدیت، خروجی باکیفیتی ارائه دهند. این ویژگی می‌تواند در محیط‌های تحصیلی و شغلی به موفقیت‌های قابل توجهی منجر شود.
-</p>
-<ul class="report-list">
-    <!-- سطح متوسط ج -->
-    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10223#;">
-        <strong>«متوسط»<br></strong>
-        شما توانایی قابل قبولی در انجام وظایف عملی دارید، اما ممکن است همواره به بالاترین سطح دقت یا کیفیت نرسید. گاه تمرکزتان دچار افت می‌شود یا شرایط محیطی بر عملکردتان تأثیر می‌گذارد.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. ایجاد برنامه مشخص برای انجام کارهای عملی؛ تقسیم وظایف به گام‌های کوچک‌تر می‌تواند تمرکز را بالا ببرد.<br>
-                ۲. درخواست بازخورد از اساتید یا همکاران در مورد کیفیت عملکرد؛ شناسایی نقاط ضعف و تلاش برای بهبود آن‌ها.<br>
-                ۳. تمرین دقت از طریق تمرین‌های ذهنی (مثل حل پازل یا مطالعه روش‌های خطاناپذیری).<br>
-                ۴. آماده‌سازی محیط کار یا تحصیل به شکلی که کمترین حواس‌پرتی ممکن رخ دهد.<br>
-                ۵. ارتقای مهارت‌های فنی و کاربردی مرتبط با رشته یا زمینه علاقه‌تان، برای افزایش اعتمادبه‌نفس عملی.
-            </div>
-        </div>
-    </li>
+            <!-- Call-to-Action Section -->
+            <section class="content-section test-section" id="start-test">
+                <div class="content-container">
+                    <!-- دعوت به اقدام (CTA) -->
+                    <h2>آیا آماده‌اید تا شروع کنید؟</h2>
+                    <p>
+                        با انجام این آزمون، گامی مهم در جهت شناخت بهتر از هوش موفق خود و بهبود مهارت‌ها و عملکرد شخصی‌تان بردارید.
+                    </p>
+                    <div style="text-align: center; margin-top: 20px;">
+                        <a href="/take/fahrest-tashkhis-hoosh-movafaq" class="cta-button">شروع آزمون</a>
+                    </div>
+                </div>
+            </section>
 
-    <!-- سطح خوب ج -->
-    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10223#;">
-        <strong>«خوب»<br></strong>
-        شما در انجام وظایف عملی، از دقت و مسئولیت‌پذیری خوبی برخوردارید و اغلب در تحصیلات یا کار عملی خود موفق عمل می‌کنید. این تعهد و جدیت می‌تواند به دستاوردهای قابل توجهی در بلندمدت منجر شود.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. ادامه تقویت مهارت‌های عملی از طریق شرکت در دوره‌های تخصصی یا مطالعه منابع عملی و کاربردی.<br>
-                ۲. به‌کارگیری روش‌های ارزیابی کیفیت کاری (چک‌لیست یا مستندسازی فرآیند) برای تشخیص نقاط قابل بهبود.<br>
-                ۳. استفاده از تجربیات موفق گذشته برای انگیزه‌بخشی به خود و تعریف اهداف جدید در زمینه مورد علاقه‌تان.<br>
-                ۴. اشتراک‌گذاری نتایج و دستاوردهایتان با دوستان یا همکاران برای یادگیری جمعی و ترویج کار دقیق و منظم.<br>
-                ۵. حفظ روند منظم و جدی خود، در عین اختصاص زمانی به استراحت و سرگرمی برای جلوگیری از فرسودگی.
-            </div>
-        </div>
-    </li>
+            <!-- FAQ Section (Optional) -->
+            <section class="content-section test-section" id="faq">
+                <div class="content-container">
+                    <!-- سوالات متداول -->
+                    <h2>سوالات متداول</h2>
+                    <div class="faq-item">
+                        <h4>آیا این آزمون دقیق است؟</h4>
+                        <p>بله، این آزمون بر اساس روش‌شناسی تحقیقاتی معتبر و تایید شده طراحی شده است تا نتایج دقیق و قابل اعتمادی ارائه دهد.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>آیا این آزمون برای کودکان مناسب است؟</h4>
+                        <p>این آزمون بیشتر برای بزرگسالان و نوجوانان طراحی شده است و ممکن است برای کودکان جوان‌تر مناسب نباشد.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>بعد از انجام آزمون چه اتفاقی می‌افتد؟</h4>
+                        <p>پس از تکمیل آزمون، شما یک گزارش جامع با نتایج و توصیه‌های شخصی دریافت خواهید کرد که می‌توانید آن را مرور کرده و در صورت نیاز، با متخصصین مشورت کنید.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
 
-    <!-- سطح عالی ج -->
-    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10223#;">
-        <strong>«عالی»<br></strong>
-        شما در سطح بالایی از توانمندی عملی و دقت قرار دارید؛ وظایف را با وسواس مثبت و تمرکز بالا انجام می‌دهید و معمولاً خروجی کارتان کم‌نقص و خلاقانه است. این رویکرد شما را به فردی مطمئن و توانمند در هر تیمی تبدیل می‌کند.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. پذیرش پروژه‌ها یا نقش‌هایی که نیازمند کیفیت و دقت بالاست؛ از این طریق می‌توانید سرآمدی خود را نشان دهید.<br>
-                ۲. آموزش و هدایت دیگران در زمینه مهارت‌های عملی و دقت؛ از تجربه‌تان برای ارتقای سطح کل گروه استفاده کنید.<br>
-                ۳. شرکت در مسابقات یا برنامه‌های تخصصی عملی برای به چالش کشیدن توانایی‌ها و رشد بیشتر.<br>
-                ۴. مراقبت از سلامت جسمی و ذهنی؛ دقت بالا نیازمند ذهنی آرام و بدنی سالم است.<br>
-                ۵. توسعه مهارت‌های ارتباطی برای ارائه و نمایش بهتر کارهای باکیفیت شما، تا بیشتر مورد توجه و تقدیر قرار گیرید.
-            </div>
-        </div>
-    </li>
-</ul>
-
-<!-- جدیت در هدفمندی (پشتکار و انگیزه عمیق در هوش موفق) -->
-<div class="report-component-title">جدیت در هدفمندی 
-    <span class="report-badge report-score-data">#field_1223#<br></span>
-</div>
-<p class="report-paragraph">
-    جدیت در هدفمندی بر پشتکار فراوان، اراده بالا و هم‌سویی با اهدافی ارزشمند دلالت دارد. افرادی که امتیاز بالایی در این بخش می‌گیرند، معمولاً با احساس نزدیکی به هدف، از تلاش‌هایشان نتیجه مثبت می‌گیرند و به طور مستمر در پی یافتن راه درست رسیدن به خواسته‌ها هستند.
-</p>
-<ul class="report-list">
-    <!-- سطح متوسط جدیت در هدفمندی -->
-    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10224#;">
-        <strong>«متوسط»<br></strong>
-        شما اغلب برای رسیدن به اهدافتان تلاش می‌کنید و پشتکار نسبتاً خوبی دارید، اما ممکن است مواقعی باشد که خستگی یا تردید بر شما غلبه کند. در این شرایط، اراده‌تان تحت تأثیر قرار می‌گیرد و پیشرفتتان کندتر می‌شود.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. مرور مداوم چشم‌انداز و علت‌های اصلی انتخاب هدف برای تقویت انگیزه در لحظات سخت.<br>
-                ۲. تعیین گام‌های کوتاه‌مدت و قابل دستیابی، تا حس پیشرفت پیوسته حفظ شود.<br>
-                ۳. گفت‌وگو با دوستان یا مربی مورد اعتماد برای دریافت حمایت عاطفی و فکری در زمان افت روحیه.<br>
-                ۴. تنظیم عادت‌های روزانه (مانند بیدار شدن به موقع، ورزش منظم) که به ثبات اراده و پشتکار کمک می‌کنند.<br>
-                ۵. تقویت مهارت تصمیم‌گیری صحیح؛ اراده قوی با انتخاب‌های هوشمندانه تکمیل می‌شود.
-            </div>
-        </div>
-    </li>
-    <!-- سطح خوب جدیت در هدفمندی -->
-    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10224#;">
-        <strong>«خوب»<br></strong>
-        شما پشتکار و انگیزه بالایی دارید و به‌طور مستمر احساس می‌کنید به هدفتان نزدیک‌تر می‌شوید. این رویکرد مثبت موجب می‌شود در اکثر مواقع نتیجه مطلوبی از تلاش‌هایتان بگیرید و احساس رضایت بیشتری را تجربه کنید.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. تعریف اهداف بلندمدت به موازات اهداف کوتاه‌مدت، برای حفظ انگیزه پایدار در مسیر رشد.<br>
-                ۲. به اشتراک‌گذاری داستان موفقیت و تلاش‌های خود با دیگران، تا به آن‌ها الهام ببخشید و خودتان را نیز تشویق کنید.<br>
-                ۳. ادامه تحلیل نتایج و دلایل موفقیت‌ها یا شکست‌های مقطعی، برای یادگیری و بهبود مستمر.<br>
-                ۴. مدیریت زمان و تعیین اولویت‌ها برای اجتناب از درگیری همزمان در فعالیت‌های متعدد و افت تمرکز.<br>
-                ۵. مراقبت از سلامت جسمی و روانی؛ پشتکار بالا بدون استراحت و تفریح کافی می‌تواند منجر به فرسودگی شود.
-            </div>
-        </div>
-    </li>
-    <!-- سطح عالی جدیت در هدفمندی -->
-    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10224#;">
-        <strong>«عالی»<br></strong>
-        شما در بالاترین سطح جدیت در هدفمندی قرار دارید؛ با پشتکار و اراده مثال‌زدنی در راستای اهداف ارزشمندتان قدم برمی‌دارید و از تلاشی که برای رسیدن به موفقیت انجام می‌دهید لذت می‌برید. این ویژگی، محرک قوی‌ای است که می‌تواند شما را به دستاوردهای بزرگی برساند.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. پذیرش نقش راهبری در گروه‌ها یا پروژه‌هایی که نیازمند پایداری و تعهد بالا هستند.<br>
-                ۲. تنظیم چشم‌اندازهای بلندمدت و تفکیک آن‌ها به اهداف مرحله‌ای برای ایجاد درک بهتر از مسیر پیش رو.<br>
-                ۳. آموزش و منتورینگ دیگران در زمینه تعیین هدف و پایبندی به آن؛ شما الگوی بسیار خوبی هستید.<br>
-                ۴. مطالعه و آشنایی با الگوهای ذهنی موفق؛ ممکن است دیدگاه‌های جدیدی در تقویت اراده و مدیریت سختی‌ها بیابید.<br>
-                ۵. حفظ تعادل میان تعهد به هدف و حساسیت به تغییر شرایط؛ گاهی لازم است مسیر را بازبینی یا اصلاح کنید.
-            </div>
-        </div>
-    </li>
-</ul>
-
-
-
-
-                                              
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-
-
-            <div class="report-section-title">جمع‌بندی</div>
-            <div class="report-paragraph">
-            <p>این گزارش ارزیابی مهارت‌های شما شامل تحلیل تعهد، نیرومندی، ظرفیت تحلیلی، بیتابی روانی، استقلال و سازش است. این بررسی نقاط قوت و زمینه‌های نیازمند بهبود شما را نشان داده و توصیه‌های کاربردی برای توسعه مهارت‌های شما ارائه می‌دهد.</p>
-            
-            <p><b>نقاط قوت: </b>شما در برخی از حوزه‌ها عملکرد برجسته‌ای دارید که نشان‌دهنده توانایی‌های قوی در مدیریت مسئولیت‌ها، انرژی بالا، تحلیل مسائل پیچیده، آرامش روانی، خودکفایی و تطبیق‌پذیری است. به عنوان مثال، در حوزه‌های "تعهد" و "ظرفیت تحلیلی"، شما توانایی زیادی در مدیریت وظایف و تحلیل مسائل نشان داده‌اید که می‌تواند به پیشرفت حرفه‌ای و رشد فردی شما کمک کند.</p>
-            
-            <p><b>حوزه‌های نیازمند بهبود:</b> در برخی از بخش‌ها نیاز به تمرکز بیشتر وجود دارد. به عنوان مثال، در حوزه‌های "بیتابی روانی" و "استقلال"، شما می‌توانید با تمرین‌های منظم و فعالیت‌های هدفمند مانند تکنیک‌های مدیریت استرس و برنامه‌ریزی منظم مهارت‌های خود را بهبود بخشید. همچنین، افزایش تعاملات اجتماعی و تمرین مهارت‌های تصمیم‌گیری مستقل می‌تواند تأثیر مثبتی بر عملکرد شما داشته باشد.</p>
-            
-            <p><b>گام‌های بعدی:</b> برای تقویت مهارت‌های خود، پیشنهاد می‌شود که به توصیه‌های ارائه‌شده در هر بخش توجه ویژه‌ای کنید و در صورت نیاز از خدمات مشاوره تخصصی استفاده نمایید. همچنین، ارزیابی منظم و پیگیری مداوم می‌تواند به توسعه پایدار و موفقیت شما در تمامی ابعاد زندگی کمک کند.</p>
-            </div>
-        
-        <footer class="report-footer-custom">
-            <div class="report-footer-content">
-                <img src="../panel/file?type=picture&amp;v=3&amp;mode=filemanager&amp;file=%7eDB3gfQUls%2bt2iiMYKbsRAxrtFhcHKUIUUo7pPtO17bHCzNxwU4zNh3UVor6QMtl7Y6EWX8dD0PSvzZOYkRrXlfejPn4lNTj6" class="report-footer-img" alt="لوگو">
-            </div>
-            <p class="report-footer-paragraph">مؤسّسه تعاملی هیجان اندیشه | تماس: 02188174100 | ایمیل: info@eot.ir</p>
-            <p class="report-footer-paragraph yellow-text">© ۱۴۰۳ تمامی حقوق محفوظ است.</p>
-            <ul class="report-footer-menu">
-                <li><a href="https://www.eot.ir/" class="report-footer-menu-link">صفحه اصلی</a></li>
-                <li><a href="https://www.eot.ir/contact" class="report-footer-menu-link">تماس با ما</a></li>
-                <li><a href="https://www.eot.ir/about" class="report-footer-menu-link">درباره ما</a></li>
-            </ul>
-            <address class="report-footer-address">تهران، سهروردی، خرمشهر، عربعلی، کوچه ششم، شماره ۴۴</address>
+        <!-- Footer -->
+        <footer id="footer" class="footer">
+            <p>&copy; 2025 استعدادیاب. تمامی حقوق محفوظ است.</p>
         </footer>
-    </div>
+
+        <!-- Scripts -->
+        <script src="/assets/js/script.js"></script>
+        <script src="/assets/js/header-footer-inject.js"></script>
+        <script>
+            // FAQ Toggle Script
+            document.querySelectorAll('.faq-item h4').forEach(function(question) {
+                question.addEventListener('click', function() {
+                    const parent = this.parentElement;
+                    parent.classList.toggle('active');
+                });
+            });
+        </script>
+    </body>
+</html>

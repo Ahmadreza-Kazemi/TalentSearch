@@ -1,52 +1,225 @@
-<div class="ravesh-editor-html" style="direction:rtl">
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>گزارش تحلیل فهرست تشخیص تعاملی شخصیت</title>
+    <title>استعدادیاب | معرفی آزمون فهرست تشخیص تعاملی ظرفیتهای شناختی</title>
     <style>
+        /* =======================================================
+           1. Reset and Base Styles
+        ======================================================= */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100%;
+            font-family: 'Vazir', sans-serif;
+            background-color: #FFFFFF;
+            color: #1F3B73;
+            direction: rtl;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            padding-top: 80px;
+            padding-bottom: 60px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #1F3B73;
+            transition: color 0.3s ease-in-out;
+        }
+
+        a:hover,
+        a:focus {
+            color: #F4C553;
+            text-decoration: underline;
+        }
+
+        /* =======================================================
+           2. Font Imports
+        ======================================================= */
+        @font-face {
+            font-family: 'Vazir';
+            src: url('/assets/fonts/Vazir-Regular-UI.woff2') format('woff2'),
+                 url('/assets/fonts/Vazir-Regular-UI.woff') format('woff'),
+                 url('/assets/fonts/Vazir-Regular-UI.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+        }
+
         @font-face {
             font-family: 'IRANSansWeb';
-            src: url('fonts/IRANSansWeb.woff2') format('woff2');
+            src: url('/assets/fonts/IRANSansWeb.woff2') format('woff2');
         }
         @font-face {
             font-family: 'BTitrBold';
-            src: url('fonts/BTitrBold.woff2') format('woff2');
+            src: url('/assets/fonts/BTitrBold.woff2') format('woff2');
         }
         @font-face {
             font-family: 'BKoodakBold';
-            src: url('fonts/BKoodakBold.woff2') format('woff2');
+            src: url('/assets/fonts/BKoodakBold.woff2') format('woff2');
         }
         @font-face {
             font-family: 'BHoma';
-            src: url('fonts/BHoma.woff2') format('woff2');
+            src: url('/assets/fonts/BHoma.woff2') format('woff2');
         }
         @font-face {
             font-family: 'BYekan';
-            src: url('fonts/BYekan.woff2') format('woff2');
+            src: url('/assets/fonts/BYekan.woff2') format('woff2');
         }
         @font-face {
             font-family: 'Tahoma';
-            src: url('fonts/Tahoma.woff2') format('woff2');
+            src: url('/assets/fonts/Tahoma.woff2') format('woff2');
         }
+
+        /* =======================================================
+           3. Typography
+        ======================================================= */
+        h1, h2, h3, h4 {
+            font-family: 'Vazir', sans-serif;
+            color: #1F3B73;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px #F4C553;
+        }
+
+        h2 {
+            font-size: 2em;
+            font-weight: 700;
+            margin-bottom: 24px;
+            text-shadow: 0 0 10px #F4C553;
+            color: #1F3B73;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 1.5em;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #1F3B73;
+            text-align: center;
+        }
+
+        h4 {
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-top: 16px;
+            color: #1F3B73;
+            text-align: center;
+        }
+
+        p {
+            font-size: 1em;
+            max-width: 800px;
+            margin: 0 auto 16px;
+            line-height: 1.6;
+            color: #1F3B73;
+            text-align: justify;
+        }
+
+        ul {
+            max-width: 800px;
+            margin: 0 auto 16px;
+            padding-right: 20px;
+            color: #1F3B73;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* =======================================================
+           4. Hero Section
+        ======================================================= */
+        .hero {
+            height: calc(100vh - 80px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #F0F0F5;
+            padding: 16px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 16px;
+            color: #1F3B73;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            margin-bottom: 24px;
+            color: #1F3B73;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #F4C553;
+            color: #FFFFFF;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 1em;
+            box-shadow: 0 0 10px #FFD77B;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease-in-out,
+                        transform 0.3s ease-in-out,
+                        box-shadow 0.3s ease-in-out;
+        }
+
+        .cta-button:hover,
+        .cta-button:focus {
+            background-color: #4FBDBA;
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px #4FBDBA;
+        }
+
+        /* =======================================================
+           5. Content Sections
+        ======================================================= */
+        .content-section {
+            padding: 60px 16px;
+            background-color: #FFFFFF;
+        }
+
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .content-section:nth-child(even) {
+            background-color: #F9F9F9;
+        }
+
+        /* =======================================================
+           6. Sample Report Section
+        ======================================================= */
+        /* Report Styles */
         .report-container {
             font-family: 'BYekan', sans-serif;
             direction: rtl;
             line-height: 1.8;
             background-color: #F5F5F5;
             color: #333333;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            max-width: 800px;
-            width: 100%;
-            margin: auto;
-            background-color: #F5F5F5;
+            margin: 40px auto;
             padding: 40px;
             box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
             border-radius: 20px;
+            max-width: 800px;
         }
+
         .report-header-custom {
             display: flex;
             align-items: center;
@@ -55,15 +228,18 @@
             background-color: #0DA3B8;
             border-radius: 20px 20px 0 0;
         }
+
         .report-header-inner {
             display: flex;
             align-items: center;
             gap: 20px;
         }
+
         .report-header-img {
             width: 40px;
             height: 40px;
         }
+
         .report-header-title {
             margin: 0;
             font-size: 1.8em;
@@ -71,22 +247,39 @@
             font-family: 'IRANSansWeb', sans-serif;
             font-weight: normal;
         }
+
         .report-header-date {
             color: #ffffff;
             font-size: 1em;
         }
-        .report-title {
-            text-align: center;
-            color: #0DA3B8;
+
+        .report-section-title {
+            font-size: 22px;
+            color: #CC3333;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #CC3333;
             font-family: 'IRANSansWeb', sans-serif;
             font-weight: bold;
-            font-size: 32px;
-            margin-bottom: 25px;
+            text-align: center;
         }
+
+        .report-paragraph {
+            background-color: #E0F7FA;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
         .report-info-container, .report-score-container {
             display: flex;
             flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
         }
+
         .report-info-item, .report-score-item {
             background-color: #F8F9FA;
             padding: 15px;
@@ -99,26 +292,17 @@
             font-family: 'BYekan', sans-serif;
             flex: 1;
             min-width: 300px;
-            margin-right: 10px; /* Add space between columns */
         }
+
         .report-info-item strong, .report-score-item strong {
             color: #0DA3B8;
             font-family: 'IRANSansWeb', sans-serif;
         }
+
         .report-info-data, .report-score-data {
             font-family: 'IRANSansWeb', sans-serif;
         }
-        .report-section-title {
-            font-size: 22px;
-            color: #CC3333;
-            margin-top: 30px;
-            margin-bottom: 10px;
-            padding-bottom: 5px;
-            border-bottom: 1px solid #CC3333;
-            font-family: 'IRANSansWeb', sans-serif;
-            font-weight: bold;
-            text-align: center;
-        }
+
         .report-component-title {
             display: flex;
             justify-content: space-between;
@@ -131,32 +315,7 @@
             border-bottom: 1px solid #DBCF93;
             font-family: 'IRANSansWeb', sans-serif;
         }
-        .report-paragraph {
-            background-color: #E0F7FA;
-            padding: 15px;
-            border-radius: 10px;
-            font-size: 16px;
-            margin-bottom: 20px;
-        }
-        .report-list {
-            list-style-type: none;
-            padding: 0;
-            font-size: 16px;
-        }
-        .report-list-item {
-            background: #F8F9FA;
-            margin-bottom: 10px;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-            display: flex;
-            flex-direction: column;
-        }
-        .report-list-item strong {
-            font-size: 18px;
-            color: #0DA3B8;
-            margin-bottom: 5px;
-        }
+
         .report-badge {
             display: inline-block;
             padding: 8px 15px;
@@ -165,6 +324,7 @@
             background-color: #4A9B8C;
             border-radius: 10px;
         }
+
         .report-recommendation {
             background-color: #EAEAEA;
             padding: 20px;
@@ -176,369 +336,534 @@
             width: 100%;
             box-sizing: border-box;
         }
+
         .report-recommendation-title {
             font-weight: bold;
             color: #CC3333;
             margin-bottom: 5px;
             font-size: 18px;
         }
+
         .report-recommendation-text {
             margin-bottom: 5px;
             line-height: 1.6;
             font-size: 16px;
         }
-        .report-footer-custom {
-            background-color: #F5F5F5;
-            color: #333333;
-            padding: 20px;
-            text-align: center;
-            font-family: 'IRANSansWeb', sans-serif;
-            border-top: 1px solid #E0E0E0;
-            font-size: 16px; /* Increased font size */
-        }
-        .report-footer-content {
-            margin-bottom: 20px;
-        }
-        .report-footer-img {
-            width: 80px;
-            height: 80px;
-        }
-        .report-footer-paragraph {
-            margin: 5px 0;
-        }
-        .report-footer-paragraph.yellow-text {
-            color: #DBCF93;
-        }
-        .report-footer-menu {
-            list-style: none;
+
+        .report-list {
+            list-style-type: none;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin: 10px 0;
+            font-size: 16px;
         }
-        .report-footer-menu-link {
-            color: #0DA3B8;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        .report-footer-menu-link:hover {
-            color: #007B8A;
-        }
-        .report-footer-address {
-            margin-top: 10px;
-            font-size: 14px;
-        }
-        .report-summary-container {
-            max-width: 800px;
-            margin: auto;
-            background-color: #FFFFFF;
-            padding: 40px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+
+        .report-list-item {
+            background: #F8F9FA;
+            margin-bottom: 10px;
+            padding: 15px;
             border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
         }
-        .report-summary-heading {
-            text-align: center;
+
+        .report-list-item strong {
+            font-size: 18px;
             color: #0DA3B8;
-            font-family: 'IRANSansWeb', sans-serif;
-            font-weight: bold;
-            font-size: 32px;
-            margin-bottom: 25px;
+            margin-bottom: 5px;
         }
-        .report-summary-content {
-            color: #333333;
-            font-family: 'IRANSansWeb', sans-serif;
-            line-height: 1.8;
-        }
+
+        /* Report Conditional Display Styles */
         .report-conditional-display {
             display: block;
         }
         .report-conditional-display[style*="--score-rate1: 1"] {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-            border-radius: 10px;
             background-color: #FF9999; /* Moderate */
         }
         .report-conditional-display[style*="--score-rate2: 2"] {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-            border-radius: 10px;
             background-color: #FFD580; /* Good */
         }
         .report-conditional-display[style*="--score-rate3: 3"] {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-            border-radius: 10px;
             background-color: #99FF99; /* Excellent */
         }
+
+        /* =======================================================
+           7. FAQ Section
+        ======================================================= */
+        .faq-item {
+            margin-bottom: 20px;
+        }
+
+        .faq-item h4 {
+            cursor: pointer;
+            position: relative;
+        }
+
+        .faq-item h4::after {
+            content: '+';
+            position: absolute;
+            left: -20px;
+            top: 0;
+            font-size: 1.5em;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active h4::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-item p {
+            display: none;
+            margin-top: 10px;
+        }
+
+        .faq-item.active p {
+            display: block;
+        }
     </style>
-    <div class="report-report-container">
-        <header class="report-header-custom">
-            <div class="report-header-inner">
-                <img src="../panel/file?type=picture&amp;v=3&amp;mode=filemanager&amp;file=%7eDB3gfQUls%2bt2iiMYKbsRAxrtFhcHKUIUUo7pPtO17bHCzNxwU4zNh3UVor6QMtl7Y6EWX8dD0PSvzZOYkRrXlfejPn4lNTj6" class="report-header-img" alt="لوگو">
-                <h1 class="report-header-title">گزارش تحلیل فهرست تشخیص تعاملی شخصیت</h1>
+</head>
+<body>
+    <header class="header">
+        <!-- می‌توانید محتوای سربرگ را اینجا اضافه کنید -->
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>فهرست تشخیص تعاملی ظرفیتهای شناختی</h1>
+                <p>تحلیل و بررسی ظرفیت‌های شناختی فرد برای توسعه توانمندی‌های تحلیلی</p>
+                <a href="/take/fahrest-tashkhis-tamarkobi-zarfiat-tahlili-shenakhti" class="cta-button">شروع آزمون</a>
             </div>
-            <div class="report-header-date">تاریخ اجرا: #primary_createDate#</div>
-        </header>
-        
-        <div class="report-section-title">فهرست تشخیص تعاملی شخصیت</div>
-        <p class="report-paragraph">
-            این ارزیابی به منظور تحلیل و بررسی ویژگی‌های شخصیتی فرد در حوزه‌های مختلف از جمله تعهد، نیرومندی، ظرفیت تحلیلی، بیتابی روانی، استقلال و سازش انجام شده است. هدف از این ارزیابی شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد.
-        </p><p></p>
-               
-        <div class="report-section-title">اطلاعات فردی</div>
-        <div class="report-info-container">
-            <div class="report-info-item"><strong>نام:</strong> <span class="report-info-data">#field_349#</span></div>
-            <div class="report-info-item"><strong>نام خانوادگی:</strong> <span class="report-info-data">#field_1712#</span></div>
-            <div class="report-info-item"><strong>موبایل:</strong> <span class="report-info-data">#field_350#</span></div>
-            <div class="report-info-item"><strong>ایمیل:</strong> <span class="report-info-data">#field_351#</span></div></div>
+        </section>
 
-        </div>
-        <div class="report-section-title">نتیجه</div>
-        <div class="report-score-container">
-            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10263#;"><strong>الف:</strong> <span class="report-badge">#field_6070#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10263#;"><strong>الف:</strong> <span class="report-badge">#field_6070#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10263#;"><strong>الف:</strong> <span class="report-badge">#field_6070#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10264#;"><strong>ب:</strong> <span class="report-badge">#field_6071#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10264#;"><strong>ب:</strong> <span class="report-badge">#field_6071#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10264#;"><strong>ب:</strong> <span class="report-badge">#field_6071#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10265#;"><strong>ج:</strong> <span class="report-badge">#field_6072#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10265#;"><strong>ج:</strong> <span class="report-badge">#field_6072#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10265#;"><strong>ج:</strong> <span class="report-badge">#field_6072#</span></div>
-
-        </div>
-        <div class="report-section-title">تفسیر</div>
-        <p class="report-paragraph">
-            این بخش به تحلیل و تفسیر نتایج ارزیابی روان‌شناختی فرد می‌پردازد. تحلیل روان‌شناختی شامل بررسی ویژگی‌های شخصیتی مختلف است. هدف از این تحلیل شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد. نتایج این تحلیل می‌تواند به فرد کمک کند تا با شناخت بهتر از خود، برنامه‌های توسعه فردی و حرفه‌ای موثرتری را دنبال کند.
-        </p>
-
-
-
-        
-
-
-
-                                              
-        
-
-<!-- الف (توانمندی تحلیلی و سازماندهی مفاهیم در حوزه شناختی) -->
-<div class="report-component-title">الف
-    <span class="report-badge report-score-data">#field_6070#<br></span>
-</div>
-<p class="report-paragraph">
-    الف در حوزه ظرفیت‌های شناختی، نشان‌دهنده توانایی فرد در تحلیل و ریشه‌یابی مفاهیم، طبقه‌بندی تخصصی و سازماندهی اطلاعات است. کسانی که در این بخش نمره بالاتری می‌گیرند، معمولاً می‌توانند راهکارهای نوآورانه در این زمینه ارائه دهند و به سادگی در انجام کارهای پیچیده، ایده‌های جدید و برجسته‌ای خلق کنند.
-</p>
-<ul class="report-list">
-    <!-- سطح متوسط الف -->
-    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10263#;">
-        <strong>«متوسط»<br></strong>
-        شما تا حدی توانایی تشخیص الگوها، ریشه‌یابی مفاهیم و سازماندهی مطالب را دارید، اما شاید همیشه ایده‌های جدید یا طرح‌های نوآورانه را به راحتی ارائه ندهید. گاهی نیز در مواجهه با مفاهیم پیچیده، به زمان بیشتری برای تحلیل نیاز دارید.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. تمرین مداوم با مسائل تحلیلی و شرکت در مباحث گروهی برای ارتقای مهارت ریشه‌یابی و نظم فکری.<br>
-                ۲. استفاده از ابزارهای مدیریت دانش (مانند نقشه‌های ذهنی) برای سازماندهی بهتر ایده‌ها.<br>
-                ۳. تعیین اهداف کوتاه‌مدت در زمینه یادگیری و ارائه مدل‌های تحلیلی، تا پیشرفت خود را قابل مشاهده کنید.<br>
-                ۴. همفکری و تبادل تجربه با افراد خلاق و متخصص برای آشنایی با رویکردهای نوین و جرقه ایده‌های تازه.<br>
-                ۵. مستندسازی فرآیندهای تحلیلی و مرور آن‌ها برای شناسایی نقاط قوت و خلأهای احتمالی.
+        <!-- Test Purpose Section -->
+        <section class="content-section test-section" id="test-purpose">
+            <div class="content-container">
+                <!-- هدف از آزمون -->
+                <h2>هدف از آزمون</h2>
+                <p>
+                    این آزمون برای سنجش و تحلیل ظرفیت‌های شناختی فرد در حوزه‌های مختلف طراحی شده است. هدف اصلی این آزمون شناسایی نقاط قوت و زمینه‌های نیازمند بهبود در روان فرد است تا بتواند در مسیر توسعه ظرفیت تحلیلی شناختی خود گام‌های موثری بردارد.
+                </p>
             </div>
-        </div>
-    </li>
+        </section>
 
-    <!-- سطح خوب الف -->
-    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10263#;">
-        <strong>«خوب»<br></strong>
-        شما از توانایی تحلیلی قابل توجهی برخوردار هستید و می‌توانید به راحتی مفاهیم را طبقه‌بندی و ریشه‌یابی کرده، مدل‌های خلاقانه‌ای در این زمینه ارائه دهید. این مهارت شما را در حل مسائل پیچیده یاری می‌دهد و جایگاه مناسبی در فعالیت‌های تخصصی به شما می‌بخشد.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. ادامه تمرین تفکر ساختاریافته؛ استفاده از روش‌های تحلیل داده و نقشه‌های ذهنی برای مسائل پیچیده‌تر.<br>
-                ۲. به اشتراک‌گذاری مدل‌های تحلیلی یا طبقه‌بندی‌های جدیدتان در کارگاه‌ها یا جمع‌های تخصصی برای دریافت بازخورد و گسترش دیدگاهتان.<br>
-                ۳. تشویق خود به آزمایش شیوه‌های تازه در تحلیل مفاهیم؛ مثلاً ترکیب چند روش سنتی و مدرن برای بهبود مدل‌های موجود.<br>
-                ۴. افزایش دامنه حوزه‌های تخصصی؛ آشنایی با رشته‌های مرتبط می‌تواند دیدتان را گسترده‌تر سازد و ایده‌های نو ایجاد کند.<br>
-                ۵. هدایت پروژه‌های نیازمند تفکر تحلیلی قوی؛ نقش رهبری در این بخش می‌تواند مهارت‌هایتان را پررنگ‌تر نمایان کند.
+        <!-- Key Features Section -->
+        <section class="content-section test-section" id="key-features">
+            <div class="content-container">
+                <!-- ویژگی‌های کلیدی آزمون -->
+                <h2>ویژگی‌های کلیدی آزمون</h2>
+                <ul>
+                    <li><strong>زمینه‌های ارزیابی:</strong> استنتاج تجربی، ریشه یابی تجربی، ظرفیت تحلیلی</li>
+                    <li><strong>زمان مورد نیاز:</strong> 20 دقیقه</li>
+                    <li><strong>دسترسی:</strong> آنلاین و حضوری</li>
+                    <li><strong>نوع گزارش:</strong> گزارش جامع با نمودارها و توصیه‌های عملی</li>
+                </ul>
             </div>
-        </div>
-    </li>
+        </section>
 
-    <!-- سطح عالی الف -->
-    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10263#;">
-        <strong>«عالی»<br></strong>
-        شما در بالاترین سطح از توانمندی تحلیلی و سازماندهی مفاهیم قرار دارید. به سادگی قادر هستید مدل‌های تخصصی ارائه دهید، در ریشه‌یابی مطالب عمیق شوید و شیوه‌های نوین طبقه‌بندی یا ارائه کارهای برجسته را خلق کنید.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. هدایت پروژه‌های پژوهشی یا تخصصی بزرگ که نیازمند قدرت بالای تحلیلی و مدل‌سازی مفاهیم هستند.<br>
-                ۲. مستندسازی نوآوری‌ها و طبقه‌بندی‌های جدیدتان و به اشتراک‌گذاری آن‌ها در مقالات علمی یا سمینارهای تخصصی.<br>
-                ۳. تشویق دیگران به یادگیری روش‌های تحلیلی نوآورانه؛ شما می‌توانید با نقش منتور، جامعه را از تجربه‌تان بهره‌مند سازید.<br>
-                ۴. همکاری با تیم‌های بین‌رشته‌ای برای ایجاد تلفیقی از روش‌های تحلیلی که منجر به راه‌حل‌های بدیع‌تر شود.<br>
-                ۵. تداوم یادگیری و رصد فناوری‌ها و متدهای نوین؛ حتی در اوج هم می‌توان روش‌های جدیدی برای بهبود و ارتقا پیدا کرد.
+        <!-- Benefits Section -->
+        <section class="content-section test-section" id="benefits">
+            <div class="content-container">
+                <!-- مزایای شرکت در این آزمون -->
+                <h2>مزایای شرکت در این آزمون</h2>
+                <ul>
+                    <li>افزایش خودآگاهی و شناخت بهتر از توانایی‌های تحلیلی</li>
+                    <li>بهبود مهارت‌های حل مسئله و تصمیم‌گیری</li>
+                    <li>شناسایی نقاط قوت و ضعف تحلیلی شناختی</li>
+                    <li>حمایت از رشد شخصی و حرفه‌ای</li>
+                    <li>افزایش عملکرد در محیط‌های کاری و آموزشی</li>
+                </ul>
             </div>
-        </div>
-    </li>
-</ul>
+        </section>
 
-<!-- ب (تمایل به تجربه عملی و خلاقیت در کارهای نو) -->
-<div class="report-component-title">ب
-    <span class="report-badge report-score-data">#field_6071#<br></span>
-</div>
-<p class="report-paragraph">
-    ب در این چارچوب، نشان‌دهنده روحیه خلاقیت و تجربه‌گرایی فرد در حوزه شناختی است؛ کسانی که در این بخش نمره بالاتر می‌گیرند، معمولاً تمایل شدیدی به آزمایش آموخته‌ها و کشف روش‌های جدید دارند. این ویژگی به آن‌ها کمک می‌کند در دنیای پرتحول امروز، راه‌حل‌های خلاقانه و کارآمد ارائه دهند.
-</p>
-<ul class="report-list">
-
-    <!-- سطح متوسط ب -->
-    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10264#;">
-        <strong>«متوسط»<br></strong>
-        شما تا حدی علاقمند به تجربه مفاهیم و کارهای جدید هستید، اما ممکن است همیشه این شور و کنجکاوی را به مرحله عمل نرسانید. گاهی تأیید و صحت آموزه‌هایتان را پیش از تجربه مستقیم می‌پذیرید و شاید به‌اندازه کافی جسارت نوآوری به خرج ندهید.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. ایجاد فضای امن فکری که بتوانید بدون ترس از شکست، دست به تجربه و آزمون ایده‌های جدید بزنید.<br>
-                ۲. ارتباط با افراد خلاق و علاقه‌مند به ایده‌پردازی؛ این تبادل انرژی می‌تواند انگیزه تجربه‌گرایی شما را بالا ببرد.<br>
-                ۳. تعیین پروژه‌های کوچک خانگی یا تحصیلی برای آزمایش تئوری‌های آموخته شده به شکل عملی.<br>
-                ۴. همگام شدن با رویدادها و نشست‌های نوآوری یا طراحی؛ جایی که جسارت خلاق می‌تواند تقویت شود.<br>
-                ۵. ثبت نتایج و تحلیل فرایند هر تجربه عملی، برای یادگیری بیشتر از موفقیت‌ها و شکست‌ها.
+        <!-- How It Works Section -->
+        <section class="content-section test-section" id="how-it-works">
+            <div class="content-container">
+                <!-- نحوه انجام آزمون -->
+                <h2>نحوه انجام آزمون</h2>
+                <p>
+                    آزمون فهرست تشخیص تعاملی ظرفیتهای شناختی شامل مراحل زیر است:
+                </p>
+                <ul>
+                    <li><strong>گام اول:</strong> تکمیل پرسشنامه آنلاین به مدت 20 دقیقه</li>
+                    <li><strong>گام دوم:</strong> دریافت گزارش تحلیلی جامع با نتایج و توصیه‌ها</li>
+                    <li><strong>گام سوم:</strong> بررسی نتایج و در صورت نیاز، مشاوره با متخصصین</li>
+                </ul>
             </div>
-        </div>
-    </li>
+        </section>
 
-    <!-- سطح خوب ب -->
-    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10264#;">
-        <strong>«خوب»<br></strong>
-        شما اشتیاق شدیدی به کسب تجربه مستقیم در مفاهیم تخصصی دارید و از کارهای نو و ابتکاری لذت می‌برید. این سطح از تجربه‌گرایی و جنب‌وجوش کنجکاوانه نشان می‌دهد شما همواره به دنبال تازه‌کردن دانش و مهارت‌های خود هستید.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. توسعه پروژه‌های نوآورانه با شدت بیشتر؛ می‌توانید روی ایده‌هایی تمرکز کنید که قابلیت تحول در کار یا رشته تحصیلی‌تان را داشته باشد.<br>
-                ۲. دعوت از دوستان و همکاران برای مشارکت در آزمایش‌های گروهی؛ ایده‌های شما در محیط تعاملی می‌تواند بارورتر شوند.<br>
-                ۳. مستندسازی کامل فرایندها و نتایج هر تجربه، تا بتوانید دانش نوین ایجاد کنید و انتقال دهید.<br>
-                ۴. نگاه به حاشیه‌های علمی؛ گاهی مطالعه در حوزه‌های پیرامونی یا بین‌رشته‌ای منجر به جرقه‌های نو می‌شود.<br>
-                ۵. استمرار ارزیابی تجربه‌های خود و بازنگری مداوم برای اصلاح یا ارتقای شیوه‌های عملی‌سازی ایده‌ها.
+        <!-- Who Should Take This Test Section -->
+        <section class="content-section test-section" id="who-should-take">
+            <div class="content-container">
+                <!-- چه کسانی باید این آزمون را انجام دهند؟ -->
+                <h2>چه کسانی باید این آزمون را انجام دهند؟</h2>
+                <ul>
+                    <li>افرادی که به دنبال شناخت بهتر از توانایی‌های تحلیلی خود هستند</li>
+                    <li>مدیران و کارمندان که به دنبال بهبود مهارت‌های تحلیل و تصمیم‌گیری خود هستند</li>
+                    <li>مشاوران و روانشناسان برای پشتیبانی از مشتریان خود</li>
+                    <li>سازمان‌ها و شرکت‌ها برای ارزیابی و بهبود ظرفیت تحلیلی تیم‌های کاری</li>
+                    <li>دانشجویان و دانش‌آموزانی که به دنبال ارتقاء مهارت‌های تحلیلی شناختی هستند</li>
+                </ul>
             </div>
-        </div>
-    </li>
+        </section>
 
-    <!-- سطح عالی ب -->
-    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10264#;">
-        <strong>«عالی»<br></strong>
-        شما در اوج تمایل به تجربه هستید؛ رویدادها و مفاهیم جدید را بلافاصله به آزمون می‌گذارید و به کمک جسارت نوآورانه‌تان، کارهای تازه و متفاوتی ارائه می‌دهید. این رویکرد شما را به فردی خلاق و پویا تبدیل کرده که همیشه به دنبال تغییرات مفید در تخصص خود است.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. هدایت پروژه‌های تحقیقاتی یا خلاقانه که نیازمند سطح بالایی از تجربه‌گرایی هستند؛ شما انگیزه مضاعفی به تیم می‌دهید.<br>
-                ۲. انتقال شور و اشتیاق به دیگران از طریق برگزاری جلسات ایده‌پردازی یا کارگاه‌های عملی؛ الهام‌بخش دیگران باشید.<br>
-                ۳. ایجاد شبکه همکاری با متخصصانی که توانایی تکمیل دیدگاه‌ها و ایده‌های نوآورانه شما را دارند.<br>
-                ۴. فراگیری مهارت‌های مدیریت ریسک؛ چراکه تجربه‌گرایی بالا همواره نیازمند پیشگیری منطقی از خطرات است.<br>
-                ۵. شرکت در رویدادهای بین‌المللی و جشنواره‌های نوآوری برای توسعه ایده‌ها و آشنایی با افکار و اختراعات روز دنیا.
+        <!-- Sample Report Section -->
+        <section class="content-section test-section" id="sample-report">
+            <div class="content-container">
+                <!-- نمونه گزارش -->
+                <h2>نمونه گزارش</h2>
+                <p>
+                    در ادامه یک نمونه از گزارش فهرست تشخیص تعاملی ظرفیتهای شناختی را مشاهده می‌کنید:
+                </p>
+                <div class="report-container">
+                    <header class="report-header-custom">
+                        <div class="report-header-inner">
+                            <img src="../panel/file?type=picture&amp;v=3&amp;mode=filemanager&amp;file=%7eDB3gfQUls%2bt2iiMYKbsRAxrtFhcHKUIUUo7pPtO17bHCzNxwU4zNh3UVor6QMtl7Y6EWX8dD0PSvzZOYkRrXlfejPn4lNTj6" class="report-header-img" alt="لوگو">
+                            <h1 class="report-header-title">گزارش تحلیل فهرست تشخیص تعاملی ظرفیتهای شناختی</h1>
+                        </div>
+                        <div class="report-header-date">تاریخ اجرا: #primary_createDate#</div>
+                    </header>
+                    <div class="report-section-title">فهرست تشخیص تعاملی ظرفیتهای شناختی</div>
+                    <p class="report-paragraph">
+                        این ارزیابی به منظور تحلیل و بررسی ظرفیت‌های شناختی فرد در حوزه‌های مختلف از جمله توانمندی تحلیلی و سازماندهی مفاهیم، اطلاعات فردی و نتیجه‌گیری انجام شده است. هدف از این ارزیابی شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد.
+                    </p>
+                    <div class="report-section-title">اطلاعات فردی</div>
+                    <div class="report-info-container">
+                        <div class="report-info-item"><strong>نام:</strong> <span class="report-info-data">#field_6028#</span></div>
+                        <div class="report-info-item"><strong>نام خانوادگی:</strong> <span class="report-info-data">#field_6029#</span></div>
+                        <div class="report-info-item"><strong>موبایل:</strong> <span class="report-info-data">#field_6031#</span></div>
+                        <div class="report-info-item"><strong>ایمیل:</strong> <span class="report-info-data">#field_6030#</span></div>
+                    </div>
+                    <div class="report-section-title">نتیجه</div>
+                    <div class="report-score-container">
+                        <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10263#;"><strong>الف:</strong> <span class="report-badge">#field_6070#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10263#;"><strong>الف:</strong> <span class="report-badge">#field_6070#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10263#;"><strong>الف:</strong> <span class="report-badge">#field_6070#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10264#;"><strong>ب:</strong> <span class="report-badge">#field_6071#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10264#;"><strong>ب:</strong> <span class="report-badge">#field_6071#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10264#;"><strong>ب:</strong> <span class="report-badge">#field_6071#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10265#;"><strong>ج:</strong> <span class="report-badge">#field_6072#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10265#;"><strong>ج:</strong> <span class="report-badge">#field_6072#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10265#;"><strong>ج:</strong> <span class="report-badge">#field_6072#</span></div>
+                    </div>
+                    <div class="report-section-title">تفسیر</div>
+                    <p class="report-paragraph">
+                        این بخش به تحلیل و تفسیر نتایج ارزیابی ظرفیت‌های شناختی فرد می‌پردازد. تحلیل ظرفیت‌های شناختی شامل بررسی توانمندی‌های تحلیلی، سازماندهی مفاهیم و اطلاعات فردی است. هدف از این تحلیل شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد. نتایج این تحلیل می‌تواند به فرد کمک کند تا با شناخت بهتر از توانمندی‌های خود، برنامه‌های توسعه فردی و حرفه‌ای موثرتری را دنبال کند. توصیه‌ها شامل تمرین مداوم با مسائل تحلیلی، استفاده از ابزارهای مدیریت دانش، تعیین اهداف کوتاه‌مدت، همفکری با افراد خلاق و مستندسازی فرآیندهای تحلیلی می‌باشد.
+                    </p>
+
+                    <!-- الف (توانمندی تحلیلی و سازماندهی مفاهیم در حوزه شناختی) -->
+                    <div class="report-component-title">الف
+                        <span class="report-badge report-score-data">#field_6070#<br></span>
+                    </div>
+                    <p class="report-paragraph">
+                        الف در حوزه ظرفیت‌های شناختی، نشان‌دهنده توانایی فرد در تحلیل و ریشه‌یابی مفاهیم، طبقه‌بندی تخصصی و سازماندهی اطلاعات است. کسانی که در این بخش نمره بالاتری می‌گیرند، معمولاً می‌توانند راهکارهای نوآورانه در این زمینه ارائه دهند و به سادگی در انجام کارهای پیچیده، ایده‌های جدید و برجسته‌ای خلق کنند.
+                    </p>
+                    <ul class="report-list">
+                        <!-- سطح متوسط الف -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10263#;">
+                            <strong>«متوسط»<br></strong>
+                            شما تا حدی توانایی تشخیص الگوها، ریشه‌یابی مفاهیم و سازماندهی مطالب را دارید، اما شاید همیشه ایده‌های جدید یا طرح‌های نوآورانه را به راحتی ارائه ندهید. گاهی نیز در مواجهه با مفاهیم پیچیده، به زمان بیشتری برای تحلیل نیاز دارید.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. تمرین مداوم با مسائل تحلیلی و شرکت در مباحث گروهی برای ارتقای مهارت ریشه‌یابی و نظم فکری.<br>
+                                    ۲. استفاده از ابزارهای مدیریت دانش (مانند نقشه‌های ذهنی) برای سازماندهی بهتر ایده‌ها.<br>
+                                    ۳. تعیین اهداف کوتاه‌مدت در زمینه یادگیری و ارائه مدل‌های تحلیلی، تا پیشرفت خود را قابل مشاهده کنید.<br>
+                                    ۴. همفکری و تبادل تجربه با افراد خلاق و متخصص برای آشنایی با رویکردهای نوین و جرقه ایده‌های تازه.<br>
+                                    ۵. مستندسازی فرآیندهای تحلیلی و مرور آن‌ها برای شناسایی نقاط قوت و خلأهای احتمالی.
+                                </div>
+                            </div>
+                        </li>
+                        <!-- سطح خوب الف -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10263#;">
+                            <strong>«خوب»<br></strong>
+                            شما از توانایی تحلیلی قابل توجهی برخوردار هستید و می‌توانید به راحتی مفاهیم را طبقه‌بندی و ریشه‌یابی کرده، مدل‌های خلاقانه‌ای در این زمینه ارائه دهید. این مهارت شما را در حل مسائل پیچیده یاری می‌دهد و جایگاه مناسبی در فعالیت‌های تخصصی به شما می‌بخشد.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. ادامه تمرین تفکر ساختاریافته؛ استفاده از روش‌های تحلیل داده و نقشه‌های ذهنی برای مسائل پیچیده‌تر.<br>
+                                    ۲. به اشتراک‌گذاری مدل‌های تحلیلی یا طبقه‌بندی‌های جدیدتان در کارگاه‌ها یا جمع‌های تخصصی برای دریافت بازخورد و گسترش دیدگاهتان.<br>
+                                    ۳. تشویق خود به آزمایش شیوه‌های تازه در تحلیل مفاهیم؛ مثلاً ترکیب چند روش سنتی و مدرن برای بهبود مدل‌های موجود.<br>
+                                    ۴. افزایش دامنه حوزه‌های تخصصی؛ آشنایی با رشته‌های مرتبط می‌تواند دیدتان را گسترده‌تر سازد و ایده‌های نو ایجاد کند.<br>
+                                    ۵. هدایت پروژه‌های نیازمند تفکر تحلیلی قوی؛ نقش رهبری در این بخش می‌تواند مهارت‌هایتان را پررنگ‌تر نمایان کند.
+                                </div>
+                            </div>
+                        </li>
+                        <!-- سطح عالی الف -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10263#;">
+                            <strong>«عالی»<br></strong>
+                            شما در بالاترین سطح از توانمندی تحلیلی و سازماندهی مفاهیم قرار دارید. به سادگی قادر هستید مدل‌های تخصصی ارائه دهید، در ریشه‌یابی مطالب عمیق شوید و شیوه‌های نوین طبقه‌بندی یا ارائه کارهای برجسته را خلق کنید.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. هدایت پروژه‌های پژوهشی یا تخصصی بزرگ که نیازمند قدرت بالای تحلیلی و مدل‌سازی مفاهیم هستند.<br>
+                                    ۲. مستندسازی نوآوری‌ها و طبقه‌بندی‌های جدیدتان و به اشتراک‌گذاری آن‌ها در مقالات علمی یا سمینارهای تخصصی.<br>
+                                    ۳. تشویق دیگران به یادگیری روش‌های تحلیلی نوآورانه؛ شما می‌توانید با نقش منتور، جامعه را از تجربه‌تان بهره‌مند سازید.<br>
+                                    ۴. همکاری با تیم‌های بین‌رشته‌ای برای ایجاد تلفیقی از روش‌های تحلیلی که منجر به راه‌حل‌های بدیع‌تر شود.<br>
+                                    ۵. تداوم یادگیری و رصد فناوری‌ها و متدهای نوین؛ حتی در اوج هم می‌توان روش‌های جدیدی برای بهبود و ارتقا پیدا کرد.
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <!-- ب (تمایل به تجربه عملی و خلاقیت در کارهای نو) -->
+                    <div class="report-component-title">ب
+                        <span class="report-badge report-score-data">#field_6071#<br></span>
+                    </div>
+                    <p class="report-paragraph">
+                        ب در این چارچوب، نشان‌دهنده روحیه خلاقیت و تجربه‌گرایی فرد در حوزه شناختی است؛ کسانی که در این بخش نمره بالاتر می‌گیرند، معمولاً تمایل شدیدی به آزمایش آموخته‌ها و کشف روش‌های جدید دارند. این ویژگی به آن‌ها کمک می‌کند در دنیای پرتحول امروز، راه‌حل‌های خلاقانه و کارآمد ارائه دهند.
+                    </p>
+                    <ul class="report-list">
+                        <!-- سطح متوسط ب -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10264#;">
+                            <strong>«متوسط»<br></strong>
+                            شما تا حدی علاقمند به تجربه مفاهیم و کارهای جدید هستید، اما ممکن است همیشه این شور و کنجکاوی را به مرحله عمل نرسانید. گاهی تأیید و صحت آموزه‌هایتان را پیش از تجربه مستقیم می‌پذیرید و شاید به‌اندازه کافی جسارت نوآوری به خرج ندهید.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. ایجاد فضای امن فکری که بتوانید بدون ترس از شکست، دست به تجربه و آزمون ایده‌های جدید بزنید.<br>
+                                    ۲. ارتباط با افراد خلاق و علاقه‌مند به ایده‌پردازی؛ این تبادل انرژی می‌تواند انگیزه تجربه‌گرایی شما را بالا ببرد.<br>
+                                    ۳. تعیین پروژه‌های کوچک خانگی یا تحصیلی برای آزمایش تئوری‌های آموخته شده به شکل عملی.<br>
+                                    ۴. همگام شدن با رویدادها و نشست‌های نوآوری یا طراحی؛ جایی که جسارت خلاق می‌تواند تقویت شود.<br>
+                                    ۵. ثبت نتایج و تحلیل فرایند هر تجربه عملی، تا بتوانید دانش نوین ایجاد کنید و انتقال دهید.
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- سطح خوب ب -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10264#;">
+                            <strong>«خوب»<br></strong>
+                            شما اشتیاق شدیدی به کسب تجربه مستقیم در مفاهیم تخصصی دارید و از کارهای نو و ابتکاری لذت می‌برید. این سطح از تجربه‌گرایی و جنب‌وجوش کنجکاوانه نشان می‌دهد شما همواره به دنبال تازه‌کردن دانش و مهارت‌های خود هستید.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. توسعه پروژه‌های نوآورانه با شدت بیشتر؛ می‌توانید روی ایده‌هایی تمرکز کنید که قابلیت تحول در کار یا رشته تحصیلی‌تان را داشته باشد.<br>
+                                    ۲. دعوت از دوستان و همکاران برای مشارکت در آزمایش‌های گروهی؛ ایده‌های شما در محیط تعاملی می‌تواند بارورتر شوند.<br>
+                                    ۳. مستندسازی کامل فرایندها و نتایج هر تجربه، تا بتوانید دانش نوین ایجاد کنید و انتقال دهید.<br>
+                                    ۴. نگاه به حاشیه‌های علمی؛ گاهی مطالعه در حوزه‌های پیرامونی یا بین‌رشته‌ای منجر به جرقه‌های نو می‌شود.<br>
+                                    ۵. استمرار ارزیابی تجربه‌های خود و بازنگری مداوم برای اصلاح یا ارتقای شیوه‌های عملی‌سازی ایده‌ها.
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- سطح عالی ب -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10264#;">
+                            <strong>«عالی»<br></strong>
+                            شما در اوج تمایل به تجربه هستید؛ رویدادها و مفاهیم جدید را بلافاصله به آزمون می‌گذارید و به کمک جسارت نوآورانه‌تان، کارهای تازه و متفاوتی ارائه می‌دهید. این رویکرد شما را به فردی خلاق و پویا تبدیل کرده که همیشه به دنبال تغییرات مفید در تخصص خود است.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. هدایت پروژه‌های تحقیقاتی یا خلاقانه که نیازمند قدرت بالای تجربه‌گرایی هستند؛ شما انگیزه مضاعفی به تیم می‌دهید.<br>
+                                    ۲. انتقال شور و اشتیاق به دیگران از طریق برگزاری جلسات ایده‌پردازی یا کارگاه‌های عملی؛ الهام‌بخش دیگران باشید.<br>
+                                    ۳. ایجاد شبکه همکاری با متخصصانی که توانایی تکمیل دیدگاه‌ها و ایده‌های نوآورانه شما را دارند.<br>
+                                    ۴. فراگیری مهارت‌های مدیریت ریسک؛ چراکه تجربه‌گرایی بالا ممکن است همراه با پیشگیری منطقی از خطرات باشد.<br>
+                                    ۵. شرکت در رویدادهای بین‌المللی و جشنواره‌های نوآوری برای توسعه ایده‌ها و آشنایی با افکار و اختراعات روز دنیا.
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <!-- ج (توانمندی اجرایی و پشتکار در انجام وظایف یادگیری) -->
+                    <div class="report-component-title">ج
+                        <span class="report-badge report-score-data">#field_6072#<br></span>
+                    </div>
+                    <p class="report-paragraph">
+                        ج در این زمینه، بیانگر توانایی فرد در عملی‌کردن آنچه می‌آموزد و انجام دقیق و درست وظایف محوله است. کسانی که در این بعد نمره بالاتری کسب می‌کنند، نه‌تنها در زمینه تحصیلی موفق‌ترند، بلکه در پروژه‌های عملی یا واحدهای درسی همواره پشتکار، دقت و مهارت قابل توجهی نشان می‌دهند.
+                    </p>
+                    <ul class="report-list">
+                        <!-- سطح متوسط ج -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10265#;">
+                            <strong>«متوسط»<br></strong>
+                            شما تا حد مطلوبی می‌توانید آموخته‌هایتان را به عمل درآورید، اما شاید در همه موارد با دقت بالا یا پشتکار شدید عمل نکنید. گاهی ممکن است انگیزه لازم برای تداوم تلاش دقیق و پیوسته در این زمینه را از دست بدهید.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. تعیین برنامه روزانه یا هفتگی برای اجرای آموخته‌ها؛ تقسیم کارهای بزرگ به گام‌های قابل مدیریت باعث حفظ انگیزه می‌شود.<br>
+                                    ۲. بررسی مداوم نقطه‌ضعف‌ها و تلاش برای رفع آن‌ها از طریق تمرین منظم یا استفاده از راهنمایی متخصصان.<br>
+                                    ۳. گروه‌بندی یا همکاری با افرادی که در کارهای عملی توانمندند؛ یادگیری تیمی اغلب باعث بهبود تلاش و دقت می‌شود.<br>
+                                    ۴. پاداش‌دهی به خود پس از اتمام موفق هریک از وظایف عملی، تا اشتیاقتان را برای کارهای بعدی بالا نگه دارید.<br>
+                                    ۵. یادداشت و بررسی اشتباهات؛ هر خطا فرصتی برای یادگیری مهارت‌های جدید و بهبود کارآمدی است.
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- سطح خوب ج -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10265#;">
+                            <strong>«خوب»<br></strong>
+                            شما توانمندی قابل توجهی در عملی‌کردن آموخته‌ها دارید؛ وظایف محوله را به‌خوبی انجام می‌دهید و در واحدهای عملی (تحصیلی یا شغلی) معمولاً موفق ظاهر می‌شوید. این رویکرد مسئولانه نشانگر پشتکار و دقت شما در پیگیری اهداف است.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. حفظ روند فعلی با ارائه ساختار منظم در کارها؛ مثلاً تهیه چک‌لیست هنگام انجام پروژه‌های عملی بزرگ.<br>
+                                    ۲. کمک به دیگران در انجام وظایفشان؛ نقش منتور یا دستیار فنی می‌تواند مهارت اجرایی شما را بیشتر نمایان کند.<br>
+                                    ۳. ارتقای مهارت‌های حرفه‌ای یا عملی از طریق کارگاه‌ها و دوره‌های تخصصی پیشرفته.<br>
+                                    ۴. ایجاد تنوع در وظایف؛ چالش‌های جدید و متفاوت می‌تواند انگیزه بالای شما را حفظ کند و از روزمرگی جلوگیری شود.<br>
+                                    ۵. در صورت موفقیت در یک زمینه خاص، بررسی پتانسیل گسترش آن به حیطه‌های مشابه یا مرتبط.
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- سطح عالی ج -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10265#;">
+                            <strong>«عالی»<br></strong>
+                            شما در بالاترین سطح ظرفیت تحلیلی و سازماندهی مفاهیم قرار دارید؛ توانایی فوق‌العاده‌ای در تحلیل دقیق و استخراج نتایج منطقی از داده‌ها و تجربیات دارید. این ویژگی به شما امکان می‌دهد تا به عنوان یک متخصص در حوزه تحلیل شناخته شوید و نقش‌های کلیدی در تصمیم‌گیری‌های استراتژیک سازمان ایفا کنید.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. پذیرش نقش‌های رهبری در پروژه‌های تحلیل داده‌های بزرگ و پیچیده.<br>
+                                    ۲. توسعه و بهبود روش‌های تحلیلی از طریق تحقیق و نوآوری.<br>
+                                    ۳. انتشار نتایج تحلیل‌های خود در مجلات تخصصی یا کنفرانس‌ها.<br>
+                                    ۴. راه‌اندازی و هدایت تیم‌های تخصصی تحلیل داده برای بهبود فرآیندهای سازمانی.<br>
+                                    ۵. آموزش و مشاوره به دیگران در زمینه تکنیک‌های پیشرفته تجزیه و تحلیل.
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <!-- ج (توانمندی اجرایی و پشتکار در انجام وظایف یادگیری) -->
+                    <div class="report-component-title">ج
+                        <span class="report-badge report-score-data">#field_6072#<br></span>
+                    </div>
+                    <p class="report-paragraph">
+                        ج در این زمینه، بیانگر توانایی فرد در عملی‌کردن آنچه می‌آموزد و انجام دقیق و درست وظایف محوله است. کسانی که در این بعد نمره بالاتری کسب می‌کنند، نه‌تنها در زمینه تحصیلی موفق‌ترند، بلکه در پروژه‌های عملی یا واحدهای درسی همواره پشتکار، دقت و مهارت قابل توجهی نشان می‌دهند.
+                    </p>
+                    <ul class="report-list">
+                        <!-- سطح متوسط ج -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10265#;">
+                            <strong>«متوسط»<br></strong>
+                            شما تا حد مطلوبی می‌توانید آموخته‌هایتان را به عمل درآورید، اما شاید در همه موارد با دقت بالا یا پشتکار شدید عمل نکنید. گاهی ممکن است انگیزه لازم برای تداوم تلاش دقیق و پیوسته در این زمینه را از دست بدهید.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. تعیین برنامه روزانه یا هفتگی برای اجرای آموخته‌ها؛ تقسیم کارهای بزرگ به گام‌های قابل مدیریت باعث حفظ انگیزه می‌شود.<br>
+                                    ۲. بررسی مداوم نقطه‌ضعف‌ها و تلاش برای رفع آن‌ها از طریق تمرین منظم یا استفاده از راهنمایی متخصصان.<br>
+                                    ۳. گروه‌بندی یا همکاری با افرادی که در کارهای عملی توانمندند؛ یادگیری تیمی اغلب باعث بهبود تلاش و دقت می‌شود.<br>
+                                    ۴. پاداش‌دهی به خود پس از اتمام موفق هریک از وظایف عملی، تا اشتیاقتان را برای کارهای بعدی بالا نگه دارید.<br>
+                                    ۵. یادداشت و بررسی اشتباهات؛ هر خطا فرصتی برای یادگیری مهارت‌های جدید و بهبود کارآمدی است.
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- سطح خوب ج -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10265#;">
+                            <strong>«خوب»<br></strong>
+                            شما توانمندی قابل توجهی در عملی‌کردن آموخته‌ها دارید؛ وظایف محوله را به‌خوبی انجام می‌دهید و در واحدهای عملی (تحصیلی یا شغلی) معمولاً موفق ظاهر می‌شوید. این رویکرد مسئولانه نشانگر پشتکار و دقت شما در پیگیری اهداف است.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. حفظ روند فعلی با ارائه ساختار منظم در کارها؛ مثلاً تهیه چک‌لیست هنگام انجام پروژه‌های عملی بزرگ.<br>
+                                    ۲. کمک به دیگران در انجام وظایفشان؛ نقش منتور یا دستیار فنی می‌تواند مهارت اجرایی شما را بیشتر نمایان کند.<br>
+                                    ۳. ارتقای مهارت‌های حرفه‌ای یا عملی از طریق کارگاه‌ها و دوره‌های تخصصی پیشرفته.<br>
+                                    ۴. ایجاد تنوع در وظایف؛ چالش‌های جدید و متفاوت می‌تواند انگیزه بالای شما را حفظ کند و از روزمرگی جلوگیری شود.<br>
+                                    ۵. در صورت موفقیت در یک زمینه خاص، بررسی پتانسیل گسترش آن به حیطه‌های مشابه یا مرتبط.
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- سطح عالی ج -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10265#;">
+                            <strong>«عالی»<br></strong>
+                            شما در بالاترین سطح ظرفیت اجرایی و پشتکار قرار دارید؛ آنچه یاد می‌گیرید را با دقت بالا و به‌درستی به مرحله عمل می‌رسانید. این رویکرد باعث می‌شود در پروژه‌های عملی و تحصیلی درخشیده و نقش‌های قابل توجهی در تیم‌ها ایفا کنید.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. پذیرش مسئولیت‌های بزرگ‌تر یا پیچیده‌تر که نیازمند پشتکار و دقت بالاست؛ از این طریق مهارتتان را کاملاً شکوفا خواهید کرد.<br>
+                                    ۲. نقش مربی یا سرپرست در تیم‌های عملی برای هدایت و هم‌افزایی گروهی؛ تجربه شما می‌تواند برای دیگران آموزنده باشد.<br>
+                                    ۳. نگارش گزارش‌های دقیق از فرایند اجرای پروژه‌ها؛ این کار به حفظ دانش سازمانی و انتقال تجربه‌های ارزشمندتان کمک می‌کند.<br>
+                                    ۴. مراقبت از توازن میان کار و استراحت؛ پشتکار بالا ممکن است منجر به خستگی مفرط شود اگر استراحت را نادیده بگیرید.<br>
+                                    ۵. توسعه شبکه حرفه‌ای؛ ارتباط با متخصصان هم‌سطح یا بالاتر از شما می‌تواند دانش عملی و کیفیت کارتان را ارتقا دهد.
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </li>
-</ul>
+        </section>
 
-<!-- ج (توانمندی اجرایی و پشتکار در انجام وظایف یادگیری) -->
-<div class="report-component-title">ج
-    <span class="report-badge report-score-data">#field_6072#<br></span>
-</div>
-<p class="report-paragraph">
-    ج در این زمینه، بیانگر توانایی فرد در عملی‌کردن آنچه می‌آموزد و انجام دقیق و درست وظایف محوله است. کسانی که در این بعد نمره بالاتری کسب می‌کنند، نه‌تنها در زمینه تحصیلی موفق‌ترند، بلکه در پروژه‌های عملی یا واحدهای درسی همواره پشتکار، دقت و مهارت قابل توجهی نشان می‌دهند.
-</p>
-<ul class="report-list">
-    <!-- سطح متوسط ج -->
-    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10265#;">
-        <strong>«متوسط»<br></strong>
-        شما تا حد مطلوبی می‌توانید آموخته‌هایتان را به عمل درآورید، اما شاید در همه موارد با دقت بالا یا پشتکار شدید عمل نکنید. گاهی ممکن است انگیزه لازم برای تداوم تلاش دقیق و پیوسته در این زمینه را از دست بدهید.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. تعیین برنامه روزانه یا هفتگی برای اجرای آموخته‌ها؛ تقسیم کارهای بزرگ به گام‌های قابل مدیریت باعث حفظ انگیزه می‌شود.<br>
-                ۲. بررسی مداوم نقطه‌ضعف‌ها و تلاش برای رفع آن‌ها از طریق تمرین منظم یا استفاده از راهنمایی متخصصان.<br>
-                ۳. گروه‌بندی یا همکاری با افرادی که در کارهای عملی توانمندند؛ یادگیری تیمی اغلب باعث بهبود تلاش و دقت می‌شود.<br>
-                ۴. پاداش‌دهی به خود پس از اتمام موفق هریک از وظایف عملی، تا اشتیاقتان را برای کارهای بعدی بالا نگه دارید.<br>
-                ۵. یادداشت و بررسی اشتباهات؛ هر خطا فرصتی برای یادگیری مهارت‌های جدید و بهبود کارآمدی است.
+        <!-- Credentials and Validity Section -->
+        <section class="content-section test-section" id="credentials">
+            <div class="content-container">
+                <!-- اعتبار و صحت آزمون -->
+                <h2>اعتبار و صحت آزمون</h2>
+                <p>
+                    آزمون فهرست تشخیص تعاملی ظرفیتهای شناختی بر اساس روش‌شناسی تحقیقاتی معتبر و تایید شده توسط متخصصین روانشناسی طراحی شده است. این آزمون توسط دانشگاه‌ها و سازمان‌های معتبر روانشناسی مورد تأیید و توصیه قرار گرفته است.
+                </p>
+                <ul>
+                    <li>روش‌شناسی تحقیقاتی مبتنی بر مطالعات علمی روز</li>
+                    <li>تأییدیه سازمان‌های معتبر روانشناسی</li>
+                    <li>پشتیبانی توسط تیم متخصصین و روانشناسان خبره</li>
+                </ul>
             </div>
-        </div>
-    </li>
+        </section>
 
-    <!-- سطح خوب ج -->
-    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10265#;">
-        <strong>«خوب»<br></strong>
-        شما توانمندی قابل توجهی در عملی‌کردن آموخته‌ها دارید؛ وظایف محوله را به‌خوبی انجام می‌دهید و در واحدهای عملی (تحصیلی یا شغلی) معمولاً موفق ظاهر می‌شوید. این رویکرد مسئولانه نشانگر پشتکار و دقت شما در پیگیری اهداف است.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. حفظ روند فعلی با ارائه ساختار منظم در کارها؛ مثلاً تهیه چک‌لیست هنگام انجام پروژه‌های عملی بزرگ.<br>
-                ۲. کمک به دیگران در انجام وظایفشان؛ نقش منتور یا دستیار فنی می‌تواند مهارت اجرایی شما را بیشتر نمایان کند.<br>
-                3. ارتقای مهارت‌های حرفه‌ای یا عملی از طریق کارگاه‌ها و دوره‌های تخصصی پیشرفته.<br>
-                4. ایجاد تنوع در وظایف؛ چالش‌های جدید و متفاوت می‌تواند انگیزه بالای شما را حفظ کند و از روزمرگی جلوگیری شود.<br>
-                5. در صورت موفقیت در یک زمینه خاص، بررسی پتانسیل گسترش آن به حیطه‌های مشابه یا مرتبط.
+        <!-- Testimonials Section -->
+        <section class="content-section test-section" id="testimonials">
+            <div class="content-container">
+                <!-- توصیه‌نامه‌ها -->
+                <h2>توصیه‌نامه‌ها</h2>
+                <div class="testimonial">
+                    <p>"آزمون فهرست تشخیص تعاملی ظرفیتهای شناختی به من کمک کرد تا بهتر خودم را بشناسم و در مسیر توسعه مهارت‌های تحلیلی‌ام قدم‌های موثرتری بردارم."</p>
+                    <p><strong>- نرگس موسوی</strong></p>
+                </div>
+                <div class="testimonial">
+                    <p>"گزارش دقیق این آزمون به من امکان داد تا نقاط قوت و ضعف خود را شناسایی کنم و برای بهبود مهارت‌هایم برنامه‌ریزی کنم."</p>
+                    <p><strong>- امیرحسین رضایی</strong></p>
+                </div>
             </div>
-        </div>
-    </li>
+        </section>
 
-    <!-- سطح عالی ج -->
-    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10265#;">
-        <strong>«عالی»<br></strong>
-        شما در اوج توانمندی اجرایی و پشتکار قرار دارید؛ آنچه یاد می‌گیرید را با دقت بالا و به‌درستی به مرحله عمل می‌رسانید. این رویکرد باعث می‌شود در پروژه‌های عملی و تحصیلی درخشیده و نقش قابل توجهی در تیم‌ها ایفا کنید.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. پذیرش مسئولیت‌های بزرگ‌تر یا پیچیده‌تر که نیازمند پشتکار و دقت بالاست؛ از این طریق مهارتتان را کاملاً شکوفا خواهید کرد.<br>
-                ۲. نقش مربی یا سرپرست در تیم‌های عملی برای هدایت و هم‌افزایی گروهی؛ تجربه شما می‌تواند برای دیگران آموزنده باشد.<br>
-                3. نگارش گزارش‌های دقیق از فرایند اجرای پروژه‌ها؛ این کار به حفظ دانش سازمانی و انتقال تجربه‌های ارزشمندتان کمک می‌کند.<br>
-                4. مراقبت از توازن میان کار و استراحت؛ پشتکار بالا ممکن است منجر به خستگی مفرط شود اگر استراحت را نادیده بگیرید.<br>
-                5. توسعه شبکه حرفه‌ای؛ ارتباط با متخصصان هم‌سطح یا بالاتر از شما می‌تواند دانش عملی و کیفیت کارتان را ارتقا دهد.
+        <!-- Call-to-Action Section -->
+        <section class="content-section test-section" id="start-test">
+            <div class="content-container">
+                <!-- دعوت به اقدام (CTA) -->
+                <h2>آیا آماده‌اید تا شروع کنید؟</h2>
+                <p>
+                    با انجام این آزمون، گامی مهم در جهت شناخت بهتر از خود و توسعه ظرفیت تحلیلی شناختی‌تان بردارید.
+                </p>
+                <div style="text-align: center; margin-top: 20px;">
+                    <a href="/take/fahrest-tashkhis-tamarkobi-zarfiat-tahlili-shenakhti" class="cta-button">شروع آزمون</a>
+                </div>
             </div>
-        </div>
-    </li>
-</ul>
+        </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-
-
-            <div class="report-section-title">جمع‌بندی</div>
-            <div class="report-paragraph">
-            <p>این گزارش ارزیابی مهارت‌های شما شامل تحلیل تعهد، نیرومندی، ظرفیت تحلیلی، بیتابی روانی، استقلال و سازش است. این بررسی نقاط قوت و زمینه‌های نیازمند بهبود شما را نشان داده و توصیه‌های کاربردی برای توسعه مهارت‌های شما ارائه می‌دهد.</p>
-            
-            <p><b>نقاط قوت: </b>شما در برخی از حوزه‌ها عملکرد برجسته‌ای دارید که نشان‌دهنده توانایی‌های قوی در مدیریت مسئولیت‌ها، انرژی بالا، تحلیل مسائل پیچیده، آرامش روانی، خودکفایی و تطبیق‌پذیری است. به عنوان مثال، در حوزه‌های "تعهد" و "ظرفیت تحلیلی"، شما توانایی زیادی در مدیریت وظایف و تحلیل مسائل نشان داده‌اید که می‌تواند به پیشرفت حرفه‌ای و رشد فردی شما کمک کند.</p>
-            
-            <p><b>حوزه‌های نیازمند بهبود:</b> در برخی از بخش‌ها نیاز به تمرکز بیشتر وجود دارد. به عنوان مثال، در حوزه‌های "بیتابی روانی" و "استقلال"، شما می‌توانید با تمرین‌های منظم و فعالیت‌های هدفمند مانند تکنیک‌های مدیریت استرس و برنامه‌ریزی منظم مهارت‌های خود را بهبود بخشید. همچنین، افزایش تعاملات اجتماعی و تمرین مهارت‌های تصمیم‌گیری مستقل می‌تواند تأثیر مثبتی بر عملکرد شما داشته باشد.</p>
-            
-            <p><b>گام‌های بعدی:</b> برای تقویت مهارت‌های خود، پیشنهاد می‌شود که به توصیه‌های ارائه‌شده در هر بخش توجه ویژه‌ای کنید و در صورت نیاز از خدمات مشاوره تخصصی استفاده نمایید. همچنین، ارزیابی منظم و پیگیری مداوم می‌تواند به توسعه پایدار و موفقیت شما در تمامی ابعاد زندگی کمک کند.</p>
+        <!-- FAQ Section (Optional) -->
+        <section class="content-section test-section" id="faq">
+            <div class="content-container">
+                <!-- سوالات متداول -->
+                <h2>سوالات متداول</h2>
+                <div class="faq-item">
+                    <h4>آیا این آزمون دقیق است؟</h4>
+                    <p>بله، این آزمون بر اساس روش‌شناسی تحقیقاتی معتبر و تایید شده طراحی شده است تا نتایج دقیق و قابل اعتمادی ارائه دهد.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>آیا این آزمون برای کودکان مناسب است؟</h4>
+                    <p>این آزمون بیشتر برای بزرگسالان و نوجوانان طراحی شده است و ممکن است برای کودکان جوان‌تر مناسب نباشد.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>بعد از انجام آزمون چه اتفاقی می‌افتد؟</h4>
+                    <p>پس از تکمیل آزمون، شما یک گزارش جامع با نتایج و توصیه‌های شخصی دریافت خواهید کرد که می‌توانید آن را مرور کرده و در صورت نیاز، با متخصصین مشورت کنید.</p>
+                </div>
             </div>
-        
-        <footer class="report-footer-custom">
-            <div class="report-footer-content">
-                <img src="../panel/file?type=picture&amp;v=3&amp;mode=filemanager&amp;file=%7eDB3gfQUls%2bt2iiMYKbsRAxrtFhcHKUIUUo7pPtO17bHCzNxwU4zNh3UVor6QMtl7Y6EWX8dD0PSvzZOYkRrXlfejPn4lNTj6" class="report-footer-img" alt="لوگو">
-            </div>
-            <p class="report-footer-paragraph">مؤسّسه تعاملی هیجان اندیشه | تماس: 02188174100 | ایمیل: info@eot.ir</p>
-            <p class="report-footer-paragraph yellow-text">© ۱۴۰۳ تمامی حقوق محفوظ است.</p>
-            <ul class="report-footer-menu">
-                <li><a href="https://www.eot.ir/" class="report-footer-menu-link">صفحه اصلی</a></li>
-                <li><a href="https://www.eot.ir/contact" class="report-footer-menu-link">تماس با ما</a></li>
-                <li><a href="https://www.eot.ir/about" class="report-footer-menu-link">درباره ما</a></li>
-            </ul>
-            <address class="report-footer-address">تهران، سهروردی، خرمشهر، عربعلی، کوچه ششم، شماره ۴۴</address>
-        </footer>
-    </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer">
+        <!-- Content injected via scripts -->
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/assets/js/script.js"></script>
+    <script src="/assets/js/header-footer-inject.js"></script>
+    <script>
+        // FAQ Toggle Script
+        document.querySelectorAll('.faq-item h4').forEach(function(question) {
+            question.addEventListener('click', function() {
+                const parent = this.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

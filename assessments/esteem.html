@@ -1,52 +1,225 @@
-<div class="ravesh-editor-html" style="direction:rtl">
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>گزارش تحلیل فهرست تشخیص تعاملی شخصیت</title>
+    <title>استعدادیاب | معرفی آزمون فهرست تشخیص تعاملی ارجمندی</title>
     <style>
+        /* =======================================================
+           1. Reset and Base Styles
+        ======================================================= */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100%;
+            font-family: 'Vazir', sans-serif;
+            background-color: #FFFFFF;
+            color: #1F3B73;
+            direction: rtl;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            padding-top: 80px;
+            padding-bottom: 60px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #1F3B73;
+            transition: color 0.3s ease-in-out;
+        }
+
+        a:hover,
+        a:focus {
+            color: #F4C553;
+            text-decoration: underline;
+        }
+
+        /* =======================================================
+           2. Font Imports
+        ======================================================= */
+        @font-face {
+            font-family: 'Vazir';
+            src: url('/assets/fonts/Vazir-Regular-UI.woff2') format('woff2'),
+                 url('/assets/fonts/Vazir-Regular-UI.woff') format('woff'),
+                 url('/assets/fonts/Vazir-Regular-UI.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+        }
+
         @font-face {
             font-family: 'IRANSansWeb';
-            src: url('fonts/IRANSansWeb.woff2') format('woff2');
+            src: url('/assets/fonts/IRANSansWeb.woff2') format('woff2');
         }
         @font-face {
             font-family: 'BTitrBold';
-            src: url('fonts/BTitrBold.woff2') format('woff2');
+            src: url('/assets/fonts/BTitrBold.woff2') format('woff2');
         }
         @font-face {
             font-family: 'BKoodakBold';
-            src: url('fonts/BKoodakBold.woff2') format('woff2');
+            src: url('/assets/fonts/BKoodakBold.woff2') format('woff2');
         }
         @font-face {
             font-family: 'BHoma';
-            src: url('fonts/BHoma.woff2') format('woff2');
+            src: url('/assets/fonts/BHoma.woff2') format('woff2');
         }
         @font-face {
             font-family: 'BYekan';
-            src: url('fonts/BYekan.woff2') format('woff2');
+            src: url('/assets/fonts/BYekan.woff2') format('woff2');
         }
         @font-face {
             font-family: 'Tahoma';
-            src: url('fonts/Tahoma.woff2') format('woff2');
+            src: url('/assets/fonts/Tahoma.woff2') format('woff2');
         }
+
+        /* =======================================================
+           3. Typography
+        ======================================================= */
+        h1, h2, h3, h4 {
+            font-family: 'Vazir', sans-serif;
+            color: #1F3B73;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px #F4C553;
+        }
+
+        h2 {
+            font-size: 2em;
+            font-weight: 700;
+            margin-bottom: 24px;
+            text-shadow: 0 0 10px #F4C553;
+            color: #1F3B73;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 1.5em;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #1F3B73;
+            text-align: center;
+        }
+
+        h4 {
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-top: 16px;
+            color: #1F3B73;
+            text-align: center;
+        }
+
+        p {
+            font-size: 1em;
+            max-width: 800px;
+            margin: 0 auto 16px;
+            line-height: 1.6;
+            color: #1F3B73;
+            text-align: justify;
+        }
+
+        ul {
+            max-width: 800px;
+            margin: 0 auto 16px;
+            padding-right: 20px;
+            color: #1F3B73;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* =======================================================
+           4. Hero Section
+        ======================================================= */
+        .hero {
+            height: calc(100vh - 80px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #F0F0F5;
+            padding: 16px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 16px;
+            color: #1F3B73;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            margin-bottom: 24px;
+            color: #1F3B73;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #F4C553;
+            color: #FFFFFF;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 1em;
+            box-shadow: 0 0 10px #FFD77B;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease-in-out,
+                        transform 0.3s ease-in-out,
+                        box-shadow 0.3s ease-in-out;
+        }
+
+        .cta-button:hover,
+        .cta-button:focus {
+            background-color: #4FBDBA;
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px #4FBDBA;
+        }
+
+        /* =======================================================
+           5. Content Sections
+        ======================================================= */
+        .content-section {
+            padding: 60px 16px;
+            background-color: #FFFFFF;
+        }
+
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .content-section:nth-child(even) {
+            background-color: #F9F9F9;
+        }
+
+        /* =======================================================
+           6. Sample Report Section
+        ======================================================= */
+        /* Report Styles */
         .report-container {
             font-family: 'BYekan', sans-serif;
             direction: rtl;
             line-height: 1.8;
             background-color: #F5F5F5;
             color: #333333;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            max-width: 800px;
-            width: 100%;
-            margin: auto;
-            background-color: #F5F5F5;
+            margin: 40px auto;
             padding: 40px;
             box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
             border-radius: 20px;
+            max-width: 800px;
         }
+
         .report-header-custom {
             display: flex;
             align-items: center;
@@ -55,15 +228,18 @@
             background-color: #0DA3B8;
             border-radius: 20px 20px 0 0;
         }
+
         .report-header-inner {
             display: flex;
             align-items: center;
             gap: 20px;
         }
+
         .report-header-img {
             width: 40px;
             height: 40px;
         }
+
         .report-header-title {
             margin: 0;
             font-size: 1.8em;
@@ -71,22 +247,39 @@
             font-family: 'IRANSansWeb', sans-serif;
             font-weight: normal;
         }
+
         .report-header-date {
             color: #ffffff;
             font-size: 1em;
         }
-        .report-title {
-            text-align: center;
-            color: #0DA3B8;
+
+        .report-section-title {
+            font-size: 22px;
+            color: #CC3333;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #CC3333;
             font-family: 'IRANSansWeb', sans-serif;
             font-weight: bold;
-            font-size: 32px;
-            margin-bottom: 25px;
+            text-align: center;
         }
+
+        .report-paragraph {
+            background-color: #E0F7FA;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
         .report-info-container, .report-score-container {
             display: flex;
             flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
         }
+
         .report-info-item, .report-score-item {
             background-color: #F8F9FA;
             padding: 15px;
@@ -99,26 +292,17 @@
             font-family: 'BYekan', sans-serif;
             flex: 1;
             min-width: 300px;
-            margin-right: 10px; /* Add space between columns */
         }
+
         .report-info-item strong, .report-score-item strong {
             color: #0DA3B8;
             font-family: 'IRANSansWeb', sans-serif;
         }
+
         .report-info-data, .report-score-data {
             font-family: 'IRANSansWeb', sans-serif;
         }
-        .report-section-title {
-            font-size: 22px;
-            color: #CC3333;
-            margin-top: 30px;
-            margin-bottom: 10px;
-            padding-bottom: 5px;
-            border-bottom: 1px solid #CC3333;
-            font-family: 'IRANSansWeb', sans-serif;
-            font-weight: bold;
-            text-align: center;
-        }
+
         .report-component-title {
             display: flex;
             justify-content: space-between;
@@ -131,32 +315,7 @@
             border-bottom: 1px solid #DBCF93;
             font-family: 'IRANSansWeb', sans-serif;
         }
-        .report-paragraph {
-            background-color: #E0F7FA;
-            padding: 15px;
-            border-radius: 10px;
-            font-size: 16px;
-            margin-bottom: 20px;
-        }
-        .report-list {
-            list-style-type: none;
-            padding: 0;
-            font-size: 16px;
-        }
-        .report-list-item {
-            background: #F8F9FA;
-            margin-bottom: 10px;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-            display: flex;
-            flex-direction: column;
-        }
-        .report-list-item strong {
-            font-size: 18px;
-            color: #0DA3B8;
-            margin-bottom: 5px;
-        }
+
         .report-badge {
             display: inline-block;
             padding: 8px 15px;
@@ -165,6 +324,7 @@
             background-color: #4A9B8C;
             border-radius: 10px;
         }
+
         .report-recommendation {
             background-color: #EAEAEA;
             padding: 20px;
@@ -176,433 +336,546 @@
             width: 100%;
             box-sizing: border-box;
         }
+
         .report-recommendation-title {
             font-weight: bold;
             color: #CC3333;
             margin-bottom: 5px;
             font-size: 18px;
         }
+
         .report-recommendation-text {
             margin-bottom: 5px;
             line-height: 1.6;
             font-size: 16px;
         }
-        .report-footer-custom {
-            background-color: #F5F5F5;
-            color: #333333;
-            padding: 20px;
-            text-align: center;
-            font-family: 'IRANSansWeb', sans-serif;
-            border-top: 1px solid #E0E0E0;
-            font-size: 16px; /* Increased font size */
-        }
-        .report-footer-content {
-            margin-bottom: 20px;
-        }
-        .report-footer-img {
-            width: 80px;
-            height: 80px;
-        }
-        .report-footer-paragraph {
-            margin: 5px 0;
-        }
-        .report-footer-paragraph.yellow-text {
-            color: #DBCF93;
-        }
-        .report-footer-menu {
-            list-style: none;
+
+        .report-list {
+            list-style-type: none;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin: 10px 0;
+            font-size: 16px;
         }
-        .report-footer-menu-link {
-            color: #0DA3B8;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        .report-footer-menu-link:hover {
-            color: #007B8A;
-        }
-        .report-footer-address {
-            margin-top: 10px;
-            font-size: 14px;
-        }
-        .report-summary-container {
-            max-width: 800px;
-            margin: auto;
-            background-color: #FFFFFF;
-            padding: 40px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+
+        .report-list-item {
+            background: #F8F9FA;
+            margin-bottom: 10px;
+            padding: 15px;
             border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
         }
-        .report-summary-heading {
-            text-align: center;
+
+        .report-list-item strong {
+            font-size: 18px;
             color: #0DA3B8;
-            font-family: 'IRANSansWeb', sans-serif;
-            font-weight: bold;
-            font-size: 32px;
-            margin-bottom: 25px;
+            margin-bottom: 5px;
         }
-        .report-summary-content {
-            color: #333333;
-            font-family: 'IRANSansWeb', sans-serif;
-            line-height: 1.8;
-        }
+
+        /* Report Conditional Display Styles */
         .report-conditional-display {
             display: block;
         }
         .report-conditional-display[style*="--score-rate1: 1"] {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-            border-radius: 10px;
             background-color: #FF9999; /* Moderate */
         }
         .report-conditional-display[style*="--score-rate2: 2"] {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-            border-radius: 10px;
             background-color: #FFD580; /* Good */
         }
         .report-conditional-display[style*="--score-rate3: 3"] {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-            border-radius: 10px;
             background-color: #99FF99; /* Excellent */
         }
+
+        /* =======================================================
+           7. FAQ Section
+        ======================================================= */
+        .faq-item {
+            margin-bottom: 20px;
+        }
+
+        .faq-item h4 {
+            cursor: pointer;
+            position: relative;
+        }
+
+        .faq-item h4::after {
+            content: '+';
+            position: absolute;
+            left: -20px;
+            top: 0;
+            font-size: 1.5em;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active h4::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-item p {
+            display: none;
+            margin-top: 10px;
+        }
+
+        .faq-item.active p {
+            display: block;
+        }
+
+        /* =======================================================
+           8. Testimonials Section
+        ======================================================= */
+        .testimonial {
+            background-color: #F8F9FA;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+            font-style: italic;
+        }
+
+        .testimonial p strong {
+            font-style: normal;
+        }
     </style>
-    <div class="report-report-container">
-        <header class="report-header-custom">
-            <div class="report-header-inner">
-                <img src="../panel/file?type=picture&amp;v=3&amp;mode=filemanager&amp;file=%7eDB3gfQUls%2bt2iiMYKbsRAxrtFhcHKUIUUo7pPtO17bHCzNxwU4zNh3UVor6QMtl7Y6EWX8dD0PSvzZOYkRrXlfejPn4lNTj6" class="report-header-img" alt="لوگو">
-                <h1 class="report-header-title">گزارش تحلیل فهرست تشخیص تعاملی شخصیت</h1>
+</head>
+<body>
+    <header class="header">
+        <!-- می‌توانید محتوای سربرگ را اینجا اضافه کنید -->
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>فهرست تشخیص تعاملی ارجمندی</h1>
+                <p>تحلیل و بررسی ویژگی‌های شخصیتی فرد برای توسعه توانمندی‌های ارجمندی</p>
+                <a href="/take/fahrest-tashkhis-tamarkobi-argejmandi" class="cta-button">شروع آزمون</a>
             </div>
-            <div class="report-header-date">تاریخ اجرا: #primary_createDate#</div>
-        </header>
-        
-        <div class="report-section-title">فهرست تشخیص تعاملی شخصیت</div>
-        <p class="report-paragraph">
-            این ارزیابی به منظور تحلیل و بررسی ویژگی‌های شخصیتی فرد در حوزه‌های مختلف از جمله تعهد، نیرومندی، ظرفیت تحلیلی، بیتابی روانی، استقلال و سازش انجام شده است. هدف از این ارزیابی شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد.
-        </p><p></p>
-               
-        <div class="report-section-title">اطلاعات فردی</div>
-        <div class="report-info-container">
-            <div class="report-info-item"><strong>نام:</strong> <span class="report-info-data">#field_349#</span></div>
-            <div class="report-info-item"><strong>نام خانوادگی:</strong> <span class="report-info-data">#field_1712#</span></div>
-            <div class="report-info-item"><strong>موبایل:</strong> <span class="report-info-data">#field_350#</span></div>
-            <div class="report-info-item"><strong>ایمیل:</strong> <span class="report-info-data">#field_351#</span></div></div>
+        </section>
 
-        </div>
-        <div class="report-section-title">نتیجه</div>
-        <div class="report-score-container">
-            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10243#;"><strong>بالندگی:</strong> <span class="report-badge">#field_5358#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10243#;"><strong>بالندگی:</strong> <span class="report-badge">#field_5358#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10243#;"><strong>بالندگی:</strong> <span class="report-badge">#field_5358#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10244#;"><strong>خودکامیابی:</strong> <span class="report-badge">#field_5359#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10244#;"><strong>خودکامیابی:</strong> <span class="report-badge">#field_5359#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10244#;"><strong>خودکامیابی:</strong> <span class="report-badge">#field_5359#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10245#;"><strong>درست زیستی:</strong> <span class="report-badge">#field_5360#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10245#;"><strong>درست زیستی:</strong> <span class="report-badge">#field_5360#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10245#;"><strong>درست زیستی:</strong> <span class="report-badge">#field_5360#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10246#;"><strong>وجاهت:</strong> <span class="report-badge">#field_5361#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10246#;"><strong>وجاهت:</strong> <span class="report-badge">#field_5361#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10246#;"><strong>وجاهت:</strong> <span class="report-badge">#field_5361#</span></div>
-
-        </div>
-        <div class="report-section-title">تفسیر</div>
-        <p class="report-paragraph">
-            این بخش به تحلیل و تفسیر نتایج ارزیابی روان‌شناختی فرد می‌پردازد. تحلیل روان‌شناختی شامل بررسی ویژگی‌های شخصیتی مختلف است. هدف از این تحلیل شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد. نتایج این تحلیل می‌تواند به فرد کمک کند تا با شناخت بهتر از خود، برنامه‌های توسعه فردی و حرفه‌ای موثرتری را دنبال کند.
-        </p>
-
-
-
-        
-
-
-
-                                              
-        
-<!-- بالندگی (حس رشد و پویایی فردی) -->
-<div class="report-component-title">بالندگی 
-    <span class="report-badge report-score-data">#field_5358#<br></span>
-</div>
-<p class="report-paragraph">
-    بالندگی در مفهوم «عزت‌نفس و ارزشمندی روان‌شناختی» به معنای احساس رشد درونی، پویایی و هدفمندی است. افرادی که در این زمینه نمره بالاتری کسب می‌کنند، باور دارند که مسیر زندگی‌شان دارای معنا و جهت مشخصی است و دیدگاه‌هایشان از سوی اطرافیان مورد احترام قرار می‌گیرد.
-</p>
-<ul class="report-list">
-
-    <!-- سطح متوسط بالندگی -->
-    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10243#;">
-        <strong>«متوسط»<br></strong>
-        شما گاه احساس پویایی و هدفمندی دارید اما ممکن است همیشه این حس در اوج نباشد. در برخی موقعیت‌ها دیدگاه‌های شما به خوبی مورد توجه اطرافیان قرار می‌گیرد، اما همیشه احساس نمی‌کنید در بالاترین سطح کارآمدی هستید.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. تعریف چشم‌انداز و اهداف کوتاه‌مدت و میان‌مدت برای حفظ انگیزه و تقویت حس پویایی.<br>
-                ۲. گفت‌وگو با افرادی که در زمینه کاری یا تحصیلی شما الگو هستند و دریافت بازخوردهای سازنده از آن‌ها.<br>
-                ۳. تقویت مهارت‌های ارتباطی برای طرح دیدگاه‌هایتان به شیوه‌ای اثربخش‌تر و جلب توجه بیشتر از سوی اطرافیان.<br>
-                ۴. یادداشت موفقیت‌های کوچک روزمره و بررسی پیشرفت هفتگی برای ثبت حس رشد و بالندگی.<br>
-                ۵. در صورت احساس رکود، انجام فعالیت‌های جدید یا شرکت در رویدادهای مختلف برای تنوع و الهام‌بخشی بیشتر.
+        <!-- Test Purpose Section -->
+        <section class="content-section test-section" id="test-purpose">
+            <div class="content-container">
+                <!-- هدف از آزمون -->
+                <h2>هدف از آزمون</h2>
+                <p>
+                    این آزمون برای سنجش و تحلیل ویژگی‌های شخصیتی فرد در حوزه‌های بالندگی، خودکامیابی، درست زیستی و وجاهت طراحی شده است. هدف اصلی این آزمون شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد.
+                </p>
             </div>
-        </div>
-    </li>
+        </section>
 
-    <!-- سطح خوب بالندگی -->
-    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10243#;">
-        <strong>«خوب»<br></strong>
-        شما احساس رشد و پویایی قابل توجهی دارید و معمولاً دیدگاه‌هایتان از سوی اطرافیان ارزشمند شمرده می‌شود. هدفمندی و کارآمدی‌تان، شما را به فردی پویا و در حال توسعه مداوم تبدیل کرده است.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. حفظ روند توسعه فعلی با به‌روز نگه‌داشتن دانش و مهارت‌هایتان در حوزه‌های مورد علاقه.<br>
-                ۲. مشارکت فعال در پروژه‌ها یا فعالیت‌هایی که نیازمند ابتکار و خلاقیت هستند، تا حس بالندگی‌تان تقویت شود.<br>
-                ۳. برقراری تعادل بین تلاش برای دستیابی به اهداف و اختصاص زمانی برای استراحت و سرگرمی‌های مورد علاقه.<br>
-                ۴. به اشتراک‌گذاری تجربیات مثبت و راهکارهای موفقیت با دیگران، برای ارتقای فضای رشد جمعی و ایجاد انگیزه بیشتر.<br>
-                ۵. تعریف هدف‌های چالش‌برانگیز جدید؛ ورود به عرصه‌های تازه می‌تواند بالندگی شما را ارتقا دهد.
+        <!-- Key Features Section -->
+        <section class="content-section test-section" id="key-features">
+            <div class="content-container">
+                <!-- ویژگی‌های کلیدی آزمون -->
+                <h2>ویژگی‌های کلیدی آزمون</h2>
+                <ul>
+                    <li><strong>زمینه‌های ارزیابی:</strong> بالندگی، خودکامیابی، درست زیستی، وجاهت</li>
+                    <li><strong>زمان مورد نیاز:</strong> 20 دقیقه</li>
+                    <li><strong>دسترسی:</strong> آنلاین و حضوری</li>
+                    <li><strong>نوع گزارش:</strong> گزارش جامع با نمودارها و توصیه‌های عملی</li>
+                </ul>
             </div>
-        </div>
-    </li>
+        </section>
 
-    <!-- سطح عالی بالندگی -->
-    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10243#;">
-        <strong>«عالی»<br></strong>
-        شما در سطح بالایی از بالندگی قرار دارید؛ دیدگاه‌هایتان به‌خوبی پذیرفته می‌شود و خود را فردی پویایی می‌دانید که در مسیر بهترین شدن قرار دارد. این حس هدفمندی و کارآمدی بالا، نشان‌دهنده روحیه ارزشمندی است که می‌تواند الگویی الهام‌بخش باشد.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. برعهده گرفتن نقش‌های کلیدی در کار یا تحصیل، مانند مدیریت پروژه‌ها یا رهبری تیم‌هایی که نیازمند ایده‌های نوین هستند.<br>
-                ۲. برگزاری یا شرکت در دوره‌های مربیگری و توسعه فردی، برای انتقال روحیه بالندگی‌تان به دیگران.<br>
-                ۳. حفظ حس تواضع در عین موفقیت؛ پذیرش دیدگاه‌های متفاوت می‌تواند به رشد بیشتر و پایدارتر کمک کند.<br>
-                ۴. تعریف اهداف بلندمدت جدید و توجه به نیازهای عاطفی و روانی خود در کنار اهداف؛ تداوم رشد در تمامی ابعاد ضروری است.<br>
-                ۵. مشارکت در فعالیت‌های گروهی یا اجتماعی که امکان تجمیع توانمندی‌هایتان را فراهم می‌کند و به شما اجازه می‌دهد اثرگذاری مثبت‌تان را گسترش دهید.
+        <!-- Benefits Section -->
+        <section class="content-section test-section" id="benefits">
+            <div class="content-container">
+                <!-- مزایای شرکت در این آزمون -->
+                <h2>مزایای شرکت در این آزمون</h2>
+                <ul>
+                    <li>افزایش خودآگاهی و شناخت بهتر از ویژگی‌های شخصیتی</li>
+                    <li>بهبود مهارت‌های تحلیل و بررسی عمیق مسائل</li>
+                    <li>شناسایی نقاط قوت و ضعف در حوزه‌های بالندگی، خودکامیابی، درست زیستی و وجاهت</li>
+                    <li>حمایت از رشد شخصی و حرفه‌ای</li>
+                    <li>افزایش عملکرد در محیط‌های کاری و آموزشی</li>
+                </ul>
             </div>
-        </div>
-    </li>
+        </section>
 
-</ul>
-
-<!-- خودکامیابی (احساس خودکارآمدی و استقلال در موفقیت) -->
-<div class="report-component-title">خودکامیابی 
-    <span class="report-badge report-score-data">#field_5359#<br></span>
-</div>
-<p class="report-paragraph">
-    خودکامیابی به میزان توانایی فرد در رسیدن به موفقیت‌ها و احساس استقلال از دیگران اشاره دارد. وقتی فرد نمی‌تواند پیشرفت مورد انتظارش را محقق کند، ممکن است احساس وابستگی یا ناکامی داشته باشد. اما با برنامه‌ریزی صحیح و اتکا بر توانایی‌های شخصی، می‌توان این حس را تقویت کرده و به رضایت درونی دست یافت.
-</p>
-<ul class="report-list">
-
-    <!-- سطح متوسط خودکامیابی -->
-    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10244#;">
-        <strong>«متوسط»<br></strong>
-        شما بعضی اوقات احساس می‌کنید وابستگی به دیگران دارید یا موفقیت مورد انتظارتان را به دست نیاورده‌اید. این موضوع می‌تواند ناشی از ضعف در برنامه‌ریزی، کمبود انگیزه یا شرایط نامساعد محیطی باشد.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. بررسی هدف‌های خود و تنظیم آن‌ها براساس توانایی‌ها و منابع واقعی؛ اجتناب از اهداف بیش‌ازحد دور از دسترس.<br>
-                ۲. تقویت اعتمادبه‌نفس از طریق شناسایی و برجسته کردن نقاط قوت، حتی کوچک‌ترین دستاوردها نیز ارزش دارد.<br>
-                ۳. تقسیم کارها و وظایف در مسیر دستیابی به موفقیت؛ بر عهده گرفتن تدریجی مسئولیت‌ها برای افزایش حس استقلال.<br>
-                ۴. گفت‌وگو با افرادی که موفقیت‌های دلخواهتان را کسب کرده‌اند، برای الهام‌گیری و یادگیری از تجربیاتشان.<br>
-                ۵. توجه به جنبه عاطفی؛ در صورت نیاز، طلب کمک روان‌شناختی یا حمایتی از دوستان صمیمی یا متخصصان.
+        <!-- How It Works Section -->
+        <section class="content-section test-section" id="how-it-works">
+            <div class="content-container">
+                <!-- نحوه انجام آزمون -->
+                <h2>نحوه انجام آزمون</h2>
+                <p>
+                    آزمون فهرست تشخیص تعاملی ارجمندی شامل مراحل زیر است:
+                </p>
+                <ul>
+                    <li><strong>گام اول:</strong> تکمیل پرسشنامه آنلاین به مدت 20 دقیقه</li>
+                    <li><strong>گام دوم:</strong> دریافت گزارش تحلیلی جامع با نتایج و توصیه‌ها</li>
+                    <li><strong>گام سوم:</strong> بررسی نتایج و در صورت نیاز، مشاوره با متخصصین</li>
+                </ul>
             </div>
-        </div>
-    </li>
+        </section>
 
-    <!-- سطح خوب خودکامیابی -->
-    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10244#;">
-        <strong>«خوب»<br></strong>
-        شما در اکثر موارد برای رسیدن به اهداف خود اتکا می‌کنید و احساس وابستگی چندانی ندارید. این موضوع نشان می‌دهد که تا حد زیادی به توانایی‌های خویش اعتماد دارید و توانسته‌اید از دشواری‌های زندگی عبور کنید.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. حفظ روحیه خوداتکایی با تعیین چالش‌های جدیدتر و گسترده‌تر در مسیر اهداف شخصی یا شغلی.<br>
-                ۲. اشتراک‌گذاری موفقیت‌ها و روش‌های رسیدن به آن، برای تقویت شبکه‌ای از افراد خودکامیار و مستقل.<br>
-                ۳. ارزیابی وضعیت پیشرفت به‌صورت دوره‌ای؛ شناخت نقاط ضعف و تصمیم برای رفع آن‌ها، حس استقلال را تقویت می‌کند.<br>
-                ۴. اعتدال در مدیریت امور؛ خوداتکایی شدید نباید به انزوای اجتماعی یا نادیده گرفتن حمایت‌های سودمند اطرافیان بینجامد.<br>
-                ۵. توجه به زمان و منابع؛ خودکامیابی هنگامی اثربخش است که با مدیریت درست زمان و انرژی همراه باشد.
+        <!-- Who Should Take This Test Section -->
+        <section class="content-section test-section" id="who-should-take">
+            <div class="content-container">
+                <!-- چه کسانی باید این آزمون را انجام دهند؟ -->
+                <h2>چه کسانی باید این آزمون را انجام دهند؟</h2>
+                <ul>
+                    <li>افرادی که به دنبال شناخت بهتر از ویژگی‌های شخصیتی خود هستند</li>
+                    <li>مدیران و کارمندان که به دنبال بهبود مهارت‌های تحلیل و بررسی عمیق خود هستند</li>
+                    <li>مشاوران و روانشناسان برای پشتیبانی از مشتریان خود</li>
+                    <li>سازمان‌ها و شرکت‌ها برای ارزیابی و بهبود ظرفیت‌های شناختی تیم‌های کاری</li>
+                    <li>دانشجویان و دانش‌آموزانی که به دنبال ارتقاء مهارت‌های تحلیل شناختی هستند</li>
+                </ul>
             </div>
-        </div>
-    </li>
+        </section>
 
-    <!-- سطح عالی خودکامیابی -->
-    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10244#;">
-        <strong>«عالی»<br></strong>
-        شما احساس استقلال و خوداتکایی بسیار بالایی دارید و معمولاً موفقیت‌هایتان را نتیجه برنامه‌ریزی دقیق و تکیه بر توانایی شخصی می‌دانید. این ویژگی به شما کمک می‌کند تا با اعتمادبه‌نفس بالا مسیر زندگی را پیش ببرید و موانع را راحت‌تر کنار بزنید.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. رهبری پروژه‌ها و وظایفی را برعهده بگیرید که نیازمند ابتکار عمل و تکیه بر توانایی‌های فردی است.<br>
-                ۲. نقش الگویی در جمع دوستان یا محیط کار؛ انتقال تجربیات خود در زمینه برنامه‌ریزی و خوداتکایی.<br>
-                ۳. انعطاف‌پذیری در برابر کمک‌ها و پیشنهادهای مفید؛ گاهی حمایت‌های محیطی می‌تواند سرعت پیشرفت شما را افزایش دهد.<br>
-                ۴. تعیین چشم‌اندازهای بلندمدت و تطبیق اهداف با ارزش‌های فردی برای دستیابی به حس رضایت عمیق‌تر.<br>
-                ۵. مراقبت از ذهن و جسم؛ ورزش، تغذیه مناسب و استراحت کافی ضامن حفظ بالندگی و انرژی بالا در مسیر خودکامیابی است.
-            </div>
-        </div>
-    </li>
+        <!-- Sample Report Section -->
+        <section class="content-section test-section" id="sample-report">
+            <div class="content-container">
+                <!-- نمونه گزارش -->
+                <h2>نمونه گزارش</h2>
+                <p>
+                    در ادامه یک نمونه از گزارش فهرست تشخیص تعاملی ارجمندی را مشاهده می‌کنید:
+                </p>
+                <div class="report-container">
+                    <header class="report-header-custom">
+                        <div class="report-header-inner">
+                            <img src="../panel/file?type=picture&amp;v=3&amp;mode=filemanager&amp;file=%7eDB3gfQUls%2bt2iiMYKbsRAxrtFhcHKUIUUo7pPtO17bHCzNxwU4zNh3UVor6QMtl7Y6EWX8dD0PSvzZOYkRrXlfejPn4lNTj6" class="report-header-img" alt="لوگو">
+                            <h1 class="report-header-title">گزارش تحلیل فهرست تشخیص تعاملی ارجمندی</h1>
+                        </div>
+                        <div class="report-header-date">تاریخ اجرا: #primary_createDate#</div>
+                    </header>
+                    <div class="report-section-title">فهرست تشخیص تعاملی ارجمندی</div>
+                    <p class="report-paragraph">
+                        این ارزیابی به منظور تحلیل و بررسی ویژگی‌های شخصیتی فرد در حوزه‌های بالندگی، خودکامیابی، درست زیستی و وجاهت انجام شده است. هدف از این ارزیابی شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد.
+                    </p>
+                    <div class="report-section-title">اطلاعات فردی</div>
+                    <div class="report-info-container">
+                        <div class="report-info-item"><strong>نام:</strong> <span class="report-info-data">#field_5334#</span></div>
+                        <div class="report-info-item"><strong>نام خانوادگی:</strong> <span class="report-info-data">#field_5335#</span></div>
+                        <div class="report-info-item"><strong>موبایل:</strong> <span class="report-info-data">#field_5337#</span></div>
+                        <div class="report-info-item"><strong>ایمیل:</strong> <span class="report-info-data">#field_5336#</span></div>
+                    </div>
+                    <div class="report-section-title">نتیجه</div>
+                    <div class="report-score-container">
+                        <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10243#;"><strong>بالندگی:</strong> <span class="report-badge">#field_5358#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10243#;"><strong>بالندگی:</strong> <span class="report-badge">#field_5358#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10243#;"><strong>بالندگی:</strong> <span class="report-badge">#field_5358#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10244#;"><strong>خودکامیابی:</strong> <span class="report-badge">#field_5359#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10244#;"><strong>خودکامیابی:</strong> <span class="report-badge">#field_5359#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10244#;"><strong>خودکامیابی:</strong> <span class="report-badge">#field_5359#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10245#;"><strong>درست زیستی:</strong> <span class="report-badge">#field_5360#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10245#;"><strong>درست زیستی:</strong> <span class="report-badge">#field_5360#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10245#;"><strong>درست زیستی:</strong> <span class="report-badge">#field_5360#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10246#;"><strong>وجاهت:</strong> <span class="report-badge">#field_5361#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10246#;"><strong>وجاهت:</strong> <span class="report-badge">#field_5361#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10246#;"><strong>وجاهت:</strong> <span class="report-badge">#field_5361#</span></div>
+                    </div>
+                    <div class="report-section-title">تفسیر</div>
+                    <p class="report-paragraph">
+                        این بخش به تحلیل و تفسیر نتایج ارزیابی روان‌شناختی فرد می‌پردازد. تحلیل روان‌شناختی شامل بررسی ویژگی‌های شخصیتی در حوزه‌های بالندگی، خودکامیابی، درست زیستی و وجاهت است. هدف از این تحلیل شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد. نتایج این تحلیل می‌تواند به فرد کمک کند تا با شناخت بهتر از خود، برنامه‌های توسعه فردی و حرفه‌ای موثرتری را دنبال کند. توصیه‌ها شامل تعریف اهداف کوتاه‌مدت و بلندمدت، تقویت مهارت‌های ارتباطی، مدیریت استرس، و بهره‌گیری از حمایت‌های اجتماعی و معنوی است.
+                    </p>
 
-</ul>
+                    <!-- بالندگی (حس رشد و پویایی فردی) -->
+                    <div class="report-component-title">بالندگی 
+                        <span class="report-badge report-score-data">#field_5358#<br></span>
+                    </div>
+                    <p class="report-paragraph">
+                        بالندگی در مفهوم «عزت‌نفس و ارزشمندی روان‌شناختی» به معنای احساس رشد درونی، پویایی و هدفمندی است. افرادی که در این زمینه نمره بالاتری کسب می‌کنند، باور دارند که مسیر زندگی‌شان دارای معنا و جهت مشخصی است و دیدگاه‌هایشان از سوی اطرافیان مورد احترام قرار می‌گیرد.
+                    </p>
+                    <ul class="report-list">
+                        <!-- سطح متوسط بالندگی -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10243#;">
+                            <strong>«متوسط»<br></strong>
+                            شما گاه احساس پویایی و هدفمندی دارید اما ممکن است همیشه این حس در اوج نباشد. در برخی موقعیت‌ها دیدگاه‌های شما به خوبی مورد توجه اطرافیان قرار می‌گیرد، اما همیشه احساس نمی‌کنید در بالاترین سطح کارآمدی هستید.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. تعریف چشم‌انداز و اهداف کوتاه‌مدت و میان‌مدت برای حفظ انگیزه و تقویت حس پویایی.<br>
+                                    ۲. گفت‌وگو با افرادی که در زمینه کاری یا تحصیلی شما الگو هستند و دریافت بازخوردهای سازنده از آن‌ها.<br>
+                                    ۳. تقویت مهارت‌های ارتباطی برای طرح دیدگاه‌هایتان به شیوه‌ای اثربخش‌تر و جلب توجه بیشتر از سوی اطرافیان.<br>
+                                    ۴. یادداشت موفقیت‌های کوچک روزمره و بررسی پیشرفت هفتگی برای ثبت حس رشد و بالندگی.<br>
+                                    ۵. در صورت احساس رکود، انجام فعالیت‌های جدید یا شرکت در رویدادهای مختلف برای تنوع و الهام‌بخشی بیشتر.
+                                </div>
+                            </div>
+                        </li>
+                        <!-- سطح خوب بالندگی -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10243#;">
+                            <strong>«خوب»<br></strong>
+                            شما احساس رشد و پویایی قابل توجهی دارید و معمولاً دیدگاه‌هایتان از سوی اطرافیان ارزشمند شمرده می‌شود. هدفمندی و کارآمدی‌تان، شما را به فردی پویا و در حال توسعه مداوم تبدیل کرده است.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. حفظ روند توسعه فعلی با به‌روز نگه‌داشتن دانش و مهارت‌هایتان در حوزه‌های مورد علاقه.<br>
+                                    ۲. مشارکت فعال در پروژه‌ها یا فعالیت‌هایی که نیازمند ابتکار و خلاقیت هستند، تا حس بالندگی‌تان تقویت شود.<br>
+                                    ۳. برقراری تعادل بین تلاش برای دستیابی به اهداف و اختصاص زمانی برای استراحت و سرگرمی‌های مورد علاقه.<br>
+                                    ۴. به اشتراک‌گذاری تجربیات مثبت و راهکارهای موفقیت با دیگران، برای ارتقای فضای رشد جمعی و ایجاد انگیزه بیشتر.<br>
+                                    ۵. تعریف هدف‌های چالش‌برانگیز جدید؛ ورود به عرصه‌های تازه می‌تواند بالندگی شما را ارتقا دهد.
+                                </div>
+                            </div>
+                        </li>
+                        <!-- سطح عالی بالندگی -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10243#;">
+                            <strong>«عالی»<br></strong>
+                            شما در بالاترین سطح بالندگی قرار دارید؛ دیدگاه‌هایتان به‌خوبی پذیرفته می‌شود و خود را فردی پویایی می‌دانید که در مسیر بهترین شدن قرار دارد. این حس هدفمندی و کارآمدی بالا، نشان‌دهنده روحیه ارزشمندی است که می‌تواند الگویی الهام‌بخش باشد.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. برعهده گرفتن نقش‌های کلیدی در کار یا تحصیل، مانند مدیریت پروژه‌ها یا رهبری تیم‌هایی که نیازمند ایده‌های نوین هستند.<br>
+                                    ۲. برگزاری یا شرکت در دوره‌های مربیگری و توسعه فردی، برای انتقال روحیه بالندگی‌تان به دیگران.<br>
+                                    ۳. حفظ حس تواضع در عین موفقیت؛ پذیرش دیدگاه‌های متفاوت می‌تواند به رشد بیشتر و پایدارتر کمک کند.<br>
+                                    ۴. تعریف اهداف بلندمدت جدید و تطبیق اهداف با ارزش‌های فردی برای دستیابی به حس رضایت عمیق‌تر.<br>
+                                    ۵. مشارکت در فعالیت‌های گروهی یا اجتماعی که امکان تجمیع توانمندی‌هایتان را فراهم می‌کند و به شما اجازه می‌دهد اثرگذاری مثبت‌تان را گسترش دهید.
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
 
-<!-- درست زیستی (احساس سرزندگی، آرامش روانی و رضایت از زندگی) -->
-<div class="report-component-title">درست زیستی 
-    <span class="report-badge report-score-data">#field_5360#<br></span>
-</div>
-<p class="report-paragraph">
-    درست زیستی به احساس سرزندگی درونی، دسترسی به سرگرمی‌ها و تفریحات مورد علاقه، رضایت از زندگی و درکی معنادار از آن اشاره دارد. افرادی که در این حوزه نمره بالایی دارند، معمولاً از آرامش روانی مطلوبی برخوردارند و شادی پایداری را در زندگی تجربه می‌کنند.
-</p>
-<ul class="report-list">
-    <!-- سطح متوسط درست زیستی -->
-    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10245#;">
-        <strong>«متوسط»<br></strong>
-        شما در بسیاری از مواقع حس رضایت و سرزندگی دارید، اما ممکن است همیشه این حس پایدار نباشد. احتمالاً به تفریح و سرگرمی‌های مورد علاقه‌تان می‌پردازید اما گاه درگیر دغدغه‌ها یا استرس‌های ذهنی می‌شوید.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. برنامه‌ریزی مداوم برای اختصاص زمانی به فعالیت‌های لذتبخش و خلق لحظات شاد.<br>
-                ۲. تمرین مدیتیشن یا تکنیک‌های آرامش ذهنی برای کنترل استرس و حفظ آرامش درونی در مواقع فشار بالا.<br>
-                ۳. بازاندیشی در اهداف زندگی؛ آیا آنچه انجام می‌دهید با ارزش‌های شخصی‌تان همخوانی دارد؟<br>
-                ۴. مشارکت در کارهای گروهی یا فعالیت‌های داوطلبانه؛ پیوندهای اجتماعی می‌توانند حس رضایت درونی را تقویت کنند.<br>
-                ۵. در صورت بروز احساس خستگی یا بی‌حوصلگی طولانی، گفت‌وگو با مشاور یا متخصص روان‌شناسی برای دریافت راهنمایی تخصصی.
-            </div>
-        </div>
-    </li>
+                    <!-- خودکامیابی (احساس خودکارآمدی و استقلال در موفقیت) -->
+                    <div class="report-component-title">خودکامیابی 
+                        <span class="report-badge report-score-data">#field_5359#<br></span>
+                    </div>
+                    <p class="report-paragraph">
+                        خودکامیابی به میزان توانایی فرد در رسیدن به موفقیت‌ها و احساس استقلال از دیگران اشاره دارد. وقتی فرد نمی‌تواند پیشرفت مورد انتظارش را محقق کند، ممکن است احساس وابستگی یا ناکامی داشته باشد. اما با برنامه‌ریزی صحیح و اتکا بر توانایی‌های شخصی، می‌توان این حس را تقویت کرده و به رضایت درونی دست یافت.
+                    </p>
+                    <ul class="report-list">
+                        <!-- سطح متوسط خودکامیابی -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10244#;">
+                            <strong>«متوسط»<br></strong>
+                            شما بعضی اوقات احساس می‌کنید وابستگی به دیگران دارید یا موفقیت مورد انتظارتان را به دست نیاورده‌اید. این موضوع می‌تواند ناشی از ضعف در برنامه‌ریزی، کمبود انگیزه یا شرایط نامساعد محیطی باشد.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. بررسی هدف‌های خود و تنظیم آن‌ها براساس توانایی‌ها و منابع واقعی؛ اجتناب از اهداف بیش‌ازحد دور از دسترس.<br>
+                                    ۲. تقویت اعتمادبه‌نفس از طریق شناسایی و برجسته کردن نقاط قوت، حتی کوچک‌ترین دستاوردها نیز ارزش دارد.<br>
+                                    ۳. تقسیم کارها و وظایف در مسیر دستیابی به موفقیت؛ بر عهده گرفتن تدریجی مسئولیت‌ها برای افزایش حس استقلال.<br>
+                                    ۴. گفت‌وگو با افرادی که موفقیت‌های دلخواهتان را کسب کرده‌اند، برای الهام‌گیری و یادگیری از تجربیاتشان.<br>
+                                    ۵. توجه به جنبه عاطفی؛ در صورت نیاز، طلب کمک روان‌شناختی یا حمایتی از دوستان صمیمی یا متخصصان.
+                                </div>
+                            </div>
+                        </li>
+                        <!-- سطح خوب خودکامیابی -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10244#;">
+                            <strong>«خوب»<br></strong>
+                            شما در اکثر موارد برای رسیدن به اهداف خود اتکا می‌کنید و احساس وابستگی چندانی ندارید. این موضوع نشان می‌دهد که تا حد زیادی به توانایی‌های خویش اعتماد دارید و توانسته‌اید از دشواری‌های زندگی عبور کنید.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. حفظ روحیه خوداتکایی با تعیین چالش‌های جدیدتر و گسترده‌تر در مسیر اهداف شخصی یا شغلی.<br>
+                                    ۲. اشتراک‌گذاری موفقیت‌ها و روش‌های رسیدن به آن، برای تقویت شبکه‌ای از افراد خودکامیار و مستقل.<br>
+                                    ۳. ارزیابی وضعیت پیشرفت به‌صورت دوره‌ای؛ شناخت نقاط ضعف و تصمیم برای رفع آن‌ها، حس استقلال را تقویت می‌کند.<br>
+                                    ۴. اعتدال در مدیریت امور؛ خوداتکایی شدید نباید به انزوای اجتماعی یا نادیده گرفتن حمایت‌های سودمند اطرافیان بینجامد.<br>
+                                    ۵. توجه به زمان و منابع؛ خودکامیابی هنگامی اثربخش است که با مدیریت درست زمان و انرژی همراه باشد.
+                                </div>
+                            </div>
+                        </li>
+                        <!-- سطح عالی خودکامیابی -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10244#;">
+                            <strong>«عالی»<br></strong>
+                            شما احساس استقلال و خوداتکایی بسیار بالایی دارید و معمولاً موفقیت‌هایتان را نتیجه برنامه‌ریزی دقیق و تکیه بر توانایی شخصی می‌دانید. این ویژگی به شما کمک می‌کند تا با اعتمادبه‌نفس بالا مسیر زندگی را پیش ببرید و موانع را راحت‌تر کنار بزنید.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. رهبری پروژه‌ها و وظایفی را برعهده بگیرید که نیازمند ابتکار عمل و تکیه بر توانایی‌های فردی است.<br>
+                                    ۲. نقش الگویی در جمع دوستان یا محیط کار؛ انتقال تجربیات خود در زمینه برنامه‌ریزی و خوداتکایی.<br>
+                                    ۳. انعطاف‌پذیری در برابر کمک‌ها و پیشنهادهای مفید؛ گاهی حمایت‌های محیطی می‌تواند سرعت پیشرفت شما را افزایش دهد.<br>
+                                    ۴. تعیین چشم‌اندازهای بلندمدت و تطبیق اهداف با ارزش‌های فردی برای دستیابی به حس رضایت عمیق‌تر.<br>
+                                    ۵. مراقبت از ذهن و جسم؛ ورزش، تغذیه مناسب و استراحت کافی ضامن حفظ بالندگی و انرژی بالا در مسیر خودکامیابی است.
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
 
-    <!-- سطح خوب درست زیستی -->
-    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10245#;">
-        <strong>«خوب»<br></strong>
-        شما اغلب از زندگی‌تان راضی هستید و به‌طور کلی سرزندگی و احساس آرامش روانی در شما دیده می‌شود. این سطح از درست زیستی نشان‌دهنده وجود تعادل نسبی بین کار، تفریح و جنبه‌های معنایی زندگی است.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. حفظ و تقویت حس شادی و آرامش با تدوین لیستی از فعالیت‌های لذتبخش و اجرای منظم آن‌ها.<br>
-                ۲. مدیریت استرس‌های احتمالی از طریق روش‌های علمی (یوگا، ذهن‌آگاهی) یا مشاوره با متخصصان حوزه سلامت روان.<br>
-                ۳. ایجاد هدف‌های جدید برای ادامه حس پیشرفت؛ ترکیبی از اهداف قابل دستیابی و رویاهای بلندمدت می‌تواند هیجان‌انگیز باشد.<br>
-                ۴. تعامل و گفت‌وگو با اطرافیان درباره ارزش‌های زندگی و راه‌های رسیدن به خوشبختی پایدار.<br>
-                ۵. تداوم فعالیت بدنی و سبک زندگی سالم؛ جسم سالم همواره ضامن روان سالم‌تر خواهد بود.
-            </div>
-        </div>
-    </li>
+                    <!-- درست زیستی (احساس سرزندگی، آرامش روانی و رضایت از زندگی) -->
+                    <div class="report-component-title">درست زیستی 
+                        <span class="report-badge report-score-data">#field_5360#<br></span>
+                    </div>
+                    <p class="report-paragraph">
+                        درست زیستی به احساس سرزندگی درونی، دسترسی به سرگرمی‌ها و تفریحات مورد علاقه، رضایت از زندگی و درکی معنادار از آن اشاره دارد. افرادی که در این حوزه نمره بالایی دارند، معمولاً از آرامش روانی مطلوبی برخوردارند و شادی پایداری را در زندگی تجربه می‌کنند.
+                    </p>
+                    <ul class="report-list">
+                        <!-- سطح متوسط درست زیستی -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10245#;">
+                            <strong>«متوسط»<br></strong>
+                            شما در بسیاری از مواقع حس رضایت و سرزندگی دارید، اما ممکن است همیشه این حس پایدار نباشد. احتمالاً به تفریح و سرگرمی‌های مورد علاقه‌تان می‌پردازید اما گاه درگیر دغدغه‌ها یا استرس‌های ذهنی می‌شوید.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. برنامه‌ریزی مداوم برای اختصاص زمانی به فعالیت‌های لذتبخش و خلق لحظات شاد.<br>
+                                    ۲. تمرین مدیتیشن یا تکنیک‌های آرامش ذهنی برای کنترل استرس و حفظ آرامش درونی در مواقع فشار بالا.<br>
+                                    ۳. بازاندیشی در اهداف زندگی؛ آیا آنچه انجام می‌دهید با ارزش‌های شخصی‌تان همخوانی دارد؟<br>
+                                    ۴. مشارکت در کارهای گروهی یا فعالیت‌های داوطلبانه؛ پیوندهای اجتماعی می‌توانند حس رضایت درونی را تقویت کنند.<br>
+                                    ۵. در صورت بروز احساس خستگی یا بی‌حوصلگی طولانی، گفت‌وگو با مشاور یا متخصص روان‌شناسی برای دریافت راهنمایی تخصصی.
+                                </div>
+                            </div>
+                        </li>
+                        <!-- سطح خوب درست زیستی -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10245#;">
+                            <strong>«خوب»<br></strong>
+                            شما اغلب از زندگی‌تان راضی هستید و به‌طور کلی سرزندگی و احساس آرامش روانی در شما دیده می‌شود. این سطح از درست زیستی نشان‌دهنده وجود تعادل نسبی بین کار، تفریح و جنبه‌های معنایی زندگی است.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. حفظ و تقویت حس شادی و آرامش با تدوین لیستی از فعالیت‌های لذتبخش و اجرای منظم آن‌ها.<br>
+                                    ۲. مدیریت استرس‌های احتمالی از طریق روش‌های علمی (یوگا، ذهن‌آگاهی) یا مشاوره با متخصصان حوزه سلامت روان.<br>
+                                    ۳. ایجاد هدف‌های جدید برای ادامه حس پیشرفت؛ ترکیبی از اهداف قابل دستیابی و رویاهای بلندمدت می‌تواند هیجان‌انگیز باشد.<br>
+                                    ۴. تعامل و گفت‌وگو با اطرافیان درباره ارزش‌های زندگی و راه‌های رسیدن به خوشبختی پایدار.<br>
+                                    ۵. تداوم فعالیت بدنی و سبک زندگی سالم؛ جسم سالم همواره ضامن روان سالم‌تر خواهد بود.
+                                </div>
+                            </div>
+                        </li>
+                        <!-- سطح عالی درست زیستی -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10245#;">
+                            <strong>«عالی»<br></strong>
+                            شما در بالاترین سطح درست زیستی قرار دارید؛ حس سرزندگی و آرامش روانی عمیقی را تجربه می‌کنید و با لذت از زندگی‌تان یاد می‌کنید. این رویکرد نه‌تنها برای خودتان، بلکه برای اطرافیان هم الهام‌بخش است و می‌تواند فضای عمومی شادتر و مثبت‌تری ایجاد کند.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. به اشتراک گذاشتن حس خوبتان با اطرافیان؛ حضور شما می‌تواند منبع انرژی مثبت باشد.<br>
+                                    ۲. پذیرش نقش رهبری یا تسهیل‌گری در گروه‌های مرتبط با سلامت و شادی، مانند برنامه‌ریزی سفرهای گروهی یا فعالیت‌های تفریحی.<br>
+                                    ۳. حفظ حس تعادل میان نیازهای شغلی، تحصیلی و تفریحی؛ هرگونه افراط، حس خوشایند موجود را تهدید می‌کند.<br>
+                                    ۴. پیشبرد اهداف بلندمدت؛ شما با داشتن ذهنی آرام و شاد می‌توانید ایده‌های بزرگ را عملی کنید.<br>
+                                    ۵. فعالیت‌های داوطلبانه و نوع‌دوستانه برای افزایش احساس معناداری زندگی و تداوم حس خوشبختی و آرامش.
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
 
-    <!-- سطح عالی درست زیستی -->
-    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10245#;">
-        <strong>«عالی»<br></strong>
-        شما در بالاترین سطح درست زیستی قرار دارید؛ حس سرزندگی و آرامش روانی عمیقی را تجربه می‌کنید و با لذت از زندگی‌تان یاد می‌کنید. این رویکرد نه‌تنها برای خودتان، بلکه برای اطرافیان هم الهام‌بخش است و می‌تواند فضای عمومی شادتر و مثبت‌تری ایجاد کند.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. به اشتراک گذاشتن حس خوبتان با اطرافیان؛ حضور شما می‌تواند منبع انرژی مثبت باشد.<br>
-                ۲. پذیرش نقش رهبری یا تسهیل‌گری در گروه‌های مرتبط با سلامت و شادی، مانند برنامه‌ریزی سفرهای گروهی یا فعالیت‌های تفریحی.<br>
-                ۳. ادامه ایجاد تعادل میان نیازهای شغلی، تحصیلی و تفریحی؛ هرگونه افراط، حس خوشایند موجود را تهدید می‌کند.<br>
-                ۴. پیشبرد اهداف بلندمدت؛ شما با داشتن ذهنی آرام و شاد می‌توانید ایده‌های بزرگ را عملی کنید.<br>
-                ۵. فعالیت‌های داوطلبانه و نوع‌دوستانه برای افزایش احساس معناداری زندگی و تداوم حس خوشبختی و آرامش.
-            </div>
-        </div>
-    </li>
+                    <!-- وجاهت (احساس ارزشمندی در نگاه دیگران و مورد تشویق قرار گرفتن) -->
+                    <div class="report-component-title">وجاهت 
+                        <span class="report-badge report-score-data">#field_5361#<br></span>
+                    </div>
+                    <p class="report-paragraph">
+                        وجاهت به معنای احساس ارزشمندی و احترام از سوی دیگران، همراه با برخورداری از حمایت معنوی و توجه به دیدگاه‌ها و باورهایتان است. اگر فرد احساس کند از تشویق مورد انتظار بی‌بهره مانده یا در دشواری‌ها تنهاست، این وجاهت ممکن است کاهش یابد و عزت نفس تحت تأثیر قرار گیرد.
+                    </p>
+                    <ul class="report-list">
+                        <!-- سطح متوسط وجاهت -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10246#;">
+                            <strong>«متوسط»<br></strong>
+                            شما در برخی شرایط مورد تقدیر و احترام قرار می‌گیرید، اما همیشه این حس را تجربه نمی‌کنید. گاهی احساس می‌کنید از معنویت دور افتاده‌اید یا در شرایط سخت چندان حمایتی دریافت نمی‌کنید. این موضوع می‌تواند به نوع ارتباطات اجتماعی یا انتظارهای بالا از اطرافیان برگردد.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. شناسایی انتظارات واقعی خود از دیگران؛ گاه توقع بیش از حد باعث تجربه تلخ کم‌توجهی می‌شود.<br>
+                                    ۲. تقویت مهارت‌های ارتباطی؛ طرح درست و واضح درخواست‌های خود می‌تواند بیشتر به رفع نیازهایتان کمک کند.<br>
+                                    ۳. درگیر شدن در فعالیت‌های اجتماعی و معنوی برای ایجاد پیوندهای عمیق‌تر و دستیابی به شبکه حمایتی قوی‌تر.<br>
+                                    ۴. نگاه به جنبه‌های مثبت و تشویق‌های هرچند کوچک؛ این رویکرد ذهنیت کمبود را کاهش می‌دهد و به خودارزشمندی بیشتری می‌انجامد.<br>
+                                    ۵. گفت‌وگو با یک روان‌شناس یا مشاور در صورت تداوم احساس تنهایی یا عدم وجاهت؛ راهکارهای تخصصی می‌تواند وضعیت را بهبود بخشد.
+                                </div>
+                            </div>
+                        </li>
+                        <!-- سطح خوب وجاهت -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10246#;">
+                            <strong>«خوب»<br></strong>
+                            شما از احترام و توجه نسبی جامعه و اطرافیان برخوردارید؛ اعتقادات و دیدگاه‌هایتان عموماً مورد توجه قرار می‌گیرد و احساس رهاشدگی در دشواری‌ها ندارید. این شرایط به شما کمک می‌کند اعتمادبه‌نفس بالاتری داشته و روابط اجتماعی موثرتری برقرار کنید.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. حفظ این جایگاه مثبت با ادامه ابراز عقاید به شکل محترمانه و سازنده در جمع‌های کاری و خانوادگی.<br>
+                                    ۲. همراهی در کارهای گروهی که نیازمند تبادل نظر هستند؛ این رویکرد، حس ارزشمندی و احترام متقابل را پایدار می‌کند.<br>
+                                    ۳. اعتدال در حفظ حس ارزشمندی با بهره‌گیری از روحیه فروتنی؛ افراط در حس وجاهت می‌تواند منجر به خودبزرگ‌بینی شود.<br>
+                                    ۴. ایجاد فرصت‌های تازه برای شناخت بهتر معنوی یا فرهنگی؛ شرکت در کلاس‌ها، کارگاه‌ها یا جمع‌های مورد علاقه.<br>
+                                    ۵. در لحظات چالش‌برانگیز، بهره‌گیری از حامیان فعلی؛ به اشتراک گذاشتن نگرانی‌ها می‌تواند درک و پشتیبانی عمقی‌تری را حاصل کند.
+                                </div>
+                            </div>
+                        </li>
+                        <!-- سطح عالی وجاهت -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10246#;">
+                            <strong>«عالی»<br></strong>
+                            شما در سطح بسیار بالایی از وجاهت قرار دارید؛ اطرافیان به عقاید و باورهایتان احترام فراوانی می‌گذارند و هنگام دشواری‌ها، احساس تنهایی نمی‌کنید. این مقدار از حمایت و تشویق می‌تواند عزت‌نفس شما را در سطحی عالی حفظ کند.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. به اشتراک گذاشتن منابع حمایتی و روش‌هایی که باعث ارتقای وجاهت شخصی شده، با کسانی که در این زمینه مشکل دارند.<br>
+                                    ۲. متعادل ساختن حس ارزشمندی با بهره‌گیری از روحیه فروتنی؛ گاهی پذیرش محدودیت‌ها و کمبودها می‌تواند رشد مستمر را تسهیل کند.<br>
+                                    ۳. استفاده از پتانسیل حمایت و احترام اطرافیان برای پیشبرد اهداف معنوی یا اجتماعی بزرگ‌تر؛ رهبری گروه‌ها یا فعالیت‌های بشردوستانه می‌تواند ثمربخش باشد.<br>
+                                    ۴. تداوم ارتباط با منابع معنوی؛ دوری از معنویت یا غفلت از رشد روحی ممکن است به مرور حس وجاهت را تضعیف کند.<br>
+                                    ۵. ارزیابی دوره‌ای موفقیت‌ها و بازبینی مسیر؛ هرگونه بهبود در کار و زندگی همراه با حس وجاهت قوی‌تر، به تعادل روانی بیشتر می‌انجامد.
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
 
-</ul>
+            <!-- Credentials and Validity Section -->
+            <section class="content-section test-section" id="credentials">
+                <div class="content-container">
+                    <!-- اعتبار و صحت آزمون -->
+                    <h2>اعتبار و صحت آزمون</h2>
+                    <p>
+                        آزمون فهرست تشخیص تعاملی ارجمندی بر اساس روش‌شناسی تحقیقاتی معتبر و تایید شده توسط متخصصین روانشناسی طراحی شده است. این آزمون توسط دانشگاه‌ها و سازمان‌های معتبر روانشناسی مورد تأیید و توصیه قرار گرفته است.
+                    </p>
+                    <ul>
+                        <li>روش‌شناسی تحقیقاتی مبتنی بر مطالعات علمی روز</li>
+                        <li>تأییدیه سازمان‌های معتبر روانشناسی</li>
+                        <li>پشتیبانی توسط تیم متخصصین و روانشناسان خبره</li>
+                    </ul>
+                </div>
+            </section>
 
-<!-- وجاهت (احساس ارزشمندی در نگاه دیگران و مورد تشویق قرار گرفتن) -->
-<div class="report-component-title">وجاهت 
-    <span class="report-badge report-score-data">#field_5361#<br></span>
-</div>
-<p class="report-paragraph">
-    وجاهت به معنای احساس ارزشمندی و احترام از سوی دیگران، همراه با برخورداری از حمایت معنوی و توجه به دیدگاه‌ها و باورهایتان است. اگر فرد احساس کند از تشویق مورد انتظار بی‌بهره مانده یا در دشواری‌ها تنهاست، این وجاهت ممکن است کاهش یابد و عزت نفس تحت تأثیر قرار گیرد.
-</p>
-<ul class="report-list">
-    <!-- سطح متوسط وجاهت -->
-    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10246#;">
-        <strong>«متوسط»<br></strong>
-        شما در برخی شرایط مورد تقدیر و احترام قرار می‌گیرید، اما همیشه این حس را تجربه نمی‌کنید. گاهی احساس می‌کنید از معنویت دور افتاده‌اید یا در شرایط سخت چندان حمایتی دریافت نمی‌کنید. این موضوع می‌تواند به نوع ارتباطات اجتماعی یا انتظارهای بالا از اطرافیان برگردد.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. شناسایی انتظارات واقعی خود از دیگران؛ گاه توقع بیش از حد باعث تجربه تلخ کم‌توجهی می‌شود.<br>
-                ۲. تقویت مهارت‌های ارتباطی؛ طرح درست و واضح درخواست‌های خود می‌تواند بیشتر به رفع نیازهایتان کمک کند.<br>
-                ۳. درگیر شدن در فعالیت‌های اجتماعی و معنوی برای ایجاد پیوندهای عمیق‌تر و دستیابی به شبکه حمایتی قوی‌تر.<br>
-                ۴. نگاه به جنبه‌های مثبت و تشویق‌های هرچند کوچک؛ این رویکرد ذهنیت کمبود را کاهش می‌دهد و به خودارزشمندی بیشتری می‌انجامد.<br>
-                ۵. گفت‌وگو با یک روان‌شناس یا مشاور در صورت تداوم احساس تنهایی یا عدم وجاهت؛ راهکارهای تخصصی می‌تواند وضعیت را بهبود بخشد.
-            </div>
-        </div>
-    </li>
+            <!-- Testimonials Section -->
+            <section class="content-section test-section" id="testimonials">
+                <div class="content-container">
+                    <!-- توصیه‌نامه‌ها -->
+                    <h2>توصیه‌نامه‌ها</h2>
+                    <div class="testimonial">
+                        <p>"آزمون فهرست تشخیص تعاملی ارجمندی به من کمک کرد تا بهتر خودم را بشناسم و در مسیر توسعه مهارت‌های ارتباطی‌ام قدم‌های موثرتری بردارم."</p>
+                        <p><strong>- نرگس موسوی</strong></p>
+                    </div>
+                    <div class="testimonial">
+                        <p>"گزارش دقیق این آزمون به من امکان داد تا توانایی‌های بالندگی، خودکامیابی، درست زیستی و وجاهت خود را شناسایی کنم و برای بهبود مهارت‌هایم برنامه‌ریزی کنم."</p>
+                        <p><strong>- امیرحسین رضایی</strong></p>
+                    </div>
+                </div>
+            </section>
 
-    <!-- سطح خوب وجاهت -->
-    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10246#;">
-        <strong>«خوب»<br></strong>
-        شما از احترام و توجه نسبی جامعه و اطرافیان برخوردارید؛ اعتقادات و دیدگاه‌هایتان عموماً مورد توجه قرار می‌گیرد و احساس رهاشدگی در دشواری‌ها ندارید. این شرایط به شما کمک می‌کند اعتمادبه‌نفس بالاتری داشته و روابط اجتماعی موثرتری برقرار کنید.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. حفظ این جایگاه مثبت با ادامه ابراز عقاید به شکل محترمانه و سازنده در جمع‌های کاری و خانوادگی.<br>
-                ۲. همراهی در کارهای گروهی که نیازمند تبادل نظر هستند؛ این رویکرد، حس ارزشمندی و احترام متقابل را پایدار می‌کند.<br>
-                ۳. رعایت تواضع در کنار احساس ارزشمندی؛ افراط در حس وجاهت می‌تواند منجر به خودبزرگ‌بینی شود.<br>
-                ۴. ایجاد فرصت‌های تازه برای شناخت بهتر معنوی یا فرهنگی؛ شرکت در کلاس‌ها، کارگاه‌ها یا جمع‌های مورد علاقه.<br>
-                ۵. در لحظات چالش‌برانگیز، بهره‌گیری از حامیان فعلی؛ به اشتراک گذاشتن نگرانی‌ها می‌تواند درک و پشتیبانی عمقی‌تری را حاصل کند.
-            </div>
-        </div>
-    </li>
+            <!-- Call-to-Action Section -->
+            <section class="content-section test-section" id="start-test">
+                <div class="content-container">
+                    <!-- دعوت به اقدام (CTA) -->
+                    <h2>آیا آماده‌اید تا شروع کنید؟</h2>
+                    <p>
+                        با انجام این آزمون، گامی مهم در جهت شناخت بهتر از خود و توسعه توانمندی‌های شناختی‌تان بردارید.
+                    </p>
+                    <div style="text-align: center; margin-top: 20px;">
+                        <a href="/take/fahrest-tashkhis-tamarkobi-argejmandi" class="cta-button">شروع آزمون</a>
+                    </div>
+                </div>
+            </section>
 
-    <!-- سطح عالی وجاهت -->
-    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10246#;">
-        <strong>«عالی»<br></strong>
-        شما در سطح بسیار بالایی از وجاهت قرار دارید؛ اطرافیان به عقاید و باورهایتان احترام فراوانی می‌گذارند و هنگام دشواری‌ها، احساس تنهایی نمی‌کنید. این مقدار از حمایت و تشویق می‌تواند عزت‌نفس شما را در سطحی عالی حفظ کند.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. به اشتراک گذاشتن منابع حمایتی و روش‌هایی که باعث ارتقای وجاهت شخصی شده، با کسانی که در این زمینه مشکل دارند.<br>
-                ۲. متعادل ساختن حس ارزشمندی با بهره‌گیری از روحیه فروتنی؛ گاهی پذیرش محدودیت‌ها و کمبودها می‌تواند رشد مستمر را تسهیل کند.<br>
-                ۳. استفاده از پتانسیل حمایت و احترام اطرافیان برای پیشبرد اهداف معنوی یا اجتماعی بزرگ‌تر؛ رهبری گروه‌ها یا فعالیت‌های بشردوستانه می‌تواند ثمربخش باشد.<br>
-                ۴. تداوم ارتباط با منابع معنوی؛ دوری از معنویت یا غفلت از رشد روحی ممکن است به مرور حس وجاهت را تضعیف کند.<br>
-                ۵. ارزیابی دوره‌ای موفقیت‌ها و بازبینی مسیر؛ هرگونه بهبود در کار و زندگی همراه با حس وجاهت قوی‌تر، به تعادل روانی بیشتر می‌انجامد.
-            </div>
-        </div>
-    </li>
+            <!-- FAQ Section (Optional) -->
+            <section class="content-section test-section" id="faq">
+                <div class="content-container">
+                    <!-- سوالات متداول -->
+                    <h2>سوالات متداول</h2>
+                    <div class="faq-item">
+                        <h4>آیا این آزمون دقیق است؟</h4>
+                        <p>بله، این آزمون بر اساس روش‌شناسی تحقیقاتی معتبر و تایید شده طراحی شده است تا نتایج دقیق و قابل اعتمادی ارائه دهد.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>آیا این آزمون برای کودکان مناسب است؟</h4>
+                        <p>این آزمون بیشتر برای بزرگسالان و نوجوانان طراحی شده است و ممکن است برای کودکان جوان‌تر مناسب نباشد.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>بعد از انجام آزمون چه اتفاقی می‌افتد؟</h4>
+                        <p>پس از تکمیل آزمون، شما یک گزارش جامع با نتایج و توصیه‌های شخصی دریافت خواهید کرد که می‌توانید آن را مرور کرده و در صورت نیاز، با متخصصین مشورت کنید.</p>
+                    </div>
+                </div>
+            </section>
+    </main>
 
-</ul>
+    <!-- Footer -->
+    <footer id="footer" class="footer">
+        <!-- Content injected via scripts -->
+    </footer>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-
-
-            <div class="report-section-title">جمع‌بندی</div>
-            <div class="report-paragraph">
-            <p>این گزارش ارزیابی مهارت‌های شما شامل تحلیل تعهد، نیرومندی، ظرفیت تحلیلی، بیتابی روانی، استقلال و سازش است. این بررسی نقاط قوت و زمینه‌های نیازمند بهبود شما را نشان داده و توصیه‌های کاربردی برای توسعه مهارت‌های شما ارائه می‌دهد.</p>
-            
-            <p><b>نقاط قوت: </b>شما در برخی از حوزه‌ها عملکرد برجسته‌ای دارید که نشان‌دهنده توانایی‌های قوی در مدیریت مسئولیت‌ها، انرژی بالا، تحلیل مسائل پیچیده، آرامش روانی، خودکفایی و تطبیق‌پذیری است. به عنوان مثال، در حوزه‌های "تعهد" و "ظرفیت تحلیلی"، شما توانایی زیادی در مدیریت وظایف و تحلیل مسائل نشان داده‌اید که می‌تواند به پیشرفت حرفه‌ای و رشد فردی شما کمک کند.</p>
-            
-            <p><b>حوزه‌های نیازمند بهبود:</b> در برخی از بخش‌ها نیاز به تمرکز بیشتر وجود دارد. به عنوان مثال، در حوزه‌های "بیتابی روانی" و "استقلال"، شما می‌توانید با تمرین‌های منظم و فعالیت‌های هدفمند مانند تکنیک‌های مدیریت استرس و برنامه‌ریزی منظم مهارت‌های خود را بهبود بخشید. همچنین، افزایش تعاملات اجتماعی و تمرین مهارت‌های تصمیم‌گیری مستقل می‌تواند تأثیر مثبتی بر عملکرد شما داشته باشد.</p>
-            
-            <p><b>گام‌های بعدی:</b> برای تقویت مهارت‌های خود، پیشنهاد می‌شود که به توصیه‌های ارائه‌شده در هر بخش توجه ویژه‌ای کنید و در صورت نیاز از خدمات مشاوره تخصصی استفاده نمایید. همچنین، ارزیابی منظم و پیگیری مداوم می‌تواند به توسعه پایدار و موفقیت شما در تمامی ابعاد زندگی کمک کند.</p>
-            </div>
-        
-        <footer class="report-footer-custom">
-            <div class="report-footer-content">
-                <img src="../panel/file?type=picture&amp;v=3&amp;mode=filemanager&amp;file=%7eDB3gfQUls%2bt2iiMYKbsRAxrtFhcHKUIUUo7pPtO17bHCzNxwU4zNh3UVor6QMtl7Y6EWX8dD0PSvzZOYkRrXlfejPn4lNTj6" class="report-footer-img" alt="لوگو">
-            </div>
-            <p class="report-footer-paragraph">مؤسّسه تعاملی هیجان اندیشه | تماس: 02188174100 | ایمیل: info@eot.ir</p>
-            <p class="report-footer-paragraph yellow-text">© ۱۴۰۳ تمامی حقوق محفوظ است.</p>
-            <ul class="report-footer-menu">
-                <li><a href="https://www.eot.ir/" class="report-footer-menu-link">صفحه اصلی</a></li>
-                <li><a href="https://www.eot.ir/contact" class="report-footer-menu-link">تماس با ما</a></li>
-                <li><a href="https://www.eot.ir/about" class="report-footer-menu-link">درباره ما</a></li>
-            </ul>
-            <address class="report-footer-address">تهران، سهروردی، خرمشهر، عربعلی، کوچه ششم، شماره ۴۴</address>
-        </footer>
-    </div>
+    <!-- Scripts -->
+    <script src="/assets/js/script.js"></script>
+    <script src="/assets/js/header-footer-inject.js"></script>
+    <script>
+        // FAQ Toggle Script
+        document.querySelectorAll('.faq-item h4').forEach(function(question) {
+            question.addEventListener('click', function() {
+                const parent = this.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

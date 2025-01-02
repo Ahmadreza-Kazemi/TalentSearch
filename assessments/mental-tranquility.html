@@ -1,52 +1,225 @@
-<div class="ravesh-editor-html" style="direction:rtl">
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>گزارش تحلیل فهرست تشخیص تعاملی شخصیت</title>
+    <title>استعدادیاب | معرفی آزمون تحلیل فهرست تشخیص تعاملی آرامش روانی</title>
     <style>
+        /* =======================================================
+           1. Reset and Base Styles
+        ======================================================= */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100%;
+            font-family: 'Vazir', sans-serif;
+            background-color: #FFFFFF;
+            color: #1F3B73;
+            direction: rtl;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            padding-top: 80px;
+            padding-bottom: 60px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #1F3B73;
+            transition: color 0.3s ease-in-out;
+        }
+
+        a:hover,
+        a:focus {
+            color: #F4C553;
+            text-decoration: underline;
+        }
+
+        /* =======================================================
+           2. Font Imports
+        ======================================================= */
+        @font-face {
+            font-family: 'Vazir';
+            src: url('/assets/fonts/Vazir-Regular-UI.woff2') format('woff2'),
+                 url('/assets/fonts/Vazir-Regular-UI.woff') format('woff'),
+                 url('/assets/fonts/Vazir-Regular-UI.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+        }
+
         @font-face {
             font-family: 'IRANSansWeb';
-            src: url('fonts/IRANSansWeb.woff2') format('woff2');
+            src: url('/assets/fonts/IRANSansWeb.woff2') format('woff2');
         }
         @font-face {
             font-family: 'BTitrBold';
-            src: url('fonts/BTitrBold.woff2') format('woff2');
+            src: url('/assets/fonts/BTitrBold.woff2') format('woff2');
         }
         @font-face {
             font-family: 'BKoodakBold';
-            src: url('fonts/BKoodakBold.woff2') format('woff2');
+            src: url('/assets/fonts/BKoodakBold.woff2') format('woff2');
         }
         @font-face {
             font-family: 'BHoma';
-            src: url('fonts/BHoma.woff2') format('woff2');
+            src: url('/assets/fonts/BHoma.woff2') format('woff2');
         }
         @font-face {
             font-family: 'BYekan';
-            src: url('fonts/BYekan.woff2') format('woff2');
+            src: url('/assets/fonts/BYekan.woff2') format('woff2');
         }
         @font-face {
             font-family: 'Tahoma';
-            src: url('fonts/Tahoma.woff2') format('woff2');
+            src: url('/assets/fonts/Tahoma.woff2') format('woff2');
         }
+
+        /* =======================================================
+           3. Typography
+        ======================================================= */
+        h1, h2, h3, h4 {
+            font-family: 'Vazir', sans-serif;
+            color: #1F3B73;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px #F4C553;
+        }
+
+        h2 {
+            font-size: 2em;
+            font-weight: 700;
+            margin-bottom: 24px;
+            text-shadow: 0 0 10px #F4C553;
+            color: #1F3B73;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 1.5em;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #1F3B73;
+            text-align: center;
+        }
+
+        h4 {
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-top: 16px;
+            color: #1F3B73;
+            text-align: center;
+        }
+
+        p {
+            font-size: 1em;
+            max-width: 800px;
+            margin: 0 auto 16px;
+            line-height: 1.6;
+            color: #1F3B73;
+            text-align: justify;
+        }
+
+        ul {
+            max-width: 800px;
+            margin: 0 auto 16px;
+            padding-right: 20px;
+            color: #1F3B73;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* =======================================================
+           4. Hero Section
+        ======================================================= */
+        .hero {
+            height: calc(100vh - 80px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #F0F0F5;
+            padding: 16px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 16px;
+            color: #1F3B73;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            margin-bottom: 24px;
+            color: #1F3B73;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #F4C553;
+            color: #FFFFFF;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 1em;
+            box-shadow: 0 0 10px #FFD77B;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease-in-out,
+                        transform 0.3s ease-in-out,
+                        box-shadow 0.3s ease-in-out;
+        }
+
+        .cta-button:hover,
+        .cta-button:focus {
+            background-color: #4FBDBA;
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px #4FBDBA;
+        }
+
+        /* =======================================================
+           5. Content Sections
+        ======================================================= */
+        .content-section {
+            padding: 60px 16px;
+            background-color: #FFFFFF;
+        }
+
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .content-section:nth-child(even) {
+            background-color: #F9F9F9;
+        }
+
+        /* =======================================================
+           6. Sample Report Section
+        ======================================================= */
+        /* Report Styles */
         .report-container {
             font-family: 'BYekan', sans-serif;
             direction: rtl;
             line-height: 1.8;
             background-color: #F5F5F5;
             color: #333333;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            max-width: 800px;
-            width: 100%;
-            margin: auto;
-            background-color: #F5F5F5;
+            margin: 40px auto;
             padding: 40px;
             box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
             border-radius: 20px;
+            max-width: 800px;
         }
+
         .report-header-custom {
             display: flex;
             align-items: center;
@@ -55,15 +228,18 @@
             background-color: #0DA3B8;
             border-radius: 20px 20px 0 0;
         }
+
         .report-header-inner {
             display: flex;
             align-items: center;
             gap: 20px;
         }
+
         .report-header-img {
             width: 40px;
             height: 40px;
         }
+
         .report-header-title {
             margin: 0;
             font-size: 1.8em;
@@ -71,22 +247,39 @@
             font-family: 'IRANSansWeb', sans-serif;
             font-weight: normal;
         }
+
         .report-header-date {
             color: #ffffff;
             font-size: 1em;
         }
-        .report-title {
-            text-align: center;
-            color: #0DA3B8;
+
+        .report-section-title {
+            font-size: 22px;
+            color: #CC3333;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #CC3333;
             font-family: 'IRANSansWeb', sans-serif;
             font-weight: bold;
-            font-size: 32px;
-            margin-bottom: 25px;
+            text-align: center;
         }
+
+        .report-paragraph {
+            background-color: #E0F7FA;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
         .report-info-container, .report-score-container {
             display: flex;
             flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
         }
+
         .report-info-item, .report-score-item {
             background-color: #F8F9FA;
             padding: 15px;
@@ -99,26 +292,17 @@
             font-family: 'BYekan', sans-serif;
             flex: 1;
             min-width: 300px;
-            margin-right: 10px; /* Add space between columns */
         }
+
         .report-info-item strong, .report-score-item strong {
             color: #0DA3B8;
             font-family: 'IRANSansWeb', sans-serif;
         }
+
         .report-info-data, .report-score-data {
             font-family: 'IRANSansWeb', sans-serif;
         }
-        .report-section-title {
-            font-size: 22px;
-            color: #CC3333;
-            margin-top: 30px;
-            margin-bottom: 10px;
-            padding-bottom: 5px;
-            border-bottom: 1px solid #CC3333;
-            font-family: 'IRANSansWeb', sans-serif;
-            font-weight: bold;
-            text-align: center;
-        }
+
         .report-component-title {
             display: flex;
             justify-content: space-between;
@@ -131,32 +315,7 @@
             border-bottom: 1px solid #DBCF93;
             font-family: 'IRANSansWeb', sans-serif;
         }
-        .report-paragraph {
-            background-color: #E0F7FA;
-            padding: 15px;
-            border-radius: 10px;
-            font-size: 16px;
-            margin-bottom: 20px;
-        }
-        .report-list {
-            list-style-type: none;
-            padding: 0;
-            font-size: 16px;
-        }
-        .report-list-item {
-            background: #F8F9FA;
-            margin-bottom: 10px;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-            display: flex;
-            flex-direction: column;
-        }
-        .report-list-item strong {
-            font-size: 18px;
-            color: #0DA3B8;
-            margin-bottom: 5px;
-        }
+
         .report-badge {
             display: inline-block;
             padding: 8px 15px;
@@ -165,6 +324,7 @@
             background-color: #4A9B8C;
             border-radius: 10px;
         }
+
         .report-recommendation {
             background-color: #EAEAEA;
             padding: 20px;
@@ -176,80 +336,43 @@
             width: 100%;
             box-sizing: border-box;
         }
+
         .report-recommendation-title {
             font-weight: bold;
             color: #CC3333;
             margin-bottom: 5px;
             font-size: 18px;
         }
+
         .report-recommendation-text {
             margin-bottom: 5px;
             line-height: 1.6;
             font-size: 16px;
         }
-        .report-footer-custom {
-            background-color: #F5F5F5;
-            color: #333333;
-            padding: 20px;
-            text-align: center;
-            font-family: 'IRANSansWeb', sans-serif;
-            border-top: 1px solid #E0E0E0;
-            font-size: 16px; /* Increased font size */
-        }
-        .report-footer-content {
-            margin-bottom: 20px;
-        }
-        .report-footer-img {
-            width: 80px;
-            height: 80px;
-        }
-        .report-footer-paragraph {
-            margin: 5px 0;
-        }
-        .report-footer-paragraph.yellow-text {
-            color: #DBCF93;
-        }
-        .report-footer-menu {
-            list-style: none;
+
+        .report-list {
+            list-style-type: none;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin: 10px 0;
+            font-size: 16px;
         }
-        .report-footer-menu-link {
-            color: #0DA3B8;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        .report-footer-menu-link:hover {
-            color: #007B8A;
-        }
-        .report-footer-address {
-            margin-top: 10px;
-            font-size: 14px;
-        }
-        .report-summary-container {
-            max-width: 800px;
-            margin: auto;
-            background-color: #FFFFFF;
-            padding: 40px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+
+        .report-list-item {
+            background: #F8F9FA;
+            margin-bottom: 10px;
+            padding: 15px;
             border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
         }
-        .report-summary-heading {
-            text-align: center;
+
+        .report-list-item strong {
+            font-size: 18px;
             color: #0DA3B8;
-            font-family: 'IRANSansWeb', sans-serif;
-            font-weight: bold;
-            font-size: 32px;
-            margin-bottom: 25px;
+            margin-bottom: 5px;
         }
-        .report-summary-content {
-            color: #333333;
-            font-family: 'IRANSansWeb', sans-serif;
-            line-height: 1.8;
-        }
+
+        /* Report Conditional Display Styles */
         .report-conditional-display {
             display: block;
         }
@@ -277,269 +400,423 @@
             border-radius: 10px;
             background-color: #99FF99; /* Excellent */
         }
+
+        /* =======================================================
+           7. FAQ Section
+        ======================================================= */
+        .faq-item {
+            margin-bottom: 20px;
+        }
+
+        .faq-item h4 {
+            cursor: pointer;
+            position: relative;
+        }
+
+        .faq-item h4::after {
+            content: '+';
+            position: absolute;
+            left: -20px;
+            top: 0;
+            font-size: 1.5em;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active h4::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-item p {
+            display: none;
+            margin-top: 10px;
+        }
+
+        .faq-item.active p {
+            display: block;
+        }
     </style>
-    <div class="report-report-container">
-        <header class="report-header-custom">
-            <div class="report-header-inner">
-                <img src="../panel/file?type=picture&amp;v=3&amp;mode=filemanager&amp;file=%7eDB3gfQUls%2bt2iiMYKbsRAxrtFhcHKUIUUo7pPtO17bHCzNxwU4zNh3UVor6QMtl7Y6EWX8dD0PSvzZOYkRrXlfejPn4lNTj6" class="report-header-img" alt="لوگو">
-                <h1 class="report-header-title">گزارش تحلیل فهرست تشخیص تعاملی شخصیت</h1>
+</head>
+<body>
+    <header class="header">
+        <!-- می‌توانید محتوای سربرگ را اینجا اضافه کنید -->
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>تحلیل فهرست تشخیص تعاملی آرامش روانی</h1>
+                <p>شناخت تعادل روانی شما و توسعه مهارت‌های فردی و حرفه‌ای</p>
+                <a href="#start-test" class="cta-button">شروع آزمون</a>
             </div>
-            <div class="report-header-date">تاریخ اجرا: #primary_createDate#</div>
-        </header>
-        
-        <div class="report-section-title">فهرست تشخیص تعاملی شخصیت</div>
-        <p class="report-paragraph">
-            این ارزیابی به منظور تحلیل و بررسی ویژگی‌های شخصیتی فرد در حوزه‌های مختلف از جمله تعهد، نیرومندی، ظرفیت تحلیلی، بیتابی روانی، استقلال و سازش انجام شده است. هدف از این ارزیابی شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد.
-        </p><p></p>
-               
-        <div class="report-section-title">اطلاعات فردی</div>
-        <div class="report-info-container">
-            <div class="report-info-item"><strong>نام:</strong> <span class="report-info-data">#field_349#</span></div>
-            <div class="report-info-item"><strong>نام خانوادگی:</strong> <span class="report-info-data">#field_1712#</span></div>
-            <div class="report-info-item"><strong>موبایل:</strong> <span class="report-info-data">#field_350#</span></div>
-            <div class="report-info-item"><strong>ایمیل:</strong> <span class="report-info-data">#field_351#</span></div></div>
+        </section>
 
-        </div>
-        <div class="report-section-title">نتیجه</div>
-        <div class="report-score-container">
-            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10238#;"><strong>استواری:</strong> <span class="report-badge">#field_5322#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10238#;"><strong>استواری:</strong> <span class="report-badge">#field_5322#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10238#;"><strong>استواری:</strong> <span class="report-badge">#field_5322#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10239#;"><strong>بالندگی متعالی:</strong> <span class="report-badge">#field_5321#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10239#;"><strong>بالندگی متعالی:</strong> <span class="report-badge">#field_5321#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10239#;"><strong>بالندگی متعالی:</strong> <span class="report-badge">#field_5321#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10240#;"><strong>پشتیبانی:</strong> <span class="report-badge">#field_5320#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10240#;"><strong>پشتیبانی:</strong> <span class="report-badge">#field_5320#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10240#;"><strong>پشتیبانی:</strong> <span class="report-badge">#field_5320#</span></div>
-
-        </div>
-        <div class="report-section-title">تفسیر</div>
-        <p class="report-paragraph">
-            این بخش به تحلیل و تفسیر نتایج ارزیابی روان‌شناختی فرد می‌پردازد. تحلیل روان‌شناختی شامل بررسی ویژگی‌های شخصیتی مختلف است. هدف از این تحلیل شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد. نتایج این تحلیل می‌تواند به فرد کمک کند تا با شناخت بهتر از خود، برنامه‌های توسعه فردی و حرفه‌ای موثرتری را دنبال کند.
-        </p>
-
-
-
-
-
-
-
-                                              
-        
-
-<!-- استواری (حس پیوستگی و آرامش در مسیر زندگی) -->
-<div class="report-component-title">استواری 
-    <span class="report-badge report-score-data">#field_5322#<br></span>
-</div>
-<p class="report-paragraph">
-    استواری در راستای آرامش ذهنی، به معنای احساس پایداری و جهت‌داشتن در زندگی است. افرادی که در این حوزه نمره بالاتری دریافت می‌کنند، خود را مفید و سالم می‌بینند، از سردرگمی و مقایسه‌های منفی با دیگران دوری می‌کنند و مسیر شخصی خود را با اعتماد طی می‌نمایند.
-</p>
-<ul class="report-list">
-
-    <!-- سطح متوسط استواری -->
-    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10238#;">
-        <strong>«متوسط»<br></strong>
-        شما گاهی دچار احساس درجا زدن یا وابستگی به دیگران می‌شوید و ممکن است حس کنید به‌اندازه کافی پیشرفت نکرده‌اید. هرچند معمولاً از تمام موقعیت‌ها ناراضی نیستید، اما نیاز دارید گام‌های مشخصی برای تقویت اعتمادبه‌نفس و یافتن مسیر رشدتان بردارید.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. تعریف اهداف کوچک و قابل دستیابی برای ایجاد حس پیشرفت پیوسته.<br>
-                ۲. شناسایی علایق درونی و تلاش برای تقویت سلامت جسمی و روانی (ورزش، تغذیه مناسب، استراحت کافی).<br>
-                ۳. شرکت در جلسات مشاوره یا گفت‌وگو با فردی معتمد جهت شناسایی علل احساس رکود و یافتن راهکارهای تخصصی.<br>
-                ۴. تمرین مدیتیشن یا تکنیک‌های ذهن‌آگاهی برای افزایش تمرکز بر توانمندی‌های خود و رهایی از افکار منفی.<br>
-                ۵. اجتناب از مقایسه مداوم خود با دیگران؛ هر فرد مسیر خاص خود را دارد و پیشرفت واقعی با تکیه بر توانایی‌های فردی حاصل می‌شود.
+        <!-- Test Purpose Section -->
+        <section class="content-section test-section" id="test-purpose">
+            <div class="content-container">
+                <!-- هدف از آزمون -->
+                <h2>هدف از آزمون</h2>
+                <p>
+                    این ارزیابی به منظور تحلیل و بررسی ویژگی‌های شخصیتی فرد در حوزه‌های مختلف از جمله استواری، بالندگی متعالی و پشتیبانی انجام شده است. هدف از این ارزیابی شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد.
+                </p>
             </div>
-        </div>
-    </li>
+        </section>
 
-    <!-- سطح خوب استواری -->
-    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10238#;">
-        <strong>«خوب»<br></strong>
-        شما در زندگی‌تان به‌طور کلی احساس استواری می‌کنید و مسیر رشد خود را دنبال می‌کنید. گرچه گاهی نگرانی‌های معمول یا لحظات دودلی رخ می‌دهد، اما توان عبور از آن را دارید و این نشانه سلامت روانی و اطمینان نسبی شماست.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. حفظ روند مثبت فعلی با شناسایی نقاط قوت و برجسته کردن دستاوردها، برای افزایش اعتمادبه‌نفس.<br>
-                ۲. مطالعه مطالب الهام‌بخش و انگیزشی (کتاب‌های توسعه فردی، سخنرانی‌های موفقیت) برای تداوم مسیر رشد.<br>
-                ۳. برقراری توازن بین کار، تحصیل و زندگی شخصی؛ اختصاص زمانی روزانه به استراحت، تفریح یا صحبت با دوستان.<br>
-                ۴. ارتقای مهارت‌های تصمیم‌گیری برای رهایی از سردرگمی‌های مقطعی و ادامه مسیر با قوت بیشتر.<br>
-                ۵. تعمیق معنویت یا ارتباط درونی برای ایجاد حس هدفمندی بیشتر و کاهش استرس‌های ناگهانی.
+        <!-- Key Features Section -->
+        <section class="content-section test-section" id="key-features">
+            <div class="content-container">
+                <!-- ویژگی‌های کلیدی آزمون -->
+                <h2>ویژگی‌های کلیدی آزمون</h2>
+                <ul>
+                    <li><strong>عوامل ارزیابی:</strong> استواری، بالندگی متعالی، پشتیبانی</li>
+                    <li><strong>زمان مورد نیاز:</strong> 20 دقیقه</li>
+                    <li><strong>دسترسی:</strong> آنلاین و حضوری</li>
+                    <li><strong>نوع گزارش:</strong> گزارش جامع با نمودارها و توصیه‌های عملی</li>
+                </ul>
             </div>
-        </div>
-    </li>
+        </section>
 
-    <!-- سطح عالی استواری -->
-    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10238#;">
-        <strong>«عالی»<br></strong>
-        شما در سطح بسیار بالایی از استواری قرار دارید و مسیر زندگی‌تان را به‌وضوح می‌شناسید. احساس مفید بودن، سلامتی روانی و استقلال فردی در شما بارز است و این اعتماد درونی سبب می‌شود کمتر تحت تأثیر ناکامی‌های جزئی قرار گیرید.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. نقش راهنمایی یا الگوبخشی برای افرادی که در جست‌وجوی ثبات روانی و جهت‌گیری روشن در زندگی هستند.<br>
-                ۲. پذیرش مسئولیت‌های گسترده‌تر در محیط کار یا تحصیل، چراکه استواری بالا به شما قابلیت مدیریت شرایط دشوار را می‌دهد.<br>
-                ۳. مراقبت از تداوم سلامت جسمی و روانی؛ حتی در اوج استواری نیز نیاز به مراقبت فردی وجود دارد.<br>
-                ۴. آموزش مهارت‌های تاب‌آوری به دیگران یا برگزاری جلسات اشتراک‌گذاری تجربه، برای گسترش حس اطمینان جمعی.<br>
-                ۵. استمرار در بازبینی اهداف و دستیابی به آن‌ها؛ گاهی تعریف اهداف چالش‌برانگیزتر، مسیر رشد را هیجان‌انگیزتر می‌کند.
+        <!-- Benefits Section -->
+        <section class="content-section test-section" id="benefits">
+            <div class="content-container">
+                <!-- مزایای شرکت در این آزمون -->
+                <h2>مزایای شرکت در این آزمون</h2>
+                <ul>
+                    <li>افزایش خودآگاهی و شناخت بهتر از تعادل روانی</li>
+                    <li>بهبود مهارت‌های مدیریت استرس و تعادل زندگی</li>
+                    <li>شناسایی نقاط قوت و ضعف در جنبه‌های مختلف روانی</li>
+                    <li>حمایت از رشد و توسعه شخصی و حرفه‌ای</li>
+                    <li>افزایش رضایت و تعهد در زندگی روزمره</li>
+                </ul>
             </div>
-        </div>
-    </li>
-</ul>
+        </section>
 
-<!-- بالندگی متعالی (احساس رشد و موفقیت در زندگی) -->
-<div class="report-component-title">بالندگی متعالی 
-    <span class="report-badge report-score-data">#field_5321#<br></span>
-</div>
-<p class="report-paragraph">
-    بالندگی متعالی به معنای حس پیشرفت فراتر از حد متوسط در زندگی است؛ فردی که خود را در جایگاه شایسته‌ای می‌بیند، احساس می‌کند در مسیر بهترین بودن گام برمی‌دارد و معنای عمیق‌تری از موفقیت و زندگی دارد. این احساس، در کنار ثبات روانی، به شما توان ساختن آینده‌ای امیدوارکننده و هدفمند را می‌دهد.
-</p>
-<ul class="report-list">
-
-    <!-- سطح متوسط بالندگی متعالی -->
-    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10239#;">
-        <strong>«متوسط»<br></strong>
-        شما در بسیاری مواقع حس پیشرفت و رشد را تجربه می‌کنید، اما ممکن است هنوز با تمام ظرفیت‌هایتان فاصله داشته باشید. گاهی اوقات تردیدها یا دغدغه‌های مختلف سبب می‌شود تا کاملاً از جایگاه کنونی خود رضایت نداشته باشید.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. تعیین اهداف واضح و قابل سنجش برای مسیر آینده؛ هر موفقیت کوچک می‌تواند حس بالندگی را تقویت کند.<br>
-                ۲. به اشتراک گذاشتن داستان پیشرفت خود با دیگران، تا دیدگاه‌های متفاوت شما را به نقاط رشد جدیدی هدایت کنند.<br>
-                ۳. مطالعه منابع انگیزشی یا حضور در دوره‌های توسعه فردی که به شما ایده‌ها و راهکارهای تازه بدهد.<br>
-                ۴. پرسیدن از خود: «چه‌کاری باید انجام دهم تا سطح فعلی را ارتقا دهم؟» و برنامه‌ریزی عملی برای آن.<br>
-                ۵. استراحت کافی و دوری از افراط؛ پیشرفت تدریجی اما مستمر، مانع از فرسودگی و بی‌حوصلگی می‌شود.
+        <!-- How It Works Section -->
+        <section class="content-section test-section" id="how-it-works">
+            <div class="content-container">
+                <!-- نحوه انجام آزمون -->
+                <h2>نحوه انجام آزمون</h2>
+                <p>
+                    آزمون فهرست تشخیص تعاملی آرامش روانی شامل مراحل زیر است:
+                </p>
+                <ul>
+                    <li><strong>گام اول:</strong> تکمیل پرسشنامه آنلاین به مدت 20 دقیقه</li>
+                    <li><strong>گام دوم:</strong> دریافت گزارش تحلیلی جامع با نتایج و توصیه‌ها</li>
+                    <li><strong>گام سوم:</strong> بررسی نتایج و در صورت نیاز، مشاوره با متخصصین</li>
+                </ul>
             </div>
-        </div>
-    </li>
+        </section>
 
-    <!-- سطح خوب بالندگی متعالی -->
-    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10239#;">
-        <strong>«خوب»<br></strong>
-        شما احساس بالندگی قابل توجهی در زندگی دارید و توانسته‌اید جایگاه شایسته‌ای برای خود کسب کنید. این سطح از موفقیت نشان می‌دهد که اغلب به‌درستی مسیرتان را انتخاب می‌کنید و از دیدگاه معنایی نیز خود را در راستای بهترین بودن می‌بینید.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. حفظ و ارتقای سطح فعلی از طریق تعریف اهداف بلندپروازانه‌تر در کنار حفظ سلامت و آرامش ذهنی.<br>
-                ۲. به‌اشتراک‌گذاری تجربیات موفقیت با افرادی که در ابتدای مسیر هستند و ایجاد شبکه‌ای از تبادل انگیزه و دانش.<br>
-                ۳. تقویت مهارت‌های مدیریتی و رهبری؛ بالندگی متعالی اغلب با ایجاد تأثیر مثبت بر دیگران همراه است.<br>
-                ۴. برنامه‌ریزی برای استراحت ذهنی و جسمی؛ تلاش بیش‌ازحد بدون وقفه می‌تواند انگیزه و حس پیشرفت را تهدید کند.<br>
-                ۵. پایش دوره‌ای عملکرد و رضایتتان؛ هر تغییر کوچک در اولویت‌ها می‌تواند مسیر بالندگی را هیجان‌انگیزتر کند.
+        <!-- Who Should Take This Test Section -->
+        <section class="content-section test-section" id="who-should-take">
+            <div class="content-container">
+                <!-- چه کسانی باید این آزمون را انجام دهند؟ -->
+                <h2>چه کسانی باید این آزمون را انجام دهند؟</h2>
+                <ul>
+                    <li>افرادی که به دنبال شناخت بهتر از تعادل روانی خود هستند</li>
+                    <li>مدیران و کارمندان که به دنبال بهبود سلامت روانی و عملکرد خود هستند</li>
+                    <li>مشاوران و روانشناسان برای پشتیبانی از مشتریان خود در حوزه تعادل روانی</li>
+                    <li>سازمان‌ها و شرکت‌ها برای ارزیابی و بهبود سلامت و انگیزه کارکنان</li>
+                    <li>دانشجویان و کارجویانی که به دنبال افزایش تعادل روانی و بهبود عملکرد خود هستند</li>
+                </ul>
             </div>
-        </div>
-    </li>
+        </section>
 
-    <!-- سطح عالی بالندگی متعالی -->
-    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10239#;">
-        <strong>«عالی»<br></strong>
-        شما در اوج حس بالندگی متعالی قرار دارید؛ به‌وضوح احساس می‌کنید در مسیر بهترین بودن پیش می‌روید و معنای عمیق‌تری را در زندگی و موفقیت‌های خود یافته‌اید. این رویکرد نه‌تنها به شما انرژی فوق‌العاده‌ای می‌بخشد، بلکه می‌تواند الگویی برای اطرافیان باشد.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. پذیرش مسئولیت‌های بزرگ‌تر و چالشی‌تر که در آن‌ها بتوانید قابلیت‌های پیشرفته خود را به نمایش بگذارید.<br>
-                ۲. برگزاری یا شرکت در سمینارها و کارگاه‌های انگیزشی و توسعه فردی، جهت انتقال تجربیات و الهام‌بخشی به دیگران.<br>
-                ۳. حفظ تواضع در عین سرآمدی؛ گاهی احساس برتری می‌تواند موانعی در برابر رشد بیشتر ایجاد کند.<br>
-                ۴. مدیریت استرس و تقسیم زمان میان کار، روابط اجتماعی و زندگی شخصی، تا حس بالندگی تداوم داشته باشد.<br>
-                5. مشارکت در فعالیت‌های عام‌المنفعه یا گروه‌های خودیاری برای تقویت حس پویایی و خوشایند بودن دستاوردهایتان.
-            </div>
-        </div>
-    </li>
-</ul>
+        <!-- Sample Report Section -->
+        <section class="content-section test-section" id="sample-report">
+            <div class="content-container">
+                <!-- نمونه گزارش -->
+                <h2>نمونه گزارش</h2>
+                <p>
+                    در ادامه یک نمونه از گزارش تحلیل فهرست تشخیص تعاملی آرامش روانی را مشاهده می‌کنید:
+                </p>
+                <div class="report-container">
+                    <header class="report-header-custom">
+                        <div class="report-header-inner">
+                            <img src="../panel/file?type=picture&amp;v=3&amp;mode=filemanager&amp;file=%7eDB3gfQUls%2bt2iiMYKbsRAxrtFhcHKUIUUo7pPtO17bHCzNxwU4zNh3UVor6QMtl7Y6EWX8dD0PSvzZOYkRrXlfejPn4lNTj6" class="report-header-img" alt="لوگو">
+                            <h1 class="report-header-title">گزارش تحلیل فهرست تشخیص تعاملی آرامش روانی</h1>
+                        </div>
+                        <div class="report-header-date">تاریخ اجرا: #primary_createDate#</div>
+                    </header>
+                    <div class="report-section-title">فهرست تشخیص تعاملی آرامش روانی</div>
+                    <p class="report-paragraph">
+                        این ارزیابی به منظور تحلیل و بررسی ویژگی‌های شخصیتی فرد در حوزه‌های مختلف از جمله استواری، بالندگی متعالی و پشتیبانی انجام شده است. هدف از این ارزیابی شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد.
+                    </p>
+                    <div class="report-section-title">اطلاعات فردی</div>
+                    <div class="report-info-container">
+                        <div class="report-info-item"><strong>نام:</strong> <span class="report-info-data">#field_5280#</span></div>
+                        <div class="report-info-item"><strong>نام خانوادگی:</strong> <span class="report-info-data">#field_5281#</span></div>
+                        <div class="report-info-item"><strong>موبایل:</strong> <span class="report-info-data">#field_5283#</span></div>
+                        <div class="report-info-item"><strong>ایمیل:</strong> <span class="report-info-data">#field_5282#</span></div>
+                    </div>
 
-<!-- پشتیبانی (احساس حمایت و همکاری در زندگی) -->
-<div class="report-component-title">پشتیبانی 
-    <span class="report-badge report-score-data">#field_5320#<br></span>
-</div>
-<p class="report-paragraph">
-    پشتیبانی نشان‌دهنده حس راحتی و پذیرش فرد از سوی اطرافیان است. زمانی که فرد در مسیر زندگی، دیدگاه‌ها و نیازهایش از سوی دیگران مورد احترام قرار گیرد و از همکاری آن‌ها بهره‌مند شود، تعادل روانی و احساس امنیت بالاتری را تجربه خواهد کرد.
-</p>
-<ul class="report-list">
-    <!-- سطح متوسط پشتیبانی -->
-    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10240#;">
-        <strong>«متوسط»<br></strong>
-        شما در بسیاری از شرایط احساس حمایت اجتماعی می‌کنید، اما شاید همیشه به شکل کامل یا در همه موقعیت‌ها پذیرش و همکاری لازم را دریافت نکنید. بااین‌وجود، فضای نسبی همراهی و قبول شدن از سوی دیگران وجود دارد.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. شفافیت در بیان نیازها و خواسته‌هایتان به اطرافیان؛ ممکن است آن‌ها دقیقاً ندانند شما چه کمکی می‌خواهید.<br>
-                ۲. پرورش مهارت‌های ارتباطی و گوش دادن فعال برای تقویت ارتباط دوسویه و افزایش حس اطمینان در روابط.<br>
-                ۳. شناسایی افرادی که با شما همفکر یا مهارت‌های تکمیلی دارند و ایجاد شبکه حمایتی قوی‌تر.<br>
-                ۴. در صورت نیاز، گفتگو با مشاور یا راهنمای متخصص برای دریافت حمایت روانی تخصصی‌تر.<br>
-                ۵. قدردانی کردن از اطرافیان و اعلام رضایت، تا آن‌ها هم ترغیب به همکاری بیشتر شوند.
-            </div>
-        </div>
-    </li>
+                    <div class="report-section-title">نتیجه</div>
+                    <div class="report-score-container">
+                        <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10238#;"><strong>استواری:</strong> <span class="report-badge">#field_5322#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10238#;"><strong>استواری:</strong> <span class="report-badge">#field_5322#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10238#;"><strong>استواری:</strong> <span class="report-badge">#field_5322#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10239#;"><strong>بالندگی متعالی:</strong> <span class="report-badge">#field_5321#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10239#;"><strong>بالندگی متعالی:</strong> <span class="report-badge">#field_5321#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10239#;"><strong>بالندگی متعالی:</strong> <span class="report-badge">#field_5321#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10240#;"><strong>پشتیبانی:</strong> <span class="report-badge">#field_5320#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10240#;"><strong>پشتیبانی:</strong> <span class="report-badge">#field_5320#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10240#;"><strong>پشتیبانی:</strong> <span class="report-badge">#field_5320#</span></div>
+                    </div>
+                    <div class="report-section-title">تفسیر</div>
+                    <p class="report-paragraph">
+                        این بخش به تحلیل و تفسیر نتایج ارزیابی روان‌شناختی فرد می‌پردازد. تحلیل روان‌شناختی شامل بررسی ویژگی‌های شخصیتی در حوزه‌های استواری، بالندگی متعالی و پشتیبانی است. هدف از این تحلیل شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد. نتایج این تحلیل می‌تواند به فرد کمک کند تا با شناخت بهتر از خود، برنامه‌های توسعه فردی و حرفه‌ای موثرتری را دنبال کند و در مسیر رشد و پیشرفت خود گام‌های مؤثرتری بردارد.
+                    </p>
+                    
+                    <!-- استواری -->
+                    <div class="report-component-title">استواری 
+                        <span class="report-badge report-score-data">#field_5322#<br></span>
+                    </div>
+                    <p class="report-paragraph">
+                        استواری در راستای آرامش ذهنی، به معنای احساس پایداری و جهت‌داشتن در زندگی است. افرادی که در این حوزه نمره بالاتری دریافت می‌کنند، خود را مفید و سالم می‌بینند، از سردرگمی و مقایسه‌های منفی با دیگران دوری می‌کنند و مسیر شخصی خود را با اعتماد طی می‌نمایند.
+                    </p>
+                    <ul class="report-list">
+                        <!-- سطح متوسط استواری -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10238#;">
+                            <strong>«متوسط»<br></strong>
+                            شما گاهی دچار احساس درجا زدن یا وابستگی به دیگران می‌شوید و ممکن است حس کنید به‌اندازه کافی پیشرفت نکرده‌اید. هرچند معمولاً از تمام موقعیت‌ها ناراضی نیستید، اما نیاز دارید گام‌های مشخصی برای تقویت اعتمادبه‌نفس و یافتن مسیر رشدتان بردارید.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. تعریف اهداف کوچک و قابل دستیابی برای ایجاد حس پیشرفت پیوسته.<br>
+                                    ۲. شناسایی علایق درونی و تلاش برای تقویت سلامت جسمی و روانی (ورزش، تغذیه مناسب، استراحت کافی).<br>
+                                    ۳. شرکت در جلسات مشاوره یا گفت‌وگو با فردی معتمد جهت شناسایی علل احساس رکود و یافتن راهکارهای تخصصی.<br>
+                                    ۴. تمرین مدیتیشن یا تکنیک‌های ذهن‌آگاهی برای افزایش تمرکز بر توانمندی‌های خود و رهایی از افکار منفی.<br>
+                                    ۵. اجتناب از مقایسه مداوم خود با دیگران؛ هر فرد مسیر خاص خود را دارد و پیشرفت واقعی با تکیه بر توانایی‌های فردی حاصل می‌شود.
+                                </div>
+                            </div>
+                        </li>
+                        <!-- سطح خوب استواری -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10238#;">
+                            <strong>«خوب»<br></strong>
+                            شما در زندگی‌تان به‌طور کلی احساس استواری می‌کنید و مسیر رشد خود را دنبال می‌کنید. گرچه گاهی نگرانی‌های معمول یا لحظات دودلی رخ می‌دهد، اما توان عبور از آن را دارید و این نشانه سلامت روانی و اطمینان نسبی شماست.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. حفظ روند مثبت فعلی با شناسایی نقاط قوت و برجسته کردن دستاوردها، برای افزایش اعتمادبه‌نفس.<br>
+                                    ۲. مطالعه مطالب الهام‌بخش و انگیزشی (کتاب‌های توسعه فردی، سخنرانی‌های موفقیت) برای تداوم مسیر رشد.<br>
+                                    ۳. برقراری توازن بین کار، تحصیل و زندگی شخصی؛ اختصاص زمانی روزانه به استراحت، تفریح یا صحبت با دوستان.<br>
+                                    ۴. ارتقای مهارت‌های تصمیم‌گیری برای رهایی از سردرگمی‌های مقطعی و ادامه مسیر با قوت بیشتر.<br>
+                                    ۵. تعمیق معنویت یا ارتباط درونی برای ایجاد حس هدفمندی بیشتر و کاهش استرس‌های ناگهانی.
+                                </div>
+                            </div>
+                        </li>
+                        <!-- سطح عالی استواری -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10238#;">
+                            <strong>«عالی»<br></strong>
+                            شما در سطح بسیار بالایی از استواری قرار دارید و مسیر زندگی‌تان را به‌وضوح می‌شناسید. احساس مفید بودن، سلامتی روانی و استقلال فردی در شما بارز است و این اعتماد درونی سبب می‌شود کمتر تحت تأثیر ناکامی‌های جزئی قرار گیرید.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. نقش راهنمایی یا الگوبخشی برای افرادی که در جست‌وجوی ثبات روانی و جهت‌گیری روشن در زندگی هستند.<br>
+                                    ۲. پذیرش مسئولیت‌های گسترده‌تر در محیط کار یا تحصیل، چراکه استواری بالا به شما قابلیت مدیریت شرایط دشوار را می‌دهد.<br>
+                                    ۳. مراقبت از تداوم سلامت جسمی و روانی؛ حتی در اوج استواری نیز نیاز به مراقبت فردی وجود دارد.<br>
+                                    ۴. آموزش مهارت‌های تاب‌آوری به دیگران یا برگزاری جلسات اشتراک‌گذاری تجربه، برای گسترش حس اطمینان جمعی.<br>
+                                    ۵. استمرار در بازبینی اهداف و دستیابی به آن‌ها؛ گاهی تعریف اهداف چالش‌برانگیزتر، مسیر رشد را هیجان‌انگیزتر می‌کند.
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <!-- بالندگی متعالی -->
+                    <div class="report-component-title">بالندگی متعالی 
+                        <span class="report-badge report-score-data">#field_5321#<br></span>
+                    </div>
+                    <p class="report-paragraph">
+                        بالندگی متعالی به معنای حس پیشرفت فراتر از حد متوسط در زندگی است؛ فردی که خود را در جایگاه شایسته‌ای می‌بیند، احساس می‌کند در مسیر بهترین بودن گام برمی‌دارد و معنای عمیق‌تری از موفقیت و زندگی دارد. این احساس، در کنار ثبات روانی، به شما توان ساختن آینده‌ای امیدوارکننده و هدفمند را می‌دهد.
+                    </p>
+                    <ul class="report-list">
+                        <!-- سطح متوسط بالندگی متعالی -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10239#;">
+                            <strong>«متوسط»<br></strong>
+                            شما در بسیاری مواقع حس پیشرفت و رشد را تجربه می‌کنید، اما ممکن است هنوز با تمام ظرفیت‌هایتان فاصله داشته باشید. گاهی اوقات تردیدها یا دغدغه‌های مختلف سبب می‌شود تا کاملاً از جایگاه کنونی خود رضایت نداشته باشید.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. تعیین اهداف واضح و قابل سنجش برای مسیر آینده؛ هر موفقیت کوچک می‌تواند حس بالندگی را تقویت کند.<br>
+                                    ۲. به اشتراک گذاشتن داستان پیشرفت خود با دیگران، تا دیدگاه‌های متفاوت شما را به نقاط رشد جدیدی هدایت کنند.<br>
+                                    ۳. مطالعه منابع انگیزشی یا حضور در دوره‌های توسعه فردی که به شما ایده‌ها و راهکارهای تازه بدهد.<br>
+                                    ۴. پرسیدن از خود: «چه‌کاری باید انجام دهم تا سطح فعلی را ارتقا دهم؟» و برنامه‌ریزی عملی برای آن.<br>
+                                    ۵. استراحت کافی و دوری از افراط؛ پیشرفت تدریجی اما مستمر، مانع از فرسودگی و بی‌حوصلگی می‌شود.
+                                </div>
+                            </div>
+                        </li>
+                        <!-- سطح خوب بالندگی متعالی -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10239#;">
+                            <strong>«خوب»<br></strong>
+                            شما احساس بالندگی قابل توجهی در زندگی دارید و توانسته‌اید جایگاه شایسته‌ای برای خود کسب کنید. این سطح از موفقیت نشان می‌دهد که اغلب به‌درستی مسیرتان را انتخاب می‌کنید و از دیدگاه معنایی نیز خود را در راستای بهترین بودن می‌بینید.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. حفظ و ارتقای سطح فعلی از طریق تعریف اهداف بلندپروازانه‌تر در کنار حفظ سلامت و آرامش ذهنی.<br>
+                                    ۲. به‌اشتراک‌گذاری تجربیات موفقیت با افرادی که در ابتدای مسیر هستند و ایجاد شبکه‌ای از تبادل انگیزه و دانش.<br>
+                                    ۳. تقویت مهارت‌های مدیریتی و رهبری؛ بالندگی متعالی اغلب با ایجاد تأثیر مثبت بر دیگران همراه است.<br>
+                                    ۴. برنامه‌ریزی برای استراحت ذهنی و جسمی؛ تلاش بیش‌ازحد بدون وقفه می‌تواند انگیزه و حس پیشرفت را تهدید کند.<br>
+                                    ۵. پایش دوره‌ای عملکرد و رضایتتان؛ هر تغییر کوچک در اولویت‌ها می‌تواند مسیر بالندگی را هیجان‌انگیزتر کند.
+                                </div>
+                            </div>
+                        </li>
+                        <!-- سطح عالی بالندگی متعالی -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10239#;">
+                            <strong>«عالی»<br></strong>
+                            شما در اوج حس بالندگی متعالی قرار دارید؛ به‌وضوح احساس می‌کنید در مسیر بهترین بودن پیش می‌روید و معنای عمیق‌تری را در زندگی و موفقیت‌های خود یافته‌اید. این رویکرد نه‌تنها به شما انرژی فوق‌العاده‌ای می‌بخشد، بلکه می‌تواند الگویی برای اطرافیان باشد.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. پذیرش مسئولیت‌های بزرگ‌تر و چالشی‌تر که در آن‌ها بتوانید قابلیت‌های پیشرفته خود را به نمایش بگذارید.<br>
+                                    ۲. برگزاری یا شرکت در سمینارها و کارگاه‌های انگیزشی و توسعه فردی، جهت انتقال تجربیات و الهام‌بخشی به دیگران.<br>
+                                    ۳. حفظ تواضع در عین سرآمدی؛ گاهی احساس برتری می‌تواند موانعی در برابر رشد بیشتر ایجاد کند.<br>
+                                    ۴. مدیریت استرس و تقسیم زمان میان کار، روابط اجتماعی و زندگی شخصی، تا حس بالندگی تداوم داشته باشد.<br>
+                                    ۵. مشارکت در فعالیت‌های عام‌المنفعه یا گروه‌های خودیاری برای تقویت حس پویایی و خوشایند بودن دستاوردهایتان.
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
 
-    <!-- سطح خوب پشتیبانی -->
-    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10240#;">
-        <strong>«خوب»<br></strong>
-        شما معمولاً از حمایت و احترام اطرافیان برخوردارید و به طور کلی احساس راحتی می‌کنید. همکاران و نزدیکان به دیدگاه‌هایتان ارزش قائل‌اند و در مواجهه با سختی‌ها، می‌توانید روی همراهی فرد مناسبی حساب کنید.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. حفظ و گسترش شبکه ارتباطی فعلی، با مشارکت فعال در فعالیت‌های جمعی و شناخت بهتر یکدیگر.<br>
-                ۲. ادامه ارائه بازخورد مثبت و قدردانی به اطرافیان برای تقویت حس ارزشمندی و پایداری حمایت دوسویه.<br>
-                ۳. درگیرشدن در پروژه‌های گروهی یا فعالیت‌های داوطلبانه به منظور تقویت روحیه همبستگی اجتماعی و خانوادگی.<br>
-                ۴. مدیریت زمان و برنامه‌ریزی برای دیدارهای منظم با افراد حامی، جهت حفظ تعامل مؤثر با آن‌ها.<br>
-                ۵. نگاه به آینده و آماده‌سازی زیرساخت‌هایی مثل پس‌انداز و برنامه تحصیلی/شغلی، تا حس آرامش بلندمدت افزایش یابد.
-            </div>
-        </div>
-    </li>
+                    <!-- پشتیبانی -->
+                    <div class="report-component-title">پشتیبانی 
+                        <span class="report-badge report-score-data">#field_5320#<br></span>
+                    </div>
+                    <p class="report-paragraph">
+                        پشتیبانی نشان‌دهنده حس راحتی و پذیرش فرد از سوی اطرافیان است. زمانی که فرد در مسیر زندگی، دیدگاه‌ها و نیازهایش از سوی دیگران مورد احترام قرار گیرد و از همکاری آن‌ها بهره‌مند شود، تعادل روانی و احساس امنیت بالاتری را تجربه خواهد کرد.
+                    </p>
+                    <ul class="report-list">
+                        <!-- سطح متوسط پشتیبانی -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10240#;">
+                            <strong>«متوسط»<br></strong>
+                            شما در بسیاری از شرایط احساس حمایت اجتماعی می‌کنید، اما شاید همیشه به شکل کامل یا در همه موقعیت‌ها پذیرش و همکاری لازم را دریافت نکنید. بااین‌وجود، فضای نسبی همراهی و قبول شدن از سوی دیگران وجود دارد.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. شفافیت در بیان نیازها و خواسته‌هایتان به اطرافیان؛ ممکن است آن‌ها دقیقاً ندانند شما چه کمکی می‌خواهید.<br>
+                                    ۲. پرورش مهارت‌های ارتباطی و گوش دادن فعال برای تقویت ارتباط دوسویه و افزایش حس اطمینان در روابط.<br>
+                                    ۳. شناسایی افرادی که با شما همفکر یا مهارت‌های تکمیلی دارند و ایجاد شبکه حمایتی قوی‌تر.<br>
+                                    ۴. در صورت نیاز، گفتگو با مشاور یا راهنمای متخصص برای دریافت حمایت روانی تخصصی‌تر.<br>
+                                    ۵. قدردانی کردن از اطرافیان و اعلام رضایت، تا آن‌ها هم ترغیب به همکاری بیشتر شوند.
+                                </div>
+                            </div>
+                        </li>
+                        <!-- سطح خوب پشتیبانی -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10240#;">
+                            <strong>«خوب»<br></strong>
+                            شما معمولاً از حمایت و احترام اطرافیان برخوردارید و به طور کلی احساس راحتی می‌کنید. همکاران و نزدیکان به دیدگاه‌هایتان ارزش قائل‌اند و در مواجهه با سختی‌ها، می‌توانید روی همراهی فرد مناسبی حساب کنید.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. حفظ و گسترش شبکه ارتباطی فعلی، با مشارکت فعال در فعالیت‌های جمعی و شناخت بهتر یکدیگر.<br>
+                                    ۲. ادامه ارائه بازخورد مثبت و قدردانی به اطرافیان برای تقویت حس ارزشمندی و پایداری حمایت دوسویه.<br>
+                                    ۳. درگیرشدن در پروژه‌های گروهی یا فعالیت‌های داوطلبانه به منظور تقویت روحیه همبستگی اجتماعی و خانوادگی.<br>
+                                    ۴. مدیریت زمان و برنامه‌ریزی برای دیدارهای منظم با افراد حامی، جهت حفظ تعامل مؤثر با آن‌ها.<br>
+                                    ۵. نگاه به آینده و آماده‌سازی زیرساخت‌هایی مثل پس‌انداز و برنامه تحصیلی/شغلی، تا حس آرامش بلندمدت افزایش یابد.
+                                </div>
+                            </div>
+                        </li>
+                        <!-- سطح عالی پشتیبانی -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10240#;">
+                            <strong>«عالی»<br></strong>
+                            شما در اوج پشتیبانی اجتماعی و عاطفی قرار دارید؛ اطرافیانتان به دیدگاه‌هایتان احترام می‌گذارند، در سختی‌ها همراهتان هستند و نقش یک راهنما را در مسیر زندگی‌تان بر عهده دارند. این سطح حمایت می‌تواند آرامش ذهنی و امنیت روانی قابل توجهی را برایتان رقم بزند.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. استفاده بهینه از این حمایت گسترده برای دنبال کردن اهداف بزرگ‌تر و بلندمدت در زندگی (تحصیلی، کاری، شخصی).<br>
+                                    ۲. ایفای نقش الگویی؛ به‌همراه داشتن چنین حمایتی، فرصت ارزشمندی است که می‌توانید به دیگران نیز انتقال دهید.<br>
+                                    ۳. مشارکت در پروژه‌های پیچیده و چالشی با اطمینان خاطر، چراکه در صورت بروز مشکل می‌توانید از حمایت اطرافیان بهره ببرید.<br>
+                                    ۴. مراقبت از استقلال شخصی در عین دریافت کمک‌های ارزشمند؛ حفظ توازن بین وابستگی و خودمختاری مهم است.<br>
+                                    ۵. تشویق دوستان یا افراد نیازمند به ایجاد و حفظ شبکه حمایتی؛ تجربیات شما می‌تواند راهگشا باشد.
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
 
-    <!-- سطح عالی پشتیبانی -->
-    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10240#;">
-        <strong>«عالی»<br></strong>
-        شما در اوج پشتیبانی اجتماعی و عاطفی قرار دارید؛ اطرافیانتان به دیدگاه‌هایتان احترام می‌گذارند، در سختی‌ها همراهتان هستند و نقش یک راهنما را در مسیر زندگی‌تان بر عهده دارند. این سطح حمایت می‌تواند آرامش ذهنی و امنیت روانی قابل توجهی را برایتان رقم بزند.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. استفاده بهینه از این حمایت گسترده برای دنبال کردن اهداف بزرگ‌تر و بلندمدت در زندگی (تحصیلی، کاری، شخصی).<br>
-                ۲. ایفای نقش الگویی؛ به‌همراه داشتن چنین حمایتی، فرصت ارزشمندی است که می‌توانید به دیگران نیز انتقال دهید.<br>
-                ۳. مشارکت در پروژه‌های پیچیده و چالشی با اطمینان خاطر، چراکه در صورت بروز مشکل می‌توانید از حمایت اطرافیان بهره ببرید.<br>
-                ۴. مراقبت از استقلال شخصی در عین دریافت کمک‌های ارزشمند؛ حفظ توازن بین وابستگی و خودمختاری مهم است.<br>
-                ۵. تشویق دوستان یا افراد نیازمند به ایجاد و حفظ شبکه حمایتی؛ تجربیات شما می‌تواند راهگشا باشد.
-            </div>
-        </div>
-    </li>
+            <!-- Credentials and Validity Section -->
+            <section class="content-section test-section" id="credentials">
+                <div class="content-container">
+                    <!-- اعتبار و صحت آزمون -->
+                    <h2>اعتبار و صحت آزمون</h2>
+                    <p>
+                        آزمون فهرست تشخیص تعاملی آرامش روانی بر اساس روش‌شناسی تحقیقاتی معتبر و تایید شده توسط متخصصین روانشناسی طراحی شده است. این آزمون توسط دانشگاه‌ها و سازمان‌های معتبر روانشناسی مورد تأیید و توصیه قرار گرفته است.
+                    </p>
+                    <ul>
+                        <li>روش‌شناسی تحقیقاتی مبتنی بر مطالعات علمی روز</li>
+                        <li>تأییدیه سازمان‌های معتبر روانشناسی</li>
+                        <li>پشتیبانی توسط تیم متخصصین و روانشناسان خبره</li>
+                    </ul>
+                </div>
+            </section>
 
-</ul>
+            <!-- Testimonials Section -->
+            <section class="content-section test-section" id="testimonials">
+                <div class="content-container">
+                    <!-- توصیه‌نامه‌ها -->
+                    <h2>توصیه‌نامه‌ها</h2>
+                    <div class="testimonial">
+                        <p>"گزارش تحلیل فهرست تشخیص تعاملی آرامش روانی به من کمک کرد تا بهتر از تعادل روانی خود آگاه شوم و مسیر توسعه فردی‌ام را بهینه‌تر کنم."</p>
+                        <p><strong>- سارا احمدی</strong></p>
+                    </div>
+                    <div class="testimonial">
+                        <p>"نتایج دقیق این آزمون به من امکان داد تا نقاط قوت و ضعف خود را در جنبه‌های استواری، بالندگی متعالی و پشتیبانی شناسایی کنم و برای بهبود وضعیت روانی‌ام برنامه‌ریزی کنم."</p>
+                        <p><strong>- علی رضایی</strong></p>
+                    </div>
+                </div>
+            </section>
 
+            <!-- Call-to-Action Section -->
+            <section class="content-section test-section" id="start-test">
+                <div class="content-container">
+                    <!-- دعوت به اقدام (CTA) -->
+                    <h2>آیا آماده‌اید تا شروع کنید؟</h2>
+                    <p>
+                        با انجام این آزمون، گامی مهم در جهت شناخت بهتر از تعادل روانی و بهبود وضعیت شخصی‌تان بردارید.
+                    </p>
+                    <div style="text-align: center; margin-top: 20px;">
+                        <a href="/take/fahrest-tashkhis-tamarkobi-aramash-rovani" class="cta-button">شروع آزمون</a>
+                    </div>
+                </div>
+            </section>
 
+            <!-- FAQ Section (Optional) -->
+            <section class="content-section test-section" id="faq">
+                <div class="content-container">
+                    <!-- سوالات متداول -->
+                    <h2>سوالات متداول</h2>
+                    <div class="faq-item">
+                        <h4>آیا این آزمون دقیق است؟</h4>
+                        <p>بله، این آزمون بر اساس روش‌شناسی تحقیقاتی معتبر و تایید شده طراحی شده است تا نتایج دقیق و قابل اعتمادی ارائه دهد.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>آیا این آزمون برای کودکان مناسب است؟</h4>
+                        <p>این آزمون بیشتر برای بزرگسالان و نوجوانان طراحی شده است و ممکن است برای کودکان جوان‌تر مناسب نباشد.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>بعد از انجام آزمون چه اتفاقی می‌افتد؟</h4>
+                        <p>پس از تکمیل آزمون، شما یک گزارش جامع با نتایج و توصیه‌های شخصی دریافت خواهید کرد که می‌توانید آن را مرور کرده و در صورت نیاز، با متخصصین مشورت کنید.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
 
+        <!-- Footer -->
+        <footer id="footer" class="footer">
 
-
-
-
-
-
-
-
-
-
-
-
-        
-
-
-            <div class="report-section-title">جمع‌بندی</div>
-            <div class="report-paragraph">
-            <p>این گزارش ارزیابی مهارت‌های شما شامل تحلیل تعهد، نیرومندی، ظرفیت تحلیلی، بیتابی روانی، استقلال و سازش است. این بررسی نقاط قوت و زمینه‌های نیازمند بهبود شما را نشان داده و توصیه‌های کاربردی برای توسعه مهارت‌های شما ارائه می‌دهد.</p>
-            
-            <p><b>نقاط قوت: </b>شما در برخی از حوزه‌ها عملکرد برجسته‌ای دارید که نشان‌دهنده توانایی‌های قوی در مدیریت مسئولیت‌ها، انرژی بالا، تحلیل مسائل پیچیده، آرامش روانی، خودکفایی و تطبیق‌پذیری است. به عنوان مثال، در حوزه‌های "تعهد" و "ظرفیت تحلیلی"، شما توانایی زیادی در مدیریت وظایف و تحلیل مسائل نشان داده‌اید که می‌تواند به پیشرفت حرفه‌ای و رشد فردی شما کمک کند.</p>
-            
-            <p><b>حوزه‌های نیازمند بهبود:</b> در برخی از بخش‌ها نیاز به تمرکز بیشتر وجود دارد. به عنوان مثال، در حوزه‌های "بیتابی روانی" و "استقلال"، شما می‌توانید با تمرین‌های منظم و فعالیت‌های هدفمند مانند تکنیک‌های مدیریت استرس و برنامه‌ریزی منظم مهارت‌های خود را بهبود بخشید. همچنین، افزایش تعاملات اجتماعی و تمرین مهارت‌های تصمیم‌گیری مستقل می‌تواند تأثیر مثبتی بر عملکرد شما داشته باشد.</p>
-            
-            <p><b>گام‌های بعدی:</b> برای تقویت مهارت‌های خود، پیشنهاد می‌شود که به توصیه‌های ارائه‌شده در هر بخش توجه ویژه‌ای کنید و در صورت نیاز از خدمات مشاوره تخصصی استفاده نمایید. همچنین، ارزیابی منظم و پیگیری مداوم می‌تواند به توسعه پایدار و موفقیت شما در تمامی ابعاد زندگی کمک کند.</p>
-            </div>
-        
-        <footer class="report-footer-custom">
-            <div class="report-footer-content">
-                <img src="../panel/file?type=picture&amp;v=3&amp;mode=filemanager&amp;file=%7eDB3gfQUls%2bt2iiMYKbsRAxrtFhcHKUIUUo7pPtO17bHCzNxwU4zNh3UVor6QMtl7Y6EWX8dD0PSvzZOYkRrXlfejPn4lNTj6" class="report-footer-img" alt="لوگو">
-            </div>
-            <p class="report-footer-paragraph">مؤسّسه تعاملی هیجان اندیشه | تماس: 02188174100 | ایمیل: info@eot.ir</p>
-            <p class="report-footer-paragraph yellow-text">© ۱۴۰۳ تمامی حقوق محفوظ است.</p>
-            <ul class="report-footer-menu">
-                <li><a href="https://www.eot.ir/" class="report-footer-menu-link">صفحه اصلی</a></li>
-                <li><a href="https://www.eot.ir/contact" class="report-footer-menu-link">تماس با ما</a></li>
-                <li><a href="https://www.eot.ir/about" class="report-footer-menu-link">درباره ما</a></li>
-            </ul>
-            <address class="report-footer-address">تهران، سهروردی، خرمشهر، عربعلی، کوچه ششم، شماره ۴۴</address>
         </footer>
-    </div>
+
+        <!-- Scripts -->
+        <script src="/assets/js/script.js"></script>
+        <script src="/assets/js/header-footer-inject.js"></script>
+        <script>
+            // FAQ Toggle Script
+            document.querySelectorAll('.faq-item h4').forEach(function(question) {
+                question.addEventListener('click', function() {
+                    const parent = this.parentElement;
+                    parent.classList.toggle('active');
+                });
+            });
+        </script>
+    </body>
+</html>

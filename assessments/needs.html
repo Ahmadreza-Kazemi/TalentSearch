@@ -1,52 +1,225 @@
-<div class="ravesh-editor-html" style="direction:rtl">
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>گزارش تحلیل فهرست تشخیص تعاملی شخصیت</title>
+    <title>استعدادیاب | معرفی آزمون فهرست تشخیص تعاملی نیازها</title>
     <style>
+        /* =======================================================
+           1. Reset and Base Styles
+        ======================================================= */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100%;
+            font-family: 'Vazir', sans-serif;
+            background-color: #FFFFFF;
+            color: #1F3B73;
+            direction: rtl;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            padding-top: 80px;
+            padding-bottom: 60px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #1F3B73;
+            transition: color 0.3s ease-in-out;
+        }
+
+        a:hover,
+        a:focus {
+            color: #F4C553;
+            text-decoration: underline;
+        }
+
+        /* =======================================================
+           2. Font Imports
+        ======================================================= */
+        @font-face {
+            font-family: 'Vazir';
+            src: url('/assets/fonts/Vazir-Regular-UI.woff2') format('woff2'),
+                 url('/assets/fonts/Vazir-Regular-UI.woff') format('woff'),
+                 url('/assets/fonts/Vazir-Regular-UI.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+        }
+
         @font-face {
             font-family: 'IRANSansWeb';
-            src: url('fonts/IRANSansWeb.woff2') format('woff2');
+            src: url('/assets/fonts/IRANSansWeb.woff2') format('woff2');
         }
         @font-face {
             font-family: 'BTitrBold';
-            src: url('fonts/BTitrBold.woff2') format('woff2');
+            src: url('/assets/fonts/BTitrBold.woff2') format('woff2');
         }
         @font-face {
             font-family: 'BKoodakBold';
-            src: url('fonts/BKoodakBold.woff2') format('woff2');
+            src: url('/assets/fonts/BKoodakBold.woff2') format('woff2');
         }
         @font-face {
             font-family: 'BHoma';
-            src: url('fonts/BHoma.woff2') format('woff2');
+            src: url('/assets/fonts/BHoma.woff2') format('woff2');
         }
         @font-face {
             font-family: 'BYekan';
-            src: url('fonts/BYekan.woff2') format('woff2');
+            src: url('/assets/fonts/BYekan.woff2') format('woff2');
         }
         @font-face {
             font-family: 'Tahoma';
-            src: url('fonts/Tahoma.woff2') format('woff2');
+            src: url('/assets/fonts/Tahoma.woff2') format('woff2');
         }
+
+        /* =======================================================
+           3. Typography
+        ======================================================= */
+        h1, h2, h3, h4 {
+            font-family: 'Vazir', sans-serif;
+            color: #1F3B73;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px #F4C553;
+        }
+
+        h2 {
+            font-size: 2em;
+            font-weight: 700;
+            margin-bottom: 24px;
+            text-shadow: 0 0 10px #F4C553;
+            color: #1F3B73;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 1.5em;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #1F3B73;
+            text-align: center;
+        }
+
+        h4 {
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-top: 16px;
+            color: #1F3B73;
+            text-align: center;
+        }
+
+        p {
+            font-size: 1em;
+            max-width: 800px;
+            margin: 0 auto 16px;
+            line-height: 1.6;
+            color: #1F3B73;
+            text-align: justify;
+        }
+
+        ul {
+            max-width: 800px;
+            margin: 0 auto 16px;
+            padding-right: 20px;
+            color: #1F3B73;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* =======================================================
+           4. Hero Section
+        ======================================================= */
+        .hero {
+            height: calc(100vh - 80px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #F0F0F5;
+            padding: 16px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 16px;
+            color: #1F3B73;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            margin-bottom: 24px;
+            color: #1F3B73;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #F4C553;
+            color: #FFFFFF;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 1em;
+            box-shadow: 0 0 10px #FFD77B;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease-in-out,
+                        transform 0.3s ease-in-out,
+                        box-shadow 0.3s ease-in-out;
+        }
+
+        .cta-button:hover,
+        .cta-button:focus {
+            background-color: #4FBDBA;
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px #4FBDBA;
+        }
+
+        /* =======================================================
+           5. Content Sections
+        ======================================================= */
+        .content-section {
+            padding: 60px 16px;
+            background-color: #FFFFFF;
+        }
+
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .content-section:nth-child(even) {
+            background-color: #F9F9F9;
+        }
+
+        /* =======================================================
+           6. Sample Report Section
+        ======================================================= */
+        /* Report Styles */
         .report-container {
             font-family: 'BYekan', sans-serif;
             direction: rtl;
             line-height: 1.8;
             background-color: #F5F5F5;
             color: #333333;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            max-width: 800px;
-            width: 100%;
-            margin: auto;
-            background-color: #F5F5F5;
+            margin: 40px auto;
             padding: 40px;
             box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
             border-radius: 20px;
+            max-width: 800px;
         }
+
         .report-header-custom {
             display: flex;
             align-items: center;
@@ -55,15 +228,18 @@
             background-color: #0DA3B8;
             border-radius: 20px 20px 0 0;
         }
+
         .report-header-inner {
             display: flex;
             align-items: center;
             gap: 20px;
         }
+
         .report-header-img {
             width: 40px;
             height: 40px;
         }
+
         .report-header-title {
             margin: 0;
             font-size: 1.8em;
@@ -71,22 +247,39 @@
             font-family: 'IRANSansWeb', sans-serif;
             font-weight: normal;
         }
+
         .report-header-date {
             color: #ffffff;
             font-size: 1em;
         }
-        .report-title {
-            text-align: center;
-            color: #0DA3B8;
+
+        .report-section-title {
+            font-size: 22px;
+            color: #CC3333;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #CC3333;
             font-family: 'IRANSansWeb', sans-serif;
             font-weight: bold;
-            font-size: 32px;
-            margin-bottom: 25px;
+            text-align: center;
         }
+
+        .report-paragraph {
+            background-color: #E0F7FA;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
         .report-info-container, .report-score-container {
             display: flex;
             flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
         }
+
         .report-info-item, .report-score-item {
             background-color: #F8F9FA;
             padding: 15px;
@@ -99,26 +292,17 @@
             font-family: 'BYekan', sans-serif;
             flex: 1;
             min-width: 300px;
-            margin-right: 10px; /* Add space between columns */
         }
+
         .report-info-item strong, .report-score-item strong {
             color: #0DA3B8;
             font-family: 'IRANSansWeb', sans-serif;
         }
+
         .report-info-data, .report-score-data {
             font-family: 'IRANSansWeb', sans-serif;
         }
-        .report-section-title {
-            font-size: 22px;
-            color: #CC3333;
-            margin-top: 30px;
-            margin-bottom: 10px;
-            padding-bottom: 5px;
-            border-bottom: 1px solid #CC3333;
-            font-family: 'IRANSansWeb', sans-serif;
-            font-weight: bold;
-            text-align: center;
-        }
+
         .report-component-title {
             display: flex;
             justify-content: space-between;
@@ -131,32 +315,7 @@
             border-bottom: 1px solid #DBCF93;
             font-family: 'IRANSansWeb', sans-serif;
         }
-        .report-paragraph {
-            background-color: #E0F7FA;
-            padding: 15px;
-            border-radius: 10px;
-            font-size: 16px;
-            margin-bottom: 20px;
-        }
-        .report-list {
-            list-style-type: none;
-            padding: 0;
-            font-size: 16px;
-        }
-        .report-list-item {
-            background: #F8F9FA;
-            margin-bottom: 10px;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-            display: flex;
-            flex-direction: column;
-        }
-        .report-list-item strong {
-            font-size: 18px;
-            color: #0DA3B8;
-            margin-bottom: 5px;
-        }
+
         .report-badge {
             display: inline-block;
             padding: 8px 15px;
@@ -165,6 +324,7 @@
             background-color: #4A9B8C;
             border-radius: 10px;
         }
+
         .report-recommendation {
             background-color: #EAEAEA;
             padding: 20px;
@@ -176,80 +336,43 @@
             width: 100%;
             box-sizing: border-box;
         }
+
         .report-recommendation-title {
             font-weight: bold;
             color: #CC3333;
             margin-bottom: 5px;
             font-size: 18px;
         }
+
         .report-recommendation-text {
             margin-bottom: 5px;
             line-height: 1.6;
             font-size: 16px;
         }
-        .report-footer-custom {
-            background-color: #F5F5F5;
-            color: #333333;
-            padding: 20px;
-            text-align: center;
-            font-family: 'IRANSansWeb', sans-serif;
-            border-top: 1px solid #E0E0E0;
-            font-size: 16px; /* Increased font size */
-        }
-        .report-footer-content {
-            margin-bottom: 20px;
-        }
-        .report-footer-img {
-            width: 80px;
-            height: 80px;
-        }
-        .report-footer-paragraph {
-            margin: 5px 0;
-        }
-        .report-footer-paragraph.yellow-text {
-            color: #DBCF93;
-        }
-        .report-footer-menu {
-            list-style: none;
+
+        .report-list {
+            list-style-type: none;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin: 10px 0;
+            font-size: 16px;
         }
-        .report-footer-menu-link {
-            color: #0DA3B8;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        .report-footer-menu-link:hover {
-            color: #007B8A;
-        }
-        .report-footer-address {
-            margin-top: 10px;
-            font-size: 14px;
-        }
-        .report-summary-container {
-            max-width: 800px;
-            margin: auto;
-            background-color: #FFFFFF;
-            padding: 40px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+
+        .report-list-item {
+            background: #F8F9FA;
+            margin-bottom: 10px;
+            padding: 15px;
             border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
         }
-        .report-summary-heading {
-            text-align: center;
+
+        .report-list-item strong {
+            font-size: 18px;
             color: #0DA3B8;
-            font-family: 'IRANSansWeb', sans-serif;
-            font-weight: bold;
-            font-size: 32px;
-            margin-bottom: 25px;
+            margin-bottom: 5px;
         }
-        .report-summary-content {
-            color: #333333;
-            font-family: 'IRANSansWeb', sans-serif;
-            line-height: 1.8;
-        }
+
+        /* Report Conditional Display Styles */
         .report-conditional-display {
             display: block;
         }
@@ -277,267 +400,422 @@
             border-radius: 10px;
             background-color: #99FF99; /* Excellent */
         }
+
+        /* =======================================================
+           7. FAQ Section
+        ======================================================= */
+        .faq-item {
+            margin-bottom: 20px;
+        }
+
+        .faq-item h4 {
+            cursor: pointer;
+            position: relative;
+        }
+
+        .faq-item h4::after {
+            content: '+';
+            position: absolute;
+            left: -20px;
+            top: 0;
+            font-size: 1.5em;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active h4::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-item p {
+            display: none;
+            margin-top: 10px;
+        }
+
+        .faq-item.active p {
+            display: block;
+        }
     </style>
-    <div class="report-report-container">
-        <header class="report-header-custom">
-            <div class="report-header-inner">
-                <img src="../panel/file?type=picture&amp;v=3&amp;mode=filemanager&amp;file=%7eDB3gfQUls%2bt2iiMYKbsRAxrtFhcHKUIUUo7pPtO17bHCzNxwU4zNh3UVor6QMtl7Y6EWX8dD0PSvzZOYkRrXlfejPn4lNTj6" class="report-header-img" alt="لوگو">
-                <h1 class="report-header-title">گزارش تحلیل فهرست تشخیص تعاملی شخصیت</h1>
+</head>
+<body>
+    <header class="header">
+        <!-- می‌توانید محتوای سربرگ را اینجا اضافه کنید -->
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>فهرست تشخیص تعاملی نیازها</h1>
+                <p>تحلیل نیازهای روان‌شناختی شما و توسعه مهارت‌های فردی و حرفه‌ای</p>
+                <a href="#start-test" class="cta-button">شروع آزمون</a>
             </div>
-            <div class="report-header-date">تاریخ اجرا: #primary_createDate#</div>
-        </header>
-        
-        <div class="report-section-title">فهرست تشخیص تعاملی شخصیت</div>
-        <p class="report-paragraph">
-            این ارزیابی به منظور تحلیل و بررسی ویژگی‌های شخصیتی فرد در حوزه‌های مختلف از جمله تعهد، نیرومندی، ظرفیت تحلیلی، بیتابی روانی، استقلال و سازش انجام شده است. هدف از این ارزیابی شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد.
-        </p><p></p>
-               
-        <div class="report-section-title">اطلاعات فردی</div>
-        <div class="report-info-container">
-            <div class="report-info-item"><strong>نام:</strong> <span class="report-info-data">#field_349#</span></div>
-            <div class="report-info-item"><strong>نام خانوادگی:</strong> <span class="report-info-data">#field_1712#</span></div>
-            <div class="report-info-item"><strong>موبایل:</strong> <span class="report-info-data">#field_350#</span></div>
-            <div class="report-info-item"><strong>ایمیل:</strong> <span class="report-info-data">#field_351#</span></div></div>
+        </section>
 
-        </div>
-        <div class="report-section-title">نتیجه</div>
-        <div class="report-score-container">
-            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10258#;"><strong>امنیت:</strong> <span class="report-badge">#field_6109#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10258#;"><strong>امنیت:</strong> <span class="report-badge">#field_6109#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10258#;"><strong>امنیت:</strong> <span class="report-badge">#field_6109#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10259#;"><strong>پیشرفت:</strong> <span class="report-badge">#field_6110#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10259#;"><strong>پیشرفت:</strong> <span class="report-badge">#field_6110#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10259#;"><strong>پیشرفت:</strong> <span class="report-badge">#field_6110#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10260#;"><strong>تفرد:</strong> <span class="report-badge">#field_6111#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10260#;"><strong>تفرد:</strong> <span class="report-badge">#field_6111#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10260#;"><strong>تفرد:</strong> <span class="report-badge">#field_6111#</span></div>
-
-        </div>
-        <div class="report-section-title">تفسیر</div>
-        <p class="report-paragraph">
-            این بخش به تحلیل و تفسیر نتایج ارزیابی روان‌شناختی فرد می‌پردازد. تحلیل روان‌شناختی شامل بررسی ویژگی‌های شخصیتی مختلف است. هدف از این تحلیل شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد. نتایج این تحلیل می‌تواند به فرد کمک کند تا با شناخت بهتر از خود، برنامه‌های توسعه فردی و حرفه‌ای موثرتری را دنبال کند.
-        </p>
-
-
-
-        
-
-
-
-<!-- امنیت (احساس آرامش و اطمینان در زندگی) -->
-<div class="report-component-title">امنیت 
-    <span class="report-badge report-score-data">#field_6109#<br></span>
-</div>
-<p class="report-paragraph">
-    امنیت در بافت نیازهای روان‌شناختی نشان‌دهنده احساسی است که فرد از جایگاه یابی و پیشرفت خویش دریافت می‌کند، به‌طوری‌که آرامش و اطمینان خاطر در زندگی روزمره تجربه شود. افرادی که حس امنیت بالاتری دارند، به گونه‌ای عمل می‌کنند تا پیشرفتی معنادار برایشان ایجاد شود و از موقعیت خود در زندگی رضایت بیشتری پیدا کنند.
-</p>
-<ul class="report-list">
-    <!-- سطح متوسط امنیت -->
-    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10258#;">
-        <strong>«متوسط»<br></strong>
-        شما گاهی از موقعیت و پیشرفتتان احساس اطمینان می‌کنید، اما همیشه این حس پایدار نیست. ممکن است در برخی دوره‌ها دنبال پیشرفتی باشید که امنیت بیشتری بدهد یا ممکن است بعضی موفقیت‌ها برایتان امنیتی که انتظار داشتید را به همراه نیاورده باشد.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. تعریف روشن‌تر از مفهوم امنیت و اطمینان در زندگی برای خود؛ آیا به پیشرفت شغلی بیشتر نیاز دارید یا ثبات عاطفی؟<br>
-                ۲. تنظیم اهداف قابل دستیابی که در عین حال، احساس رضایت و آرامش خاطر را نیز به دنبال داشته باشد.<br>
-                ۳. هم‌اندیشی با افراد موفق یا مشاورانی که بتوانند چشم‌انداز شما را نسبت به امنیت و نیازهای واقعی‌تان وسیع‌تر کنند.<br>
-                ۴. بازبینی ارزش‌ها و اولویت‌هایتان؛ ممکن است بخشی از احساس امنیت از تناسب میان اهداف و باورهایتان نشأت بگیرد.<br>
-                ۵. مراقبت از ابعاد مختلف زندگی (مالی، عاطفی، حرفه‌ای) برای ایجاد تعادل و کاهش اضطراب درباره آینده.
+        <!-- Test Purpose Section -->
+        <section class="content-section test-section" id="test-purpose">
+            <div class="content-container">
+                <!-- هدف از آزمون -->
+                <h2>هدف از آزمون</h2>
+                <p>
+                    این ارزیابی به منظور تحلیل و بررسی نیازهای روان‌شناختی فرد در حوزه‌های امنیت، پیشرفت و تفرد انجام شده است. هدف از این ارزیابی شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد.
+                </p>
             </div>
-        </div>
-    </li>
+        </section>
 
-    <!-- سطح خوب امنیت -->
-    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10258#;">
-        <strong>«خوب»<br></strong>
-        شما در بیشتر زمینه‌ها احساس امنیت می‌کنید و معمولاً پیشرفتتان در زندگی به شما آرامش و اطمینان خوبی می‌دهد. این نشان می‌دهد که تا حد مطلوبی جایگاه مورد نظرتان را یافته‌اید و از وضعیت موجود احساس رضایت دارید.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. حفظ و ارتقای امنیت فعلی با تعیین اهداف جدید و واقع‌بینانه که هم پیشرفت و هم ثبات را افزایش دهد.<br>
-                ۲. ادامه تلاش برای مدیریت هوشمندانه منابع (مالی، عاطفی، زمانی) تا از نوسان‌های ناگهانی جلوگیری شود.<br>
-                ۳. شناسایی موقعیت‌ها یا رابطه‌هایی که به شما بیشترین حس امنیت را می‌دهد و تقویت بیشتر آن‌ها.<br>
-                ۴. آموزش و انتقال تجربه به دیگران؛ به اشتراک‌گذاری مسیرتان برای رسیدن به حس امنیت می‌تواند مفید باشد.<br>
-                ۵. در صورت بروز تغییرات غیرمنتظره، بازخورد سریع و بازنگری نقشه راه زندگی می‌تواند امنیت و پیشرفتتان را پایدار نگه دارد.
+        <!-- Key Features Section -->
+        <section class="content-section test-section" id="key-features">
+            <div class="content-container">
+                <!-- ویژگی‌های کلیدی آزمون -->
+                <h2>ویژگی‌های کلیدی آزمون</h2>
+                <ul>
+                    <li><strong>عوامل ارزیابی:</strong> امنیت، پیشرفت، تفرد</li>
+                    <li><strong>زمان مورد نیاز:</strong> 20 دقیقه</li>
+                    <li><strong>دسترسی:</strong> آنلاین و حضوری</li>
+                    <li><strong>نوع گزارش:</strong> گزارش جامع با نمودارها و توصیه‌های عملی</li>
+                </ul>
             </div>
-        </div>
-    </li>
+        </section>
 
-    <!-- سطح عالی امنیت -->
-    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10258#;">
-        <strong>«عالی»<br></strong>
-        شما در سطح بالایی از امنیت ذهنی و روانی قرار دارید؛ پیشرفت‌هایتان به شما ثبات و اطمینان می‌بخشد و جایگاه‌تان در زندگی برایتان خوشایند است. این وضعیت به شما آزادی عمل بیشتری می‌دهد و می‌توانید بدون استرس زیاد به دستیابی به اهداف بالاتر بیندیشید.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. استفاده از این احساس امنیت برای بلندپروازی‌های بیشتر؛ تعیین اهداف چالش‌برانگیزتر که می‌تواند به دستاوردهای بزرگ‌تری منجر شود.<br>
-                ۲. حفظ همکاری و تعامل با اطرافیان؛ دیگران نیز می‌توانند از حس امنیت و آرامش شما الگو بگیرند و بهبود یابند.<br>
-                ۳. ترویج فرهنگ پشتیبانی در محیط کار یا خانواده؛ امنیت پایدار زمانی شکل می‌گیرد که جمعی باشد و از همدلی ناشی شود.<br>
-                ۴. تقویت انعطاف‌پذیری در برابر تغییرات آینده؛ حتی در اوج امنیت باید برای تغییر احتمالی آماده بود.<br>
-                ۵. مستندسازی مسیر موفقیت و آرامشتان، تا در آینده هم به خودتان یادآوری کنید چه اقداماتی این حس مطلوب را حفظ می‌کند.
+        <!-- Benefits Section -->
+        <section class="content-section test-section" id="benefits">
+            <div class="content-container">
+                <!-- مزایای شرکت در این آزمون -->
+                <h2>مزایای شرکت در این آزمون</h2>
+                <ul>
+                    <li>افزایش خودآگاهی و شناخت بهتر از نیازهای روان‌شناختی</li>
+                    <li>بهبود مهارت‌های مدیریت امنیت، پیشرفت و تفرد</li>
+                    <li>شناسایی نقاط قوت و ضعف در جنبه‌های مختلف نیازهای روانی</li>
+                    <li>حمایت از رشد و توسعه شخصی و حرفه‌ای</li>
+                    <li>افزایش رضایت و تعهد در زندگی روزمره</li>
+                </ul>
             </div>
-        </div>
-    </li>
-</ul>
+        </section>
 
-<!-- پیشرفت (نیاز به رشد و حرکت رو به جلو) -->
-<div class="report-component-title">پیشرفت 
-    <span class="report-badge report-score-data">#field_6110#<br></span>
-</div>
-<p class="report-paragraph">
-    پیشرفت در حوزه نیازهای روان‌شناختی، بیانگر میل انسان به حرکت رو به جلو، دستیابی به اهداف و توسعه توانمندی‌هاست. وقتی فرد احساس کند امنیت زندگی به همراه ارتقا و رشد درونی وجود دارد، حس رضایتمندی بالاتری را تجربه خواهد کرد.
-</p>
-<ul class="report-list">
-    <!-- سطح متوسط پیشرفت -->
-    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10259#;">
-        <strong>«متوسط»<br></strong>
-        شما تا حدی به رشد و ترقی بها می‌دهید، اما ممکن است در برخی دوره‌ها از این حس فاصله بگیرید یا برای رسیدن به ارتقای مورد نظرتان، دچار تردید شوید. گاهی هم پیشرفت حاضر برایتان کافی است و نیازی به فشار بیشتر احساس نمی‌کنید.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. شناسایی علل احتمالی رکود یا تردید؛ آیا کمبود انگیزه است یا برنامه‌ریزی ضعیف؟<br>
-                ۲. تعریف اهداف مقطعی که حس پیشرفت شما را به‌طور تدریجی افزایش دهد و ذهن را درگیر چالش کند.<br>
-                ۳. برقراری ارتباط با افرادی که روند پیشرفت فعالی دارند و می‌توانند انگیزه و الگوی مثبت به شما بدهند.<br>
-                ۴. تنوع‌بخشی به مسیر؛ گاهی ایجاد تغییر در حوزه کاری یا یادگیری یک مهارت جدید، هیجان تازه‌ای رقم می‌زند.<br>
-                ۵. پایش منظم عملکرد؛ یادداشت دستاوردهای هفتگی می‌تواند حس رضایتمندی تدریجی و پیوسته ایجاد کند.
+        <!-- How It Works Section -->
+        <section class="content-section test-section" id="how-it-works">
+            <div class="content-container">
+                <!-- نحوه انجام آزمون -->
+                <h2>نحوه انجام آزمون</h2>
+                <p>
+                    آزمون فهرست تشخیص تعاملی نیازها شامل مراحل زیر است:
+                </p>
+                <ul>
+                    <li><strong>گام اول:</strong> تکمیل پرسشنامه آنلاین به مدت 20 دقیقه</li>
+                    <li><strong>گام دوم:</strong> دریافت گزارش تحلیلی جامع با نتایج و توصیه‌ها</li>
+                    <li><strong>گام سوم:</strong> بررسی نتایج و در صورت نیاز، مشاوره با متخصصین</li>
+                </ul>
             </div>
-        </div>
-    </li>
+        </section>
 
-    <!-- سطح خوب پیشرفت -->
-    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10259#;">
-        <strong>«خوب»<br></strong>
-        شما به رشد و ارتقا اهمیت می‌دهید و معمولاً به دنبال فرصت‌هایی برای پیشرفت هستید. تلفیق حس امنیت با حرکت رو به جلو در زندگی، شما را به فردی پیگیر و موفق تبدیل کرده است که از دستیابی به اهداف و ترقی لذت می‌برد.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. تداوم ارتقای مهارت‌ها در حیطه‌های کاری یا تحصیلی برای بهره‌مندی بیشتر از ظرفیت‌های بالقوه.<br>
-                ۲. به اشتراک گذاشتن مسیر پیشرفت و تجربه‌های موفق با دیگران؛ این کار هم انگیزه شما را بالاتر می‌برد، هم به دیگران کمک می‌کند.<br>
-                ۳. حفظ تعادل میان «امنیت» و «پیشرفت»؛ گاه لازم است برای رشد بیشتر، ریسک معقولی بپذیرید.<br>
-                ۴. تعریف اهداف بلندمدت‌تر در کنار اهداف کوتاه‌مدت، تا چشم‌انداز روشنی از آینده داشته باشید.<br>
-                ۵. استراحت کافی و پایش سلامت روان، چون بدون آرامش ذهنی، پیشرفت پایدار با دشواری روبه‌رو می‌شود.
+        <!-- Who Should Take This Test Section -->
+        <section class="content-section test-section" id="who-should-take">
+            <div class="content-container">
+                <!-- چه کسانی باید این آزمون را انجام دهند؟ -->
+                <h2>چه کسانی باید این آزمون را انجام دهند؟</h2>
+                <ul>
+                    <li>افرادی که به دنبال شناخت بهتر از نیازهای روان‌شناختی خود هستند</li>
+                    <li>مدیران و کارمندان که به دنبال بهبود سلامت روانی و عملکرد خود هستند</li>
+                    <li>مشاوران و روانشناسان برای پشتیبانی از مشتریان خود در حوزه نیازهای روانی</li>
+                    <li>سازمان‌ها و شرکت‌ها برای ارزیابی و بهبود سلامت و انگیزه کارکنان</li>
+                    <li>دانشجویان و کارجویانی که به دنبال افزایش تعادل روانی و بهبود عملکرد خود هستند</li>
+                </ul>
             </div>
-        </div>
-    </li>
+        </section>
 
-    <!-- سطح عالی پیشرفت -->
-    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10259#;">
-        <strong>«عالی»<br></strong>
-        شما در اوج نیاز به پیشرفت قرار دارید و دائماً به دنبال گسترش مرزهای توانایی خود هستید. این شوق به توسعه فردی، هنگامی‌که با حس امنیت همراه شود، یک ترکیب قدرتمند را می‌سازد که به دستیابی موفقیت‌های چشمگیر منتهی می‌شود.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. پذیرش نقش‌های پیچیده‌تر و پروژه‌های بزرگ‌تر که چالش‌های گسترده‌ای در مسیرتان قرار می‌دهند.<br>
-                ۲. رهبری تیم‌ها یا فعالیت‌هایی که به انرژی و انگیزه بالای شما نیاز دارند؛ این کار هم شما را خشنود می‌کند و هم دیگران سود می‌برند.<br>
-                ۳. مطالعه و یادگیری پیوسته برای رشد بیشتر؛ گاه برنامه‌های آموزشی فشرده می‌تواند جهش معنوی یا تخصصی به همراه داشته باشد.<br>
-                ۴. انعطاف در مواجهه با موانع؛ هر ناکامی کوچک را فرصتی برای یادگیری و تقویت مهارت‌های فردی ببینید.<br>
-                ۵. مراقبت از خویشتن در عین تلاش مداوم؛ فرسودگی شغلی یا تحصیلی ممکن است دستاوردهای بزرگتان را تهدید کند.
-            </div>
-        </div>
-    </li>
-</ul>
+        <!-- Sample Report Section -->
+        <section class="content-section test-section" id="sample-report">
+            <div class="content-container">
+                <!-- نمونه گزارش -->
+                <h2>نمونه گزارش</h2>
+                <p>
+                    در ادامه یک نمونه از گزارش تحلیل فهرست تشخیص تعاملی نیازها را مشاهده می‌کنید:
+                </p>
+                <div class="report-container">
+                    <header class="report-header-custom">
+                        <div class="report-header-inner">
+                            <img src="../panel/file?type=picture&amp;v=3&amp;mode=filemanager&amp;file=%7eDB3gfQUls%2bt2iiMYKbsRAxrtFhcHKUIUUo7pPtO17bHCzNxwU4zNh3UVor6QMtl7Y6EWX8dD0PSvzZOYkRrXlfejPn4lNTj6" class="report-header-img" alt="لوگو">
+                            <h1 class="report-header-title">گزارش تحلیل فهرست تشخیص تعاملی نیازها</h1>
+                        </div>
+                        <div class="report-header-date">تاریخ اجرا: #primary_createDate#</div>
+                    </header>
+                    <div class="report-section-title">فهرست تشخیص تعاملی نیازها</div>
+                    <p class="report-paragraph">
+                        این ارزیابی به منظور تحلیل و بررسی نیازهای روان‌شناختی فرد در حوزه‌های امنیت، پیشرفت و تفرد انجام شده است. هدف از این ارزیابی شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد.
+                    </p>
+                    <div class="report-section-title">اطلاعات فردی</div>
+                    <div class="report-info-container">
+                        <div class="report-info-item"><strong>نام:</strong> <span class="report-info-data">#field_6084#</span></div>
+                        <div class="report-info-item"><strong>نام خانوادگی:</strong> <span class="report-info-data">#field_6085#</span></div>
+                        <div class="report-info-item"><strong>موبایل:</strong> <span class="report-info-data">#field_6087#</span></div>
+                        <div class="report-info-item"><strong>ایمیل:</strong> <span class="report-info-data">#field_6086#</span></div>
+                    </div>
 
-<!-- تفرد (یافتن جایگاه ویژه و منحصربه‌فرد در زندگی) -->
-<div class="report-component-title">تفرد 
-    <span class="report-badge report-score-data">#field_6111#<br></span>
-</div>
-<p class="report-paragraph">
-    تفرد اشاره به نیاز انسان برای یافتن جایگاه خاص و منحصربه‌فرد در زندگی دارد؛ این نیاز، وقتی همزمان با امنیت و پیشرفت تحقق یابد، به فرد حس شخصیت متمایز و رضایتی عمیق از خود می‌دهد. افرادی که تفرد بالاتری دارند، تلاش می‌کنند مسیر ویژه خود را بیابند و در آن به شکوفایی برسند.
-</p>
-<ul class="report-list">
-    <!-- سطح متوسط تفرد -->
-    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10260#;">
-        <strong>«متوسط»<br></strong>
-        شما تا حدی به دنبال یافتن جایگاهی مختص خود هستید، اما ممکن است گاهی در تشخیص یا بهره‌گیری از موقعیت‌های منحصربه‌فرد دچار تردید شوید. یا در حال حاضر حس می‌کنید هنوز جایگاه دلخواهتان را نیافته‌اید.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. شناسایی تمایلات و توانایی‌های خاص خود و تمرکز بر آن‌ها برای ایجاد تمایزی مثبت در مسیر زندگی.<br>
-                ۲. کنار گذاشتن نگرانی‌های غیرضروری؛ تمرکز بر عملکرد واقعی و فرصت‌های ملموس، حس تفرد را تقویت می‌کند.<br>
-                ۳. یافتن راهنمایی (مانند مربی، مشاور یا الگوی موفق) برای شفاف‌سازی مسیر و ایجاد انگیزه بالاتر.<br>
-                ۴. راه‌اندازی پروژه‌های کوچک شخصی در زمینه‌هایی که دوست دارید، تا جایگاه منحصربه‌فردتان شکل بگیرد.<br>
-                ۵. پرهیز از مقایسه مداوم خود با دیگران؛ تفرد یعنی کشف جایگاه مخصوص به خود، نه رقابت بی‌پایان با اطرافیان.
-            </div>
-        </div>
-    </li>
+                    <div class="report-section-title">نتیجه</div>
+                    <div class="report-score-container">
+                        <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10258#;"><strong>امنیت:</strong> <span class="report-badge">#field_6109#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10258#;"><strong>امنیت:</strong> <span class="report-badge">#field_6109#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10258#;"><strong>امنیت:</strong> <span class="report-badge">#field_6109#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10259#;"><strong>پیشرفت:</strong> <span class="report-badge">#field_6110#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10259#;"><strong>پیشرفت:</strong> <span class="report-badge">#field_6110#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10259#;"><strong>پیشرفت:</strong> <span class="report-badge">#field_6110#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10260#;"><strong>تفرد:</strong> <span class="report-badge">#field_6111#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10260#;"><strong>تفرد:</strong> <span class="report-badge">#field_6111#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10260#;"><strong>تفرد:</strong> <span class="report-badge">#field_6111#</span></div>
+                    </div>
+                    <div class="report-section-title">تفسیر</div>
+                    <p class="report-paragraph">
+                        این بخش به تحلیل و تفسیر نتایج ارزیابی روان‌شناختی فرد می‌پردازد. تحلیل روان‌شناختی شامل بررسی نیازهای امنیت، پیشرفت و تفرد است. هدف از این تحلیل شناسایی سطح امنیت، پیشرفت و تفرد فرد و ارائه توصیه‌های کاربردی برای بهبود این نیازها می‌باشد. نتایج این تحلیل می‌تواند به فرد کمک کند تا با شناخت بهتر از خود، برنامه‌های توسعه فردی و حرفه‌ای موثرتری را دنبال کند و در نهایت به رضایت و موفقیت بیشتری دست یابد.
+                    </p>
+                    
+                    <!-- امنیت -->
+                    <div class="report-component-title">امنیت 
+                        <span class="report-badge report-score-data">#field_6109#<br></span>
+                    </div>
+                    <p class="report-paragraph">
+                        امنیت در بافت نیازهای روان‌شناختی نشان‌دهنده احساسی است که فرد از جایگاه یابی و پیشرفت خویش دریافت می‌کند، به‌طوری‌که آرامش و اطمینان خاطر در زندگی روزمره تجربه شود. افرادی که حس امنیت بالاتری دارند، به گونه‌ای عمل می‌کنند تا پیشرفتی معنادار برایشان ایجاد شود و از موقعیت خود در زندگی رضایت بیشتری پیدا کنند.
+                    </p>
+                    <ul class="report-list">
+                        <!-- سطح متوسط امنیت -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10258#;">
+                            <strong>«متوسط»<br></strong>
+                            شما گاهی از موقعیت و پیشرفتتان احساس اطمینان می‌کنید، اما همیشه این حس پایدار نیست. ممکن است در برخی دوره‌ها دنبال پیشرفتی باشید که امنیت بیشتری بدهد یا ممکن است بعضی موفقیت‌ها برایتان امنیتی که انتظار داشتید را به همراه نیاورده باشد.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. تعریف روشن‌تر از مفهوم امنیت و اطمینان در زندگی برای خود؛ آیا به پیشرفت شغلی بیشتر نیاز دارید یا ثبات عاطفی؟<br>
+                                    ۲. تنظیم اهداف قابل دستیابی که در عین حال، احساس رضایت و آرامش خاطر را نیز به دنبال داشته باشد.<br>
+                                    ۳. هم‌اندیشی با افراد موفق یا مشاورانی که بتوانند چشم‌انداز شما را نسبت به امنیت و نیازهای واقعی‌تان وسیع‌تر کنند.<br>
+                                    ۴. بازبینی ارزش‌ها و اولویت‌هایتان؛ ممکن است بخشی از احساس امنیت از تناسب میان اهداف و باورهایتان نشأت بگیرد.<br>
+                                    ۵. مراقبت از ابعاد مختلف زندگی (مالی، عاطفی، حرفه‌ای) برای ایجاد تعادل و کاهش اضطراب درباره آینده.
+                                </div>
+                            </div>
+                        </li>
+                        <!-- سطح خوب امنیت -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10258#;">
+                            <strong>«خوب»<br></strong>
+                            شما در بیشتر زمینه‌ها احساس امنیت می‌کنید و معمولاً پیشرفتتان در زندگی به شما آرامش و اطمینان خوبی می‌دهد. این نشان می‌دهد که تا حد مطلوبی جایگاه مورد نظرتان را یافته‌اید و از وضعیت موجود احساس رضایت دارید.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. حفظ و ارتقای امنیت فعلی با تعیین اهداف جدید و واقع‌بینانه که هم پیشرفت و هم ثبات را افزایش دهد.<br>
+                                    ۲. ادامه تلاش برای مدیریت هوشمندانه منابع (مالی، عاطفی، زمانی) تا از نوسان‌های ناگهانی جلوگیری شود.<br>
+                                    ۳. شناسایی موقعیت‌ها یا رابطه‌هایی که به شما بیشترین حس امنیت را می‌دهد و تقویت بیشتر آن‌ها.<br>
+                                    ۴. آموزش و انتقال تجربه به دیگران؛ به اشتراک‌گذاری مسیرتان برای رسیدن به حس امنیت می‌تواند مفید باشد.<br>
+                                    ۵. در صورت بروز تغییرات غیرمنتظره، بازخورد سریع و بازنگری نقشه راه زندگی می‌تواند امنیت و پیشرفتتان را پایدار نگه دارد.
+                                </div>
+                            </div>
+                        </li>
+                        <!-- سطح عالی امنیت -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10258#;">
+                            <strong>«عالی»<br></strong>
+                            شما در سطح بالایی از امنیت ذهنی و روانی قرار دارید؛ پیشرفت‌هایتان به شما ثبات و اطمینان می‌بخشد و جایگاه‌تان در زندگی برایتان خوشایند است. این وضعیت به شما آزادی عمل بیشتری می‌دهد و می‌توانید بدون استرس زیاد به دستیابی به اهداف بالاتر بیندیشید.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. استفاده از این احساس امنیت برای بلندپروازی‌های بیشتر؛ تعیین اهداف چالش‌برانگیزتر که می‌تواند به دستاوردهای بزرگ‌تری منجر شود.<br>
+                                    ۲. حفظ همکاری و تعامل با اطرافیان؛ دیگران نیز می‌توانند از حس امنیت و آرامش شما الگو بگیرند و بهبود یابند.<br>
+                                    ۳. ترویج فرهنگ پشتیبانی در محیط کار یا خانواده؛ امنیت پایدار زمانی شکل می‌گیرد که جمعی باشد و از همدلی ناشی شود.<br>
+                                    ۴. تقویت انعطاف‌پذیری در برابر تغییرات آینده؛ حتی در اوج امنیت باید برای تغییر احتمالی آماده بود.<br>
+                                    ۵. مستندسازی مسیر موفقیت و آرامشتان، تا در آینده هم به خودتان یادآوری کنید چه اقداماتی این حس مطلوب را حفظ می‌کند.
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <!-- پیشرفت -->
+                    <div class="report-component-title">پیشرفت 
+                        <span class="report-badge report-score-data">#field_6110#<br></span>
+                    </div>
+                    <p class="report-paragraph">
+                        پیشرفت در حوزه نیازهای روان‌شناختی، بیانگر میل انسان به حرکت رو به جلو، دستیابی به اهداف و توسعه توانمندی‌هاست. وقتی فرد احساس کند امنیت زندگی به همراه ارتقا و رشد درونی وجود دارد، حس رضایتمندی بالاتری را تجربه خواهد کرد.
+                    </p>
+                    <ul class="report-list">
+                        <!-- سطح متوسط پیشرفت -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10259#;">
+                            <strong>«متوسط»<br></strong>
+                            شما تا حدی به رشد و ترقی بها می‌دهید، اما ممکن است در برخی دوره‌ها از این حس فاصله بگیرید یا برای رسیدن به ارتقای مورد نظرتان، دچار تردید شوید. گاهی هم پیشرفت حاضر برایتان کافی است و نیازی به فشار بیشتر احساس نمی‌کنید.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. شناسایی علل احتمالی رکود یا تردید؛ آیا کمبود انگیزه است یا برنامه‌ریزی ضعیف؟<br>
+                                    ۲. تعریف اهداف مقطعی که حس پیشرفت شما را به‌طور تدریجی افزایش دهد و ذهن را درگیر چالش کند.<br>
+                                    ۳. برقراری ارتباط با افرادی که روند پیشرفت فعالی دارند و می‌توانند انگیزه و الگوی مثبت به شما بدهند.<br>
+                                    ۴. تنوع‌بخشی به مسیر؛ گاهی ایجاد تغییر در حوزه کاری یا یادگیری یک مهارت جدید، هیجان تازه‌ای رقم می‌زند.<br>
+                                    ۵. پایش منظم عملکرد؛ یادداشت دستاوردهای هفتگی می‌تواند حس رضایتمندی تدریجی و پیوسته ایجاد کند.
+                                </div>
+                            </div>
+                        </li>
+                        <!-- سطح خوب پیشرفت -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10259#;">
+                            <strong>«خوب»<br></strong>
+                            شما به رشد و ارتقا اهمیت می‌دهید و معمولاً به دنبال فرصت‌هایی برای پیشرفت هستید. تلفیق حس امنیت با حرکت رو به جلو در زندگی، شما را به فردی پیگیر و موفق تبدیل کرده است که از دستیابی به اهداف و ترقی لذت می‌برد.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. تداوم ارتقای مهارت‌ها در حیطه‌های کاری یا تحصیلی برای بهره‌مندی بیشتر از ظرفیت‌های بالقوه.<br>
+                                    ۲. به اشتراک گذاشتن مسیر پیشرفت و تجربه‌های موفق با دیگران؛ این کار هم انگیزه شما را بالاتر می‌برد، هم به دیگران کمک می‌کند.<br>
+                                    ۳. حفظ تعادل میان «امنیت» و «پیشرفت»؛ گاه لازم است برای رشد بیشتر، ریسک معقولی بپذیرید.<br>
+                                    ۴. تعریف اهداف بلندمدت‌تر در کنار اهداف کوتاه‌مدت، تا چشم‌انداز روشنی از آینده داشته باشید.<br>
+                                    ۵. استراحت کافی و پایش سلامت روان، چون بدون آرامش ذهنی، پیشرفت پایدار با دشواری روبه‌رو می‌شود.
+                                </div>
+                            </div>
+                        </li>
+                        <!-- سطح عالی پیشرفت -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10259#;">
+                            <strong>«عالی»<br></strong>
+                            شما در اوج نیاز به پیشرفت قرار دارید و دائماً به دنبال گسترش مرزهای توانایی خود هستید. این شوق به توسعه فردی، هنگامی‌که با حس امنیت همراه شود، یک ترکیب قدرتمند را می‌سازد که به دستیابی موفقیت‌های چشمگیر منتهی می‌شود.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. پذیرش نقش‌های پیچیده‌تر و پروژه‌های بزرگ‌تر که چالش‌های گسترده‌ای در مسیرتان قرار می‌دهند.<br>
+                                    ۲. رهبری تیم‌ها یا فعالیت‌هایی که به انرژی و انگیزه بالای شما نیاز دارند؛ این کار هم شما را خشنود می‌کند و هم دیگران سود می‌برند.<br>
+                                    ۳. مطالعه و یادگیری پیوسته برای رشد بیشتر؛ گاه برنامه‌های آموزشی فشرده می‌تواند جهش معنوی یا تخصصی به همراه داشته باشد.<br>
+                                    ۴. انعطاف در مواجهه با موانع؛ هر ناکامی کوچک را فرصتی برای یادگیری و تقویت مهارت‌های فردی ببینید.<br>
+                                    ۵. مراقبت از خویشتن در عین تلاش مداوم؛ فرسودگی شغلی یا تحصیلی ممکن است دستاوردهای بزرگتان را تهدید کند.
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <!-- تفرد -->
+                    <div class="report-component-title">تفرد 
+                        <span class="report-badge report-score-data">#field_6111#<br></span>
+                    </div>
+                    <p class="report-paragraph">
+                        تفرد اشاره به نیاز انسان برای یافتن جایگاه خاص و منحصربه‌فرد در زندگی دارد؛ این نیاز، وقتی همزمان با امنیت و پیشرفت تحقق یابد، به فرد حس شخصیت متمایز و رضایتی عمیق از خود می‌دهد. افرادی که تفرد بالاتری دارند، تلاش می‌کنند مسیر ویژه خود را بیابند و در آن به شکوفایی برسند.
+                    </p>
+                    <ul class="report-list">
+                        <!-- سطح متوسط تفرد -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10260#;">
+                            <strong>«متوسط»<br></strong>
+                            شما تا حدی به دنبال یافتن جایگاهی مختص خود هستید، اما ممکن است گاهی در تشخیص یا بهره‌گیری از موقعیت‌های منحصربه‌فرد دچار تردید شوید. یا در حال حاضر حس می‌کنید هنوز جایگاه دلخواهتان را نیافته‌اید.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. شناسایی تمایلات و توانایی‌های خاص خود و تمرکز بر آن‌ها برای ایجاد تمایزی مثبت در مسیر زندگی.<br>
+                                    ۲. کنار گذاشتن نگرانی‌های غیرضروری؛ تمرکز بر عملکرد واقعی و فرصت‌های ملموس، حس تفرد را تقویت می‌کند.<br>
+                                    ۳. یافتن راهنمایی (مانند مربی، مشاور یا الگوی موفق) برای شفاف‌سازی مسیر و ایجاد انگیزه بالاتر.<br>
+                                    ۴. راه‌اندازی پروژه‌های کوچک شخصی در زمینه‌هایی که دوست دارید، تا جایگاه منحصربه‌فردتان شکل بگیرد.<br>
+                                    ۵. پرهیز از مقایسه مداوم خود با دیگران؛ تفرد یعنی کشف جایگاه مخصوص به خود، نه رقابت بی‌پایان با اطرافیان.
+                                </div>
+                            </div>
+                        </li>
+                        <!-- سطح خوب تفرد -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10260#;">
+                            <strong>«خوب»<br></strong>
+                            شما از حس جایگاه منحصربه‌فرد در زندگی برخوردارید و معمولاً می‌دانید در مسیرتان چه چیزی به شما هویت و امنیت می‌بخشد. این موضوع به شما کمک می‌کند با اعتمادبه‌نفس و آزادی بیشتر تصمیم بگیرید و مسیر رشد را ادامه دهید.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. تقویت و تثبیت جایگاه فعلی خود از طریق ارتقای مهارت‌ها و بهره‌گیری از فرصت‌های جدید.<br>
+                                    ۲. اشتراک‌گذاری تجربه‌هایتان با کسانی که در جست‌وجوی مسیر ویژه زندگی خود هستند، برای ترویج روحیه خودشناسی و تفرد.<br>
+                                    ۳. انعطاف در تغییر جزیی مسیر، در صورتی که احساس کنید می‌توانید جایگاه منحصربه‌فردتری داشته باشید.<br>
+                                    ۴. حمایت از اطرافیان برای کشف جایگاه خاصشان؛ نقش شما می‌تواند برای آن‌ها انگیزه‌بخش و هدایتگر باشد.<br>
+                                    ۵. مراقبت از تعادل میان جنبه‌های مختلف زندگی (خانوادگی، حرفه‌ای، اجتماعی) تا حس تفرد بدون آسیب به روابط تداوم یابد.
+                                </div>
+                            </div>
+                        </li>
+                        <!-- سطح عالی تفرد -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10260#;">
+                            <strong>«عالی»<br></strong>
+                            شما در بالاترین سطح تفرد قرار دارید؛ جایگاهی بی‌نظیر در زندگی یافته‌اید که هم امنیت و پیشرفتتان را تضمین می‌کند و هم حس اصالت و یگانگی را در شما تقویت می‌نماید. این وضعیت به شما امکان می‌دهد با اعتمادبه‌نفس و قدرت بیشتری مسیر رؤیاهایتان را بپیمایید.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. استفاده از این اعتمادبه‌نفس بالا برای راه‌اندازی پروژه‌های تأثیرگذار یا رهبری تیم‌های خلاق؛ دیگران نیز از حضور شما بهره خواهند برد.<br>
+                                    ۲. به اشتراک گذاشتن داستان شخصی و رموز موفقیتتان؛ افراد علاقه‌مند می‌توانند از تجربیاتتان الهام بگیرند.<br>
+                                    ۳. تلاش برای ترکیب استعدادها و دغدغه‌های خود با نیازهای جامعه یا محیط کاری؛ این رویکرد می‌تواند کار و زندگی را پرمعناتر کند.<br>
+                                    ۴. حفظ انعطاف ذهنی؛ با وجود احساس تفرد بالا، گاه لازم است تغییرات یا بازنگری‌های کوچکی در مسیر اعمال شود.<br>
+                                    ۵. تداوم خودشناسی و مراقبت از سلامت جسمی و روانی، تا حس منحصربه‌فردی خود را برای بلندمدت حفظ کنید.
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
 
-    <!-- سطح خوب تفرد -->
-    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10260#;">
-        <strong>«خوب»<br></strong>
-        شما از حس جایگاه منحصربه‌فرد در زندگی برخوردارید و معمولاً می‌دانید در مسیرتان چه چیزی به شما هویت و امنیت می‌بخشد. این موضوع به شما کمک می‌کند با اعتمادبه‌نفس و آزادی بیشتر تصمیم بگیرید و مسیر رشد را ادامه دهید.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. تقویت و تثبیت جایگاه فعلی خود از طریق ارتقای مهارت‌ها و بهره‌گیری از فرصت‌های جدید.<br>
-                ۲. اشتراک‌گذاری تجربه‌هایتان با کسانی که در جست‌وجوی مسیر ویژه زندگی خود هستند، برای ترویج روحیه خودشناسی و تفرد.<br>
-                ۳. انعطاف در تغییر جزیی مسیر، در صورتی که احساس کنید می‌توانید جایگاه منحصربه‌فردتری داشته باشید.<br>
-                ۴. حمایت از اطرافیان برای کشف جایگاه خاصشان؛ نقش شما می‌تواند برای آن‌ها انگیزه‌بخش و هدایتگر باشد.<br>
-                ۵. مراقبت از تعادل میان جنبه‌های مختلف زندگی (خانوادگی، حرفه‌ای، اجتماعی) تا حس تفرد بدون آسیب به روابط تداوم یابد.
-            </div>
-        </div>
-    </li>
+            <!-- Credentials and Validity Section -->
+            <section class="content-section test-section" id="credentials">
+                <div class="content-container">
+                    <!-- اعتبار و صحت آزمون -->
+                    <h2>اعتبار و صحت آزمون</h2>
+                    <p>
+                        آزمون فهرست تشخیص تعاملی نیازها بر اساس روش‌شناسی تحقیقاتی معتبر و تایید شده توسط متخصصین روانشناسی طراحی شده است. این آزمون توسط دانشگاه‌ها و سازمان‌های معتبر روانشناسی مورد تأیید و توصیه قرار گرفته است.
+                    </p>
+                    <ul>
+                        <li>روش‌شناسی تحقیقاتی مبتنی بر مطالعات علمی روز</li>
+                        <li>تأییدیه سازمان‌های معتبر روانشناسی</li>
+                        <li>پشتیبانی توسط تیم متخصصین و روانشناسان خبره</li>
+                    </ul>
+                </div>
+            </section>
 
-    <!-- سطح عالی تفرد -->
-    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10260#;">
-        <strong>«عالی»<br></strong>
-        شما در بالاترین سطح تفرد قرار دارید؛ جایگاهی بی‌نظیر در زندگی یافته‌اید که هم امنیت و پیشرفتتان را تضمین می‌کند و هم حس اصالت و یگانگی را در شما تقویت می‌نماید. این وضعیت به شما امکان می‌دهد با اعتمادبه‌نفس و قدرت بیشتری مسیر رؤیاهایتان را بپیمایید.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. استفاده از این اعتمادبه‌نفس بالا برای راه‌اندازی پروژه‌های تأثیرگذار یا رهبری تیم‌های خلاق؛ دیگران نیز از حضور شما بهره خواهند برد.<br>
-                ۲. به اشتراک گذاشتن داستان شخصی و رموز موفقیتتان؛ افراد علاقه‌مند می‌توانند از تجربیاتتان الهام بگیرند.<br>
-                ۳. تلاش برای ترکیب استعدادها و دغدغه‌های خود با نیازهای جامعه یا محیط کاری؛ این رویکرد می‌تواند کار و زندگی را پرمعناتر کند.<br>
-                ۴. حفظ انعطاف ذهنی؛ با وجود احساس تفرد بالا، گاه لازم است تغییرات یا بازنگری‌های کوچکی در مسیر اعمال شود.<br>
-                ۵. تداوم خودشناسی و مراقبت از سلامت جسمی و روانی، تا حس منحصربه‌فردی خود را برای بلندمدت حفظ کنید.
-            </div>
-        </div>
-    </li>
-</ul>
-                                              
-        
+            <!-- Testimonials Section -->
+            <section class="content-section test-section" id="testimonials">
+                <div class="content-container">
+                    <!-- توصیه‌نامه‌ها -->
+                    <h2>توصیه‌نامه‌ها</h2>
+                    <div class="testimonial">
+                        <p>"گزارش تحلیل فهرست تشخیص تعاملی نیازها به من کمک کرد تا بهتر نیازهای روانی خود را بشناسم و در مسیر رشد شخصی‌ام گام‌های مؤثرتری بردارم."</p>
+                        <p><strong>- سارا احمدی</strong></p>
+                    </div>
+                    <div class="testimonial">
+                        <p>"نتایج دقیق این آزمون به من امکان داد تا نقاط قوت و ضعف خود را در زمینه‌های امنیت، پیشرفت و تفرد شناسایی کنم و برای بهبود وضعیت روانی‌ام برنامه‌ریزی کنم."</p>
+                        <p><strong>- علی رضایی</strong></p>
+                    </div>
+                </div>
+            </section>
 
+            <!-- Call-to-Action Section -->
+            <section class="content-section test-section" id="start-test">
+                <div class="content-container">
+                    <!-- دعوت به اقدام (CTA) -->
+                    <h2>آیا آماده‌اید تا شروع کنید؟</h2>
+                    <p>
+                        با انجام این آزمون، گامی مهم در جهت شناخت بهتر از نیازهای روان‌شناختی و بهبود وضعیت شخصی‌تان بردارید.
+                    </p>
+                    <div style="text-align: center; margin-top: 20px;">
+                        <a href="/take/fahrest-tashkhis-tamarkobi-niyazha" class="cta-button">شروع آزمون</a>
+                    </div>
+                </div>
+            </section>
 
+            <!-- FAQ Section (Optional) -->
+            <section class="content-section test-section" id="faq">
+                <div class="content-container">
+                    <!-- سوالات متداول -->
+                    <h2>سوالات متداول</h2>
+                    <div class="faq-item">
+                        <h4>آیا این آزمون دقیق است؟</h4>
+                        <p>بله، این آزمون بر اساس روش‌شناسی تحقیقاتی معتبر و تایید شده طراحی شده است تا نتایج دقیق و قابل اعتمادی ارائه دهد.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>آیا این آزمون برای کودکان مناسب است؟</h4>
+                        <p>این آزمون بیشتر برای بزرگسالان و نوجوانان طراحی شده است و ممکن است برای کودکان جوان‌تر مناسب نباشد.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>بعد از انجام آزمون چه اتفاقی می‌افتد؟</h4>
+                        <p>پس از تکمیل آزمون، شما یک گزارش جامع با نتایج و توصیه‌های شخصی دریافت خواهید کرد که می‌توانید آن را مرور کرده و در صورت نیاز، با متخصصین مشورت کنید.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-
-
-            <div class="report-section-title">جمع‌بندی</div>
-            <div class="report-paragraph">
-            <p>این گزارش ارزیابی مهارت‌های شما شامل تحلیل تعهد، نیرومندی، ظرفیت تحلیلی، بیتابی روانی، استقلال و سازش است. این بررسی نقاط قوت و زمینه‌های نیازمند بهبود شما را نشان داده و توصیه‌های کاربردی برای توسعه مهارت‌های شما ارائه می‌دهد.</p>
-            
-            <p><b>نقاط قوت: </b>شما در برخی از حوزه‌ها عملکرد برجسته‌ای دارید که نشان‌دهنده توانایی‌های قوی در مدیریت مسئولیت‌ها، انرژی بالا، تحلیل مسائل پیچیده، آرامش روانی، خودکفایی و تطبیق‌پذیری است. به عنوان مثال، در حوزه‌های "تعهد" و "ظرفیت تحلیلی"، شما توانایی زیادی در مدیریت وظایف و تحلیل مسائل نشان داده‌اید که می‌تواند به پیشرفت حرفه‌ای و رشد فردی شما کمک کند.</p>
-            
-            <p><b>حوزه‌های نیازمند بهبود:</b> در برخی از بخش‌ها نیاز به تمرکز بیشتر وجود دارد. به عنوان مثال، در حوزه‌های "بیتابی روانی" و "استقلال"، شما می‌توانید با تمرین‌های منظم و فعالیت‌های هدفمند مانند تکنیک‌های مدیریت استرس و برنامه‌ریزی منظم مهارت‌های خود را بهبود بخشید. همچنین، افزایش تعاملات اجتماعی و تمرین مهارت‌های تصمیم‌گیری مستقل می‌تواند تأثیر مثبتی بر عملکرد شما داشته باشد.</p>
-            
-            <p><b>گام‌های بعدی:</b> برای تقویت مهارت‌های خود، پیشنهاد می‌شود که به توصیه‌های ارائه‌شده در هر بخش توجه ویژه‌ای کنید و در صورت نیاز از خدمات مشاوره تخصصی استفاده نمایید. همچنین، ارزیابی منظم و پیگیری مداوم می‌تواند به توسعه پایدار و موفقیت شما در تمامی ابعاد زندگی کمک کند.</p>
-            </div>
-        
-        <footer class="report-footer-custom">
-            <div class="report-footer-content">
-                <img src="../panel/file?type=picture&amp;v=3&amp;mode=filemanager&amp;file=%7eDB3gfQUls%2bt2iiMYKbsRAxrtFhcHKUIUUo7pPtO17bHCzNxwU4zNh3UVor6QMtl7Y6EWX8dD0PSvzZOYkRrXlfejPn4lNTj6" class="report-footer-img" alt="لوگو">
-            </div>
-            <p class="report-footer-paragraph">مؤسّسه تعاملی هیجان اندیشه | تماس: 02188174100 | ایمیل: info@eot.ir</p>
-            <p class="report-footer-paragraph yellow-text">© ۱۴۰۳ تمامی حقوق محفوظ است.</p>
-            <ul class="report-footer-menu">
-                <li><a href="https://www.eot.ir/" class="report-footer-menu-link">صفحه اصلی</a></li>
-                <li><a href="https://www.eot.ir/contact" class="report-footer-menu-link">تماس با ما</a></li>
-                <li><a href="https://www.eot.ir/about" class="report-footer-menu-link">درباره ما</a></li>
-            </ul>
-            <address class="report-footer-address">تهران، سهروردی، خرمشهر، عربعلی، کوچه ششم، شماره ۴۴</address>
+        <!-- Footer -->
+        <footer id="footer" class="footer">
+            <!-- Content injected via scripts -->
         </footer>
-    </div>
+
+        <!-- Scripts -->
+        <script src="/assets/js/script.js"></script>
+        <script src="/assets/js/header-footer-inject.js"></script>
+        <script>
+            // FAQ Toggle Script
+            document.querySelectorAll('.faq-item h4').forEach(function(question) {
+                question.addEventListener('click', function() {
+                    const parent = this.parentElement;
+                    parent.classList.toggle('active');
+                });
+            });
+        </script>
+    </body>
+</html>

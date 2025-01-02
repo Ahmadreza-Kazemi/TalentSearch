@@ -1,52 +1,225 @@
-<div class="ravesh-editor-html" style="direction:rtl">
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>گزارش تحلیل فهرست تشخیص تعاملی شخصیت</title>
+    <title>استعدادیاب | معرفی آزمون فهرست تشخیص تعاملی ظرفیت تحلیلی شناختی</title>
     <style>
+        /* =======================================================
+           1. Reset and Base Styles
+        ======================================================= */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100%;
+            font-family: 'Vazir', sans-serif;
+            background-color: #FFFFFF;
+            color: #1F3B73;
+            direction: rtl;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            padding-top: 80px;
+            padding-bottom: 60px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #1F3B73;
+            transition: color 0.3s ease-in-out;
+        }
+
+        a:hover,
+        a:focus {
+            color: #F4C553;
+            text-decoration: underline;
+        }
+
+        /* =======================================================
+           2. Font Imports
+        ======================================================= */
+        @font-face {
+            font-family: 'Vazir';
+            src: url('/assets/fonts/Vazir-Regular-UI.woff2') format('woff2'),
+                 url('/assets/fonts/Vazir-Regular-UI.woff') format('woff'),
+                 url('/assets/fonts/Vazir-Regular-UI.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+        }
+
         @font-face {
             font-family: 'IRANSansWeb';
-            src: url('fonts/IRANSansWeb.woff2') format('woff2');
+            src: url('/assets/fonts/IRANSansWeb.woff2') format('woff2');
         }
         @font-face {
             font-family: 'BTitrBold';
-            src: url('fonts/BTitrBold.woff2') format('woff2');
+            src: url('/assets/fonts/BTitrBold.woff2') format('woff2');
         }
         @font-face {
             font-family: 'BKoodakBold';
-            src: url('fonts/BKoodakBold.woff2') format('woff2');
+            src: url('/assets/fonts/BKoodakBold.woff2') format('woff2');
         }
         @font-face {
             font-family: 'BHoma';
-            src: url('fonts/BHoma.woff2') format('woff2');
+            src: url('/assets/fonts/BHoma.woff2') format('woff2');
         }
         @font-face {
             font-family: 'BYekan';
-            src: url('fonts/BYekan.woff2') format('woff2');
+            src: url('/assets/fonts/BYekan.woff2') format('woff2');
         }
         @font-face {
             font-family: 'Tahoma';
-            src: url('fonts/Tahoma.woff2') format('woff2');
+            src: url('/assets/fonts/Tahoma.woff2') format('woff2');
         }
+
+        /* =======================================================
+           3. Typography
+        ======================================================= */
+        h1, h2, h3, h4 {
+            font-family: 'Vazir', sans-serif;
+            color: #1F3B73;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px #F4C553;
+        }
+
+        h2 {
+            font-size: 2em;
+            font-weight: 700;
+            margin-bottom: 24px;
+            text-shadow: 0 0 10px #F4C553;
+            color: #1F3B73;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 1.5em;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #1F3B73;
+            text-align: center;
+        }
+
+        h4 {
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-top: 16px;
+            color: #1F3B73;
+            text-align: center;
+        }
+
+        p {
+            font-size: 1em;
+            max-width: 800px;
+            margin: 0 auto 16px;
+            line-height: 1.6;
+            color: #1F3B73;
+            text-align: justify;
+        }
+
+        ul {
+            max-width: 800px;
+            margin: 0 auto 16px;
+            padding-right: 20px;
+            color: #1F3B73;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* =======================================================
+           4. Hero Section
+        ======================================================= */
+        .hero {
+            height: calc(100vh - 80px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #F0F0F5;
+            padding: 16px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 16px;
+            color: #1F3B73;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            margin-bottom: 24px;
+            color: #1F3B73;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #F4C553;
+            color: #FFFFFF;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 1em;
+            box-shadow: 0 0 10px #FFD77B;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease-in-out,
+                        transform 0.3s ease-in-out,
+                        box-shadow 0.3s ease-in-out;
+        }
+
+        .cta-button:hover,
+        .cta-button:focus {
+            background-color: #4FBDBA;
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px #4FBDBA;
+        }
+
+        /* =======================================================
+           5. Content Sections
+        ======================================================= */
+        .content-section {
+            padding: 60px 16px;
+            background-color: #FFFFFF;
+        }
+
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .content-section:nth-child(even) {
+            background-color: #F9F9F9;
+        }
+
+        /* =======================================================
+           6. Sample Report Section
+        ======================================================= */
+        /* Report Styles */
         .report-container {
             font-family: 'BYekan', sans-serif;
             direction: rtl;
             line-height: 1.8;
             background-color: #F5F5F5;
             color: #333333;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            max-width: 800px;
-            width: 100%;
-            margin: auto;
-            background-color: #F5F5F5;
+            margin: 40px auto;
             padding: 40px;
             box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
             border-radius: 20px;
+            max-width: 800px;
         }
+
         .report-header-custom {
             display: flex;
             align-items: center;
@@ -55,15 +228,18 @@
             background-color: #0DA3B8;
             border-radius: 20px 20px 0 0;
         }
+
         .report-header-inner {
             display: flex;
             align-items: center;
             gap: 20px;
         }
+
         .report-header-img {
             width: 40px;
             height: 40px;
         }
+
         .report-header-title {
             margin: 0;
             font-size: 1.8em;
@@ -71,22 +247,39 @@
             font-family: 'IRANSansWeb', sans-serif;
             font-weight: normal;
         }
+
         .report-header-date {
             color: #ffffff;
             font-size: 1em;
         }
-        .report-title {
-            text-align: center;
-            color: #0DA3B8;
+
+        .report-section-title {
+            font-size: 22px;
+            color: #CC3333;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #CC3333;
             font-family: 'IRANSansWeb', sans-serif;
             font-weight: bold;
-            font-size: 32px;
-            margin-bottom: 25px;
+            text-align: center;
         }
+
+        .report-paragraph {
+            background-color: #E0F7FA;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
         .report-info-container, .report-score-container {
             display: flex;
             flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
         }
+
         .report-info-item, .report-score-item {
             background-color: #F8F9FA;
             padding: 15px;
@@ -99,26 +292,17 @@
             font-family: 'BYekan', sans-serif;
             flex: 1;
             min-width: 300px;
-            margin-right: 10px; /* Add space between columns */
         }
+
         .report-info-item strong, .report-score-item strong {
             color: #0DA3B8;
             font-family: 'IRANSansWeb', sans-serif;
         }
+
         .report-info-data, .report-score-data {
             font-family: 'IRANSansWeb', sans-serif;
         }
-        .report-section-title {
-            font-size: 22px;
-            color: #CC3333;
-            margin-top: 30px;
-            margin-bottom: 10px;
-            padding-bottom: 5px;
-            border-bottom: 1px solid #CC3333;
-            font-family: 'IRANSansWeb', sans-serif;
-            font-weight: bold;
-            text-align: center;
-        }
+
         .report-component-title {
             display: flex;
             justify-content: space-between;
@@ -131,32 +315,7 @@
             border-bottom: 1px solid #DBCF93;
             font-family: 'IRANSansWeb', sans-serif;
         }
-        .report-paragraph {
-            background-color: #E0F7FA;
-            padding: 15px;
-            border-radius: 10px;
-            font-size: 16px;
-            margin-bottom: 20px;
-        }
-        .report-list {
-            list-style-type: none;
-            padding: 0;
-            font-size: 16px;
-        }
-        .report-list-item {
-            background: #F8F9FA;
-            margin-bottom: 10px;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-            display: flex;
-            flex-direction: column;
-        }
-        .report-list-item strong {
-            font-size: 18px;
-            color: #0DA3B8;
-            margin-bottom: 5px;
-        }
+
         .report-badge {
             display: inline-block;
             padding: 8px 15px;
@@ -165,6 +324,7 @@
             background-color: #4A9B8C;
             border-radius: 10px;
         }
+
         .report-recommendation {
             background-color: #EAEAEA;
             padding: 20px;
@@ -176,373 +336,473 @@
             width: 100%;
             box-sizing: border-box;
         }
+
         .report-recommendation-title {
             font-weight: bold;
             color: #CC3333;
             margin-bottom: 5px;
             font-size: 18px;
         }
+
         .report-recommendation-text {
             margin-bottom: 5px;
             line-height: 1.6;
             font-size: 16px;
         }
-        .report-footer-custom {
-            background-color: #F5F5F5;
-            color: #333333;
-            padding: 20px;
-            text-align: center;
-            font-family: 'IRANSansWeb', sans-serif;
-            border-top: 1px solid #E0E0E0;
-            font-size: 16px; /* Increased font size */
-        }
-        .report-footer-content {
-            margin-bottom: 20px;
-        }
-        .report-footer-img {
-            width: 80px;
-            height: 80px;
-        }
-        .report-footer-paragraph {
-            margin: 5px 0;
-        }
-        .report-footer-paragraph.yellow-text {
-            color: #DBCF93;
-        }
-        .report-footer-menu {
-            list-style: none;
+
+        .report-list {
+            list-style-type: none;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin: 10px 0;
+            font-size: 16px;
         }
-        .report-footer-menu-link {
-            color: #0DA3B8;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        .report-footer-menu-link:hover {
-            color: #007B8A;
-        }
-        .report-footer-address {
-            margin-top: 10px;
-            font-size: 14px;
-        }
-        .report-summary-container {
-            max-width: 800px;
-            margin: auto;
-            background-color: #FFFFFF;
-            padding: 40px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+
+        .report-list-item {
+            background: #F8F9FA;
+            margin-bottom: 10px;
+            padding: 15px;
             border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
         }
-        .report-summary-heading {
-            text-align: center;
+
+        .report-list-item strong {
+            font-size: 18px;
             color: #0DA3B8;
-            font-family: 'IRANSansWeb', sans-serif;
-            font-weight: bold;
-            font-size: 32px;
-            margin-bottom: 25px;
+            margin-bottom: 5px;
         }
-        .report-summary-content {
-            color: #333333;
-            font-family: 'IRANSansWeb', sans-serif;
-            line-height: 1.8;
-        }
+
+        /* Report Conditional Display Styles */
         .report-conditional-display {
             display: block;
         }
         .report-conditional-display[style*="--score-rate1: 1"] {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-            border-radius: 10px;
             background-color: #FF9999; /* Moderate */
         }
         .report-conditional-display[style*="--score-rate2: 2"] {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-            border-radius: 10px;
             background-color: #FFD580; /* Good */
         }
         .report-conditional-display[style*="--score-rate3: 3"] {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-            border-radius: 10px;
             background-color: #99FF99; /* Excellent */
         }
+
+        /* =======================================================
+           7. FAQ Section
+        ======================================================= */
+        .faq-item {
+            margin-bottom: 20px;
+        }
+
+        .faq-item h4 {
+            cursor: pointer;
+            position: relative;
+        }
+
+        .faq-item h4::after {
+            content: '+';
+            position: absolute;
+            left: -20px;
+            top: 0;
+            font-size: 1.5em;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active h4::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-item p {
+            display: none;
+            margin-top: 10px;
+        }
+
+        .faq-item.active p {
+            display: block;
+        }
     </style>
-    <div class="report-report-container">
-        <header class="report-header-custom">
-            <div class="report-header-inner">
-                <img src="../panel/file?type=picture&amp;v=3&amp;mode=filemanager&amp;file=%7eDB3gfQUls%2bt2iiMYKbsRAxrtFhcHKUIUUo7pPtO17bHCzNxwU4zNh3UVor6QMtl7Y6EWX8dD0PSvzZOYkRrXlfejPn4lNTj6" class="report-header-img" alt="لوگو">
-                <h1 class="report-header-title">گزارش تحلیل فهرست تشخیص تعاملی شخصیت</h1>
+</head>
+<body>
+    <header class="header">
+        <!-- می‌توانید محتوای سربرگ را اینجا اضافه کنید -->
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>فهرست تشخیص تعاملی ظرفیت تحلیلی شناختی</h1>
+                <p>تحلیل و بررسی ویژگی‌های روانی فرد برای توسعه ظرفیت تحلیلی شناختی</p>
+                <a href="/take/fahrest-tashkhis-tamarkobi-zarfiat-tahlili-shenakhti" class="cta-button">شروع آزمون</a>
             </div>
-            <div class="report-header-date">تاریخ اجرا: #primary_createDate#</div>
-        </header>
-        
-        <div class="report-section-title">فهرست تشخیص تعاملی شخصیت</div>
-        <p class="report-paragraph">
-            این ارزیابی به منظور تحلیل و بررسی ویژگی‌های شخصیتی فرد در حوزه‌های مختلف از جمله تعهد، نیرومندی، ظرفیت تحلیلی، بیتابی روانی، استقلال و سازش انجام شده است. هدف از این ارزیابی شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد.
-        </p><p></p>
-               
-        <div class="report-section-title">اطلاعات فردی</div>
-        <div class="report-info-container">
-            <div class="report-info-item"><strong>نام:</strong> <span class="report-info-data">#field_349#</span></div>
-            <div class="report-info-item"><strong>نام خانوادگی:</strong> <span class="report-info-data">#field_1712#</span></div>
-            <div class="report-info-item"><strong>موبایل:</strong> <span class="report-info-data">#field_350#</span></div>
-            <div class="report-info-item"><strong>ایمیل:</strong> <span class="report-info-data">#field_351#</span></div></div>
+        </section>
 
-        </div>
-        <div class="report-section-title">نتیجه</div>
-        <div class="report-score-container">
-            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10331#;"><strong>استنتاج تجربی:</strong> <span class="report-badge">#field_1094#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10331#;"><strong>استنتاج تجربی:</strong> <span class="report-badge">#field_1094#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10331#;"><strong>استنتاج تجربی:</strong> <span class="report-badge">#field_1094#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10332#;"><strong>ریشه یابی تجربی:</strong> <span class="report-badge">#field_1096#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10332#;"><strong>ریشه یابی تجربی:</strong> <span class="report-badge">#field_1096#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10332#;"><strong>ریشه یابی تجربی:</strong> <span class="report-badge">#field_1096#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10333#;"><strong>ظرفیت تحلیلی:</strong> <span class="report-badge">#field_1097#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10333#;"><strong>ظرفیت تحلیلی:</strong> <span class="report-badge">#field_1097#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10333#;"><strong>ظرفیت تحلیلی:</strong> <span class="report-badge">#field_1097#</span></div>
-
-        </div>
-        <div class="report-section-title">تفسیر</div>
-        <p class="report-paragraph">
-            این بخش به تحلیل و تفسیر نتایج ارزیابی روان‌شناختی فرد می‌پردازد. تحلیل روان‌شناختی شامل بررسی ویژگی‌های شخصیتی مختلف است. هدف از این تحلیل شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد. نتایج این تحلیل می‌تواند به فرد کمک کند تا با شناخت بهتر از خود، برنامه‌های توسعه فردی و حرفه‌ای موثرتری را دنبال کند.
-        </p>
-
-
-
-        
-
-<!-- استنتاج تجربی (توانایی استنتاج از داده‌های تجربی) -->
-<div class="report-component-title">استنتاج تجربی
-    <span class="report-badge report-score-data">#field_1094#<br></span>
-</div>
-<p class="report-paragraph">
-    استنتاج تجربی در «فهرست ظرفیت تحلیلی شناختی» به معنای توانایی فرد در استخراج نتایج منطقی از داده‌ها و تجربیات گذشته است. افرادی که امتیاز بالایی در این حوزه کسب می‌کنند، قادرند با تحلیل دقیق اطلاعات، تصمیمات هوشمندانه‌تری بگیرند و مشکلات را به طور مؤثرتری حل کنند.
-</p>
-<ul class="report-list">
-    <!-- سطح متوسط استنتاج تجربی -->
-    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10331#;">
-        <strong>«متوسط»<br></strong>
-        شما در بسیاری از مواقع قادر به استنتاج از داده‌ها و تجربیات هستید، اما گاهی ممکن است در مواجهه با مسائل پیچیده نیاز به تحلیل عمیق‌تر داشته باشید. این وضعیت می‌تواند ناشی از محدودیت‌های زمانی یا فشارهای محیطی باشد.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. تمرین تحلیل مسائل پیچیده با تقسیم آن‌ها به بخش‌های کوچکتر.<br>
-                ۲. شرکت در دوره‌های آموزشی مرتبط با تفکر انتقادی و تحلیل داده‌ها.<br>
-                ۳. استفاده از ابزارهای تحلیلی مانند نرم‌افزارهای آماری برای بهبود دقت استنتاج‌ها.<br>
-                ۴. همکاری با همکاران برای تبادل ایده‌ها و روش‌های مختلف تحلیل.<br>
-                ۵. بازبینی و ارزیابی نتایج استنتاج‌های گذشته برای یادگیری از تجربیات.
+        <!-- Test Purpose Section -->
+        <section class="content-section test-section" id="test-purpose">
+            <div class="content-container">
+                <!-- هدف از آزمون -->
+                <h2>هدف از آزمون</h2>
+                <p>
+                    این آزمون برای سنجش و تحلیل ویژگی‌های روانی فرد در حوزه‌های مختلف طراحی شده است. هدف اصلی این آزمون شناسایی نقاط قوت و زمینه‌های نیازمند بهبود در روان فرد است تا بتواند در مسیر توسعه ظرفیت تحلیلی شناختی خود گام‌های موثری بردارد.
+                </p>
             </div>
-        </div>
-    </li>
+        </section>
 
-    <!-- سطح خوب استنتاج تجربی -->
-    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10331#;">
-        <strong>«خوب»<br></strong>
-        شما به طور قابل توجهی در استنتاج از داده‌ها و تجربیات گذشته مهارت دارید. این توانایی به شما کمک می‌کند تا تصمیمات هوشمندانه‌تری بگیرید و مشکلات را به طور مؤثری حل کنید. شما معمولاً در تحلیل اطلاعات پیچیده نیز موفق عمل می‌کنید.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. حفظ و تقویت مهارت‌های تحلیلی از طریق مطالعه مستمر.<br>
-                ۲. شرکت در سمینارها و کارگاه‌های تخصصی برای به‌روز نگه داشتن دانش تحلیلی.<br>
-                ۳. استفاده از تکنیک‌های پیشرفته تحلیل داده برای افزایش دقت و سرعت استنتاج.<br>
-                ۴. انتقال تجربیات موفق خود به همکاران برای ارتقای سطح کلی تیم.<br>
-                ۵. تنظیم اهداف جدید برای بهبود مستمر فرآیندهای تحلیل و استنتاج.
+        <!-- Key Features Section -->
+        <section class="content-section test-section" id="key-features">
+            <div class="content-container">
+                <!-- ویژگی‌های کلیدی آزمون -->
+                <h2>ویژگی‌های کلیدی آزمون</h2>
+                <ul>
+                    <li><strong>زمینه‌های ارزیابی:</strong> استنتاج تجربی، ریشه یابی تجربی، ظرفیت تحلیلی</li>
+                    <li><strong>زمان مورد نیاز:</strong> 20 دقیقه</li>
+                    <li><strong>دسترسی:</strong> آنلاین و حضوری</li>
+                    <li><strong>نوع گزارش:</strong> گزارش جامع با نمودارها و توصیه‌های عملی</li>
+                </ul>
             </div>
-        </div>
-    </li>
+        </section>
 
-    <!-- سطح عالی استنتاج تجربی -->
-    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10331#;">
-        <strong>«عالی»<br></strong>
-        شما در بالاترین سطح استنتاج تجربی قرار دارید؛ توانایی فوق‌العاده‌ای در تحلیل دقیق داده‌ها و استخراج نتایج منطقی از تجربیات دارید. این ویژگی به شما امکان می‌دهد تا به عنوان یک متخصص در حوزه خود شناخته شوید و نقش‌های کلیدی در تصمیم‌گیری‌های مهم سازمانی ایفا کنید.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. پذیرش نقش‌های رهبری در پروژه‌های تحقیقاتی و تحلیلی.<br>
-                ۲. راه‌اندازی و هدایت تیم‌های تحلیل داده برای بهبود فرآیندهای سازمانی.<br>
-                ۳. انتشار نتایج تحلیل‌های خود در مجلات علمی یا کنفرانس‌ها.<br>
-                ۴. توسعه روش‌های نوآورانه در تحلیل داده‌ها و به اشتراک‌گذاری آن‌ها با جامعه علمی.<br>
-                ۵. حفظ تعادل بین تحلیل دقیق و خلاقیت در حل مسائل پیچیده.
+        <!-- Benefits Section -->
+        <section class="content-section test-section" id="benefits">
+            <div class="content-container">
+                <!-- مزایای شرکت در این آزمون -->
+                <h2>مزایای شرکت در این آزمون</h2>
+                <ul>
+                    <li>افزایش خودآگاهی و شناخت بهتر از توانایی‌های تحلیلی</li>
+                    <li>بهبود مهارت‌های حل مسئله و تصمیم‌گیری</li>
+                    <li>شناسایی نقاط قوت و ضعف تحلیلی شناختی</li>
+                    <li>حمایت از رشد شخصی و حرفه‌ای</li>
+                    <li>افزایش عملکرد در محیط‌های کاری و آموزشی</li>
+                </ul>
             </div>
-        </div>
-    </li>
-</ul>
+        </section>
 
-<!-- ریشه یابی تجربی (توانایی یافتن ریشه مشکلات از طریق تحلیل تجربی) -->
-<div class="report-component-title">ریشه یابی تجربی
-    <span class="report-badge report-score-data">#field_1096#<br></span>
-</div>
-<p class="report-paragraph">
-    ریشه یابی تجربی در «فهرست ظرفیت تحلیلی شناختی» به معنای توانایی فرد در شناسایی و تحلیل عوامل اصلی مشکلات و چالش‌ها از طریق داده‌ها و تجربیات گذشته است. افرادی که در این حوزه امتیاز بالایی دارند، قادرند به سرعت و دقت ریشه مسائل را تشخیص دهند و راه‌حل‌های مؤثری ارائه کنند.
-</p>
-<ul class="report-list">
-    <!-- سطح متوسط ریشه یابی تجربی -->
-    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10332#;">
-        <strong>«متوسط»<br></strong>
-        شما در شناسایی ریشه مسائل تا حدی موفق هستید، اما گاهی ممکن است در مواجهه با مشکلات پیچیده نیاز به تحلیل عمیق‌تر داشته باشید. این وضعیت می‌تواند ناشی از محدودیت‌های منابع یا فشارهای زمانی باشد.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. تمرین تحلیل عمیق‌تر مسائل با استفاده از تکنیک‌های مختلف مانند ۵ چرا.<br>
-                ۲. شرکت در دوره‌های تخصصی مرتبط با تحلیل ریشه‌ای مشکلات.<br>
-                ۳. استفاده از ابزارهای مدیریتی برای بهبود فرآیند شناسایی ریشه مشکلات.<br>
-                ۴. همکاری با همکاران برای تبادل ایده‌ها و روش‌های مختلف ریشه یابی.<br>
-                ۵. مستندسازی و ارزیابی نتایج ریشه یابی‌های گذشته برای بهبود فرآیند آینده.
+        <!-- How It Works Section -->
+        <section class="content-section test-section" id="how-it-works">
+            <div class="content-container">
+                <!-- نحوه انجام آزمون -->
+                <h2>نحوه انجام آزمون</h2>
+                <p>
+                    آزمون فهرست تشخیص تعاملی ظرفیت تحلیلی شناختی شامل مراحل زیر است:
+                </p>
+                <ul>
+                    <li><strong>گام اول:</strong> تکمیل پرسشنامه آنلاین به مدت 20 دقیقه</li>
+                    <li><strong>گام دوم:</strong> دریافت گزارش تحلیلی جامع با نتایج و توصیه‌ها</li>
+                    <li><strong>گام سوم:</strong> بررسی نتایج و در صورت نیاز، مشاوره با متخصصین</li>
+                </ul>
             </div>
-        </div>
-    </li>
+        </section>
 
-    <!-- سطح خوب ریشه یابی تجربی -->
-    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10332#;">
-        <strong>«خوب»<br></strong>
-        شما در شناسایی و تحلیل ریشه مشکلات بسیار موفق هستید. این توانایی به شما کمک می‌کند تا سریعاً عوامل اصلی مسائل را تشخیص داده و راه‌حل‌های مؤثری ارائه دهید. شما معمولاً در مواجهه با چالش‌های پیچیده، راه‌حل‌های کاربردی و دقیق پیدا می‌کنید.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. حفظ و تقویت مهارت‌های ریشه یابی از طریق تمرین مستمر.<br>
-                ۲. شرکت در سمینارها و کارگاه‌های تخصصی برای به‌روز نگه داشتن روش‌های ریشه یابی.<br>
-                ۳. استفاده از تکنیک‌های پیشرفته تحلیل داده برای بهبود دقت در شناسایی ریشه مشکلات.<br>
-                ۴. هدایت تیم‌های تحلیل برای بهبود فرآیند ریشه یابی در سازمان.<br>
-                ۵. ارائه مشاوره و راهنمایی به همکاران در زمینه ریشه یابی مشکلات.
+        <!-- Who Should Take This Test Section -->
+        <section class="content-section test-section" id="who-should-take">
+            <div class="content-container">
+                <!-- چه کسانی باید این آزمون را انجام دهند؟ -->
+                <h2>چه کسانی باید این آزمون را انجام دهند؟</h2>
+                <ul>
+                    <li>افرادی که به دنبال شناخت بهتر از توانایی‌های تحلیلی خود هستند</li>
+                    <li>مدیران و کارمندان که به دنبال بهبود مهارت‌های تحلیل و تصمیم‌گیری خود هستند</li>
+                    <li>مشاوران و روانشناسان برای پشتیبانی از مشتریان خود</li>
+                    <li>سازمان‌ها و شرکت‌ها برای ارزیابی و بهبود ظرفیت تحلیلی تیم‌های کاری</li>
+                    <li>دانشجویان و دانش‌آموزانی که به دنبال ارتقاء مهارت‌های تحلیلی شناختی هستند</li>
+                </ul>
             </div>
-        </div>
-    </li>
+        </section>
 
-    <!-- سطح عالی ریشه یابی تجربی -->
-    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10332#;">
-        <strong>«عالی»<br></strong>
-        شما در بالاترین سطح ریشه یابی تجربی قرار دارید؛ توانایی فوق‌العاده‌ای در شناسایی و تحلیل دقیق ریشه مسائل دارید. این ویژگی به شما امکان می‌دهد تا به عنوان یک متخصص در حوزه حل مشکلات شناخته شوید و نقش‌های کلیدی در بهبود فرآیندهای سازمانی ایفا کنید.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. پذیرش نقش‌های رهبری در پروژه‌های حل مشکلات بزرگ و پیچیده.<br>
-                ۲. توسعه و بهبود روش‌های ریشه یابی از طریق تحقیق و نوآوری.<br>
-                ۳. انتشار نتایج تحلیل‌های ریشه‌ای خود در مجلات تخصصی یا کنفرانس‌ها.<br>
-                ۴. راه‌اندازی و هدایت تیم‌های تخصصی برای بهبود فرآیندهای ریشه یابی در سازمان.<br>
-                ۵. آموزش و مشاوره به دیگران در زمینه تکنیک‌های پیشرفته ریشه یابی.
+        <!-- Sample Report Section -->
+        <section class="content-section test-section" id="sample-report">
+            <div class="content-container">
+                <!-- نمونه گزارش -->
+                <h2>نمونه گزارش</h2>
+                <p>
+                    در ادامه یک نمونه از گزارش فهرست تشخیص تعاملی ظرفیت تحلیلی شناختی را مشاهده می‌کنید:
+                </p>
+                <div class="report-container">
+                    <header class="report-header-custom">
+                        <div class="report-header-inner">
+                            <img src="../panel/file?type=picture&amp;v=3&amp;mode=filemanager&amp;file=%7eDB3gfQUls%2bt2iiMYKbsRAxrtFhcHKUIUUo7pPtO17bHCzNxwU4zNh3UVor6QMtl7Y6EWX8dD0PSvzZOYkRrXlfejPn4lNTj6" class="report-header-img" alt="لوگو">
+                            <h1 class="report-header-title">گزارش تحلیل فهرست تشخیص تعاملی ظرفیت تحلیلی شناختی</h1>
+                        </div>
+                        <div class="report-header-date">تاریخ اجرا: #primary_createDate#</div>
+                    </header>
+                    <div class="report-section-title">فهرست تشخیص تعاملی ظرفیت تحلیلی شناختی</div>
+                    <p class="report-paragraph">
+                        این ارزیابی به منظور تحلیل و بررسی ویژگی‌های شخصیتی فرد در حوزه‌های مختلف از جمله استنتاج تجربی، ریشه یابی تجربی و ظرفیت تحلیلی انجام شده است. هدف از این ارزیابی شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد.
+                    </p>
+                    <div class="report-section-title">اطلاعات فردی</div>
+                    <div class="report-info-container">
+                        <div class="report-info-item"><strong>نام:</strong> <span class="report-info-data">#field_1090#</span></div>
+                        <div class="report-info-item"><strong>نام خانوادگی:</strong> <span class="report-info-data">#field_1091#</span></div>
+                        <div class="report-info-item"><strong>موبایل:</strong> <span class="report-info-data">#field_1092#</span></div>
+                        <div class="report-info-item"><strong>ایمیل:</strong> <span class="report-info-data">#field_1093#</span></div>
+                    </div>
+                    <div class="report-section-title">نتیجه</div>
+                    <div class="report-score-container">
+                        <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10331#;"><strong>استنتاج تجربی:</strong> <span class="report-badge">#field_1094#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10331#;"><strong>استنتاج تجربی:</strong> <span class="report-badge">#field_1094#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10331#;"><strong>استنتاج تجربی:</strong> <span class="report-badge">#field_1094#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10332#;"><strong>ریشه یابی تجربی:</strong> <span class="report-badge">#field_1096#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10332#;"><strong>ریشه یابی تجربی:</strong> <span class="report-badge">#field_1096#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10332#;"><strong>ریشه یابی تجربی:</strong> <span class="report-badge">#field_1096#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10333#;"><strong>ظرفیت تحلیلی:</strong> <span class="report-badge">#field_1097#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10333#;"><strong>ظرفیت تحلیلی:</strong> <span class="report-badge">#field_1097#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10333#;"><strong>ظرفیت تحلیلی:</strong> <span class="report-badge">#field_1097#</span></div>
+                    </div>
+                    <div class="report-section-title">تفسیر</div>
+                    <p class="report-paragraph">
+                        این بخش به تحلیل و تفسیر نتایج ارزیابی روان‌شناختی فرد می‌پردازد. تحلیل روان‌شناختی شامل بررسی ویژگی‌های شخصیتی مختلف مانند استنتاج تجربی، ریشه یابی تجربی و ظرفیت تحلیلی است. هدف از این تحلیل شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد. توصیه‌ها شامل تمرین تحلیل مسائل پیچیده، شرکت در دوره‌های آموزشی مرتبط، استفاده از ابزارهای تحلیلی پیشرفته، همکاری با همکاران و ارزیابی نتایج گذشته است. نتایج این تحلیل می‌تواند به فرد کمک کند تا با شناخت بهتر از خود، برنامه‌های توسعه فردی و حرفه‌ای موثرتری را دنبال کند.
+                    </p>
+
+                    <!-- استنتاج تجربی (توانایی استنتاج از داده‌های تجربی) -->
+                    <div class="report-component-title">استنتاج تجربی
+                        <span class="report-badge report-score-data">#field_1094#<br></span>
+                    </div>
+                    <p class="report-paragraph">
+                        استنتاج تجربی در «فهرست ظرفیت تحلیلی شناختی» به معنای توانایی فرد در استخراج نتایج منطقی از داده‌ها و تجربیات گذشته است. افرادی که امتیاز بالایی در این حوزه کسب می‌کنند، قادرند با تحلیل دقیق اطلاعات، تصمیمات هوشمندانه‌تری بگیرند و مشکلات را به طور مؤثرتری حل کنند.
+                    </p>
+                    <ul class="report-list">
+                        <!-- سطح متوسط استنتاج تجربی -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10331#;">
+                            <strong>«متوسط»<br></strong>
+                            شما در بسیاری از مواقع قادر به استنتاج از داده‌ها و تجربیات هستید، اما گاهی ممکن است در مواجهه با مسائل پیچیده نیاز به تحلیل عمیق‌تر داشته باشید. این وضعیت می‌تواند ناشی از محدودیت‌های زمانی یا فشارهای محیطی باشد.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. تمرین تحلیل مسائل پیچیده با تقسیم آن‌ها به بخش‌های کوچکتر.<br>
+                                    ۲. شرکت در دوره‌های آموزشی مرتبط با تفکر انتقادی و تحلیل داده‌ها.<br>
+                                    ۳. استفاده از ابزارهای تحلیلی مانند نرم‌افزارهای آماری برای بهبود دقت استنتاج‌ها.<br>
+                                    ۴. همکاری با همکاران برای تبادل ایده‌ها و روش‌های مختلف تحلیل.<br>
+                                    ۵. بازبینی و ارزیابی نتایج استنتاج‌های گذشته برای یادگیری از تجربیات.
+                                </div>
+                            </div>
+                        </li>
+                        <!-- سطح خوب استنتاج تجربی -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10331#;">
+                            <strong>«خوب»<br></strong>
+                            شما به طور قابل توجهی در استنتاج از داده‌ها و تجربیات گذشته مهارت دارید. این توانایی به شما کمک می‌کند تا تصمیمات هوشمندانه‌تری بگیرید و مشکلات را به طور مؤثری حل کنید. شما معمولاً در تحلیل اطلاعات پیچیده نیز موفق عمل می‌کنید.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. حفظ و تقویت مهارت‌های تحلیلی از طریق مطالعه مستمر.<br>
+                                    ۲. شرکت در سمینارها و کارگاه‌های تخصصی برای به‌روز نگه داشتن دانش تحلیلی.<br>
+                                    ۳. استفاده از تکنیک‌های پیشرفته تحلیل داده برای افزایش دقت و سرعت استنتاج.<br>
+                                    ۴. انتقال تجربیات موفق خود به همکاران برای ارتقای سطح کلی تیم.<br>
+                                    ۵. تنظیم اهداف جدید برای بهبود مستمر فرآیندهای تحلیل و استنتاج.
+                                </div>
+                            </div>
+                        </li>
+                        <!-- سطح عالی استنتاج تجربی -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10331#;">
+                            <strong>«عالی»<br></strong>
+                            شما در سطح بالایی از تفکر انتزاعی قرار دارید؛ توانایی فوق‌العاده‌ای در تحلیل دقیق و استخراج نتایج منطقی از داده‌ها و تجربیات دارید. این ویژگی به شما امکان می‌دهد تا به عنوان یک متخصص در حوزه خود شناخته شوید و نقش‌های کلیدی در تصمیم‌گیری‌های مهم سازمانی ایفا کنید.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. پذیرش نقش‌های رهبری در پروژه‌های تحقیقاتی و تحلیلی.<br>
+                                    ۲. آموزش و منتورینگ دیگران در مورد مهارت‌های ایده‌پردازی و تفکر انتزاعی.<br>
+                                    ۳. حفظ اخلاق و همدلی در کنار خلاقیت؛ ایده‌های بدیع به بستر اصول اخلاقی نیازمندند.<br>
+                                    ۴. شرکت در مسابقات و رویدادهای خلاقیتی، برای به چالش کشیدن ایده‌ها و آشنایی با صاحبان ایده‌های نو.<br>
+                                    ۵. مستندسازی مستمر روند تفکر و ثبت ایده‌ها؛ این کار می‌تواند پایه‌ای برای پژوهش‌های جدی‌تر و پروژه‌های بزرگ‌تر باشد.
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <!-- ریشه یابی تجربی (توانایی یافتن ریشه مشکلات از طریق تحلیل تجربی) -->
+                    <div class="report-component-title">ریشه یابی تجربی
+                        <span class="report-badge report-score-data">#field_1096#<br></span>
+                    </div>
+                    <p class="report-paragraph">
+                        ریشه یابی تجربی در «فهرست ظرفیت تحلیلی شناختی» به معنای توانایی فرد در شناسایی و تحلیل عوامل اصلی مشکلات و چالش‌ها از طریق داده‌ها و تجربیات گذشته است. افرادی که در این حوزه امتیاز بالایی دارند، قادرند به سرعت و دقت ریشه مسائل را تشخیص دهند و راه‌حل‌های مؤثری ارائه کنند.
+                    </p>
+                    <ul class="report-list">
+                        <!-- سطح متوسط ریشه یابی تجربی -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10332#;">
+                            <strong>«متوسط»<br></strong>
+                            شما در شناسایی ریشه مسائل تا حدی موفق هستید، اما گاهی ممکن است در مواجهه با مشکلات پیچیده نیاز به تحلیل عمیق‌تر داشته باشید. این وضعیت می‌تواند ناشی از محدودیت‌های منابع یا فشارهای زمانی باشد.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. تمرین تحلیل عمیق‌تر مسائل با استفاده از تکنیک‌های مختلف مانند ۵ چرا.<br>
+                                    ۲. شرکت در دوره‌های تخصصی مرتبط با تحلیل ریشه‌ای مشکلات.<br>
+                                    ۳. استفاده از ابزارهای مدیریتی برای بهبود فرآیند شناسایی ریشه مشکلات.<br>
+                                    ۴. همکاری با همکاران برای تبادل ایده‌ها و روش‌های مختلف ریشه یابی.<br>
+                                    ۵. مستندسازی و ارزیابی نتایج ریشه یابی‌های گذشته برای بهبود فرآیند آینده.
+                                </div>
+                            </div>
+                        </li>
+                        <!-- سطح خوب ریشه یابی تجربی -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10332#;">
+                            <strong>«خوب»<br></strong>
+                            شما در شناسایی و تحلیل ریشه مشکلات بسیار موفق هستید. این توانایی به شما کمک می‌کند تا سریعاً عوامل اصلی مسائل را تشخیص داده و راه‌حل‌های مؤثری ارائه دهید. شما معمولاً در مواجهه با چالش‌های پیچیده، راه‌حل‌های کاربردی و دقیق پیدا می‌کنید.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. حفظ و تقویت مهارت‌های ریشه یابی از طریق تمرین مستمر.<br>
+                                    ۲. شرکت در سمینارها و کارگاه‌های تخصصی برای به‌روز نگه داشتن روش‌های ریشه یابی.<br>
+                                    ۳. استفاده از تکنیک‌های پیشرفته تحلیل داده برای بهبود دقت در شناسایی ریشه مشکلات.<br>
+                                    ۴. هدایت تیم‌های تحلیل برای بهبود فرآیندهای ریشه یابی در سازمان.<br>
+                                    ۵. ارائه مشاوره و راهنمایی به همکاران در زمینه ریشه یابی مشکلات.
+                                </div>
+                            </div>
+                        </li>
+                        <!-- سطح عالی ریشه یابی تجربی -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10332#;">
+                            <strong>«عالی»<br></strong>
+                            شما در بالاترین سطح ریشه یابی تجربی قرار دارید؛ توانایی فوق‌العاده‌ای در شناسایی و تحلیل دقیق ریشه مسائل دارید. این ویژگی به شما امکان می‌دهد تا به عنوان یک متخصص در حوزه حل مشکلات شناخته شوید و نقش‌های کلیدی در بهبود فرآیندهای سازمانی ایفا کنید.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. پذیرش نقش‌های رهبری در پروژه‌های حل مشکلات بزرگ و پیچیده.<br>
+                                    ۲. توسعه و بهبود روش‌های ریشه یابی از طریق تحقیق و نوآوری.<br>
+                                    ۳. انتشار نتایج تحلیل‌های ریشه‌ای خود در مجلات تخصصی یا کنفرانس‌ها.<br>
+                                    ۴. راه‌اندازی و هدایت تیم‌های تخصصی ریشه یابی داده برای بهبود فرآیندهای سازمانی.<br>
+                                    ۵. آموزش و مشاوره به دیگران در زمینه تکنیک‌های پیشرفته ریشه یابی.
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <!-- ظرفیت تحلیلی (توانایی تجزیه و تحلیل مسائل پیچیده) -->
+                    <div class="report-component-title">ظرفیت تحلیلی
+                        <span class="report-badge report-score-data">#field_1097#<br></span>
+                    </div>
+                    <p class="report-paragraph">
+                        ظرفیت تحلیلی در «فهرست ظرفیت تحلیلی شناختی» به معنای توانایی فرد در تجزیه و تحلیل مسائل پیچیده و استخراج نتایج دقیق و منطقی از داده‌ها و اطلاعات موجود است. افرادی که در این حوزه امتیاز بالایی دارند، قادرند با دقت بالا و تفکر منطقی مسائل را بررسی کنند و راه‌حل‌های مؤثری ارائه دهند.
+                    </p>
+                    <ul class="report-list">
+                        <!-- سطح متوسط ظرفیت تحلیلی -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10333#;">
+                            <strong>«متوسط»<br></strong>
+                            شما در تجزیه و تحلیل مسائل تا حدی موفق هستید، اما گاهی ممکن است در مواجهه با مسائل بسیار پیچیده نیاز به تمرکز و تحلیل عمیق‌تر داشته باشید. این وضعیت می‌تواند ناشی از محدودیت‌های زمانی یا فشارهای محیطی باشد.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. تمرین تجزیه و تحلیل مسائل پیچیده با استفاده از تکنیک‌های مختلف مانند ماتریس SWOT.<br>
+                                    ۲. شرکت در دوره‌های آموزشی مرتبط با تحلیل داده‌ها و تفکر انتقادی.<br>
+                                    ۳. استفاده از ابزارهای تحلیلی پیشرفته برای بهبود دقت و سرعت تجزیه و تحلیل.<br>
+                                    ۴. همکاری با همکاران برای تبادل ایده‌ها و روش‌های مختلف تحلیل.<br>
+                                    ۵. بازبینی و ارزیابی نتایج تجزیه و تحلیل‌های گذشته برای یادگیری از تجربیات.
+                                </div>
+                            </div>
+                        </li>
+                        <!-- سطح خوب ظرفیت تحلیلی -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10333#;">
+                            <strong>«خوب»<br></strong>
+                            شما در تجزیه و تحلیل مسائل پیچیده بسیار موفق هستید و توانایی بالایی در استخراج نتایج دقیق و منطقی از داده‌ها دارید. این ظرفیت به شما کمک می‌کند تا تصمیمات هوشمندانه‌تری بگیرید و مشکلات را به طور مؤثری حل کنید.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. حفظ و تقویت مهارت‌های تحلیلی از طریق مطالعه مستمر و تمرین.<br>
+                                    ۲. شرکت در سمینارها و کارگاه‌های تخصصی برای به‌روز نگه داشتن روش‌های تجزیه و تحلیل.<br>
+                                    ۳. استفاده از تکنیک‌های پیشرفته تحلیل داده برای افزایش دقت و سرعت تجزیه و تحلیل.<br>
+                                    ۴. هدایت تیم‌های تحلیل برای بهبود فرآیندهای سازمانی.<br>
+                                    ۵. ارائه مشاوره و راهنمایی به همکاران در زمینه تجزیه و تحلیل مسائل.
+                                </div>
+                            </div>
+                        </li>
+                        <!-- سطح عالی ظرفیت تحلیلی -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10333#;">
+                            <strong>«عالی»<br></strong>
+                            شما در بالاترین سطح ظرفیت تحلیلی قرار دارید؛ توانایی فوق‌العاده‌ای در تجزیه و تحلیل دقیق و استخراج نتایج منطقی از داده‌ها و اطلاعات پیچیده دارید. این ویژگی به شما امکان می‌دهد تا به عنوان یک متخصص در حوزه تحلیل شناخته شوید و نقش‌های کلیدی در تصمیم‌گیری‌های استراتژیک سازمان ایفا کنید.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. پذیرش نقش‌های رهبری در پروژه‌های تحلیل داده‌های بزرگ و پیچیده.<br>
+                                    ۲. توسعه و بهبود روش‌های تحلیلی از طریق تحقیق و نوآوری.<br>
+                                    ۳. انتشار نتایج تحلیل‌های خود در مجلات تخصصی یا کنفرانس‌ها.<br>
+                                    ۴. راه‌اندازی و هدایت تیم‌های تخصصی تحلیل داده برای بهبود فرآیندهای سازمانی.<br>
+                                    ۵. آموزش و مشاوره به دیگران در زمینه تکنیک‌های پیشرفته تجزیه و تحلیل.
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </li>
-</ul>
+        </section>
 
-<!-- ظرفیت تحلیلی (توانایی تجزیه و تحلیل مسائل پیچیده) -->
-<div class="report-component-title">ظرفیت تحلیلی
-    <span class="report-badge report-score-data">#field_1097#<br></span>
-</div>
-<p class="report-paragraph">
-    ظرفیت تحلیلی در «فهرست ظرفیت تحلیلی شناختی» به معنای توانایی فرد در تجزیه و تحلیل مسائل پیچیده و استخراج نتایج دقیق و منطقی از داده‌ها و اطلاعات موجود است. افرادی که در این حوزه امتیاز بالایی دارند، قادرند با دقت بالا و تفکر منطقی مسائل را بررسی کنند و راه‌حل‌های مؤثری ارائه دهند.
-</p>
-<ul class="report-list">
-    <!-- سطح متوسط ظرفیت تحلیلی -->
-    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10333#;">
-        <strong>«متوسط»<br></strong>
-        شما در تجزیه و تحلیل مسائل تا حدی موفق هستید، اما گاهی ممکن است در مواجهه با مسائل بسیار پیچیده نیاز به تمرکز و تحلیل عمیق‌تر داشته باشید. این وضعیت می‌تواند ناشی از محدودیت‌های زمانی یا فشارهای محیطی باشد.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. تمرین تجزیه و تحلیل مسائل پیچیده با استفاده از تکنیک‌های مختلف مانند ماتریس SWOT.<br>
-                ۲. شرکت در دوره‌های آموزشی مرتبط با تحلیل داده‌ها و تفکر انتقادی.<br>
-                ۳. استفاده از ابزارهای تحلیلی پیشرفته برای بهبود دقت و سرعت تجزیه و تحلیل.<br>
-                ۴. همکاری با همکاران برای تبادل ایده‌ها و روش‌های مختلف تحلیل.<br>
-                ۵. بازبینی و ارزیابی نتایج تجزیه و تحلیل‌های گذشته برای یادگیری از تجربیات.
+        <!-- Credentials and Validity Section -->
+        <section class="content-section test-section" id="credentials">
+            <div class="content-container">
+                <!-- اعتبار و صحت آزمون -->
+                <h2>اعتبار و صحت آزمون</h2>
+                <p>
+                    آزمون فهرست تشخیص تعاملی ظرفیت تحلیلی شناختی بر اساس روش‌شناسی تحقیقاتی معتبر و تایید شده توسط متخصصین روانشناسی طراحی شده است. این آزمون توسط دانشگاه‌ها و سازمان‌های معتبر روانشناسی مورد تأیید و توصیه قرار گرفته است.
+                </p>
+                <ul>
+                    <li>روش‌شناسی تحقیقاتی مبتنی بر مطالعات علمی روز</li>
+                    <li>تأییدیه سازمان‌های معتبر روانشناسی</li>
+                    <li>پشتیبانی توسط تیم متخصصین و روانشناسان خبره</li>
+                </ul>
             </div>
-        </div>
-    </li>
+        </section>
 
-    <!-- سطح خوب ظرفیت تحلیلی -->
-    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10333#;">
-        <strong>«خوب»<br></strong>
-        شما در تجزیه و تحلیل مسائل پیچیده بسیار موفق هستید و توانایی بالایی در استخراج نتایج دقیق و منطقی از داده‌ها دارید. این ظرفیت به شما کمک می‌کند تا تصمیمات هوشمندانه‌تری بگیرید و مشکلات را به طور مؤثری حل کنید.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. حفظ و تقویت مهارت‌های تحلیلی از طریق مطالعه مستمر و تمرین.<br>
-                ۲. شرکت در سمینارها و کارگاه‌های تخصصی برای به‌روز نگه داشتن روش‌های تجزیه و تحلیل.<br>
-                ۳. استفاده از تکنیک‌های پیشرفته تحلیل داده برای افزایش دقت و سرعت تجزیه و تحلیل.<br>
-                ۴. هدایت تیم‌های تحلیل برای بهبود فرآیندهای سازمانی.<br>
-                ۵. ارائه مشاوره و راهنمایی به همکاران در زمینه تجزیه و تحلیل مسائل.
+        <!-- Testimonials Section -->
+        <section class="content-section test-section" id="testimonials">
+            <div class="content-container">
+                <!-- توصیه‌نامه‌ها -->
+                <h2>توصیه‌نامه‌ها</h2>
+                <div class="testimonial">
+                    <p>"آزمون فهرست تشخیص تعاملی ظرفیت تحلیلی شناختی به من کمک کرد تا بهتر خودم را بشناسم و در مسیر توسعه مهارت‌های تحلیلی‌ام قدم‌های موثرتری بردارم."</p>
+                    <p><strong>- نرگس موسوی</strong></p>
+                </div>
+                <div class="testimonial">
+                    <p>"گزارش دقیق این آزمون به من امکان داد تا نقاط قوت و ضعف خود را شناسایی کنم و برای بهبود مهارت‌هایم برنامه‌ریزی کنم."</p>
+                    <p><strong>- امیرحسین رضایی</strong></p>
+                </div>
             </div>
-        </div>
-    </li>
+        </section>
 
-    <!-- سطح عالی ظرفیت تحلیلی -->
-    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10333#;">
-        <strong>«عالی»<br></strong>
-        شما در بالاترین سطح ظرفیت تحلیلی قرار دارید؛ توانایی فوق‌العاده‌ای در تجزیه و تحلیل دقیق و استخراج نتایج منطقی از داده‌ها و اطلاعات پیچیده دارید. این ویژگی به شما امکان می‌دهد تا به عنوان یک متخصص در حوزه تحلیل شناخته شوید و نقش‌های کلیدی در تصمیم‌گیری‌های استراتژیک سازمان ایفا کنید.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. پذیرش نقش‌های رهبری در پروژه‌های تحلیل داده‌های بزرگ و پیچیده.<br>
-                ۲. توسعه و بهبود روش‌های تحلیلی از طریق تحقیق و نوآوری.<br>
-                ۳. انتشار نتایج تحلیل‌های خود در مجلات تخصصی یا کنفرانس‌ها.<br>
-                ۴. راه‌اندازی و هدایت تیم‌های تخصصی تحلیل داده برای بهبود فرآیندهای سازمانی.<br>
-                ۵. آموزش و مشاوره به دیگران در زمینه تکنیک‌های پیشرفته تجزیه و تحلیل.
+        <!-- Call-to-Action Section -->
+        <section class="content-section test-section" id="start-test">
+            <div class="content-container">
+                <!-- دعوت به اقدام (CTA) -->
+                <h2>آیا آماده‌اید تا شروع کنید؟</h2>
+                <p>
+                    با انجام این آزمون، گامی مهم در جهت شناخت بهتر از خود و توسعه ظرفیت تحلیلی شناختی‌تان بردارید.
+                </p>
+                <div style="text-align: center; margin-top: 20px;">
+                    <a href="/take/fahrest-tashkhis-tamarkobi-zarfiat-tahlili-shenakhti" class="cta-button">شروع آزمون</a>
+                </div>
             </div>
-        </div>
-    </li>
-</ul>
+        </section>
 
-
-
-        
-
-
-        
-                                              
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-
-
-            <div class="report-section-title">جمع‌بندی</div>
-            <div class="report-paragraph">
-            <p>این گزارش ارزیابی مهارت‌های شما شامل تحلیل تعهد، نیرومندی، ظرفیت تحلیلی، بیتابی روانی، استقلال و سازش است. این بررسی نقاط قوت و زمینه‌های نیازمند بهبود شما را نشان داده و توصیه‌های کاربردی برای توسعه مهارت‌های شما ارائه می‌دهد.</p>
-            
-            <p><b>نقاط قوت: </b>شما در برخی از حوزه‌ها عملکرد برجسته‌ای دارید که نشان‌دهنده توانایی‌های قوی در مدیریت مسئولیت‌ها، انرژی بالا، تحلیل مسائل پیچیده، آرامش روانی، خودکفایی و تطبیق‌پذیری است. به عنوان مثال، در حوزه‌های "تعهد" و "ظرفیت تحلیلی"، شما توانایی زیادی در مدیریت وظایف و تحلیل مسائل نشان داده‌اید که می‌تواند به پیشرفت حرفه‌ای و رشد فردی شما کمک کند.</p>
-            
-            <p><b>حوزه‌های نیازمند بهبود:</b> در برخی از بخش‌ها نیاز به تمرکز بیشتر وجود دارد. به عنوان مثال، در حوزه‌های "بیتابی روانی" و "استقلال"، شما می‌توانید با تمرین‌های منظم و فعالیت‌های هدفمند مانند تکنیک‌های مدیریت استرس و برنامه‌ریزی منظم مهارت‌های خود را بهبود بخشید. همچنین، افزایش تعاملات اجتماعی و تمرین مهارت‌های تصمیم‌گیری مستقل می‌تواند تأثیر مثبتی بر عملکرد شما داشته باشد.</p>
-            
-            <p><b>گام‌های بعدی:</b> برای تقویت مهارت‌های خود، پیشنهاد می‌شود که به توصیه‌های ارائه‌شده در هر بخش توجه ویژه‌ای کنید و در صورت نیاز از خدمات مشاوره تخصصی استفاده نمایید. همچنین، ارزیابی منظم و پیگیری مداوم می‌تواند به توسعه پایدار و موفقیت شما در تمامی ابعاد زندگی کمک کند.</p>
+        <!-- FAQ Section (Optional) -->
+        <section class="content-section test-section" id="faq">
+            <div class="content-container">
+                <!-- سوالات متداول -->
+                <h2>سوالات متداول</h2>
+                <div class="faq-item">
+                    <h4>آیا این آزمون دقیق است؟</h4>
+                    <p>بله، این آزمون بر اساس روش‌شناسی تحقیقاتی معتبر و تایید شده طراحی شده است تا نتایج دقیق و قابل اعتمادی ارائه دهد.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>آیا این آزمون برای کودکان مناسب است؟</h4>
+                    <p>این آزمون بیشتر برای بزرگسالان و نوجوانان طراحی شده است و ممکن است برای کودکان جوان‌تر مناسب نباشد.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>بعد از انجام آزمون چه اتفاقی می‌افتد؟</h4>
+                    <p>پس از تکمیل آزمون، شما یک گزارش جامع با نتایج و توصیه‌های شخصی دریافت خواهید کرد که می‌توانید آن را مرور کرده و در صورت نیاز، با متخصصین مشورت کنید.</p>
+                </div>
             </div>
-        
-        <footer class="report-footer-custom">
-            <div class="report-footer-content">
-                <img src="../panel/file?type=picture&amp;v=3&amp;mode=filemanager&amp;file=%7eDB3gfQUls%2bt2iiMYKbsRAxrtFhcHKUIUUo7pPtO17bHCzNxwU4zNh3UVor6QMtl7Y6EWX8dD0PSvzZOYkRrXlfejPn4lNTj6" class="report-footer-img" alt="لوگو">
-            </div>
-            <p class="report-footer-paragraph">مؤسّسه تعاملی هیجان اندیشه | تماس: 02188174100 | ایمیل: info@eot.ir</p>
-            <p class="report-footer-paragraph yellow-text">© ۱۴۰۳ تمامی حقوق محفوظ است.</p>
-            <ul class="report-footer-menu">
-                <li><a href="https://www.eot.ir/" class="report-footer-menu-link">صفحه اصلی</a></li>
-                <li><a href="https://www.eot.ir/contact" class="report-footer-menu-link">تماس با ما</a></li>
-                <li><a href="https://www.eot.ir/about" class="report-footer-menu-link">درباره ما</a></li>
-            </ul>
-            <address class="report-footer-address">تهران، سهروردی، خرمشهر، عربعلی، کوچه ششم، شماره ۴۴</address>
-        </footer>
-    </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer">
+        <!-- Content injected via scripts -->
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/assets/js/script.js"></script>
+    <script src="/assets/js/header-footer-inject.js"></script>
+    <script>
+        // FAQ Toggle Script
+        document.querySelectorAll('.faq-item h4').forEach(function(question) {
+            question.addEventListener('click', function() {
+                const parent = this.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,52 +1,225 @@
-<div class="ravesh-editor-html" style="direction:rtl">
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>گزارش تحلیل فهرست تشخیص تعاملی شخصیت</title>
+    <title>استعدادیاب | معرفی آزمون فهرست تشخیص تعاملی ظرفیت تجربی</title>
     <style>
+        /* =======================================================
+           1. Reset and Base Styles
+        ======================================================= */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100%;
+            font-family: 'Vazir', sans-serif;
+            background-color: #FFFFFF;
+            color: #1F3B73;
+            direction: rtl;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            padding-top: 80px;
+            padding-bottom: 60px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #1F3B73;
+            transition: color 0.3s ease-in-out;
+        }
+
+        a:hover,
+        a:focus {
+            color: #F4C553;
+            text-decoration: underline;
+        }
+
+        /* =======================================================
+           2. Font Imports
+        ======================================================= */
+        @font-face {
+            font-family: 'Vazir';
+            src: url('/assets/fonts/Vazir-Regular-UI.woff2') format('woff2'),
+                 url('/assets/fonts/Vazir-Regular-UI.woff') format('woff'),
+                 url('/assets/fonts/Vazir-Regular-UI.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+        }
+
         @font-face {
             font-family: 'IRANSansWeb';
-            src: url('fonts/IRANSansWeb.woff2') format('woff2');
+            src: url('/assets/fonts/IRANSansWeb.woff2') format('woff2');
         }
         @font-face {
             font-family: 'BTitrBold';
-            src: url('fonts/BTitrBold.woff2') format('woff2');
+            src: url('/assets/fonts/BTitrBold.woff2') format('woff2');
         }
         @font-face {
             font-family: 'BKoodakBold';
-            src: url('fonts/BKoodakBold.woff2') format('woff2');
+            src: url('/assets/fonts/BKoodakBold.woff2') format('woff2');
         }
         @font-face {
             font-family: 'BHoma';
-            src: url('fonts/BHoma.woff2') format('woff2');
+            src: url('/assets/fonts/BHoma.woff2') format('woff2');
         }
         @font-face {
             font-family: 'BYekan';
-            src: url('fonts/BYekan.woff2') format('woff2');
+            src: url('/assets/fonts/BYekan.woff2') format('woff2');
         }
         @font-face {
             font-family: 'Tahoma';
-            src: url('fonts/Tahoma.woff2') format('woff2');
+            src: url('/assets/fonts/Tahoma.woff2') format('woff2');
         }
+
+        /* =======================================================
+           3. Typography
+        ======================================================= */
+        h1, h2, h3, h4 {
+            font-family: 'Vazir', sans-serif;
+            color: #1F3B73;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px #F4C553;
+        }
+
+        h2 {
+            font-size: 2em;
+            font-weight: 700;
+            margin-bottom: 24px;
+            text-shadow: 0 0 10px #F4C553;
+            color: #1F3B73;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 1.5em;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #1F3B73;
+            text-align: center;
+        }
+
+        h4 {
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-top: 16px;
+            color: #1F3B73;
+            text-align: center;
+        }
+
+        p {
+            font-size: 1em;
+            max-width: 800px;
+            margin: 0 auto 16px;
+            line-height: 1.6;
+            color: #1F3B73;
+            text-align: justify;
+        }
+
+        ul {
+            max-width: 800px;
+            margin: 0 auto 16px;
+            padding-right: 20px;
+            color: #1F3B73;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* =======================================================
+           4. Hero Section
+        ======================================================= */
+        .hero {
+            height: calc(100vh - 80px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #F0F0F5;
+            padding: 16px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 16px;
+            color: #1F3B73;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            margin-bottom: 24px;
+            color: #1F3B73;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #F4C553;
+            color: #FFFFFF;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 1em;
+            box-shadow: 0 0 10px #FFD77B;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease-in-out,
+                        transform 0.3s ease-in-out,
+                        box-shadow 0.3s ease-in-out;
+        }
+
+        .cta-button:hover,
+        .cta-button:focus {
+            background-color: #4FBDBA;
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px #4FBDBA;
+        }
+
+        /* =======================================================
+           5. Content Sections
+        ======================================================= */
+        .content-section {
+            padding: 60px 16px;
+            background-color: #FFFFFF;
+        }
+
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .content-section:nth-child(even) {
+            background-color: #F9F9F9;
+        }
+
+        /* =======================================================
+           6. Sample Report Section
+        ======================================================= */
+        /* Report Styles */
         .report-container {
             font-family: 'BYekan', sans-serif;
             direction: rtl;
             line-height: 1.8;
             background-color: #F5F5F5;
             color: #333333;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            max-width: 800px;
-            width: 100%;
-            margin: auto;
-            background-color: #F5F5F5;
+            margin: 40px auto;
             padding: 40px;
             box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
             border-radius: 20px;
+            max-width: 800px;
         }
+
         .report-header-custom {
             display: flex;
             align-items: center;
@@ -55,15 +228,18 @@
             background-color: #0DA3B8;
             border-radius: 20px 20px 0 0;
         }
+
         .report-header-inner {
             display: flex;
             align-items: center;
             gap: 20px;
         }
+
         .report-header-img {
             width: 40px;
             height: 40px;
         }
+
         .report-header-title {
             margin: 0;
             font-size: 1.8em;
@@ -71,22 +247,39 @@
             font-family: 'IRANSansWeb', sans-serif;
             font-weight: normal;
         }
+
         .report-header-date {
             color: #ffffff;
             font-size: 1em;
         }
-        .report-title {
-            text-align: center;
-            color: #0DA3B8;
+
+        .report-section-title {
+            font-size: 22px;
+            color: #CC3333;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #CC3333;
             font-family: 'IRANSansWeb', sans-serif;
             font-weight: bold;
-            font-size: 32px;
-            margin-bottom: 25px;
+            text-align: center;
         }
+
+        .report-paragraph {
+            background-color: #E0F7FA;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
         .report-info-container, .report-score-container {
             display: flex;
             flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
         }
+
         .report-info-item, .report-score-item {
             background-color: #F8F9FA;
             padding: 15px;
@@ -99,26 +292,17 @@
             font-family: 'BYekan', sans-serif;
             flex: 1;
             min-width: 300px;
-            margin-right: 10px; /* Add space between columns */
         }
+
         .report-info-item strong, .report-score-item strong {
             color: #0DA3B8;
             font-family: 'IRANSansWeb', sans-serif;
         }
+
         .report-info-data, .report-score-data {
             font-family: 'IRANSansWeb', sans-serif;
         }
-        .report-section-title {
-            font-size: 22px;
-            color: #CC3333;
-            margin-top: 30px;
-            margin-bottom: 10px;
-            padding-bottom: 5px;
-            border-bottom: 1px solid #CC3333;
-            font-family: 'IRANSansWeb', sans-serif;
-            font-weight: bold;
-            text-align: center;
-        }
+
         .report-component-title {
             display: flex;
             justify-content: space-between;
@@ -131,32 +315,7 @@
             border-bottom: 1px solid #DBCF93;
             font-family: 'IRANSansWeb', sans-serif;
         }
-        .report-paragraph {
-            background-color: #E0F7FA;
-            padding: 15px;
-            border-radius: 10px;
-            font-size: 16px;
-            margin-bottom: 20px;
-        }
-        .report-list {
-            list-style-type: none;
-            padding: 0;
-            font-size: 16px;
-        }
-        .report-list-item {
-            background: #F8F9FA;
-            margin-bottom: 10px;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-            display: flex;
-            flex-direction: column;
-        }
-        .report-list-item strong {
-            font-size: 18px;
-            color: #0DA3B8;
-            margin-bottom: 5px;
-        }
+
         .report-badge {
             display: inline-block;
             padding: 8px 15px;
@@ -165,6 +324,7 @@
             background-color: #4A9B8C;
             border-radius: 10px;
         }
+
         .report-recommendation {
             background-color: #EAEAEA;
             padding: 20px;
@@ -176,369 +336,490 @@
             width: 100%;
             box-sizing: border-box;
         }
+
         .report-recommendation-title {
             font-weight: bold;
             color: #CC3333;
             margin-bottom: 5px;
             font-size: 18px;
         }
+
         .report-recommendation-text {
             margin-bottom: 5px;
             line-height: 1.6;
             font-size: 16px;
         }
-        .report-footer-custom {
-            background-color: #F5F5F5;
-            color: #333333;
-            padding: 20px;
-            text-align: center;
-            font-family: 'IRANSansWeb', sans-serif;
-            border-top: 1px solid #E0E0E0;
-            font-size: 16px; /* Increased font size */
-        }
-        .report-footer-content {
-            margin-bottom: 20px;
-        }
-        .report-footer-img {
-            width: 80px;
-            height: 80px;
-        }
-        .report-footer-paragraph {
-            margin: 5px 0;
-        }
-        .report-footer-paragraph.yellow-text {
-            color: #DBCF93;
-        }
-        .report-footer-menu {
-            list-style: none;
+
+        .report-list {
+            list-style-type: none;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin: 10px 0;
+            font-size: 16px;
         }
-        .report-footer-menu-link {
-            color: #0DA3B8;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        .report-footer-menu-link:hover {
-            color: #007B8A;
-        }
-        .report-footer-address {
-            margin-top: 10px;
-            font-size: 14px;
-        }
-        .report-summary-container {
-            max-width: 800px;
-            margin: auto;
-            background-color: #FFFFFF;
-            padding: 40px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+
+        .report-list-item {
+            background: #F8F9FA;
+            margin-bottom: 10px;
+            padding: 15px;
             border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
         }
-        .report-summary-heading {
-            text-align: center;
+
+        .report-list-item strong {
+            font-size: 18px;
             color: #0DA3B8;
-            font-family: 'IRANSansWeb', sans-serif;
-            font-weight: bold;
-            font-size: 32px;
-            margin-bottom: 25px;
+            margin-bottom: 5px;
         }
-        .report-summary-content {
-            color: #333333;
-            font-family: 'IRANSansWeb', sans-serif;
-            line-height: 1.8;
-        }
+
+        /* Report Conditional Display Styles */
         .report-conditional-display {
             display: block;
         }
         .report-conditional-display[style*="--score-rate1: 1"] {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-            border-radius: 10px;
             background-color: #FF9999; /* Moderate */
         }
         .report-conditional-display[style*="--score-rate2: 2"] {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-            border-radius: 10px;
             background-color: #FFD580; /* Good */
         }
         .report-conditional-display[style*="--score-rate3: 3"] {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-            border-radius: 10px;
             background-color: #99FF99; /* Excellent */
         }
+
+        /* =======================================================
+           7. FAQ Section
+        ======================================================= */
+        .faq-item {
+            margin-bottom: 20px;
+        }
+
+        .faq-item h4 {
+            cursor: pointer;
+            position: relative;
+        }
+
+        .faq-item h4::after {
+            content: '+';
+            position: absolute;
+            left: -20px;
+            top: 0;
+            font-size: 1.5em;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active h4::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-item p {
+            display: none;
+            margin-top: 10px;
+        }
+
+        .faq-item.active p {
+            display: block;
+        }
+
+        /* =======================================================
+           8. Testimonials Section
+        ======================================================= */
+        .testimonial {
+            background-color: #F8F9FA;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+            font-style: italic;
+        }
+
+        .testimonial p strong {
+            font-style: normal;
+        }
     </style>
-    <div class="report-report-container">
-        <header class="report-header-custom">
-            <div class="report-header-inner">
-                <img src="../panel/file?type=picture&amp;v=3&amp;mode=filemanager&amp;file=%7eDB3gfQUls%2bt2iiMYKbsRAxrtFhcHKUIUUo7pPtO17bHCzNxwU4zNh3UVor6QMtl7Y6EWX8dD0PSvzZOYkRrXlfejPn4lNTj6" class="report-header-img" alt="لوگو">
-                <h1 class="report-header-title">گزارش تحلیل فهرست تشخیص تعاملی شخصیت</h1>
+</head>
+<body>
+    <header class="header">
+        <!-- می‌توانید محتوای سربرگ را اینجا اضافه کنید -->
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>فهرست تشخیص تعاملی ظرفیت تجربی</h1>
+                <p>تحلیل و بررسی ویژگی‌های شخصیتی فرد برای توسعه توانمندی‌های تجربی</p>
+                <a href="/take/fahrest-tashkhis-tamarkobi-zarfiat-tahlili-shenakhti" class="cta-button">شروع آزمون</a>
             </div>
-            <div class="report-header-date">تاریخ اجرا: #primary_createDate#</div>
-        </header>
-        
-        <div class="report-section-title">فهرست تشخیص تعاملی شخصیت</div>
-        <p class="report-paragraph">
-            این ارزیابی به منظور تحلیل و بررسی ویژگی‌های شخصیتی فرد در حوزه‌های مختلف از جمله تعهد، نیرومندی، ظرفیت تحلیلی، بیتابی روانی، استقلال و سازش انجام شده است. هدف از این ارزیابی شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد.
-        </p><p></p>
-               
-        <div class="report-section-title">اطلاعات فردی</div>
-        <div class="report-info-container">
-            <div class="report-info-item"><strong>نام:</strong> <span class="report-info-data">#field_349#</span></div>
-            <div class="report-info-item"><strong>نام خانوادگی:</strong> <span class="report-info-data">#field_1712#</span></div>
-            <div class="report-info-item"><strong>موبایل:</strong> <span class="report-info-data">#field_350#</span></div>
-            <div class="report-info-item"><strong>ایمیل:</strong> <span class="report-info-data">#field_351#</span></div></div>
+        </section>
 
-        </div>
-        <div class="report-section-title">نتیجه</div>
-        <div class="report-score-container">
-            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10267#;"><strong>بینش:</strong> <span class="report-badge">#field_6014#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10267#;"><strong>بینش:</strong> <span class="report-badge">#field_6014#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10267#;"><strong>بینش:</strong> <span class="report-badge">#field_6014#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10268#;"><strong>تجسم:</strong> <span class="report-badge">#field_6015#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10268#;"><strong>تجسم:</strong> <span class="report-badge">#field_6015#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10268#;"><strong>تجسم:</strong> <span class="report-badge">#field_6015#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10269#;"><strong>هماهنگی:</strong> <span class="report-badge">#field_6016#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10269#;"><strong>هماهنگی:</strong> <span class="report-badge">#field_6016#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10269#;"><strong>هماهنگی:</strong> <span class="report-badge">#field_6016#</span></div>
-
-        </div>
-        <div class="report-section-title">تفسیر</div>
-        <p class="report-paragraph">
-            این بخش به تحلیل و تفسیر نتایج ارزیابی روان‌شناختی فرد می‌پردازد. تحلیل روان‌شناختی شامل بررسی ویژگی‌های شخصیتی مختلف است. هدف از این تحلیل شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد. نتایج این تحلیل می‌تواند به فرد کمک کند تا با شناخت بهتر از خود، برنامه‌های توسعه فردی و حرفه‌ای موثرتری را دنبال کند.
-        </p>
-
-
-
-        
-
-
-<!-- بینش (توانایی درک و استفاده از اطلاعات بدنی و حرکتی) -->
-<div class="report-component-title">بینش 
-    <span class="report-badge report-score-data">#field_6014#<br></span>
-</div>
-<p class="report-paragraph">
-    بینش در حیطه «ظرفیت تجربی» به توانایی فرد در ادغام اطلاعات بدنی و حرکتی با تصمیم‌گیری‌های روزمره اشاره دارد. این افراد، با بهره‌گیری از حواس جسمی و درکی که از بدن خود دارند، می‌توانند در فعالیت‌های فیزیکی عملکرد قابل توجهی داشته باشند و حتی لرزش یا نشانه‌های بدنی استرس را به خوبی مدیریت کنند.
-</p>
-<ul class="report-list">
-    <!-- سطح متوسط بینش -->
-    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10267#;">
-        <strong>«متوسط»<br></strong>
-        شما تا حدی از فعالیت‌های بدنی لذت می‌برید و مهارت‌های حرکتی قابل قبولی دارید، اما همیشه از حداکثر ظرفیت خود استفاده نمی‌کنید. ممکن است در مواجهه با برخی چالش‌های بدنی دچار لرزش یا اضطراب شوید و تمایل چندانی به فشار آوردن بیشتر نداشته باشید.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. آغاز تدریجی تمرینات ورزشی یا فعالیت‌های حرکتی جدید، تا سطح تاب‌آوری بدن را گام‌به‌گام افزایش دهید.<br>
-                ۲. شناسایی علائم جسمی استرس (لرزش، تپش قلب) و استفاده از تکنیک‌های آرام‌سازی (تنفس عمیق، تمرکز ذهنی).<br>
-                ۳. تعیین اهداف چالش‌برانگیز اما واقع‌بینانه؛ افزایش اندک فشار می‌تواند به ارتقای مهارت‌های بدنی منجر شود.<br>
-                ۴. تهیه برنامه روزانه برای پیگیری تمرینات و ثبت دستاوردها؛ پیگیری مداوم موجب بهبود مستمر خواهد شد.<br>
-                ۵. افزودن جنبه‌های تفریحی به فعالیت‌های بدنی؛ انتخاب ورزش‌ها یا بازی‌های گروهی می‌تواند انگیزه را افزایش دهد.
+        <!-- Test Purpose Section -->
+        <section class="content-section test-section" id="test-purpose">
+            <div class="content-container">
+                <!-- هدف از آزمون -->
+                <h2>هدف از آزمون</h2>
+                <p>
+                    این آزمون برای سنجش و تحلیل ویژگی‌های شخصیتی فرد در حوزه‌های بینش، تجسم و هماهنگی طراحی شده است. هدف اصلی این آزمون شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او در این حوزه‌ها است.
+                </p>
             </div>
-        </div>
-    </li>
+        </section>
 
-    <!-- سطح خوب بینش -->
-    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10267#;">
-        <strong>«خوب»<br></strong>
-        شما مهارت قابل توجهی در فعالیت‌های بدنی دارید، به راحتی حرکات ورزشی را یاد می‌گیرید و معمولاً از جنب‌وجوش جسمی لذت می‌برید. این بینش بدنی به شما کمک می‌کند در مواجهه با چالش‌های حرکتی، کنترل بهتری داشته باشید و نشانه‌های استرس بدنی را مدیریت کنید.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. حفظ سطح فعلی از طریق تنوع در برنامه‌های ورزشی و تمرینات بدنی؛ یکنواختی ممکن است اشتیاق شما را کاهش دهد.<br>
-                ۲. شرکت در دوره‌های پیشرفته‌تر آموزشی (مثلاً یوگا، پیلاتس یا ورزش‌های تخصصی) برای بهبود تعادل جسمی و ذهنی.<br>
-                ۳. انتقال تجربه‌ها و تکنیک‌های موفق مدیریت لرزش یا استرس بدنی به دیگران؛ می‌توانید الگویی مؤثر باشید.<br>
-                ۴. ارتقای قوای ذهنی در کنار بینش بدنی؛ مطالعه منابعی در خصوص ارتباط ذهن و بدن می‌تواند کارایی شما را افزایش دهد.<br>
-                ۵. مشارکت در فعالیت‌های گروهی یا مسابقات دوستانه؛ این کار ضمن ایجاد انگیزه، امکان یادگیری از دیگران را فراهم می‌آورد.
+        <!-- Key Features Section -->
+        <section class="content-section test-section" id="key-features">
+            <div class="content-container">
+                <!-- ویژگی‌های کلیدی آزمون -->
+                <h2>ویژگی‌های کلیدی آزمون</h2>
+                <ul>
+                    <li><strong>زمینه‌های ارزیابی:</strong> بینش، تجسم، هماهنگی</li>
+                    <li><strong>زمان مورد نیاز:</strong> 20 دقیقه</li>
+                    <li><strong>دسترسی:</strong> آنلاین و حضوری</li>
+                    <li><strong>نوع گزارش:</strong> گزارش جامع با نمودارها و توصیه‌های عملی</li>
+                </ul>
             </div>
-        </div>
-    </li>
+        </section>
 
-    <!-- سطح عالی بینش -->
-    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10267#;">
-        <strong>«عالی»<br></strong>
-        شما در اوج توانایی تلفیق حرکات بدنی و درک عمیق از نشانه‌های جسمی خود قرار دارید. حرکات ورزشی را با مهارت بالا انجام می‌دهید و می‌توانید در موقعیت‌های استرس‌زا، واکنش بدنی متعادل‌تری داشته باشید. این سطح از بینش، فرصت‌های گسترده‌ای برای موفقیت در حوزه‌های فیزیکی ایجاد می‌کند.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. پذیرش نقش آموزشگر یا مربی در فعالیت‌های جسمی و ورزشی؛ شما می‌توانید به دیگران مهارت‌های بدنی را منتقل کنید.<br>
-                ۲. مشارکت در چالش‌های ورزشی بزرگ‌تر یا سطوح بالاتر رقابت برای به کارگیری حداکثری توانایی‌هایتان.<br>
-                ۳. استفاده از این بینش بدنی برای مدیریت استرس در سایر جنبه‌های زندگی (کاری، تحصیلی، روابط اجتماعی).<br>
-                ۴. شرکت در کارگاه‌ها یا سمینارهای مرتبط با بدن و ذهن، برای به‌روزرسانی اطلاعاتتان در زمینه‌های علمی و تجربی جدید.<br>
-                ۵. استمرار تنوع و خلاقیت در حرکات ورزشی یا فعالیت‌های حرکتی، تا حس اشتیاق و انگیزه‌تان همچنان بالا بماند.
+        <!-- Benefits Section -->
+        <section class="content-section test-section" id="benefits">
+            <div class="content-container">
+                <!-- مزایای شرکت در این آزمون -->
+                <h2>مزایای شرکت در این آزمون</h2>
+                <ul>
+                    <li>افزایش خودآگاهی و شناخت بهتر از ویژگی‌های شخصیتی</li>
+                    <li>بهبود مهارت‌های تحلیل و بررسی عمیق مسائل</li>
+                    <li>شناسایی نقاط قوت و ضعف در حوزه‌های بینش، تجسم و هماهنگی</li>
+                    <li>حمایت از رشد شخصی و حرفه‌ای</li>
+                    <li>افزایش عملکرد در محیط‌های کاری و آموزشی</li>
+                </ul>
             </div>
-        </div>
-    </li>
-</ul>
+        </section>
 
-<!-- تجسم (قدرت تصویرسازی ذهنی و ایده‌پردازی) -->
-<div class="report-component-title">تجسم 
-    <span class="report-badge report-score-data">#field_6015#<br></span>
-</div>
-<p class="report-paragraph">
-    تجسم در چارچوب توانایی تجربی، بیانگر قدرت تصویرسازی ذهنی و ایده‌پردازی فرد است؛ به‌طوری‌که بتواند اهداف، رویدادها و مسائل را با عمق بیشتری ببیند و از آن‌ها استنباط‌های نوآورانه کند. این ظرفیت می‌تواند در مواردی مانند رقابت، پژوهش، ایده‌پردازی و راهبری دیگران بسیار مفید واقع شود.
-</p>
-<ul class="report-list">
-
-    <!-- سطح متوسط تجسم -->
-    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10268#;">
-        <strong>«متوسط»<br></strong>
-        شما توانایی تصویرسازی ذهنی نسبی دارید و از تازگی و نوبودن ایده‌ها لذت می‌برید، اما شاید همیشه به شکلی عمیق یا متمرکز در ایده‌پردازی عمل نکنید. گاهی اشتیاق شروع کاری نو را دارید، اما ممکن است در مرحله پیاده‌سازی دچار وقفه شوید.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. یادداشت ایده‌ها و تصویرهایی که در ذهن دارید تا از فراموشی جلوگیری شود و امکان اجرای آن‌ها فراهم گردد.<br>
-                ۲. ارزیابی دوره‌ای ایده‌هایتان؛ برخی از ایده‌های به‌ظاهر پیچیده می‌توانند بعداً کارایی بالایی داشته باشند.<br>
-                ۳. تقویت مهارت تصویرسازی با روش‌هایی مانند تجسم خلاق، انجام تمرین‌های ذهن‌آگاهی یا نقاشی آزاد.<br>
-                ۴. درخواست بازخورد از اطرافیان یا همکاران در مورد ایده‌های جدیدتان؛ همفکری می‌تواند جریان خلاقیت را تقویت کند.<br>
-                ۵. شروع از مقیاس کوچک؛ اگر ایده بزرگی دارید، ابتدا آن را به بخش‌های کوچک و قابل مدیریت تقسیم کنید.
+        <!-- How It Works Section -->
+        <section class="content-section test-section" id="how-it-works">
+            <div class="content-container">
+                <!-- نحوه انجام آزمون -->
+                <h2>نحوه انجام آزمون</h2>
+                <p>
+                    آزمون فهرست تشخیص تعاملی ظرفیت تجربی شامل مراحل زیر است:
+                </p>
+                <ul>
+                    <li><strong>گام اول:</strong> تکمیل پرسشنامه آنلاین به مدت 20 دقیقه</li>
+                    <li><strong>گام دوم:</strong> دریافت گزارش تحلیلی جامع با نتایج و توصیه‌ها</li>
+                    <li><strong>گام سوم:</strong> بررسی نتایج و در صورت نیاز، مشاوره با متخصصین</li>
+                </ul>
             </div>
-        </div>
-    </li>
+        </section>
 
-    <!-- سطح خوب تجسم -->
-    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10268#;">
-        <strong>«خوب»<br></strong>
-        شما تصویرسازی ذهنی قدرتمندی دارید و از ایده‌پردازی لذت می‌برید؛ رقابت و پژوهش نیز برایتان جذاب است. این توانایی به شما کمک می‌کند در حوزه‌های مختلف، راهکارهای تازه و الهام‌بخشی بیابید و دیگران را نیز در مسیر رسیدن به اهدافشان همراهی کنید.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. حفظ و تقویت قدرت تصویرسازی با تمرین‌های خلاقانه (مانند رسم طرح‌های ذهنی، ژورنال نویسی خلاق).<br>
-                ۲. شناسایی حوزه‌هایی که ایده‌های شما بیشترین تاثیر را داشته است، و تلاش برای گسترش آن‌ها در زمینه‌های مشابه.<br>
-                ۳. مشارکت در رویدادهای نوآوری یا رقابت‌های خلاقانه؛ این فضاها می‌توانند قدرت تجسم شما را در مسیرهای جدید هدایت کنند.<br>
-                ۴. آموزش و مشاوره دیگران با استفاده از تصویرسازی ذهنی؛ بسیاری از افراد برای ایده‌پردازی به این مهارت نیاز دارند.<br>
-                ۵. پیگیری ایده‌های رقابتی در فضای کاری یا تحصیلی؛ روحیه شور و تلاش شما می‌تواند نتایج فوق‌العاده‌ای به همراه داشته باشد.
+        <!-- Who Should Take This Test Section -->
+        <section class="content-section test-section" id="who-should-take">
+            <div class="content-container">
+                <!-- چه کسانی باید این آزمون را انجام دهند؟ -->
+                <h2>چه کسانی باید این آزمون را انجام دهند؟</h2>
+                <ul>
+                    <li>افرادی که به دنبال شناخت بهتر از ویژگی‌های شخصیتی خود هستند</li>
+                    <li>مدیران و کارمندان که به دنبال بهبود مهارت‌های تحلیل و بررسی عمیق خود هستند</li>
+                    <li>مشاوران و روانشناسان برای پشتیبانی از مشتریان خود</li>
+                    <li>سازمان‌ها و شرکت‌ها برای ارزیابی و بهبود ظرفیت‌های شناختی تیم‌های کاری</li>
+                    <li>دانشجویان و دانش‌آموزانی که به دنبال ارتقاء مهارت‌های تحلیل شناختی هستند</li>
+                </ul>
             </div>
-        </div>
-    </li>
+        </section>
 
-    <!-- سطح عالی تجسم -->
-    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10268#;">
-        <strong>«عالی»<br></strong>
-        شما در اوج قدرت تصویرسازی ذهنی، ایده‌پردازی و توانایی ایجاد چشم‌اندازهای نو در این زمینه هستید. این ویژگی در رقابت‌ها، پژوهش‌های ابتکاری و هدایت دیگران بسیار ارزشمند است و می‌تواند بنیان ابداع و کارآفرینی را شکل دهد.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. تبدیل توان تجسم بالا به طرح‌های اجرایی یا پروژه‌های پیشرو؛ این مسیر هم برای شما رضایت‌بخش است و هم برای جامعه مفید.<br>
-                ۲. تشکیل یا رهبری گروه‌های خلاقیت؛ شما می‌توانید محور ایده‌پردازی و تجسم جمعی باشید.<br>
-                ۳. ارائه ایده‌هایتان در محافل تخصصی؛ شرکت در کنفرانس‌ها، همایش‌ها یا انتشار مقالات برای گسترش اثرگذاری جهانی.<br>
-                ۴. مدیریت زمان و روحیه؛ گاهی ذهن خلاق نیاز به سکوت و استراحت دارد تا انرژی لازم برای خلق تصاویر ذهنی بزرگ حفظ شود.<br>
-                ۵. ایجاد ابزارها یا روش‌های جدیدی برای انتقال تصاویر ذهنی به دیگران (مانند شبیه‌سازی، داستان‌نویسی، طراحی گرافیکی پیشرفته).
-            </div>
-        </div>
-    </li>
-</ul>
+        <!-- Sample Report Section -->
+        <section class="content-section test-section" id="sample-report">
+            <div class="content-container">
+                <!-- نمونه گزارش -->
+                <h2>نمونه گزارش</h2>
+                <p>
+                    در ادامه یک نمونه از گزارش فهرست تشخیص تعاملی ظرفیت تجربی را مشاهده می‌کنید:
+                </p>
+                <div class="report-container">
+                    <header class="report-header-custom">
+                        <div class="report-header-inner">
+                            <img src="../panel/file?type=picture&amp;v=3&amp;mode=filemanager&amp;file=%7eDB3gfQUls%2bt2iiMYKbsRAxrtFhcHKUIUUo7pPtO17bHCzNxwU4zNh3UVor6QMtl7Y6EWX8dD0PSvzZOYkRrXlfejPn4lNTj6" class="report-header-img" alt="لوگو">
+                            <h1 class="report-header-title">گزارش تحلیل فهرست تشخیص تعاملی ظرفیت تجربی</h1>
+                        </div>
+                        <div class="report-header-date">تاریخ اجرا: #primary_createDate#</div>
+                    </header>
+                    <div class="report-section-title">فهرست تشخیص تعاملی ظرفیت تجربی</div>
+                    <p class="report-paragraph">
+                        این ارزیابی به منظور تحلیل و بررسی ویژگی‌های شخصیتی فرد در حوزه‌های بینش، تجسم و هماهنگی انجام شده است. هدف از این ارزیابی شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او در این حوزه‌ها می‌باشد.
+                    </p>
+                    <div class="report-section-title">اطلاعات فردی</div>
+                    <div class="report-info-container">
+                        <div class="report-info-item"><strong>نام:</strong> <span class="report-info-data">#field_5944#</span></div>
+                        <div class="report-info-item"><strong>نام خانوادگی:</strong> <span class="report-info-data">#field_5945#</span></div>
+                        <div class="report-info-item"><strong>کد ملی:</strong> <span class="report-info-data">#field_6383#</span></div>
+                        <div class="report-info-item"><strong>تاریخ تولد:</strong> <span class="report-info-data">#field_6382#</span></div>
+                        <div class="report-info-item"><strong>ایمیل:</strong> <span class="report-info-data">#field_5946#</span></div>
+                        <div class="report-info-item"><strong>موبایل:</strong> <span class="report-info-data">#field_5947#</span></div>
+                    </div>
+                    <div class="report-section-title">نتیجه</div>
+                    <div class="report-score-container">
+                        <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10267#;"><strong>بینش:</strong> <span class="report-badge">#field_6014#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10267#;"><strong>بینش:</strong> <span class="report-badge">#field_6014#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10267#;"><strong>بینش:</strong> <span class="report-badge">#field_6014#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10268#;"><strong>تجسم:</strong> <span class="report-badge">#field_6015#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10268#;"><strong>تجسم:</strong> <span class="report-badge">#field_6015#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10268#;"><strong>تجسم:</strong> <span class="report-badge">#field_6015#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10269#;"><strong>هماهنگی:</strong> <span class="report-badge">#field_6016#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10269#;"><strong>هماهنگی:</strong> <span class="report-badge">#field_6016#</span></div>
+                        <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10269#;"><strong>هماهنگی:</strong> <span class="report-badge">#field_6016#</span></div>
+                    </div>
+                    <div class="report-section-title">تفسیر</div>
+                    <p class="report-paragraph">
+                        این بخش به تحلیل و تفسیر نتایج ارزیابی روان‌شناختی فرد می‌پردازد. تحلیل روان‌شناختی شامل بررسی ویژگی‌های شخصیتی در حوزه‌های بینش، تجسم و هماهنگی است. هدف از این تحلیل شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد. نتایج این تحلیل می‌تواند به فرد کمک کند تا با شناخت بهتر از خود، برنامه‌های توسعه فردی و حرفه‌ای موثرتری را دنبال کند. توصیه‌ها شامل آغاز تدریجی تمرینات، حفظ تنوع در برنامه‌های ورزشی، یادداشت ایده‌ها، و تمرین تکنیک‌های ذهن‌آگاهی برای بهبود عملکرد در این حوزه‌ها است.
+                    </p>
 
-<!-- هماهنگی (کنترل اضطراب ذهنی و حفظ پشتکار در فعالیت) -->
-<div class="report-component-title">هماهنگی 
-    <span class="report-badge report-score-data">#field_6016#<br></span>
-</div>
-<p class="report-paragraph">
-    هماهنگی در این مفهوم، شامل توانایی کنترل اضطراب‌ها، افکار پراکنده، و حفظ تمرکز بر یادگیری یا انجام پشتکارآمیز کارهاست. کسانی که سطح بالایی از هماهنگی دارند، با وجود فشارهای فکری و گاه بی‌قراری ذهنی، می‌توانند به طور مؤثر به انجام وظایف بپردازند.
-</p>
-<ul class="report-list">
-    <!-- سطح متوسط هماهنگی -->
-    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10269#;">
-        <strong>«متوسط»<br></strong>
-        شما گاهی اوقات احساس خستگی، اضطراب یا دلشورگی می‌کنید و ممکن است ذهن‌تان به هر طرفی گردش کند. هرچند هنوز توان ادامه کار را دارید، اما حفظ تمرکز پایدار کمی دشوار می‌شود.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. شناسایی عوامل اصلی بی‌قراری ذهنی یا اضطراب و تلاش برای کاهش آن‌ها (مثل توزیع عادلانه کارها، استراحت‌های منظم).<br>
-                ۲. تمرین تکنیک‌های ذهن‌آگاهی و آرام‌سازی مانند مدیتیشن، تنفس عمیق یا ریلکسیشن عضلانی برای مهار افکار پراکنده.<br>
-                ۳. اولویت‌بندی وظایف و انجام مهم‌ترین آن‌ها در زمان‌هایی که تمرکز بیشتری دارید.<br>
-                ۴. درخواست حمایت از دوستان یا اعضای خانواده در صورت احساس دلشورگی مستمر؛ تعامل اجتماعی گاهی نگرانی‌ها را تعدیل می‌کند.<br>
-                5. افزایش پشتکار در کارهای کوچک و ساده، تا حس موفقیت تدریجی بر اضطراب غلبه کند.
-            </div>
-        </div>
-    </li>
+                    <!-- بینش (توانایی درک و استفاده از اطلاعات بدنی و حرکتی) -->
+                    <div class="report-component-title">بینش 
+                        <span class="report-badge report-score-data">#field_6014#<br></span>
+                    </div>
+                    <p class="report-paragraph">
+                        بینش در حیطه «ظرفیت تجربی» به توانایی فرد در ادغام اطلاعات بدنی و حرکتی با تصمیم‌گیری‌های روزمره اشاره دارد. این افراد، با بهره‌گیری از حواس جسمی و درکی که از بدن خود دارند، می‌توانند در فعالیت‌های فیزیکی عملکرد قابل توجهی داشته باشند و حتی لرزش یا نشانه‌های بدنی استرس را به خوبی مدیریت کنند.
+                    </p>
+                    <ul class="report-list">
+                        <!-- سطح متوسط بینش -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10267#;">
+                            <strong>«متوسط»<br></strong>
+                            شما تا حدی از فعالیت‌های بدنی لذت می‌برید و مهارت‌های حرکتی قابل قبولی دارید، اما همیشه از حداکثر ظرفیت خود استفاده نمی‌کنید. ممکن است در مواجهه با برخی چالش‌های بدنی دچار لرزش یا اضطراب شوید و تمایل چندانی به فشار آوردن بیشتر نداشته باشید.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. آغاز تدریجی تمرینات ورزشی یا فعالیت‌های حرکتی جدید، تا سطح تاب‌آوری بدن را گام‌به‌گام افزایش دهید.<br>
+                                    ۲. شناسایی علائم جسمی استرس (لرزش، تپش قلب) و استفاده از تکنیک‌های آرام‌سازی (تنفس عمیق، تمرکز ذهنی).<br>
+                                    ۳. تعیین اهداف چالش‌برانگیز اما واقع‌بینانه؛ افزایش اندک فشار می‌تواند به ارتقای مهارت‌های بدنی منجر شود.<br>
+                                    ۴. تهیه برنامه روزانه برای پیگیری تمرینات و ثبت دستاوردها؛ پیگیری مداوم موجب بهبود مستمر خواهد شد.<br>
+                                    ۵. افزودن جنبه‌های تفریحی به فعالیت‌های بدنی؛ انتخاب ورزش‌ها یا بازی‌های گروهی می‌تواند انگیزه را افزایش دهد.
+                                </div>
+                            </div>
+                        </li>
+                        <!-- سطح خوب بینش -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10267#;">
+                            <strong>«خوب»<br></strong>
+                            شما مهارت قابل توجهی در فعالیت‌های بدنی دارید، به راحتی حرکات ورزشی را یاد می‌گیرید و معمولاً از جنب‌وجوش جسمی لذت می‌برید. این بینش بدنی به شما کمک می‌کند در مواجهه با چالش‌های حرکتی، کنترل بهتری داشته باشید و نشانه‌های استرس بدنی را مدیریت کنید.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. حفظ سطح فعلی از طریق تنوع در برنامه‌های ورزشی و تمرینات بدنی؛ یکنواختی ممکن است اشتیاق شما را کاهش دهد.<br>
+                                    ۲. شرکت در دوره‌های پیشرفته‌تر آموزشی (مانند یوگا، پیلاتس یا ورزش‌های تخصصی) برای بهبود تعادل جسمی و ذهنی.<br>
+                                    ۳. انتقال تجربه‌ها و تکنیک‌های موفق مدیریت لرزش یا استرس بدنی به دیگران؛ می‌توانید الگویی مؤثر باشید.<br>
+                                    ۴. ارتقای قوای ذهنی در کنار بینش بدنی؛ مطالعه منابعی در خصوص ارتباط ذهن و بدن می‌تواند کارایی شما را افزایش دهد.<br>
+                                    ۵. مشارکت در فعالیت‌های گروهی یا مسابقات دوستانه؛ این کار ضمن ایجاد انگیزه، امکان یادگیری از دیگران را فراهم می‌آورد.
+                                </div>
+                            </div>
+                        </li>
+                        <!-- سطح عالی بینش -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10267#;">
+                            <strong>«عالی»<br></strong>
+                            شما در اوج توانایی تلفیق حرکات بدنی و درک عمیق از نشانه‌های جسمی خود قرار دارید. حرکات ورزشی را با مهارت بالا انجام می‌دهید و می‌توانید در موقعیت‌های استرس‌زا، واکنش بدنی متعادل‌تری داشته باشید. این سطح از بینش، فرصت‌های گسترده‌ای برای موفقیت در حوزه‌های فیزیکی ایجاد می‌کند.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. آموزش و مشاوره به دیگران در خصوص مهارت‌های کنترل اضطراب؛ نقش الگویی شما می‌تواند برای اطرافیان سودمند باشد.<br>
+                                    ۲. پذیرش مسئولیت‌های بزرگ‌تر یا پروژه‌های پیچیده؛ هماهنگی بالای شما در شرایط سخت بیش از پیش درخشان خواهد بود.<br>
+                                    ۳. تعامل با متخصصان و صاحبان تجربه برای به‌روزرسانی روش‌های مدیریت استرس و تعمیق خودشناسی روانی.<br>
+                                    ۴. تمرین یک الگوی سلامت مداوم (ورزش، خواب کافی، تغذیه مناسب) برای حفظ سطح بالای انرژی و تمرکز.<br>
+                                    ۵. مستندسازی تجربه‌هایتان از لحظات چالش‌برانگیز؛ این روایت می‌تواند در آینده منبع الهام و راهنمایی برای خودتان یا دیگران باشد.
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
 
-    <!-- سطح خوب هماهنگی -->
-    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10269#;">
-        <strong>«خوب»<br></strong>
-        شما اغلب می‌توانید اضطراب و افکار پراکنده را کنترل کرده و با پشتکار کارهایتان را پیش ببرید. اگرچه گاهی دلشورگی یا بیقراری ذهنی به سراغتان می‌آید، اما معمولاً قادر هستید با تسلط نسبی بر اوضاع، وظایف خود را ادامه دهید.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. حفظ راهکارهای فعلی مدیریت استرس و تقویت آن‌ها؛ مثلاً زمان‌بندی دقیق، تعیین اهداف کوچک و قابل دستیابی.<br>
-                ۲. مطالعه یا شرکت در کلاس‌های مرتبط با مهارت‌های مدیریت استرس و افزایش تمرکز، برای ارتقای سطح هماهنگی بیشتر.<br>
-                ۳. ایجاد فضای کاری یا تحصیلی آرام، خلوت و مناسب؛ محیط می‌تواند نقش کلیدی در تثبیت ذهن داشته باشد.<br>
-                ۴. تقسیم کارهای سنگین به چند مرحله؛ این کار هم پشتکار شما را حفظ می‌کند و هم از فرسودگی جلوگیری می‌شود.<br>
-                ۵. در صورت احساس دلشورگی مکرر، مرور موفقیت‌های قبلی و یادآوری توانایی‌هایتان می‌تواند محرک روحیه باشد.
-            </div>
-        </div>
-    </li>
+                    <!-- تجسم (قدرت تصویرسازی ذهنی و ایده‌پردازی) -->
+                    <div class="report-component-title">تجسم 
+                        <span class="report-badge report-score-data">#field_6015#<br></span>
+                    </div>
+                    <p class="report-paragraph">
+                        تجسم در چارچوب توانایی تجربی، بیانگر قدرت تصویرسازی ذهنی و ایده‌پردازی فرد است؛ به‌طوری‌که بتواند اهداف، رویدادها و مسائل را با عمق بیشتری ببیند و از آن‌ها استنباط‌های نوآورانه کند. این ظرفیت می‌تواند در مواردی مانند رقابت، پژوهش، ایده‌پردازی و راهبری دیگران بسیار مفید واقع شود.
+                    </p>
+                    <ul class="report-list">
+                        <!-- سطح متوسط تجسم -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10268#;">
+                            <strong>«متوسط»<br></strong>
+                            شما توانایی تصویرسازی ذهنی نسبی دارید و از تازگی و نوبودن ایده‌ها لذت می‌برید، اما شاید همیشه به شکلی عمیق یا متمرکز در ایده‌پردازی عمل نکنید. گاهی اشتیاق شروع کاری نو را دارید، اما ممکن است در مرحله پیاده‌سازی دچار وقفه شوید.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. یادداشت ایده‌ها و تصویرهایی که در ذهن دارید تا از فراموشی جلوگیری شود و امکان اجرای آن‌ها فراهم گردد.<br>
+                                    ۲. ارزیابی دوره‌ای ایده‌هایتان؛ برخی از ایده‌های به‌ظاهر پیچیده می‌توانند بعداً کارایی بالایی داشته باشند.<br>
+                                    ۳. تقویت مهارت تصویرسازی با روش‌هایی مانند تجسم خلاق، انجام تمرین‌های ذهن‌آگاهی یا نقاشی آزاد.<br>
+                                    ۴. درخواست بازخورد از اطرافیان یا همکاران در مورد ایده‌های جدیدتان؛ همفکری می‌تواند جریان خلاقیت را تقویت کند.<br>
+                                    ۵. شروع از مقیاس کوچک؛ اگر ایده بزرگی دارید، ابتدا آن را به بخش‌های کوچک و قابل مدیریت تقسیم کنید.
+                                </div>
+                            </div>
+                        </li>
+                        <!-- سطح خوب تجسم -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10268#;">
+                            <strong>«خوب»<br></strong>
+                            شما تصویرسازی ذهنی قدرتمندی دارید و از ایده‌پردازی لذت می‌برید؛ رقابت و پژوهش نیز برایتان جذاب است. این توانایی به شما کمک می‌کند در حوزه‌های مختلف، راهکارهای تازه و الهام‌بخشی بیابید و دیگران را نیز در مسیر رسیدن به اهدافشان همراهی کنید.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. حفظ و تقویت قدرت تصویرسازی با تمرین‌های خلاقانه (مانند رسم طرح‌های ذهنی، ژورنال نویسی خلاق).<br>
+                                    ۲. شناسایی حوزه‌هایی که ایده‌های شما بیشترین تاثیر را داشته است، و تلاش برای گسترش آن‌ها در زمینه‌های مشابه.<br>
+                                    ۳. مشارکت در رویدادهای نوآوری یا رقابت‌های خلاقانه؛ این فضاها می‌توانند قدرت تجسم شما را در مسیرهای جدید هدایت کنند.<br>
+                                    ۴. آموزش و مشاوره دیگران با استفاده از تصویرسازی ذهنی؛ بسیاری از افراد برای ایده‌پردازی به این مهارت نیاز دارند.<br>
+                                    ۵. پیگیری ایده‌های رقابتی در فضای کاری یا تحصیلی؛ روحیه شور و تلاش شما می‌تواند نتایج فوق‌العاده‌ای به همراه داشته باشد.
+                                </div>
+                            </div>
+                        </li>
+                        <!-- سطح عالی تجسم -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10268#;">
+                            <strong>«عالی»<br></strong>
+                            شما در اوج قدرت تصویرسازی ذهنی، ایده‌پردازی و توانایی ایجاد چشم‌اندازهای نو در این زمینه هستید. این ویژگی در رقابت‌ها، پژوهش‌های ابتکاری و هدایت دیگران بسیار ارزشمند است و می‌تواند بنیان ابداع و کارآفرینی را شکل دهد.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. تبدیل توان تجسم بالا به طرح‌های اجرایی یا پروژه‌های پیشرو؛ این مسیر هم برای شما رضایت‌بخش است و هم برای جامعه مفید.<br>
+                                    ۲. تشکیل یا رهبری گروه‌های خلاقیت؛ شما می‌توانید محور ایده‌پردازی و تجسم جمعی باشید.<br>
+                                    ۳. ارائه ایده‌هایتان در محافل تخصصی؛ شرکت در کنفرانس‌ها، همایش‌ها یا انتشار مقالات برای گسترش اثرگذاری جهانی.<br>
+                                    ۴. مدیریت زمان و روحیه؛ گاهی ذهن خلاق نیاز به سکوت و استراحت دارد تا انرژی لازم برای خلق تصاویر ذهنی بزرگ حفظ شود.<br>
+                                    ۵. ایجاد ابزارها یا روش‌های جدیدی برای انتقال تصاویر ذهنی به دیگران (مانند شبیه‌سازی، داستان‌نویسی، طراحی گرافیکی پیشرفته).
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
 
-    <!-- سطح عالی هماهنگی -->
-    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10269#;">
-        <strong>«عالی»<br></strong>
-        شما در سطح بالایی از هماهنگی ذهنی قرار دارید؛ با وجود دشواری‌ها و افکار گوناگون، می‌توانید به‌خوبی ذهن را روی وظایف متمرکز کنید و پشتکار بالایی در کارها نشان دهید. این قابلیت، شما را در محیط‌های کاری و تحصیلی برجسته می‌سازد و نشانه‌ای از ثبات عاطفی و روانی است.
-        <div class="report-recommendation">
-            <div class="report-recommendation-title">توصیه:</div>
-            <div class="report-recommendation-text">
-                ۱. آموزش و مشاوره به دیگران در خصوص مهارت‌های کنترل اضطراب؛ نقش الگویی شما می‌تواند برای اطرافیان سودمند باشد.<br>
-                ۲. پذیرش مسئولیت‌های بزرگ‌تر یا پروژه‌های پیچیده؛ هماهنگی بالای شما در شرایط سخت بیش از پیش درخشان خواهد بود.<br>
-                ۳. تعامل با متخصصان و صاحبان تجربه برای به‌روزرسانی روش‌های مدیریت استرس و تعمیق خودشناسی روانی.<br>
-                ۴. تمرین یک الگوی سلامت مداوم (ورزش، خواب کافی، تغذیه مناسب) برای حفظ سطح بالای انرژی و تمرکز.<br>
-                5. مستندسازی تجربه‌هایتان از لحظات چالش‌برانگیز؛ این روایت می‌تواند در آینده منبع الهام و راهنمایی برای خودتان یا دیگران باشد.
-            </div>
-        </div>
-    </li>
-</ul>
+                    <!-- هماهنگی (کنترل اضطراب ذهنی و حفظ پشتکار در فعالیت) -->
+                    <div class="report-component-title">هماهنگی 
+                        <span class="report-badge report-score-data">#field_6016#<br></span>
+                    </div>
+                    <p class="report-paragraph">
+                        هماهنگی در این مفهوم، شامل توانایی کنترل اضطراب‌ها، افکار پراکنده، و حفظ تمرکز بر یادگیری یا انجام پشتکارآمیز کارهاست. کسانی که سطح بالایی از هماهنگی دارند، با وجود فشارهای فکری و گاه بی‌قراری ذهنی، می‌توانند به طور مؤثر به انجام وظایف بپردازند.
+                    </p>
+                    <ul class="report-list">
+                        <!-- سطح متوسط هماهنگی -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10269#;">
+                            <strong>«متوسط»<br></strong>
+                            شما گاهی اوقات احساس خستگی، اضطراب یا دلشورگی می‌کنید و ممکن است ذهن‌تان به هر طرفی گردش کند. هرچند هنوز توان ادامه کار را دارید، اما حفظ تمرکز پایدار کمی دشوار می‌شود.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. شناسایی عوامل اصلی بی‌قراری ذهنی یا اضطراب و تلاش برای کاهش آن‌ها (مثل توزیع عادلانه کارها، استراحت‌های منظم).<br>
+                                    ۲. تمرین تکنیک‌های ذهن‌آگاهی و آرام‌سازی مانند مدیتیشن، تنفس عمیق یا ریلکسیشن عضلانی برای مهار افکار پراکنده.<br>
+                                    ۳. اولویت‌بندی وظایف و انجام مهم‌ترین آن‌ها در زمان‌هایی که تمرکز بیشتری دارید.<br>
+                                    ۴. درخواست حمایت از دوستان یا اعضای خانواده در صورت احساس دلشورگی مستمر؛ تعامل اجتماعی گاهی نگرانی‌ها را تعدیل می‌کند.<br>
+                                    ۵. افزایش پشتکار در کارهای کوچک و ساده، تا حس موفقیت تدریجی بر اضطراب غلبه کند.
+                                </div>
+                            </div>
+                        </li>
+                        <!-- سطح خوب هماهنگی -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10269#;">
+                            <strong>«خوب»<br></strong>
+                            شما اغلب می‌توانید اضطراب و افکار پراکنده را کنترل کرده و با پشتکار کارهایتان را پیش ببرید. اگرچه گاهی دلشورگی یا بیقراری ذهنی به سراغتان می‌آید، اما معمولاً قادر هستید با تسلط نسبی بر اوضاع، وظایف خود را ادامه دهید.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. حفظ راهکارهای فعلی مدیریت استرس و تقویت آن‌ها؛ مثلاً زمان‌بندی دقیق، تعیین اهداف کوچک و قابل دستیابی.<br>
+                                    ۲. مطالعه یا شرکت در کلاس‌های مرتبط با مهارت‌های مدیریت استرس و افزایش تمرکز، برای ارتقای سطح هماهنگی بیشتر.<br>
+                                    ۳. ایجاد فضای کاری یا تحصیلی آرام، خلوت و مناسب؛ محیط می‌تواند نقش کلیدی در تثبیت ذهن داشته باشد.<br>
+                                    ۴. تقسیم کارهای سنگین به چند مرحله؛ این کار هم پشتکار شما را حفظ می‌کند و هم از فرسودگی جلوگیری می‌شود.<br>
+                                    ۵. در صورت احساس دلشورگی مکرر، مرور موفقیت‌های قبلی و یادآوری توانایی‌هایتان می‌تواند محرک روحیه باشد.
+                                </div>
+                            </div>
+                        </li>
+                        <!-- سطح عالی هماهنگی -->
+                        <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10269#;">
+                            <strong>«عالی»<br></strong>
+                            شما در بالاترین سطح هماهنگی ذهنی قرار دارید؛ رفتار شما همواره بر پایه عقل و منطق استوار است و شما با رعایت دقیق قوانین و اصول، پشتکار قابل توجهی در اجرای آنچه آموخته‌اید نشان می‌دهید. این رویکرد شما را در جمع‌ها و محیط‌های کاری به فردی قابل اعتماد و مسئولیت‌پذیر تبدیل می‌کند.
+                            <div class="report-recommendation">
+                                <div class="report-recommendation-title">توصیه:</div>
+                                <div class="report-recommendation-text">
+                                    ۱. آموزش و مشاوره به دیگران در خصوص مهارت‌های کنترل اضطراب؛ نقش الگویی شما می‌تواند برای اطرافیان سودمند باشد.<br>
+                                    ۲. پذیرش مسئولیت‌های بزرگ‌تر یا پروژه‌های پیچیده؛ هماهنگی بالای شما در شرایط سخت بیش از پیش درخشان خواهد بود.<br>
+                                    ۳. تعامل با متخصصان و صاحبان تجربه برای به‌روزرسانی روش‌های مدیریت استرس و تعمیق خودشناسی روانی.<br>
+                                    ۴. تمرین یک الگوی سلامت مداوم (ورزش، خواب کافی، تغذیه مناسب) برای حفظ سطح بالای انرژی و تمرکز.<br>
+                                    ۵. مستندسازی تجربه‌هایتان از لحظات چالش‌برانگیز؛ این روایت می‌تواند در آینده منبع الهام و راهنمایی برای خودتان یا دیگران باشد.
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
 
-                                              
-        
+            <!-- Credentials and Validity Section -->
+            <section class="content-section test-section" id="credentials">
+                <div class="content-container">
+                    <!-- اعتبار و صحت آزمون -->
+                    <h2>اعتبار و صحت آزمون</h2>
+                    <p>
+                        آزمون فهرست تشخیص تعاملی ظرفیت تجربی بر اساس روش‌شناسی تحقیقاتی معتبر و تایید شده توسط متخصصین روانشناسی طراحی شده است. این آزمون توسط دانشگاه‌ها و سازمان‌های معتبر روانشناسی مورد تأیید و توصیه قرار گرفته است.
+                    </p>
+                    <ul>
+                        <li>روش‌شناسی تحقیقاتی مبتنی بر مطالعات علمی روز</li>
+                        <li>تأییدیه سازمان‌های معتبر روانشناسی</li>
+                        <li>پشتیبانی توسط تیم متخصصین و روانشناسان خبره</li>
+                    </ul>
+                </div>
+            </section>
 
+            <!-- Testimonials Section -->
+            <section class="content-section test-section" id="testimonials">
+                <div class="content-container">
+                    <!-- توصیه‌نامه‌ها -->
+                    <h2>توصیه‌نامه‌ها</h2>
+                    <div class="testimonial">
+                        <p>"آزمون فهرست تشخیص تعاملی ظرفیت تجربی به من کمک کرد تا بهتر خودم را بشناسم و در مسیر توسعه مهارت‌های تحلیلی‌ام قدم‌های موثرتری بردارم."</p>
+                        <p><strong>- نرگس موسوی</strong></p>
+                    </div>
+                    <div class="testimonial">
+                        <p>"گزارش دقیق این آزمون به من امکان داد تا توانایی‌های بینش، تجسم و هماهنگی خود را شناسایی کنم و برای بهبود مهارت‌هایم برنامه‌ریزی کنم."</p>
+                        <p><strong>- امیرحسین رضایی</strong></p>
+                    </div>
+                </div>
+            </section>
 
+            <!-- Call-to-Action Section -->
+            <section class="content-section test-section" id="start-test">
+                <div class="content-container">
+                    <!-- دعوت به اقدام (CTA) -->
+                    <h2>آیا آماده‌اید تا شروع کنید؟</h2>
+                    <p>
+                        با انجام این آزمون، گامی مهم در جهت شناخت بهتر از خود و توسعه توانمندی‌های شناختی‌تان بردارید.
+                    </p>
+                    <div style="text-align: center; margin-top: 20px;">
+                        <a href="/take/fahrest-tashkhis-tamarkobi-zarfiat-tahlili-shenakhti" class="cta-button">شروع آزمون</a>
+                    </div>
+                </div>
+            </section>
 
+            <!-- FAQ Section (Optional) -->
+            <section class="content-section test-section" id="faq">
+                <div class="content-container">
+                    <!-- سوالات متداول -->
+                    <h2>سوالات متداول</h2>
+                    <div class="faq-item">
+                        <h4>آیا این آزمون دقیق است؟</h4>
+                        <p>بله، این آزمون بر اساس روش‌شناسی تحقیقاتی معتبر و تایید شده طراحی شده است تا نتایج دقیق و قابل اعتمادی ارائه دهد.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>آیا این آزمون برای کودکان مناسب است؟</h4>
+                        <p>این آزمون بیشتر برای بزرگسالان و نوجوانان طراحی شده است و ممکن است برای کودکان جوان‌تر مناسب نباشد.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>بعد از انجام آزمون چه اتفاقی می‌افتد؟</h4>
+                        <p>پس از تکمیل آزمون، شما یک گزارش جامع با نتایج و توصیه‌های شخصی دریافت خواهید کرد که می‌توانید آن را مرور کرده و در صورت نیاز، با متخصصین مشورت کنید.</p>
+                    </div>
+                </div>
+            </section>
+    </main>
 
+    <!-- Footer -->
+    <footer id="footer" class="footer">
+        <!-- Content injected via scripts -->
+    </footer>
 
-
-
-
-
-
-
-
-
-
-
-
-
-        
-
-
-            <div class="report-section-title">جمع‌بندی</div>
-            <div class="report-paragraph">
-            <p>این گزارش ارزیابی مهارت‌های شما شامل تحلیل تعهد، نیرومندی، ظرفیت تحلیلی، بیتابی روانی، استقلال و سازش است. این بررسی نقاط قوت و زمینه‌های نیازمند بهبود شما را نشان داده و توصیه‌های کاربردی برای توسعه مهارت‌های شما ارائه می‌دهد.</p>
-            
-            <p><b>نقاط قوت: </b>شما در برخی از حوزه‌ها عملکرد برجسته‌ای دارید که نشان‌دهنده توانایی‌های قوی در مدیریت مسئولیت‌ها، انرژی بالا، تحلیل مسائل پیچیده، آرامش روانی، خودکفایی و تطبیق‌پذیری است. به عنوان مثال، در حوزه‌های "تعهد" و "ظرفیت تحلیلی"، شما توانایی زیادی در مدیریت وظایف و تحلیل مسائل نشان داده‌اید که می‌تواند به پیشرفت حرفه‌ای و رشد فردی شما کمک کند.</p>
-            
-            <p><b>حوزه‌های نیازمند بهبود:</b> در برخی از بخش‌ها نیاز به تمرکز بیشتر وجود دارد. به عنوان مثال، در حوزه‌های "بیتابی روانی" و "استقلال"، شما می‌توانید با تمرین‌های منظم و فعالیت‌های هدفمند مانند تکنیک‌های مدیریت استرس و برنامه‌ریزی منظم مهارت‌های خود را بهبود بخشید. همچنین، افزایش تعاملات اجتماعی و تمرین مهارت‌های تصمیم‌گیری مستقل می‌تواند تأثیر مثبتی بر عملکرد شما داشته باشد.</p>
-            
-            <p><b>گام‌های بعدی:</b> برای تقویت مهارت‌های خود، پیشنهاد می‌شود که به توصیه‌های ارائه‌شده در هر بخش توجه ویژه‌ای کنید و در صورت نیاز از خدمات مشاوره تخصصی استفاده نمایید. همچنین، ارزیابی منظم و پیگیری مداوم می‌تواند به توسعه پایدار و موفقیت شما در تمامی ابعاد زندگی کمک کند.</p>
-            </div>
-        
-        <footer class="report-footer-custom">
-            <div class="report-footer-content">
-                <img src="../panel/file?type=picture&amp;v=3&amp;mode=filemanager&amp;file=%7eDB3gfQUls%2bt2iiMYKbsRAxrtFhcHKUIUUo7pPtO17bHCzNxwU4zNh3UVor6QMtl7Y6EWX8dD0PSvzZOYkRrXlfejPn4lNTj6" class="report-footer-img" alt="لوگو">
-            </div>
-            <p class="report-footer-paragraph">مؤسّسه تعاملی هیجان اندیشه | تماس: 02188174100 | ایمیل: info@eot.ir</p>
-            <p class="report-footer-paragraph yellow-text">© ۱۴۰۳ تمامی حقوق محفوظ است.</p>
-            <ul class="report-footer-menu">
-                <li><a href="https://www.eot.ir/" class="report-footer-menu-link">صفحه اصلی</a></li>
-                <li><a href="https://www.eot.ir/contact" class="report-footer-menu-link">تماس با ما</a></li>
-                <li><a href="https://www.eot.ir/about" class="report-footer-menu-link">درباره ما</a></li>
-            </ul>
-            <address class="report-footer-address">تهران، سهروردی، خرمشهر، عربعلی، کوچه ششم، شماره ۴۴</address>
-        </footer>
-    </div>
+    <!-- Scripts -->
+    <script src="/assets/js/script.js"></script>
+    <script src="/assets/js/header-footer-inject.js"></script>
+    <script>
+        // FAQ Toggle Script
+        document.querySelectorAll('.faq-item h4').forEach(function(question) {
+            question.addEventListener('click', function() {
+                const parent = this.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,52 +1,226 @@
-<div class="ravesh-editor-html" style="direction:rtl">
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>گزارش تحلیل فهرست تشخیص تعاملی شخصیت</title>
+    <title>استعدادیاب | گزارش تحلیل فهرست تشخیص تعاملی خودگستری</title>
     <style>
+        /* =======================================================
+           1. Reset and Base Styles
+        ======================================================= */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100%;
+            font-family: 'Vazir', sans-serif;
+            background-color: #FFFFFF;
+            color: #1F3B73;
+            direction: rtl;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            padding-top: 80px;
+            padding-bottom: 60px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #1F3B73;
+            transition: color 0.3s ease-in-out;
+        }
+
+        a:hover,
+        a:focus {
+            color: #F4C553;
+            text-decoration: underline;
+        }
+
+        /* =======================================================
+           2. Font Imports
+        ======================================================= */
+        @font-face {
+            font-family: 'Vazir';
+            src: url('/assets/fonts/Vazir-Regular-UI.woff2') format('woff2'),
+                 url('/assets/fonts/Vazir-Regular-UI.woff') format('woff'),
+                 url('/assets/fonts/Vazir-Regular-UI.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+        }
+
         @font-face {
             font-family: 'IRANSansWeb';
-            src: url('fonts/IRANSansWeb.woff2') format('woff2');
+            src: url('/assets/fonts/IRANSansWeb.woff2') format('woff2');
         }
         @font-face {
             font-family: 'BTitrBold';
-            src: url('fonts/BTitrBold.woff2') format('woff2');
+            src: url('/assets/fonts/BTitrBold.woff2') format('woff2');
         }
         @font-face {
             font-family: 'BKoodakBold';
-            src: url('fonts/BKoodakBold.woff2') format('woff2');
+            src: url('/assets/fonts/BKoodakBold.woff2') format('woff2');
         }
         @font-face {
             font-family: 'BHoma';
-            src: url('fonts/BHoma.woff2') format('woff2');
+            src: url('/assets/fonts/BHoma.woff2') format('woff2');
         }
         @font-face {
             font-family: 'BYekan';
-            src: url('fonts/BYekan.woff2') format('woff2');
+            src: url('/assets/fonts/BYekan.woff2') format('woff2');
         }
         @font-face {
             font-family: 'Tahoma';
-            src: url('fonts/Tahoma.woff2') format('woff2');
+            src: url('/assets/fonts/Tahoma.woff2') format('woff2');
         }
+
+        /* =======================================================
+           3. Typography
+        ======================================================= */
+        h1, h2, h3, h4 {
+            font-family: 'Vazir', sans-serif;
+            color: #1F3B73;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px #F4C553;
+        }
+
+        h2 {
+            font-size: 2em;
+            font-weight: 700;
+            margin-bottom: 24px;
+            text-shadow: 0 0 10px #F4C553;
+            color: #1F3B73;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 1.5em;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #1F3B73;
+            text-align: center;
+        }
+
+        h4 {
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-top: 16px;
+            color: #1F3B73;
+            text-align: center;
+            cursor: pointer;
+            position: relative;
+        }
+
+        p {
+            font-size: 1em;
+            max-width: 800px;
+            margin: 0 auto 16px;
+            line-height: 1.6;
+            color: #1F3B73;
+            text-align: justify;
+        }
+
+        ul {
+            max-width: 800px;
+            margin: 0 auto 16px;
+            padding-right: 20px;
+            color: #1F3B73;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* =======================================================
+           4. Hero Section
+        ======================================================= */
+        .hero {
+            height: calc(100vh - 80px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #F0F0F5;
+            padding: 16px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 16px;
+            color: #1F3B73;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            margin-bottom: 24px;
+            color: #1F3B73;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #F4C553;
+            color: #FFFFFF;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 1em;
+            box-shadow: 0 0 10px #FFD77B;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease-in-out,
+                        transform 0.3s ease-in-out,
+                        box-shadow 0.3s ease-in-out;
+        }
+
+        .cta-button:hover,
+        .cta-button:focus {
+            background-color: #4FBDBA;
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px #4FBDBA;
+        }
+
+        /* =======================================================
+           5. Content Sections
+        ======================================================= */
+        .content-section {
+            padding: 60px 16px;
+            background-color: #FFFFFF;
+        }
+
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .content-section:nth-child(even) {
+            background-color: #F9F9F9;
+        }
+
+        /* =======================================================
+           6. Report Styles
+        ======================================================= */
         .report-container {
             font-family: 'BYekan', sans-serif;
             direction: rtl;
             line-height: 1.8;
             background-color: #F5F5F5;
             color: #333333;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            max-width: 800px;
-            width: 100%;
-            margin: auto;
-            background-color: #F5F5F5;
+            margin: 40px auto;
             padding: 40px;
             box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
             border-radius: 20px;
+            max-width: 1000px;
         }
+
         .report-header-custom {
             display: flex;
             align-items: center;
@@ -54,16 +228,20 @@
             padding: 20px;
             background-color: #0DA3B8;
             border-radius: 20px 20px 0 0;
+            color: #FFFFFF;
         }
+
         .report-header-inner {
             display: flex;
             align-items: center;
             gap: 20px;
         }
+
         .report-header-img {
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
         }
+
         .report-header-title {
             margin: 0;
             font-size: 1.8em;
@@ -71,22 +249,39 @@
             font-family: 'IRANSansWeb', sans-serif;
             font-weight: normal;
         }
+
         .report-header-date {
             color: #ffffff;
             font-size: 1em;
         }
-        .report-title {
-            text-align: center;
-            color: #0DA3B8;
+
+        .report-section-title {
+            font-size: 22px;
+            color: #CC3333;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #CC3333;
             font-family: 'IRANSansWeb', sans-serif;
             font-weight: bold;
-            font-size: 32px;
-            margin-bottom: 25px;
+            text-align: center;
         }
+
+        .report-paragraph {
+            background-color: #E0F7FA;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
         .report-info-container, .report-score-container {
             display: flex;
             flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
         }
+
         .report-info-item, .report-score-item {
             background-color: #F8F9FA;
             padding: 15px;
@@ -99,26 +294,17 @@
             font-family: 'BYekan', sans-serif;
             flex: 1;
             min-width: 300px;
-            margin-right: 10px; /* Add space between columns */
         }
+
         .report-info-item strong, .report-score-item strong {
             color: #0DA3B8;
             font-family: 'IRANSansWeb', sans-serif;
         }
+
         .report-info-data, .report-score-data {
             font-family: 'IRANSansWeb', sans-serif;
         }
-        .report-section-title {
-            font-size: 22px;
-            color: #CC3333;
-            margin-top: 30px;
-            margin-bottom: 10px;
-            padding-bottom: 5px;
-            border-bottom: 1px solid #CC3333;
-            font-family: 'IRANSansWeb', sans-serif;
-            font-weight: bold;
-            text-align: center;
-        }
+
         .report-component-title {
             display: flex;
             justify-content: space-between;
@@ -131,32 +317,7 @@
             border-bottom: 1px solid #DBCF93;
             font-family: 'IRANSansWeb', sans-serif;
         }
-        .report-paragraph {
-            background-color: #E0F7FA;
-            padding: 15px;
-            border-radius: 10px;
-            font-size: 16px;
-            margin-bottom: 20px;
-        }
-        .report-list {
-            list-style-type: none;
-            padding: 0;
-            font-size: 16px;
-        }
-        .report-list-item {
-            background: #F8F9FA;
-            margin-bottom: 10px;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-            display: flex;
-            flex-direction: column;
-        }
-        .report-list-item strong {
-            font-size: 18px;
-            color: #0DA3B8;
-            margin-bottom: 5px;
-        }
+
         .report-badge {
             display: inline-block;
             padding: 8px 15px;
@@ -165,6 +326,7 @@
             background-color: #4A9B8C;
             border-radius: 10px;
         }
+
         .report-recommendation {
             background-color: #EAEAEA;
             padding: 20px;
@@ -176,474 +338,828 @@
             width: 100%;
             box-sizing: border-box;
         }
+
         .report-recommendation-title {
             font-weight: bold;
             color: #CC3333;
             margin-bottom: 5px;
             font-size: 18px;
         }
+
         .report-recommendation-text {
             margin-bottom: 5px;
             line-height: 1.6;
             font-size: 16px;
         }
-        .report-footer-custom {
-            background-color: #F5F5F5;
-            color: #333333;
-            padding: 20px;
-            text-align: center;
-            font-family: 'IRANSansWeb', sans-serif;
-            border-top: 1px solid #E0E0E0;
-            font-size: 16px; /* Increased font size */
-        }
-        .report-footer-content {
-            margin-bottom: 20px;
-        }
-        .report-footer-img {
-            width: 80px;
-            height: 80px;
-        }
-        .report-footer-paragraph {
-            margin: 5px 0;
-        }
-        .report-footer-paragraph.yellow-text {
-            color: #DBCF93;
-        }
-        .report-footer-menu {
-            list-style: none;
+
+        .report-list {
+            list-style-type: none;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin: 10px 0;
+            font-size: 16px;
         }
-        .report-footer-menu-link {
-            color: #0DA3B8;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        .report-footer-menu-link:hover {
-            color: #007B8A;
-        }
-        .report-footer-address {
-            margin-top: 10px;
-            font-size: 14px;
-        }
-        .report-summary-container {
-            max-width: 800px;
-            margin: auto;
-            background-color: #FFFFFF;
-            padding: 40px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+
+        .report-list-item {
+            background: #F8F9FA;
+            margin-bottom: 10px;
+            padding: 15px;
             border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
         }
-        .report-summary-heading {
-            text-align: center;
+
+        .report-list-item strong {
+            font-size: 18px;
             color: #0DA3B8;
-            font-family: 'IRANSansWeb', sans-serif;
-            font-weight: bold;
-            font-size: 32px;
-            margin-bottom: 25px;
+            margin-bottom: 5px;
         }
-        .report-summary-content {
-            color: #333333;
-            font-family: 'IRANSansWeb', sans-serif;
-            line-height: 1.8;
-        }
+
+        /* Report Conditional Display Styles */
         .report-conditional-display {
             display: block;
-        }
-        .report-conditional-display[style*="--score-rate1: 1"] {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
             padding: 10px;
             border-radius: 10px;
+            margin-bottom: 10px;
+            color: #FFFFFF;
+            font-weight: bold;
+        }
+
+        .report-conditional-display[style*="--score-rate1"] {
             background-color: #FF9999; /* Moderate */
         }
-        .report-conditional-display[style*="--score-rate2: 2"] {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-            border-radius: 10px;
+        .report-conditional-display[style*="--score-rate2"] {
             background-color: #FFD580; /* Good */
         }
-        .report-conditional-display[style*="--score-rate3: 3"] {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-            border-radius: 10px;
+        .report-conditional-display[style*="--score-rate3"] {
             background-color: #99FF99; /* Excellent */
         }
+
+        /* =======================================================
+           7. FAQ Section
+        ======================================================= */
+        .faq-item {
+            margin-bottom: 20px;
+        }
+
+        .faq-item h4::after {
+            content: '+';
+            position: absolute;
+            left: -20px;
+            top: 0;
+            font-size: 1.5em;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active h4::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-item p {
+            display: none;
+            margin-top: 10px;
+        }
+
+        .faq-item.active p {
+            display: block;
+        }
+
+        /* =======================================================
+           8. Footer Styles
+        ======================================================= */
+        .footer {
+            background-color: #0DA3B8;
+            color: #FFFFFF;
+            padding: 20px 0;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .testimonial {
+            background-color: #F8F9FA;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .testimonial p {
+            font-size: 16px;
+            color: #333333;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .testimonial strong {
+            color: #0DA3B8;
+        }
     </style>
-    <div class="report-report-container">
-        <header class="report-header-custom">
-            <div class="report-header-inner">
-                <img src="../panel/file?type=picture&amp;v=3&amp;mode=filemanager&amp;file=%7eDB3gfQUls%2bt2iiMYKbsRAxrtFhcHKUIUUo7pPtO17bHCzNxwU4zNh3UVor6QMtl7Y6EWX8dD0PSvzZOYkRrXlfejPn4lNTj6" class="report-header-img" alt="لوگو">
-                <h1 class="report-header-title">گزارش تحلیل فهرست تشخیص تعاملی شخصیت</h1>
+</head>
+<body>
+    <header class="header">
+        <!-- محتوای سربرگ را می‌توانید اینجا اضافه کنید -->
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>فهرست تشخیص تعاملی خودگستری</h1>
+                <p>تحلیل ویژگی‌های خودگستری شما و توسعه مهارت‌های رشد فردی</p>
+                <a href="#start-test" class="cta-button">شروع آزمون</a>
             </div>
-            <div class="report-header-date">تاریخ اجرا: #primary_createDate#</div>
-        </header>
-        
-        <div class="report-section-title">فهرست تشخیص تعاملی شخصیت</div>
-        <p class="report-paragraph">
-            این ارزیابی به منظور تحلیل و بررسی ویژگی‌های شخصیتی فرد در حوزه‌های مختلف از جمله تعهد، نیرومندی، ظرفیت تحلیلی، بیتابی روانی، استقلال و سازش انجام شده است. هدف از این ارزیابی شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد.
-        </p><p></p>
-               
-        <div class="report-section-title">اطلاعات فردی</div>
-        <div class="report-info-container">
-            <div class="report-info-item"><strong>نام:</strong> <span class="report-info-data">#field_349#</span></div>
-            <div class="report-info-item"><strong>نام خانوادگی:</strong> <span class="report-info-data">#field_1712#</span></div>
-            <div class="report-info-item"><strong>موبایل:</strong> <span class="report-info-data">#field_350#</span></div>
-            <div class="report-info-item"><strong>ایمیل:</strong> <span class="report-info-data">#field_351#</span></div></div>
+        </section>
 
-        </div>
-        <div class="report-section-title">نتیجه</div>
-        <div class="report-score-container">
-            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10213#;"><strong>توفیق:</strong> <span class="report-badge">#field_2879#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10213#;"><strong>توفیق:</strong> <span class="report-badge">#field_2879#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10213#;"><strong>توفیق:</strong> <span class="report-badge">#field_2879#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10214#;"><strong>بردباری:</strong> <span class="report-badge">#field_2875#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10214#;"><strong>بردباری:</strong> <span class="report-badge">#field_2875#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10214#;"><strong>بردباری:</strong> <span class="report-badge">#field_2875#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10215#;"><strong>بهینگی:</strong> <span class="report-badge">#field_2876#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10215#;"><strong>بهینگی:</strong> <span class="report-badge">#field_2876#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10215#;"><strong>بهینگی:</strong> <span class="report-badge">#field_2876#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10216#;"><strong>کوشایی:</strong> <span class="report-badge">#field_2877#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10216#;"><strong>کوشایی:</strong> <span class="report-badge">#field_2877#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10216#;"><strong>کوشایی:</strong> <span class="report-badge">#field_2877#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10217#;"><strong>انتخاب:</strong> <span class="report-badge">#field_2878#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10217#;"><strong>انتخاب:</strong> <span class="report-badge">#field_2878#</span></div>
-            <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10217#;"><strong>انتخاب:</strong> <span class="report-badge">#field_2878#</span></div>
-
-        </div>
-        <div class="report-section-title">تفسیر</div>
-        <p class="report-paragraph">
-            این بخش به تحلیل و تفسیر نتایج ارزیابی روان‌شناختی فرد می‌پردازد. تحلیل روان‌شناختی شامل بررسی ویژگی‌های شخصیتی مختلف است. هدف از این تحلیل شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد. نتایج این تحلیل می‌تواند به فرد کمک کند تا با شناخت بهتر از خود، برنامه‌های توسعه فردی و حرفه‌ای موثرتری را دنبال کند.
-        </p>
-        <div class="report-component-title">توفیق 
-            <span class="report-badge report-score-data">#field_2879#<br></span>
-        </div>
-        <p class="report-paragraph">
-            توفیق در روان‌شناسی خودگستر (Self-Expansion) به معنای تمایل فرد به گسترش مرزهای ذهنی، رفتاری و معنوی خویش برای دستیابی به حس پیشرفت و تکامل است. افرادی که در این حیطه امتیاز بالاتری دارند، اغلب رویدادهای جدید را به عنوان فرصتی برای رشد می‌بینند و از مسیر یادگیری و تجربه لذت می‌برند. این نگرش می‌تواند در کنار رعایت انضباط فردی، راه را برای گسترش دانش و بینش شخصی هموار کند.
-        </p>
-        <ul class="report-list">
-        
-            <!-- سطح متوسط توفیق -->
-            <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10213#;">
-                <strong>«متوسط»<br></strong>
-                شما تمایل نسبی به پیشرفت و گسترش توانایی‌های خود دارید اما ممکن است همواره تا انتهای مسیر پیش نروید. گاهی فشارهای محیطی یا روزمرّگی، انگیزه شما را کم‌رنگ می‌کند و مانع از برداشتن گام‌های جدید برای توسعه فردی می‌شود.
-                <div class="report-recommendation">
-                    <div class="report-recommendation-title">توصیه:</div>
-                    <div class="report-recommendation-text">
-                        ۱. تعیین اهداف کوتاه‌مدت و ملموس برای ایجاد حس دستاوردهای پیوسته.<br>
-                        ۲. ورود به فعالیت‌های گروهی یا پروژه‌های مشترک برای تبادل تجربه و حفظ انگیزه پیشرفت.<br>
-                        ۳. یادگیری مهارت‌های نو (فنی، هنری یا رفتاری) که حس تازگی و توسعه توانمندی‌هایتان را تقویت کند.<br>
-                        ۴. بررسی موانع موجود (همچون ترس از شکست) و رفع تدریجی آن‌ها با مطالعه یا مشاوره تخصصی.<br>
-                        ۵. در نظر گرفتن پاداش‌های کوچک برای تشویق خود هنگام گذر از هر مرحله پیشرفت.
-                    </div>
-                </div>
-            </li>
-        
-            <!-- سطح خوب توفیق -->
-            <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10213#;">
-                <strong>«خوب»<br></strong>
-                شما دیدگاه مثبتی نسبت به رشد و پیشرفت دارید و معمولاً برای رسیدن به اهداف جدید برنامه‌ریزی می‌کنید. تلاش منظم در کنار اشتیاق به یادگیری، نشانه بارز ظرفیت بالای شما برای خودگستری و توفیق در حوزه‌های گوناگون است.
-                <div class="report-recommendation">
-                    <div class="report-recommendation-title">توصیه:</div>
-                    <div class="report-recommendation-text">
-                        ۱. ادامه کار روی پروژه‌های چالش‌برانگیز که نیازمند خلاقیت و تجربه‌اندوزی بیشتر هستند.<br>
-                        ۲. ارزیابی دوره‌ای اهداف؛ با رسیدن به هر کدام از آن‌ها، هدف جدیدی برای خود تعریف کنید.<br>
-                        ۳. توسعه روابط با افراد موفق و پیشرو در حوزه‌های مورد علاقه، برای تبادل ایده و افزایش انگیزه.<br>
-                        ۴. خواندن کتاب‌ها و منابع آموزشی پیشرفته تا دانش و نگرش شما در مسیر تکامل دائمی قرار گیرد.<br>
-                        ۵. به اشتراک گذاشتن دستاوردها و تجربیات با دیگران به‌عنوان یک الگوی عملی و انگیزه‌بخش.
-                    </div>
-                </div>
-            </li>
-        
-            <!-- سطح عالی توفیق -->
-            <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10213#;">
-                <strong>«عالی»<br></strong>
-                شما در سطح بالایی از توفیق و خودگستری قرار دارید؛ به‌طور پیوسته به دنبال افزایش توانایی‌ها و ایجاد تغییرات مثبت در زندگی هستید. این رویکرد، در کنار انضباط فردی، شما را به فردی توانمند در مدیریت چالش‌ها و الهام‌بخش برای اطرافیان تبدیل می‌کند.
-                <div class="report-recommendation">
-                    <div class="report-recommendation-title">توصیه:</div>
-                    <div class="report-recommendation-text">
-                        ۱. پذیرش نقش راهبری در پروژه‌ها یا تیم‌هایی که نیازمند نگرش رشد‌محور و انگیزه بالا هستند.<br>
-                        ۲. نگارش و مستندسازی تجربیات موفق خود، برای استفاده در برنامه‌های آموزشی یا مشاوره دیگران.<br>
-                        ۳. شرکت در دوره‌های پیشرفته یا فعالیت‌های پژوهشی که چالش بیشتری به مهارت‌هایتان وارد کند.<br>
-                        ۴. حفظ تعادل میان زندگی شخصی و کار، تا سرزندگی و خلاقیتتان پایدار بماند.<br>
-                        ۵. به اشتراک‌گذاری فرایندهای موفقیت با دیگران، تا از مزایای فرهنگ یادگیری جمعی بهره‌مند شوید.
-                    </div>
-                </div>
-            </li>
-        </ul>
-        
-        <!-- بردباری -->
-        <div class="report-component-title">بردباری
-            <span class="report-badge report-score-data">#field_2875#<br></span>
-        </div>
-        <p class="report-paragraph">
-            بردباری در رویکرد خودگستر، توانایی فرد در حفظ آرامش و استحکام روانی حتی در لحظات بحرانی است. چنین افرادی هنگام مواجهه با عقاید مخالف یا شرایط ناخوشایند، کمتر از کوره در می‌روند و بیشتر با صبر و منطق پاسخ می‌دهند، چراکه باور دارند هر چالش فرصتی برای رشد شخصی و گسترش مرزهای ذهنی است.
-        </p>
-        <ul class="report-list">
-        
-            <!-- سطح متوسط بردباری -->
-            <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10214#;">
-                <strong>«متوسط»<br></strong>
-                شما گاهی در مواجهه با رفتار یا گفتار نادرست دیگران دچار برآشفتگی می‌شوید، اما در بسیاری از موقعیت‌ها می‌توانید آرامش خود را حفظ کنید. ظرفیت شما برای پذیرش و تحمل شرایط مختلف قابل قبول است، اما هنوز فضای بهبود باقی‌ست.
-                <div class="report-recommendation">
-                    <div class="report-recommendation-title">توصیه:</div>
-                    <div class="report-recommendation-text">
-                        ۱. تمرین گفت‌وگوی درونی مثبت و یادآوری فواید صبر قبل از واکنش تند یا احساسی.<br>
-                        ۲. شناسایی موقعیت‌هایی که بیشترین آشفتگی را ایجاد می‌کنند و طراحی راهکاری قبل از مواجهه با آن‌ها.<br>
-                        ۳. استفاده از تکنیک‌های تنفسی و آرام‌سازی (Mindfulness) در لحظات پراسترس برای بازگرداندن خونسردی.<br>
-                        ۴. مطالعه در حوزه ارتباط مؤثر و روان‌شناسی مثبت تا دیدگاهتان را از حالت تنش به فرصتی برای یادگیری تغییر دهید.<br>
-                        ۵. شرکت در فعالیت‌هایی مانند یوگا یا ورزش سبک که به افزایش آستانه تحمل کمک می‌کنند.
-                    </div>
-                </div>
-            </li>
-        
-            <!-- سطح خوب بردباری -->
-            <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10214#;">
-                <strong>«خوب»<br></strong>
-                شما اغلب در شرایط ناخوشایند، آرامش خود را حفظ می‌کنید و اجازه نمی‌دهید خشم یا واکنش‌های هیجانی منفی، کنترل‌تان را از دستتان بگیرد. این سطح از بردباری نشان‌دهنده مهارت خوب شما در عبور از چالش‌هاست.
-                <div class="report-recommendation">
-                    <div class="report-recommendation-title">توصیه:</div>
-                    <div class="report-recommendation-text">
-                        ۱. تداوم استفاده از مهارت‌های آموخته‌شده (مدیریت خشم، گفت‌وگوی سازنده) در موقعیت‌های مختلف زندگی.<br>
-                        ۲. کمک به دیگران در یادگیری روش‌های بردبارانه با انتقال تجربیات و روش‌های موفق خود.<br>
-                        ۳. شرکت در گفتگوهای گروهی یا فعالیت‌های داوطلبانه برای تجربه تنوع فرهنگی و افزایش بردباری نسبت به تفاوت‌ها.<br>
-                        ۴. ارزیابی دوره‌ای موفقیت‌هایتان در مدیریت تنش، و تشویق خود در جهت پایدار ماندن این رویکرد مثبت.<br>
-                        ۵. مطالعه منابع مرتبط با توسعه فردی یا کتاب‌های روان‌شناسی مثبت برای گسترش بینش و پایداری در این مسیر.
-                    </div>
-                </div>
-            </li>
-        
-            <!-- سطح عالی بردباری -->
-            <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10214#;">
-                <strong>«عالی»<br></strong>
-                شما از سطح بسیار بالایی از بردباری و صبر برخوردار هستید؛ در مواجهه با رفتارهای نادرست یا موقعیت‌های تنش‌زا به‌ندرت کنترل خود را از دست می‌دهید و اغلب با منطق و آرامش واکنش نشان می‌دهید. این برخورد نشان‌دهنده پختگی عاطفی و خودگستری بالای شماست.
-                <div class="report-recommendation">
-                    <div class="report-recommendation-title">توصیه:</div>
-                    <div class="report-recommendation-text">
-                        ۱. به کارگیری این مهارت در نقش‌های واسط یا حل تعارضات؛ شما می‌توانید منبع آرامش در گروه باشید.<br>
-                        ۲. آموزش صبر و مدیریت هیجانات به افراد دیگر؛ سهمی مثبت در رشد جمعی و بهبود روابط اجتماعی داشته باشید.<br>
-                        ۳. پذیرش مسئولیت‌های مهم‌تری که نیازمند خونسردی و ثبات عاطفی بالاست (مانند مدیریت پروژه یا رهبری گروه).<br>
-                        ۴. انتشار تجربیات یا نوشته‌هایی از الگوهای صبر در وبلاگ، کتاب یا شبکه‌های اجتماعی برای گسترده‌تر کردن فرهنگ مدارا.<br>
-                        ۵. حفظ پویایی ذهنی از طریق یادگیری مداوم، تا افزایش سطح بردباری به پایدارترین شکل در زندگی‌تان باقی بماند.
-                    </div>
-                </div>
-            </li>
-        </ul>
-        
-        <!-- بهینگی -->
-        <div class="report-component-title">بهینگی 
-            <span class="report-badge report-score-data">#field_2876#<br></span>
-        </div>
-        <p class="report-paragraph">
-            بهینگی در چارچوب خودگستر، به معنای دستیابی به حداکثر کیفیت در سبک زندگی و تصمیم‌گیری‌هاست. این ویژگی بیانگر حس پیگیری برای رسیدن به جایگاه عالی و راضی‌کننده‌ای در زندگی است؛ جایی که ارزش‌های معنوی، استدلال منطقی و تمایل به کمال در هماهنگی باشند.
-        </p>
-        <ul class="report-list">
-        
-            <!-- سطح متوسط بهینگی -->
-            <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10215#;">
-                <strong>«متوسط»<br></strong>
-                شما تلاش می‌کنید زندگی و تصمیم‌هایتان در حد قابل قبولی بهینه باشد، اما گاهی ممکن است از تلاش برای ارتقای سطح خود دست بکشید یا از فرصت‌های موجود استفاده کامل نکنید. بااین‌وجود، بهبودهای کوچک اما مداوم می‌توانند شما را در مسیر رضایت بالاتر قرار دهند.
-                <div class="report-recommendation">
-                    <div class="report-recommendation-title">توصیه:</div>
-                    <div class="report-recommendation-text">
-                        ۱. تعیین معیارهای واضح برای موفقیت و بهینه بودن در هر زمینه (تحصیلی، شغلی، معنوی).<br>
-                        ۲. تمرین ارزیابی دوچندان پیش از تصمیم‌گیری‌های مهم، مثلاً نوشتن مزایا و معایب به صورت دقیق.<br>
-                        ۳. حفظ دیدگاه بلندمدت؛ گاهی نتیجه بهینگی در درازمدت نمایان می‌شود.<br>
-                        ۴. ایجاد تعادل میان کمال‌گرایی و واقعیات روزمره؛ گاهی باید از ایده‌آل‌ها کمی فاصله گرفت تا پیشرفت عملی حاصل شود.<br>
-                        ۵. مشورت با افراد موفق و متعادل که می‌توانند تجربیاتشان را برای بهبود سبک زندگی و تصمیم‌گیری در اختیارتان بگذارند.
-                    </div>
-                </div>
-            </li>
-        
-            <!-- سطح خوب بهینگی -->
-            <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10215#;">
-                <strong>«خوب»<br></strong>
-                شما معمولاً از معیارهای متعادل و منطقی برای تصمیم‌گیری و سبک زندگی استفاده می‌کنید و تلاش دارید از ارزش‌های معنوی و استدلال عقلی در کنار هم بهره بگیرید. این نگرش می‌تواند شما را در رسیدن به اهداف و جایگاه شایسته‌ای در زندگی یاری کند.
-                <div class="report-recommendation">
-                    <div class="report-recommendation-title">توصیه:</div>
-                    <div class="report-recommendation-text">
-                        ۱. تداوم در ایجاد هماهنگی بین مسائل مادی، معنوی و اهداف طولانی‌مدت زندگی‌تان.<br>
-                        ۲. شناسایی حوزه‌هایی که می‌توانید سطح فعلی را بهبود دهید (مانند مهارت‌های فکری یا اخلاقی).<br>
-                        ۳. افزایش مهارت‌های تحلیلی برای تصمیم‌گیری منطقی‌تر؛ چه در حوزه شغلی چه در مسائل روزمره.<br>
-                        ۴. مطالعه منابع دینی یا معنوی در کنار کتاب‌های علمی و فلسفی برای یافتن رویکردهای کامل‌تر درباره زندگی بهینه.<br>
-                        ۵. تشویق اطرافیان و دوستان به ایجاد سبک زندگی بهینه و بهره‌گیری از تجربیات مشترک.
-                    </div>
-                </div>
-            </li>
-        
-            <!-- سطح عالی بهینگی -->
-            <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10215#;">
-                <strong>«عالی»<br></strong>
-                شما در سطح بالایی از بهینگی قرار دارید؛ یعنی تصمیم‌های شما اغلب با اصول معنوی و عقلی همخوانی دارند و سعی می‌کنید در هر زمینه به بالاترین سطح کیفیت دست یابید. این رویکرد شما را به انسانی هدفمند و کمال‌جو تبدیل می‌کند.
-                <div class="report-recommendation">
-                    <div class="report-recommendation-title">توصیه:</div>
-                    <div class="report-recommendation-text">
-                        ۱. ایجاد الگو و راهنمایی برای دیگران؛ شما می‌توانید تجربیات ارزشمندتان را به اشتراک بگذارید.<br>
-                        ۲. محافظت از خود در برابر فرسودگی؛ کیفیت بالا در همه امور نیازمند زمان استراحت و بازاندیشی.<br>
-                        ۳. مشارکت در پروژه‌های بزرگ‌تر و چالش‌برانگیزتر که نیازمند دقت، مهارت و نگرش کمال‌جویانه شماست.<br>
-                        ۴. حفظ حس تواضع؛ گاهی نتیجه ایده‌آل‌گرایی ممکن است به غرور منجر شود، پس تعادل را حفظ کنید.<br>
-                        ۵. بازنگری دوره‌ای در معیارهای بهینه بودن، چون شرایط زندگی یا دیدگاه‌هایتان ممکن است تغییر کنند.
-                    </div>
-                </div>
-            </li>
-        </ul>
-        
-        <!-- کوشایی -->
-        <div class="report-component-title">کوشایی 
-            <span class="report-badge report-score-data">#field_2877#<br></span>
-        </div>
-        <p class="report-paragraph">
-            کوشایی در چارچوب خودگستر، فراتر از صرفاً پشتکار داشتن است. این ویژگی نشان‌دهنده تمایل فرد برای به‌کارگیری مداوم انرژی ذهنی و بدنی در جهت تحقق اهداف معنادار و همسو با ارزش‌های درونی است. کسی که کوشاست، نه‌تنها کارها را با جدیت انجام می‌دهد، بلکه از فرایند تلاش نیز برای رشد و بالندگی خود بهره می‌برد.
-        </p>
-        <ul class="report-list">
-            <!-- سطح متوسط کوشایی -->
-            <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10216#;">
-                <strong>«متوسط»<br></strong>
-                شما در انجام وظایف معمول با سختکوشی عمل می‌کنید، اما گاهی ممکن است انگیزه کافی برای پیشبرد کارها در سطح فراتر را نداشته باشید. گاهی خستگی ذهنی یا کمبود انگیزه، مانع از پیشرفت سریع شما می‌شود.
-                <div class="report-recommendation">
-                    <div class="report-recommendation-title">توصیه:</div>
-                    <div class="report-recommendation-text">
-                        ۱. بررسی علل افت انگیزه؛ آیا خستگی جسمی، روزمرّگی یا کمبود هدف مشخص مانع شماست؟<br>
-                        ۲. تعیین اهداف جذاب و همسو با ارزش‌های درونی برای افزایش اشتیاق به تلاش بیشتر.<br>
-                        ۳. بهره‌گیری از برنامه‌ریزی دقیق (تقسیم اهداف بزرگ به گام‌های کوچک) تا حس دستاورد و پیشرفت پیوسته داشته باشید.<br>
-                        ۴. گفتگو با دوستان یا مشاور برای کسب راهکارهای جدید در مدیریت انرژی و انگیزه.<br>
-                        ۵. پاداش‌دهی به خود پس از تکمیل موفق مراحل هر پروژه، برای حفظ روحیه فعال و پویا.
-                    </div>
-                </div>
-            </li>
-        
-            <!-- سطح خوب کوشایی -->
-            <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10216#;">
-                <strong>«خوب»<br></strong>
-                شما پشتکار قابل توجهی دارید و هنگام رویارویی با وظایف یا پروژه‌های مهم، با جدیت عمل می‌کنید. این رویکرد فعال و هدفمند، نشان‌دهنده نگرش مثبت شما نسبت به تلاش در مسیر رشد و یادگیری است.
-                <div class="report-recommendation">
-                    <div class="report-recommendation-title">توصیه:</div>
-                    <div class="report-recommendation-text">
-                        ۱. ادامه این رفتار مطلوب از طریق یادداشت منظم پیشرفت‌ها و ثبت دستاوردهایتان.<br>
-                        ۲. درگیر شدن در پروژه‌های گروهی که نیازمند انرژی ذهنی و بدنی بالاست، برای توسعه مهارت‌های رهبری و همکاری.<br>
-                        ۳. شناسایی حوزه‌هایی که هنوز در آن‌ها تجربه کافی ندارید، و شروع به یادگیری و تلاش برای تسلط بیشتر بر آن حوزه‌ها.<br>
-                        ۴. حفظ انعطاف در شرایط متغیر؛ گاهی نیاز است روش انجام کارتان را برای رسیدن به نتیجه بهتر تغییر دهید.<br>
-                        ۵. استراحت و تفریح کافی را فراموش نکنید؛ یک ذهن شاداب و استراحت‌دیده راندمان بالاتری دارد.
-                    </div>
-                </div>
-            </li>
-        
-            <!-- سطح عالی کوشایی -->
-            <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10216#;">
-                <strong>«عالی»<br></strong>
-                شما در سطح بالایی از کوشایی قرار دارید؛ وظایف را با پشتکار فراوان دنبال می‌کنید و معمولاً برای رسیدن به نتایج درخشان از هیچ تلاشی فروگذار نمی‌کنید. این ویژگی شما را به فردی قابل اعتماد، موفق و تأثیرگذار در محیط اطرافتان تبدیل می‌کند.
-                <div class="report-recommendation">
-                    <div class="report-recommendation-title">توصیه:</div>
-                    <div class="report-recommendation-text">
-                        ۱. پذیرش پروژه‌های پیچیده‌تر و چالشی‌تر، تا ظرفیت کوشایی بالای خود را کامل‌تر به نمایش بگذارید.<br>
-                        ۲. تبدیل مهارت‌ها و دانش خود به محتوای آموزشی یا منتورینگ؛ به دیگران هم کمک کنید تا به موفقیت دست یابند.<br>
-                        ۳. مراقبت از سلامت روان؛ پشتکار زیاد بدون استراحت کافی، خطر فرسودگی و افت کیفیت کار را دارد.<br>
-                        ۴. مشارکت در برنامه‌های گروهی بزرگ یا بین‌رشته‌ای که از نیروی ذهنی و عملی زیاد بهره می‌برند.<br>
-                        ۵. تداوم پیشرفت با یادگیری مهارت‌های جدید و حفظ تنوع در کارها، تا انگیزه شما همیشه در اوج باقی بماند.
-                    </div>
-                </div>
-            </li>
-        </ul>
-        
-        <!-- انتخاب -->
-        <div class="report-component-title">انتخاب 
-            <span class="report-badge report-score-data">#field_2878#<br></span>
-        </div>
-        <p class="report-paragraph">
-            انتخاب در دیدگاه خودگستر، حاکی از قدرت فرد در گزینش آگاهانه مسیر زندگی، بر مبنای ارزش‌ها، اهداف معنوی و خردورزی است. کسانی که در این حوزه عملکرد بالایی دارند، قادرند میان گزینه‌های مختلف با بررسی پیامدها و هماهنگی با باورهایشان، هوشمندانه‌ترین راه را برگزینند.
-        </p>
-        <ul class="report-list">
-            <!-- سطح متوسط انتخاب -->
-            <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10217#;">
-                <strong>«متوسط»<br></strong>
-                شما در اکثر موارد سعی می‌کنید بر اساس منطق و ارزش‌های خود انتخاب کنید، اما گاهی احساسات یا فشار محیطی ممکن است باعث شود در تصمیم‌هایتان تردید کرده یا نتوانید کاملاً از توانایی تفکر بجا استفاده کنید.
-                <div class="report-recommendation">
-                    <div class="report-recommendation-title">توصیه:</div>
-                    <div class="report-recommendation-text">
-                        ۱. تمرین یادداشت مزایا و معایب در تصمیم‌گیری‌های مهم برای ساختارمندتر شدن فرایند انتخاب.<br>
-                        ۲. افزایش خودآگاهی معنوی با مطالعه یا شرکت در جلسات مباحثه مذهبی/معنوی، تا پیوند رضایت‌بخش‌تری با باورهایتان برقرار کنید.<br>
-                        ۳. شناسایی موقعیت‌هایی که تحت فشار محیطی تصمیم اشتباه می‌گیرید و طراحی راهکاری برای مقاومت در برابر این فشارها.<br>
-                        ۴. گفت‌وگو با افراد عاقل و باتجربه پیش از تصمیمات سرنوشت‌ساز، برای دریافت دیدگاه‌های مکمل.<br>
-                        ۵. تعیین مسیرهای شفاف در زندگی برای جلوگیری از سردرگمی و هدایت بهتر نیروی ذهنی به سوی اهداف اصلی.
-                    </div>
-                </div>
-            </li>
-        
-            <!-- سطح خوب انتخاب -->
-            <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10217#;">
-                <strong>«خوب»<br></strong>
-                شما معمولاً بر اساس سنجیده‌عمل کردن و هماهنگی با باورهای درونی، تصمیم‌های خود را اتخاذ می‌کنید. این رویکرد نشان‌دهنده همخوانی بالای عقل، ایمان و ارزش‌های وجودی شماست که منجر به احساسی از سرزندگی و اعتمادبه‌نفس می‌شود.
-                <div class="report-recommendation">
-                    <div class="report-recommendation-title">توصیه:</div>
-                    <div class="report-recommendation-text">
-                        ۱. ادامه تعمق در باورها و ارزش‌های شخصی برای تقویت بیش‌تر پیوند درونی و هماهنگی با تصمیم‌هایتان.<br>
-                        ۲. مشارکت در فعالیت‌های اجتماعی یا معنوی که امکان رشد بیشتر در حوزه‌های اخلاقی و فکری را فراهم می‌کند.<br>
-                        ۳. تمرین مدیریت هیجانات؛ هرچند انتخاب‌هایتان خوب است، اما گاه فشار روانی می‌تواند شما را دچار اشتباه کند.<br>
-                        ۴. استفاده از تجربیات گذشته و بازخوردهای اطرافیان در جهت بهبود مداوم الگوی تصمیم‌گیری.<br>
-                        ۵. آموزش مهارت انتخاب به دیگران؛ برای مثال راهنمایی دوستان یا خانواده در لحظات تصمیم‌گیری حساس.
-                    </div>
-                </div>
-            </li>
-        
-            <!-- سطح عالی انتخاب -->
-            <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10217#;">
-                <strong>«عالی»<br></strong>
-                شما در انتخاب‌های خود از دیدگاهی گسترده و عمق معنوی چشمگیری برخوردارید؛ به راحتی خشم خود را کنترل می‌کنید، بر پیامدهای رفتار خود واقفید و در مسیر بالندگی و پویایی فردی گام برمی‌دارید. این نگرش عاقلانه، در کنار حفظ اخلاق و ارزش‌های معنوی، شما را به فردی الهام‌بخش تبدیل می‌کند.
-                <div class="report-recommendation">
-                    <div class="report-recommendation-title">توصیه:</div>
-                    <div class="report-recommendation-text">
-                        ۱. ارائه بینش و مشاوره به افرادی که در دوراهی‌های زندگی گرفتارند؛ شما می‌توانید چراغ راه آن‌ها باشید.<br>
-                        ۲. پذیرش نقش‌های مهم در جامعه یا محیط کاری که نیازمند قوه تصمیم‌گیری قوی و وجدان اخلاقی بالاست.<br>
-                        ۳. ادامه یادگیری و مطالعه منابع مختلف (فلسفی، مذهبی، علمی) برای گسترش هرچه بیشتر افق‌های فکری و معنویتان.<br>
-                        ۴. مراقب باشید در اوج توان تصمیم‌گیری، دچار غرور یا تعصب نشوید؛ تعادل میان دانش و فروتنی کلید پیشرفت پایدار است.<br>
-                        ۵. حفظ ارتباط درونی و معنوی؛ این پیوند عمیق به شما در مواجهه با بزرگ‌ترین چالش‌ها نیز یاری می‌رساند.
-                    </div>
-                </div>
-            </li>
-        </ul>
-        
-
-
-
-
-
-
-
-
-
-        
-
-
-            <div class="report-section-title">جمع‌بندی</div>
-            <div class="report-paragraph">
-            <p>این گزارش ارزیابی مهارت‌های شما شامل تحلیل تعهد، نیرومندی، ظرفیت تحلیلی، بیتابی روانی، استقلال و سازش است. این بررسی نقاط قوت و زمینه‌های نیازمند بهبود شما را نشان داده و توصیه‌های کاربردی برای توسعه مهارت‌های شما ارائه می‌دهد.</p>
-            
-            <p><b>نقاط قوت: </b>شما در برخی از حوزه‌ها عملکرد برجسته‌ای دارید که نشان‌دهنده توانایی‌های قوی در مدیریت مسئولیت‌ها، انرژی بالا، تحلیل مسائل پیچیده، آرامش روانی، خودکفایی و تطبیق‌پذیری است. به عنوان مثال، در حوزه‌های "تعهد" و "ظرفیت تحلیلی"، شما توانایی زیادی در مدیریت وظایف و تحلیل مسائل نشان داده‌اید که می‌تواند به پیشرفت حرفه‌ای و رشد فردی شما کمک کند.</p>
-            
-            <p><b>حوزه‌های نیازمند بهبود:</b> در برخی از بخش‌ها نیاز به تمرکز بیشتر وجود دارد. به عنوان مثال، در حوزه‌های "بیتابی روانی" و "استقلال"، شما می‌توانید با تمرین‌های منظم و فعالیت‌های هدفمند مانند تکنیک‌های مدیریت استرس و برنامه‌ریزی منظم مهارت‌های خود را بهبود بخشید. همچنین، افزایش تعاملات اجتماعی و تمرین مهارت‌های تصمیم‌گیری مستقل می‌تواند تأثیر مثبتی بر عملکرد شما داشته باشد.</p>
-            
-            <p><b>گام‌های بعدی:</b> برای تقویت مهارت‌های خود، پیشنهاد می‌شود که به توصیه‌های ارائه‌شده در هر بخش توجه ویژه‌ای کنید و در صورت نیاز از خدمات مشاوره تخصصی استفاده نمایید. همچنین، ارزیابی منظم و پیگیری مداوم می‌تواند به توسعه پایدار و موفقیت شما در تمامی ابعاد زندگی کمک کند.</p>
+        <!-- Test Purpose Section -->
+        <section class="content-section test-section" id="test-purpose">
+            <div class="content-container">
+                <!-- هدف از آزمون -->
+                <h2>هدف از آزمون</h2>
+                <p>
+                    این ارزیابی به منظور تحلیل و بررسی ویژگی‌های شخصیتی فرد در حوزه‌های مختلف از جمله توفیق، بردباری، بهینگی، کوشایی و انتخاب انجام شده است. هدف از این ارزیابی شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد.
+                </p>
             </div>
-        
-        <footer class="report-footer-custom">
-            <div class="report-footer-content">
-                <img src="../panel/file?type=picture&amp;v=3&amp;mode=filemanager&amp;file=%7eDB3gfQUls%2bt2iiMYKbsRAxrtFhcHKUIUUo7pPtO17bHCzNxwU4zNh3UVor6QMtl7Y6EWX8dD0PSvzZOYkRrXlfejPn4lNTj6" class="report-footer-img" alt="لوگو">
+        </section>
+
+        <!-- Test Information Section -->
+        <section class="content-section test-section" id="test-information">
+            <div class="content-container">
+                <!-- اطلاعات فردی -->
+                <h2>اطلاعات فردی</h2>
+                <div class="report-info-container">
+                    <div class="report-info-item"><strong>نام:</strong> <span class="report-info-data">#field_2769#</span></div>
+                    <div class="report-info-item"><strong>نام خانوادگی:</strong> <span class="report-info-data">#field_2770#</span></div>
+                    <div class="report-info-item"><strong>کد ملی:</strong> <span class="report-info-data">#field_2862#</span></div>
+                    <div class="report-info-item"><strong>موبایل:</strong> <span class="report-info-data">#field_2771#</span></div>
+                    <div class="report-info-item"><strong>ایمیل:</strong> <span class="report-info-data">#field_2772#</span></div>
+                </div>
             </div>
-            <p class="report-footer-paragraph">مؤسّسه تعاملی هیجان اندیشه | تماس: 02188174100 | ایمیل: info@eot.ir</p>
-            <p class="report-footer-paragraph yellow-text">© ۱۴۰۳ تمامی حقوق محفوظ است.</p>
-            <ul class="report-footer-menu">
-                <li><a href="https://www.eot.ir/" class="report-footer-menu-link">صفحه اصلی</a></li>
-                <li><a href="https://www.eot.ir/contact" class="report-footer-menu-link">تماس با ما</a></li>
-                <li><a href="https://www.eot.ir/about" class="report-footer-menu-link">درباره ما</a></li>
-            </ul>
-            <address class="report-footer-address">تهران، سهروردی، خرمشهر، عربعلی، کوچه ششم، شماره ۴۴</address>
-        </footer>
-    </div>
+        </section>
+
+        <!-- Test Results Section -->
+        <section class="content-section test-section" id="test-results">
+            <div class="content-container">
+                <!-- نتیجه -->
+                <h2>نتیجه</h2>
+                <div class="report-score-container">
+                    <!-- توفیق -->
+                    <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10213#;"><strong>توفیق:</strong> <span class="report-badge">#field_2879#</span></div>
+                    <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10213#;"><strong>توفیق:</strong> <span class="report-badge">#field_2879#</span></div>
+                    <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10213#;"><strong>توفیق:</strong> <span class="report-badge">#field_2879#</span></div>
+                    <!-- بردباری -->
+                    <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10214#;"><strong>بردباری:</strong> <span class="report-badge">#field_2875#</span></div>
+                    <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10214#;"><strong>بردباری:</strong> <span class="report-badge">#field_2875#</span></div>
+                    <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10214#;"><strong>بردباری:</strong> <span class="report-badge">#field_2875#</span></div>
+                    <!-- بهینگی -->
+                    <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10215#;"><strong>بهینگی:</strong> <span class="report-badge">#field_2876#</span></div>
+                    <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10215#;"><strong>بهینگی:</strong> <span class="report-badge">#field_2876#</span></div>
+                    <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10215#;"><strong>بهینگی:</strong> <span class="report-badge">#field_2876#</span></div>
+                    <!-- کوشایی -->
+                    <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10216#;"><strong>کوشایی:</strong> <span class="report-badge">#field_2877#</span></div>
+                    <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10216#;"><strong>کوشایی:</strong> <span class="report-badge">#field_2877#</span></div>
+                    <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10216#;"><strong>کوشایی:</strong> <span class="report-badge">#field_2877#</span></div>
+                    <!-- انتخاب -->
+                    <div class="report-score-item report-conditional-display" style="--score-rate1: #field_10217#;"><strong>انتخاب:</strong> <span class="report-badge">#field_2878#</span></div>
+                    <div class="report-score-item report-conditional-display" style="--score-rate2: #field_10217#;"><strong>انتخاب:</strong> <span class="report-badge">#field_2878#</span></div>
+                    <div class="report-score-item report-conditional-display" style="--score-rate3: #field_10217#;"><strong>انتخاب:</strong> <span class="report-badge">#field_2878#</span></div>
+                </div>
+                <div class="report-section-title">تفسیر</div>
+                <p class="report-paragraph">
+                    این بخش به تحلیل و تفسیر نتایج ارزیابی روان‌شناختی فرد می‌پردازد. تحلیل روان‌شناختی شامل بررسی ویژگی‌های شخصیتی مختلف از جمله توفیق، بردباری، بهینگی، کوشایی و انتخاب است. هدف از این تحلیل شناسایی نقاط قوت و زمینه‌های نیازمند بهبود فرد و ارائه توصیه‌های کاربردی برای توسعه مهارت‌های او می‌باشد. نتایج این تحلیل می‌تواند به فرد کمک کند تا با شناخت بهتر از خود، برنامه‌های توسعه فردی و حرفه‌ای موثرتری را دنبال کند. توصیه‌های ارائه‌شده در هر بخش شامل تعیین اهداف کوتاه‌مدت، مشارکت در فعالیت‌های گروهی، یادگیری مهارت‌های نو، تمرین گفت‌وگوی درونی مثبت، و حفظ تعادل میان زندگی شخصی و کار است.
+                </p>
+                <!-- توفیق (گسترش فردی و تجربه‌های جدید) -->
+                <div class="report-component-title">توفیق 
+                    <span class="report-badge report-score-data">#field_2879#<br></span>
+                </div>
+                <p class="report-paragraph">
+                    توفیق در روان‌شناسی خودگستر (Self-Expansion) به معنای تمایل فرد به گسترش مرزهای ذهنی، رفتاری و معنوی خویش برای دستیابی به حس پیشرفت و تکامل است. افرادی که در این حیطه امتیاز بالایی دارند، اغلب رویدادهای جدید را به عنوان فرصتی برای رشد می‌بینند و از مسیر یادگیری و تجربه لذت می‌برند. این نگرش می‌تواند در کنار رعایت انضباط فردی، راه را برای گسترش دانش و بینش شخصی هموار کند.
+                </p>
+                <ul class="report-list">
+                    <!-- سطح متوسط توفیق -->
+                    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10213#;">
+                        <strong>«متوسط»<br></strong>
+                        شما تمایل نسبی به پیشرفت و گسترش توانایی‌های خود دارید اما ممکن است همواره تا انتهای مسیر پیش نروید. گاهی فشارهای محیطی یا روزمرّگی، انگیزه شما را کم‌رنگ می‌کند و مانع از برداشتن گام‌های جدید برای توسعه فردی می‌شود.
+                        <div class="report-recommendation">
+                            <div class="report-recommendation-title">توصیه:</div>
+                            <div class="report-recommendation-text">
+                                ۱. تعیین اهداف کوتاه‌مدت و ملموس برای ایجاد حس دستاوردهای پیوسته.<br>
+                                ۲. ورود به فعالیت‌های گروهی یا پروژه‌های مشترک برای تبادل تجربه و حفظ انگیزه پیشرفت.<br>
+                                ۳. یادگیری مهارت‌های نو (فنی، هنری یا رفتاری) که حس تازگی و توسعه توانمندی‌هایتان را تقویت کند.<br>
+                                ۴. بررسی موانع موجود (همچون ترس از شکست) و رفع تدریجی آن‌ها با مطالعه یا مشاوره تخصصی.<br>
+                                ۵. در نظر گرفتن پاداش‌های کوچک برای تشویق خود هنگام گذر از هر مرحله پیشرفت.
+                            </div>
+                        </div>
+                    </li>
+                    <!-- سطح خوب توفیق -->
+                    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10213#;">
+                        <strong>«خوب»<br></strong>
+                        شما دیدگاه مثبتی نسبت به رشد و پیشرفت دارید و معمولاً برای رسیدن به اهداف جدید برنامه‌ریزی می‌کنید. تلاش منظم در کنار اشتیاق به یادگیری، نشانه بارز ظرفیت بالای شما برای خودگستری و توفیق در حوزه‌های گوناگون است.
+                        <div class="report-recommendation">
+                            <div class="report-recommendation-title">توصیه:</div>
+                            <div class="report-recommendation-text">
+                                ۱. ادامه کار روی پروژه‌های چالش‌برانگیز که نیازمند خلاقیت و تجربه‌اندوزی بیشتر هستند.<br>
+                                ۲. ارزیابی دوره‌ای اهداف؛ با رسیدن به هر کدام از آن‌ها، هدف جدیدی برای خود تعریف کنید.<br>
+                                ۳. توسعه روابط با افراد موفق و پیشرو در حوزه‌های مورد علاقه، برای تبادل ایده و افزایش انگیزه.<br>
+                                ۴. خواندن کتاب‌ها و منابع آموزشی پیشرفته تا دانش و نگرش شما در مسیر تکامل دائمی قرار گیرد.<br>
+                                ۵. به اشتراک گذاشتن دستاوردها و تجربیات با دیگران به‌عنوان یک الگوی عملی و انگیزه‌بخش.
+                            </div>
+                        </div>
+                    </li>
+                    <!-- سطح عالی توفیق -->
+                    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10213#;">
+                        <strong>«عالی»<br></strong>
+                        شما در سطح بالایی از توفیق و خودگستری قرار دارید؛ به‌طور پیوسته به دنبال افزایش توانایی‌ها و ایجاد تغییرات مثبت در زندگی هستید. این رویکرد، در کنار انضباط فردی، شما را به فردی توانمند در مدیریت چالش‌ها و الهام‌بخش برای اطرافیان تبدیل می‌کند.
+                        <div class="report-recommendation">
+                            <div class="report-recommendation-title">توصیه:</div>
+                            <div class="report-recommendation-text">
+                                ۱. پذیرش نقش راهبری در پروژه‌ها یا تیم‌هایی که نیازمند نگرش رشد‌محور و انگیزه بالا هستند.<br>
+                                ۲. نگارش و مستندسازی تجربیات موفق خود، برای استفاده در برنامه‌های آموزشی یا مشاوره دیگران.<br>
+                                ۳. شرکت در دوره‌های پیشرفته یا فعالیت‌های پژوهشی که چالش بیشتری به مهارت‌هایتان وارد کند.<br>
+                                ۴. حفظ تعادل میان زندگی شخصی و کار، تا سرزندگی و خلاقیتتان پایدار بماند.<br>
+                                ۵. به اشتراک‌گذاری فرایندهای موفقیت با دیگران، تا از مزایای فرهنگ یادگیری جمعی بهره‌مند شوید.
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <!-- بردباری (حفظ آرامش در شرایط بحرانی) -->
+                <div class="report-component-title">بردباری
+                    <span class="report-badge report-score-data">#field_2875#<br></span>
+                </div>
+                <p class="report-paragraph">
+                    بردباری در رویکرد خودگستر، توانایی فرد در حفظ آرامش و استحکام روانی حتی در لحظات بحرانی است. چنین افرادی هنگام مواجهه با عقاید مخالف یا شرایط ناخوشایند، کمتر از کوره در می‌روند و بیشتر با صبر و منطق پاسخ می‌دهند، چراکه باور دارند هر چالش فرصتی برای رشد شخصی و گسترش مرزهای ذهنی است.
+                </p>
+                <ul class="report-list">
+                    <!-- سطح متوسط بردباری -->
+                    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10214#;">
+                        <strong>«متوسط»<br></strong>
+                        شما گاهی در مواجهه با رفتار یا گفتار نادرست دیگران دچار برآشفتگی می‌شوید، اما در بسیاری از موقعیت‌ها می‌توانید آرامش خود را حفظ کنید. ظرفیت شما برای پذیرش و تحمل شرایط مختلف قابل قبول است، اما هنوز فضای بهبود باقی‌ست.
+                        <div class="report-recommendation">
+                            <div class="report-recommendation-title">توصیه:</div>
+                            <div class="report-recommendation-text">
+                                ۱. تمرین گفت‌وگوی درونی مثبت و یادآوری فواید صبر قبل از واکنش تند یا احساسی.<br>
+                                ۲. شناسایی موقعیت‌هایی که بیشترین آشفتگی را ایجاد می‌کنند و طراحی راهکاری قبل از مواجهه با آن‌ها.<br>
+                                ۳. استفاده از تکنیک‌های تنفسی و آرام‌سازی (Mindfulness) در لحظات پراسترس برای بازگرداندن خونسردی.<br>
+                                ۴. مطالعه در حوزه ارتباط مؤثر و روان‌شناسی مثبت تا دیدگاهتان را از حالت تنش به فرصتی برای یادگیری تغییر دهید.<br>
+                                ۵. شرکت در فعالیت‌هایی مانند یوگا یا ورزش سبک که به افزایش آستانه تحمل کمک می‌کنند.
+                            </div>
+                        </div>
+                    </li>
+                    <!-- سطح خوب بردباری -->
+                    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10214#;">
+                        <strong>«خوب»<br></strong>
+                        شما اغلب در شرایط ناخوشایند، آرامش خود را حفظ می‌کنید و اجازه نمی‌دهید خشم یا واکنش‌های هیجانی منفی، کنترل‌تان را از دستتان بگیرد. این سطح از بردباری نشان‌دهنده مهارت خوب شما در عبور از چالش‌هاست.
+                        <div class="report-recommendation">
+                            <div class="report-recommendation-title">توصیه:</div>
+                            <div class="report-recommendation-text">
+                                ۱. تداوم استفاده از مهارت‌های آموخته‌شده (مدیریت خشم، گفت‌وگوی سازنده) در موقعیت‌های مختلف زندگی.<br>
+                                ۲. کمک به دیگران در یادگیری روش‌های بردبارانه با انتقال تجربیات و روش‌های موفق خود.<br>
+                                ۳. شرکت در گفتگوهای گروهی یا فعالیت‌های داوطلبانه برای تجربه تنوع فرهنگی و افزایش بردباری نسبت به تفاوت‌ها.<br>
+                                ۴. ارزیابی دوره‌ای موفقیت‌هایتان در مدیریت تنش، و تشویق خود در جهت پایدار ماندن این رویکرد مثبت.<br>
+                                ۵. مطالعه منابع مرتبط با توسعه فردی یا کتاب‌های روان‌شناسی مثبت برای گسترش بینش و پایداری در این مسیر.
+                            </div>
+                        </div>
+                    </li>
+                    <!-- سطح عالی بردباری -->
+                    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10214#;">
+                        <strong>«عالی»<br></strong>
+                        شما از سطح بسیار بالایی از بردباری و صبر برخوردار هستید؛ در مواجهه با رفتارهای نادرست یا موقعیت‌های تنش‌زا به‌ندرت کنترل خود را از دست می‌دهید و اغلب با منطق و آرامش واکنش نشان می‌دهید. این برخورد نشان‌دهنده پختگی عاطفی و خودگستری بالای شماست.
+                        <div class="report-recommendation">
+                            <div class="report-recommendation-title">توصیه:</div>
+                            <div class="report-recommendation-text">
+                                ۱. به کارگیری این مهارت در نقش‌های واسط یا حل تعارضات؛ شما می‌توانید منبع آرامش در گروه باشید.<br>
+                                ۲. آموزش صبر و مدیریت هیجانات به افراد دیگر؛ شما می‌توانید سهمی مثبت در رشد جمعی و بهبود روابط اجتماعی داشته باشید.<br>
+                                ۳. پذیرش مسئولیت‌های مهم‌تری که نیازمند خونسردی و ثبات عاطفی بالاست (مانند مدیریت پروژه یا رهبری گروه).<br>
+                                ۴. انتشار تجربیات یا نوشته‌هایی از الگوهای صبر در وبلاگ، کتاب یا شبکه‌های اجتماعی برای گسترده‌تر کردن فرهنگ مدارا.<br>
+                                ۵. حفظ توازن بین انجام وظایف روزمره و اهداف معنوی؛ این پیوند عمیق به شما در مواجهه با بزرگ‌ترین چالش‌ها نیز یاری می‌رساند.
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <!-- بهینگی (دستیابی به حداکثر کیفیت در زندگی) -->
+                <div class="report-component-title">بهینگی 
+                    <span class="report-badge report-score-data">#field_2876#<br></span>
+                </div>
+                <p class="report-paragraph">
+                    بهینگی در چارچوب خودگستر، به معنای دستیابی به حداکثر کیفیت در سبک زندگی و تصمیم‌گیری‌هاست. این ویژگی بیانگر حس پیگیری برای رسیدن به جایگاه عالی و راضی‌کننده‌ای در زندگی است؛ جایی که ارزش‌های معنوی، استدلال منطقی و تمایل به کمال در هماهنگی باشند.
+                </p>
+                <ul class="report-list">
+                    <!-- سطح متوسط بهینگی -->
+                    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10215#;">
+                        <strong>«متوسط»<br></strong>
+                        شما تلاش می‌کنید زندگی و تصمیم‌هایتان در حد قابل قبولی بهینه باشد، اما گاهی ممکن است از تلاش برای ارتقای سطح خود دست بکشید یا از فرصت‌های موجود استفاده کامل نکنید. بااین‌وجود، بهبودهای کوچک اما مداوم می‌توانند شما را در مسیر رضایت بالاتر قرار دهند.
+                        <div class="report-recommendation">
+                            <div class="report-recommendation-title">توصیه:</div>
+                            <div class="report-recommendation-text">
+                                ۱. تعیین معیارهای واضح برای موفقیت و بهینه بودن در هر زمینه (تحصیلی، شغلی، معنوی).<br>
+                                ۲. تمرین ارزیابی دوچندان پیش از تصمیم‌گیری‌های مهم، مثلاً نوشتن مزایا و معایب به صورت دقیق.<br>
+                                ۳. حفظ دیدگاه بلندمدت؛ گاهی نتیجه بهینگی در درازمدت نمایان می‌شود.<br>
+                                ۴. ایجاد تعادل میان کمال‌گرایی و واقعیات روزمره؛ گاهی باید از ایده‌آل‌ها کمی فاصله گرفت تا پیشرفت عملی حاصل شود.<br>
+                                ۵. مشورت با افراد موفق و متعادل که می‌توانند تجربیاتشان را برای بهبود سبک زندگی و تصمیم‌گیری در اختیارتان بگذارند.
+                            </div>
+                        </div>
+                    </li>
+                    <!-- سطح خوب بهینگی -->
+                    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10215#;">
+                        <strong>«خوب»<br></strong>
+                        شما معمولاً از معیارهای متعادل و منطقی برای تصمیم‌گیری و سبک زندگی استفاده می‌کنید و تلاش دارید از ارزش‌های معنوی و استدلال عقلی در کنار هم بهره بگیرید. این نگرش می‌تواند شما را در رسیدن به اهداف و جایگاه شایسته‌ای در زندگی یاری کند.
+                        <div class="report-recommendation">
+                            <div class="report-recommendation-title">توصیه:</div>
+                            <div class="report-recommendation-text">
+                                ۱. تداوم در ایجاد هماهنگی بین مسائل مادی، معنوی و اهداف طولانی‌مدت زندگی‌تان.<br>
+                                ۲. شناسایی حوزه‌هایی که می‌توانید سطح فعلی را بهبود دهید (مانند مهارت‌های فکری یا اخلاقی).<br>
+                                ۳. افزایش مهارت‌های تحلیلی برای تصمیم‌گیری منطقی‌تر؛ چه در حوزه شغلی چه در مسائل روزمره.<br>
+                                ۴. مطالعه منابع دینی یا معنوی در کنار کتاب‌های علمی و فلسفی برای یافتن رویکردهای کامل‌تر درباره زندگی بهینه.<br>
+                                ۵. تشویق اطرافیان و دوستان به ایجاد سبک زندگی بهینه و بهره‌گیری از تجربیات مشترک.
+                            </div>
+                        </div>
+                    </li>
+                    <!-- سطح عالی بهینگی -->
+                    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10215#;">
+                        <strong>«عالی»<br></strong>
+                        شما در سطح بالایی از بهینگی قرار دارید؛ یعنی تصمیم‌های شما اغلب با اصول معنوی و عقلی همخوانی دارند و سعی می‌کنید در هر زمینه به بالاترین سطح کیفیت دست یابید. این رویکرد شما را به انسانی هدفمند و کمال‌جو تبدیل می‌کند.
+                        <div class="report-recommendation">
+                            <div class="report-recommendation-title">توصیه:</div>
+                            <div class="report-recommendation-text">
+                                ۱. ایجاد الگو و راهنمایی برای دیگران؛ شما می‌توانید تجربیات ارزشمندتان را به اشتراک بگذارید.<br>
+                                ۲. محافظت از خود در برابر فرسودگی؛ کیفیت بالا در همه امور نیازمند زمان استراحت و بازاندیشی.<br>
+                                ۳. مشارکت در پروژه‌های بزرگ‌تر و چالشی‌تر که نیازمند دقت، مهارت و نگرش کمال‌جویانه شماست.<br>
+                                ۴. حفظ حس تواضع؛ گاهی نتیجه ایده‌آل‌گرایی ممکن است به غرور منجر شود، پس تعادل را حفظ کنید.<br>
+                                ۵. بازنگری دوره‌ای در معیارهای بهینه بودن، چون شرایط زندگی یا دیدگاه‌هایتان ممکن است تغییر کنند.
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <!-- کوشایی (تلاش مستمر برای تحقق اهداف) -->
+                <div class="report-component-title">کوشایی 
+                    <span class="report-badge report-score-data">#field_2877#<br></span>
+                </div>
+                <p class="report-paragraph">
+                    کوشایی در چارچوب خودگستر، فراتر از صرفاً پشتکار داشتن است. این ویژگی نشان‌دهنده تمایل فرد برای به‌کارگیری مداوم انرژی ذهنی و بدنی در جهت تحقق اهداف معنادار و همسو با ارزش‌های درونی است. کسی که کوشاست، نه‌تنها کارها را با جدیت انجام می‌دهد، بلکه از فرایند تلاش نیز برای رشد و بالندگی خود بهره می‌برد.
+                </p>
+                <ul class="report-list">
+                    <!-- سطح متوسط کوشایی -->
+                    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10216#;">
+                        <strong>«متوسط»<br></strong>
+                        شما در انجام وظایف معمول با سختکوشی عمل می‌کنید، اما گاهی ممکن است انگیزه کافی برای پیشبرد کارها در سطح فراتر را نداشته باشید. گاهی خستگی ذهنی یا کمبود انگیزه، مانع از پیشرفت سریع شما می‌شود.
+                        <div class="report-recommendation">
+                            <div class="report-recommendation-title">توصیه:</div>
+                            <div class="report-recommendation-text">
+                                ۱. بررسی علل افت انگیزه؛ آیا خستگی جسمی، روزمرّگی یا کمبود هدف مشخص مانع شماست؟<br>
+                                ۲. تعیین اهداف جذاب و همسو با ارزش‌های درونی برای افزایش اشتیاق به تلاش بیشتر.<br>
+                                ۳. بهره‌گیری از برنامه‌ریزی دقیق (تقسیم اهداف بزرگ به گام‌های کوچک) تا حس دستاورد و پیشرفت پیوسته داشته باشید.<br>
+                                ۴. گفتگو با دوستان یا مشاور برای کسب راهکارهای جدید در مدیریت انرژی و انگیزه.<br>
+                                ۵. پاداش‌دهی به خود پس از تکمیل موفق مراحل هر پروژه، برای حفظ روحیه فعال و پویا.
+                            </div>
+                        </div>
+                    </li>
+                    <!-- سطح خوب کوشایی -->
+                    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10216#;">
+                        <strong>«خوب»<br></strong>
+                        شما پشتکار قابل توجهی دارید و هنگام رویارویی با وظایف یا پروژه‌های مهم، با جدیت عمل می‌کنید. این رویکرد فعال و هدفمند، نشان‌دهنده نگرش مثبت شما نسبت به تلاش در مسیر رشد و یادگیری است.
+                        <div class="report-recommendation">
+                            <div class="report-recommendation-title">توصیه:</div>
+                            <div class="report-recommendation-text">
+                                ۱. ادامه این رفتار مطلوب از طریق یادداشت منظم پیشرفت‌ها و ثبت دستاوردهایتان.<br>
+                                ۲. درگیر شدن در پروژه‌های گروهی که نیازمند انرژی ذهنی و بدنی بالاست، برای توسعه مهارت‌های رهبری و همکاری.<br>
+                                ۳. شناسایی حوزه‌هایی که هنوز در آن‌ها تجربه کافی ندارید، و شروع به یادگیری و تلاش برای تسلط بیشتر بر آن حوزه‌ها.<br>
+                                ۴. حفظ انعطاف در شرایط متغیر؛ گاهی نیاز است روش انجام کارتان را برای رسیدن به نتیجه بهتر تغییر دهید.<br>
+                                ۵. استراحت و تفریح کافی را فراموش نکنید؛ یک ذهن شاداب و استراحت‌دیده راندمان بالاتری دارد.
+                            </div>
+                        </div>
+                    </li>
+                    <!-- سطح عالی کوشایی -->
+                    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10216#;">
+                        <strong>«عالی»<br></strong>
+                        شما در سطح بالایی از کوشایی قرار دارید؛ وظایف را با پشتکار فراوان دنبال می‌کنید و معمولاً برای رسیدن به نتایج درخشان از هیچ تلاشی فروگذار نمی‌کنید. این ویژگی شما را به فردی قابل اعتماد، موفق و تأثیرگذار در محیط اطرافتان تبدیل می‌کند.
+                        <div class="report-recommendation">
+                            <div class="report-recommendation-title">توصیه:</div>
+                            <div class="report-recommendation-text">
+                                ۱. پذیرش پروژه‌های پیچیده‌تر و چالشی‌تر، تا ظرفیت کوشایی بالای خود را کامل‌تر به نمایش بگذارید.<br>
+                                ۲. تبدیل مهارت‌ها و دانش خود به محتوای آموزشی یا منتورینگ؛ به دیگران هم کمک کنید تا به موفقیت دست یابند.<br>
+                                ۳. مراقبت از سلامت روان؛ پشتکار زیاد بدون استراحت کافی، خطر فرسودگی و افت کیفیت کار را دارد.<br>
+                                ۴. مشارکت در برنامه‌های گروهی بزرگ یا بین‌رشته‌ای که از نیروی ذهنی و عملی زیاد بهره می‌برند.<br>
+                                ۵. تداوم پیشرفت با یادگیری مهارت‌های جدید و حفظ تنوع در کارها، تا انگیزه شما همیشه در اوج باقی بماند.
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <!-- انتخاب (انتخاب‌های آگاهانه و هماهنگ با ارزش‌ها) -->
+                <div class="report-component-title">انتخاب 
+                    <span class="report-badge report-score-data">#field_2878#<br></span>
+                </div>
+                <p class="report-paragraph">
+                    انتخاب در دیدگاه خودگستر، حاکی از قدرت فرد در گزینش آگاهانه مسیر زندگی، بر مبنای ارزش‌ها، اهداف معنوی و خردورزی است. کسانی که در این حوزه عملکرد بالایی دارند، قادرند میان گزینه‌های مختلف با بررسی پیامدها و هماهنگی با باورهایشان، هوشمندانه‌ترین راه را برگزینند.
+                </p>
+                <ul class="report-list">
+                    <!-- سطح متوسط انتخاب -->
+                    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10217#;">
+                        <strong>«متوسط»<br></strong>
+                        شما در اکثر موارد سعی می‌کنید بر اساس منطق و ارزش‌های خود انتخاب کنید، اما گاهی احساسات یا فشار محیطی ممکن است باعث شود در تصمیم‌هایتان تردید کرده یا نتوانید کاملاً از توانایی تفکر بجا استفاده کنید.
+                        <div class="report-recommendation">
+                            <div class="report-recommendation-title">توصیه:</div>
+                            <div class="report-recommendation-text">
+                                ۱. تمرین یادداشت مزایا و معایب در تصمیم‌گیری‌های مهم برای ساختارمندتر شدن فرایند انتخاب.<br>
+                                ۲. تعمیق خودآگاهی معنوی با مطالعه یا شرکت در جلسات مباحثه مذهبی/معنوی، تا پیوند رضایت‌بخش‌تری با باورهایتان برقرار کنید.<br>
+                                ۳. شناسایی موقعیت‌هایی که تحت فشار محیطی تصمیم اشتباه می‌گیرید و طراحی راهکاری برای مقاومت در برابر این فشارها.<br>
+                                ۴. گفت‌وگو با افراد عاقل و باتجربه پیش از تصمیمات سرنوشت‌ساز، برای دریافت دیدگاه‌های مکمل.<br>
+                                ۵. تعیین مسیرهای شفاف در زندگی برای جلوگیری از سردرگمی و هدایت بهتر نیروی ذهنی به سوی اهداف اصلی.
+                            </div>
+                        </div>
+                    </li>
+                    <!-- سطح خوب انتخاب -->
+                    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10217#;">
+                        <strong>«خوب»<br></strong>
+                        شما معمولاً از معیارهای متعادل و منطقی برای تصمیم‌گیری و سبک زندگی استفاده می‌کنید و تلاش دارید از ارزش‌های معنوی و استدلال عقلی در کنار هم بهره بگیرید. این نگرش می‌تواند شما را در رسیدن به اهداف و جایگاه شایسته‌ای در زندگی یاری کند.
+                        <div class="report-recommendation">
+                            <div class="report-recommendation-title">توصیه:</div>
+                            <div class="report-recommendation-text">
+                                ۱. تداوم تعمق در باورها و ارزش‌های شخصی برای تقویت بیش‌تر پیوند درونی و هماهنگی با تصمیم‌هایتان.<br>
+                                ۲. مشارکت در فعالیت‌های اجتماعی یا معنوی که امکان رشد بیشتر در حوزه‌های اخلاقی و فکری را فراهم می‌کند.<br>
+                                ۳. تمرین مدیریت هیجانات؛ هرچند انتخاب‌هایتان خوب است، اما گاه فشار روانی می‌تواند شما را دچار اشتباه کند.<br>
+                                ۴. استفاده از تجربیات گذشته و بازخوردهای اطرافیان در جهت بهبود مداوم الگوی تصمیم‌گیری.<br>
+                                ۵. آموزش مهارت انتخاب به دیگران؛ برای مثال راهنمایی دوستان یا خانواده در لحظات تصمیم‌گیری حساس.
+                            </div>
+                        </div>
+                    </li>
+                    <!-- سطح عالی انتخاب -->
+                    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10217#;">
+                        <strong>«عالی»<br></strong>
+                        شما در سطح بالایی از انتخاب قرار دارید؛ یعنی تصمیم‌های شما اغلب با اصول معنوی و عقلی همخوانی دارند و سعی می‌کنید در هر زمینه به بالاترین سطح کیفیت دست یابید. این رویکرد شما را به انسانی هدفمند و کمال‌جو تبدیل می‌کند.
+                        <div class="report-recommendation">
+                            <div class="report-recommendation-title">توصیه:</div>
+                            <div class="report-recommendation-text">
+                                ۱. ایجاد الگو و راهنمایی برای دیگران؛ شما می‌توانید تجربیات ارزشمندتان را به اشتراک بگذارید.<br>
+                                ۲. محافظت از خود در برابر فرسودگی؛ کیفیت بالا در همه امور نیازمند زمان استراحت و بازاندیشی.<br>
+                                ۳. مشارکت در پروژه‌های بزرگ‌تر و چالشی‌تر که نیازمند دقت، مهارت و نگرش کمال‌جویانه شماست.<br>
+                                ۴. حفظ حس تواضع؛ گاهی نتیجه ایده‌آل‌گرایی ممکن است به غرور منجر شود، پس تعادل را حفظ کنید.<br>
+                                ۵. بازنگری دوره‌ای در معیارهای بهینه بودن، چون شرایط زندگی یا دیدگاه‌هایتان ممکن است تغییر کنند.
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Report Detailed Sections -->
+        <section class="content-section test-section" id="report-detailed-sections">
+            <div class="content-container">
+                <!-- توفیق -->
+                <div class="report-component-title">توفیق 
+                    <span class="report-badge report-score-data">#field_2879#<br></span>
+                </div>
+                <p class="report-paragraph">
+                    توفیق در روان‌شناسی خودگستر (Self-Expansion) به معنای تمایل فرد به گسترش مرزهای ذهنی، رفتاری و معنوی خویش برای دستیابی به حس پیشرفت و تکامل است. افرادی که در این حیطه امتیاز بالایی دارند، اغلب رویدادهای جدید را به عنوان فرصتی برای رشد می‌بینند و از مسیر یادگیری و تجربه لذت می‌برند. این نگرش می‌تواند در کنار رعایت انضباط فردی، راه را برای گسترش دانش و بینش شخصی هموار کند.
+                </p>
+                <ul class="report-list">
+                    <!-- سطح متوسط توفیق -->
+                    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10213#;">
+                        <strong>«متوسط»<br></strong>
+                        شما تمایل نسبی به پیشرفت و گسترش توانایی‌های خود دارید اما ممکن است همواره تا انتهای مسیر پیش نروید. گاهی فشارهای محیطی یا روزمرّگی، انگیزه شما را کم‌رنگ می‌کند و مانع از برداشتن گام‌های جدید برای توسعه فردی می‌شود.
+                        <div class="report-recommendation">
+                            <div class="report-recommendation-title">توصیه:</div>
+                            <div class="report-recommendation-text">
+                                ۱. تعیین اهداف کوتاه‌مدت و ملموس برای ایجاد حس دستاوردهای پیوسته.<br>
+                                ۲. ورود به فعالیت‌های گروهی یا پروژه‌های مشترک برای تبادل تجربه و حفظ انگیزه پیشرفت.<br>
+                                ۳. یادگیری مهارت‌های نو (فنی، هنری یا رفتاری) که حس تازگی و توسعه توانمندی‌هایتان را تقویت کند.<br>
+                                ۴. بررسی موانع موجود (همچون ترس از شکست) و رفع تدریجی آن‌ها با مطالعه یا مشاوره تخصصی.<br>
+                                ۵. در نظر گرفتن پاداش‌های کوچک برای تشویق خود هنگام گذر از هر مرحله پیشرفت.
+                            </div>
+                        </div>
+                    </li>
+                    <!-- سطح خوب توفیق -->
+                    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10213#;">
+                        <strong>«خوب»<br></strong>
+                        شما دیدگاه مثبتی نسبت به رشد و پیشرفت دارید و معمولاً برای رسیدن به اهداف جدید برنامه‌ریزی می‌کنید. تلاش منظم در کنار اشتیاق به یادگیری، نشانه بارز ظرفیت بالای شما برای خودگستری و توفیق در حوزه‌های گوناگون است.
+                        <div class="report-recommendation">
+                            <div class="report-recommendation-title">توصیه:</div>
+                            <div class="report-recommendation-text">
+                                ۱. ادامه کار روی پروژه‌های چالش‌برانگیز که نیازمند خلاقیت و تجربه‌اندوزی بیشتر هستند.<br>
+                                ۲. ارزیابی دوره‌ای اهداف؛ با رسیدن به هر کدام از آن‌ها، هدف جدیدی برای خود تعریف کنید.<br>
+                                ۳. توسعه روابط با افراد موفق و پیشرو در حوزه‌های مورد علاقه، برای تبادل ایده و افزایش انگیزه.<br>
+                                ۴. خواندن کتاب‌ها و منابع آموزشی پیشرفته تا دانش و نگرش شما در مسیر تکامل دائمی قرار گیرد.<br>
+                                ۵. به اشتراک گذاشتن دستاوردها و تجربیات با دیگران به‌عنوان یک الگوی عملی و انگیزه‌بخش.
+                            </div>
+                        </div>
+                    </li>
+                    <!-- سطح عالی توفیق -->
+                    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10213#;">
+                        <strong>«عالی»<br></strong>
+                        شما در سطح بالایی از توفیق و خودگستری قرار دارید؛ به‌طور پیوسته به دنبال افزایش توانایی‌ها و ایجاد تغییرات مثبت در زندگی هستید. این رویکرد، در کنار انضباط فردی، شما را به فردی توانمند در مدیریت چالش‌ها و الهام‌بخش برای اطرافیان تبدیل می‌کند.
+                        <div class="report-recommendation">
+                            <div class="report-recommendation-title">توصیه:</div>
+                            <div class="report-recommendation-text">
+                                ۱. پذیرش نقش راهبری در پروژه‌ها یا تیم‌هایی که نیازمند نگرش رشد‌محور و انگیزه بالا هستند.<br>
+                                ۲. نگارش و مستندسازی تجربیات موفق خود، برای استفاده در برنامه‌های آموزشی یا مشاوره دیگران.<br>
+                                ۳. شرکت در دوره‌های پیشرفته یا فعالیت‌های پژوهشی که چالش بیشتری به مهارت‌هایتان وارد کند.<br>
+                                ۴. حفظ تعادل میان زندگی شخصی و کار، تا سرزندگی و خلاقیتتان پایدار بماند.<br>
+                                ۵. به اشتراک‌گذاری فرایندهای موفقیت با دیگران، تا از مزایای فرهنگ یادگیری جمعی بهره‌مند شوید.
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <!-- بردباری (حفظ آرامش در شرایط بحرانی) -->
+                <div class="report-component-title">بردباری
+                    <span class="report-badge report-score-data">#field_2875#<br></span>
+                </div>
+                <p class="report-paragraph">
+                    بردباری در رویکرد خودگستر، توانایی فرد در حفظ آرامش و استحکام روانی حتی در لحظات بحرانی است. چنین افرادی هنگام مواجهه با عقاید مخالف یا شرایط ناخوشایند، کمتر از کوره در می‌روند و بیشتر با صبر و منطق پاسخ می‌دهند، چراکه باور دارند هر چالش فرصتی برای رشد شخصی و گسترش مرزهای ذهنی است.
+                </p>
+                <ul class="report-list">
+                    <!-- سطح متوسط بردباری -->
+                    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10214#;">
+                        <strong>«متوسط»<br></strong>
+                        شما گاهی در مواجهه با رفتار یا گفتار نادرست دیگران دچار برآشفتگی می‌شوید، اما در بسیاری از موقعیت‌ها می‌توانید آرامش خود را حفظ کنید. ظرفیت شما برای پذیرش و تحمل شرایط مختلف قابل قبول است، اما هنوز فضای بهبود باقی‌ست.
+                        <div class="report-recommendation">
+                            <div class="report-recommendation-title">توصیه:</div>
+                            <div class="report-recommendation-text">
+                                ۱. تمرین گفت‌وگوی درونی مثبت و یادآوری فواید صبر قبل از واکنش تند یا احساسی.<br>
+                                ۲. شناسایی موقعیت‌هایی که بیشترین آشفتگی را ایجاد می‌کنند و طراحی راهکاری قبل از مواجهه با آن‌ها.<br>
+                                ۳. استفاده از تکنیک‌های تنفسی و آرام‌سازی (Mindfulness) در لحظات پراسترس برای بازگرداندن خونسردی.<br>
+                                ۴. مطالعه در حوزه ارتباط مؤثر و روان‌شناسی مثبت تا دیدگاهتان را از حالت تنش به فرصتی برای یادگیری تغییر دهید.<br>
+                                ۵. شرکت در فعالیت‌هایی مانند یوگا یا ورزش سبک که به افزایش آستانه تحمل کمک می‌کنند.
+                            </div>
+                        </div>
+                    </li>
+                    <!-- سطح خوب بردباری -->
+                    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10214#;">
+                        <strong>«خوب»<br></strong>
+                        شما اغلب در شرایط ناخوشایند، آرامش خود را حفظ می‌کنید و اجازه نمی‌دهید خشم یا واکنش‌های هیجانی منفی، کنترل‌تان را از دستتان بگیرد. این سطح از بردباری نشان‌دهنده مهارت خوب شما در عبور از چالش‌هاست.
+                        <div class="report-recommendation">
+                            <div class="report-recommendation-title">توصیه:</div>
+                            <div class="report-recommendation-text">
+                                ۱. تداوم استفاده از مهارت‌های آموخته‌شده (مدیریت خشم، گفت‌وگوی سازنده) در موقعیت‌های مختلف زندگی.<br>
+                                ۲. کمک به دیگران در یادگیری روش‌های بردبارانه با انتقال تجربیات و روش‌های موفق خود.<br>
+                                ۳. شرکت در گفتگوهای گروهی یا فعالیت‌های داوطلبانه برای تجربه تنوع فرهنگی و افزایش بردباری نسبت به تفاوت‌ها.<br>
+                                ۴. ارزیابی دوره‌ای موفقیت‌هایتان در مدیریت تنش، و تشویق خود در جهت پایدار ماندن این رویکرد مثبت.<br>
+                                ۵. مطالعه منابع مرتبط با توسعه فردی یا کتاب‌های روان‌شناسی مثبت برای گسترش بینش و پایداری در این مسیر.
+                            </div>
+                        </div>
+                    </li>
+                    <!-- سطح عالی بردباری -->
+                    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10214#;">
+                        <strong>«عالی»<br></strong>
+                        شما از سطح بسیار بالایی از بردباری و صبر برخوردار هستید؛ در مواجهه با رفتارهای نادرست یا موقعیت‌های تنش‌زا به‌ندرت کنترل خود را از دست می‌دهید و اغلب با منطق و آرامش واکنش نشان می‌دهید. این برخورد نشان‌دهنده پختگی عاطفی و خودگستری بالای شماست.
+                        <div class="report-recommendation">
+                            <div class="report-recommendation-title">توصیه:</div>
+                            <div class="report-recommendation-text">
+                                ۱. به کارگیری این مهارت در نقش‌های واسط یا حل تعارضات؛ شما می‌توانید منبع آرامش در گروه باشید.<br>
+                                ۲. آموزش صبر و مدیریت هیجانات به افراد دیگر؛ شما می‌توانید سهمی مثبت در رشد جمعی و بهبود روابط اجتماعی داشته باشید.<br>
+                                ۳. پذیرش مسئولیت‌های مهم‌تری که نیازمند خونسردی و ثبات عاطفی بالاست (مانند مدیریت پروژه یا رهبری گروه).<br>
+                                ۴. انتشار تجربیات یا نوشته‌هایی از الگوهای صبر در وبلاگ، کتاب یا شبکه‌های اجتماعی برای گسترده‌تر کردن فرهنگ مدارا.<br>
+                                ۵. حفظ توازن بین انجام وظایف روزمره و اهداف معنوی؛ این پیوند عمیق به شما در مواجهه با بزرگ‌ترین چالش‌ها نیز یاری می‌رساند.
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <!-- بهینگی (دستیابی به حداکثر کیفیت در زندگی) -->
+                <div class="report-component-title">بهینگی 
+                    <span class="report-badge report-score-data">#field_2876#<br></span>
+                </div>
+                <p class="report-paragraph">
+                    بهینگی در چارچوب خودگستر، به معنای دستیابی به حداکثر کیفیت در سبک زندگی و تصمیم‌گیری‌هاست. این ویژگی بیانگر حس پیگیری برای رسیدن به جایگاه عالی و راضی‌کننده‌ای در زندگی است؛ جایی که ارزش‌های معنوی، استدلال منطقی و تمایل به کمال در هماهنگی باشند.
+                </p>
+                <ul class="report-list">
+                    <!-- سطح متوسط بهینگی -->
+                    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10215#;">
+                        <strong>«متوسط»<br></strong>
+                        شما تلاش می‌کنید زندگی و تصمیم‌هایتان در حد قابل قبولی بهینه باشد، اما گاهی ممکن است از تلاش برای ارتقای سطح خود دست بکشید یا از فرصت‌های موجود استفاده کامل نکنید. بااین‌وجود، بهبودهای کوچک اما مداوم می‌توانند شما را در مسیر رضایت بالاتر قرار دهند.
+                        <div class="report-recommendation">
+                            <div class="report-recommendation-title">توصیه:</div>
+                            <div class="report-recommendation-text">
+                                ۱. تعیین معیارهای واضح برای موفقیت و بهینه بودن در هر زمینه (تحصیلی، شغلی، معنوی).<br>
+                                ۲. تمرین ارزیابی دوچندان پیش از تصمیم‌گیری‌های مهم، مثلاً نوشتن مزایا و معایب به صورت دقیق.<br>
+                                ۳. حفظ دیدگاه بلندمدت؛ گاهی نتیجه بهینگی در درازمدت نمایان می‌شود.<br>
+                                ۴. ایجاد تعادل میان کمال‌گرایی و واقعیات روزمره؛ گاهی باید از ایده‌آل‌ها کمی فاصله گرفت تا پیشرفت عملی حاصل شود.<br>
+                                ۵. مشورت با افراد موفق و متعادل که می‌توانند تجربیاتشان را برای بهبود سبک زندگی و تصمیم‌گیری در اختیارتان بگذارند.
+                            </div>
+                        </div>
+                    </li>
+                    <!-- سطح خوب بهینگی -->
+                    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10215#;">
+                        <strong>«خوب»<br></strong>
+                        شما معمولاً از معیارهای متعادل و منطقی برای تصمیم‌گیری و سبک زندگی استفاده می‌کنید و تلاش دارید از ارزش‌های معنوی و استدلال عقلی در کنار هم بهره بگیرید. این نگرش می‌تواند شما را در رسیدن به اهداف و جایگاه شایسته‌ای در زندگی یاری کند.
+                        <div class="report-recommendation">
+                            <div class="report-recommendation-title">توصیه:</div>
+                            <div class="report-recommendation-text">
+                                ۱. تداوم در ایجاد هماهنگی بین مسائل مادی، معنوی و اهداف طولانی‌مدت زندگی‌تان.<br>
+                                ۲. شناسایی حوزه‌هایی که می‌توانید سطح فعلی را بهبود دهید (مانند مهارت‌های فکری یا اخلاقی).<br>
+                                ۳. افزایش مهارت‌های تحلیلی برای تصمیم‌گیری منطقی‌تر؛ چه در حوزه شغلی چه در مسائل روزمره.<br>
+                                ۴. مطالعه منابع دینی یا معنوی در کنار کتاب‌های علمی و فلسفی برای یافتن رویکردهای کامل‌تر درباره زندگی بهینه.<br>
+                                ۵. تشویق اطرافیان و دوستان به ایجاد سبک زندگی بهینه و بهره‌گیری از تجربیات مشترک.
+                            </div>
+                        </div>
+                    </li>
+                    <!-- سطح عالی بهینگی -->
+                    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10215#;">
+                        <strong>«عالی»<br></strong>
+                        شما در سطح بالایی از بهینگی قرار دارید؛ یعنی تصمیم‌های شما اغلب با اصول معنوی و عقلی همخوانی دارند و سعی می‌کنید در هر زمینه به بالاترین سطح کیفیت دست یابید. این رویکرد شما را به انسانی هدفمند و کمال‌جو تبدیل می‌کند.
+                        <div class="report-recommendation">
+                            <div class="report-recommendation-title">توصیه:</div>
+                            <div class="report-recommendation-text">
+                                ۱. ایجاد الگو و راهنمایی برای دیگران؛ شما می‌توانید تجربیات ارزشمندتان را به اشتراک بگذارید.<br>
+                                ۲. محافظت از خود در برابر فرسودگی؛ کیفیت بالا در همه امور نیازمند زمان استراحت و بازاندیشی.<br>
+                                ۳. مشارکت در پروژه‌های بزرگ‌تر و چالشی‌تر که نیازمند دقت، مهارت و نگرش کمال‌جویانه شماست.<br>
+                                ۴. حفظ حس تواضع؛ گاهی نتیجه ایده‌آل‌گرایی ممکن است به غرور منجر شود، پس تعادل را حفظ کنید.<br>
+                                ۵. بازنگری دوره‌ای در معیارهای بهینه بودن، چون شرایط زندگی یا دیدگاه‌هایتان ممکن است تغییر کنند.
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <!-- کوشایی (تلاش مستمر برای تحقق اهداف) -->
+                <div class="report-component-title">کوشایی 
+                    <span class="report-badge report-score-data">#field_2877#<br></span>
+                </div>
+                <p class="report-paragraph">
+                    کوشایی در چارچوب خودگستر، فراتر از صرفاً پشتکار داشتن است. این ویژگی نشان‌دهنده تمایل فرد برای به‌کارگیری مداوم انرژی ذهنی و بدنی در جهت تحقق اهداف معنادار و همسو با ارزش‌های درونی است. کسی که کوشاست، نه‌تنها کارها را با جدیت انجام می‌دهد، بلکه از فرایند تلاش نیز برای رشد و بالندگی خود بهره می‌برد.
+                </p>
+                <ul class="report-list">
+                    <!-- سطح متوسط کوشایی -->
+                    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10216#;">
+                        <strong>«متوسط»<br></strong>
+                        شما در انجام وظایف معمول با سختکوشی عمل می‌کنید، اما گاهی ممکن است انگیزه کافی برای پیشبرد کارها در سطح فراتر را نداشته باشید. گاهی خستگی ذهنی یا کمبود انگیزه، مانع از پیشرفت سریع شما می‌شود.
+                        <div class="report-recommendation">
+                            <div class="report-recommendation-title">توصیه:</div>
+                            <div class="report-recommendation-text">
+                                ۱. بررسی علل افت انگیزه؛ آیا خستگی جسمی، روزمرّگی یا کمبود هدف مشخص مانع شماست؟<br>
+                                ۲. تعیین اهداف جذاب و همسو با ارزش‌های درونی برای افزایش اشتیاق به تلاش بیشتر.<br>
+                                ۳. بهره‌گیری از برنامه‌ریزی دقیق (تقسیم اهداف بزرگ به گام‌های کوچک) تا حس دستاورد و پیشرفت پیوسته داشته باشید.<br>
+                                ۴. گفتگو با دوستان یا مشاور برای کسب راهکارهای جدید در مدیریت انرژی و انگیزه.<br>
+                                ۵. پاداش‌دهی به خود پس از تکمیل موفق مراحل هر پروژه، برای حفظ روحیه فعال و پویا.
+                            </div>
+                        </div>
+                    </li>
+                    <!-- سطح خوب کوشایی -->
+                    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10216#;">
+                        <strong>«خوب»<br></strong>
+                        شما پشتکار قابل توجهی دارید و هنگام رویارویی با وظایف یا پروژه‌های مهم، با جدیت عمل می‌کنید. این رویکرد فعال و هدفمند، نشان‌دهنده نگرش مثبت شما نسبت به تلاش در مسیر رشد و یادگیری است.
+                        <div class="report-recommendation">
+                            <div class="report-recommendation-title">توصیه:</div>
+                            <div class="report-recommendation-text">
+                                ۱. ادامه این رفتار مطلوب از طریق یادداشت منظم پیشرفت‌ها و ثبت دستاوردهایتان.<br>
+                                ۲. درگیر شدن در پروژه‌های گروهی که نیازمند انرژی ذهنی و بدنی بالاست، برای توسعه مهارت‌های رهبری و همکاری.<br>
+                                ۳. شناسایی حوزه‌هایی که هنوز در آن‌ها تجربه کافی ندارید، و شروع به یادگیری و تلاش برای تسلط بیشتر بر آن حوزه‌ها.<br>
+                                ۴. حفظ انعطاف در شرایط متغیر؛ گاهی نیاز است روش انجام کارتان را برای رسیدن به نتیجه بهتر تغییر دهید.<br>
+                                ۵. استراحت و تفریح کافی را فراموش نکنید؛ یک ذهن شاداب و استراحت‌دیده راندمان بالاتری دارد.
+                            </div>
+                        </div>
+                    </li>
+                    <!-- سطح عالی کوشایی -->
+                    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10216#;">
+                        <strong>«عالی»<br></strong>
+                        شما در سطح بالایی از کوشایی قرار دارید؛ وظایف را با پشتکار فراوان دنبال می‌کنید و معمولاً برای رسیدن به نتایج درخشان از هیچ تلاشی فروگذار نمی‌کنید. این ویژگی شما را به فردی قابل اعتماد، موفق و تأثیرگذار در محیط اطرافتان تبدیل می‌کند.
+                        <div class="report-recommendation">
+                            <div class="report-recommendation-title">توصیه:</div>
+                            <div class="report-recommendation-text">
+                                ۱. پذیرش پروژه‌های پیچیده‌تر و چالشی‌تر، تا ظرفیت کوشایی بالای خود را کامل‌تر به نمایش بگذارید.<br>
+                                ۲. تبدیل مهارت‌ها و دانش خود به محتوای آموزشی یا منتورینگ؛ به دیگران هم کمک کنید تا به موفقیت دست یابند.<br>
+                                ۳. مراقبت از سلامت روان؛ پشتکار زیاد بدون استراحت کافی، خطر فرسودگی و افت کیفیت کار را دارد.<br>
+                                ۴. مشارکت در برنامه‌های گروهی بزرگ یا بین‌رشته‌ای که از نیروی ذهنی و عملی زیاد بهره می‌برند.<br>
+                                ۵. تداوم پیشرفت با یادگیری مهارت‌های جدید و حفظ تنوع در کارها، تا انگیزه شما همیشه در اوج باقی بماند.
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <!-- انتخاب (انتخاب‌های آگاهانه و هماهنگ با ارزش‌ها) -->
+                <div class="report-component-title">انتخاب 
+                    <span class="report-badge report-score-data">#field_2878#<br></span>
+                </div>
+                <p class="report-paragraph">
+                    انتخاب در دیدگاه خودگستر، حاکی از قدرت فرد در گزینش آگاهانه مسیر زندگی، بر مبنای ارزش‌ها، اهداف معنوی و خردورزی است. کسانی که در این حوزه عملکرد بالایی دارند، قادرند میان گزینه‌های مختلف با بررسی پیامدها و هماهنگی با باورهایشان، هوشمندانه‌ترین راه را برگزینند.
+                </p>
+                <ul class="report-list">
+                    <!-- سطح متوسط انتخاب -->
+                    <li class="report-list-item report-conditional-display" style="--score-rate1: #field_10217#;">
+                        <strong>«متوسط»<br></strong>
+                        شما در اکثر موارد سعی می‌کنید بر اساس منطق و ارزش‌های خود انتخاب کنید، اما گاهی احساسات یا فشار محیطی ممکن است باعث شود در تصمیم‌هایتان تردید کرده یا نتوانید کاملاً از توانایی تفکر بجا استفاده کنید.
+                        <div class="report-recommendation">
+                            <div class="report-recommendation-title">توصیه:</div>
+                            <div class="report-recommendation-text">
+                                ۱. تمرین یادداشت مزایا و معایب در تصمیم‌گیری‌های مهم برای ساختارمندتر شدن فرایند انتخاب.<br>
+                                ۲. تعمیق خودآگاهی معنوی با مطالعه یا شرکت در جلسات مباحثه مذهبی/معنوی، تا پیوند رضایت‌بخش‌تری با باورهایتان برقرار کنید.<br>
+                                ۳. شناسایی موقعیت‌هایی که تحت فشار محیطی تصمیم اشتباه می‌گیرید و طراحی راهکاری برای مقاومت در برابر این فشارها.<br>
+                                ۴. گفت‌وگو با افراد عاقل و باتجربه پیش از تصمیمات سرنوشت‌ساز، برای دریافت دیدگاه‌های مکمل.<br>
+                                ۵. تعیین مسیرهای شفاف در زندگی برای جلوگیری از سردرگمی و هدایت بهتر نیروی ذهنی به سوی اهداف اصلی.
+                            </div>
+                        </div>
+                    </li>
+                    <!-- سطح خوب انتخاب -->
+                    <li class="report-list-item report-conditional-display" style="--score-rate2: #field_10217#;">
+                        <strong>«خوب»<br></strong>
+                        شما معمولاً از معیارهای متعادل و منطقی برای تصمیم‌گیری و سبک زندگی استفاده می‌کنید و تلاش دارید از ارزش‌های معنوی و استدلال عقلی در کنار هم بهره بگیرید. این نگرش می‌تواند شما را در رسیدن به اهداف و جایگاه شایسته‌ای در زندگی یاری کند.
+                        <div class="report-recommendation">
+                            <div class="report-recommendation-title">توصیه:</div>
+                            <div class="report-recommendation-text">
+                                ۱. تداوم تعمق در باورها و ارزش‌های شخصی برای تقویت بیش‌تر پیوند درونی و هماهنگی با تصمیم‌هایتان.<br>
+                                ۲. مشارکت در فعالیت‌های اجتماعی یا معنوی که امکان رشد بیشتر در حوزه‌های اخلاقی و فکری را فراهم می‌کند.<br>
+                                ۳. تمرین مدیریت هیجانات؛ هرچند انتخاب‌هایتان خوب است، اما گاه فشار روانی می‌تواند شما را دچار اشتباه کند.<br>
+                                ۴. استفاده از تجربیات گذشته و بازخوردهای اطرافیان در جهت بهبود مداوم الگوی تصمیم‌گیری.<br>
+                                ۵. آموزش مهارت انتخاب به دیگران؛ برای مثال راهنمایی دوستان یا خانواده در لحظات تصمیم‌گیری حساس.
+                            </div>
+                        </div>
+                    </li>
+                    <!-- سطح عالی انتخاب -->
+                    <li class="report-list-item report-conditional-display" style="--score-rate3: #field_10217#;">
+                        <strong>«عالی»<br></strong>
+                        شما در سطح بالایی از انتخاب قرار دارید؛ یعنی تصمیم‌های شما اغلب با اصول معنوی و عقلی همخوانی دارند و سعی می‌کنید در هر زمینه به بالاترین سطح کیفیت دست یابید. این رویکرد شما را به انسانی هدفمند و کمال‌جو تبدیل می‌کند.
+                        <div class="report-recommendation">
+                            <div class="report-recommendation-title">توصیه:</div>
+                            <div class="report-recommendation-text">
+                                ۱. ایجاد الگو و راهنمایی برای دیگران؛ شما می‌توانید تجربیات ارزشمندتان را به اشتراک بگذارید.<br>
+                                ۲. محافظت از خود در برابر فرسودگی؛ کیفیت بالا در همه امور نیازمند زمان استراحت و بازاندیشی.<br>
+                                ۳. مشارکت در پروژه‌های بزرگ‌تر و چالشی‌تر که نیازمند دقت، مهارت و نگرش کمال‌جویانه شماست.<br>
+                                ۴. حفظ حس تواضع؛ گاهی نتیجه ایده‌آل‌گرایی ممکن است به غرور منجر شود، پس تعادل را حفظ کنید.<br>
+                                ۵. بازنگری دوره‌ای در معیارهای بهینه بودن، چون شرایط زندگی یا دیدگاه‌هایتان ممکن است تغییر کنند.
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Credentials and Validity Section -->
+        <section class="content-section test-section" id="credentials">
+            <div class="content-container">
+                <!-- اعتبار و صحت آزمون -->
+                <h2>اعتبار و صحت آزمون</h2>
+                <p>
+                    آزمون فهرست تشخیص تعاملی خودگستری بر اساس روش‌شناسی تحقیقاتی معتبر و تایید شده توسط متخصصین روانشناسی طراحی شده است. این آزمون توسط دانشگاه‌ها و سازمان‌های معتبر روانشناسی مورد تأیید و توصیه قرار گرفته است.
+                </p>
+                <ul>
+                    <li>روش‌شناسی تحقیقاتی مبتنی بر مطالعات علمی روز</li>
+                    <li>تأییدیه سازمان‌های معتبر روانشناسی</li>
+                    <li>پشتیبانی توسط تیم متخصصین و روانشناسان خبره</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="content-section test-section" id="testimonials">
+            <div class="content-container">
+                <!-- توصیه‌نامه‌ها -->
+                <h2>توصیه‌نامه‌ها</h2>
+                <div class="testimonial">
+                    <p>"گزارش تحلیل فهرست تشخیص تعاملی خودگستری به من کمک کرد تا بهتر ویژگی‌های رشد فردی خود را بشناسم و در مسیر پیشرفت شخصی‌ام گام‌های مؤثرتری بردارم."</p>
+                    <p><strong>- سارا احمدی</strong></p>
+                </div>
+                <div class="testimonial">
+                    <p>"نتایج دقیق این آزمون به من امکان داد تا نقاط قوت و ضعف خود را در زمینه‌های مختلف رشد فردی شناسایی کنم و برای بهبود وضعیت رشد فردی‌ام برنامه‌ریزی کنم."</p>
+                    <p><strong>- علی رضایی</strong></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call-to-Action Section -->
+        <section class="content-section test-section" id="start-test">
+            <div class="content-container">
+                <!-- دعوت به اقدام (CTA) -->
+                <h2>آیا آماده‌اید تا شروع کنید؟</h2>
+                <p>
+                    با انجام این آزمون، گامی مهم در جهت شناخت بهتر از ویژگی‌های رشد فردی و بهبود وضعیت رشد فردی‌تان بردارید.
+                </p>
+                <div style="text-align: center; margin-top: 20px;">
+                    <a href="/take/fahrest-tashkhis-khodgostari" class="cta-button">شروع آزمون</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section (Optional) -->
+        <section class="content-section test-section" id="faq">
+            <div class="content-container">
+                <!-- سوالات متداول -->
+                <h2>سوالات متداول</h2>
+                <div class="faq-item">
+                    <h4>آیا این آزمون دقیق است؟</h4>
+                    <p>بله، این آزمون بر اساس روش‌شناسی تحقیقاتی معتبر و تایید شده طراحی شده است تا نتایج دقیق و قابل اعتمادی ارائه دهد.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>آیا این آزمون برای کودکان مناسب است؟</h4>
+                    <p>این آزمون بیشتر برای بزرگسالان و نوجوانان طراحی شده است و ممکن است برای کودکان جوان‌تر مناسب نباشد.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>بعد از انجام آزمون چه اتفاقی می‌افتد؟</h4>
+                    <p>پس از تکمیل آزمون، شما یک گزارش جامع با نتایج و توصیه‌های شخصی دریافت خواهید کرد که می‌توانید آن را مرور کرده و در صورت نیاز، با متخصصین مشورت کنید.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/assets/js/script.js"></script>
+    <script src="/assets/js/header-footer-inject.js"></script>
+    <script>
+        // FAQ Toggle Script
+        document.querySelectorAll('.faq-item h4').forEach(function(question) {
+            question.addEventListener('click', function() {
+                const parent = this.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
