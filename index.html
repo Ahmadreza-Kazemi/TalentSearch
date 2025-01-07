@@ -796,13 +796,13 @@
                 <p class="partner-name">مرکز خدمات روانشناسی و مشاوره سپهر</p>
             </div>
 
-           /*  <!--
+          <!--
             <div class="partner-card">
                 <img src="/assets/images/federation-koshti-logo.png" alt="فدراسیون کشتی ایران" class="partner-logo">
                 <p class="partner-name">فدراسیون کشتی ایران</p>
             </div>
 
-           Add more partners as needed --> */
+           Add more partners as needed -->
         </div>
     </div>
 </section>
@@ -1076,21 +1076,18 @@
             پاسخ داده‌ایم تا بتوانید بهترین تصمیم را بگیرید.
         </p>
 
-        <!-- Category Selector (Dropdown) -->
-        <div class="faq-category-selector">
-            <label for="faqCategorySelect" class="select-label">دسته‌بندی پرسش‌ها:</label>
-            <select id="faqCategorySelect" class="select-dropdown">
-                <option value="faq-general">سوالات عمومی</option>
-                <option value="faq-individuals">افراد</option>
-                <option value="faq-organizations">سازمان‌ها</option>
-                <option value="faq-schools">مدارس</option>
-                <option value="faq-clinics">کلینیک‌ها</option>
-            </select>
+        <!-- Tab Navigation -->
+        <div class="faq-tabs">
+            <button class="tab-link active" data-tab="faq-general">سوالات عمومی</button>
+            <button class="tab-link" data-tab="faq-individuals">افراد</button>
+            <button class="tab-link" data-tab="faq-organizations">سازمان‌ها</button>
+            <button class="tab-link" data-tab="faq-schools">مدارس</button>
+            <button class="tab-link" data-tab="faq-clinics">کلینیک‌ها</button>
         </div>
 
         <!-- FAQ Categories (Accordion Containers) -->
 
-        <!-- 1) General Questions -->
+        <!-- General Questions -->
         <div id="faq-general" class="faq-category active">
             <h3 class="faq-category-title">سوالات عمومی</h3>
             <div class="faq-item">
@@ -1109,7 +1106,7 @@
             </div>
         </div>
 
-        <!-- 2) Individuals -->
+        <!-- Individuals -->
         <div id="faq-individuals" class="faq-category">
             <h3 class="faq-category-title">افراد</h3>
             <div class="faq-item">
@@ -1128,7 +1125,7 @@
             </div>
         </div>
 
-        <!-- 3) Organizations -->
+        <!-- Organizations -->
         <div id="faq-organizations" class="faq-category">
             <h3 class="faq-category-title">سازمان‌ها</h3>
             <div class="faq-item">
@@ -1146,7 +1143,7 @@
             </div>
         </div>
 
-        <!-- 4) Schools -->
+        <!-- Schools -->
         <div id="faq-schools" class="faq-category">
             <h3 class="faq-category-title">مدارس</h3>
             <div class="faq-item">
@@ -1165,7 +1162,7 @@
             </div>
         </div>
 
-        <!-- 5) Clinics -->
+        <!-- Clinics -->
         <div id="faq-clinics" class="faq-category">
             <h3 class="faq-category-title">کلینیک‌های روان‌شناسی</h3>
             <div class="faq-item">
@@ -1185,17 +1182,10 @@
 </section>
 
 <style>
-/* FAQ Section Styles (Mobile-First) */
+/* FAQ Section Styles */
 .faq-section {
     padding: var(--spacing-lg) var(--spacing-md);
     background-color: var(--neutral-cool-gray);
-    text-align: left; /* ensures alignment for questions/answers */
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: var(--spacing-md);
 }
 
 .section-title {
@@ -1203,7 +1193,6 @@
     font-weight: 700;
     color: var(--primary-deep-blue);
     margin-bottom: var(--spacing-md);
-    text-shadow: 0 0 5px var(--primary-gold);
     text-align: center;
 }
 
@@ -1215,46 +1204,41 @@
     text-align: justify;
 }
 
-/* Category Selector */
-.faq-category-selector {
-    margin-bottom: var(--spacing-lg);
+/* Tabs */
+.faq-tabs {
     display: flex;
-    flex-direction: column;
     gap: var(--spacing-sm);
-    align-items: flex-start; /* left align on mobile */
+    overflow-x: auto;
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 2px solid var(--neutral-cool-gray);
 }
 
-.select-label {
+.tab-link {
+    padding: var(--spacing-sm) var(--spacing-md);
     font-size: 1em;
     font-weight: 600;
     color: var(--primary-deep-blue);
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
 }
 
-.select-dropdown {
-    padding: var(--spacing-sm);
-    font-size: 1em;
-    border-radius: var(--border-radius);
-    border: 1px solid #ccc;
-    background-color: var(--neutral-white);
-    color: var(--primary-deep-blue);
+.tab-link:hover,
+.tab-link.active {
+    color: var(--button-primary);
+    border-bottom: 2px solid var(--button-primary);
 }
 
-/* FAQ Category Container */
+/* FAQ Category (Accordion Containers) */
 .faq-category {
-    display: none; /* hidden by default, shown if active */
-    margin-bottom: var(--spacing-lg);
+    display: none;
 }
 
 .faq-category.active {
-    display: block; /* show only the chosen category */
-}
-
-.faq-category-title {
-    font-size: 1.5em;
-    font-weight: 700;
-    color: var(--primary-deep-blue);
-    margin-bottom: var(--spacing-md);
-    text-shadow: 0 0 5px var(--primary-gold);
+    display: block;
 }
 
 /* FAQ Items */
@@ -1294,43 +1278,30 @@
 .faq-item.active .faq-answer {
     display: block;
 }
-
-/* Responsive Styles */
-@media (min-width: 576px) {
-    .faq-category-selector {
-        flex-direction: row;
-        align-items: center;
-        gap: var(--spacing-md);
-    }
-}
 </style>
 
 <script>
-// 1) Show/Hide FAQ categories based on dropdown selection
-const faqCategorySelect = document.getElementById("faqCategorySelect");
-const faqCategories = document.querySelectorAll(".faq-category");
+// Tab Navigation
+const tabs = document.querySelectorAll(".tab-link");
+const categories = document.querySelectorAll(".faq-category");
 
-faqCategorySelect.addEventListener("change", function () {
-    // Hide all categories
-    faqCategories.forEach(cat => cat.classList.remove("active"));
-    // Show only the selected category
-    const selectedCategory = document.getElementById(this.value);
-    if (selectedCategory) {
-        selectedCategory.classList.add("active");
-    }
-});
+tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+        // Deactivate all tabs and categories
+        tabs.forEach((t) => t.classList.remove("active"));
+        categories.forEach((c) => c.classList.remove("active"));
 
-// 2) Accordions for each question
-document.querySelectorAll(".faq-question").forEach((btn) => {
-    btn.addEventListener("click", () => {
-        const parent = btn.parentElement;
-        parent.classList.toggle("active");
+        // Activate the clicked tab and corresponding category
+        tab.classList.add("active");
+        const target = tab.getAttribute("data-tab");
+        document.getElementById(target).classList.add("active");
     });
 });
 
-// Default view: Show "General" questions first
-document.getElementById("faq-general").classList.add("active");
+// Default: Show "General Questions" tab
+document.querySelector(".tab-link[data-tab='faq-general']").click();
 </script>
+
 
 
 
