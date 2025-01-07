@@ -771,7 +771,21 @@
         </section>
 
 
-        <!-- Partners or Collaborators Section -->
+                <!-- Reasonable CTA Section -->
+<section class="section cta-section" id="cta">
+    <div class="container">
+        <h2 class="cta-title">گام نخست برای کشف استعدادهایتان</h2>
+        <p class="cta-text">
+            اگر آماده‌اید تا قدمی اصولی برای شناسایی توانمندی‌های درونی‌تان بردارید، ارزیابی‌های روان‌شناختی 
+            استعدادیاب به شما کمک می‌کنند تا آگاهانه‌تر مسیر رشد و پیشرفت خود را تعیین کنید.
+        </p>
+        <a href="/getting-started" class="cta-button">همین حالا آغاز کنید</a>
+    </div>
+</section>
+
+        
+
+    <!-- Partners or Collaborators Section -->
 <section class="section partners-section" id="partners">
     <div class="container">
         <h2 class="section-title">همکاری‌ها و مشتریان ما</h2>
@@ -796,24 +810,20 @@
                 <p class="partner-name">مرکز خدمات روانشناسی و مشاوره سپهر</p>
             </div>
 
-          <!--
+            <!-- Uncomment and add more partners as needed
             <div class="partner-card">
                 <img src="/assets/images/federation-koshti-logo.png" alt="فدراسیون کشتی ایران" class="partner-logo">
                 <p class="partner-name">فدراسیون کشتی ایران</p>
             </div>
-
-           Add more partners as needed -->
+            -->
         </div>
     </div>
 </section>
-<style>
-
-
-       /*Partners or Collaborators Section Styles*/
+/* Partners or Collaborators Section Styles */
 .partners-section {
     padding: var(--spacing-lg) var(--spacing-md);
     background-color: var(--neutral-white);
-    text-align: center;
+    text-align: center; /* Center-aligns the text within the section */
 }
 
 .partners-section .container {
@@ -828,6 +838,7 @@
     color: var(--primary-deep-blue);
     margin-bottom: var(--spacing-lg);
     text-shadow: 0 0 5px var(--primary-gold);
+    font-family: 'Vazir', sans-serif; /* Ensures the title uses 'Vazir' font */
 }
 
 .partners-section .section-text {
@@ -836,6 +847,7 @@
     line-height: 1.8;
     margin-bottom: var(--spacing-lg);
     text-align: justify;
+    font-family: 'Vazir', sans-serif; /* Ensures the text uses 'Vazir' font */
 }
 
 .partners-grid {
@@ -843,7 +855,8 @@
     gap: var(--spacing-lg);
     grid-template-columns: 1fr;
     align-items: center;
-    justify-items: center;
+    justify-items: center; /* Centers items horizontally within their grid cell */
+    justify-content: center; /* Centers the entire grid within the container */
 }
 
 .partner-card {
@@ -854,7 +867,8 @@
     transition: transform var(--transition-speed) var(--transition-type), box-shadow var(--transition-speed) var(--transition-type);
     width: 100%;
     max-width: 250px;
-    text-align: center;
+    text-align: center; /* Centers text within each partner card */
+    font-family: 'Vazir', sans-serif; /* Ensures the card uses 'Vazir' font */
 }
 
 .partner-card:hover {
@@ -874,39 +888,29 @@
     font-size: 1em;
     font-weight: 600;
     color: var(--primary-deep-blue);
+    font-family: 'Vazir', sans-serif; /* Ensures the partner name uses 'Vazir' font */
 }
 
 /* Responsive Styles */
 @media (min-width: 576px) {
     .partners-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); /* Two columns for screens >= 576px */
     }
 }
 
 @media (min-width: 768px) {
     .partners-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr); /* Three columns for screens >= 768px */
     }
 }
 
 @media (min-width: 1024px) {
     .partners-grid {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(4, 1fr); /* Four columns for screens >= 1024px */
     }
 }
-</style>
 
-                <!-- Reasonable CTA Section -->
-<section class="section cta-section" id="cta">
-    <div class="container">
-        <h2 class="cta-title">گام نخست برای کشف استعدادهایتان</h2>
-        <p class="cta-text">
-            اگر آماده‌اید تا قدمی اصولی برای شناسایی توانمندی‌های درونی‌تان بردارید، ارزیابی‌های روان‌شناختی 
-            استعدادیاب به شما کمک می‌کنند تا آگاهانه‌تر مسیر رشد و پیشرفت خود را تعیین کنید.
-        </p>
-        <a href="/getting-started" class="cta-button">همین حالا آغاز کنید</a>
-    </div>
-</section>
+
         <!-- Reasonable Pricing Section -->
 <section class="section pricing-section" id="pricing">
     <div class="container">
