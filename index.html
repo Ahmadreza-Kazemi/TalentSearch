@@ -1067,172 +1067,271 @@
 }
 </style>
 
-        <!-- FAQs Section -->
-<section id="faqs" class="section faqs-section">
+<!-- FAQ Section -->
+<section id="faq" class="section faq-section">
     <div class="container">
         <h2 class="section-title">سوالات متداول</h2>
         <p class="section-text">
-            در این بخش، پاسخ‌هایی به سوالات رایج کاربران در مورد استعدادیاب و خدمات ما ارائه شده است. 
-            سوالات بر اساس نیازهای افراد، سازمان‌ها، مدارس و کلینیک‌ها دسته‌بندی شده‌اند.
+            در این بخش به سوالات رایج کاربران مختلف استعدادیاب از جمله افراد، سازمان‌ها، مدارس و کلینیک‌ها 
+            پاسخ داده‌ایم تا بتوانید بهترین تصمیم را بگیرید.
         </p>
 
-        <!-- General Questions -->
-        <div class="faq-group">
-            <h3 class="faq-title">سوالات عمومی</h3>
-            <ul class="faq-list">
-                <li>
-                    <strong>چگونه می‌توانم از خدمات استعدادیاب استفاده کنم؟</strong>
-                    <p>ابتدا ثبت‌نام کنید و سپس از طریق صفحه ارزیابی‌ها، تست مورد نظر خود را انتخاب کنید. 
-                       برخی از تست‌ها رایگان هستند و برخی دارای هزینه می‌باشند.</p>
-                </li>
-                <li>
-                    <strong>آیا گزارش‌های استعدادیاب قابل فهم هستند؟</strong>
-                    <p>بله، تمامی گزارش‌ها به زبان ساده و با توضیحات کاربردی ارائه می‌شوند تا به راحتی قابل استفاده باشند.</p>
-                </li>
-                <li>
-                    <strong>آیا داده‌های من در استعدادیاب ایمن هستند؟</strong>
-                    <p>بله، امنیت داده‌ها از اولویت‌های اصلی ما است و تمامی اطلاعات شما با بالاترین سطح حفاظت ذخیره می‌شود.</p>
-                </li>
-            </ul>
+        <!-- Category Selector (Dropdown) -->
+        <div class="faq-category-selector">
+            <label for="faqCategorySelect" class="select-label">دسته‌بندی پرسش‌ها:</label>
+            <select id="faqCategorySelect" class="select-dropdown">
+                <option value="faq-general">سوالات عمومی</option>
+                <option value="faq-individuals">افراد</option>
+                <option value="faq-organizations">سازمان‌ها</option>
+                <option value="faq-schools">مدارس</option>
+                <option value="faq-clinics">کلینیک‌ها</option>
+            </select>
         </div>
 
-        <!-- Individuals Questions -->
-        <div class="faq-group">
-            <h3 class="faq-title">سوالات افراد (Individuals)</h3>
-            <ul class="faq-list">
-                <li>
-                    <strong>چگونه از طریق استعدادیاب می‌توانم استعدادهای پنهانم را کشف کنم؟</strong>
-                    <p>با شرکت در ارزیابی‌های مقدماتی رایگان شروع کنید و سپس تست‌های پیشرفته‌تر را برای گزارش‌های دقیق‌تر انتخاب کنید.</p>
-                </li>
-                <li>
-                    <strong>آیا گزارش‌های ارائه شده برای زندگی روزمره و روابط خانوادگی هم مفید است؟</strong>
-                    <p>بله، بسیاری از ارزیابی‌های ما مهارت‌های ارتباطی و سلامت روان را پوشش می‌دهند که در زندگی روزمره کاربرد دارند.</p>
-                </li>
-                <li>
-                    <strong>آیا لازم است حتماً با یک روان‌شناس تماس بگیرم؟</strong>
-                    <p>خیر، گزارش‌های استعدادیاب به گونه‌ای طراحی شده‌اند که به تنهایی قابل استفاده باشند، اما مشاوره اختیاری نیز فراهم است.</p>
-                </li>
-            </ul>
+        <!-- FAQ Categories (Accordion Containers) -->
+
+        <!-- 1) General Questions -->
+        <div id="faq-general" class="faq-category active">
+            <h3 class="faq-category-title">سوالات عمومی</h3>
+            <div class="faq-item">
+                <button class="faq-question">آیا گزارش‌های ارائه شده توسط استعدادیاب علمی و دقیق هستند؟</button>
+                <div class="faq-answer">
+                    <p>بله، تمامی گزارش‌های ما بر پایه داده‌های معتبر روان‌سنجی و روش‌های علمی طراحی شده‌اند 
+                    تا دقت و صحت نتایج تضمین شود.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">آیا استفاده از استعدادیاب نیاز به مشاوره روان‌شناسی دارد؟</button>
+                <div class="faq-answer">
+                    <p>خیر، گزارش‌های ما به گونه‌ای طراحی شده‌اند که برای کاربران قابل فهم و عملی باشند. 
+                    اما در صورت نیاز به مشاوره، امکان همکاری با متخصصین نیز فراهم است.</p>
+                </div>
+            </div>
         </div>
 
-        <!-- Organizations Questions -->
-        <div class="faq-group">
-            <h3 class="faq-title">سوالات سازمان‌ها و شرکت‌ها (Organizations)</h3>
-            <ul class="faq-list">
-                <li>
-                    <strong>چگونه می‌توانیم از ارزیابی‌های استعدادیاب برای بهبود عملکرد تیم‌ها استفاده کنیم؟</strong>
-                    <p>با انجام ارزیابی‌های گروهی، می‌توانید نقاط قوت و سبک‌های کاری کارکنان را شناسایی کرده و از آن‌ها بهینه استفاده کنید.</p>
-                </li>
-                <li>
-                    <strong>آیا تخفیف یا قرارداد ویژه‌ای برای سازمان‌ها ارائه می‌دهید؟</strong>
-                    <p>بله، ما پکیج‌های قابل مذاکره برای سازمان‌ها داریم. لطفاً با تیم فروش ما تماس بگیرید.</p>
-                </li>
-                <li>
-                    <strong>گزارش‌های گروهی چگونه ارائه می‌شوند؟</strong>
-                    <p>گزارش‌ها به‌صورت داشبوردهای مدیریتی ارائه می‌شوند که شامل تحلیل‌های کلیدی برای مدیریت منابع انسانی است.</p>
-                </li>
-            </ul>
+        <!-- 2) Individuals -->
+        <div id="faq-individuals" class="faq-category">
+            <h3 class="faq-category-title">افراد</h3>
+            <div class="faq-item">
+                <button class="faq-question">چگونه می‌توانم استعدادهایم را کشف کنم؟</button>
+                <div class="faq-answer">
+                    <p>با انجام تست‌های مقدماتی رایگان شروع کنید و سپس به سراغ ارزیابی‌های پیشرفته‌تر بروید 
+                    تا گزارش‌های عمیق و شخصی‌سازی شده دریافت کنید.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">آیا گزارش‌ها برای زندگی روزمره و روابط مفید هستند؟</button>
+                <div class="faq-answer">
+                    <p>بله، بسیاری از ارزیابی‌ها جنبه‌های شخصیتی، سلامت روان و مهارت‌های ارتباطی را پوشش می‌دهند 
+                    که مستقیماً بر تصمیم‌گیری‌ها و روابط شما تأثیر می‌گذارند.</p>
+                </div>
+            </div>
         </div>
 
-        <!-- Schools Questions -->
-        <div class="faq-group">
-            <h3 class="faq-title">سوالات مدارس (Schools)</h3>
-            <ul class="faq-list">
-                <li>
-                    <strong>چگونه ارزیابی‌های استعدادیاب به دانش‌آموزان در انتخاب رشته تحصیلی کمک می‌کند؟</strong>
-                    <p>با شناسایی علایق و توانایی‌های دانش‌آموزان از طریق تست‌های شناختی و شخصیتی، انتخاب‌های بهتری فراهم می‌شود.</p>
-                </li>
-                <li>
-                    <strong>آیا راهکاری برای مشاوران مدارس دارید؟</strong>
-                    <p>بله، گزارش‌های ما می‌تواند در جلسات مشاوره تحصیلی استفاده شود و تصمیم‌گیری‌های آگاهانه‌تری را تسهیل کند.</p>
-                </li>
-                <li>
-                    <strong>آیا قیمت ارزیابی‌ها برای مدارس متفاوت است؟</strong>
-                    <p>بله، ما پلن‌های ویژه‌ای داریم که قیمت آن‌ها بر اساس تعداد دانش‌آموزان قابل تنظیم است.</p>
-                </li>
-            </ul>
+        <!-- 3) Organizations -->
+        <div id="faq-organizations" class="faq-category">
+            <h3 class="faq-category-title">سازمان‌ها</h3>
+            <div class="faq-item">
+                <button class="faq-question">آیا پلن‌های ویژه برای سازمان‌ها وجود دارد؟</button>
+                <div class="faq-answer">
+                    <p>بله، ما پکیج‌های ارزیابی گروهی با قیمت قابل مذاکره ارائه می‌دهیم که شامل گزارش‌های سفارشی و داشبورد مدیریتی است.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">چگونه می‌توانیم عملکرد تیم‌ها را بهبود دهیم؟</button>
+                <div class="faq-answer">
+                    <p>با استفاده از ارزیابی‌های گروهی، می‌توانید نقاط قوت و سبک‌های کاری تیم‌ها را شناسایی کرده 
+                    و همکاری مؤثرتری را ایجاد کنید.</p>
+                </div>
+            </div>
         </div>
 
-        <!-- Clinics Questions -->
-        <div class="faq-group">
-            <h3 class="faq-title">سوالات کلینیک‌های روان‌شناسی (Clinics)</h3>
-            <ul class="faq-list">
-                <li>
-                    <strong>آیا تست‌های استعدادیاب دارای پشتوانه علمی هستند؟</strong>
-                    <p>بله، تمامی تست‌های ما بر اساس اصول علمی طراحی شده و از اعتبار روان‌سنجی بالایی برخوردارند.</p>
-                </li>
-                <li>
-                    <strong>چگونه می‌توانیم نتایج را با جلسات درمانی تلفیق کنیم؟</strong>
-                    <p>گزارش‌های ما به متخصصان کمک می‌کند طرح درمانی یا مداخلات اثربخشی را طراحی کنند.</p>
-                </li>
-                <li>
-                    <strong>آیا امکان همکاری طولانی‌مدت با کلینیک ما وجود دارد؟</strong>
-                    <p>بله، ما پلن‌های اختصاصی برای کلینیک‌ها داریم که شامل پشتیبانی مداوم و گزارش‌های سفارشی است.</p>
-                </li>
-            </ul>
+        <!-- 4) Schools -->
+        <div id="faq-schools" class="faq-category">
+            <h3 class="faq-category-title">مدارس</h3>
+            <div class="faq-item">
+                <button class="faq-question">چگونه استعدادیاب به دانش‌آموزان در انتخاب رشته کمک می‌کند؟</button>
+                <div class="faq-answer">
+                    <p>ارزیابی‌های شخصیتی و شناختی ما به دانش‌آموزان کمک می‌کند توانایی‌ها و علایق خود را بشناسند 
+                    و مسیر تحصیلی مناسب‌تری انتخاب کنند.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">آیا قیمت‌ها برای مدارس متفاوت است؟</button>
+                <div class="faq-answer">
+                    <p>بله، ما پلن‌های ویژه با قیمت‌های قابل مذاکره برای مدارس ارائه می‌دهیم. لطفاً برای اطلاعات 
+                    بیشتر با ما تماس بگیرید.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5) Clinics -->
+        <div id="faq-clinics" class="faq-category">
+            <h3 class="faq-category-title">کلینیک‌های روان‌شناسی</h3>
+            <div class="faq-item">
+                <button class="faq-question">چگونه نتایج ارزیابی‌ها را در جلسات درمانی استفاده کنیم؟</button>
+                <div class="faq-answer">
+                    <p>گزارش‌های ما شامل اطلاعات جامع و تحلیلی است که به متخصصین در طراحی طرح درمانی یا برنامه‌های مداخلاتی کمک می‌کند.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">آیا امکان همکاری طولانی‌مدت با کلینیک‌ها وجود دارد؟</button>
+                <div class="faq-answer">
+                    <p>بله، ما پلن‌های ویژه‌ای برای همکاری‌های طولانی‌مدت با کلینیک‌ها داریم که شامل دسترسی به دیتابیس تست‌ها، گزارش‌های سفارشی و پشتیبانی اختصاصی است.</p>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
 <style>
-/* FAQs Section */
-.faqs-section {
+/* FAQ Section Styles (Mobile-First) */
+.faq-section {
     padding: var(--spacing-lg) var(--spacing-md);
     background-color: var(--neutral-cool-gray);
+    text-align: left; /* ensures alignment for questions/answers */
 }
 
-.faqs-section .container {
+.container {
     max-width: 1200px;
     margin: 0 auto;
+    padding: var(--spacing-md);
 }
 
 .section-title {
     font-size: 2em;
     font-weight: 700;
     color: var(--primary-deep-blue);
+    margin-bottom: var(--spacing-md);
+    text-shadow: 0 0 5px var(--primary-gold);
     text-align: center;
-    margin-bottom: var(--spacing-lg);
 }
 
 .section-text {
     font-size: 1.1em;
     color: var(--text-secondary);
-    text-align: center;
-    margin-bottom: var(--spacing-md);
+    line-height: 1.8;
+    margin-bottom: var(--spacing-lg);
+    text-align: justify;
 }
 
-.faq-group {
+/* Category Selector */
+.faq-category-selector {
+    margin-bottom: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    align-items: flex-start; /* left align on mobile */
+}
+
+.select-label {
+    font-size: 1em;
+    font-weight: 600;
+    color: var(--primary-deep-blue);
+}
+
+.select-dropdown {
+    padding: var(--spacing-sm);
+    font-size: 1em;
+    border-radius: var(--border-radius);
+    border: 1px solid #ccc;
+    background-color: var(--neutral-white);
+    color: var(--primary-deep-blue);
+}
+
+/* FAQ Category Container */
+.faq-category {
+    display: none; /* hidden by default, shown if active */
     margin-bottom: var(--spacing-lg);
 }
 
-.faq-title {
+.faq-category.active {
+    display: block; /* show only the chosen category */
+}
+
+.faq-category-title {
     font-size: 1.5em;
     font-weight: 700;
     color: var(--primary-deep-blue);
     margin-bottom: var(--spacing-md);
+    text-shadow: 0 0 5px var(--primary-gold);
 }
 
-.faq-list {
-    list-style: none;
-    padding: 0;
-}
-
-.faq-list li {
+/* FAQ Items */
+.faq-item {
     margin-bottom: var(--spacing-md);
+}
+
+.faq-question {
+    width: 100%;
+    text-align: left;
+    background-color: var(--neutral-white);
+    color: var(--primary-deep-blue);
+    padding: var(--spacing-md);
+    font-size: 1em;
+    font-weight: 600;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    box-shadow: var(--shadow-card);
+    transition: box-shadow var(--transition-speed) var(--transition-type);
+}
+
+.faq-question:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+.faq-answer {
+    display: none;
+    background-color: var(--neutral-white);
+    border-radius: var(--border-radius);
+    margin-top: var(--spacing-xs);
+    padding: var(--spacing-md);
+    line-height: 1.6;
     color: var(--text-secondary);
 }
 
-.faq-list strong {
+.faq-item.active .faq-answer {
     display: block;
-    font-weight: 600;
-    margin-bottom: var(--spacing-sm);
 }
 
-.faq-list p {
-    margin: 0;
-    line-height: 1.6;
+/* Responsive Styles */
+@media (min-width: 576px) {
+    .faq-category-selector {
+        flex-direction: row;
+        align-items: center;
+        gap: var(--spacing-md);
+    }
 }
 </style>
+
+<script>
+// 1) Show/Hide FAQ categories based on dropdown selection
+const faqCategorySelect = document.getElementById("faqCategorySelect");
+const faqCategories = document.querySelectorAll(".faq-category");
+
+faqCategorySelect.addEventListener("change", function () {
+    // Hide all categories
+    faqCategories.forEach(cat => cat.classList.remove("active"));
+    // Show only the selected category
+    const selectedCategory = document.getElementById(this.value);
+    if (selectedCategory) {
+        selectedCategory.classList.add("active");
+    }
+});
+
+// 2) Accordions for each question
+document.querySelectorAll(".faq-question").forEach((btn) => {
+    btn.addEventListener("click", () => {
+        const parent = btn.parentElement;
+        parent.classList.toggle("active");
+    });
+});
+
+// Default view: Show "General" questions first
+document.getElementById("faq-general").classList.add("active");
+</script>
+
 
 
     </main>
