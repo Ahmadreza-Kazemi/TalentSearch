@@ -100,6 +100,7 @@
         /* =======================================================
            3. Font Imports
         ======================================================= */
+        /* Make sure these paths are correct for your environment */
         @font-face {
             font-family: 'Vazir';
             src: url('/assets/fonts/Vazir-Thin-UI.eot');
@@ -294,7 +295,7 @@
 
         /* ---------------------------------------------------
            4.4. Assessments Slider Section (Mobile-First)
-       --------------------------------------------------- */
+        --------------------------------------------------- */
         .assessments-slider {
             padding: 1rem;
             background-color: #ffffff; /* var(--neutral-white) */
@@ -317,6 +318,7 @@
             overflow-x: auto;
             margin-bottom: 1rem;
             border-bottom: 2px solid #e0e0e0;
+            font-family: 'Vazir', sans-serif; /* Ensure consistent font */
         }
 
         .tab {
@@ -330,6 +332,7 @@
             font-size: 1em;
             font-weight: 600;
             color: #333333;
+            font-family: 'Vazir', sans-serif; /* Ensure consistent font */
         }
 
         .tab.active {
@@ -402,6 +405,7 @@
             text-decoration: none;
             font-weight: 500;
             transition: background-color 0.3s ease;
+            font-family: 'Vazir', sans-serif;
         }
 
         .battery-btn:hover,
@@ -570,9 +574,6 @@
             }
         }
 
-        /* Services Grid for Large Devices (if needed) */
-        /* Removed since services are now in a slider */
-
         /* Adjustments for Very Small Devices */
         @media (max-width: 576px) {
             .footer-content {
@@ -633,7 +634,6 @@
         .reasoning-section {
             padding: var(--spacing-lg) var(--spacing-md);
             background-color: var(--neutral-white); /* Light gray for a subtle contrast */
-
             text-align: center;
         }
 
@@ -712,7 +712,7 @@
         }
         </style>
 
-         <!-- Assessments Slider Section -->
+        <!-- Assessments Slider Section -->
         <section class="assessments-slider">
             <h2>ارزیابی‌های روانشناسی</h2>
             
@@ -842,7 +842,6 @@
                                     <a href="/assessments/life-satisfaction-25" class="battery-btn">معرفی ارزیابی</a>
                                 </div>
                             </div>
-                            
                             <!-- Add more inventories as needed -->
                         </div>
                     </div>
@@ -906,7 +905,6 @@
                                     <a href="/assessments/goal-oriented" class="battery-btn">معرفی ارزیابی</a>
                                 </div>
                             </div>
-                            
                             <!-- Add more inventories as needed -->
                         </div>
                     </div>
@@ -948,7 +946,6 @@
                                     <a href="/assessments/childrens-personality" class="battery-btn">معرفی ارزیابی</a>
                                 </div>
                             </div>
-                            
                             <!-- Add more inventories as needed -->
                         </div>
                     </div>
@@ -990,7 +987,6 @@
                                     <a href="/assessments/cognitive-capacities" class="battery-btn">معرفی ارزیابی</a>
                                 </div>
                             </div>
-                            
                             <!-- Add more inventories as needed -->
                         </div>
                     </div>
@@ -1021,7 +1017,6 @@
                                     <a href="/assessments/child-talent-72" class="battery-btn">معرفی ارزیابی</a>
                                 </div>
                             </div>
-                            
                             <!-- Add more inventories as needed -->
                         </div>
                     </div>
@@ -1041,12 +1036,10 @@
                                     <a href="/assessments/mental-tranquility" class="battery-btn">معرفی ارزیابی</a>
                                 </div>
                             </div>
-                            
                             <!-- Add more inventories as needed -->
                         </div>
                     </div>
                 </div>
-                
                 <!-- Add more tab panes as needed -->
             </div>
             
@@ -1162,7 +1155,6 @@
                                 </p>
                             </div>
                         </div>
-                        
                         <!-- Add more factor slides as needed -->
                     </div>
                     
@@ -1181,7 +1173,7 @@
                 </div>
             </div>
         </section>
-    
+
         <style>
         /* Diagnostic Factors Section Styles */
         .factors-section {
@@ -1246,27 +1238,12 @@
             box-shadow: var(--shadow-hover);
         }
 
-        .factor-icon {
-            width: 50px;
-            height: 50px;
-            margin-bottom: var(--spacing-sm);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .factor-icon img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
         .factor-title {
             font-size: 1.2em;
             font-weight: 700;
             color: var(--primary-deep-blue);
             margin-bottom: var(--spacing-xs);
-            flex-shrink: 0; /* Prevent title from shrinking */
+            flex-shrink: 0; 
         }
 
         .factor-description {
@@ -1274,7 +1251,7 @@
             color: var(--text-secondary);
             line-height: 1.6;
             text-align: justify;
-            flex-grow: 1; /* Allow description to take up remaining space */
+            flex-grow: 1; 
             overflow: hidden;
         }
 
@@ -1404,23 +1381,16 @@
                         <img src="/assets/images/sepehr-logo.png" alt="مرکز خدمات روانشناسی و مشاوره سپهر" class="partner-logo">
                         <p class="partner-name">مرکز خدمات روانشناسی و مشاوره سپهر</p>
                     </div>
-
-                    <!-- Uncomment and add more partners as needed
-                    <div class="partner-card">
-                        <img src="/assets/images/federation-koshti-logo.png" alt="فدراسیون کشتی ایران" class="partner-logo">
-                        <p class="partner-name">فدراسیون کشتی ایران</p>
-                    </div>
-                    -->
+                    <!-- Add more partners as needed -->
                 </div>
             </div>
         </section>
         <style>
-
         /* Partners or Collaborators Section Styles */
         .partners-section {
             padding: var(--spacing-lg) var(--spacing-md);
             background-color: var(--neutral-white);
-            text-align: center; /* Center-aligns the text within the section */
+            text-align: center; 
         }
 
         .partners-section .container {
@@ -1435,7 +1405,7 @@
             color: var(--primary-deep-blue);
             margin-bottom: var(--spacing-lg);
             text-shadow: 0 0 5px var(--primary-gold);
-            font-family: 'Vazir', sans-serif; /* Ensures the title uses 'Vazir' font */
+            font-family: 'Vazir', sans-serif; 
         }
 
         .partners-section .section-text {
@@ -1444,7 +1414,7 @@
             line-height: 1.8;
             margin-bottom: var(--spacing-lg);
             text-align: justify;
-            font-family: 'Vazir', sans-serif; /* Ensures the text uses 'Vazir' font */
+            font-family: 'Vazir', sans-serif; 
         }
 
         .partners-grid {
@@ -1452,8 +1422,8 @@
             gap: var(--spacing-lg);
             grid-template-columns: 1fr;
             align-items: center;
-            justify-items: center; /* Centers items horizontally within their grid cell */
-            justify-content: center; /* Centers the entire grid within the container */
+            justify-items: center;
+            justify-content: center;
         }
 
         .partner-card {
@@ -1464,8 +1434,8 @@
             transition: transform var(--transition-speed) var(--transition-type), box-shadow var(--transition-speed) var(--transition-type);
             width: 100%;
             max-width: 250px;
-            text-align: center; /* Centers text within each partner card */
-            font-family: 'Vazir', sans-serif; /* Ensures the card uses 'Vazir' font */
+            text-align: center; 
+            font-family: 'Vazir', sans-serif; 
         }
 
         .partner-card:hover {
@@ -1485,25 +1455,24 @@
             font-size: 1em;
             font-weight: 600;
             color: var(--primary-deep-blue);
-            font-family: 'Vazir', sans-serif; /* Ensures the partner name uses 'Vazir' font */
+            font-family: 'Vazir', sans-serif;
         }
 
-        /* Responsive Styles */
         @media (min-width: 576px) {
             .partners-grid {
-                grid-template-columns: repeat(2, 1fr); /* Two columns for screens >= 576px */
+                grid-template-columns: repeat(2, 1fr); 
             }
         }
 
         @media (min-width: 768px) {
             .partners-grid {
-                grid-template-columns: repeat(3, 1fr); /* Three columns for screens >= 768px */
+                grid-template-columns: repeat(3, 1fr);
             }
         }
 
         @media (min-width: 1024px) {
             .partners-grid {
-                grid-template-columns: repeat(4, 1fr); /* Four columns for screens >= 1024px */
+                grid-template-columns: repeat(4, 1fr);
             }
         }
         </style>
@@ -1660,7 +1629,6 @@
             box-shadow: 0 0 10px var(--button-secondary);
         }
 
-        /* Responsive Styles */
         @media (min-width: 768px) {
             .pricing-grid {
                 grid-template-columns: repeat(3, 1fr);
@@ -1686,9 +1654,7 @@
                     <button class="tab-link" data-tab="faq-clinics">کلینیک‌ها</button>
                 </div>
 
-                <!-- FAQ Categories (Accordion Containers) -->
-
-                <!-- General Questions -->
+                <!-- FAQ Categories -->
                 <div id="faq-general" class="faq-category active">
                     <div class="faq-item">
                         <button class="faq-question">آیا گزارش‌های ارائه شده توسط استعدادیاب علمی و دقیق هستند؟</button>
@@ -1706,7 +1672,6 @@
                     </div>
                 </div>
 
-                <!-- Individuals -->
                 <div id="faq-individuals" class="faq-category">
                     <div class="faq-item">
                         <button class="faq-question">چگونه از طریق استعدادیاب می‌توانم استعدادهای پنهانم را کشف کنم؟</button>
@@ -1732,7 +1697,6 @@
                     </div>
                 </div>
 
-                <!-- Organizations -->
                 <div id="faq-organizations" class="faq-category">
                     <div class="faq-item">
                         <button class="faq-question">چگونه می‌توانیم از ارزیابی‌های استعدادیاب برای بهبود عملکرد تیم‌ها استفاده کنیم؟</button>
@@ -1757,7 +1721,6 @@
                     </div>
                 </div>
 
-                <!-- Schools -->
                 <div id="faq-schools" class="faq-category">
                     <div class="faq-item">
                         <button class="faq-question">چگونه ارزیابی‌های استعدادیاب به دانش‌آموزان در انتخاب رشته تحصیلی کمک می‌کند؟</button>
@@ -1782,7 +1745,6 @@
                     </div>
                 </div>
 
-                <!-- Clinics -->
                 <div id="faq-clinics" class="faq-category">
                     <div class="faq-item">
                         <button class="faq-question">آیا تست‌های استعدادیاب دارای پشتوانه علمی و اعتبار روان‌سنجی هستند؟</button>
@@ -1808,10 +1770,9 @@
                 </div>
             </div>
         </section>
-    
+
         <!-- FAQ Section Styles -->
         <style>
-            /* FAQ Section Styles */
             .faq-section {
                 padding: var(--spacing-lg) var(--spacing-md);
                 background-color: var(--neutral-cool-gray);
@@ -1839,7 +1800,6 @@
                 text-align: justify;
             }
 
-            /* Tabs */
             .faq-tabs {
                 display: flex;
                 justify-content: center;
@@ -1870,7 +1830,6 @@
                 border-bottom: 2px solid var(--button-primary);
             }
 
-            /* FAQ Categories */
             .faq-category {
                 display: none;
                 text-align: right;
@@ -1880,7 +1839,6 @@
                 display: block;
             }
 
-            /* FAQ Items */
             .faq-item {
                 margin-bottom: var(--spacing-md);
             }
@@ -1920,7 +1878,6 @@
                 display: block;
             }
 
-            /* Responsive Styles */
             @media (min-width: 576px) {
                 .faq-tabs {
                     gap: var(--spacing-md);
@@ -1935,7 +1892,6 @@
                 .faq-question {
                     font-size: 1.05em;
                 }
-
                 .faq-answer {
                     font-size: 1.1em;
                 }
@@ -1945,50 +1901,11 @@
                 .faq-question {
                     font-size: 1.1em;
                 }
-
                 .faq-answer {
                     font-size: 1.2em;
                 }
             }
         </style>
-    
-        <!-- FAQ Section JavaScript -->
-        <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                // Tab Navigation
-                const tabs = document.querySelectorAll(".tab-link");
-                const categories = document.querySelectorAll(".faq-category");
-
-                tabs.forEach((tab) => {
-                    tab.addEventListener("click", () => {
-                        // Remove active class from all tabs
-                        tabs.forEach((t) => t.classList.remove("active"));
-                        // Hide all categories
-                        categories.forEach((c) => c.classList.remove("active"));
-                        // Add active class to clicked tab
-                        tab.classList.add("active");
-                        // Show corresponding category
-                        const target = tab.getAttribute("data-tab");
-                        document.getElementById(target).classList.add("active");
-                    });
-                });
-
-                // Accordion Functionality
-                document.querySelectorAll(".faq-question").forEach((btn) => {
-                    btn.addEventListener("click", () => {
-                        const parent = btn.parentElement;
-                        parent.classList.toggle("active");
-                    });
-                });
-
-                // Set default active tab and category
-                const defaultTab = document.querySelector(".tab-link[data-tab='faq-general']");
-                if (defaultTab) {
-                    defaultTab.click();
-                }
-            });
-        </script>
-    
     </main>
     
     <!-- Footer -->
@@ -1998,10 +1915,11 @@
     
     <!-- Swiper JS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- These two scripts can be removed if you are not using them -->
     <script src="assets/js/header-footer-inject.js"></script>
     <script src="/assets/js/script.js"></script>
     
-    <!-- Initialize Swiper -->
+    <!-- Initialize Swiper and Tab Functionality -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             // Initialize Swiper for Diagnostic Factors
@@ -2011,42 +1929,31 @@
                 spaceBetween: 20,
                 slidesPerView: 1,
                 centeredSlides: true,
-                // Responsive breakpoints
                 breakpoints: {
-                    576: {
-                        slidesPerView: 1.5,
-                    },
-                    768: {
-                        slidesPerView: 2,
-                    },
-                    1024: {
-                        slidesPerView: 3,
-                    },
-                    1200: {
-                        slidesPerView: 4,
-                    },
+                    576: { slidesPerView: 1.5 },
+                    768: { slidesPerView: 2 },
+                    1024: { slidesPerView: 3 },
+                    1200: { slidesPerView: 4 },
                 },
-                // Pagination
                 pagination: {
                     el: ".swiper-pagination",
                     clickable: true,
                 },
-                // Navigation buttons
                 navigation: {
                     nextEl: ".swiper-button-next",
                     prevEl: ".swiper-button-prev",
                 },
             });
 
-            // Tab Functionality
+            // Assessments Tabs & Swipers
             const tabs = document.querySelectorAll('.tab');
             const tabPanes = document.querySelectorAll('.tab-pane');
 
             tabs.forEach(tab => {
                 tab.addEventListener('click', () => {
-                    // Remove active class from all tabs
+                    // Remove 'active' class from all tabs
                     tabs.forEach(t => t.classList.remove('active'));
-                    // Add active class to clicked tab
+                    // Add 'active' to the clicked tab
                     tab.classList.add('active');
 
                     // Hide all tab panes
@@ -2077,8 +1984,8 @@
                                     spaceBetween: 40,
                                 },
                             },
-                            pagination: false, // Remove pagination bullets
-                            navigation: false, // Remove navigation arrows
+                            pagination: false,
+                            navigation: false,
                             autoplay: {
                                 delay: 5000,
                                 disableOnInteraction: false,
@@ -2110,19 +2017,47 @@
                             spaceBetween: 40,
                         },
                     },
-                    pagination: false, // Remove pagination bullets
-                    navigation: false, // Remove navigation arrows
+                    pagination: false,
+                    navigation: false,
                     autoplay: {
                         delay: 5000,
                         disableOnInteraction: false,
                     },
                 });
             });
+
+            // FAQ Tab Navigation
+            const faqTabs = document.querySelectorAll(".tab-link");
+            const faqCategories = document.querySelectorAll(".faq-category");
+
+            faqTabs.forEach((tab) => {
+                tab.addEventListener("click", () => {
+                    // Remove active class from all faq tabs
+                    faqTabs.forEach((t) => t.classList.remove("active"));
+                    // Hide all categories
+                    faqCategories.forEach((c) => c.classList.remove("active"));
+                    // Add active class to clicked tab
+                    tab.classList.add("active");
+                    // Show corresponding category
+                    const target = tab.getAttribute("data-tab");
+                    document.getElementById(target).classList.add("active");
+                });
+            });
+
+            // FAQ Accordion
+            document.querySelectorAll(".faq-question").forEach((btn) => {
+                btn.addEventListener("click", () => {
+                    const parent = btn.parentElement;
+                    parent.classList.toggle("active");
+                });
+            });
+
+            // Set default active FAQ tab
+            const defaultFAQTab = document.querySelector(".tab-link[data-tab='faq-general']");
+            if (defaultFAQTab) {
+                defaultFAQTab.click();
+            }
         });
     </script>
-
-    <!-- Additional Sections (Diagnostic Factors, Partners, Pricing, FAQ) -->
-    <!-- These sections remain unchanged except for the Swiper class updates -->
-    
 </body>
 </html>
