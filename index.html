@@ -1655,41 +1655,47 @@
     <script src="/assets/js/script.js"></script>
     
     <!-- Initialize Swiper -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Initialize Services Swiper
-            var servicesSwiper = new Swiper('.swiper-services', {
-                direction: 'horizontal',
-                loop: true,
-                slidesPerView: 1,
-                spaceBetween: 20,
-                breakpoints: {
-                    576: {
-                        slidesPerView: 2,
-                        spaceBetween: 20,
-                    },
-                    768: {
-                        slidesPerView: 3,
-                        spaceBetween: 30,
-                    },
-                    1024: {
-                        slidesPerView: 4,
-                        spaceBetween: 40,
-                    },
+<!-- Swiper JS -->
+
+<!-- Swiper Initialization -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var swiperFactors = new Swiper(".swiper-factors", {
+            // Optional parameters
+            direction: "horizontal",
+            loop: true,
+            spaceBetween: 20,
+            slidesPerView: 1,
+            centeredSlides: true,
+            // Responsive breakpoints
+            breakpoints: {
+                576: {
+                    slidesPerView: 1.5,
                 },
-                pagination: {
-                    el: '.swiper-services .swiper-pagination',
-                    clickable: true,
+                768: {
+                    slidesPerView: 2,
                 },
-                navigation: {
-                    nextEl: '.swiper-services .swiper-button-next',
-                    prevEl: '.swiper-services .swiper-button-prev',
+                1024: {
+                    slidesPerView: 3,
                 },
-                autoplay: {
-                    delay: 5000,
-                    disableOnInteraction: false,
+                1200: {
+                    slidesPerView: 4,
                 },
-            });
+            },
+            // If you need pagination
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            // If you need navigation buttons
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    });
+</script>
+
 
             // Initialize Assessments Swiper
             var assessmentsSwiper = new Swiper('.swiper-assessments', {
