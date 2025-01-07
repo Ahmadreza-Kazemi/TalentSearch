@@ -715,10 +715,6 @@
                 <!-- Factor Slide 1 -->
                 <div class="swiper-slide">
                     <div class="factor-card">
-                        <div class="factor-icon">
-                            <!-- Optional: Add an icon representing AI/data-driven -->
-                            <img src="/assets/icons/ai-icon.svg" alt="AI Icon" />
-                        </div>
                         <h3 class="factor-title">استنتاج تجربی</h3>
                         <p class="factor-description">
                             فردی که از آزمون روش‌های جدید، تفکر عمیق دربارهٔ مسائل،
@@ -730,9 +726,6 @@
                 <!-- Factor Slide 2 -->
                 <div class="swiper-slide">
                     <div class="factor-card">
-                        <div class="factor-icon">
-                            <img src="/assets/icons/data-icon.svg" alt="Data Icon" />
-                        </div>
                         <h3 class="factor-title">اعتمادورزی</h3>
                         <p class="factor-description">
                             فردی که به دیگران اعتماد دارد و معتقد است آن‌ها صادق هستند
@@ -745,9 +738,6 @@
                 <!-- Factor Slide 3 -->
                 <div class="swiper-slide">
                     <div class="factor-card">
-                        <div class="factor-icon">
-                            <img src="/assets/icons/analytics-icon.svg" alt="Analytics Icon" />
-                        </div>
                         <h3 class="factor-title">تحلیلگری</h3>
                         <p class="factor-description">
                             فردی با قدرت درک موقعیت، یافتن راه‌حل‌های منطقی و
@@ -760,9 +750,6 @@
                 <!-- Factor Slide 4 -->
                 <div class="swiper-slide">
                     <div class="factor-card">
-                        <div class="factor-icon">
-                            <img src="/assets/icons/innovation-icon.svg" alt="Innovation Icon" />
-                        </div>
                         <h3 class="factor-title">نوآوری</h3>
                         <p class="factor-description">
                             توانایی بالقوه در یافتن راه‌حل‌های جدید و ساده برای مشکلات.
@@ -774,14 +761,46 @@
                 <!-- Factor Slide 5 -->
                 <div class="swiper-slide">
                     <div class="factor-card">
-                        <div class="factor-icon">
-                            <img src="/assets/icons/emotion-icon.svg" alt="Emotion Icon" />
-                        </div>
                         <h3 class="factor-title">هیجان پذیری</h3>
                         <p class="factor-description">
                             تأثیرپذیری زیاد از هیجانات در تصمیم‌گیری. احساسات
                             گاه بر منطق او غلبه می‌کنند و می‌توانند روند تشخیص و
                             انتخاب را پیچیده سازند.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Factor Slide 6 -->
+                <div class="swiper-slide">
+                    <div class="factor-card">
+                        <h3 class="factor-title">مادی‌گرایی</h3>
+                        <p class="factor-description">
+                            شخصی که خودبینی و جاه‌طلبی بالایی دارد، اغلب خود را
+                            با دیگران مقایسه می‌کند و از معنویت فاصله گرفته است.
+                            ارزشمندی‌اش را از موفقیت‌های بیرونی می‌گیرد.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Factor Slide 7 -->
+                <div class="swiper-slide">
+                    <div class="factor-card">
+                        <h3 class="factor-title">شیفتگی</h3>
+                        <p class="factor-description">
+                            تمرکزی عمیق روی وظایف و موضوعات؛ اغلب زمان را فراموش
+                            می‌کند و با انرژی بالا کارها را تا حصول نتیجه ادامه می‌دهد.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Factor Slide 8 -->
+                <div class="swiper-slide">
+                    <div class="factor-card">
+                        <h3 class="factor-title">نوآوری</h3>
+                        <p class="factor-description">
+                            توانایی بالقوه‌ای در ارائه راه‌حل‌های جدید، آسان و مؤثر برای مسائل دشوار دارد.
+                            او برخوردار از توانایی ویژه‌ای در انجام کارهای سودمند است و معمولاً توانایی دارد
+                            که با شیوه‌های نوین و متفاوتی کارها را ارائه دهد.
                         </p>
                     </div>
                 </div>
@@ -792,7 +811,9 @@
             <!-- Swiper Pagination -->
             <div class="swiper-pagination"></div>
             
-
+            <!-- Swiper Navigation (Optional) -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
         </div>
         
         <!-- CTA & Mention of Total Factors -->
@@ -805,6 +826,7 @@
         </div>
     </div>
 </section>
+
         <style>
 /* Diagnostic Factors Section Styles */
 .factors-section {
@@ -846,7 +868,7 @@
 .swiper-factors .swiper-slide {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: stretch; /* Ensure slides stretch to the same height */
 }
 
 .factor-card {
@@ -861,6 +883,7 @@
     display: flex;
     flex-direction: column;
     gap: var(--spacing-sm);
+    height: 100%; /* Make all cards the same height */
 }
 
 .factor-card:hover {
@@ -888,6 +911,7 @@
     font-weight: 700;
     color: var(--primary-deep-blue);
     margin-bottom: var(--spacing-xs);
+    flex-shrink: 0; /* Prevent title from shrinking */
 }
 
 .factor-description {
@@ -895,9 +919,10 @@
     color: var(--text-secondary);
     line-height: 1.6;
     text-align: justify;
+    flex-grow: 1; /* Allow description to take up remaining space */
+    overflow: hidden;
 }
 
-/* CTA Section */
 .factors-cta {
     margin-top: var(--spacing-lg);
     text-align: center;
@@ -956,10 +981,6 @@
 
 /* Responsive Styles */
 @media (min-width: 576px) {
-    .factors-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
     .swiper-factors .swiper-slide {
         width: 50%;
     }
@@ -984,6 +1005,13 @@
         max-width: 400px;
     }
 }
+
+@media (min-width: 1200px) {
+    .swiper-factors .swiper-slide {
+        width: 20%;
+    }
+}
+
     </style>
 
 
