@@ -163,6 +163,19 @@
         ======================================================= */
 
         /* ---------------------------------------------------
+           4.1. Header
+        --------------------------------------------------- */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: var(--header-height);
+            background-color: var(--neutral-white);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        /* ---------------------------------------------------
            4.2. Hero Section
         --------------------------------------------------- */
         .hero {
@@ -267,7 +280,85 @@
         }
 
         /* ---------------------------------------------------
-           4.4. Footer
+           4.4. Assessments Slider Section
+        --------------------------------------------------- */
+        .assessments-slider {
+            padding: var(--spacing-lg);
+            background-color: var(--neutral-white);
+            color: var(--text-primary);
+            text-align: center;
+        }
+
+        .assessments-slider h2 {
+            font-size: 2em;
+            font-weight: 700;
+            color: var(--primary-deep-blue);
+            text-shadow: 0 0 5px var(--primary-gold);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        /* Swiper Specific Styles */
+        .swiper {
+            width: 100%;
+            padding-bottom: 50px;
+        }
+
+        .swiper-slide {
+            background-color: var(--neutral-cool-gray);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-card);
+            transition: transform var(--transition-speed) var(--transition-type),
+                        box-shadow var(--transition-speed) var(--transition-type);
+            height: auto; /* Adjust height based on content */
+        }
+
+        .swiper-slide:hover,
+        .swiper-slide:focus-within {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .swiper-slide h3 {
+            font-size: 1.2em;
+            font-weight: 700;
+            color: var(--primary-deep-blue);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .swiper-slide p.description {
+            font-size: 0.95em;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .swiper-slide p.id {
+            font-size: 0.85em;
+            color: var(--neutral-dark-gray);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .battery-btn {
+            display: inline-block;
+            background-color: var(--button-primary);
+            color: var(--neutral-white);
+            padding: 8px 20px;
+            border-radius: var(--border-radius);
+            font-size: 0.9em;
+            text-decoration: none;
+            font-weight: 500;
+            margin: 5px;
+            transition: background-color var(--transition-speed) var(--transition-type);
+        }
+
+        .battery-btn:hover,
+        .battery-btn:focus {
+            background-color: var(--button-secondary);
+        }
+
+        /* ---------------------------------------------------
+           4.5. Footer
         --------------------------------------------------- */
         .footer {
             background-color: var(--neutral-white);
@@ -378,17 +469,18 @@
            5. Responsive Styles (Mobile-First)
         ======================================================= */
 
-        /* Medium Devices (Tablets) */
-        @media (min-width: 577px) and (max-width: 768px) {
+        /* Services Grid for Large Devices */
+        @media (min-width: 769px) {
             .service-list {
-                grid-template-columns: repeat(2, 1fr); /* Two columns for tablets */
+                grid-template-columns: repeat(3, 1fr);
             }
         }
 
-        /* Large Devices (Desktops) */
+        /* Assessments Slider for Larger Devices */
         @media (min-width: 769px) {
-            .service-list {
-                grid-template-columns: repeat(3, 1fr); /* Three columns for desktops */
+            .swiper {
+                width: 90%;
+                margin: 0 auto;
             }
         }
 
@@ -416,6 +508,12 @@
         }
 
     </style>
+
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
 </head>
 <body>
     <!-- Header -->
@@ -450,27 +548,63 @@
                     <h3>هوش تحصیلی</h3>
                     <p>این هوش به توانایی یادگیری سریع و دقیق مطالب درسی اشاره دارد. فرد با هوش تحصیلی بالا معمولاً در دروس عملی و نظری عملکرد خوبی دارد.</p>
                 </div>
-                <div class="service-item">
-                    <h3>مهارت نوآوری</h3>
-                    <p>این مهارت به توانایی ارائه راه‌حل‌های جدید و خلاقانه برای مشکلات اطلاق می‌شود. فردی با این مهارت قادر است در شرایط دشوار، ایده‌های نوآورانه‌ای ارائه دهد.</p>
-                </div>
-                <div class="service-item">
-                    <h3>مهارت وظیفه‌مندی</h3>
-                    <p>این مهارت به قابلیت انجام دقیق و مؤثر کارهایی که به شما سپرده شده است، اشاره دارد. کسی که در این مهارت قوی است، وظایف خود را با دقت و کیفیت بالا انجام می‌دهد.</p>
-                </div>
-                <div class="service-item">
-                    <h3>خلاقیت</h3>
-                    <p>خلاقیت به توانایی ایجاد ایده‌های جدید و نوآورانه اشاره دارد. فردی خلاق می‌تواند راه‌حل‌های منحصر به فردی برای مشکلات ارائه دهد و ایده‌های نو را به واقعیت تبدیل کند.</p>
-                </div>
-                <div class="service-item">
-                    <h3>تیزهوشی</h3>
-                    <p>تیزهوشی به توانایی سریع و دقیق در درک مفاهیم پیچیده و حل مسائل اشاره دارد. افراد با تیزهوشی بالا قادرند به سرعت اطلاعات جدید را پردازش و اعمال کنند.</p>
-                </div>
-                <div class="service-item">
-                    <h3>نبوغ</h3>
-                    <p>نبوغ به توانایی فوق‌العاده در درک و حل مسائل پیچیده و خلق آثار هنری یا علمی اشاره دارد. نبوغ اغلب با ابتکار و خلاقیت ترکیب می‌شود.</p>
-                </div>
+                <!-- Add more service items as needed -->
             </div>
+        </section>
+
+        <!-- Assessments Slider Section -->
+        <section id="featured-assessments" class="section assessments-slider">
+            <h2>برخی از ارزیابی‌های ما</h2>
+            
+            <!-- Swiper -->
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide">
+                        <h3>فهرست آرامش روانی - 33</h3>
+                        <p class="description">این ارزیابی به سنجش میزان آرامش روانی و توانایی مدیریت استرس شما می‌پردازد.</p>
+                        <p class="id">id: 110001</p>
+                        <div class="battery-links">
+                            <a href="/take/mental-tranquility" class="battery-btn">شروع ارزیابی</a>
+                            <a href="/assessments/mental-tranquility" class="battery-btn">معرفی ارزیابی</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide">
+                        <h3>فهرست ارجمندی - 17</h3>
+                        <p class="description">این ارزیابی به بررسی سطح ارجمندی و خودارزیابی مثبت شما می‌پردازد.</p>
+                        <p class="id">id: 110002</p>
+                        <div class="battery-links">
+                            <a href="/take/esteem" class="battery-btn">شروع ارزیابی</a>
+                            <a href="/assessments/esteem" class="battery-btn">معرفی ارزیابی</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide">
+                        <h3>فهرست استعداد کودک - 48</h3>
+                        <p class="description">این ارزیابی برای شناسایی استعدادهای بالقوه کودکان طراحی شده است.</p>
+                        <p class="id">id: 110003</p>
+                        <div class="battery-links">
+                            <a href="/take/child-talent-48" class="battery-btn">شروع ارزیابی</a>
+                            <a href="/assessments/child-talent-48" class="battery-btn">معرفی ارزیابی</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Add more slides as needed -->
+                </div>
+                
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+                
+                <!-- Add Navigation -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+
+            <!-- Button to Go to Assessments Page -->
+            <a href="/assessments" class="cta-button" style="margin-top: var(--spacing-lg);">مشاهده همه ارزیابی‌ها</a>
         </section>
     </main>
     
@@ -479,8 +613,54 @@
         <!-- Content injected via scripts -->
     </footer>
     
-    <!-- Scripts -->
-    <script src="assets/js/header-footer-inject.js"></script>
-    <script src="assets/js/script.js" defer></script>
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+            <script src="assets/js/header-footer-inject.js"></script>
+    <script src="/assets/js/script.js"></script>
+    
+    <!-- Initialize Swiper -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var swiper = new Swiper('.swiper', {
+                // Optional parameters
+                direction: 'horizontal',
+                loop: true,
+                slidesPerView: 1,
+                spaceBetween: 20,
+                // Responsive breakpoints
+                breakpoints: {
+                    576: {
+                        slidesPerView: 1.5,
+                        spaceBetween: 20,
+                    },
+                    768: {
+                        slidesPerView: 2.5,
+                        spaceBetween: 30,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                        spaceBetween: 40,
+                    },
+                },
+                // If you need pagination
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                // Navigation arrows
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                // Enable autoplay
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+                // Enable RTL
+                rtl: true,
+            });
+        });
+    </script>
 </body>
 </html>
