@@ -298,7 +298,7 @@
         }
 
         /* Swiper Specific Styles */
-        .swiper-container {
+        .swiper {
             width: 100%;
             padding-bottom: 50px;
         }
@@ -478,7 +478,7 @@
 
         /* Assessments Slider for Larger Devices */
         @media (min-width: 769px) {
-            .swiper-container {
+            .swiper {
                 width: 90%;
                 margin: 0 auto;
             }
@@ -557,7 +557,7 @@
             <h2>برخی از ارزیابی‌های ما</h2>
             
             <!-- Swiper -->
-            <div class="swiper-container">
+            <div class="swiper">
                 <div class="swiper-wrapper">
                     <!-- Slide 1 -->
                     <div class="swiper-slide">
@@ -619,16 +619,12 @@
     <!-- Initialize Swiper -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            var swiper = new Swiper('.swiper-container', {
-                // Enable RTL
-                direction: 'horizontal',
-                rtl: true,
-
+            var swiper = new Swiper('.swiper', {
                 // Optional parameters
+                direction: 'horizontal',
                 loop: true,
                 slidesPerView: 1,
                 spaceBetween: 20,
-
                 // Responsive breakpoints
                 breakpoints: {
                     576: {
@@ -644,24 +640,23 @@
                         spaceBetween: 40,
                     },
                 },
-
                 // If you need pagination
                 pagination: {
                     el: '.swiper-pagination',
                     clickable: true,
                 },
-
                 // Navigation arrows
                 navigation: {
                     nextEl: '.swiper-button-next',
                     prevEl: '.swiper-button-prev',
                 },
-
                 // Enable autoplay
                 autoplay: {
                     delay: 5000,
                     disableOnInteraction: false,
                 },
+                // Enable RTL
+                rtl: true,
             });
         });
     </script>
