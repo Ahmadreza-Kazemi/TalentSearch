@@ -768,6 +768,131 @@
                         <!-- Button to Go to Factors Page -->
             <a href="/resources/factors" class="cta-button" style="margin-top: var(--spacing-lg);">همه عوامل</a>
         </section>
+
+
+        <!-- Partners or Collaborators Section -->
+<section class="section partners-section" id="partners">
+    <div class="container">
+        <h2 class="section-title">همکاری‌ها و مشتریان ما</h2>
+        <p class="section-text">
+            ما در استعدادیاب مفتخریم که با سازمان‌ها و موسسات معتبر همکاری می‌کنیم تا بهترین خدمات را به شما ارائه دهیم.
+            با بیش از <strong>40,000 تست تکمیل‌شده</strong> و <strong>8,000 مشتری از طریق شرکای ما</strong>,
+            اعتماد بیشمار کاربران به ما را نشان می‌دهد.
+        </p>
+
+        <!-- Partners Logos -->
+        <div class="partners-grid">
+            <!-- Partner 1 -->
+            <div class="partner-card">
+                <!-- Replace the src attribute with the actual logo image paths -->
+                <img src="/assets/images/iran-andiash-logo.png" alt="مرکز خدمات روانشناسی و مشاوره ایران اندیش" class="partner-logo">
+                <p class="partner-name">مرکز خدمات روانشناسی و مشاوره ایران اندیش</p>
+            </div>
+
+            <!-- Partner 2 -->
+            <div class="partner-card">
+                <img src="/assets/images/sepehr-logo.png" alt="مرکز خدمات روانشناسی و مشاوره سپهر" class="partner-logo">
+                <p class="partner-name">مرکز خدمات روانشناسی و مشاوره سپهر</p>
+            </div>
+
+            <!-- Partner 3 -->
+            <div class="partner-card">
+                <img src="/assets/images/federation-koshti-logo.png" alt="فدراسیون کشتی ایران" class="partner-logo">
+                <p class="partner-name">فدراسیون کشتی ایران</p>
+            </div>
+
+            <!-- Add more partners as needed -->
+        </div>
+    </div>
+</section>
+
+
+        /* Partners or Collaborators Section Styles */
+.partners-section {
+    padding: var(--spacing-lg) var(--spacing-md);
+    background-color: var(--neutral-white);
+    text-align: center;
+}
+
+.partners-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-md);
+}
+
+.partners-section .section-title {
+    font-size: 2em;
+    font-weight: 700;
+    color: var(--primary-deep-blue);
+    margin-bottom: var(--spacing-lg);
+    text-shadow: 0 0 5px var(--primary-gold);
+}
+
+.partners-section .section-text {
+    font-size: 1.1em;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: var(--spacing-lg);
+    text-align: justify;
+}
+
+.partners-grid {
+    display: grid;
+    gap: var(--spacing-lg);
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-items: center;
+}
+
+.partner-card {
+    background-color: var(--neutral-cool-gray);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-card);
+    transition: transform var(--transition-speed) var(--transition-type), box-shadow var(--transition-speed) var(--transition-type);
+    width: 100%;
+    max-width: 250px;
+    text-align: center;
+}
+
+.partner-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.partner-logo {
+    width: 100%;
+    height: auto;
+    max-height: 100px;
+    object-fit: contain;
+    margin-bottom: var(--spacing-sm);
+}
+
+.partner-name {
+    font-size: 1em;
+    font-weight: 600;
+    color: var(--primary-deep-blue);
+}
+
+/* Responsive Styles */
+@media (min-width: 576px) {
+    .partners-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 768px) {
+    .partners-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .partners-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
                 <!-- Reasonable CTA Section -->
 <section class="section cta-section" id="cta">
     <div class="container">
