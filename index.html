@@ -590,17 +590,7 @@
 }
 </style>
 
-        <!-- Reasonable CTA Section -->
-<section class="section cta-section" id="cta">
-    <div class="container">
-        <h2 class="cta-title">گام نخست برای کشف استعدادهایتان</h2>
-        <p class="cta-text">
-            اگر آماده‌اید تا قدمی اصولی برای شناسایی توانمندی‌های درونی‌تان بردارید، ارزیابی‌های روان‌شناختی 
-            استعدادیاب به شما کمک می‌کنند تا آگاهانه‌تر مسیر رشد و پیشرفت خود را تعیین کنید.
-        </p>
-        <a href="/getting-started" class="cta-button">همین حالا آغاز کنید</a>
-    </div>
-</section>
+
 
 <style>
 /* CTA Section Styles */
@@ -789,6 +779,166 @@
         <a href="/getting-started" class="cta-button">همین حالا آغاز کنید</a>
     </div>
 </section>
+        <!-- Reasonable Pricing Section -->
+<section class="section pricing-section" id="pricing">
+    <div class="container">
+        <h2 class="section-title">پلن‌های قیمتی ما</h2>
+        <p class="section-text">
+            ما در استعدادیاب معتقدیم ارزیابی‌های روان‌شناختی باید برای همه قابل‌دسترس باشد. 
+            به همین دلیل ترکیبی از تست‌های رایگان و پرداختی را ارائه می‌دهیم تا بتوانید بر اساس 
+            نیاز و بودجه‌تان، بهترین انتخاب را داشته باشید.
+        </p>
+
+        <!-- Pricing Options -->
+        <div class="pricing-grid">
+            <!-- Free Tests -->
+            <div class="pricing-card">
+                <h3 class="pricing-title">تست‌های رایگان</h3>
+                <p class="pricing-amount">رایگان</p>
+                <ul class="pricing-features">
+                    <li>دسترسی به ارزیابی‌های مقدماتی</li>
+                    <li>گزارش مختصر و قابل فهم</li>
+                    <li>پشتیبانی از طریق محتوای راهنما</li>
+                </ul>
+                <a href="/assessments#free-tests" class="cta-button">شروع رایگان</a>
+            </div>
+
+            <!-- Paid Tests -->
+            <div class="pricing-card">
+                <h3 class="pricing-title">تست‌های پیشرفته</h3>
+                <p class="pricing-amount">پرداختی بر اساس هر تست</p>
+                <ul class="pricing-features">
+                    <li>گزارش‌های جامع و تعاملی</li>
+                    <li>امکان مشاوره اختیاری</li>
+                    <li>دسترسی به نتایج و پیشنهادهای تخصصی</li>
+                </ul>
+                <a href="/assessments#premium-tests" class="cta-button">مشاهده تست‌ها</a>
+            </div>
+
+            <!-- Negotiable Pricing -->
+            <div class="pricing-card">
+                <h3 class="pricing-title">سازمان‌ها و مدارس</h3>
+                <p class="pricing-amount">قابل مذاکره</p>
+                <ul class="pricing-features">
+                    <li>پکیج‌های ارزیابی گروهی</li>
+                    <li>گزارش‌های سفارشی و تحلیلی</li>
+                    <li>پشتیبانی اختصاصی و داشبورد سازمانی</li>
+                </ul>
+                <a href="/contact" class="cta-button">تماس بگیرید</a>
+            </div>
+        </div>
+
+        <p class="section-note">
+            هزینه برخی تست‌ها مستقیماً در صفحه ارزیابی ذکر شده است. 
+            برای اطلاعات بیشتر یا دریافت بسته‌های شخصی‌سازی‌شده، خوشحال می‌شویم با ما در ارتباط باشید.
+        </p>
+    </div>
+</section>
+
+<style>
+/* Reasonable Pricing Section Styles */
+.pricing-section {
+    padding: var(--spacing-lg) var(--spacing-md);
+    background-color: var(--neutral-cool-gray);
+    text-align: center;
+}
+
+.pricing-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-md);
+}
+
+.section-title {
+    font-size: 2em;
+    font-weight: 700;
+    color: var(--primary-deep-blue);
+    margin-bottom: var(--spacing-lg);
+    text-shadow: 0 0 5px var(--primary-gold);
+}
+
+.section-text, .section-note {
+    font-size: 1.1em;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: var(--spacing-md);
+    text-align: justify;
+}
+
+.pricing-grid {
+    display: grid;
+    gap: var(--spacing-lg);
+    grid-template-columns: 1fr;
+    margin-bottom: var(--spacing-lg);
+}
+
+.pricing-card {
+    background-color: var(--neutral-white);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-card);
+    transition: box-shadow var(--transition-speed) var(--transition-type);
+}
+
+.pricing-card:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+.pricing-title {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: var(--primary-deep-blue);
+    margin-bottom: var(--spacing-sm);
+}
+
+.pricing-amount {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: var(--secondary-teal-green);
+    margin-bottom: var(--spacing-md);
+}
+
+.pricing-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: var(--spacing-md);
+    text-align: left;
+}
+
+.pricing-features li {
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-secondary);
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--button-primary);
+    color: var(--neutral-white);
+    padding: 10px 24px;
+    border-radius: var(--border-radius);
+    font-size: 1em;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color var(--transition-speed) var(--transition-type),
+                transform var(--transition-speed) var(--transition-type),
+                box-shadow var(--transition-speed) var(--transition-type);
+}
+
+.cta-button:hover,
+.cta-button:focus {
+    background-color: var(--button-secondary);
+    transform: translateY(-3px);
+    box-shadow: 0 0 10px var(--button-secondary);
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+    .pricing-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+</style>
+
     </main>
     
     <!-- Footer -->
