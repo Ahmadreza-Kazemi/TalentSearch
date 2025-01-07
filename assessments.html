@@ -1,512 +1,669 @@
-<!doctype html>
-<html lang="fa">
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>استعدادیاب | معرفی ارزیابی‌های روان‌شناختی</title>
-    <meta name="description" content="با استعدادیاب، با ارزیابی‌های روان‌شناختی پیشرفته آشنا شوید و توانمندی‌های خود را بشناسید.">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>استعدادیاب | ارزیابی‌های روان‌شناختی برای تعالی فردی شما</title>
+    <style>
+        /* =======================================================
+           1. Reset and Base Styles
+        ======================================================= */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100%;
+            font-family: 'Vazir', sans-serif;
+            background-color: #FFFFFF;
+            color: #1F3B73;
+            direction: rtl;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            padding-top: 80px;
+            padding-bottom: 60px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #1F3B73;
+            transition: color 0.3s ease-in-out;
+        }
+
+        a:hover,
+        a:focus {
+            color: #F4C553;
+            text-decoration: underline;
+        }
+
+        /* =======================================================
+           2. Root Variables
+        ======================================================= */
+        :root {
+            /* Font Family */
+            --font-family: 'Vazir', sans-serif;
+
+            /* Color Palette */
+            --primary-gold: #F4C553;
+            --primary-deep-blue: #1F3B73;
+            --secondary-teal-green: #4FBDBA;
+            --secondary-electric-blue: #007BFF;
+            --neutral-white: #FFFFFF;
+            --neutral-cool-gray: #F0F0F5;
+            --neutral-dark-gray: #888888;
+            --accent-golden-yellow: #FFD77B;
+
+            /* Text Colors */
+            --text-primary: var(--primary-deep-blue);
+            --text-secondary: var(--neutral-dark-gray);
+
+            /* Button Colors */
+            --button-primary: var(--primary-gold);
+            --button-secondary: var(--secondary-teal-green);
+
+            /* Spacing */
+            --header-height: 80px;
+            --spacing-xs: 4px;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+            --spacing-xl: 32px;
+            --spacing-small: 10px;
+            --spacing-medium: 20px;
+            --spacing-large: 40px;
+
+            /* Border Radius */
+            --border-radius: 8px;
+
+            /* Shadows */
+            --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 6px 18px rgba(0, 0, 0, 0.15);
+
+            /* Transitions */
+            --transition-speed: 0.3s;
+            --transition-type: ease-in-out;
+        }
+
+        /* =======================================================
+           3. Font Imports
+        ======================================================= */
+        @font-face {
+            font-family: 'Vazir';
+            src: url('/assets/fonts/Vazir-Thin-UI.eot');
+            src: url('/assets/fonts/Vazir-Thin-UI.eot?#iefix') format('embedded-opentype'),
+                 url('/assets/fonts/Vazir-Thin-UI.woff2') format('woff2'),
+                 url('/assets/fonts/Vazir-Thin-UI.woff') format('woff'),
+                 url('/assets/fonts/Vazir-Thin-UI.ttf') format('truetype');
+            font-weight: 100;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Vazir';
+            src: url('/assets/fonts/Vazir-Light-UI.eot');
+            src: url('/assets/fonts/Vazir-Light-UI.eot?#iefix') format('embedded-opentype'),
+                 url('/assets/fonts/Vazir-Light-UI.woff2') format('woff2'),
+                 url('/assets/fonts/Vazir-Light-UI.woff') format('woff'),
+                 url('/assets/fonts/Vazir-Light-UI.ttf') format('truetype');
+            font-weight: 300;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Vazir';
+            src: url('/assets/fonts/Vazir-Regular-UI.eot');
+            src: url('/assets/fonts/Vazir-Regular-UI.eot?#iefix') format('embedded-opentype'),
+                 url('/assets/fonts/Vazir-Regular-UI.woff2') format('woff2'),
+                 url('/assets/fonts/Vazir-Regular-UI.woff') format('woff'),
+                 url('/assets/fonts/Vazir-Regular-UI.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Vazir';
+            src: url('/assets/fonts/Vazir-Medium-UI.eot');
+            src: url('/assets/fonts/Vazir-Medium-UI.eot?#iefix') format('embedded-opentype'),
+                 url('/assets/fonts/Vazir-Medium-UI.woff2') format('woff2'),
+                 url('/assets/fonts/Vazir-Medium-UI.woff') format('woff'),
+                 url('/assets/fonts/Vazir-Medium-UI.ttf') format('truetype');
+            font-weight: 500;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Vazir';
+            src: url('/assets/fonts/Vazir-Bold-UI.eot');
+            src: url('/assets/fonts/Vazir-Bold-UI.eot?#iefix') format('embedded-opentype'),
+                 url('/assets/fonts/Vazir-Bold-UI.woff2') format('woff2'),
+                 url('/assets/fonts/Vazir-Bold-UI.woff') format('woff'),
+                 url('/assets/fonts/Vazir-Bold-UI.ttf') format('truetype');
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Vazir';
+            src: url('/assets/fonts/Vazir-Black-UI.eot');
+            src: url('/assets/fonts/Vazir-Black-UI.eot?#iefix') format('embedded-opentype'),
+                 url('/assets/fonts/Vazir-Black-UI.woff2') format('woff2'),
+                 url('/assets/fonts/Vazir-Black-UI.woff') format('woff'),
+                 url('/assets/fonts/Vazir-Black-UI.ttf') format('truetype');
+            font-weight: 900;
+            font-style: normal;
+        }
+
+        /* =======================================================
+           4. Layout Sections
+        ======================================================= */
+
+        /* ---------------------------------------------------
+           4.1. Header
+        --------------------------------------------------- */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: var(--header-height);
+            background-color: var(--neutral-white);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        /* ---------------------------------------------------
+           4.2. Hero Section
+        --------------------------------------------------- */
+        .hero {
+            height: calc(100vh - var(--header-height));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--neutral-cool-gray);
+            color: var(--text-primary);
+            text-align: center;
+            padding: var(--spacing-md);
+        }
+
+        .hero-content h2 {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: var(--primary-deep-blue);
+            text-shadow: 0 0 10px var(--primary-gold);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .hero-content p {
+            font-size: 1.5em;
+            margin-bottom: var(--spacing-lg);
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--button-primary);
+            color: var(--neutral-white);
+            padding: 12px 30px;
+            border-radius: var(--border-radius);
+            font-size: 1em;
+            box-shadow: 0 0 10px var(--accent-golden-yellow);
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color var(--transition-speed) var(--transition-type),
+                        transform var(--transition-speed) var(--transition-type),
+                        box-shadow var(--transition-speed) var(--transition-type);
+        }
+
+        .cta-button:hover,
+        .cta-button:focus {
+            background-color: var(--button-secondary);
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px var(--button-secondary);
+        }
+
+        /* ---------------------------------------------------
+           4.3. Services Section
+        --------------------------------------------------- */
+        .services {
+            padding: var(--spacing-lg);
+            background-color: var(--neutral-white);
+            color: var(--text-primary);
+            text-align: center;
+        }
+
+        .services h2 {
+            font-size: 2em;
+            font-weight: 700;
+            color: var(--primary-deep-blue);
+            text-shadow: 0 0 5px var(--primary-gold);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .service-list {
+            display: grid;
+            grid-template-columns: 1fr; /* Mobile-first: single column */
+            gap: var(--spacing-lg);
+            padding: var(--spacing-lg) var(--spacing-md);
+        }
+
+        .service-item {
+            background-color: var(--neutral-cool-gray);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-card);
+            transition: transform var(--transition-speed) var(--transition-type),
+                        box-shadow var(--transition-speed) var(--transition-type);
+        }
+
+        .service-item:hover,
+        .service-item:focus-within {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .service-item h3 {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: var(--primary-deep-blue);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .service-item p {
+            font-size: 1em;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* ---------------------------------------------------
+           4.4. Assessments Slider Section
+        --------------------------------------------------- */
+        .assessments-slider {
+            padding: var(--spacing-lg);
+            background-color: var(--neutral-white);
+            color: var(--text-primary);
+            text-align: center;
+        }
+
+        .assessments-slider h2 {
+            font-size: 2em;
+            font-weight: 700;
+            color: var(--primary-deep-blue);
+            text-shadow: 0 0 5px var(--primary-gold);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        /* Swiper Specific Styles */
+        .swiper-container {
+            width: 100%;
+            padding-bottom: 50px;
+        }
+
+        .swiper-slide {
+            background-color: var(--neutral-cool-gray);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-card);
+            transition: transform var(--transition-speed) var(--transition-type),
+                        box-shadow var(--transition-speed) var(--transition-type);
+            height: auto; /* Adjust height based on content */
+        }
+
+        .swiper-slide:hover,
+        .swiper-slide:focus-within {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .swiper-slide h3 {
+            font-size: 1.2em;
+            font-weight: 700;
+            color: var(--primary-deep-blue);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .swiper-slide p.description {
+            font-size: 0.95em;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .swiper-slide p.id {
+            font-size: 0.85em;
+            color: var(--neutral-dark-gray);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .battery-btn {
+            display: inline-block;
+            background-color: var(--button-primary);
+            color: var(--neutral-white);
+            padding: 8px 20px;
+            border-radius: var(--border-radius);
+            font-size: 0.9em;
+            text-decoration: none;
+            font-weight: 500;
+            margin: 5px;
+            transition: background-color var(--transition-speed) var(--transition-type);
+        }
+
+        .battery-btn:hover,
+        .battery-btn:focus {
+            background-color: var(--button-secondary);
+        }
+
+        /* ---------------------------------------------------
+           4.5. Footer
+        --------------------------------------------------- */
+        .footer {
+            background-color: var(--neutral-white);
+            padding: var(--spacing-lg);
+            color: var(--text-primary);
+            text-align: center;
+            border-top: 1px solid #F0F0F5;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-bottom: var(--spacing-md);
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-lg);
+            text-align: center;
+        }
+
+        .about-info,
+        .contact-info,
+        .powered-by {
+            flex: 1;
+            text-align: center;
+        }
+
+        .about-info h2 {
+            font-size: 2em;
+            font-weight: 700;
+            color: var(--primary-deep-blue);
+            margin-bottom: var(--spacing-md);
+            position: relative;
+        }
+
+        .about-info h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary-teal-green);
+            margin: var(--spacing-sm) auto var(--spacing-md);
+            border-radius: 2px;
+        }
+
+        .about-info p {
+            font-size: 1.1em;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .contact-info p {
+            font-size: 1em;
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .contact-info p strong {
+            color: var(--primary-gold);
+        }
+
+        .contact-info a {
+            color: var(--primary-gold);
+            text-decoration: none;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .contact-info a:hover,
+        .contact-info a:focus {
+            color: var(--secondary-teal-green);
+            text-decoration: underline;
+        }
+
+        .powered-by {
+            margin-top: var(--spacing-lg);
+            font-size: 0.95em;
+            color: var(--text-primary);
+        }
+
+        .powered-by a {
+            color: var(--primary-deep-blue);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .powered-by a:hover,
+        .powered-by a:focus {
+            color: var(--secondary-teal-green);
+            text-decoration: underline;
+        }
+
+        .footer .decorative-line {
+            width: 100px;
+            height: 2px;
+            background-color: var(--secondary-teal-green);
+            margin: var(--spacing-sm) auto;
+            border-radius: 1px;
+            opacity: 0.7;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .footer .decorative-line:hover {
+            opacity: 1;
+        }
+
+        /* =======================================================
+           5. Responsive Styles (Mobile-First)
+        ======================================================= */
+
+        /* Services Grid for Large Devices */
+        @media (min-width: 769px) {
+            .service-list {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* Assessments Slider for Larger Devices */
+        @media (min-width: 769px) {
+            .swiper-container {
+                width: 90%;
+                margin: 0 auto;
+            }
+        }
+
+        /* Adjustments for Very Small Devices */
+        @media (max-width: 576px) {
+            .footer-content {
+                padding: 60px 15px;
+            }
+
+            .about-info h2::after {
+                width: 60px;
+            }
+
+            .about-info p {
+                font-size: 1em;
+            }
+
+            .contact-info p {
+                font-size: 0.95em;
+            }
+
+            .powered-by {
+                font-size: 0.85em;
+            }
+        }
+
+    </style>
+
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
 </head>
 <body>
-    <!-- skip link for accessibility -->
-    <header class="header"></header>
+    <!-- Header -->
+    <header class="header">
+        <!-- Content injected via scripts -->
+    </header>
 
+    <!-- Main Content -->
     <main id="main-content">
-        <section class="hero">
+        <!-- Hero Section -->
+        <section id="home" class="section hero">
             <div class="hero-content">
-                <h2>بسته‌های ارزیابی</h2>
-                <p>بسته‌های ارزیابی شامل مجموعه‌ای از ارزیابی‌های مرتبط هستند که به شما کمک می‌کنند تا جنبه‌های مختلف شخصیت و توانمندی‌های خود را به‌طور جامع بررسی کنید.</p>
-                <!-- cta button to scroll to batteries section -->
-                <a href="#batteries-section" class="cta-button">مشاهده بسته‌ها</a>
+                <h2>رگه‌های طلایی استعداد خود را کشف کنید!</h2>
+                <p>ارائه ارزیابی‌های روان‌شناختی پیشرفته برای تعالی فردی شما</p>
+                <a href="/getting-started" class="cta-button">شروع کنید</a>
             </div>
         </section>
-                <div class="batteries-grid" id="batteries-section">
+        
+        <!-- Services Section -->
+        <section id="services" class="section services">
+            <h2>ارزیابی‌های ما</h2>
+            <div class="service-list">
+                <div class="service-item">
+                    <h3>هوش تحلیلی</h3>
+                    <p>این نوع هوش به شما این امکان را می‌دهد که اطلاعات را به خوبی فهمیده و به دقت تجزیه و تحلیل کنید. فردی با هوش تحلیلی بالا قادر است اطلاعات را به روش‌های نو و مؤثر سازماندهی کند.</p>
+                </div>
+                <div class="service-item">
+                    <h3>هوش تجربی</h3>
+                    <p>این هوش به کارگیری تجربیات عملی در یادگیری و فهم بهتر موضوعات است. کسانی که این نوع هوش را دارند، از طریق تجربه و مشاهده مهارت‌های خود را توسعه داده و به دنبال یادگیری مستمر هستند.</p>
+                </div>
+                <div class="service-item">
+                    <h3>هوش تحصیلی</h3>
+                    <p>این هوش به توانایی یادگیری سریع و دقیق مطالب درسی اشاره دارد. فرد با هوش تحصیلی بالا معمولاً در دروس عملی و نظری عملکرد خوبی دارد.</p>
+                </div>
+                <!-- Add more service items as needed -->
+            </div>
+        </section>
 
-                <!-- inventory 1 -->
-                <div class="battery-card">
-                    <div>
+        <!-- Assessments Slider Section -->
+        <section id="featured-assessments" class="section assessments-slider">
+            <h2>برخی از ارزیابی‌های ما</h2>
+            
+            <!-- Swiper -->
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide">
                         <h3>فهرست آرامش روانی - 33</h3>
                         <p class="description">این ارزیابی به سنجش میزان آرامش روانی و توانایی مدیریت استرس شما می‌پردازد.</p>
                         <p class="id">id: 110001</p>
+                        <div class="battery-links">
+                            <a href="/take/mental-tranquility" class="battery-btn">شروع ارزیابی</a>
+                            <a href="/assessments/mental-tranquility" class="battery-btn">معرفی ارزیابی</a>
+                        </div>
                     </div>
-                    <div class="battery-links">
-                        <a href="/take/mental-tranquility" class="battery-btn">شروع ارزیابی</a>
-                        <a href="/assessments/mental-tranquility" class="battery-btn">معرفی ارزیابی</a>
-                    </div>
-                </div>
-
-                <!-- inventory 2 -->
-                <div class="battery-card">
-                    <div>
+                    
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide">
                         <h3>فهرست ارجمندی - 17</h3>
                         <p class="description">این ارزیابی به بررسی سطح ارجمندی و خودارزیابی مثبت شما می‌پردازد.</p>
                         <p class="id">id: 110002</p>
+                        <div class="battery-links">
+                            <a href="/take/esteem" class="battery-btn">شروع ارزیابی</a>
+                            <a href="/assessments/esteem" class="battery-btn">معرفی ارزیابی</a>
+                        </div>
                     </div>
-                    <div class="battery-links">
-                        <a href="/take/esteem" class="battery-btn">شروع ارزیابی</a>
-                        <a href="/assessments/esteem" class="battery-btn">معرفی ارزیابی</a>
-                    </div>
-                </div>
-
-                <!-- inventory 3 -->
-                <div class="battery-card">
-                    <div>
+                    
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide">
                         <h3>فهرست استعداد کودک - 48</h3>
                         <p class="description">این ارزیابی برای شناسایی استعدادهای بالقوه کودکان طراحی شده است.</p>
                         <p class="id">id: 110003</p>
+                        <div class="battery-links">
+                            <a href="/take/child-talent-48" class="battery-btn">شروع ارزیابی</a>
+                            <a href="/assessments/child-talent-48" class="battery-btn">معرفی ارزیابی</a>
+                        </div>
                     </div>
-                    <div class="battery-links">
-                        <a href="/take/child-talent-48" class="battery-btn">شروع ارزیابی</a>
-                        <a href="/assessments/child-talent-48" class="battery-btn">معرفی ارزیابی</a>
-                    </div>
+                    
+                    <!-- Add more slides as needed -->
                 </div>
-
-                <!-- inventory 4 -->
-                <div class="battery-card">
-                    <div>
-                        <h3>فهرست استعداد کودک - 72</h3>
-                        <p class="description">این ارزیابی برای بررسی و توسعه استعدادهای ویژه کودکان مورد استفاده قرار می‌گیرد.</p>
-                        <p class="id">id: 110004</p>
-                    </div>
-                    <div class="battery-links">
-                        <a href="/take/child-talent-72" class="battery-btn">شروع ارزیابی</a>
-                        <a href="/assessments/child-talent-72" class="battery-btn">معرفی ارزیابی</a>
-                    </div>
-                </div>
-
-                <!-- inventory 5 -->
-                <div class="battery-card">
-                    <div>
-                        <h3>فهرست استواری پویش - 32</h3>
-                        <p class="description">این ارزیابی میزان استواری و پویایی شما در مواجهه با چالش‌ها را سنجش می‌کند.</p>
-                        <p class="id">id: 110005</p>
-                    </div>
-                    <div class="battery-links">
-                        <a href="/take/persistence" class="battery-btn">شروع ارزیابی</a>
-                        <a href="/assessments/persistence" class="battery-btn">معرفی ارزیابی</a>
-                    </div>
-                </div>
-
-                <!-- inventory 6 -->
-                <div class="battery-card">
-                    <div>
-                        <h3>فهرست بهداشت روان نوجوان - 46</h3>
-                        <p class="description">این ارزیابی به بررسی سلامت روانی و بهداشت روانی نوجوانان می‌پردازد.</p>
-                        <p class="id">id: 110006</p>
-                    </div>
-                    <div class="battery-links">
-                        <a href="/take/adolescent-mental-hygiene" class="battery-btn">شروع ارزیابی</a>
-                        <a href="/assessments/adolescent-mental-hygiene" class="battery-btn">معرفی ارزیابی</a>
-                    </div>
-                </div>
-
-                <!-- inventory 7 -->
-                <div class="battery-card">
-                    <div>
-                        <h3>فهرست پاکزیستی - 20</h3>
-                        <p class="description">این ارزیابی به بررسی میزان پاکیزگی و بهداشت شخصی شما می‌پردازد.</p>
-                        <p class="id">id: 110007</p>
-                    </div>
-                    <div class="battery-links">
-                        <a href="/take/purification" class="battery-btn">شروع ارزیابی</a>
-                        <a href="/assessments/purification" class="battery-btn">معرفی ارزیابی</a>
-                    </div>
-                </div>
-
-                <!-- inventory 8 -->
-                <div class="battery-card">
-                    <div>
-                        <h3>فهرست پایایی - 29</h3>
-                        <p class="description">این ارزیابی به سنجش میزان پایایی و ثبات احساسی شما می‌پردازد.</p>
-                        <p class="id">id: 110008</p>
-                    </div>
-                    <div class="battery-links">
-                        <a href="/take/stability" class="battery-btn">شروع ارزیابی</a>
-                        <a href="/assessments/stability" class="battery-btn">معرفی ارزیابی</a>
-                    </div>
-                </div>
-
-                <!-- inventory 9 -->
-                <div class="battery-card">
-                    <div>
-                        <h3>فهرست تحلیلی تجربی - 42</h3>
-                        <p class="description">این ارزیابی توانایی‌های تحلیلی و تجربی شما را بررسی می‌کند.</p>
-                        <p class="id">id: 110009</p>
-                    </div>
-                    <div class="battery-links">
-                        <a href="/take/empirical-analytical" class="battery-btn">شروع ارزیابی</a>
-                        <a href="/assessments/empirical-analytical" class="battery-btn">معرفی ارزیابی</a>
-                    </div>
-                </div>
-
-                <!-- inventory 10 -->
-                <div class="battery-card">
-                    <div>
-                        <h3>فهرست تعادل - 38</h3>
-                        <p class="description">این ارزیابی به بررسی تعادل میان زندگی شخصی و حرفه‌ای شما می‌پردازد.</p>
-                        <p class="id">id: 110010</p>
-                    </div>
-                    <div class="battery-links">
-                        <a href="/take/balance" class="battery-btn">شروع ارزیابی</a>
-                        <a href="/assessments/balance" class="battery-btn">معرفی ارزیابی</a>
-                    </div>
-                </div>
-
-                <!-- inventory 11 -->
-                <div class="battery-card">
-                    <div>
-                        <h3>فهرست تعادل روان - 94</h3>
-                        <p class="description">این ارزیابی به سنجش تعادل روانی و سلامت روان شما می‌پردازد.</p>
-                        <p class="id">id: 110011</p>
-                    </div>
-                    <div class="battery-links">
-                        <a href="/take/mental-balance" class="battery-btn">شروع ارزیابی</a>
-                        <a href="/assessments/mental-balance" class="battery-btn">معرفی ارزیابی</a>
-                    </div>
-                </div>
-
-                <!-- inventory 12 -->
-                <div class="battery-card">
-                    <div>
-                        <h3>فهرست تعالی فردی - 37</h3>
-                        <p class="description">این ارزیابی به بررسی سطح تعالی و رشد شخصی شما می‌پردازد.</p>
-                        <p class="id">id: 110012</p>
-                    </div>
-                    <div class="battery-links">
-                        <a href="/take/personal-excellence" class="battery-btn">شروع ارزیابی</a>
-                        <a href="/assessments/personal-excellence" class="battery-btn">معرفی ارزیابی</a>
-                    </div>
-                </div>
-
-                <!-- inventory 13 -->
-                <div class="battery-card">
-                    <div>
-                        <h3>فهرست تعاملی شخصیت - 62</h3>
-                        <p class="description">این ارزیابی به بررسی تعامل شخصیت شما با دیگران می‌پردازد.</p>
-                        <p class="id">id: 110013</p>
-                    </div>
-                    <div class="battery-links">
-                        <a href="/take/personality-interaction" class="battery-btn">شروع ارزیابی</a>
-                        <a href="/assessments/personality-interaction" class="battery-btn">معرفی ارزیابی</a>
-                    </div>
-                </div>
-
-                <!-- inventory 14 -->
-                <div class="battery-card">
-                    <div>
-                        <h3>فهرست تعهد فردی - 12</h3>
-                        <p class="description">این ارزیابی میزان تعهد شما به اهداف و مسئولیت‌ها را سنجش می‌کند.</p>
-                        <p class="id">id: 110014</p>
-                    </div>
-                    <div class="battery-links">
-                        <a href="/take/personal-commitment" class="battery-btn">شروع ارزیابی</a>
-                        <a href="/assessments/personal-commitment" class="battery-btn">معرفی ارزیابی</a>
-                    </div>
-                </div>
-
-                <!-- inventory 15 -->
-                <div class="battery-card">
-                    <div>
-                        <h3>فهرست حریم فردی - 24</h3>
-                        <p class="description">این ارزیابی به بررسی نیازها و احترام به حریم شخصی شما می‌پردازد.</p>
-                        <p class="id">id: 110015</p>
-                    </div>
-                    <div class="battery-links">
-                        <a href="/take/personal-space" class="battery-btn">شروع ارزیابی</a>
-                        <a href="/assessments/personal-space" class="battery-btn">معرفی ارزیابی</a>
-                    </div>
-                </div>
-
-                <!-- inventory 16 -->
-                <div class="battery-card">
-                    <div>
-                        <h3>فهرست حمایت معنوی - 28</h3>
-                        <p class="description">این ارزیابی میزان حمایت معنوی و روانی شما را بررسی می‌کند.</p>
-                        <p class="id">id: 110016</p>
-                    </div>
-                    <div class="battery-links">
-                        <a href="/take/spiritual-support" class="battery-btn">شروع ارزیابی</a>
-                        <a href="/assessments/spiritual-support" class="battery-btn">معرفی ارزیابی</a>
-                    </div>
-                </div>
-
-                <!-- inventory 17 -->
-                <div class="battery-card">
-                    <div>
-                        <h3>فهرست خردمندی - 25</h3>
-                        <p class="description">این ارزیابی به سنجش میزان خردمندی و درک عمیق شما می‌پردازد.</p>
-                        <p class="id">id: 110017</p>
-                    </div>
-                    <div class="battery-links">
-                        <a href="/take/wisdom" class="battery-btn">شروع ارزیابی</a>
-                        <a href="/assessments/wisdom" class="battery-btn">معرفی ارزیابی</a>
-                    </div>
-                </div>
-
-                <!-- inventory 18 -->
-                <div class="battery-card">
-                    <div>
-                        <h3>فهرست خود گستری - 62</h3>
-                        <p class="description">این ارزیابی به بررسی میزان خودگسترایی و توسعه شخصی شما می‌پردازد.</p>
-                        <p class="id">id: 110018</p>
-                    </div>
-                    <div class="battery-links">
-                        <a href="/take/self-expansion" class="battery-btn">شروع ارزیابی</a>
-                        <a href="/assessments/self-expansion" class="battery-btn">معرفی ارزیابی</a>
-                    </div>
-                </div>
-
-                <!-- inventory 19 -->
-                <div class="battery-card">
-                    <div>
-                        <h3>فهرست درستی - 17</h3>
-                        <p class="description">این ارزیابی به سنجش دقت و صحت در تفکر و عمل شما می‌پردازد.</p>
-                        <p class="id">id: 110019</p>
-                    </div>
-                    <div class="battery-links">
-                        <a href="/take/accuracy" class="battery-btn">شروع ارزیابی</a>
-                        <a href="/assessments/accuracy" class="battery-btn">معرفی ارزیابی</a>
-                    </div>
-                </div>
-
-                <!-- inventory 20 -->
-                <div class="battery-card">
-                    <div>
-                        <h3>فهرست رضایت از زندگی - 24</h3>
-                        <p class="description">این ارزیابی میزان رضایت شما از جنبه‌های مختلف زندگی را بررسی می‌کند.</p>
-                        <p class="id">id: 110020</p>
-                    </div>
-                    <div class="battery-links">
-                        <a href="/take/life-satisfaction" class="battery-btn">شروع ارزیابی</a>
-                        <a href="/assessments/life-satisfaction" class="battery-btn">معرفی ارزیابی</a>
-                    </div>
-                </div>
-
-                <!-- inventory 21 -->
-                <div class="battery-card">
-                    <div>
-                        <h3>فهرست رضایت زناشویی - 38</h3>
-                        <p class="description">این ارزیابی به بررسی رضایت شما از زندگی زناشویی می‌پردازد.</p>
-                        <p class="id">id: 110021</p>
-                    </div>
-                    <div class="battery-links">
-                        <a href="/take/marital-satisfaction" class="battery-btn">شروع ارزیابی</a>
-                        <a href="/assessments/marital-satisfaction" class="battery-btn">معرفی ارزیابی</a>
-                    </div>
-                </div>
-
-                <!-- inventory 22 -->
-                <div class="battery-card">
-                    <div>
-                        <h3>فهرست رضایت شغلی - 29</h3>
-                        <p class="description">این ارزیابی میزان رضایت شما از محیط و شرایط کاری را سنجش می‌کند.</p>
-                        <p class="id">id: 110022</p>
-                    </div>
-                    <div class="battery-links">
-                        <a href="/take/job-satisfaction" class="battery-btn">شروع ارزیابی</a>
-                        <a href="/assessments/job-satisfaction" class="battery-btn">معرفی ارزیابی</a>
-                    </div>
-                </div>
-
-                <!-- inventory 23 -->
-                <div class="battery-card">
-                    <div>
-                        <h3>فهرست سر زندگی - 24</h3>
-                        <p class="description">این ارزیابی به بررسی نقاط اوج و دستاوردهای زندگی شما می‌پردازد.</p>
-                        <p class="id">id: 110023</p>
-                    </div>
-                    <div class="battery-links">
-                        <a href="/take/life-summit" class="battery-btn">شروع ارزیابی</a>
-                        <a href="/assessments/life-summit" class="battery-btn">معرفی ارزیابی</a>
-                    </div>
-                </div>
-
-                <!-- inventory 24 -->
-                <div class="battery-card">
-                    <div>
-                        <h3>فهرست شخصیت - 79</h3>
-                        <p class="description">این ارزیابی به بررسی ویژگی‌ها و ابعاد مختلف شخصیت شما می‌پردازد.</p>
-                        <p class="id">id: 110024</p>
-                    </div>
-                    <div class="battery-links">
-                        <a href="/take/personality" class="battery-btn">شروع ارزیابی</a>
-                        <a href="/assessments/personality" class="battery-btn">معرفی ارزیابی</a>
-                    </div>
-                </div>
-
-                <!-- inventory 25 -->
-                <div class="battery-card">
-                    <div>
-                        <h3>فهرست شخصیت کودکان - 50</h3>
-                        <p class="description">این ارزیابی به بررسی ویژگی‌های شخصیتی کودکان می‌پردازد.</p>
-                        <p class="id">id: 110025</p>
-                    </div>
-                    <div class="battery-links">
-                        <a href="/take/childrens-personality" class="battery-btn">شروع ارزیابی</a>
-                        <a href="/assessments/childrens-personality" class="battery-btn">معرفی ارزیابی</a>
-                    </div>
-                </div>
-
-                <!-- inventory 26 -->
-                <div class="battery-card">
-                    <div>
-                        <h3>فهرست شناختی - 24</h3>
-                        <p class="description">این ارزیابی به سنجش توانایی‌های شناختی و ذهنی شما می‌پردازد.</p>
-                        <p class="id">id: 110026</p>
-                    </div>
-                    <div class="battery-links">
-                        <a href="/take/cognitive-24" class="battery-btn">شروع ارزیابی</a>
-                        <a href="/assessments/cognitive-24" class="battery-btn">معرفی ارزیابی</a>
-                    </div>
-                </div>
-
-                <!-- inventory 27 -->
-                <div class="battery-card">
-                    <div>
-                        <h3>فهرست ظرفیت تجربی - 63</h3>
-                        <p class="description">این ارزیابی به بررسی ظرفیت‌های تجربی و عملی شما می‌پردازد.</p>
-                        <p class="id">id: 110027</p>
-                    </div>
-                    <div class="battery-links">
-                        <a href="/take/empirical-capacity" class="battery-btn">شروع ارزیابی</a>
-                        <a href="/assessments/empirical-capacity" class="battery-btn">معرفی ارزیابی</a>
-                    </div>
-                </div>
-
-                <!-- inventory 28 -->
-                <div class="battery-card">
-                    <div>
-                        <h3>فهرست ظرفیتهای شناختی - 35</h3>
-                        <p class="description">این ارزیابی به بررسی توانایی‌های شناختی پیشرفته شما می‌پردازد.</p>
-                        <p class="id">id: 110028</p>
-                    </div>
-                    <div class="battery-links">
-                        <a href="/take/cognitive-capacities" class="battery-btn">شروع ارزیابی</a>
-                        <a href="/assessments/cognitive-capacities" class="battery-btn">معرفی ارزیابی</a>
-                    </div>
-                </div>
-
-                <!-- inventory 29 -->
-                <div class="battery-card">
-                    <div>
-                        <h3>فهرست کرونا - 26</h3>
-                        <p class="description">این ارزیابی به بررسی تأثیرات کروناویروس بر زندگی و روان شما می‌پردازد.</p>
-                        <p class="id">id: 110029</p>
-                    </div>
-                    <div class="battery-links">
-                        <a href="/take/corona" class="battery-btn">شروع ارزیابی</a>
-                        <a href="/assessments/corona" class="battery-btn">معرفی ارزیابی</a>
-                    </div>
-                </div>
-
-                <!-- inventory 30 -->
-                <div class="battery-card">
-                    <div>
-                        <h3>فهرست نیازها - 18</h3>
-                        <p class="description">این ارزیابی به بررسی نیازهای اساسی و اولویت‌های شما می‌پردازد.</p>
-                        <p class="id">id: 110030</p>
-                    </div>
-                    <div class="battery-links">
-                        <a href="/take/needs" class="battery-btn">شروع ارزیابی</a>
-                        <a href="/assessments/needs" class="battery-btn">معرفی ارزیابی</a>
-                    </div>
-                </div>
-
-                <!-- inventory 31 -->
-                <div class="battery-card">
-                    <div>
-                        <h3>فهرست وظیفه مندی - 11</h3>
-                        <p class="description">این ارزیابی به بررسی سطح وظیفه‌مندی و مسئولیت‌پذیری شما می‌پردازد.</p>
-                        <p class="id">id: 110031</p>
-                    </div>
-                    <div class="battery-links">
-                        <a href="/take/duty" class="battery-btn">شروع ارزیابی</a>
-                        <a href="/assessments/duty" class="battery-btn">معرفی ارزیابی</a>
-                    </div>
-                </div>
-
-                <!-- inventory 32 -->
-                <div class="battery-card">
-                    <div>
-                        <h3>فهرست هدفمندی - 25</h3>
-                        <p class="description">این ارزیابی به بررسی تمرکز و هدفمندی شما در رسیدن به اهداف می‌پردازد.</p>
-                        <p class="id">id: 110032</p>
-                    </div>
-                    <div class="battery-links">
-                        <a href="/take/goal-oriented" class="battery-btn">شروع ارزیابی</a>
-                        <a href="/assessments/goal-oriented" class="battery-btn">معرفی ارزیابی</a>
-                    </div>
-                </div>
-
-                <!-- inventory 33 -->
-                <div class="battery-card">
-                    <div>
-                        <h3>فهرست هوش موفق - 49</h3>
-                        <p class="description">این ارزیابی به بررسی هوش موفق و توانایی‌های موفقیت‌آمیز شما می‌پردازد.</p>
-                        <p class="id">id: 110033</p>
-                    </div>
-                    <div class="battery-links">
-                        <a href="/take/successful-intelligence" class="battery-btn">شروع ارزیابی</a>
-                        <a href="/assessments/successful-intelligence" class="battery-btn">معرفی ارزیابی</a>
-                    </div>
-                </div>
-
-                <!-- inventory 34 -->
-                <div class="battery-card">
-                    <div>
-                        <h3>فهرست هیجان اندیشه - 69</h3>
-                        <p class="description">این ارزیابی به بررسی ارتباط میان افکار و احساسات شما می‌پردازد.</p>
-                        <p class="id">id: 110034</p>
-                    </div>
-                    <div class="battery-links">
-                        <a href="/take/thought-emotion" class="battery-btn">شروع ارزیابی</a>
-                        <a href="/assessments/thought-emotion" class="battery-btn">معرفی ارزیابی</a>
-                    </div>
-                </div>
-
-                <!-- inventory 35 -->
-                <div class="battery-card">
-                    <div>
-                        <h3>فهرست یکپارچگی شناختی - 14</h3>
-                        <p class="description">این ارزیابی به بررسی میزان یکپارچگی و انسجام در تفکر شما می‌پردازد.</p>
-                        <p class="id">id: 110035</p>
-                    </div>
-                    <div class="battery-links">
-                        <a href="/take/cognitive-integration" class="battery-btn">شروع ارزیابی</a>
-                        <a href="/assessments/cognitive-integration" class="battery-btn">معرفی ارزیابی</a>
-                    </div>
-                </div>
-
-                <!-- inventory 36 -->
-                <div class="battery-card">
-                    <div>
-                        <h3>فهرست رضایت از زندگی - 25</h3>
-                        <p class="description">این ارزیابی به بررسی سطح رضایت شما از جنبه‌های مختلف زندگی می‌پردازد.</p>
-                        <p class="id">id: 110036</p>
-                    </div>
-                    <div class="battery-links">
-                        <a href="/take/life-satisfaction-25" class="battery-btn">شروع ارزیابی</a>
-                        <a href="/assessments/life-satisfaction-25" class="battery-btn">معرفی ارزیابی</a>
-                    </div>
-                </div>
-
-                <!-- inventory 37 -->
-                <div class="battery-card">
-                    <div>
-                        <h3>فهرست تعاملی استعداد - 15</h3>
-                        <p class="description">این ارزیابی به بررسی نحوه تعامل استعدادهای شما با محیط اطراف می‌پردازد.</p>
-                        <p class="id">id: 110037</p>
-                    </div>
-                    <div class="battery-links">
-                        <a href="/take/talent-interaction" class="battery-btn">شروع ارزیابی</a>
-                        <a href="/assessments/talent-interaction" class="battery-btn">معرفی ارزیابی</a>
-                    </div>
-                </div>
+                
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+                
+                <!-- Add Navigation -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </div>
-</main>
-        <div class="footer"></div>
-        <script src="assets/js/header-footer-inject.js"></script>
-    <script src="/assets/js/script.js"></script>
 
+            <!-- Button to Go to Assessments Page -->
+            <a href="/assessments" class="cta-button" style="margin-top: var(--spacing-lg);">مشاهده همه ارزیابی‌ها</a>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer id="footer" class="footer">
+        <!-- Content injected via scripts -->
+    </footer>
+    
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    
+    <!-- Initialize Swiper -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var swiper = new Swiper('.swiper-container', {
+                // Enable RTL
+                direction: 'horizontal',
+                rtl: true,
+
+                // Optional parameters
+                loop: true,
+                slidesPerView: 1,
+                spaceBetween: 20,
+
+                // Responsive breakpoints
+                breakpoints: {
+                    576: {
+                        slidesPerView: 1.5,
+                        spaceBetween: 20,
+                    },
+                    768: {
+                        slidesPerView: 2.5,
+                        spaceBetween: 30,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                        spaceBetween: 40,
+                    },
+                },
+
+                // If you need pagination
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+
+                // Navigation arrows
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+
+                // Enable autoplay
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+            });
+        });
+    </script>
 </body>
 </html>
