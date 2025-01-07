@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>استعدادیاب | ارزیابی‌های روان‌شناختی برای تعالی فردی شما</title>
+    <meta name="description" content="با استعدادیاب، با ارزیابی‌های روان‌شناختی پیشرفته آشنا شوید و توانمندی‌های خود را بشناسید.">
+    
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    
     <style>
         /* =======================================================
            1. Reset and Base Styles
@@ -227,16 +235,16 @@
         }
 
         /* ---------------------------------------------------
-           4.3. Services Section
+           4.3. Services Slider Section
         --------------------------------------------------- */
-        .services {
+        .services-slider {
             padding: var(--spacing-lg);
             background-color: var(--neutral-white);
             color: var(--text-primary);
             text-align: center;
         }
 
-        .services h2 {
+        .services-slider h2 {
             font-size: 2em;
             font-weight: 700;
             color: var(--primary-deep-blue);
@@ -244,39 +252,44 @@
             margin-bottom: var(--spacing-lg);
         }
 
-        .service-list {
-            display: grid;
-            grid-template-columns: 1fr; /* Mobile-first: single column */
-            gap: var(--spacing-lg);
-            padding: var(--spacing-lg) var(--spacing-md);
+        /* Swiper Specific Styles for Services */
+        .swiper-services {
+            width: 100%;
+            padding-bottom: 30px;
         }
 
-        .service-item {
+        .swiper-services .swiper-wrapper {
+            display: flex;
+        }
+
+        .swiper-services .swiper-slide {
             background-color: var(--neutral-cool-gray);
             padding: var(--spacing-md);
             border-radius: var(--border-radius);
             box-shadow: var(--shadow-card);
             transition: transform var(--transition-speed) var(--transition-type),
                         box-shadow var(--transition-speed) var(--transition-type);
+            height: auto; /* Adjust height based on content */
         }
 
-        .service-item:hover,
-        .service-item:focus-within {
+        .swiper-services .swiper-slide:hover,
+        .swiper-services .swiper-slide:focus-within {
             transform: translateY(-5px);
             box-shadow: var(--shadow-hover);
         }
 
-        .service-item h3 {
-            font-size: 1.5em;
+        .swiper-services .swiper-slide h3 {
+            font-size: 1.2em;
             font-weight: 700;
             color: var(--primary-deep-blue);
-            margin-bottom: var(--spacing-md);
+            margin-bottom: var(--spacing-sm);
         }
 
-        .service-item p {
-            font-size: 1em;
+        .swiper-services .swiper-slide p {
+            font-size: 0.95em;
             color: var(--text-secondary);
             line-height: 1.6;
+            margin-bottom: var(--spacing-sm);
         }
 
         /* ---------------------------------------------------
@@ -297,13 +310,17 @@
             margin-bottom: var(--spacing-lg);
         }
 
-        /* Swiper Specific Styles */
-        .swiper {
+        /* Swiper Specific Styles for Assessments */
+        .swiper-assessments {
             width: 100%;
             padding-bottom: 50px;
         }
 
-        .swiper-slide {
+        .swiper-assessments .swiper-wrapper {
+            display: flex;
+        }
+
+        .swiper-assessments .swiper-slide {
             background-color: var(--neutral-cool-gray);
             padding: var(--spacing-md);
             border-radius: var(--border-radius);
@@ -313,27 +330,27 @@
             height: auto; /* Adjust height based on content */
         }
 
-        .swiper-slide:hover,
-        .swiper-slide:focus-within {
+        .swiper-assessments .swiper-slide:hover,
+        .swiper-assessments .swiper-slide:focus-within {
             transform: translateY(-5px);
             box-shadow: var(--shadow-hover);
         }
 
-        .swiper-slide h3 {
+        .swiper-assessments .swiper-slide h3 {
             font-size: 1.2em;
             font-weight: 700;
             color: var(--primary-deep-blue);
             margin-bottom: var(--spacing-sm);
         }
 
-        .swiper-slide p.description {
+        .swiper-assessments .swiper-slide p.description {
             font-size: 0.95em;
             color: var(--text-secondary);
             line-height: 1.6;
             margin-bottom: var(--spacing-sm);
         }
 
-        .swiper-slide p.id {
+        .swiper-assessments .swiper-slide p.id {
             font-size: 0.85em;
             color: var(--neutral-dark-gray);
             margin-bottom: var(--spacing-sm);
@@ -469,20 +486,24 @@
            5. Responsive Styles (Mobile-First)
         ======================================================= */
 
-        /* Services Grid for Large Devices */
+        /* Services Slider for Large Devices */
         @media (min-width: 769px) {
-            .service-list {
-                grid-template-columns: repeat(3, 1fr);
+            .swiper-services {
+                width: 90%;
+                margin: 0 auto;
             }
         }
 
         /* Assessments Slider for Larger Devices */
         @media (min-width: 769px) {
-            .swiper {
+            .swiper-assessments {
                 width: 90%;
                 margin: 0 auto;
             }
         }
+
+        /* Services Grid for Large Devices (if needed) */
+        /* Removed since services are now in a slider */
 
         /* Adjustments for Very Small Devices */
         @media (max-width: 576px) {
@@ -506,14 +527,7 @@
                 font-size: 0.85em;
             }
         }
-
     </style>
-
-    <!-- Swiper CSS -->
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/swiper/swiper-bundle.min.css"
-    />
 </head>
 <body>
     <!-- Header -->
@@ -532,23 +546,40 @@
             </div>
         </section>
         
-        <!-- Services Section -->
-        <section id="services" class="section services">
-            <h2>ارزیابی‌های ما</h2>
-            <div class="service-list">
-                <div class="service-item">
-                    <h3>هوش تحلیلی</h3>
-                    <p>این نوع هوش به شما این امکان را می‌دهد که اطلاعات را به خوبی فهمیده و به دقت تجزیه و تحلیل کنید. فردی با هوش تحلیلی بالا قادر است اطلاعات را به روش‌های نو و مؤثر سازماندهی کند.</p>
+        <!-- Services Slider Section -->
+        <section id="services" class="section services-slider">
+            <h2>خدمات ما</h2>
+            
+            <!-- Swiper Services -->
+            <div class="swiper swiper-services">
+                <div class="swiper-wrapper">
+                    <!-- Service Slide 1 -->
+                    <div class="swiper-slide">
+                        <h3>خدمت 1</h3>
+                        <p>توضیحات کوتاه در مورد خدمت اول.</p>
+                    </div>
+                    
+                    <!-- Service Slide 2 -->
+                    <div class="swiper-slide">
+                        <h3>خدمت 2</h3>
+                        <p>توضیحات کوتاه در مورد خدمت دوم.</p>
+                    </div>
+                    
+                    <!-- Service Slide 3 -->
+                    <div class="swiper-slide">
+                        <h3>خدمت 3</h3>
+                        <p>توضیحات کوتاه در مورد خدمت سوم.</p>
+                    </div>
+                    
+                    <!-- Add more service slides as needed -->
                 </div>
-                <div class="service-item">
-                    <h3>هوش تجربی</h3>
-                    <p>این هوش به کارگیری تجربیات عملی در یادگیری و فهم بهتر موضوعات است. کسانی که این نوع هوش را دارند، از طریق تجربه و مشاهده مهارت‌های خود را توسعه داده و به دنبال یادگیری مستمر هستند.</p>
-                </div>
-                <div class="service-item">
-                    <h3>هوش تحصیلی</h3>
-                    <p>این هوش به توانایی یادگیری سریع و دقیق مطالب درسی اشاره دارد. فرد با هوش تحصیلی بالا معمولاً در دروس عملی و نظری عملکرد خوبی دارد.</p>
-                </div>
-                <!-- Add more service items as needed -->
+                
+                <!-- Add Pagination (optional) -->
+                <div class="swiper-pagination"></div>
+                
+                <!-- Add Navigation (optional) -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </div>
         </section>
 
@@ -556,8 +587,8 @@
         <section id="featured-assessments" class="section assessments-slider">
             <h2>برخی از ارزیابی‌های ما</h2>
             
-            <!-- Swiper -->
-            <div class="swiper">
+            <!-- Swiper Assessments -->
+            <div class="swiper swiper-assessments">
                 <div class="swiper-wrapper">
                     <!-- Slide 1 -->
                     <div class="swiper-slide">
@@ -592,18 +623,8 @@
                         </div>
                     </div>
                     
-                <!-- inventory 17 -->
-                    <div class="swiper-slide">
-                        <h3>فهرست خردمندی - 25</h3>
-                        <p class="description">این ارزیابی به سنجش میزان خردمندی و درک عمیق شما می‌پردازد.</p>
-                        <p class="id">id: 110017</p>
-                    </div>
-                    <div class="battery-links">
-                        <a href="/take/wisdom" class="battery-btn">شروع ارزیابی</a>
-                        <a href="/assessments/wisdom" class="battery-btn">معرفی ارزیابی</a>
-                    </div>
+                    <!-- Add more assessment slides as needed -->
                 </div>
-            </div>
                 
                 <!-- Add Pagination -->
                 <div class="swiper-pagination"></div>
@@ -625,19 +646,52 @@
     
     <!-- Swiper JS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-            <script src="assets/js/header-footer-inject.js"></script>
+    <script src="assets/js/header-footer-inject.js"></script>
     <script src="/assets/js/script.js"></script>
     
     <!-- Initialize Swiper -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            var swiper = new Swiper('.swiper', {
-                // Optional parameters
+            // Initialize Services Swiper
+            var servicesSwiper = new Swiper('.swiper-services', {
                 direction: 'horizontal',
                 loop: true,
                 slidesPerView: 1,
                 spaceBetween: 20,
-                // Responsive breakpoints
+                breakpoints: {
+                    576: {
+                        slidesPerView: 2,
+                        spaceBetween: 20,
+                    },
+                    768: {
+                        slidesPerView: 3,
+                        spaceBetween: 30,
+                    },
+                    1024: {
+                        slidesPerView: 4,
+                        spaceBetween: 40,
+                    },
+                },
+                pagination: {
+                    el: '.swiper-services .swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-services .swiper-button-next',
+                    prevEl: '.swiper-services .swiper-button-prev',
+                },
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+            });
+
+            // Initialize Assessments Swiper
+            var assessmentsSwiper = new Swiper('.swiper-assessments', {
+                direction: 'horizontal',
+                loop: true,
+                slidesPerView: 1,
+                spaceBetween: 20,
                 breakpoints: {
                     576: {
                         slidesPerView: 1.5,
@@ -652,23 +706,18 @@
                         spaceBetween: 40,
                     },
                 },
-                // If you need pagination
                 pagination: {
-                    el: '.swiper-pagination',
+                    el: '.swiper-assessments .swiper-pagination',
                     clickable: true,
                 },
-                // Navigation arrows
                 navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
+                    nextEl: '.swiper-assessments .swiper-button-next',
+                    prevEl: '.swiper-assessments .swiper-button-prev',
                 },
-                // Enable autoplay
                 autoplay: {
                     delay: 5000,
                     disableOnInteraction: false,
                 },
-                // Enable RTL
-                rtl: true,
             });
         });
     </script>
