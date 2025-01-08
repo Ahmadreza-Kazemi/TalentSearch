@@ -647,56 +647,482 @@
 </style>
 
 
-        <!-- Assessments Slider Section -->
-        <section id="featured-assessments" class="section assessments-slider">
-            <h2>فهرستهای تشخیصی</h2>
-            
-            <!-- Swiper Assessments -->
-            <div class="swiper swiper-assessments">
-                <div class="swiper-wrapper">
-                    <!-- Slide 1 -->
-                    <div class="swiper-slide">
-                        <h3>فهرست آرامش روانی - 33</h3>
-                        <p class="description">این ارزیابی به سنجش میزان آرامش روانی و توانایی مدیریت استرس شما می‌پردازد.</p>
-                        <p class="id">id: 110001</p>
-                        <div class="battery-links">
-                            <a href="/take/mental-tranquility" class="battery-btn">شروع ارزیابی</a>
-                            <a href="/assessments/mental-tranquility" class="battery-btn">معرفی ارزیابی</a>
-                        </div>
-                    </div>
-                    
-                    <!-- Slide 2 -->
-                    <div class="swiper-slide">
-                        <h3>فهرست ارجمندی - 17</h3>
-                        <p class="description">این ارزیابی به بررسی سطح ارجمندی و خودارزیابی مثبت شما می‌پردازد.</p>
-                        <p class="id">id: 110002</p>
-                        <div class="battery-links">
-                            <a href="/take/esteem" class="battery-btn">شروع ارزیابی</a>
-                            <a href="/assessments/esteem" class="battery-btn">معرفی ارزیابی</a>
-                        </div>
-                    </div>
-                    
-                    <!-- Slide 3 -->
-                    <div class="swiper-slide">
-                        <h3>فهرست استعداد کودک - 48</h3>
-                        <p class="description">این ارزیابی برای شناسایی استعدادهای بالقوه کودکان طراحی شده است.</p>
-                        <p class="id">id: 110003</p>
-                        <div class="battery-links">
-                            <a href="/take/child-talent-48" class="battery-btn">شروع ارزیابی</a>
-                            <a href="/assessments/child-talent-48" class="battery-btn">معرفی ارزیابی</a>
-                        </div>
-                    </div>
-                    
-                    <!-- Add more assessment slides as needed -->
-                </div>
-                
-                <!-- Add Pagination -->
-                <div class="swiper-pagination"></div>
-            </div>
 
-            <!-- Button to Go to Assessments Page -->
-            <a href="/assessments" class="cta-button" style="margin-top: var(--spacing-lg);">همه فهرست‌ها</a>
-        </section>
+<!-- =========================================
+     Tabbed Assessments Section
+========================================= -->
+<section class="section tabbed-assessments" id="tabbed-assessments">
+  <div class="container">
+    <!-- Section Title & Intro Text -->
+    <h2 class="section-title">ارزیابی‌های دسته‌بندی‌شده</h2>
+    <p class="section-text">
+      در این بخش، ارزیابی‌ها بر اساس دسته‌بندی‌های مختلف در اختیار شما قرار می‌گیرند.
+      روی هر تب کلیک کنید تا فهرست ارزیابی‌های مربوط را در قالب اسلایدر مشاهده کنید.
+    </p>
+
+    <!-- Tabs Navigation -->
+    <div class="tabs-navigation">
+      <!-- Each button is tied to a specific tab content below (data-tab="category1" etc.) -->
+      <button class="tab-link active" data-tab="category1">ارزیابی‌های آرامش روانی</button>
+      <button class="tab-link" data-tab="category2">ارزیابی‌های عزت نفس</button>
+      <button class="tab-link" data-tab="category3">استعدادهای ویژه کودکان</button>
+      <!-- Add more tabs as needed -->
+    </div>
+
+    <!-- =====================
+         Tab Content #1
+    ====================== -->
+    <div id="category1" class="tab-content active">
+      <div class="swiper swiper-category1">
+        <div class="swiper-wrapper">
+          <!-- Slide 1 -->
+          <div class="swiper-slide">
+            <h3>فهرست آرامش روانی - 33</h3>
+            <p class="description">
+              این ارزیابی به سنجش میزان آرامش روانی و مدیریت استرس شما می‌پردازد.
+            </p>
+            <p class="id">ID: 110001</p>
+            <div class="battery-links">
+              <a href="/take/mental-tranquility" class="battery-btn">شروع ارزیابی</a>
+              <a href="/assessments/mental-tranquility" class="battery-btn">معرفی ارزیابی</a>
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="swiper-slide">
+            <h3>فهرست آرامش روانی - 45</h3>
+            <p class="description">
+              این ارزیابی نسخه جامع‌تر و پیشرفته برای سنجش آرامش ذهنی شماست.
+            </p>
+            <p class="id">ID: 110004</p>
+            <div class="battery-links">
+              <a href="/take/mental-tranquility-advanced" class="battery-btn">شروع ارزیابی</a>
+              <a href="/assessments/mental-tranquility-advanced" class="battery-btn">معرفی ارزیابی</a>
+            </div>
+          </div>
+          <!-- Add more slides as needed -->
+        </div>
+        <!-- Pagination & Navigation (optional) -->
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </div>
+
+    <!-- =====================
+         Tab Content #2
+    ====================== -->
+    <div id="category2" class="tab-content">
+      <div class="swiper swiper-category2">
+        <div class="swiper-wrapper">
+          <!-- Slide 1 -->
+          <div class="swiper-slide">
+            <h3>فهرست ارجمندی - 17</h3>
+            <p class="description">
+              این ارزیابی به بررسی سطح ارجمندی و خودارزیابی مثبت شما می‌پردازد.
+            </p>
+            <p class="id">ID: 110002</p>
+            <div class="battery-links">
+              <a href="/take/esteem" class="battery-btn">شروع ارزیابی</a>
+              <a href="/assessments/esteem" class="battery-btn">معرفی ارزیابی</a>
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="swiper-slide">
+            <h3>فهرست اعتماد به نفس - 20</h3>
+            <p class="description">
+              برای بررسی میزان اعتمادبه‌نفس کلی و نقش آن در تصمیم‌گیری‌های روزمره.
+            </p>
+            <p class="id">ID: 110005</p>
+            <div class="battery-links">
+              <a href="/take/self-confidence" class="battery-btn">شروع ارزیابی</a>
+              <a href="/assessments/self-confidence" class="battery-btn">معرفی ارزیابی</a>
+            </div>
+          </div>
+          <!-- Add more slides as needed -->
+        </div>
+        <!-- Pagination & Navigation (optional) -->
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </div>
+
+    <!-- =====================
+         Tab Content #3
+    ====================== -->
+    <div id="category3" class="tab-content">
+      <div class="swiper swiper-category3">
+        <div class="swiper-wrapper">
+          <!-- Slide 1 -->
+          <div class="swiper-slide">
+            <h3>فهرست استعداد کودک - 48</h3>
+            <p class="description">
+              این ارزیابی برای شناسایی استعدادهای بالقوه کودکان طراحی شده است.
+            </p>
+            <p class="id">ID: 110003</p>
+            <div class="battery-links">
+              <a href="/take/child-talent-48" class="battery-btn">شروع ارزیابی</a>
+              <a href="/assessments/child-talent-48" class="battery-btn">معرفی ارزیابی</a>
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="swiper-slide">
+            <h3>فهرست مهارت‌های اجتماعی کودک - 22</h3>
+            <p class="description">
+              بررسی میزان مهارت‌های ارتباطی و تعامل اجتماعی در کودکان سنین مختلف.
+            </p>
+            <p class="id">ID: 110006</p>
+            <div class="battery-links">
+              <a href="/take/child-social-skills" class="battery-btn">شروع ارزیابی</a>
+              <a href="/assessments/child-social-skills" class="battery-btn">معرفی ارزیابی</a>
+            </div>
+          </div>
+          <!-- Add more slides as needed -->
+        </div>
+        <!-- Pagination & Navigation (optional) -->
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </div>
+    
+    <!-- Add additional category tabs/contents as needed -->
+
+  </div> <!-- end container -->
+</section>
+
+
+        <styles>/* ============================================
+   1. Tabbed Assessments Section
+============================================ */
+.tabbed-assessments {
+    background-color: var(--neutral-white);
+    text-align: center;
+    padding: var(--spacing-lg) var(--spacing-md);
+}
+
+.tabbed-assessments .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-md);
+}
+
+.tabbed-assessments .section-title {
+    font-size: 2em;
+    font-weight: 700;
+    color: var(--primary-deep-blue);
+    margin-bottom: var(--spacing-lg);
+    text-shadow: 0 0 5px var(--primary-gold);
+}
+
+.tabbed-assessments .section-text {
+    font-size: 1.1em;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: var(--spacing-md);
+    text-align: justify;
+}
+
+/* Tab Navigation (buttons) */
+.tabs-navigation {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: var(--spacing-sm);
+    overflow-x: auto; /* Mobile-friendly horizontal scroll if needed */
+    margin-bottom: var(--spacing-md);
+    border-bottom: 2px solid var(--neutral-cool-gray);
+    padding-bottom: var(--spacing-sm);
+}
+
+.tab-link {
+    background-color: transparent;
+    color: var(--primary-deep-blue);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: none;
+    border-bottom: 2px solid transparent;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color var(--transition-speed) var(--transition-type),
+                border-bottom var(--transition-speed) var(--transition-type);
+    white-space: nowrap; /* Prevent text from wrapping in small widths */
+    font-family: 'Vazir', sans-serif;
+}
+
+.tab-link.active,
+.tab-link:hover {
+    color: var(--button-primary);
+    border-bottom: 2px solid var(--button-primary);
+}
+
+/* Tab Contents - Hide non-active by default */
+.tab-content {
+    display: none;
+    text-align: right; /* Because it's RTL */
+}
+
+.tab-content.active {
+    display: block;
+    margin-top: var(--spacing-md);
+}
+
+/* Slides inside each tab: 
+   We'll reuse the existing Swiper styling from your code for consistency.
+   Just ensure you have .swiper and .swiper-slide classes as in the original.
+*/
+.swiper {
+    width: 100%;
+    margin: 0 auto;
+    padding-bottom: 50px;
+}
+
+.swiper-wrapper {
+    display: flex;
+}
+
+.swiper-slide {
+    background-color: var(--neutral-cool-gray);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-card);
+    transition: transform var(--transition-speed) var(--transition-type),
+                box-shadow var(--transition-speed) var(--transition-type);
+}
+
+.swiper-slide:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* Assessment text styling within the slides */
+.swiper-slide h3 {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: var(--primary-deep-blue);
+    margin-bottom: var(--spacing-xs);
+}
+
+.description {
+    font-size: 0.95em;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.id {
+    font-size: 0.85em;
+    color: var(--neutral-dark-gray);
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Battery buttons within slides */
+.battery-links {
+    margin-top: var(--spacing-sm);
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.battery-btn {
+    background-color: var(--button-primary);
+    color: var(--neutral-white);
+    padding: 8px 20px;
+    border-radius: var(--border-radius);
+    font-size: 0.9em;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color var(--transition-speed) var(--transition-type);
+}
+
+.battery-btn:hover {
+    background-color: var(--button-secondary);
+}
+
+/* Swiper Pagination & Navigation */
+.swiper-pagination-bullet {
+    background: var(--neutral-dark-gray);
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--button-primary);
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: var(--primary-deep-blue);
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    color: var(--button-primary);
+}
+
+/* ============================================
+   2. Responsiveness (mobile-first approach)
+============================================ */
+/* Already mobile friendly by default. 
+   We'll add breakpoints for larger devices. */
+@media (min-width: 576px) {
+    .tabbed-assessments .section-text {
+        font-size: 1em;
+    }
+}
+
+@media (min-width: 768px) {
+    .tab-link {
+        font-size: 1em;
+    }
+    .swiper-slide {
+        padding: var(--spacing-lg);
+    }
+}
+
+@media (min-width: 1024px) {
+    .tabbed-assessments .section-title {
+        font-size: 2.2em;
+    }
+    .swiper-slide h3 {
+        font-size: 1.3em;
+    }
+}
+
+</styles>
+
+        <script>
+document.addEventListener("DOMContentLoaded", function () {
+  // ========== Tabs ==========
+  const tabLinks = document.querySelectorAll(".tab-link");
+  const tabContents = document.querySelectorAll(".tab-content");
+
+  tabLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      // Remove 'active' from all tab links
+      tabLinks.forEach((btn) => btn.classList.remove("active"));
+      // Hide all tab contents
+      tabContents.forEach((content) => content.classList.remove("active"));
+
+      // Add 'active' to clicked tab and its content
+      link.classList.add("active");
+      const tabTarget = link.getAttribute("data-tab");
+      document.getElementById(tabTarget).classList.add("active");
+    });
+  });
+
+  // ========== Swiper Initializations for Each Category ==========
+  // Category 1
+  const swiperCategory1 = new Swiper(".swiper-category1", {
+    direction: "horizontal",
+    loop: true,
+    spaceBetween: 20,
+    slidesPerView: 1,
+    centeredSlides: true,
+    pagination: {
+      el: ".swiper-category1 .swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-category1 .swiper-button-next",
+      prevEl: ".swiper-category1 .swiper-button-prev",
+    },
+    // Adjust breakpoints as needed
+    breakpoints: {
+      576: {
+        slidesPerView: 1.5,
+        spaceBetween: 20,
+      },
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 30,
+      },
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 40,
+      },
+    },
+  });
+
+  // Category 2
+  const swiperCategory2 = new Swiper(".swiper-category2", {
+    direction: "horizontal",
+    loop: true,
+    spaceBetween: 20,
+    slidesPerView: 1,
+    centeredSlides: true,
+    pagination: {
+      el: ".swiper-category2 .swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-category2 .swiper-button-next",
+      prevEl: ".swiper-category2 .swiper-button-prev",
+    },
+    breakpoints: {
+      576: {
+        slidesPerView: 1.5,
+        spaceBetween: 20,
+      },
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 30,
+      },
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 40,
+      },
+    },
+  });
+
+  // Category 3
+  const swiperCategory3 = new Swiper(".swiper-category3", {
+    direction: "horizontal",
+    loop: true,
+    spaceBetween: 20,
+    slidesPerView: 1,
+    centeredSlides: true,
+    pagination: {
+      el: ".swiper-category3 .swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-category3 .swiper-button-next",
+      prevEl: ".swiper-category3 .swiper-button-prev",
+    },
+    breakpoints: {
+      576: {
+        slidesPerView: 1.5,
+        spaceBetween: 20,
+      },
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 30,
+      },
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 40,
+      },
+    },
+  });
+
+  // ... Initialize more Swipers for additional categories if needed
+
+  // (Optional) Set a default tab to open on load
+  // document.querySelector(".tab-link[data-tab='category1']").click();
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
         
 <!-- Diagnostic Factors (Data-Driven) Section -->
 <section id="diagnostic-factors" class="section factors-section">
