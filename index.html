@@ -814,18 +814,18 @@
 
 }
 
-        /* ======================================
-   3. Call-to-Action Button Styles
-   Class Name: btn-cta
-   Purpose: Solid fill with primary color, double size
+/* ======================================
+   3. Call-to-Action Primary Button Styles (20% Smaller)
+   Class Name: btn-cta-primary
+   Purpose: Solid fill with primary color, slightly smaller size
 ====================================== */
-.btn-cta {
+.btn-cta-primary {
     display: inline-block;
     background-color: var(--button-primary);
     color: var(--neutral-white);
-    padding: 24px 60px; /* Double the padding */
+    padding: 19.2px 48px; /* 20% smaller than 24px 60px */
     border-radius: var(--border-radius);
-    font-size: 2em; /* Double the font size */
+    font-size: 1.6em; /* 20% smaller than 2em */
     font-weight: 600;
     text-decoration: none;
     transition: transform var(--transition-speed) var(--transition-type),
@@ -834,27 +834,42 @@
     border: none; /* No border for primary buttons */
 }
 
-/* Hover and Focus States for Call-to-Action Button */
-.btn-cta:hover,
-.btn-cta:focus {
+/* Hover and Focus States for Call-to-Action Primary Button */
+.btn-cta-primary:hover,
+.btn-cta-primary:focus {
     filter: brightness(95%); /* Reduce brightness to darken */
     text-decoration: none; /* Ensure no underline on hover/focus */
     color: var(--neutral-white); /* Ensures text color doesn't change */
 }
 
-
-
-
-/* Responsive Adjustments */
-@media (min-width: 768px) {
-  .battery-links {
-    flex-direction: row;
-    justify-content: center;
-  }
-  .btn-secondary .btn-primary {
-    font-size: 1em;
-  }
+/* ======================================
+   4. Call-to-Action Secondary Button Styles (20% Smaller)
+   Class Name: btn-cta-secondary
+   Purpose: Outline style with primary color border and no fill, slightly smaller size
+====================================== */
+.btn-cta-secondary {
+    display: inline-block;
+    background-color: transparent; /* No fill */
+    color: var(--button-primary);
+    padding: 12.8px 32px; /* 20% smaller than 16px 40px */
+    border-radius: var(--border-radius);
+    font-size: 1.6em; /* 20% smaller than 2em */
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform var(--transition-speed) var(--transition-type),
+                opacity var(--transition-speed) var(--transition-type);
+    font-family: 'Vazir', sans-serif; /* Consistent font */
+    border: 3.2px solid var(--button-primary); /* 20% smaller than 4px */
 }
+
+/* Hover and Focus States for Call-to-Action Secondary Button */
+.btn-cta-secondary:hover,
+.btn-cta-secondary:focus {
+    text-decoration: none; /* Ensure no underline on hover/focus */
+    filter: brightness(95%); /* Reduce brightness to darken */
+    color: var(--button-primary); /* Ensures text color doesn't change */
+}
+
 
 
   
@@ -1362,7 +1377,7 @@
             <div class="hero-content">
                 <h2>رگه‌های طلایی استعداد خود را کشف کنید!</h2>
                 <p>ارائه ارزیابی‌های روان‌شناختی پیشرفته برای تعالی فردی شما</p>
-                <a href="/getting-started" class="btn-cta">شروع کنید</a>
+                <a href="/getting-started" class="btn-cta-primary">شروع کنید</a>
             </div>
         </section>
 
@@ -1895,7 +1910,7 @@
       </div>
     </div>
           <div class="btn-primary-container" style="text-align: center; margin-top: 40px;">
-      <a href="/assessments" class="btn-primary">مشاهده همه ارزیابی‌ها</a>
+      <a href="/assessments" class="btn-cta-secondary">مشاهده همه ارزیابی‌ها</a>
     </div>
   </div> <!-- end container -->
 </section>
@@ -2021,7 +2036,7 @@
                         این‌ها تنها بخشی از <strong>۱۹۰ عامل روان‌شناختی</strong> هستند 
                         که ما در استعدادیاب با رویکرد داده‌محور تحلیل می‌کنیم.
                     </p>
-                    <a href="/resources/factors" class="btn-primary">مشاهده همه عوامل</a>
+                    <a href="/resources/factors" class="btn-cta-secondary">مشاهده همه عوامل</a>
                 </div>
             </div>
         </section>
