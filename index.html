@@ -681,42 +681,47 @@
   margin-top: var(--spacing-md);
 }
 
-.battery-btn {
-  background-color: var(--button-primary);
-  color: var(--neutral-white);
+/* General styles for all buttons */
+.battery-btn, 
+.outline-btn {
   padding: 8px 20px;
   border-radius: var(--border-radius);
   font-size: 0.9em;
   font-weight: 500;
   text-decoration: none;
-  transition: background-color var(--transition-speed) var(--transition-type);
   text-align: center;
+  transition: background-color var(--transition-speed) var(--transition-type),
+              color var(--transition-speed) var(--transition-type),
+              border-color var(--transition-speed) var(--transition-type);
+  display: inline-block;
+  font-family: 'Vazir', sans-serif; /* Consistent font */
+}
+
+/* Specific styles for the filled button */
+.battery-btn {
+  background-color: var(--button-primary);
+  color: var(--neutral-white);
+  border: none; /* No border for filled buttons */
 }
 
 .battery-btn:hover,
 .battery-btn:focus {
   background-color: var(--button-secondary);
 }
-        /* Outline style for battery-btn within Tabbed Assessments Section */
-.tabbed-assessments .outline-btn {
-    background-color: transparent; /* No fill */
-    color: var(--button-primary); /* Text color matches border */
-    border: 2px solid var(--button-primary); /* Border color */
-    padding: 8px 16px; /* Adequate padding */
-    border-radius: var(--border-radius); /* Consistent border radius */
-    text-decoration: none; /* Remove underline */
-    transition: color var(--transition-speed) var(--transition-type), border-color var(--transition-speed) var(--transition-type);
-    font-weight: 600; /* Consistent font weight */
-    display: inline-block; /* Ensure proper spacing */
-    font-family: 'Vazir', sans-serif; /* Consistent font */
+
+/* Specific styles for the outlined button */
+.outline-btn {
+  background-color: transparent; /* No background for outline buttons */
+  color: var(--button-primary); /* Text color matches border */
+  border: 2px solid var(--button-primary); /* Border for outline buttons */
 }
 
-.tabbed-assessments .outline-btn:hover,
-.tabbed-assessments .outline-btn:focus {
-    color: var(--button-secondary); /* Optional: Change text color on hover/focus */
-    border-color: var(--button-secondary); /* Optional: Change border color on hover/focus */
-    /* Optional: Add other hover effects if desired */
+.outline-btn:hover,
+.outline-btn:focus {
+  color: var(--button-secondary); /* Change text color on hover/focus */
+  border-color: var(--button-secondary); /* Change border color on hover/focus */
 }
+
 
 
 /* Responsive Adjustments */
