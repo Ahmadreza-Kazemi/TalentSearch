@@ -668,8 +668,9 @@
 /* Hover and Focus States for Primary Button */
 .btn-primary:hover,
 .btn-primary:focus {
-    opacity: 0.95; /* Slight opacity decrease */
-    color: var(--neutral-white); /* Text color remains white */
+    background-color: darken(var(--button-primary), 10%); /* Slightly darker background */
+    text-decoration: none; /* Ensure no underline on hover/focus */
+    color: var(--neutral-white); /* Ensures text color doesn't change */
 
 }
 
@@ -696,8 +697,10 @@
 /* Hover and Focus States for Secondary Button */
 .btn-secondary:hover,
 .btn-secondary:focus {
-    opacity: 0.95; /* Slight opacity decrease */
-    color: var(--button-primary);
+    text-decoration: none; /* Ensure no underline on hover/focus */
+    background-color: rgba(0, 0, 0, 0.05); /* Very subtle background fill for better contrast */
+    border-color: darken(var(--button-primary), 10%); /* Darker border on hover */
+    color: var(--button-primary); /* Ensures text color doesn't change */
 
 }
 
