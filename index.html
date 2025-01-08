@@ -502,9 +502,6 @@
             }
         }
 
-        /* Services Grid for Large Devices (if needed) */
-        /* Removed since services are now in a slider */
-
         /* Adjustments for Very Small Devices */
         @media (max-width: 576px) {
             .footer-content {
@@ -527,6 +524,793 @@
                 font-size: 0.85em;
             }
         }
+
+        /* =======================================================
+           6. Reasoning Section Styles
+        ======================================================= */
+        /* Reasoning Section */
+        .reasoning-section {
+            padding: var(--spacing-lg) var(--spacing-md);
+            background-color: var(--neutral-white); /* Light gray for a subtle contrast */
+            text-align: center;
+        }
+
+        .reasoning-section .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-md);
+        }
+
+        .reasoning-section .section-title {
+            font-size: 2em;
+            font-weight: 700;
+            color: var(--primary-deep-blue); /* Main deep blue color */
+            margin-bottom: var(--spacing-lg);
+            text-shadow: 0 0 5px var(--primary-gold); /* Golden glow for emphasis */
+        }
+
+        .reasoning-section .section-text {
+            font-size: 1.2em;
+            color: var(--text-secondary); /* Neutral dark gray for readability */
+            line-height: 1.8;
+            margin-bottom: var(--spacing-md);
+        }
+
+        /* =======================================================
+           7. CTA Section Styles
+        ======================================================= */
+        /* CTA Section Styles */
+        .cta-section {
+            padding: var(--spacing-lg) var(--spacing-md);
+            background-color: var(--neutral-cool-gray);
+            text-align: center;
+        }
+
+        .cta-section .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-md);
+        }
+
+        .cta-title {
+            font-size: 2em;
+            font-weight: 700;
+            color: var(--primary-deep-blue);
+            margin-bottom: var(--spacing-lg);
+            text-shadow: 0 0 5px var(--primary-gold);
+        }
+
+        .cta-text {
+            font-size: 1.1em;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: var(--spacing-md);
+            text-align: justify;
+        }
+
+        /* =======================================================
+           8. Tabbed Assessments Section Styles
+        ======================================================= */
+        /* Tabbed Assessments Section */
+        .tabbed-assessments {
+            background-color: var(--neutral-white);
+            text-align: center;
+            padding: var(--spacing-lg) var(--spacing-md);
+        }
+
+        .tabbed-assessments .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-md);
+        }
+
+        .tabbed-assessments .section-title {
+            font-size: 2em;
+            font-weight: 700;
+            color: var(--primary-deep-blue);
+            margin-bottom: var(--spacing-lg);
+            text-shadow: 0 0 5px var(--primary-gold);
+        }
+
+        .tabbed-assessments .section-text {
+            font-size: 1.1em;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: var(--spacing-md);
+            text-align: justify;
+        }
+
+        /* Tab Navigation (buttons) */
+        .tabs-navigation {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: var(--spacing-sm);
+            overflow-x: auto; /* Mobile-friendly horizontal scroll if needed */
+            margin-bottom: var(--spacing-md);
+            border-bottom: 2px solid var(--neutral-cool-gray);
+            padding-bottom: var(--spacing-sm);
+        }
+
+        .tab-link {
+            background-color: transparent;
+            color: var(--primary-deep-blue);
+            padding: var(--spacing-sm) var(--spacing-md);
+            border: none;
+            border-bottom: 2px solid transparent;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: color var(--transition-speed) var(--transition-type),
+                        border-bottom var(--transition-speed) var(--transition-type);
+            white-space: nowrap; /* Prevent text from wrapping in small widths */
+            font-family: 'Vazir', sans-serif;
+        }
+
+        .tab-link.active,
+        .tab-link:hover {
+            color: var(--button-primary);
+            border-bottom: 2px solid var(--button-primary);
+        }
+
+        /* Tab Contents - Hide non-active by default */
+        .tab-content {
+            display: none;
+            text-align: right; /* Because it's RTL */
+        }
+
+        .tab-content.active {
+            display: block;
+            margin-top: var(--spacing-md);
+        }
+
+        /* Slides inside each tab: 
+           We'll reuse the existing Swiper styling from your code for consistency.
+           Just ensure you have .swiper and .swiper-slide classes as in the original.
+        */
+        .swiper {
+            width: 100%;
+            margin: 0 auto;
+            padding-bottom: 50px;
+        }
+
+        .swiper-wrapper {
+            display: flex;
+        }
+
+        .swiper-slide {
+            background-color: var(--neutral-cool-gray);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-card);
+            transition: transform var(--transition-speed) var(--transition-type),
+                        box-shadow var(--transition-speed) var(--transition-type);
+        }
+
+        .swiper-slide:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        /* Assessment text styling within the slides */
+        .swiper-slide h3 {
+            font-size: 1.2em;
+            font-weight: 700;
+            color: var(--primary-deep-blue);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .description {
+            font-size: 0.95em;
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-sm);
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        .id {
+            font-size: 0.85em;
+            color: var(--neutral-dark-gray);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        /* Battery buttons within slides */
+        .battery-links {
+            margin-top: var(--spacing-sm);
+            display: flex;
+            gap: var(--spacing-sm);
+        }
+
+        .battery-btn {
+            background-color: var(--button-primary);
+            color: var(--neutral-white);
+            padding: 8px 20px;
+            border-radius: var(--border-radius);
+            font-size: 0.9em;
+            font-weight: 500;
+            text-decoration: none;
+            transition: background-color var(--transition-speed) var(--transition-type);
+        }
+
+        .battery-btn:hover {
+            background-color: var(--button-secondary);
+        }
+
+        /* Swiper Pagination & Navigation */
+        .swiper-pagination-bullet {
+            background: var(--neutral-dark-gray);
+        }
+
+        .swiper-pagination-bullet-active {
+            background: var(--button-primary);
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: var(--primary-deep-blue);
+        }
+
+        .swiper-button-next:hover,
+        .swiper-button-prev:hover {
+            color: var(--button-primary);
+        }
+
+        /* ============================================
+           2. Responsiveness (mobile-first approach)
+        ============================================ */
+        /* Already mobile friendly by default. 
+           We'll add breakpoints for larger devices. */
+        @media (min-width: 576px) {
+            .tabbed-assessments .section-text {
+                font-size: 1em;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .tab-link {
+                font-size: 1em;
+            }
+            .swiper-slide {
+                padding: var(--spacing-lg);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .tabbed-assessments .section-title {
+                font-size: 2.2em;
+            }
+            .swiper-slide h3 {
+                font-size: 1.3em;
+            }
+        }
+
+        /* =======================================================
+           9. Diagnostic Factors Section Styles
+        ======================================================= */
+        /* Diagnostic Factors Section Styles */
+        .factors-section {
+            padding: var(--spacing-lg) var(--spacing-md);
+            background-color: var(--neutral-cool-gray);
+            text-align: center;
+            font-family: 'Vazir', sans-serif; /* Ensures this section uses Vazir font */
+        }
+
+        .factors-section .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-md);
+        }
+
+        .section-title {
+            font-size: 2em;
+            font-weight: 700;
+            color: var(--primary-deep-blue);
+            margin-bottom: var(--spacing-md);
+            text-shadow: 0 0 5px var(--primary-gold);
+        }
+
+        .section-subtitle {
+            font-size: 1.1em;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: var(--spacing-lg);
+            text-align: center;
+        }
+
+        /* Swiper Diagnostic Factors */
+        .swiper-factors {
+            width: 100%;
+            padding-top: var(--spacing-md);
+            padding-bottom: var(--spacing-lg);
+        }
+
+        .swiper-factors .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: stretch; /* Ensure slides stretch to the same height */
+        }
+
+        .factor-card {
+            background-color: var(--neutral-white);
+            width: 100%;
+            max-width: 300px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-card);
+            text-align: right; /* Right-align text for RTL */
+            padding: var(--spacing-md);
+            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+            height: 100%; /* Make all cards the same height */
+        }
+
+        .factor-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .factor-icon {
+            width: 50px;
+            height: 50px;
+            margin-bottom: var(--spacing-sm);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .factor-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .factor-title {
+            font-size: 1.2em;
+            font-weight: 700;
+            color: var(--primary-deep-blue);
+            margin-bottom: var(--spacing-xs);
+            flex-shrink: 0; /* Prevent title from shrinking */
+        }
+
+        .factor-description {
+            font-size: 1em;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            text-align: justify;
+            flex-grow: 1; /* Allow description to take up remaining space */
+            overflow: hidden;
+        }
+
+        .factors-cta {
+            margin-top: var(--spacing-lg);
+            text-align: center;
+        }
+
+        .factors-note {
+            font-size: 1em;
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-sm);
+            text-align: center;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--button-primary);
+            color: var(--neutral-white);
+            padding: 12px 30px;
+            border-radius: var(--border-radius);
+            font-size: 1em;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 0 10px var(--accent-golden-yellow);
+            transition: background-color var(--transition-speed) var(--transition-type),
+                        transform var(--transition-speed) var(--transition-type),
+                        box-shadow var(--transition-speed) var(--transition-type);
+            margin-top: var(--spacing-xs);
+        }
+
+        .cta-button:hover,
+        .cta-button:focus {
+            background-color: var(--button-secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 0 20px var(--button-secondary);
+        }
+
+        /* Swiper Navigation Buttons */
+        .swiper-button-prev,
+        .swiper-button-next {
+            color: var(--primary-deep-blue);
+        }
+
+        .swiper-button-prev:hover,
+        .swiper-button-next:hover {
+            color: var(--button-primary);
+        }
+
+        /* Swiper Pagination Dots */
+        .swiper-pagination-bullet {
+            background: var(--neutral-dark-gray);
+            opacity: 1;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: var(--button-primary);
+        }
+
+        /* Responsive Styles */
+        @media (min-width: 576px) {
+            .swiper-factors .swiper-slide {
+                width: 50%;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .swiper-factors .swiper-slide {
+                width: 33.3333%;
+            }
+
+            .factor-card {
+                max-width: 350px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .swiper-factors .swiper-slide {
+                width: 25%;
+            }
+
+            .factor-card {
+                max-width: 400px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .swiper-factors .swiper-slide {
+                width: 20%;
+            }
+        }
+
+        /* =======================================================
+           10. Partners or Collaborators Section Styles
+        ======================================================= */
+        /* Partners or Collaborators Section Styles */
+        .partners-section {
+            padding: var(--spacing-lg) var(--spacing-md);
+            background-color: var(--neutral-white);
+            text-align: center; /* Center-aligns the text within the section */
+        }
+
+        .partners-section .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-md);
+        }
+
+        .partners-section .section-title {
+            font-size: 2em;
+            font-weight: 700;
+            color: var(--primary-deep-blue);
+            margin-bottom: var(--spacing-lg);
+            text-shadow: 0 0 5px var(--primary-gold);
+            font-family: 'Vazir', sans-serif; /* Ensures the title uses 'Vazir' font */
+        }
+
+        .partners-section .section-text {
+            font-size: 1.1em;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: var(--spacing-lg);
+            text-align: justify;
+            font-family: 'Vazir', sans-serif; /* Ensures the text uses 'Vazir' font */
+        }
+
+        .partners-grid {
+            display: grid;
+            gap: var(--spacing-lg);
+            grid-template-columns: 1fr;
+            align-items: center;
+            justify-items: center; /* Centers items horizontally within their grid cell */
+            justify-content: center; /* Centers the entire grid within the container */
+        }
+
+        .partner-card {
+            background-color: var(--neutral-cool-gray);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-card);
+            transition: transform var(--transition-speed) var(--transition-type), box-shadow var(--transition-speed) var(--transition-type);
+            width: 100%;
+            max-width: 250px;
+            text-align: center; /* Centers text within each partner card */
+            font-family: 'Vazir', sans-serif; /* Ensures the card uses 'Vazir' font */
+        }
+
+        .partner-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .partner-logo {
+            width: 100%;
+            height: auto;
+            max-height: 100px;
+            object-fit: contain;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .partner-name {
+            font-size: 1em;
+            font-weight: 600;
+            color: var(--primary-deep-blue);
+            font-family: 'Vazir', sans-serif; /* Ensures the partner name uses 'Vazir' font */
+        }
+
+        /* Responsive Styles */
+        @media (min-width: 576px) {
+            .partners-grid {
+                grid-template-columns: repeat(2, 1fr); /* Two columns for screens >= 576px */
+            }
+        }
+
+        @media (min-width: 768px) {
+            .partners-grid {
+                grid-template-columns: repeat(3, 1fr); /* Three columns for screens >= 768px */
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .partners-grid {
+                grid-template-columns: repeat(4, 1fr); /* Four columns for screens >= 1024px */
+            }
+        }
+
+        /* =======================================================
+           11. Reasonable Pricing Section Styles
+        ======================================================= */
+        /* Reasonable Pricing Section Styles */
+        .pricing-section {
+            padding: var(--spacing-lg) var(--spacing-md);
+            background-color: var(--neutral-cool-gray);
+            text-align: center;
+        }
+
+        .pricing-section .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-md);
+        }
+
+        .section-title {
+            font-size: 2em;
+            font-weight: 700;
+            color: var(--primary-deep-blue);
+            margin-bottom: var(--spacing-lg);
+            text-shadow: 0 0 5px var(--primary-gold);
+        }
+
+        .section-text, .section-note {
+            font-size: 1.1em;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: var(--spacing-md);
+            text-align: justify;
+        }
+
+        .pricing-grid {
+            display: grid;
+            gap: var(--spacing-lg);
+            grid-template-columns: 1fr;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .pricing-card {
+            background-color: var(--neutral-white);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-card);
+            transition: box-shadow var(--transition-speed) var(--transition-type);
+        }
+
+        .pricing-card:hover {
+            box-shadow: var(--shadow-hover);
+        }
+
+        .pricing-title {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: var(--primary-deep-blue);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .pricing-amount {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: var(--secondary-teal-green);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .pricing-features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: var(--spacing-md);
+            text-align: center;
+        }
+
+        .pricing-features li {
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-secondary);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--button-primary);
+            color: var(--neutral-white);
+            padding: 10px 24px;
+            border-radius: var(--border-radius);
+            font-size: 1em;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background-color var(--transition-speed) var(--transition-type),
+                        transform var(--transition-speed) var(--transition-type),
+                        box-shadow var(--transition-speed) var(--transition-type);
+        }
+
+        .cta-button:hover,
+        .cta-button:focus {
+            background-color: var(--button-secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 0 10px var(--button-secondary);
+        }
+
+        /* Responsive Styles */
+        @media (min-width: 768px) {
+            .pricing-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* =======================================================
+           12. FAQ Section Styles
+        ======================================================= */
+        /* FAQ Section Styles */
+        .faq-section {
+            padding: var(--spacing-lg) var(--spacing-md);
+            background-color: var(--neutral-cool-gray);
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-md);
+        }
+
+        .section-title {
+            font-size: 2em;
+            font-weight: 700;
+            color: var(--primary-deep-blue);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .section-text {
+            font-size: 1.1em;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: var(--spacing-lg);
+            text-align: justify;
+        }
+
+        /* Tabs */
+        .faq-tabs {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+            overflow-x: auto;
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 2px solid var(--neutral-cool-gray);
+        }
+
+        .tab-link {
+            padding: var(--spacing-sm) var(--spacing-md);
+            font-size: 1em;
+            font-weight: 600;
+            color: var(--primary-deep-blue);
+            background-color: transparent;
+            border: none;
+            border-bottom: 2px solid transparent;
+            cursor: pointer;
+            transition: all var(--transition-speed) ease-in-out;
+            white-space: nowrap;
+            font-family: 'Vazir', sans-serif;
+        }
+
+        .tab-link:hover,
+        .tab-link.active {
+            color: var(--button-primary);
+            border-bottom: 2px solid var(--button-primary);
+        }
+
+        /* FAQ Categories */
+        .faq-category {
+            display: none;
+            text-align: right;
+        }
+
+        .faq-category.active {
+            display: block;
+        }
+
+        /* FAQ Items */
+        .faq-item {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .faq-question {
+            width: 100%;
+            text-align: right;
+            background-color: var(--neutral-white);
+            color: var(--primary-deep-blue);
+            padding: var(--spacing-md);
+            font-size: 1em;
+            font-weight: 600;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            box-shadow: var(--shadow-card);
+            transition: box-shadow var(--transition-speed) ease-in-out;
+            font-family: 'Vazir', sans-serif;
+        }
+
+        .faq-question:hover {
+            box-shadow: var(--shadow-hover);
+        }
+
+        .faq-answer {
+            display: none;
+            text-align: justify;
+            background-color: var(--neutral-white);
+            border-radius: var(--border-radius);
+            margin-top: var(--spacing-xs);
+            padding: var(--spacing-md);
+            line-height: 1.6;
+            color: var(--text-secondary);
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        /* Responsive Styles */
+        @media (min-width: 576px) {
+            .faq-tabs {
+                gap: var(--spacing-md);
+            }
+
+            .tab-link {
+                font-size: 1em;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .faq-question {
+                font-size: 1.05em;
+            }
+
+            .faq-answer {
+                font-size: 1.1em;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .faq-question {
+                font-size: 1.1em;
+            }
+
+            .faq-answer {
+                font-size: 1.2em;
+            }
+        }
     </style>
 </head>
 <body>
@@ -547,1526 +1331,481 @@
         </section>
 
         <!-- Why Choose Us Section -->
-<section class="section reasoning-section" id="reason">
-    <div class="container">
-        <h2 class="section-title">چرا استعدادیاب؟</h2>
-        <p class="section-text">
-            تجربه ما در حوزه روان‌شناسی نشان داد افراد معمولاً نتایج ارزیابی‌های خود را به‌صورت کلی دریافت می‌کنند 
-            و فرصت کافی برای درک عمیق یا به‌کارگیری آن در زندگی واقعی ندارند. به همین دلیل، ما در استعدادیاب تصمیم گرفتیم 
-            بستری کاملاً آنلاین و کاربرپسند فراهم کنیم تا هر فرد بتواند از هر کجا، پاسخ‌های ارزیابی خود را به‌طور دقیق 
-            مشاهده کرده و راهکارهای علمی دریافت کند. هدف ما این است که با ارائه گزارش‌های شفاف، ابزارهای عملی و پشتیبانی 
-            مستمر، هر شخص بتواند آگاهانه درباره آینده شغلی، تحصیلی یا شخصی خود تصمیم بگیرد.
-        </p>
-    </div>
-</section>
-
-<style>
-/* Reasoning Section */
-.reasoning-section {
-    padding: var(--spacing-lg) var(--spacing-md);
-            background-color: var(--neutral-white); /* Light gray for a subtle contrast */
-
-    text-align: center;
-}
-
-.reasoning-section .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: var(--spacing-md);
-}
-
-.reasoning-section .section-title {
-    font-size: 2em;
-    font-weight: 700;
-    color: var(--primary-deep-blue); /* Main deep blue color */
-    margin-bottom: var(--spacing-lg);
-    text-shadow: 0 0 5px var(--primary-gold); /* Golden glow for emphasis */
-}
-
-.reasoning-section .section-text {
-    font-size: 1.2em;
-    color: var(--text-secondary); /* Neutral dark gray for readability */
-    line-height: 1.8;
-    margin-bottom: var(--spacing-md);
-}
-</style>
-
-
-
-<style>
-/* CTA Section Styles */
-.cta-section {
-    padding: var(--spacing-lg) var(--spacing-md);
-    background-color: var(--neutral-cool-gray);
-    text-align: center;
-}
-
-.cta-section .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: var(--spacing-md);
-}
-
-.cta-title {
-    font-size: 2em;
-    font-weight: 700;
-    color: var(--primary-deep-blue);
-    margin-bottom: var(--spacing-lg);
-    text-shadow: 0 0 5px var(--primary-gold);
-}
-
-.cta-text {
-    font-size: 1.1em;
-    color: var(--text-secondary);
-    line-height: 1.8;
-    margin-bottom: var(--spacing-md);
-    text-align: justify;
-}
-
-.cta-button {
-    display: inline-block;
-    background-color: var(--button-primary);
-    color: var(--neutral-white);
-    padding: 12px 30px;
-    border-radius: var(--border-radius);
-    font-size: 1em;
-    font-weight: 600;
-    box-shadow: 0 0 10px var(--accent-golden-yellow);
-    text-decoration: none;
-    transition: background-color var(--transition-speed) var(--transition-type),
-                transform var(--transition-speed) var(--transition-type),
-                box-shadow var(--transition-speed) var(--transition-type);
-}
-
-.cta-button:hover,
-.cta-button:focus {
-    background-color: var(--button-secondary);
-    transform: translateY(-5px);
-    box-shadow: 0 0 20px var(--button-secondary);
-}
-</style>
-
-
-
-<!-- =========================================
-     Tabbed Assessments Section
-========================================= -->
-<section class="section tabbed-assessments" id="tabbed-assessments">
-  <div class="container">
-    <!-- Section Title & Intro Text -->
-    <h2 class="section-title">ارزیابی‌های دسته‌بندی‌شده</h2>
-    <p class="section-text">
-      در این بخش، ارزیابی‌ها بر اساس دسته‌بندی‌های مختلف در اختیار شما قرار می‌گیرند.
-      روی هر تب کلیک کنید تا فهرست ارزیابی‌های مربوط را در قالب اسلایدر مشاهده کنید.
-    </p>
-
-    <!-- Tabs Navigation -->
-    <div class="tabs-navigation">
-      <!-- Each button is tied to a specific tab content below (data-tab="category1" etc.) -->
-      <button class="tab-link active" data-tab="category1">ارزیابی‌های آرامش روانی</button>
-      <button class="tab-link" data-tab="category2">ارزیابی‌های عزت نفس</button>
-      <button class="tab-link" data-tab="category3">استعدادهای ویژه کودکان</button>
-      <!-- Add more tabs as needed -->
-    </div>
-
-    <!-- =====================
-         Tab Content #1
-    ====================== -->
-    <div id="category1" class="tab-content active">
-      <div class="swiper swiper-category1">
-        <div class="swiper-wrapper">
-          <!-- Slide 1 -->
-          <div class="swiper-slide">
-            <h3>فهرست آرامش روانی - 33</h3>
-            <p class="description">
-              این ارزیابی به سنجش میزان آرامش روانی و مدیریت استرس شما می‌پردازد.
-            </p>
-            <p class="id">ID: 110001</p>
-            <div class="battery-links">
-              <a href="/take/mental-tranquility" class="battery-btn">شروع ارزیابی</a>
-              <a href="/assessments/mental-tranquility" class="battery-btn">معرفی ارزیابی</a>
+        <section class="section reasoning-section" id="reason">
+            <div class="container">
+                <h2 class="section-title">چرا استعدادیاب؟</h2>
+                <p class="section-text">
+                    تجربه ما در حوزه روان‌شناسی نشان داد افراد معمولاً نتایج ارزیابی‌های خود را به‌صورت کلی دریافت می‌کنند 
+                    و فرصت کافی برای درک عمیق یا به‌کارگیری آن در زندگی واقعی ندارند. به همین دلیل، ما در استعدادیاب تصمیم گرفتیم 
+                    بستری کاملاً آنلاین و کاربرپسند فراهم کنیم تا هر فرد بتواند از هر کجا، پاسخ‌های ارزیابی خود را به‌طور دقیق 
+                    مشاهده کرده و راهکارهای علمی دریافت کند. هدف ما این است که با ارائه گزارش‌های شفاف، ابزارهای عملی و پشتیبانی 
+                    مستمر، هر شخص بتواند آگاهانه درباره آینده شغلی، تحصیلی یا شخصی خود تصمیم بگیرد.
+                </p>
             </div>
-          </div>
-          <!-- Slide 2 -->
-          <div class="swiper-slide">
-            <h3>فهرست آرامش روانی - 45</h3>
-            <p class="description">
-              این ارزیابی نسخه جامع‌تر و پیشرفته برای سنجش آرامش ذهنی شماست.
+        </section>
+
+        <!-- Tabbed Assessments Section -->
+        <section class="section tabbed-assessments" id="tabbed-assessments">
+          <div class="container">
+            <!-- Section Title & Intro Text -->
+            <h2 class="section-title">ارزیابی‌های دسته‌بندی‌شده</h2>
+            <p class="section-text">
+              در این بخش، ارزیابی‌ها بر اساس دسته‌بندی‌های مختلف در اختیار شما قرار می‌گیرند.
+              روی هر تب کلیک کنید تا فهرست ارزیابی‌های مربوط را در قالب اسلایدر مشاهده کنید.
             </p>
-            <p class="id">ID: 110004</p>
-            <div class="battery-links">
-              <a href="/take/mental-tranquility-advanced" class="battery-btn">شروع ارزیابی</a>
-              <a href="/assessments/mental-tranquility-advanced" class="battery-btn">معرفی ارزیابی</a>
+
+            <!-- Tabs Navigation -->
+            <div class="tabs-navigation">
+              <!-- Each button is tied to a specific tab content below (data-tab="category1" etc.) -->
+              <button class="tab-link active" data-tab="category1">ارزیابی‌های آرامش روانی</button>
+              <button class="tab-link" data-tab="category2">ارزیابی‌های عزت نفس</button>
+              <button class="tab-link" data-tab="category3">استعدادهای ویژه کودکان</button>
+              <!-- Add more tabs as needed -->
             </div>
-          </div>
-          <!-- Add more slides as needed -->
-        </div>
-        <!-- Pagination & Navigation (optional) -->
-        <div class="swiper-pagination"></div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-      </div>
-    </div>
 
-    <!-- =====================
-         Tab Content #2
-    ====================== -->
-    <div id="category2" class="tab-content">
-      <div class="swiper swiper-category2">
-        <div class="swiper-wrapper">
-          <!-- Slide 1 -->
-          <div class="swiper-slide">
-            <h3>فهرست ارجمندی - 17</h3>
-            <p class="description">
-              این ارزیابی به بررسی سطح ارجمندی و خودارزیابی مثبت شما می‌پردازد.
-            </p>
-            <p class="id">ID: 110002</p>
-            <div class="battery-links">
-              <a href="/take/esteem" class="battery-btn">شروع ارزیابی</a>
-              <a href="/assessments/esteem" class="battery-btn">معرفی ارزیابی</a>
+            <!-- =====================
+                 Tab Content #1
+            ====================== -->
+            <div id="category1" class="tab-content active">
+              <div class="swiper swiper-category1">
+                <div class="swiper-wrapper">
+                  <!-- Slide 1 -->
+                  <div class="swiper-slide">
+                    <h3>فهرست آرامش روانی - 33</h3>
+                    <p class="description">
+                      این ارزیابی به سنجش میزان آرامش روانی و مدیریت استرس شما می‌پردازد.
+                    </p>
+                    <p class="id">ID: 110001</p>
+                    <div class="battery-links">
+                      <a href="/take/mental-tranquility" class="battery-btn">شروع ارزیابی</a>
+                      <a href="/assessments/mental-tranquility" class="battery-btn">معرفی ارزیابی</a>
+                    </div>
+                  </div>
+                  <!-- Slide 2 -->
+                  <div class="swiper-slide">
+                    <h3>فهرست آرامش روانی - 45</h3>
+                    <p class="description">
+                      این ارزیابی نسخه جامع‌تر و پیشرفته برای سنجش آرامش ذهنی شماست.
+                    </p>
+                    <p class="id">ID: 110004</p>
+                    <div class="battery-links">
+                      <a href="/take/mental-tranquility-advanced" class="battery-btn">شروع ارزیابی</a>
+                      <a href="/assessments/mental-tranquility-advanced" class="battery-btn">معرفی ارزیابی</a>
+                    </div>
+                  </div>
+                  <!-- Add more slides as needed -->
+                </div>
+                <!-- Pagination & Navigation (optional) -->
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+              </div>
             </div>
-          </div>
-          <!-- Slide 2 -->
-          <div class="swiper-slide">
-            <h3>فهرست اعتماد به نفس - 20</h3>
-            <p class="description">
-              برای بررسی میزان اعتمادبه‌نفس کلی و نقش آن در تصمیم‌گیری‌های روزمره.
-            </p>
-            <p class="id">ID: 110005</p>
-            <div class="battery-links">
-              <a href="/take/self-confidence" class="battery-btn">شروع ارزیابی</a>
-              <a href="/assessments/self-confidence" class="battery-btn">معرفی ارزیابی</a>
+
+            <!-- =====================
+                 Tab Content #2
+            ====================== -->
+            <div id="category2" class="tab-content">
+              <div class="swiper swiper-category2">
+                <div class="swiper-wrapper">
+                  <!-- Slide 1 -->
+                  <div class="swiper-slide">
+                    <h3>فهرست ارجمندی - 17</h3>
+                    <p class="description">
+                      این ارزیابی به بررسی سطح ارجمندی و خودارزیابی مثبت شما می‌پردازد.
+                    </p>
+                    <p class="id">ID: 110002</p>
+                    <div class="battery-links">
+                      <a href="/take/esteem" class="battery-btn">شروع ارزیابی</a>
+                      <a href="/assessments/esteem" class="battery-btn">معرفی ارزیابی</a>
+                    </div>
+                  </div>
+                  <!-- Slide 2 -->
+                  <div class="swiper-slide">
+                    <h3>فهرست اعتماد به نفس - 20</h3>
+                    <p class="description">
+                      برای بررسی میزان اعتمادبه‌نفس کلی و نقش آن در تصمیم‌گیری‌های روزمره.
+                    </p>
+                    <p class="id">ID: 110005</p>
+                    <div class="battery-links">
+                      <a href="/take/self-confidence" class="battery-btn">شروع ارزیابی</a>
+                      <a href="/assessments/self-confidence" class="battery-btn">معرفی ارزیابی</a>
+                    </div>
+                  </div>
+                  <!-- Add more slides as needed -->
+                </div>
+                <!-- Pagination & Navigation (optional) -->
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+              </div>
             </div>
-          </div>
-          <!-- Add more slides as needed -->
-        </div>
-        <!-- Pagination & Navigation (optional) -->
-        <div class="swiper-pagination"></div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-      </div>
-    </div>
 
-    <!-- =====================
-         Tab Content #3
-    ====================== -->
-    <div id="category3" class="tab-content">
-      <div class="swiper swiper-category3">
-        <div class="swiper-wrapper">
-          <!-- Slide 1 -->
-          <div class="swiper-slide">
-            <h3>فهرست استعداد کودک - 48</h3>
-            <p class="description">
-              این ارزیابی برای شناسایی استعدادهای بالقوه کودکان طراحی شده است.
-            </p>
-            <p class="id">ID: 110003</p>
-            <div class="battery-links">
-              <a href="/take/child-talent-48" class="battery-btn">شروع ارزیابی</a>
-              <a href="/assessments/child-talent-48" class="battery-btn">معرفی ارزیابی</a>
-            </div>
-          </div>
-          <!-- Slide 2 -->
-          <div class="swiper-slide">
-            <h3>فهرست مهارت‌های اجتماعی کودک - 22</h3>
-            <p class="description">
-              بررسی میزان مهارت‌های ارتباطی و تعامل اجتماعی در کودکان سنین مختلف.
-            </p>
-            <p class="id">ID: 110006</p>
-            <div class="battery-links">
-              <a href="/take/child-social-skills" class="battery-btn">شروع ارزیابی</a>
-              <a href="/assessments/child-social-skills" class="battery-btn">معرفی ارزیابی</a>
-            </div>
-          </div>
-          <!-- Add more slides as needed -->
-        </div>
-        <!-- Pagination & Navigation (optional) -->
-        <div class="swiper-pagination"></div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-      </div>
-    </div>
-    
-    <!-- Add additional category tabs/contents as needed -->
-
-  </div> <!-- end container -->
-</section>
-
-
-        <style>
-            /* ============================================
-   1. Tabbed Assessments Section
-============================================ */
-.tabbed-assessments {
-    background-color: var(--neutral-white);
-    text-align: center;
-    padding: var(--spacing-lg) var(--spacing-md);
-}
-
-.tabbed-assessments .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: var(--spacing-md);
-}
-
-.tabbed-assessments .section-title {
-    font-size: 2em;
-    font-weight: 700;
-    color: var(--primary-deep-blue);
-    margin-bottom: var(--spacing-lg);
-    text-shadow: 0 0 5px var(--primary-gold);
-}
-
-.tabbed-assessments .section-text {
-    font-size: 1.1em;
-    color: var(--text-secondary);
-    line-height: 1.8;
-    margin-bottom: var(--spacing-md);
-    text-align: justify;
-}
-
-/* Tab Navigation (buttons) */
-.tabs-navigation {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: var(--spacing-sm);
-    overflow-x: auto; /* Mobile-friendly horizontal scroll if needed */
-    margin-bottom: var(--spacing-md);
-    border-bottom: 2px solid var(--neutral-cool-gray);
-    padding-bottom: var(--spacing-sm);
-}
-
-.tab-link {
-    background-color: transparent;
-    color: var(--primary-deep-blue);
-    padding: var(--spacing-sm) var(--spacing-md);
-    border: none;
-    border-bottom: 2px solid transparent;
-    font-size: 1em;
-    font-weight: 600;
-    cursor: pointer;
-    transition: color var(--transition-speed) var(--transition-type),
-                border-bottom var(--transition-speed) var(--transition-type);
-    white-space: nowrap; /* Prevent text from wrapping in small widths */
-    font-family: 'Vazir', sans-serif;
-}
-
-.tab-link.active,
-.tab-link:hover {
-    color: var(--button-primary);
-    border-bottom: 2px solid var(--button-primary);
-}
-
-/* Tab Contents - Hide non-active by default */
-.tab-content {
-    display: none;
-    text-align: right; /* Because it's RTL */
-}
-
-.tab-content.active {
-    display: block;
-    margin-top: var(--spacing-md);
-}
-
-/* Slides inside each tab: 
-   We'll reuse the existing Swiper styling from your code for consistency.
-   Just ensure you have .swiper and .swiper-slide classes as in the original.
-*/
-.swiper {
-    width: 100%;
-    margin: 0 auto;
-    padding-bottom: 50px;
-}
-
-.swiper-wrapper {
-    display: flex;
-}
-
-.swiper-slide {
-    background-color: var(--neutral-cool-gray);
-    padding: var(--spacing-md);
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow-card);
-    transition: transform var(--transition-speed) var(--transition-type),
-                box-shadow var(--transition-speed) var(--transition-type);
-}
-
-.swiper-slide:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-hover);
-}
-
-/* Assessment text styling within the slides */
-.swiper-slide h3 {
-    font-size: 1.2em;
-    font-weight: 700;
-    color: var(--primary-deep-blue);
-    margin-bottom: var(--spacing-xs);
-}
-
-.description {
-    font-size: 0.95em;
-    color: var(--text-secondary);
-    margin-bottom: var(--spacing-sm);
-    line-height: 1.6;
-    text-align: justify;
-}
-
-.id {
-    font-size: 0.85em;
-    color: var(--neutral-dark-gray);
-    margin-bottom: var(--spacing-sm);
-}
-
-/* Battery buttons within slides */
-.battery-links {
-    margin-top: var(--spacing-sm);
-    display: flex;
-    gap: var(--spacing-sm);
-}
-
-.battery-btn {
-    background-color: var(--button-primary);
-    color: var(--neutral-white);
-    padding: 8px 20px;
-    border-radius: var(--border-radius);
-    font-size: 0.9em;
-    font-weight: 500;
-    text-decoration: none;
-    transition: background-color var(--transition-speed) var(--transition-type);
-}
-
-.battery-btn:hover {
-    background-color: var(--button-secondary);
-}
-
-/* Swiper Pagination & Navigation */
-.swiper-pagination-bullet {
-    background: var(--neutral-dark-gray);
-}
-
-.swiper-pagination-bullet-active {
-    background: var(--button-primary);
-}
-
-.swiper-button-next,
-.swiper-button-prev {
-    color: var(--primary-deep-blue);
-}
-
-.swiper-button-next:hover,
-.swiper-button-prev:hover {
-    color: var(--button-primary);
-}
-
-/* ============================================
-   2. Responsiveness (mobile-first approach)
-============================================ */
-/* Already mobile friendly by default. 
-   We'll add breakpoints for larger devices. */
-@media (min-width: 576px) {
-    .tabbed-assessments .section-text {
-        font-size: 1em;
-    }
-}
-
-@media (min-width: 768px) {
-    .tab-link {
-        font-size: 1em;
-    }
-    .swiper-slide {
-        padding: var(--spacing-lg);
-    }
-}
-
-@media (min-width: 1024px) {
-    .tabbed-assessments .section-title {
-        font-size: 2.2em;
-    }
-    .swiper-slide h3 {
-        font-size: 1.3em;
-    }
-}
-
-</style>
-
-        <script>
-document.addEventListener("DOMContentLoaded", function () {
-  // ========== Tabs ==========
-  const tabLinks = document.querySelectorAll(".tab-link");
-  const tabContents = document.querySelectorAll(".tab-content");
-
-  tabLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-      // Remove 'active' from all tab links
-      tabLinks.forEach((btn) => btn.classList.remove("active"));
-      // Hide all tab contents
-      tabContents.forEach((content) => content.classList.remove("active"));
-
-      // Add 'active' to clicked tab and its content
-      link.classList.add("active");
-      const tabTarget = link.getAttribute("data-tab");
-      document.getElementById(tabTarget).classList.add("active");
-    });
-  });
-
-  // ========== Swiper Initializations for Each Category ==========
-  // Category 1
-  const swiperCategory1 = new Swiper(".swiper-category1", {
-    direction: "horizontal",
-    loop: true,
-    spaceBetween: 20,
-    slidesPerView: 1,
-    centeredSlides: true,
-    pagination: {
-      el: ".swiper-category1 .swiper-pagination",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: ".swiper-category1 .swiper-button-next",
-      prevEl: ".swiper-category1 .swiper-button-prev",
-    },
-    // Adjust breakpoints as needed
-    breakpoints: {
-      576: {
-        slidesPerView: 1.5,
-        spaceBetween: 20,
-      },
-      768: {
-        slidesPerView: 2,
-        spaceBetween: 30,
-      },
-      1024: {
-        slidesPerView: 3,
-        spaceBetween: 40,
-      },
-    },
-  });
-
-  // Category 2
-  const swiperCategory2 = new Swiper(".swiper-category2", {
-    direction: "horizontal",
-    loop: true,
-    spaceBetween: 20,
-    slidesPerView: 1,
-    centeredSlides: true,
-    pagination: {
-      el: ".swiper-category2 .swiper-pagination",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: ".swiper-category2 .swiper-button-next",
-      prevEl: ".swiper-category2 .swiper-button-prev",
-    },
-    breakpoints: {
-      576: {
-        slidesPerView: 1.5,
-        spaceBetween: 20,
-      },
-      768: {
-        slidesPerView: 2,
-        spaceBetween: 30,
-      },
-      1024: {
-        slidesPerView: 3,
-        spaceBetween: 40,
-      },
-    },
-  });
-
-  // Category 3
-  const swiperCategory3 = new Swiper(".swiper-category3", {
-    direction: "horizontal",
-    loop: true,
-    spaceBetween: 20,
-    slidesPerView: 1,
-    centeredSlides: true,
-    pagination: {
-      el: ".swiper-category3 .swiper-pagination",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: ".swiper-category3 .swiper-button-next",
-      prevEl: ".swiper-category3 .swiper-button-prev",
-    },
-    breakpoints: {
-      576: {
-        slidesPerView: 1.5,
-        spaceBetween: 20,
-      },
-      768: {
-        slidesPerView: 2,
-        spaceBetween: 30,
-      },
-      1024: {
-        slidesPerView: 3,
-        spaceBetween: 40,
-      },
-    },
-  });
-
-  // ... Initialize more Swipers for additional categories if needed
-
-  // (Optional) Set a default tab to open on load
-  // document.querySelector(".tab-link[data-tab='category1']").click();
-});
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-        
-<!-- Diagnostic Factors (Data-Driven) Section -->
-<section id="diagnostic-factors" class="section factors-section">
-    <div class="container">
-        <!-- Heading and Subheading -->
-        <h2 class="section-title">عوامل تشخیصی</h2>
-        <p class="section-subtitle">
-            ما بیش از 
-            <strong>۱۹۰ عامل</strong> روان‌شناختی را ارزیابی می‌کنیم تا به درکی 
-            جامع و دقیق از ویژگی‌های فردی دست یابیم.
-        </p>
-        
-        <!-- Swiper Diagnostic Factors -->
-        <div class="swiper swiper-factors">
-            <div class="swiper-wrapper">
-                <!-- Factor Slide 1 -->
-                <div class="swiper-slide">
-                    <div class="factor-card">
-                        <h3 class="factor-title">استنتاج تجربی</h3>
-                        <p class="factor-description">
-                            فردی که از آزمون روش‌های جدید، تفکر عمیق دربارهٔ مسائل،
-                            حل مسائل پیچیده، و تجربه عملی در موقعیت‌های نو لذت می‌برد.
-                        </p>
+            <!-- =====================
+                 Tab Content #3
+            ====================== -->
+            <div id="category3" class="tab-content">
+              <div class="swiper swiper-category3">
+                <div class="swiper-wrapper">
+                  <!-- Slide 1 -->
+                  <div class="swiper-slide">
+                    <h3>فهرست استعداد کودک - 48</h3>
+                    <p class="description">
+                      این ارزیابی برای شناسایی استعدادهای بالقوه کودکان طراحی شده است.
+                    </p>
+                    <p class="id">ID: 110003</p>
+                    <div class="battery-links">
+                      <a href="/take/child-talent-48" class="battery-btn">شروع ارزیابی</a>
+                      <a href="/assessments/child-talent-48" class="battery-btn">معرفی ارزیابی</a>
                     </div>
-                </div>
-                
-                <!-- Factor Slide 2 -->
-                <div class="swiper-slide">
-                    <div class="factor-card">
-                        <h3 class="factor-title">اعتمادورزی</h3>
-                        <p class="factor-description">
-                            فردی که به دیگران اعتماد دارد و معتقد است آن‌ها صادق هستند
-                            و در زندگی مشترک یا همکاری‌ها وفادار می‌مانند. احساس
-                            امنیت در روابط برای او ارزشمند است.
-                        </p>
+                  </div>
+                  <!-- Slide 2 -->
+                  <div class="swiper-slide">
+                    <h3>فهرست مهارت‌های اجتماعی کودک - 22</h3>
+                    <p class="description">
+                      بررسی میزان مهارت‌های ارتباطی و تعامل اجتماعی در کودکان سنین مختلف.
+                    </p>
+                    <p class="id">ID: 110006</p>
+                    <div class="battery-links">
+                      <a href="/take/child-social-skills" class="battery-btn">شروع ارزیابی</a>
+                      <a href="/assessments/child-social-skills" class="battery-btn">معرفی ارزیابی</a>
                     </div>
+                  </div>
+                  <!-- Add more slides as needed -->
                 </div>
-                
-                <!-- Factor Slide 3 -->
-                <div class="swiper-slide">
-                    <div class="factor-card">
-                        <h3 class="factor-title">تحلیلگری</h3>
-                        <p class="factor-description">
-                            فردی با قدرت درک موقعیت، یافتن راه‌حل‌های منطقی و
-                            تجزیه و تحلیل دقیق مطالب. توانمند در تصمیم‌گیری‌های
-                            سنجیده و منسجم.
-                        </p>
-                    </div>
-                </div>
-                
-                <!-- Factor Slide 4 -->
-                <div class="swiper-slide">
-                    <div class="factor-card">
-                        <h3 class="factor-title">نوآوری</h3>
-                        <p class="factor-description">
-                            توانایی بالقوه در یافتن راه‌حل‌های جدید و ساده برای مشکلات.
-                            ایده‌پردازی و یادگیری فعال، از شاخصه‌های بارز این فرد است.
-                        </p>
-                    </div>
-                </div>
-                
-                <!-- Factor Slide 5 -->
-                <div class="swiper-slide">
-                    <div class="factor-card">
-                        <h3 class="factor-title">هیجان پذیری</h3>
-                        <p class="factor-description">
-                            تأثیرپذیری زیاد از هیجانات در تصمیم‌گیری. احساسات
-                            گاه بر منطق او غلبه می‌کنند و می‌توانند روند تشخیص و
-                            انتخاب را پیچیده سازند.
-                        </p>
-                    </div>
-                </div>
-                
-                <!-- Factor Slide 6 -->
-                <div class="swiper-slide">
-                    <div class="factor-card">
-                        <h3 class="factor-title">مادی‌گرایی</h3>
-                        <p class="factor-description">
-                            شخصی که خودبینی و جاه‌طلبی بالایی دارد، اغلب خود را
-                            با دیگران مقایسه می‌کند و از معنویت فاصله گرفته است.
-                            ارزشمندی‌اش را از موفقیت‌های بیرونی می‌گیرد.
-                        </p>
-                    </div>
-                </div>
-                
-                <!-- Factor Slide 7 -->
-                <div class="swiper-slide">
-                    <div class="factor-card">
-                        <h3 class="factor-title">شیفتگی</h3>
-                        <p class="factor-description">
-                            تمرکزی عمیق روی وظایف و موضوعات؛ اغلب زمان را فراموش
-                            می‌کند و با انرژی بالا کارها را تا حصول نتیجه ادامه می‌دهد.
-                        </p>
-                    </div>
-                </div>
-                
-                <!-- Factor Slide 8 -->
-                <div class="swiper-slide">
-                    <div class="factor-card">
-                        <h3 class="factor-title">نوآوری</h3>
-                        <p class="factor-description">
-                            توانایی بالقوه‌ای در ارائه راه‌حل‌های جدید، آسان و مؤثر برای مسائل دشوار دارد.
-                            او برخوردار از توانایی ویژه‌ای در انجام کارهای سودمند است و معمولاً توانایی دارد
-                            که با شیوه‌های نوین و متفاوتی کارها را ارائه دهد.
-                        </p>
-                    </div>
-                </div>
-                
-                <!-- Add more factor slides as needed -->
+                <!-- Pagination & Navigation (optional) -->
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+              </div>
             </div>
             
-            <!-- Swiper Pagination -->
-            <div class="swiper-pagination"></div>
-            
+            <!-- Add additional category tabs/contents as needed -->
 
-        </div>
-        
-        <!-- CTA & Mention of Total Factors -->
-        <div class="factors-cta">
-            <p class="factors-note">
-                این‌ها تنها بخشی از <strong>۱۹۰ عامل روان‌شناختی</strong> هستند 
-                که ما در استعدادیاب با رویکرد داده‌محور تحلیل می‌کنیم.
-            </p>
-            <a href="/resources/factors" class="cta-button">مشاهده همه عوامل</a>
-        </div>
-    </div>
-</section>
+          </div> <!-- end container -->
+        </section>
 
-        <style>
-/* Diagnostic Factors Section Styles */
-.factors-section {
-    padding: var(--spacing-lg) var(--spacing-md);
-    background-color: var(--neutral-cool-gray);
-    text-align: center;
-    font-family: 'Vazir', sans-serif; /* Ensures this section uses Vazir font */
-}
-
-.factors-section .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: var(--spacing-md);
-}
-
-.section-title {
-    font-size: 2em;
-    font-weight: 700;
-    color: var(--primary-deep-blue);
-    margin-bottom: var(--spacing-md);
-    text-shadow: 0 0 5px var(--primary-gold);
-}
-
-.section-subtitle {
-    font-size: 1.1em;
-    color: var(--text-secondary);
-    line-height: 1.8;
-    margin-bottom: var(--spacing-lg);
-    text-align: center;
-}
-
-/* Swiper Diagnostic Factors */
-.swiper-factors {
-    width: 100%;
-    padding-top: var(--spacing-md);
-    padding-bottom: var(--spacing-lg);
-}
-
-.swiper-factors .swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: stretch; /* Ensure slides stretch to the same height */
-}
-
-.factor-card {
-    background-color: var(--neutral-white);
-    width: 100%;
-    max-width: 300px;
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow-card);
-    text-align: right; /* Right-align text for RTL */
-    padding: var(--spacing-md);
-    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-sm);
-    height: 100%; /* Make all cards the same height */
-}
-
-.factor-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-hover);
-}
-
-.factor-icon {
-    width: 50px;
-    height: 50px;
-    margin-bottom: var(--spacing-sm);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.factor-icon img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-.factor-title {
-    font-size: 1.2em;
-    font-weight: 700;
-    color: var(--primary-deep-blue);
-    margin-bottom: var(--spacing-xs);
-    flex-shrink: 0; /* Prevent title from shrinking */
-}
-
-.factor-description {
-    font-size: 1em;
-    color: var(--text-secondary);
-    line-height: 1.6;
-    text-align: justify;
-    flex-grow: 1; /* Allow description to take up remaining space */
-    overflow: hidden;
-}
-
-.factors-cta {
-    margin-top: var(--spacing-lg);
-    text-align: center;
-}
-
-.factors-note {
-    font-size: 1em;
-    color: var(--text-secondary);
-    margin-bottom: var(--spacing-sm);
-    text-align: center;
-}
-
-.cta-button {
-    display: inline-block;
-    background-color: var(--button-primary);
-    color: var(--neutral-white);
-    padding: 12px 30px;
-    border-radius: var(--border-radius);
-    font-size: 1em;
-    font-weight: 600;
-    text-decoration: none;
-    box-shadow: 0 0 10px var(--accent-golden-yellow);
-    transition: background-color var(--transition-speed) var(--transition-type),
-                transform var(--transition-speed) var(--transition-type),
-                box-shadow var(--transition-speed) var(--transition-type);
-    margin-top: var(--spacing-xs);
-}
-
-.cta-button:hover,
-.cta-button:focus {
-    background-color: var(--button-secondary);
-    transform: translateY(-3px);
-    box-shadow: 0 0 20px var(--button-secondary);
-}
-
-/* Swiper Navigation Buttons */
-.swiper-button-prev,
-.swiper-button-next {
-    color: var(--primary-deep-blue);
-}
-
-.swiper-button-prev:hover,
-.swiper-button-next:hover {
-    color: var(--button-primary);
-}
-
-/* Swiper Pagination Dots */
-.swiper-pagination-bullet {
-    background: var(--neutral-dark-gray);
-    opacity: 1;
-}
-
-.swiper-pagination-bullet-active {
-    background: var(--button-primary);
-}
-
-/* Responsive Styles */
-@media (min-width: 576px) {
-    .swiper-factors .swiper-slide {
-        width: 50%;
-    }
-}
-
-@media (min-width: 768px) {
-    .swiper-factors .swiper-slide {
-        width: 33.3333%;
-    }
-
-    .factor-card {
-        max-width: 350px;
-    }
-}
-
-@media (min-width: 1024px) {
-    .swiper-factors .swiper-slide {
-        width: 25%;
-    }
-
-    .factor-card {
-        max-width: 400px;
-    }
-}
-
-@media (min-width: 1200px) {
-    .swiper-factors .swiper-slide {
-        width: 20%;
-    }
-}
-
-    </style>
-
-
-                <!-- Reasonable CTA Section -->
-<section class="section cta-section" id="cta">
-    <div class="container">
-        <h2 class="cta-title">گام نخست برای کشف استعدادهایتان</h2>
-        <p class="cta-text">
-            اگر آماده‌اید تا قدمی اصولی برای شناسایی توانمندی‌های درونی‌تان بردارید، ارزیابی‌های روان‌شناختی 
-            استعدادیاب به شما کمک می‌کنند تا آگاهانه‌تر مسیر رشد و پیشرفت خود را تعیین کنید.
-        </p>
-        <a href="/getting-started" class="cta-button">همین حالا آغاز کنید</a>
-    </div>
-</section>
-
-        
-
-    <!-- Partners or Collaborators Section -->
-<section class="section partners-section" id="partners">
-    <div class="container">
-        <h2 class="section-title">همکاری‌ها و مشتریان ما</h2>
-        <p class="section-text">
-            ما در استعدادیاب مفتخریم که با سازمان‌ها و موسسات معتبر همکاری می‌کنیم تا بهترین خدمات را به شما ارائه دهیم.
-            با بیش از <strong>40,000 تست تکمیل‌شده</strong> و <strong>8,000 مشتری از طریق شرکای ما</strong>,
-            اعتماد بیشمار کاربران به ما را نشان می‌دهد.
-        </p>
-
-        <!-- Partners Logos -->
-        <div class="partners-grid">
-            <!-- Partner 1 -->
-            <div class="partner-card">
-                <!-- Replace the src attribute with the actual logo image paths -->
-                <img src="/assets/images/iran-andiash-logo.png" alt="مرکز خدمات روانشناسی و مشاوره ایران اندیش" class="partner-logo">
-                <p class="partner-name">مرکز خدمات روانشناسی و مشاوره ایران اندیش</p>
+        <!-- Diagnostic Factors (Data-Driven) Section -->
+        <section id="diagnostic-factors" class="section factors-section">
+            <div class="container">
+                <!-- Heading and Subheading -->
+                <h2 class="section-title">عوامل تشخیصی</h2>
+                <p class="section-subtitle">
+                    ما بیش از 
+                    <strong>۱۹۰ عامل</strong> روان‌شناختی را ارزیابی می‌کنیم تا به درکی 
+                    جامع و دقیق از ویژگی‌های فردی دست یابیم.
+                </p>
+                
+                <!-- Swiper Diagnostic Factors -->
+                <div class="swiper swiper-factors">
+                    <div class="swiper-wrapper">
+                        <!-- Factor Slide 1 -->
+                        <div class="swiper-slide">
+                            <div class="factor-card">
+                                <h3 class="factor-title">استنتاج تجربی</h3>
+                                <p class="factor-description">
+                                    فردی که از آزمون روش‌های جدید، تفکر عمیق دربارهٔ مسائل،
+                                    حل مسائل پیچیده، و تجربه عملی در موقعیت‌های نو لذت می‌برد.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Factor Slide 2 -->
+                        <div class="swiper-slide">
+                            <div class="factor-card">
+                                <h3 class="factor-title">اعتمادورزی</h3>
+                                <p class="factor-description">
+                                    فردی که به دیگران اعتماد دارد و معتقد است آن‌ها صادق هستند
+                                    و در زندگی مشترک یا همکاری‌ها وفادار می‌مانند. احساس
+                                    امنیت در روابط برای او ارزشمند است.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Factor Slide 3 -->
+                        <div class="swiper-slide">
+                            <div class="factor-card">
+                                <h3 class="factor-title">تحلیلگری</h3>
+                                <p class="factor-description">
+                                    فردی با قدرت درک موقعیت، یافتن راه‌حل‌های منطقی و
+                                    تجزیه و تحلیل دقیق مطالب. توانمند در تصمیم‌گیری‌های
+                                    سنجیده و منسجم.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Factor Slide 4 -->
+                        <div class="swiper-slide">
+                            <div class="factor-card">
+                                <h3 class="factor-title">نوآوری</h3>
+                                <p class="factor-description">
+                                    توانایی بالقوه در یافتن راه‌حل‌های جدید و ساده برای مشکلات.
+                                    ایده‌پردازی و یادگیری فعال، از شاخصه‌های بارز این فرد است.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Factor Slide 5 -->
+                        <div class="swiper-slide">
+                            <div class="factor-card">
+                                <h3 class="factor-title">هیجان پذیری</h3>
+                                <p class="factor-description">
+                                    تأثیرپذیری زیاد از هیجانات در تصمیم‌گیری. احساسات
+                                    گاه بر منطق او غلبه می‌کنند و می‌توانند روند تشخیص و
+                                    انتخاب را پیچیده سازند.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Factor Slide 6 -->
+                        <div class="swiper-slide">
+                            <div class="factor-card">
+                                <h3 class="factor-title">مادی‌گرایی</h3>
+                                <p class="factor-description">
+                                    شخصی که خودبینی و جاه‌طلبی بالایی دارد، اغلب خود را
+                                    با دیگران مقایسه می‌کند و از معنویت فاصله گرفته است.
+                                    ارزشمندی‌اش را از موفقیت‌های بیرونی می‌گیرد.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Factor Slide 7 -->
+                        <div class="swiper-slide">
+                            <div class="factor-card">
+                                <h3 class="factor-title">شیفتگی</h3>
+                                <p class="factor-description">
+                                    تمرکزی عمیق روی وظایف و موضوعات؛ اغلب زمان را فراموش
+                                    می‌کند و با انرژی بالا کارها را تا حصول نتیجه ادامه می‌دهد.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Factor Slide 8 -->
+                        <div class="swiper-slide">
+                            <div class="factor-card">
+                                <h3 class="factor-title">نوآوری</h3>
+                                <p class="factor-description">
+                                    توانایی بالقوه‌ای در ارائه راه‌حل‌های جدید، آسان و مؤثر برای مسائل دشوار دارد.
+                                    او برخوردار از توانایی ویژه‌ای در انجام کارهای سودمند است و معمولاً توانایی دارد
+                                    که با شیوه‌های نوین و متفاوتی کارها را ارائه دهد.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Add more factor slides as needed -->
+                    </div>
+                    
+                    <!-- Swiper Pagination -->
+                    <div class="swiper-pagination"></div>
+                </div>
+                
+                <!-- CTA & Mention of Total Factors -->
+                <div class="factors-cta">
+                    <p class="factors-note">
+                        این‌ها تنها بخشی از <strong>۱۹۰ عامل روان‌شناختی</strong> هستند 
+                        که ما در استعدادیاب با رویکرد داده‌محور تحلیل می‌کنیم.
+                    </p>
+                    <a href="/resources/factors" class="cta-button">مشاهده همه عوامل</a>
+                </div>
             </div>
-
-            <!-- Partner 2 -->
-            <div class="partner-card">
-                <img src="/assets/images/sepehr-logo.png" alt="مرکز خدمات روانشناسی و مشاوره سپهر" class="partner-logo">
-                <p class="partner-name">مرکز خدمات روانشناسی و مشاوره سپهر</p>
-            </div>
-
-            <!-- Uncomment and add more partners as needed
-            <div class="partner-card">
-                <img src="/assets/images/federation-koshti-logo.png" alt="فدراسیون کشتی ایران" class="partner-logo">
-                <p class="partner-name">فدراسیون کشتی ایران</p>
-            </div>
-            -->
-        </div>
-    </div>
-</section>
-        <style>
-
-/* Partners or Collaborators Section Styles */
-.partners-section {
-    padding: var(--spacing-lg) var(--spacing-md);
-    background-color: var(--neutral-white);
-    text-align: center; /* Center-aligns the text within the section */
-}
-
-.partners-section .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: var(--spacing-md);
-}
-
-.partners-section .section-title {
-    font-size: 2em;
-    font-weight: 700;
-    color: var(--primary-deep-blue);
-    margin-bottom: var(--spacing-lg);
-    text-shadow: 0 0 5px var(--primary-gold);
-    font-family: 'Vazir', sans-serif; /* Ensures the title uses 'Vazir' font */
-}
-
-.partners-section .section-text {
-    font-size: 1.1em;
-    color: var(--text-secondary);
-    line-height: 1.8;
-    margin-bottom: var(--spacing-lg);
-    text-align: justify;
-    font-family: 'Vazir', sans-serif; /* Ensures the text uses 'Vazir' font */
-}
-
-.partners-grid {
-    display: grid;
-    gap: var(--spacing-lg);
-    grid-template-columns: 1fr;
-    align-items: center;
-    justify-items: center; /* Centers items horizontally within their grid cell */
-    justify-content: center; /* Centers the entire grid within the container */
-}
-
-.partner-card {
-    background-color: var(--neutral-cool-gray);
-    padding: var(--spacing-md);
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow-card);
-    transition: transform var(--transition-speed) var(--transition-type), box-shadow var(--transition-speed) var(--transition-type);
-    width: 100%;
-    max-width: 250px;
-    text-align: center; /* Centers text within each partner card */
-    font-family: 'Vazir', sans-serif; /* Ensures the card uses 'Vazir' font */
-}
-
-.partner-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-hover);
-}
-
-.partner-logo {
-    width: 100%;
-    height: auto;
-    max-height: 100px;
-    object-fit: contain;
-    margin-bottom: var(--spacing-sm);
-}
-
-.partner-name {
-    font-size: 1em;
-    font-weight: 600;
-    color: var(--primary-deep-blue);
-    font-family: 'Vazir', sans-serif; /* Ensures the partner name uses 'Vazir' font */
-}
-
-/* Responsive Styles */
-@media (min-width: 576px) {
-    .partners-grid {
-        grid-template-columns: repeat(2, 1fr); /* Two columns for screens >= 576px */
-    }
-}
-
-@media (min-width: 768px) {
-    .partners-grid {
-        grid-template-columns: repeat(3, 1fr); /* Three columns for screens >= 768px */
-    }
-}
-
-@media (min-width: 1024px) {
-    .partners-grid {
-        grid-template-columns: repeat(4, 1fr); /* Four columns for screens >= 1024px */
-    }
-}
-</style>
-
+        </section>
 
         <!-- Reasonable Pricing Section -->
-<section class="section pricing-section" id="pricing">
-    <div class="container">
-        <h2 class="section-title">پلن‌های قیمتی ما</h2>
-        <p class="section-text">
-            ما در استعدادیاب معتقدیم ارزیابی‌های روان‌شناختی باید برای همه قابل‌دسترس باشد. 
-            به همین دلیل ترکیبی از تست‌های رایگان و پرداختی را ارائه می‌دهیم تا بتوانید بر اساس 
-            نیاز و بودجه‌تان، بهترین انتخاب را داشته باشید.
-        </p>
+        <section class="section pricing-section" id="pricing">
+            <div class="container">
+                <h2 class="section-title">پلن‌های قیمتی ما</h2>
+                <p class="section-text">
+                    ما در استعدادیاب معتقدیم ارزیابی‌های روان‌شناختی باید برای همه قابل‌دسترس باشد. 
+                    به همین دلیل ترکیبی از تست‌های رایگان و پرداختی را ارائه می‌دهیم تا بتوانید بر اساس 
+                    نیاز و بودجه‌تان، بهترین انتخاب را داشته باشید.
+                </p>
 
-        <!-- Pricing Options -->
-        <div class="pricing-grid">
-            <!-- Free Tests -->
-            <div class="pricing-card">
-                <h3 class="pricing-title">تست‌های رایگان</h3>
-                <p class="pricing-amount">رایگان</p>
-                <ul class="pricing-features">
-                    <li>دسترسی به ارزیابی‌های مقدماتی</li>
-                    <li>گزارش مختصر و قابل فهم</li>
-                    <li>پشتیبانی از طریق محتوای راهنما</li>
-                </ul>
-                <a href="/assessments#free-tests" class="cta-button">شروع رایگان</a>
+                <!-- Pricing Options -->
+                <div class="pricing-grid">
+                    <!-- Free Tests -->
+                    <div class="pricing-card">
+                        <h3 class="pricing-title">تست‌های رایگان</h3>
+                        <p class="pricing-amount">رایگان</p>
+                        <ul class="pricing-features">
+                            <li>دسترسی به ارزیابی‌های مقدماتی</li>
+                            <li>گزارش مختصر و قابل فهم</li>
+                            <li>پشتیبانی از طریق محتوای راهنما</li>
+                        </ul>
+                        <a href="/assessments#free-tests" class="cta-button">شروع رایگان</a>
+                    </div>
+
+                    <!-- Paid Tests -->
+                    <div class="pricing-card">
+                        <h3 class="pricing-title">تست‌های پیشرفته</h3>
+                        <p class="pricing-amount">پرداختی بر اساس هر تست</p>
+                        <ul class="pricing-features">
+                            <li>گزارش‌های جامع و تعاملی</li>
+                            <li>امکان مشاوره اختیاری</li>
+                            <li>دسترسی به نتایج و پیشنهادهای تخصصی</li>
+                        </ul>
+                        <a href="/assessments#premium-tests" class="cta-button">مشاهده تست‌ها</a>
+                    </div>
+
+                    <!-- Negotiable Pricing -->
+                    <div class="pricing-card">
+                        <h3 class="pricing-title">سازمان‌ها و مدارس</h3>
+                        <p class="pricing-amount">قابل مذاکره</p>
+                        <ul class="pricing-features">
+                            <li>پکیج‌های ارزیابی گروهی</li>
+                            <li>گزارش‌های سفارشی و تحلیلی</li>
+                            <li>پشتیبانی اختصاصی و داشبورد سازمانی</li>
+                        </ul>
+                        <a href="/contact" class="cta-button">تماس بگیرید</a>
+                    </div>
+                </div>
+
+                <p class="section-note">
+                    هزینه برخی تست‌ها مستقیماً در صفحه ارزیابی ذکر شده است. 
+                    برای اطلاعات بیشتر یا دریافت بسته‌های شخصی‌سازی‌شده، خوشحال می‌شویم با ما در ارتباط باشید.
+                </p>
             </div>
+        </section>
 
-            <!-- Paid Tests -->
-            <div class="pricing-card">
-                <h3 class="pricing-title">تست‌های پیشرفته</h3>
-                <p class="pricing-amount">پرداختی بر اساس هر تست</p>
-                <ul class="pricing-features">
-                    <li>گزارش‌های جامع و تعاملی</li>
-                    <li>امکان مشاوره اختیاری</li>
-                    <li>دسترسی به نتایج و پیشنهادهای تخصصی</li>
-                </ul>
-                <a href="/assessments#premium-tests" class="cta-button">مشاهده تست‌ها</a>
-            </div>
+        <!-- FAQ Section -->
+        <section id="faq" class="section faq-section">
+            <div class="container">
+                <h2 class="section-title">سوالات متداول</h2>
+                <p class="section-text">
+                    در این بخش به سوالات رایج کاربران مختلف استعدادیاب از جمله افراد، سازمان‌ها، مدارس و کلینیک‌ها 
+                    پاسخ داده‌ایم تا بتوانید بهترین تصمیم را بگیرید.
+                </p>
 
-            <!-- Negotiable Pricing -->
-            <div class="pricing-card">
-                <h3 class="pricing-title">سازمان‌ها و مدارس</h3>
-                <p class="pricing-amount">قابل مذاکره</p>
-                <ul class="pricing-features">
-                    <li>پکیج‌های ارزیابی گروهی</li>
-                    <li>گزارش‌های سفارشی و تحلیلی</li>
-                    <li>پشتیبانی اختصاصی و داشبورد سازمانی</li>
-                </ul>
-                <a href="/contact" class="cta-button">تماس بگیرید</a>
-            </div>
-        </div>
+                <!-- Tab Navigation -->
+                <div class="faq-tabs">
+                    <button class="tab-link active" data-tab="faq-general">سوالات عمومی</button>
+                    <button class="tab-link" data-tab="faq-individuals">افراد</button>
+                    <button class="tab-link" data-tab="faq-organizations">سازمان‌ها</button>
+                    <button class="tab-link" data-tab="faq-schools">مدارس</button>
+                    <button class="tab-link" data-tab="faq-clinics">کلینیک‌ها</button>
+                </div>
 
-        <p class="section-note">
-            هزینه برخی تست‌ها مستقیماً در صفحه ارزیابی ذکر شده است. 
-            برای اطلاعات بیشتر یا دریافت بسته‌های شخصی‌سازی‌شده، خوشحال می‌شویم با ما در ارتباط باشید.
-        </p>
-    </div>
-</section>
+                <!-- FAQ Categories (Accordion Containers) -->
 
-<style>
-/* Reasonable Pricing Section Styles */
-.pricing-section {
-    padding: var(--spacing-lg) var(--spacing-md);
-    background-color: var(--neutral-cool-gray);
-    text-align: center;
-}
+                <!-- General Questions -->
+                <div id="faq-general" class="faq-category active">
+                    <div class="faq-item">
+                        <button class="faq-question">آیا گزارش‌های ارائه شده توسط استعدادیاب علمی و دقیق هستند؟</button>
+                        <div class="faq-answer">
+                            <p>بله، تمامی گزارش‌های ما بر پایه داده‌های معتبر روان‌سنجی و روش‌های علمی طراحی شده‌اند 
+                            تا دقت و صحت نتایج تضمین شود.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">آیا استفاده از استعدادیاب نیاز به مشاوره روان‌شناسی دارد؟</button>
+                        <div class="faq-answer">
+                            <p>خیر، گزارش‌های ما به گونه‌ای طراحی شده‌اند که برای کاربران قابل فهم و عملی باشند. 
+                            اما در صورت نیاز به مشاوره، امکان همکاری با متخصصین نیز فراهم است.</p>
+                        </div>
+                    </div>
+                </div>
 
-.pricing-section .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: var(--spacing-md);
-}
+                <!-- Individuals -->
+                <div id="faq-individuals" class="faq-category">
+                    <div class="faq-item">
+                        <button class="faq-question">چگونه از طریق استعدادیاب می‌توانم استعدادهای پنهانم را کشف کنم؟</button>
+                        <div class="faq-answer">
+                            <p>با شرکت در ارزیابی‌های مقدماتی رایگان شروع کنید تا بینشی کلی به دست آورید. 
+                            سپس می‌توانید با استفاده از تست‌های پیشرفته‌تر، گزارش‌های عمیق‌تری دریافت کرده 
+                            و مسیر شغلی یا تحصیلی خود را هوشمندانه‌تر انتخاب کنید.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">آیا گزارش‌های ارائه شده برای زندگی روزمره و روابط خانوادگی هم مفید است؟</button>
+                        <div class="faq-answer">
+                            <p>بله، بسیاری از ارزیابی‌های ما جنبه‌های شخصیتی، مهارت‌های ارتباطی و سلامت روان را 
+                            پوشش می‌دهند که مستقیماً بر روابط و تصمیم‌گیری‌های روزمره شما تأثیر می‌گذارد.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">آیا لازم است حتماً با یک روان‌شناس تماس بگیرم؟</button>
+                        <div class="faq-answer">
+                            <p>ما گزارش‌های قابل فهم و عملی ارائه می‌دهیم تا بتوانید اولین گام‌های تغییر را 
+                            خودتان بردارید. در صورت نیاز به راهنمایی حرفه‌ای، امکان مشاوره اختیاری هم وجود دارد.</p>
+                        </div>
+                    </div>
+                </div>
 
-.section-title {
-    font-size: 2em;
-    font-weight: 700;
-    color: var(--primary-deep-blue);
-    margin-bottom: var(--spacing-lg);
-    text-shadow: 0 0 5px var(--primary-gold);
-}
+                <!-- Organizations -->
+                <div id="faq-organizations" class="faq-category">
+                    <div class="faq-item">
+                        <button class="faq-question">چگونه می‌توانیم از ارزیابی‌های استعدادیاب برای بهبود عملکرد تیم‌ها استفاده کنیم؟</button>
+                        <div class="faq-answer">
+                            <p>با انجام ارزیابی‌های گروهی، می‌توانید نقاط قوت و سبک‌های کاری کارکنان را شناسایی و 
+                            آن‌ها را در جایگاه مناسب قرار دهید تا همکاری مؤثرتری داشته باشند.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">آیا تخفیف یا قرارداد ویژه‌ای برای سازمان‌ها ارائه می‌دهید؟</button>
+                        <div class="faq-answer">
+                            <p>بله، ما پکیج‌های ارزیابی سازمانی با قیمت قابل مذاکره داریم. لطفاً با تیم فروش ما تماس 
+                            بگیرید تا متناسب با نیازهای شما بسته‌ای سفارشی ارائه دهیم.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">گزارش‌های گروهی چگونه ارائه می‌شوند؟</button>
+                        <div class="faq-answer">
+                            <p>گزارش‌های سازمانی شامل داشبورد اختصاصی و تحلیل‌های کلیدی برای مدیریت منابع انسانی 
+                            است که دید جامعی درباره عملکرد و رضایت کارکنان فراهم می‌کند.</p>
+                        </div>
+                    </div>
+                </div>
 
-.section-text, .section-note {
-    font-size: 1.1em;
-    color: var(--text-secondary);
-    line-height: 1.8;
-    margin-bottom: var(--spacing-md);
-    text-align: justify;
-}
+                <!-- Schools -->
+                <div id="faq-schools" class="faq-category">
+                    <div class="faq-item">
+                        <button class="faq-question">چگونه ارزیابی‌های استعدادیاب به دانش‌آموزان در انتخاب رشته تحصیلی کمک می‌کند؟</button>
+                        <div class="faq-answer">
+                            <p>با شناسایی علایق و توانایی‌های دانش‌آموزان از طریق تست‌های شناختی و شخصیتی، امکان 
+                            هدایت دقیق‌تر به رشته‌های متناسب فراهم می‌شود.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">آیا راهکاری برای مشاوران مدارس دارید؟</button>
+                        <div class="faq-answer">
+                            <p>بله، گزارش‌های گروهی و فردی ما می‌تواند در جلسات مشاوره تحصیلی مورد استفاده قرار گیرد 
+                            تا تصمیم‌های آگاهانه‌تری گرفته شود.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">آیا قیمت ارزیابی‌ها برای مدارس متفاوت است؟</button>
+                        <div class="faq-answer">
+                            <p>ما پلن‌های ویژه‌ای برای مدارس داریم که قیمت آن‌ها قابل مذاکره بوده و بر اساس تعداد 
+                            دانش‌آموزان تنظیم می‌گردد.</p>
+                        </div>
+                    </div>
+                </div>
 
-.pricing-grid {
-    display: grid;
-    gap: var(--spacing-lg);
-    grid-template-columns: 1fr;
-    margin-bottom: var(--spacing-lg);
-}
-
-.pricing-card {
-    background-color: var(--neutral-white);
-    padding: var(--spacing-md);
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow-card);
-    transition: box-shadow var(--transition-speed) var(--transition-type);
-}
-
-.pricing-card:hover {
-    box-shadow: var(--shadow-hover);
-}
-
-.pricing-title {
-    font-size: 1.5em;
-    font-weight: 700;
-    color: var(--primary-deep-blue);
-    margin-bottom: var(--spacing-sm);
-}
-
-.pricing-amount {
-    font-size: 1.2em;
-    font-weight: 600;
-    color: var(--secondary-teal-green);
-    margin-bottom: var(--spacing-md);
-}
-
-.pricing-features {
-    list-style: none;
-    padding: 0;
-    margin-bottom: var(--spacing-md);
-    text-align: center;
-}
-
-.pricing-features li {
-    margin-bottom: var(--spacing-sm);
-    color: var(--text-secondary);
-}
-
-.cta-button {
-    display: inline-block;
-    background-color: var(--button-primary);
-    color: var(--neutral-white);
-    padding: 10px 24px;
-    border-radius: var(--border-radius);
-    font-size: 1em;
-    font-weight: 600;
-    text-decoration: none;
-    transition: background-color var(--transition-speed) var(--transition-type),
-                transform var(--transition-speed) var(--transition-type),
-                box-shadow var(--transition-speed) var(--transition-type);
-}
-
-.cta-button:hover,
-.cta-button:focus {
-    background-color: var(--button-secondary);
-    transform: translateY(-3px);
-    box-shadow: 0 0 10px var(--button-secondary);
-}
-
-/* Responsive Styles */
-@media (min-width: 768px) {
-    .pricing-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-</style>
-<!-- FAQ Section -->
-<section id="faq" class="section faq-section">
-    <div class="container">
-        <h2 class="section-title">سوالات متداول</h2>
-        <p class="section-text">
-            در این بخش به سوالات رایج کاربران مختلف استعدادیاب از جمله افراد، سازمان‌ها، مدارس و کلینیک‌ها 
-            پاسخ داده‌ایم تا بتوانید بهترین تصمیم را بگیرید.
-        </p>
-
-        <!-- Tab Navigation -->
-        <div class="faq-tabs">
-            <button class="tab-link active" data-tab="faq-general">سوالات عمومی</button>
-            <button class="tab-link" data-tab="faq-individuals">افراد</button>
-            <button class="tab-link" data-tab="faq-organizations">سازمان‌ها</button>
-            <button class="tab-link" data-tab="faq-schools">مدارس</button>
-            <button class="tab-link" data-tab="faq-clinics">کلینیک‌ها</button>
-        </div>
-
-        <!-- FAQ Categories (Accordion Containers) -->
-
-        <!-- General Questions -->
-        <div id="faq-general" class="faq-category active">
-            <div class="faq-item">
-                <button class="faq-question">آیا گزارش‌های ارائه شده توسط استعدادیاب علمی و دقیق هستند؟</button>
-                <div class="faq-answer">
-                    <p>بله، تمامی گزارش‌های ما بر پایه داده‌های معتبر روان‌سنجی و روش‌های علمی طراحی شده‌اند 
-                    تا دقت و صحت نتایج تضمین شود.</p>
+                <!-- Clinics -->
+                <div id="faq-clinics" class="faq-category">
+                    <div class="faq-item">
+                        <button class="faq-question">آیا تست‌های استعدادیاب دارای پشتوانه علمی و اعتبار روان‌سنجی هستند؟</button>
+                        <div class="faq-answer">
+                            <p>بله، ما از روش‌های معتبر روان‌سنجی و داده‌های پژوهشی بهره می‌بریم تا ارزیابی‌ها 
+                            از دقت و روایی مناسبی برخوردار باشند.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">چگونه می‌توانیم نتایج را با جلسات درمانی تلفیق کنیم؟</button>
+                        <div class="faq-answer">
+                            <p>گزارش‌های کامل ما به متخصصان امکان می‌دهد بر اساس نتایج عینی و علمی، طرح درمان 
+                            یا برنامه‌های مداخلاتی اثربخشی طراحی کنند.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">آیا امکان همکاری طولانی‌مدت با کلینیک ما وجود دارد؟</button>
+                        <div class="faq-answer">
+                            <p>بله، ما پلن‌های سازمانی داریم که می‌تواند به‌صورت اختصاصی برای کلینیک‌ها تنظیم شود 
+                            و شامل دسترسی ویژه به دیتابیس تست‌ها، گزارش‌های سفارشی و پشتیبانی مداوم است.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="faq-item">
-                <button class="faq-question">آیا استفاده از استعدادیاب نیاز به مشاوره روان‌شناسی دارد؟</button>
-                <div class="faq-answer">
-                    <p>خیر، گزارش‌های ما به گونه‌ای طراحی شده‌اند که برای کاربران قابل فهم و عملی باشند. 
-                    اما در صورت نیاز به مشاوره، امکان همکاری با متخصصین نیز فراهم است.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Individuals -->
-        <div id="faq-individuals" class="faq-category">
-            <div class="faq-item">
-                <button class="faq-question">چگونه از طریق استعدادیاب می‌توانم استعدادهای پنهانم را کشف کنم؟</button>
-                <div class="faq-answer">
-                    <p>با شرکت در ارزیابی‌های مقدماتی رایگان شروع کنید تا بینشی کلی به دست آورید. 
-                    سپس می‌توانید با استفاده از تست‌های پیشرفته‌تر، گزارش‌های عمیق‌تری دریافت کرده 
-                    و مسیر شغلی یا تحصیلی خود را هوشمندانه‌تر انتخاب کنید.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question">آیا گزارش‌های ارائه شده برای زندگی روزمره و روابط خانوادگی هم مفید است؟</button>
-                <div class="faq-answer">
-                    <p>بله، بسیاری از ارزیابی‌های ما جنبه‌های شخصیتی، مهارت‌های ارتباطی و سلامت روان را 
-                    پوشش می‌دهند که مستقیماً بر روابط و تصمیم‌گیری‌های روزمره شما تأثیر می‌گذارد.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question">آیا لازم است حتماً با یک روان‌شناس تماس بگیرم؟</button>
-                <div class="faq-answer">
-                    <p>ما گزارش‌های قابل فهم و عملی ارائه می‌دهیم تا بتوانید اولین گام‌های تغییر را 
-                    خودتان بردارید. در صورت نیاز به راهنمایی حرفه‌ای، امکان مشاوره اختیاری هم وجود دارد.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Organizations -->
-        <div id="faq-organizations" class="faq-category">
-            <div class="faq-item">
-                <button class="faq-question">چگونه می‌توانیم از ارزیابی‌های استعدادیاب برای بهبود عملکرد تیم‌ها استفاده کنیم؟</button>
-                <div class="faq-answer">
-                    <p>با انجام ارزیابی‌های گروهی، می‌توانید نقاط قوت و سبک‌های کاری کارکنان را شناسایی و 
-                    آن‌ها را در جایگاه مناسب قرار دهید تا همکاری مؤثرتری داشته باشند.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question">آیا تخفیف یا قرارداد ویژه‌ای برای سازمان‌ها ارائه می‌دهید؟</button>
-                <div class="faq-answer">
-                    <p>بله، ما پکیج‌های ارزیابی سازمانی با قیمت قابل مذاکره داریم. لطفاً با تیم فروش ما تماس 
-                    بگیرید تا متناسب با نیازهای شما بسته‌ای سفارشی ارائه دهیم.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question">گزارش‌های گروهی چگونه ارائه می‌شوند؟</button>
-                <div class="faq-answer">
-                    <p>گزارش‌های سازمانی شامل داشبورد اختصاصی و تحلیل‌های کلیدی برای مدیریت منابع انسانی 
-                    است که دید جامعی درباره عملکرد و رضایت کارکنان فراهم می‌کند.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Schools -->
-        <div id="faq-schools" class="faq-category">
-            <div class="faq-item">
-                <button class="faq-question">چگونه ارزیابی‌های استعدادیاب به دانش‌آموزان در انتخاب رشته تحصیلی کمک می‌کند؟</button>
-                <div class="faq-answer">
-                    <p>با شناسایی علایق و توانایی‌های دانش‌آموزان از طریق تست‌های شناختی و شخصیتی، امکان 
-                    هدایت دقیق‌تر به رشته‌های متناسب فراهم می‌شود.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question">آیا راهکاری برای مشاوران مدارس دارید؟</button>
-                <div class="faq-answer">
-                    <p>بله، گزارش‌های گروهی و فردی ما می‌تواند در جلسات مشاوره تحصیلی مورد استفاده قرار گیرد 
-                    تا تصمیم‌های آگاهانه‌تری گرفته شود.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question">آیا قیمت ارزیابی‌ها برای مدارس متفاوت است؟</button>
-                <div class="faq-answer">
-                    <p>ما پلن‌های ویژه‌ای برای مدارس داریم که قیمت آن‌ها قابل مذاکره بوده و بر اساس تعداد 
-                    دانش‌آموزان تنظیم می‌گردد.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Clinics -->
-        <div id="faq-clinics" class="faq-category">
-            <div class="faq-item">
-                <button class="faq-question">آیا تست‌های استعدادیاب دارای پشتوانه علمی و اعتبار روان‌سنجی هستند؟</button>
-                <div class="faq-answer">
-                    <p>بله، ما از روش‌های معتبر روان‌سنجی و داده‌های پژوهشی بهره می‌بریم تا ارزیابی‌ها 
-                    از دقت و روایی مناسبی برخوردار باشند.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question">چگونه می‌توانیم نتایج را با جلسات درمانی تلفیق کنیم؟</button>
-                <div class="faq-answer">
-                    <p>گزارش‌های کامل ما به متخصصان امکان می‌دهد بر اساس نتایج عینی و علمی، طرح درمان 
-                    یا برنامه‌های مداخلاتی اثربخشی طراحی کنند.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question">آیا امکان همکاری طولانی‌مدت با کلینیک ما وجود دارد؟</button>
-                <div class="faq-answer">
-                    <p>بله، ما پلن‌های سازمانی داریم که می‌تواند به‌صورت اختصاصی برای کلینیک‌ها تنظیم شود 
-                    و شامل دسترسی ویژه به دیتابیس تست‌ها، گزارش‌های سفارشی و پشتیبانی مداوم است.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- FAQ Section Styles -->
-<style>
-    /* FAQ Section Styles */
-    .faq-section {
-        padding: var(--spacing-lg) var(--spacing-md);
-        background-color: var(--neutral-cool-gray);
-        text-align: center;
-    }
-
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: var(--spacing-md);
-    }
-
-    .section-title {
-        font-size: 2em;
-        font-weight: 700;
-        color: var(--primary-deep-blue);
-        margin-bottom: var(--spacing-md);
-    }
-
-    .section-text {
-        font-size: 1.1em;
-        color: var(--text-secondary);
-        line-height: 1.8;
-        margin-bottom: var(--spacing-lg);
-        text-align: justify;
-    }
-
-    /* Tabs */
-    .faq-tabs {
-        display: flex;
-        justify-content: center;
-        gap: var(--spacing-md);
-        margin-bottom: var(--spacing-md);
-        overflow-x: auto;
-        padding-bottom: var(--spacing-sm);
-        border-bottom: 2px solid var(--neutral-cool-gray);
-    }
-
-    .tab-link {
-        padding: var(--spacing-sm) var(--spacing-md);
-        font-size: 1em;
-        font-weight: 600;
-        color: var(--primary-deep-blue);
-        background-color: transparent;
-        border: none;
-        border-bottom: 2px solid transparent;
-        cursor: pointer;
-        transition: all var(--transition-speed) ease-in-out;
-        white-space: nowrap;
-        font-family: 'Vazir', sans-serif;
-    }
-
-    .tab-link:hover,
-    .tab-link.active {
-        color: var(--button-primary);
-        border-bottom: 2px solid var(--button-primary);
-    }
-
-    /* FAQ Categories */
-    .faq-category {
-        display: none;
-        text-align: right;
-    }
-
-    .faq-category.active {
-        display: block;
-    }
-
-    /* FAQ Items */
-    .faq-item {
-        margin-bottom: var(--spacing-md);
-    }
-
-    .faq-question {
-        width: 100%;
-        text-align: right;
-        background-color: var(--neutral-white);
-        color: var(--primary-deep-blue);
-        padding: var(--spacing-md);
-        font-size: 1em;
-        font-weight: 600;
-        border: none;
-        border-radius: var(--border-radius);
-        cursor: pointer;
-        box-shadow: var(--shadow-card);
-        transition: box-shadow var(--transition-speed) ease-in-out;
-        font-family: 'Vazir', sans-serif;
-    }
-
-    .faq-question:hover {
-        box-shadow: var(--shadow-hover);
-    }
-
-    .faq-answer {
-        display: none;
-        text-align: justify;
-        background-color: var(--neutral-white);
-        border-radius: var(--border-radius);
-        margin-top: var(--spacing-xs);
-        padding: var(--spacing-md);
-        line-height: 1.6;
-        color: var(--text-secondary);
-    }
-
-    .faq-item.active .faq-answer {
-        display: block;
-    }
-
-    /* Responsive Styles */
-    @media (min-width: 576px) {
-        .faq-tabs {
-            gap: var(--spacing-md);
-        }
-
-        .tab-link {
-            font-size: 1em;
-        }
-    }
-
-    @media (min-width: 768px) {
-        .faq-question {
-            font-size: 1.05em;
-        }
-
-        .faq-answer {
-            font-size: 1.1em;
-        }
-    }
-
-    @media (min-width: 1024px) {
-        .faq-question {
-            font-size: 1.1em;
-        }
-
-        .faq-answer {
-            font-size: 1.2em;
-        }
-    }
-</style>
-
-<!-- FAQ Section JavaScript -->
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        // Tab Navigation
-        const tabs = document.querySelectorAll(".tab-link");
-        const categories = document.querySelectorAll(".faq-category");
-
-        tabs.forEach((tab) => {
-            tab.addEventListener("click", () => {
-                // Remove active class from all tabs
-                tabs.forEach((t) => t.classList.remove("active"));
-                // Hide all categories
-                categories.forEach((c) => c.classList.remove("active"));
-                // Add active class to clicked tab
-                tab.classList.add("active");
-                // Show corresponding category
-                const target = tab.getAttribute("data-tab");
-                document.getElementById(target).classList.add("active");
-            });
-        });
-
-        // Accordion Functionality
-        document.querySelectorAll(".faq-question").forEach((btn) => {
-            btn.addEventListener("click", () => {
-                const parent = btn.parentElement;
-                parent.classList.toggle("active");
-            });
-        });
-
-        // Set default active tab and category
-        const defaultTab = document.querySelector(".tab-link[data-tab='faq-general']");
-        if (defaultTab) {
-            defaultTab.click();
-        }
-    });
-</script>
-
-
-
-
-
+        </section>
     </main>
     
     <!-- Footer -->
@@ -2079,48 +1818,199 @@ document.addEventListener("DOMContentLoaded", function () {
     <script src="assets/js/header-footer-inject.js"></script>
     <script src="/assets/js/script.js"></script>
     
-    <!-- Initialize Swiper -->
-<!-- Swiper JS -->
-
-<!-- Swiper Initialization -->
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        var swiperFactors = new Swiper(".swiper-factors", {
-            // Optional parameters
-            direction: "horizontal",
-            loop: true,
-            spaceBetween: 20,
-            slidesPerView: 1,
-            centeredSlides: true,
-            // Responsive breakpoints
-            breakpoints: {
-                576: {
-                    slidesPerView: 1.5,
+    <!-- Consolidated Inline Scripts -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            /* ============================================
+               1. Tabbed Assessments Section Scripts
+            ============================================ */
+            // ========== Tabs ==========
+            const tabLinks = document.querySelectorAll(".tab-link");
+            const tabContents = document.querySelectorAll(".tab-content");
+        
+            tabLinks.forEach((link) => {
+                link.addEventListener("click", () => {
+                    // Remove 'active' from all tab links
+                    tabLinks.forEach((btn) => btn.classList.remove("active"));
+                    // Hide all tab contents
+                    tabContents.forEach((content) => content.classList.remove("active"));
+        
+                    // Add 'active' to clicked tab and its content
+                    link.classList.add("active");
+                    const tabTarget = link.getAttribute("data-tab");
+                    document.getElementById(tabTarget).classList.add("active");
+                });
+            });
+        
+            // ========== Swiper Initializations for Each Category ==========
+            // Category 1
+            const swiperCategory1 = new Swiper(".swiper-category1", {
+                direction: "horizontal",
+                loop: true,
+                spaceBetween: 20,
+                slidesPerView: 1,
+                centeredSlides: true,
+                pagination: {
+                    el: ".swiper-category1 .swiper-pagination",
+                    clickable: true,
                 },
-                768: {
-                    slidesPerView: 2,
+                navigation: {
+                    nextEl: ".swiper-category1 .swiper-button-next",
+                    prevEl: ".swiper-category1 .swiper-button-prev",
                 },
-                1024: {
-                    slidesPerView: 3,
+                // Adjust breakpoints as needed
+                breakpoints: {
+                    576: {
+                        slidesPerView: 1.5,
+                        spaceBetween: 20,
+                    },
+                    768: {
+                        slidesPerView: 2,
+                        spaceBetween: 30,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                        spaceBetween: 40,
+                    },
                 },
-                1200: {
-                    slidesPerView: 4,
+            });
+        
+            // Category 2
+            const swiperCategory2 = new Swiper(".swiper-category2", {
+                direction: "horizontal",
+                loop: true,
+                spaceBetween: 20,
+                slidesPerView: 1,
+                centeredSlides: true,
+                pagination: {
+                    el: ".swiper-category2 .swiper-pagination",
+                    clickable: true,
                 },
-            },
-            // If you need pagination
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            // If you need navigation buttons
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-        });
-
-
-            // Initialize Assessments Swiper
+                navigation: {
+                    nextEl: ".swiper-category2 .swiper-button-next",
+                    prevEl: ".swiper-category2 .swiper-button-prev",
+                },
+                breakpoints: {
+                    576: {
+                        slidesPerView: 1.5,
+                        spaceBetween: 20,
+                    },
+                    768: {
+                        slidesPerView: 2,
+                        spaceBetween: 30,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                        spaceBetween: 40,
+                    },
+                },
+            });
+        
+            // Category 3
+            const swiperCategory3 = new Swiper(".swiper-category3", {
+                direction: "horizontal",
+                loop: true,
+                spaceBetween: 20,
+                slidesPerView: 1,
+                centeredSlides: true,
+                pagination: {
+                    el: ".swiper-category3 .swiper-pagination",
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: ".swiper-category3 .swiper-button-next",
+                    prevEl: ".swiper-category3 .swiper-button-prev",
+                },
+                breakpoints: {
+                    576: {
+                        slidesPerView: 1.5,
+                        spaceBetween: 20,
+                    },
+                    768: {
+                        slidesPerView: 2,
+                        spaceBetween: 30,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                        spaceBetween: 40,
+                    },
+                },
+            });
+        
+            /* ============================================
+               2. FAQ Section Scripts
+            ============================================ */
+            // Tab Navigation
+            const faqTabs = document.querySelectorAll(".faq-section .tab-link");
+            const faqCategories = document.querySelectorAll(".faq-category");
+        
+            faqTabs.forEach((tab) => {
+                tab.addEventListener("click", () => {
+                    // Remove active class from all tabs
+                    faqTabs.forEach((t) => t.classList.remove("active"));
+                    // Hide all categories
+                    faqCategories.forEach((c) => c.classList.remove("active"));
+                    // Add active class to clicked tab
+                    tab.classList.add("active");
+                    // Show corresponding category
+                    const target = tab.getAttribute("data-tab");
+                    document.getElementById(target).classList.add("active");
+                });
+            });
+        
+            // Accordion Functionality
+            document.querySelectorAll(".faq-question").forEach((btn) => {
+                btn.addEventListener("click", () => {
+                    const parent = btn.parentElement;
+                    parent.classList.toggle("active");
+                });
+            });
+        
+            // Set default active tab and category
+            const defaultFaqTab = document.querySelector(".faq-section .tab-link[data-tab='faq-general']");
+            if (defaultFaqTab) {
+                defaultFaqTab.click();
+            }
+        
+            /* ============================================
+               3. Swiper Initialization Scripts
+            ============================================ */
+            // Initialize Swiper for Diagnostic Factors
+            var swiperFactors = new Swiper(".swiper-factors", {
+                // Optional parameters
+                direction: "horizontal",
+                loop: true,
+                spaceBetween: 20,
+                slidesPerView: 1,
+                centeredSlides: true,
+                // Responsive breakpoints
+                breakpoints: {
+                    576: {
+                        slidesPerView: 1.5,
+                    },
+                    768: {
+                        slidesPerView: 2,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                    },
+                    1200: {
+                        slidesPerView: 4,
+                    },
+                },
+                // If you need pagination
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                // If you need navigation buttons
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+            });
+        
+            // Initialize Swiper for Assessments
             var assessmentsSwiper = new Swiper('.swiper-assessments', {
                 direction: 'horizontal',
                 loop: true,
