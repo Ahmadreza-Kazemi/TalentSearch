@@ -1946,19 +1946,21 @@
     </div>
 </section>
 
-        <!-- Reasonable Pricing Section -->
-        <section class="section pricing-section" id="pricing">
-            <div class="container">
-                <h2 class="section-title">پلن‌های قیمتی ما</h2>
-                <p class="section-text">
-                    ما در استعدادیاب معتقدیم ارزیابی‌های روان‌شناختی باید برای همه قابل‌دسترس باشد. 
-                    به همین دلیل ترکیبی از تست‌های رایگان و پرداختی را ارائه می‌دهیم تا بتوانید بر اساس 
-                    نیاز و بودجه‌تان، بهترین انتخاب را داشته باشید.
-                </p>
+<!-- Reasonable Pricing Section -->
+<section class="section pricing-section" id="pricing">
+    <div class="container">
+        <h2 class="section-title">پلن‌های قیمتی ما</h2>
+        <p class="section-text">
+            ما در استعدادیاب معتقدیم ارزیابی‌های روان‌شناختی باید برای همه قابل‌دسترس باشد. 
+            به همین دلیل ترکیبی از تست‌های رایگان و پرداختی را ارائه می‌دهیم تا بتوانید بر اساس 
+            نیاز و بودجه‌تان، بهترین انتخاب را داشته باشید.
+        </p>
 
-                <!-- Pricing Options -->
-                <div class="pricing-grid">
-                    <!-- Free Tests -->
+        <!-- Swiper Container -->
+        <div class="swiper swiper-pricing">
+            <div class="swiper-wrapper">
+                <!-- Free Tests -->
+                <div class="swiper-slide">
                     <div class="pricing-card">
                         <h3 class="pricing-title">تست‌های رایگان</h3>
                         <p class="pricing-amount">رایگان</p>
@@ -1969,8 +1971,10 @@
                         </ul>
                         <a href="/assessments#free-tests" class="btn-primary">شروع رایگان</a>
                     </div>
+                </div>
 
-                    <!-- Paid Tests -->
+                <!-- Paid Tests -->
+                <div class="swiper-slide">
                     <div class="pricing-card">
                         <h3 class="pricing-title">تست‌های پیشرفته</h3>
                         <p class="pricing-amount">پرداختی بر اساس هر تست</p>
@@ -1981,8 +1985,10 @@
                         </ul>
                         <a href="/assessments#premium-tests" class="btn-primary">مشاهده تست‌ها</a>
                     </div>
+                </div>
 
-                    <!-- Negotiable Pricing -->
+                <!-- Negotiable Pricing -->
+                <div class="swiper-slide">
                     <div class="pricing-card">
                         <h3 class="pricing-title">سازمان‌ها و مدارس</h3>
                         <p class="pricing-amount">قابل مذاکره</p>
@@ -1994,13 +2000,23 @@
                         <a href="/contact-us" class="btn-primary">تماس بگیرید</a>
                     </div>
                 </div>
-
-                <p class="section-note">
-                    هزینه برخی تست‌ها مستقیماً در صفحه ارزیابی ذکر شده است. 
-                    برای اطلاعات بیشتر یا دریافت بسته‌های شخصی‌سازی‌شده، خوشحال می‌شویم با ما در ارتباط باشید.
-                </p>
             </div>
-        </section>
+
+            <!-- Swiper Pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- Swiper Navigation -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+
+        <p class="section-note">
+            هزینه برخی تست‌ها مستقیماً در صفحه ارزیابی ذکر شده است. 
+            برای اطلاعات بیشتر یا دریافت بسته‌های شخصی‌سازی‌شده، خوشحال می‌شویم با ما در ارتباط باشید.
+        </p>
+    </div>
+</section>
+
 
         <!-- FAQ Section -->
         <section id="faq" class="section faq-section">
@@ -2346,6 +2362,46 @@
             },
         });
     });
+    // Initialize Swiper for Pricing Section
+document.addEventListener("DOMContentLoaded", function () {
+    /* Pricing Swiper Initialization */
+    var pricingSwiper = new Swiper('.swiper-pricing', {
+        // Optional parameters
+        loop: true, // Enable looping
+        slidesPerView: 1, // Number of slides per view
+        spaceBetween: 30, // Space between slides in px
+        centeredSlides: true, // Center the active slide
+
+        // Responsive breakpoints
+        breakpoints: {
+            576: {
+                slidesPerView: 1.2,
+                spaceBetween: 20,
+            },
+            768: {
+                slidesPerView: 1.5,
+                spaceBetween: 30,
+            },
+            1024: {
+                slidesPerView: 2,
+                spaceBetween: 40,
+            },
+        },
+
+        // If you want pagination
+        pagination: {
+            el: '.swiper-pricing .swiper-pagination',
+            clickable: true,
+        },
+
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-pricing .swiper-button-next',
+            prevEl: '.swiper-pricing .swiper-button-prev',
+        },
+    });
+});
+
 </script>
 
 </body>
