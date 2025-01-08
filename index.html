@@ -620,48 +620,88 @@
             text-align: justify;
         }
 
-        /* Tab Navigation (buttons) */
-        .tabs-navigation {
-            display: flex;
-            flex-wrap: nowrap;
-            gap: var(--spacing-sm);
-            overflow-x: auto; /* Mobile-friendly horizontal scroll if needed */
-            margin-bottom: var(--spacing-md);
-            border-bottom: 2px solid var(--neutral-cool-gray);
-            padding-bottom: var(--spacing-sm);
-        }
+/* Tabs Navigation - Mobile First */
+.tabs-navigation {
+  display: flex;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  gap: var(--spacing-md);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 2px solid var(--neutral-cool-gray);
+}
 
-        .tab-link {
-            background-color: transparent;
-            color: var(--primary-deep-blue);
-            padding: var(--spacing-sm) var(--spacing-md);
-            border: none;
-            border-bottom: 2px solid transparent;
-            font-size: 1em;
-            font-weight: 600;
-            cursor: pointer;
-            transition: color var(--transition-speed) var(--transition-type),
-                        border-bottom var(--transition-speed) var(--transition-type);
-            white-space: nowrap; /* Prevent text from wrapping in small widths */
-            font-family: 'Vazir', sans-serif;
-        }
+.tab-link {
+  flex: 0 0 auto; /* Prevent buttons from stretching */
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: 1em;
+  font-weight: 600;
+  color: var(--primary-deep-blue);
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: color var(--transition-speed) ease-in-out, border-bottom var(--transition-speed) ease-in-out;
+  white-space: nowrap; /* Prevent text wrapping */
+  font-family: 'Vazir', sans-serif;
+}
 
-        .tab-link.active,
-        .tab-link:hover {
-            color: var(--button-primary);
-            border-bottom: 2px solid var(--button-primary);
-        }
+.tab-link.active,
+.tab-link:hover {
+  color: var(--button-primary);
+  border-bottom: 2px solid var(--button-primary);
+}
 
-        /* Tab Contents - Hide non-active by default */
-        .tab-content {
-            display: none;
-            text-align: right; /* Because it's RTL */
-        }
+/* Battery Cards - Responsive */
+.battery-card {
+  background-color: var(--neutral-white);
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition-speed) var(--transition-type), box-shadow var(--transition-speed) var(--transition-type);
+  margin-bottom: var(--spacing-lg);
+}
 
-        .tab-content.active {
-            display: block;
-            margin-top: var(--spacing-md);
-        }
+.battery-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.battery-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-md);
+}
+
+.battery-btn {
+  background-color: var(--button-primary);
+  color: var(--neutral-white);
+  padding: 8px 20px;
+  border-radius: var(--border-radius);
+  font-size: 0.9em;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color var(--transition-speed) var(--transition-type);
+  text-align: center;
+}
+
+.battery-btn:hover,
+.battery-btn:focus {
+  background-color: var(--button-secondary);
+}
+
+/* Responsive Adjustments */
+@media (min-width: 768px) {
+  .battery-links {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .battery-btn {
+    font-size: 1em;
+  }
+}
+
 
         /* Slides inside each tab: 
            We'll reuse the existing Swiper styling from your code for consistency.
@@ -1344,7 +1384,7 @@
             </div>
         </section>
 
-       <!-- =========================================
+<!-- =========================================
      Tabbed Assessments Section (Updated)
 ========================================= -->
 <section class="section tabbed-assessments" id="tabbed-assessments">
@@ -1358,24 +1398,21 @@
 
     <!-- Tabs Navigation -->
     <div class="tabs-navigation">
-      <!-- Four sample categories (tabs). 
-           You can rename or add/remove tabs as needed. -->
-      <button class="tab-link active" data-tab="category1">ارزیابی‌های سلامت روان</button>
-      <button class="tab-link" data-tab="category2">ارزیابی‌های شخصیت و عزت‌نفس</button>
+      <!-- Define each category as a tab -->
+      <button class="tab-link active" data-tab="category1">سلامت روان</button>
+      <button class="tab-link" data-tab="category2">شخصیت و عزت نفس</button>
       <button class="tab-link" data-tab="category3">ارزیابی‌های کودکان</button>
-      <button class="tab-link" data-tab="category4">ارزیابی‌های زندگی و رشد فردی</button>
+      <button class="tab-link" data-tab="category4">زندگی و رشد فردی</button>
+      <button class="tab-link" data-tab="category5">رضایت شغلی و زناشویی</button>
+      <button class="tab-link" data-tab="category6">ارزیابی‌های شناختی</button>
     </div>
 
     <!-- =====================
          Tab Content #1 (Active)
-         Example Category: سلامت روان
+         Category: سلامت روان (Mental Health)
     ====================== -->
     <div id="category1" class="tab-content active">
-      <!--
-        Below is an example grouping for "سلامت روان."
-        You can rearrange or rename as you see fit.
-      -->
-      <!-- inventory 1 -->
+      <!-- Inventory 1 -->
       <div class="battery-card">
         <div>
           <h3>فهرست آرامش روانی - 33</h3>
@@ -1388,7 +1425,7 @@
         </div>
       </div>
 
-      <!-- inventory 6 -->
+      <!-- Inventory 6 -->
       <div class="battery-card">
         <div>
           <h3>فهرست بهداشت روان نوجوان - 46</h3>
@@ -1401,7 +1438,7 @@
         </div>
       </div>
 
-      <!-- inventory 7 -->
+      <!-- Inventory 7 -->
       <div class="battery-card">
         <div>
           <h3>فهرست پاکزیستی - 20</h3>
@@ -1414,7 +1451,7 @@
         </div>
       </div>
 
-      <!-- inventory 8 -->
+      <!-- Inventory 8 -->
       <div class="battery-card">
         <div>
           <h3>فهرست پایایی - 29</h3>
@@ -1427,7 +1464,7 @@
         </div>
       </div>
 
-      <!-- inventory 10 -->
+      <!-- Inventory 10 -->
       <div class="battery-card">
         <div>
           <h3>فهرست تعادل - 38</h3>
@@ -1440,7 +1477,7 @@
         </div>
       </div>
 
-      <!-- inventory 11 -->
+      <!-- Inventory 11 -->
       <div class="battery-card">
         <div>
           <h3>فهرست تعادل روان - 94</h3>
@@ -1453,7 +1490,7 @@
         </div>
       </div>
 
-      <!-- inventory 16 -->
+      <!-- Inventory 16 -->
       <div class="battery-card">
         <div>
           <h3>فهرست حمایت معنوی - 28</h3>
@@ -1465,17 +1502,14 @@
           <a href="/assessments/spiritual-support" class="battery-btn">معرفی ارزیابی</a>
         </div>
       </div>
-
-      <!-- (Add or remove as you see fit for "سلامت روان") -->
-      <!-- ... -->
     </div>
 
     <!-- =====================
          Tab Content #2
-         Example Category: شخصیت و عزت‌نفس
+         Category: شخصیت و عزت نفس (Personality and Self-Esteem)
     ====================== -->
     <div id="category2" class="tab-content">
-      <!-- inventory 2 -->
+      <!-- Inventory 2 -->
       <div class="battery-card">
         <div>
           <h3>فهرست ارجمندی - 17</h3>
@@ -1488,33 +1522,7 @@
         </div>
       </div>
 
-      <!-- inventory 9 -->
-      <div class="battery-card">
-        <div>
-          <h3>فهرست تحلیلی تجربی - 42</h3>
-          <p class="description">این ارزیابی توانایی‌های تحلیلی و تجربی شما را بررسی می‌کند.</p>
-          <p class="id">id: 110009</p>
-        </div>
-        <div class="battery-links">
-          <a href="/take/empirical-analytical" class="battery-btn">شروع ارزیابی</a>
-          <a href="/assessments/empirical-analytical" class="battery-btn">معرفی ارزیابی</a>
-        </div>
-      </div>
-
-      <!-- inventory 13 -->
-      <div class="battery-card">
-        <div>
-          <h3>فهرست تعاملی شخصیت - 62</h3>
-          <p class="description">این ارزیابی به بررسی تعامل شخصیت شما با دیگران می‌پردازد.</p>
-          <p class="id">id: 110013</p>
-        </div>
-        <div class="battery-links">
-          <a href="/take/personality-interaction" class="battery-btn">شروع ارزیابی</a>
-          <a href="/assessments/personality-interaction" class="battery-btn">معرفی ارزیابی</a>
-        </div>
-      </div>
-
-      <!-- inventory 14 -->
+      <!-- Inventory 12 -->
       <div class="battery-card">
         <div>
           <h3>فهرست تعهد فردی - 12</h3>
@@ -1527,20 +1535,20 @@
         </div>
       </div>
 
-      <!-- inventory 15 -->
+      <!-- Inventory 14 -->
       <div class="battery-card">
         <div>
-          <h3>فهرست حریم فردی - 24</h3>
-          <p class="description">این ارزیابی به بررسی نیازها و احترام به حریم شخصی شما می‌پردازد.</p>
-          <p class="id">id: 110015</p>
+          <h3>فهرست یکپارچگی شناختی - 14</h3>
+          <p class="description">این ارزیابی به بررسی میزان یکپارچگی و انسجام در تفکر شما می‌پردازد.</p>
+          <p class="id">id: 110035</p>
         </div>
         <div class="battery-links">
-          <a href="/take/personal-space" class="battery-btn">شروع ارزیابی</a>
-          <a href="/assessments/personal-space" class="battery-btn">معرفی ارزیابی</a>
+          <a href="/take/cognitive-integration" class="battery-btn">شروع ارزیابی</a>
+          <a href="/assessments/cognitive-integration" class="battery-btn">معرفی ارزیابی</a>
         </div>
       </div>
 
-      <!-- inventory 17 -->
+      <!-- Inventory 17 -->
       <div class="battery-card">
         <div>
           <h3>فهرست خردمندی - 25</h3>
@@ -1553,7 +1561,7 @@
         </div>
       </div>
 
-      <!-- inventory 18 -->
+      <!-- Inventory 18 -->
       <div class="battery-card">
         <div>
           <h3>فهرست خود گستری - 62</h3>
@@ -1566,7 +1574,7 @@
         </div>
       </div>
 
-      <!-- inventory 19 -->
+      <!-- Inventory 19 -->
       <div class="battery-card">
         <div>
           <h3>فهرست درستی - 17</h3>
@@ -1578,17 +1586,14 @@
           <a href="/assessments/accuracy" class="battery-btn">معرفی ارزیابی</a>
         </div>
       </div>
-
-      <!-- inventory 9, 27, 28, 26, etc. could also fit here if you prefer ... -->
-      <!-- (Continue adding inventories that revolve around شخصیت, عزت‌نفس, or self-related aspects) -->
     </div>
 
     <!-- =====================
          Tab Content #3
-         Example Category: کودکان
+         Category: ارزیابی‌های کودکان (Child Assessments)
     ====================== -->
     <div id="category3" class="tab-content">
-      <!-- inventory 3 -->
+      <!-- Inventory 3 -->
       <div class="battery-card">
         <div>
           <h3>فهرست استعداد کودک - 48</h3>
@@ -1601,7 +1606,7 @@
         </div>
       </div>
 
-      <!-- inventory 4 -->
+      <!-- Inventory 4 -->
       <div class="battery-card">
         <div>
           <h3>فهرست استعداد کودک - 72</h3>
@@ -1614,7 +1619,7 @@
         </div>
       </div>
 
-      <!-- inventory 25 -->
+      <!-- Inventory 25 -->
       <div class="battery-card">
         <div>
           <h3>فهرست شخصیت کودکان - 50</h3>
@@ -1626,15 +1631,14 @@
           <a href="/assessments/childrens-personality" class="battery-btn">معرفی ارزیابی</a>
         </div>
       </div>
-      <!-- (Add any other child-related inventories if desired) -->
     </div>
 
     <!-- =====================
          Tab Content #4
-         Example Category: زندگی و رشد فردی
+         Category: زندگی و رشد فردی (Life and Personal Growth)
     ====================== -->
     <div id="category4" class="tab-content">
-      <!-- inventory 5 -->
+      <!-- Inventory 5 -->
       <div class="battery-card">
         <div>
           <h3>فهرست استواری پویش - 32</h3>
@@ -1647,20 +1651,20 @@
         </div>
       </div>
 
-      <!-- inventory 12 -->
+      <!-- Inventory 37 -->
       <div class="battery-card">
         <div>
-          <h3>فهرست تعالی فردی - 37</h3>
-          <p class="description">این ارزیابی به بررسی سطح تعالی و رشد شخصی شما می‌پردازد.</p>
-          <p class="id">id: 110012</p>
+          <h3>فهرست تعاملی استعداد - 15</h3>
+          <p class="description">این ارزیابی به بررسی نحوه تعامل استعدادهای شما با محیط اطراف می‌پردازد.</p>
+          <p class="id">id: 110037</p>
         </div>
         <div class="battery-links">
-          <a href="/take/personal-excellence" class="battery-btn">شروع ارزیابی</a>
-          <a href="/assessments/personal-excellence" class="battery-btn">معرفی ارزیابی</a>
+          <a href="/take/talent-interaction" class="battery-btn">شروع ارزیابی</a>
+          <a href="/assessments/talent-interaction" class="battery-btn">معرفی ارزیابی</a>
         </div>
       </div>
 
-      <!-- inventory 20 -->
+      <!-- Inventory 20 -->
       <div class="battery-card">
         <div>
           <h3>فهرست رضایت از زندگی - 24</h3>
@@ -1673,7 +1677,26 @@
         </div>
       </div>
 
-      <!-- inventory 21 -->
+      <!-- Inventory 36 -->
+      <div class="battery-card">
+        <div>
+          <h3>فهرست رضایت از زندگی - 25</h3>
+          <p class="description">این ارزیابی به بررسی سطح رضایت شما از جنبه‌های مختلف زندگی می‌پردازد.</p>
+          <p class="id">id: 110036</p>
+        </div>
+        <div class="battery-links">
+          <a href="/take/life-satisfaction-25" class="battery-btn">شروع ارزیابی</a>
+          <a href="/assessments/life-satisfaction-25" class="battery-btn">معرفی ارزیابی</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- =====================
+         Tab Content #5
+         Category: رضایت شغلی و زناشویی (Job and Marital Satisfaction)
+    ====================== -->
+    <div id="category5" class="tab-content">
+      <!-- Inventory 21 -->
       <div class="battery-card">
         <div>
           <h3>فهرست رضایت زناشویی - 38</h3>
@@ -1686,7 +1709,7 @@
         </div>
       </div>
 
-      <!-- inventory 22 -->
+      <!-- Inventory 22 -->
       <div class="battery-card">
         <div>
           <h3>فهرست رضایت شغلی - 29</h3>
@@ -1698,37 +1721,94 @@
           <a href="/assessments/job-satisfaction" class="battery-btn">معرفی ارزیابی</a>
         </div>
       </div>
+    </div>
 
-      <!-- inventory 23 -->
+    <!-- =====================
+         Tab Content #6
+         Category: ارزیابی‌های شناختی (Cognitive Assessments)
+    ====================== -->
+    <div id="category6" class="tab-content">
+      <!-- Inventory 9 -->
       <div class="battery-card">
         <div>
-          <h3>فهرست سر زندگی - 24</h3>
-          <p class="description">این ارزیابی به بررسی نقاط اوج و دستاوردهای زندگی شما می‌پردازد.</p>
-          <p class="id">id: 110023</p>
+          <h3>فهرست تحلیلی تجربی - 42</h3>
+          <p class="description">این ارزیابی توانایی‌های تحلیلی و تجربی شما را بررسی می‌کند.</p>
+          <p class="id">id: 110009</p>
         </div>
         <div class="battery-links">
-          <a href="/take/life-summit" class="battery-btn">شروع ارزیابی</a>
-          <a href="/assessments/life-summit" class="battery-btn">معرفی ارزیابی</a>
+          <a href="/take/empirical-analytical" class="battery-btn">شروع ارزیابی</a>
+          <a href="/assessments/empirical-analytical" class="battery-btn">معرفی ارزیابی</a>
         </div>
       </div>
 
-      <!-- inventory 36 -->
+      <!-- Inventory 26 -->
       <div class="battery-card">
         <div>
-          <h3>فهرست رضایت از زندگی - 25</h3>
-          <p class="description">این ارزیابی به بررسی سطح رضایت شما از جنبه‌های مختلف زندگی می‌پردازد.</p>
-          <p class="id">id: 110036</p>
+          <h3>فهرست شناختی - 24</h3>
+          <p class="description">این ارزیابی به سنجش توانایی‌های شناختی و ذهنی شما می‌پردازد.</p>
+          <p class="id">id: 110026</p>
         </div>
         <div class="battery-links">
-          <a href="/take/life-satisfaction-25" class="battery-btn">شروع ارزیابی</a>
-          <a href="/assessments/life-satisfaction-25" class="battery-btn">معرفی ارزیابی</a>
+          <a href="/take/cognitive-24" class="battery-btn">شروع ارزیابی</a>
+          <a href="/assessments/cognitive-24" class="battery-btn">معرفی ارزیابی</a>
         </div>
       </div>
 
-      <!-- (Continue grouping or adjusting as desired for "زندگی و رشد فردی") -->
+      <!-- Inventory 27 -->
+      <div class="battery-card">
+        <div>
+          <h3>فهرست ظرفیت تجربی - 63</h3>
+          <p class="description">این ارزیابی به بررسی ظرفیت‌های تجربی و عملی شما می‌پردازد.</p>
+          <p class="id">id: 110027</p>
+        </div>
+        <div class="battery-links">
+          <a href="/take/empirical-capacity" class="battery-btn">شروع ارزیابی</a>
+          <a href="/assessments/empirical-capacity" class="battery-btn">معرفی ارزیابی</a>
+        </div>
+      </div>
+
+      <!-- Inventory 28 -->
+      <div class="battery-card">
+        <div>
+          <h3>فهرست ظرفیتهای شناختی - 35</h3>
+          <p class="description">این ارزیابی به بررسی توانایی‌های شناختی پیشرفته شما می‌پردازد.</p>
+          <p class="id">id: 110028</p>
+        </div>
+        <div class="battery-links">
+          <a href="/take/cognitive-capacities" class="battery-btn">شروع ارزیابی</a>
+          <a href="/assessments/cognitive-capacities" class="battery-btn">معرفی ارزیابی</a>
+        </div>
+      </div>
+
+      <!-- Inventory 26 -->
+      <div class="battery-card">
+        <div>
+          <h3>فهرست ظرفیتهای شناختی - 35</h3>
+          <p class="description">این ارزیابی به بررسی توانایی‌های شناختی پیشرفته شما می‌پردازد.</p>
+          <p class="id">id: 110028</p>
+        </div>
+        <div class="battery-links">
+          <a href="/take/cognitive-capacities" class="battery-btn">شروع ارزیابی</a>
+          <a href="/assessments/cognitive-capacities" class="battery-btn">معرفی ارزیابی</a>
+        </div>
+      </div>
+
+      <!-- Inventory 29 -->
+      <div class="battery-card">
+        <div>
+          <h3>فهرست کرونا - 26</h3>
+          <p class="description">این ارزیابی به بررسی تأثیرات کروناویروس بر زندگی و روان شما می‌پردازد.</p>
+          <p class="id">id: 110029</p>
+        </div>
+        <div class="battery-links">
+          <a href="/take/corona" class="battery-btn">شروع ارزیابی</a>
+          <a href="/assessments/corona" class="battery-btn">معرفی ارزیابی</a>
+        </div>
+      </div>
     </div>
   </div> <!-- end container -->
 </section>
+
 
         <!-- Diagnostic Factors (Data-Driven) Section -->
         <section id="diagnostic-factors" class="section factors-section">
@@ -2070,22 +2150,23 @@
                1. Tabbed Assessments Section Scripts
             ============================================ */
             // ========== Tabs ==========
-            const tabLinks = document.querySelectorAll(".tab-link");
-            const tabContents = document.querySelectorAll(".tab-content");
-        
-            tabLinks.forEach((link) => {
-                link.addEventListener("click", () => {
-                    // Remove 'active' from all tab links
-                    tabLinks.forEach((btn) => btn.classList.remove("active"));
-                    // Hide all tab contents
-                    tabContents.forEach((content) => content.classList.remove("active"));
-        
-                    // Add 'active' to clicked tab and its content
-                    link.classList.add("active");
-                    const tabTarget = link.getAttribute("data-tab");
-                    document.getElementById(tabTarget).classList.add("active");
-                });
-            });
+    const tabLinks = document.querySelectorAll(".tabbed-assessments .tab-link");
+    const tabContents = document.querySelectorAll(".tabbed-assessments .tab-content");
+
+    tabLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        // Remove 'active' from all tab links
+        tabLinks.forEach((btn) => btn.classList.remove("active"));
+        // Hide all tab contents
+        tabContents.forEach((content) => content.classList.remove("active"));
+
+        // Add 'active' to clicked tab and its content
+        link.classList.add("active");
+        const tabTarget = link.getAttribute("data-tab");
+        document.getElementById(tabTarget).classList.add("active");
+      });
+    });
+
         
             // ========== Swiper Initializations for Each Category ==========
             // Category 1
