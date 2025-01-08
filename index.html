@@ -565,42 +565,27 @@
         max-width: 400px;
     }
 }
-
-
-
-
-
-
-        
         /* =======================================================
            5. Responsive Styles (Mobile-First)
         ======================================================= */
-
-
-
         /* Adjustments for Very Small Devices */
         @media (max-width: 576px) {
             .footer-content {
                 padding: 60px 15px;
             }
-
             .about-info h2::after {
                 width: 60px;
             }
-
             .about-info p {
                 font-size: 1em;
             }
-
             .contact-info p {
                 font-size: 0.95em;
             }
-
             .powered-by {
                 font-size: 0.85em;
             }
         }
-
         /* =======================================================
            6. Reasoning Section Styles
         ======================================================= */
@@ -610,13 +595,11 @@
             background-color: var(--neutral-white); /* Light gray for a subtle contrast */
             text-align: center;
         }
-
         .reasoning-section .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: var(--spacing-md);
         }
-
         .reasoning-section .section-title {
             font-size: 2em;
             font-weight: 700;
@@ -624,14 +607,12 @@
             margin-bottom: var(--spacing-lg);
              /* Golden glow for emphasis */
         }
-
         .reasoning-section .section-text {
             font-size: 1.2em;
             color: var(--text-secondary); /* Neutral dark gray for readability */
             line-height: 1.8;
             margin-bottom: var(--spacing-md);
         }
-
         /* =======================================================
            7. CTA Section Styles
         ======================================================= */
@@ -641,21 +622,17 @@
             background-color: var(--neutral-cool-gray);
             text-align: center;
         }
-
         .cta-section .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: var(--spacing-md);
         }
-
         .cta-title {
             font-size: 2em;
             font-weight: 700;
             color: var(--primary-deep-blue);
-            margin-bottom: var(--spacing-lg);
-            
+            margin-bottom: var(--spacing-lg);          
         }
-
         .cta-text {
             font-size: 1.1em;
             color: var(--text-secondary);
@@ -663,7 +640,6 @@
             margin-bottom: var(--spacing-md);
             text-align: justify;
         }
-
         /* =======================================================
            8. Tabbed Assessments Section Styles
         ======================================================= */
@@ -673,21 +649,17 @@
             text-align: center;
             padding: var(--spacing-lg) var(--spacing-md);
         }
-
         .tabbed-assessments .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: var(--spacing-md);
         }
-
         .tabbed-assessments .section-title {
             font-size: 2em;
             font-weight: 700;
             color: var(--primary-deep-blue);
-            margin-bottom: var(--spacing-lg);
-            
+            margin-bottom: var(--spacing-lg);           
         }
-
         .tabbed-assessments .section-text {
             font-size: 1.1em;
             color: var(--text-secondary);
@@ -695,7 +667,6 @@
             margin-bottom: var(--spacing-md);
             text-align: justify;
         }
-
 /* Tabs Navigation - Mobile First */
 .tabs-navigation {
   display: flex;
@@ -705,7 +676,6 @@
   padding-bottom: var(--spacing-sm);
   border-bottom: 2px solid var(--neutral-cool-gray);
 }
-
 .tab-link {
   flex: 0 0 auto; /* Prevent buttons from stretching */
   padding: var(--spacing-sm) var(--spacing-md);
@@ -720,13 +690,11 @@
   white-space: nowrap; /* Prevent text wrapping */
   font-family: 'Vazir', sans-serif;
 }
-
 .tab-link.active,
 .tab-link:hover {
   color: var(--button-primary);
   border-bottom: 2px solid var(--button-primary);
 }
-
 /* Battery Cards - Responsive */
 .battery-card {
   background-color: var(--neutral-white);
@@ -736,7 +704,6 @@
   transition: transform var(--transition-speed) var(--transition-type), box-shadow var(--transition-speed) var(--transition-type);
   margin-bottom: var(--spacing-lg);
 }
-
 .battery-card:hover {
   box-shadow: var(--shadow-hover);
 }
@@ -744,7 +711,6 @@
 .tab-content {
     display: none;
 }
-
 /* Display the active tab content */
 .tab-content.active {
     display: block;
@@ -755,7 +721,6 @@
   gap: var(--spacing-sm);
   margin-top: var(--spacing-md);
 }
-
 /* ======================================
    1. Primary Button Styles
    Class Name: btn-primary
@@ -771,20 +736,17 @@
     font-weight: 600;
     text-decoration: none;
     transition: transform var(--transition-speed) var(--transition-type),
-                opacity var(--transition-speed) var(--transition-type);
+    opacity var(--transition-speed) var(--transition-type);
     font-family: 'Vazir', sans-serif; /* Consistent font */
     border: none; /* No border for primary buttons */
 }
-
 /* Hover and Focus States for Primary Button */
 .btn-primary:hover,
 .btn-primary:focus {
     filter: brightness(95%); /* Reduce brightness to darken */
     text-decoration: none; /* Ensure no underline on hover/focus */
     color: var(--neutral-white); /* Ensures text color doesn't change */
-
 }
-
 /* ======================================
    2. Secondary Button Styles
    Class Name: btn-secondary
@@ -800,24 +762,21 @@
     font-weight: 600;
     text-decoration: none;
     transition: transform var(--transition-speed) var(--transition-type),
-                opacity var(--transition-speed) var(--transition-type);
+    opacity var(--transition-speed) var(--transition-type);
     font-family: 'Vazir', sans-serif; /* Consistent font */
     border: 2px solid var(--button-primary); /* Solid border */
 }
-
 /* Hover and Focus States for Secondary Button */
 .btn-secondary:hover,
 .btn-secondary:focus {
     text-decoration: none; /* Ensure no underline on hover/focus */
     filter: brightness(95%); /* Reduce brightness to darken */
     color: var(--button-primary); /* Ensures text color doesn't change */
-
 }
-
 /* ======================================
-   2. Call-to-Action Primary Button Styles (10% Bigger)
+   2. Call-to-Action Primary Button Styles (10% Bigger with Top and Bottom Margins)
    Class Name: btn-cta-primary
-   Purpose: Solid fill with primary color, larger size, fully rounded, with horizontal margins
+   Purpose: Solid fill with primary color, larger size, fully rounded, with horizontal and vertical margins
 ====================================== */
 .btn-cta-primary {
     display: inline-flex; /* Use flexbox for better alignment */
@@ -825,7 +784,7 @@
     justify-content: center; /* Horizontally center the content */
     background-color: var(--button-primary);
     color: var(--neutral-white);
-    padding: 19.2px 48px; /* 10% bigger than 15px 38px */
+    padding: 19.2px 48px; /* 10% bigger than 17.45px 43.63px */
     border-radius: 999px; /* Fully rounded edges */
     font-size: 1.408em; /* 10% bigger than 1.28em */
     font-weight: 600;
@@ -834,8 +793,8 @@
                 opacity var(--transition-speed) var(--transition-type);
     font-family: 'Vazir', sans-serif; /* Consistent font */
     border: none; /* No border for primary buttons */
-    margin: 0 10px; /* Horizontal margins */
-    height: 55px; /* Increased from 50px to maintain proportion */
+    margin: 10px; /* Added top, bottom, left, and right margins */
+    height: 55px; /* Fixed height for consistency */
     box-sizing: border-box; /* Ensure padding and border are included in height */
 }
 
@@ -848,9 +807,9 @@
 }
 
 /* ======================================
-   3. Call-to-Action Secondary Button Styles (10% Bigger)
+   3. Call-to-Action Secondary Button Styles (10% Bigger with Top and Bottom Margins)
    Class Name: btn-cta-secondary
-   Purpose: Outline style with primary color border and no fill, larger size, fully rounded, with horizontal margins
+   Purpose: Outline style with primary color border and no fill, larger size, fully rounded, with horizontal and vertical margins
 ====================================== */
 .btn-cta-secondary {
     display: inline-flex; /* Use flexbox for better alignment */
@@ -858,7 +817,7 @@
     justify-content: center; /* Horizontally center the content */
     background-color: transparent; /* No fill */
     color: var(--button-primary);
-    padding: 13px 28.6px; /* 10% bigger than 12px 26px */
+    padding: 13.2px 28.8px; /* 10% bigger than 12px 26px */
     border-radius: 999px; /* Fully rounded edges */
     font-size: 1.408em; /* 10% bigger than 1.28em */
     font-weight: 600;
@@ -867,8 +826,8 @@
                 opacity var(--transition-speed) var(--transition-type);
     font-family: 'Vazir', sans-serif; /* Consistent font */
     border: 2.82px solid var(--button-primary); /* 10% bigger than 2.56px */
-    margin: 0 10px; /* Horizontal margins */
-    height: 55px; /* Increased from 50px to maintain proportion */
+    margin: 10px; /* Added top, bottom, left, and right margins */
+    height: 55px; /* Fixed height for consistency */
     box-sizing: border-box; /* Ensure padding and border are included in height */
 }
 
@@ -881,35 +840,25 @@
 }
 
 
-
-
-
-  
-
-        .description {
+        
+.description {
             font-size: 0.95em;
             color: var(--text-secondary);
             margin-bottom: var(--spacing-sm);
             line-height: 1.6;
             text-align: justify;
         }
-
         .id {
             font-size: 0.85em;
             color: var(--neutral-dark-gray);
             margin-bottom: var(--spacing-sm);
         }
-
         /* Battery buttons within slides */
         .battery-links {
             margin-top: var(--spacing-sm);
             display: flex;
             gap: var(--spacing-sm);
         }
-
-
-
-
         /* ============================================
            2. Responsiveness (mobile-first approach)
         ============================================ */
@@ -920,21 +869,16 @@
                 font-size: 1em;
             }
         }
-
         @media (min-width: 768px) {
             .tab-link {
                 font-size: 1em;
             }
-
         }
-
         @media (min-width: 1024px) {
             .tabbed-assessments .section-title {
                 font-size: 2.2em;
             }
-
         }
-
         /* =======================================================
            9. Diagnostic Factors Section Styles
         ======================================================= */
@@ -945,21 +889,17 @@
             text-align: center;
             font-family: 'Vazir', sans-serif; /* Ensures this section uses Vazir font */
         }
-
         .factors-section .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: var(--spacing-md);
         }
-
         .section-title {
             font-size: 2em;
             font-weight: 700;
             color: var(--primary-deep-blue);
-            margin-bottom: var(--spacing-md);
-            
+            margin-bottom: var(--spacing-md);          
         }
-
         .section-subtitle {
             font-size: 1.1em;
             color: var(--text-secondary);
@@ -967,9 +907,6 @@
             margin-bottom: var(--spacing-lg);
             text-align: center;
         }
-
-
-
         .factor-card {
             background-color: var(--neutral-white);
             width: 100%;
@@ -984,11 +921,9 @@
             gap: var(--spacing-sm);
             height: 100%; /* Make all cards the same height */
         }
-
         .factor-card:hover {
             box-shadow: var(--shadow-hover);
         }
-
         .factor-icon {
             width: 50px;
             height: 50px;
@@ -997,13 +932,11 @@
             justify-content: center;
             align-items: center;
         }
-
         .factor-icon img {
             width: 100%;
             height: 100%;
             object-fit: contain;
         }
-
         .factor-title {
             font-size: 1.2em;
             font-weight: 700;
@@ -1011,7 +944,6 @@
             margin-bottom: var(--spacing-xs);
             flex-shrink: 0; /* Prevent title from shrinking */
         }
-
         .factor-description {
             font-size: 1em;
             color: var(--text-secondary);
@@ -1020,39 +952,25 @@
             flex-grow: 1; /* Allow description to take up remaining space */
             overflow: hidden;
         }
-
         .factors-cta {
             margin-top: var(--spacing-lg);
             text-align: center;
         }
-
         .factors-note {
             font-size: 1em;
             color: var(--text-secondary);
             margin-bottom: var(--spacing-sm);
             text-align: center;
         }
-
-
-
-
-
-
-            .factor-card {
-                max-width: 350px;
+        .factor-card {
+            max-width: 350px;
             }
         }
-
         @media (min-width: 1024px) {
-
-
             .factor-card {
                 max-width: 400px;
             }
         }
-
-
-
         /* =======================================================
            10. Partners or Collaborators Section Styles
         ======================================================= */
@@ -1062,22 +980,18 @@
             background-color: var(--neutral-white);
             text-align: center; /* Center-aligns the text within the section */
         }
-
         .partners-section .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: var(--spacing-md);
         }
-
         .partners-section .section-title {
             font-size: 2em;
             font-weight: 700;
             color: var(--primary-deep-blue);
-            margin-bottom: var(--spacing-lg);
-            
+            margin-bottom: var(--spacing-lg);          
             font-family: 'Vazir', sans-serif; /* Ensures the title uses 'Vazir' font */
         }
-
         .partners-section .section-text {
             font-size: 1.1em;
             color: var(--text-secondary);
@@ -1086,7 +1000,6 @@
             text-align: justify;
             font-family: 'Vazir', sans-serif; /* Ensures the text uses 'Vazir' font */
         }
-
         .partners-grid {
             display: grid;
             gap: var(--spacing-lg);
@@ -1095,7 +1008,6 @@
             justify-items: center; /* Centers items horizontally within their grid cell */
             justify-content: center; /* Centers the entire grid within the container */
         }
-
         .partner-card {
             background-color: var(--neutral-cool-gray);
             padding: var(--spacing-md);
@@ -1107,11 +1019,9 @@
             text-align: center; /* Centers text within each partner card */
             font-family: 'Vazir', sans-serif; /* Ensures the card uses 'Vazir' font */
         }
-
         .partner-card:hover {
             box-shadow: var(--shadow-hover);
         }
-
         .partner-logo {
             width: 100%;
             height: auto;
@@ -1119,33 +1029,28 @@
             object-fit: contain;
             margin-bottom: var(--spacing-sm);
         }
-
         .partner-name {
             font-size: 1em;
             font-weight: 600;
             color: var(--primary-deep-blue);
             font-family: 'Vazir', sans-serif; /* Ensures the partner name uses 'Vazir' font */
         }
-
         /* Responsive Styles */
         @media (min-width: 576px) {
             .partners-grid {
                 grid-template-columns: repeat(2, 1fr); /* Two columns for screens >= 576px */
             }
         }
-
         @media (min-width: 768px) {
             .partners-grid {
                 grid-template-columns: repeat(3, 1fr); /* Three columns for screens >= 768px */
             }
         }
-
         @media (min-width: 1024px) {
             .partners-grid {
                 grid-template-columns: repeat(4, 1fr); /* Four columns for screens >= 1024px */
             }
         }
-
         /* =======================================================
            11. Reasonable Pricing Section Styles
         ======================================================= */
@@ -1155,21 +1060,17 @@
             background-color: var(--neutral-cool-gray);
             text-align: center;
         }
-
         .pricing-section .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: var(--spacing-md);
         }
-
         .section-title {
             font-size: 2em;
             font-weight: 700;
             color: var(--primary-deep-blue);
-            margin-bottom: var(--spacing-lg);
-            
+            margin-bottom: var(--spacing-lg);           
         }
-
         .section-text, .section-note {
             font-size: 1.1em;
             color: var(--text-secondary);
@@ -1177,14 +1078,12 @@
             margin-bottom: var(--spacing-md);
             text-align: justify;
         }
-
         .pricing-grid {
             display: grid;
             gap: var(--spacing-lg);
             grid-template-columns: 1fr;
             margin-bottom: var(--spacing-lg);
         }
-
         .pricing-card {
             background-color: var(--neutral-white);
             padding: var(--spacing-md);
@@ -1192,46 +1091,37 @@
             box-shadow: var(--shadow-card);
             transition: box-shadow var(--transition-speed) var(--transition-type);
         }
-
         .pricing-card:hover {
             box-shadow: var(--shadow-hover);
         }
-
-        .pricing-title {
+       .pricing-title {
             font-size: 1.5em;
             font-weight: 700;
             color: var(--primary-deep-blue);
             margin-bottom: var(--spacing-sm);
         }
-
         .pricing-amount {
             font-size: 1.2em;
             font-weight: 600;
             color: var(--secondary-teal-green);
             margin-bottom: var(--spacing-md);
         }
-
         .pricing-features {
             list-style: none;
             padding: 0;
             margin-bottom: var(--spacing-md);
             text-align: center;
         }
-
         .pricing-features li {
             margin-bottom: var(--spacing-sm);
             color: var(--text-secondary);
         }
-
-
-
         /* Responsive Styles */
         @media (min-width: 768px) {
             .pricing-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
         }
-
         /* =======================================================
            12. FAQ Section Styles
         ======================================================= */
@@ -1241,20 +1131,17 @@
             background-color: var(--neutral-cool-gray);
             text-align: center;
         }
-
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: var(--spacing-md);
         }
-
         .section-title {
             font-size: 2em;
             font-weight: 700;
             color: var(--primary-deep-blue);
             margin-bottom: var(--spacing-md);
         }
-
         .section-text {
             font-size: 1.1em;
             color: var(--text-secondary);
@@ -1262,7 +1149,6 @@
             margin-bottom: var(--spacing-lg);
             text-align: justify;
         }
-
         /* Tabs */
         .faq-tabs {
             display: flex;
@@ -1273,7 +1159,6 @@
             padding-bottom: var(--spacing-sm);
             border-bottom: 2px solid var(--neutral-cool-gray);
         }
-
         .tab-link {
             padding: var(--spacing-sm) var(--spacing-md);
             font-size: 1em;
@@ -1287,28 +1172,23 @@
             white-space: nowrap;
             font-family: 'Vazir', sans-serif;
         }
-
         .tab-link:hover,
         .tab-link.active {
             color: var(--button-primary);
             border-bottom: 2px solid var(--button-primary);
         }
-
         /* FAQ Categories */
         .faq-category {
             display: none;
             text-align: right;
         }
-
         .faq-category.active {
             display: block;
         }
-
         /* FAQ Items */
         .faq-item {
             margin-bottom: var(--spacing-md);
         }
-
         .faq-question {
             width: 100%;
             text-align: right;
@@ -1324,11 +1204,9 @@
             transition: box-shadow var(--transition-speed) ease-in-out;
             font-family: 'Vazir', sans-serif;
         }
-
         .faq-question:hover {
             box-shadow: var(--shadow-hover);
         }
-
         .faq-answer {
             display: none;
             text-align: justify;
@@ -1339,37 +1217,30 @@
             line-height: 1.6;
             color: var(--text-secondary);
         }
-
         .faq-item.active .faq-answer {
             display: block;
         }
-
         /* Responsive Styles */
         @media (min-width: 576px) {
             .faq-tabs {
                 gap: var(--spacing-md);
             }
-
             .tab-link {
                 font-size: 1em;
             }
         }
-
         @media (min-width: 768px) {
             .faq-question {
                 font-size: 1.05em;
             }
-
             .faq-answer {
                 font-size: 1.1em;
             }
         }
-
         @media (min-width: 1024px) {
             .faq-question {
                 font-size: 1.1em;
             }
-
             .faq-answer {
                 font-size: 1.2em;
             }
@@ -1381,7 +1252,6 @@
     <header class="header">
         <!-- Content injected via scripts -->
     </header>
-
     <!-- Main Content -->
     <main id="main-content">
         <!-- Hero Section -->
@@ -1390,11 +1260,9 @@
                 <h2>رگه‌های طلایی استعداد خود را کشف کنید!</h2>
                 <p>ارائه ارزیابی‌های روان‌شناختی پیشرفته برای تعالی فردی شما</p>
                 <a href="/getting-started" class="btn-cta-primary">شروع کنید</a>
-                      <a href="/assessments" class="btn-cta-secondary">مشاهده همه آزمون‌ها</a>
-
+                <a href="/assessments" class="btn-cta-secondary">مشاهده همه آزمون‌ها</a>
             </div>
         </section>
-
         <!-- Why Choose Us Section -->
         <section class="section reasoning-section" id="reason">
             <div class="container">
@@ -1404,7 +1272,6 @@
                 </p>
             </div>
         </section>
-
 <!-- =========================================
      Tabbed Assessments Section (Updated)
 ========================================= -->
@@ -1415,7 +1282,6 @@
     <p class="section-text">
       در این بخش، ارزیابی‌ها بر اساس دسته‌بندی‌های مختلف روانشناختی در اختیار شما قرار می‌گیرند.
     </p>
-
     <!-- Tabs Navigation -->
     <div class="tabs-navigation">
       <!-- Define each category as a tab -->
@@ -1426,7 +1292,6 @@
       <button class="tab-link" data-tab="category5">رضایت شغلی و زناشویی</button>
       <button class="tab-link" data-tab="category6">ارزیابی‌های شناختی</button>
     </div>
-
     <!-- =====================
          Tab Content #1 (Active)
          Category: سلامت روان (Mental Health)
@@ -1449,7 +1314,6 @@
               </div>
             </div>
           </div>
-
           <!-- Inventory 6 -->
           <div class="swiper-slide">
             <div class="battery-card">
@@ -1924,8 +1788,6 @@
     </div>
   </div> <!-- end container -->
 </section>
-
-
         <!-- Diagnostic Factors (Data-Driven) Section -->
         <section id="diagnostic-factors" class="section factors-section">
             <div class="container">
@@ -1936,7 +1798,6 @@
                     <strong>۱۹۰ عامل</strong> روان‌شناختی را ارزیابی می‌کنیم تا به درکی 
                     جامع و دقیق از ویژگی‌های فردی دست یابیم.
                 </p>
-                
                 <!-- Swiper Diagnostic Factors -->
                 <div class="swiper swiper-factors">
                     <div class="swiper-wrapper">
@@ -2050,7 +1911,6 @@
                 </div>
             </div>
         </section>
-
         
     <!-- Partners or Collaborators Section -->
 <section class="section partners-section" id="partners">
