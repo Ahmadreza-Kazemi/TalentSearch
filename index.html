@@ -212,27 +212,7 @@
             line-height: 1.6;
         }
 
-        .cta-button {
-            display: inline-block;
-            background-color: var(--button-primary);
-            color: var(--neutral-white);
-            padding: 12px 30px;
-            border-radius: var(--border-radius);
-            font-size: 1em;
-            box-shadow: 0 0 10px var(--accent-golden-yellow);
-            text-decoration: none;
-            font-weight: 600;
-            transition: background-color var(--transition-speed) var(--transition-type),
-                        transform var(--transition-speed) var(--transition-type),
-                        box-shadow var(--transition-speed) var(--transition-type);
-        }
 
-        .cta-button:hover,
-        .cta-button:focus {
-            background-color: var(--button-secondary);
-            transform: translateY(-5px);
-            box-shadow: 0 0 20px var(--button-secondary);
-        }
 
         /* ---------------------------------------------------
            4.3. Services Slider Section
@@ -665,8 +645,57 @@
   margin-top: var(--spacing-md);
 }
 
+.cta-button {
+  display: inline-block;
+  background-color: var(--button-primary);
+  color: var(--neutral-white);
+  padding: 12px 30px; /* Default padding */
+  border-radius: var(--border-radius);
+  font-size: 1em;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 0 10px var(--accent-golden-yellow);
+  transition: background-color var(--transition-speed) var(--transition-type),
+              transform var(--transition-speed) var(--transition-type),
+              box-shadow var(--transition-speed) var(--transition-type);
+}
+
+.cta-button:hover,
+.cta-button:focus {
+  background-color: var(--button-secondary);
+  transform: translateY(-3px); /* Default lift */
+  box-shadow: 0 0 20px var(--button-secondary); /* Default hover shadow */
+}
+
+/* Modifiers (Optional) */
+.cta-button--small {
+  padding: 10px 24px;
+}
+
+.cta-button--lifted:hover,
+.cta-button--lifted:focus {
+  transform: translateY(-5px); /* Higher lift */
+}
+
+        
+
 /* General styles for all buttons */
-       
+        .battery-btn {
+            background-color: var(--button-primary);
+            color: var(--neutral-white);
+            padding: 8px 20px;
+            border-radius: var(--border-radius);
+            font-size: 0.9em;
+            font-weight: 500;
+            text-decoration: none;
+            transition: background-color var(--transition-speed) var(--transition-type);
+        }
+
+        .battery-btn:hover {
+            background-color: var(--button-secondary);
+        }
+
+        
 .battery-btn, 
 .outline-btn {
   padding: 8px 20px;
@@ -778,20 +807,7 @@
             gap: var(--spacing-sm);
         }
 
-        .battery-btn {
-            background-color: var(--button-primary);
-            color: var(--neutral-white);
-            padding: 8px 20px;
-            border-radius: var(--border-radius);
-            font-size: 0.9em;
-            font-weight: 500;
-            text-decoration: none;
-            transition: background-color var(--transition-speed) var(--transition-type);
-        }
 
-        .battery-btn:hover {
-            background-color: var(--button-secondary);
-        }
 
         /* Swiper Pagination & Navigation */
         .swiper-pagination-bullet {
@@ -951,28 +967,7 @@
             text-align: center;
         }
 
-        .cta-button {
-            display: inline-block;
-            background-color: var(--button-primary);
-            color: var(--neutral-white);
-            padding: 12px 30px;
-            border-radius: var(--border-radius);
-            font-size: 1em;
-            font-weight: 600;
-            text-decoration: none;
-            box-shadow: 0 0 10px var(--accent-golden-yellow);
-            transition: background-color var(--transition-speed) var(--transition-type),
-                        transform var(--transition-speed) var(--transition-type),
-                        box-shadow var(--transition-speed) var(--transition-type);
-            margin-top: var(--spacing-xs);
-        }
 
-        .cta-button:hover,
-        .cta-button:focus {
-            background-color: var(--button-secondary);
-            transform: translateY(-3px);
-            box-shadow: 0 0 20px var(--button-secondary);
-        }
 
         /* Swiper Navigation Buttons */
         .swiper-button-prev,
@@ -1199,26 +1194,7 @@
             color: var(--text-secondary);
         }
 
-        .cta-button {
-            display: inline-block;
-            background-color: var(--button-primary);
-            color: var(--neutral-white);
-            padding: 10px 24px;
-            border-radius: var(--border-radius);
-            font-size: 1em;
-            font-weight: 600;
-            text-decoration: none;
-            transition: background-color var(--transition-speed) var(--transition-type),
-                        transform var(--transition-speed) var(--transition-type),
-                        box-shadow var(--transition-speed) var(--transition-type);
-        }
 
-        .cta-button:hover,
-        .cta-button:focus {
-            background-color: var(--button-secondary);
-            transform: translateY(-3px);
-            box-shadow: 0 0 10px var(--button-secondary);
-        }
 
         /* Responsive Styles */
         @media (min-width: 768px) {
