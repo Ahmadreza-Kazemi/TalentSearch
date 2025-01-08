@@ -817,21 +817,25 @@
 /* ======================================
    2. Call-to-Action Primary Button Styles (20% Smaller)
    Class Name: btn-cta-primary
-   Purpose: Solid fill with primary color, slightly smaller size
+   Purpose: Solid fill with primary color, slightly smaller size, fully rounded, with horizontal margins
 ====================================== */
 .btn-cta-primary {
     display: inline-block;
     background-color: var(--button-primary);
     color: var(--neutral-white);
-    padding: 19.2px 48px; /* 20% smaller than 24px 60px */
-    border-radius: var(--border-radius);
-    font-size: 1.6em; /* 20% smaller than 2em */
+    padding: 15px 38px; /* 20% smaller than 19.2px 48px */
+    border-radius: 999px; /* Fully rounded edges */
+    font-size: 1.28em; /* 20% smaller than 1.6em */
     font-weight: 600;
     text-decoration: none;
     transition: transform var(--transition-speed) var(--transition-type),
                 opacity var(--transition-speed) var(--transition-type);
     font-family: 'Vazir', sans-serif; /* Consistent font */
     border: none; /* No border for primary buttons */
+    margin: 0 10px; /* Horizontal margins */
+    height: 50px; /* Fixed height for consistency */
+    line-height: 50px; /* Align text vertically */
+    box-sizing: border-box; /* Ensure padding and border are included in height */
 }
 
 /* Hover and Focus States for Call-to-Action Primary Button */
@@ -845,21 +849,25 @@
 /* ======================================
    3. Call-to-Action Secondary Button Styles (20% Smaller)
    Class Name: btn-cta-secondary
-   Purpose: Outline style with primary color border and no fill, slightly smaller size
+   Purpose: Outline style with primary color border and no fill, slightly smaller size, fully rounded, with horizontal margins
 ====================================== */
 .btn-cta-secondary {
     display: inline-block;
     background-color: transparent; /* No fill */
     color: var(--button-primary);
-    padding: 12.8px 32px; /* 20% smaller than 16px 40px */
-    border-radius: var(--border-radius);
-    font-size: 1.6em; /* 20% smaller than 2em */
+    padding: 10px 26px; /* 20% smaller than 12.8px 32px */
+    border-radius: 999px; /* Fully rounded edges */
+    font-size: 1.28em; /* 20% smaller than 1.6em */
     font-weight: 600;
     text-decoration: none;
     transition: transform var(--transition-speed) var(--transition-type),
                 opacity var(--transition-speed) var(--transition-type);
     font-family: 'Vazir', sans-serif; /* Consistent font */
-    border: 3.2px solid var(--button-primary); /* 20% smaller than 4px */
+    border: 2.56px solid var(--button-primary); /* 20% smaller than 3.2px */
+    margin: 0 10px; /* Horizontal margins */
+    height: 50px; /* Fixed height for consistency */
+    line-height: 50px; /* Align text vertically */
+    box-sizing: border-box; /* Ensure padding and border are included in height */
 }
 
 /* Hover and Focus States for Call-to-Action Secondary Button */
