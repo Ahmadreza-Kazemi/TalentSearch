@@ -668,9 +668,9 @@
 /* Hover and Focus States for Primary Button */
 .btn-primary:hover,
 .btn-primary:focus {
-    transform: scale(1.02); /* Subtle scale effect */
     opacity: 0.95; /* Slight opacity decrease */
-    /* Removed color and box-shadow changes */
+    color: var(--neutral-white); /* Text color remains white */
+
 }
 
 /* ======================================
@@ -684,8 +684,8 @@
     color: var(--button-primary);
     padding: 8px 20px; /* Consistent padding */
     border-radius: var(--border-radius);
-    font-size: 0.9em;
-    font-weight: 500;
+    font-size: 1em;
+    font-weight: 600;
     text-decoration: none;
     transition: transform var(--transition-speed) var(--transition-type),
                 opacity var(--transition-speed) var(--transition-type);
@@ -696,9 +696,9 @@
 /* Hover and Focus States for Secondary Button */
 .btn-secondary:hover,
 .btn-secondary:focus {
-    transform: scale(1.02); /* Subtle scale effect */
     opacity: 0.95; /* Slight opacity decrease */
-    /* Removed color and border-color changes */
+    color: var(--button-primary);
+
 }
 
 
