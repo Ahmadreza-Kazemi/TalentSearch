@@ -668,7 +668,7 @@
 /* Hover and Focus States for Primary Button */
 .btn-primary:hover,
 .btn-primary:focus {
-    background-color: darken(var(--button-primary), 10%); /* Slightly darker background */
+    filter: brightness(90%); /* Reduce brightness to darken */
     text-decoration: none; /* Ensure no underline on hover/focus */
     color: var(--neutral-white); /* Ensures text color doesn't change */
 
@@ -698,7 +698,7 @@
 .btn-secondary:hover,
 .btn-secondary:focus {
     text-decoration: none; /* Ensure no underline on hover/focus */
-    border-color: darken(var(--button-primary), 90%); /* Darker border on hover */
+    filter: brightness(90%); /* Reduce brightness to darken */
     color: var(--button-primary); /* Ensures text color doesn't change */
 
 }
