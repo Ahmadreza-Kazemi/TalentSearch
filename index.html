@@ -645,95 +645,60 @@
   margin-top: var(--spacing-md);
 }
 
-.cta-button {
-  display: inline-block;
-  background-color: var(--button-primary);
-  color: var(--neutral-white);
-  padding: 12px 30px; /* Default padding */
-  border-radius: var(--border-radius);
-  font-size: 1em;
-  font-weight: 600;
-  text-decoration: none;
-  box-shadow: 0 0 10px var(--accent-golden-yellow);
-  transition: background-color var(--transition-speed) var(--transition-type),
-              transform var(--transition-speed) var(--transition-type),
-              box-shadow var(--transition-speed) var(--transition-type);
+/* ======================================
+   1. Primary Button Styles
+   Class Name: btn-primary
+   Purpose: Solid fill with primary color
+====================================== */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--button-primary);
+    color: var(--neutral-white);
+    padding: 12px 30px; /* Consistent padding */
+    border-radius: var(--border-radius);
+    font-size: 1em;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform var(--transition-speed) var(--transition-type),
+                opacity var(--transition-speed) var(--transition-type);
+    font-family: 'Vazir', sans-serif; /* Consistent font */
+    border: none; /* No border for primary buttons */
 }
 
-.cta-button:hover,
-.cta-button:focus {
-  background-color: var(--button-secondary);
-  transform: translateY(-3px); /* Default lift */
-  box-shadow: 0 0 20px var(--button-secondary); /* Default hover shadow */
+/* Hover and Focus States for Primary Button */
+.btn-primary:hover,
+.btn-primary:focus {
+    transform: scale(1.02); /* Subtle scale effect */
+    opacity: 0.95; /* Slight opacity decrease */
+    /* Removed color and box-shadow changes */
 }
 
-/* Modifiers (Optional) */
-.cta-button--small {
-  padding: 10px 24px;
+/* ======================================
+   2. Secondary Button Styles
+   Class Name: btn-secondary
+   Purpose: Outline style with primary color border and no fill
+====================================== */
+.btn-secondary {
+    display: inline-block;
+    background-color: transparent; /* No fill */
+    color: var(--button-primary);
+    padding: 8px 20px; /* Consistent padding */
+    border-radius: var(--border-radius);
+    font-size: 0.9em;
+    font-weight: 500;
+    text-decoration: none;
+    transition: transform var(--transition-speed) var(--transition-type),
+                opacity var(--transition-speed) var(--transition-type);
+    font-family: 'Vazir', sans-serif; /* Consistent font */
+    border: 2px solid var(--button-primary); /* Solid border */
 }
 
-.cta-button--lifted:hover,
-.cta-button--lifted:focus {
-  transform: translateY(-5px); /* Higher lift */
-}
-
-        
-
-/* General styles for all buttons */
-        .battery-btn {
-            background-color: var(--button-primary);
-            color: var(--neutral-white);
-            padding: 8px 20px;
-            border-radius: var(--border-radius);
-            font-size: 0.9em;
-            font-weight: 500;
-            text-decoration: none;
-            transition: background-color var(--transition-speed) var(--transition-type);
-        }
-
-        .battery-btn:hover {
-            background-color: var(--button-secondary);
-        }
-
-        
-.battery-btn, 
-.outline-btn {
-  padding: 8px 20px;
-  border-radius: var(--border-radius);
-  font-size: 0.9em;
-  font-weight: 500;
-  text-decoration: none;
-  text-align: center;
-  transition: background-color var(--transition-speed) var(--transition-type),
-              color var(--transition-speed) var(--transition-type),
-              border-color var(--transition-speed) var(--transition-type);
-  display: inline-block;
-  font-family: 'Vazir', sans-serif; /* Consistent font */
-}
-
-/* Specific styles for the filled button */
-.battery-btn {
-  background-color: var(--button-primary);
-  color: var(--neutral-white);
-  border: 2px solid var(--button-primary); /* Border for outline buttons */
-}
-
-.battery-btn:hover,
-.battery-btn:focus {
-  background-color: var(--button-secondary);
-}
-
-/* Specific styles for the outlined button */
-.outline-btn {
-  background-color: transparent; /* No background for outline buttons */
-  color: var(--button-primary); /* Text color matches border */
-  border: 2px solid var(--button-primary); /* Border for outline buttons */
-}
-
-.outline-btn:hover,
-.outline-btn:focus {
-  color: var(--button-secondary); /* Change text color on hover/focus */
-  border-color: var(--button-secondary); /* Change border color on hover/focus */
+/* Hover and Focus States for Secondary Button */
+.btn-secondary:hover,
+.btn-secondary:focus {
+    transform: scale(1.02); /* Subtle scale effect */
+    opacity: 0.95; /* Slight opacity decrease */
+    /* Removed color and border-color changes */
 }
 
 
@@ -744,7 +709,7 @@
     flex-direction: row;
     justify-content: center;
   }
-  .outline-btn .battery-btn {
+  .btn-secondary .btn-primary {
     font-size: 1em;
   }
 }
@@ -1360,7 +1325,7 @@
             <div class="hero-content">
                 <h2>رگه‌های طلایی استعداد خود را کشف کنید!</h2>
                 <p>ارائه ارزیابی‌های روان‌شناختی پیشرفته برای تعالی فردی شما</p>
-                <a href="/getting-started" class="cta-button">شروع کنید</a>
+                <a href="/getting-started" class="btn-primary">شروع کنید</a>
             </div>
         </section>
 
@@ -1418,8 +1383,8 @@
                 <p class="id">id: 110001</p>
               </div>
               <div class="battery-links">
-                <a href="/take/mental-tranquility" class="battery-btn">شروع ارزیابی</a>
-                <a href="/assessments/mental-tranquility" class="outline-btn">معرفی ارزیابی</a>
+                <a href="/take/mental-tranquility" class="btn-primary">شروع ارزیابی</a>
+                <a href="/assessments/mental-tranquility" class="btn-secondary">معرفی ارزیابی</a>
               </div>
             </div>
           </div>
@@ -1433,8 +1398,8 @@
                 <p class="id">id: 110006</p>
               </div>
               <div class="battery-links">
-                <a href="/take/adolescent-mental-hygiene" class="battery-btn">شروع ارزیابی</a>
-                <a href="/assessments/adolescent-mental-hygiene" class="outline-btn">معرفی ارزیابی</a>
+                <a href="/take/adolescent-mental-hygiene" class="btn-primary">شروع ارزیابی</a>
+                <a href="/assessments/adolescent-mental-hygiene" class="btn-secondary">معرفی ارزیابی</a>
               </div>
             </div>
           </div>
@@ -1448,8 +1413,8 @@
                 <p class="id">id: 110007</p>
               </div>
               <div class="battery-links">
-                <a href="/take/purification" class="battery-btn">شروع ارزیابی</a>
-                <a href="/assessments/purification" class="outline-btn">معرفی ارزیابی</a>
+                <a href="/take/purification" class="btn-primary">شروع ارزیابی</a>
+                <a href="/assessments/purification" class="btn-secondary">معرفی ارزیابی</a>
               </div>
             </div>
           </div>
@@ -1463,8 +1428,8 @@
                 <p class="id">id: 110008</p>
               </div>
               <div class="battery-links">
-                <a href="/take/stability" class="battery-btn">شروع ارزیابی</a>
-                <a href="/assessments/stability" class="outline-btn">معرفی ارزیابی</a>
+                <a href="/take/stability" class="btn-primary">شروع ارزیابی</a>
+                <a href="/assessments/stability" class="btn-secondary">معرفی ارزیابی</a>
               </div>
             </div>
           </div>
@@ -1478,8 +1443,8 @@
                 <p class="id">id: 110010</p>
               </div>
               <div class="battery-links">
-                <a href="/take/balance" class="battery-btn">شروع ارزیابی</a>
-                <a href="/assessments/balance" class="outline-btn">معرفی ارزیابی</a>
+                <a href="/take/balance" class="btn-primary">شروع ارزیابی</a>
+                <a href="/assessments/balance" class="btn-secondary">معرفی ارزیابی</a>
               </div>
             </div>
           </div>
@@ -1493,8 +1458,8 @@
                 <p class="id">id: 110011</p>
               </div>
               <div class="battery-links">
-                <a href="/take/mental-balance" class="battery-btn">شروع ارزیابی</a>
-                <a href="/assessments/mental-balance" class="outline-btn">معرفی ارزیابی</a>
+                <a href="/take/mental-balance" class="btn-primary">شروع ارزیابی</a>
+                <a href="/assessments/mental-balance" class="btn-secondary">معرفی ارزیابی</a>
               </div>
             </div>
           </div>
@@ -1508,8 +1473,8 @@
                 <p class="id">id: 110016</p>
               </div>
               <div class="battery-links">
-                <a href="/take/spiritual-support" class="battery-btn">شروع ارزیابی</a>
-                <a href="/assessments/spiritual-support" class="outline-btn">معرفی ارزیابی</a>
+                <a href="/take/spiritual-support" class="btn-primary">شروع ارزیابی</a>
+                <a href="/assessments/spiritual-support" class="btn-secondary">معرفی ارزیابی</a>
               </div>
             </div>
           </div>
@@ -1538,8 +1503,8 @@
                 <p class="id">id: 110002</p>
               </div>
               <div class="battery-links">
-                <a href="/take/esteem" class="battery-btn">شروع ارزیابی</a>
-                <a href="/assessments/esteem" class="outline-btn">معرفی ارزیابی</a>
+                <a href="/take/esteem" class="btn-primary">شروع ارزیابی</a>
+                <a href="/assessments/esteem" class="btn-secondary">معرفی ارزیابی</a>
               </div>
             </div>
           </div>
@@ -1553,8 +1518,8 @@
                 <p class="id">id: 110014</p>
               </div>
               <div class="battery-links">
-                <a href="/take/personal-commitment" class="battery-btn">شروع ارزیابی</a>
-                <a href="/assessments/personal-commitment" class="outline-btn">معرفی ارزیابی</a>
+                <a href="/take/personal-commitment" class="btn-primary">شروع ارزیابی</a>
+                <a href="/assessments/personal-commitment" class="btn-secondary">معرفی ارزیابی</a>
               </div>
             </div>
           </div>
@@ -1568,8 +1533,8 @@
                 <p class="id">id: 110035</p>
               </div>
               <div class="battery-links">
-                <a href="/take/cognitive-integration" class="battery-btn">شروع ارزیابی</a>
-                <a href="/assessments/cognitive-integration" class="outline-btn">معرفی ارزیابی</a>
+                <a href="/take/cognitive-integration" class="btn-primary">شروع ارزیابی</a>
+                <a href="/assessments/cognitive-integration" class="btn-secondary">معرفی ارزیابی</a>
               </div>
             </div>
           </div>
@@ -1583,8 +1548,8 @@
                 <p class="id">id: 110017</p>
               </div>
               <div class="battery-links">
-                <a href="/take/wisdom" class="battery-btn">شروع ارزیابی</a>
-                <a href="/assessments/wisdom" class="outline-btn">معرفی ارزیابی</a>
+                <a href="/take/wisdom" class="btn-primary">شروع ارزیابی</a>
+                <a href="/assessments/wisdom" class="btn-secondary">معرفی ارزیابی</a>
               </div>
             </div>
           </div>
@@ -1598,8 +1563,8 @@
                 <p class="id">id: 110018</p>
               </div>
               <div class="battery-links">
-                <a href="/take/self-expansion" class="battery-btn">شروع ارزیابی</a>
-                <a href="/assessments/self-expansion" class="outline-btn">معرفی ارزیابی</a>
+                <a href="/take/self-expansion" class="btn-primary">شروع ارزیابی</a>
+                <a href="/assessments/self-expansion" class="btn-secondary">معرفی ارزیابی</a>
               </div>
             </div>
           </div>
@@ -1613,8 +1578,8 @@
                 <p class="id">id: 110019</p>
               </div>
               <div class="battery-links">
-                <a href="/take/accuracy" class="battery-btn">شروع ارزیابی</a>
-                <a href="/assessments/accuracy" class="outline-btn">معرفی ارزیابی</a>
+                <a href="/take/accuracy" class="btn-primary">شروع ارزیابی</a>
+                <a href="/assessments/accuracy" class="btn-secondary">معرفی ارزیابی</a>
               </div>
             </div>
           </div>
@@ -1643,8 +1608,8 @@
                 <p class="id">id: 110003</p>
               </div>
               <div class="battery-links">
-                <a href="/take/child-talent-48" class="battery-btn">شروع ارزیابی</a>
-                <a href="/assessments/child-talent-48" class="outline-btn">معرفی ارزیابی</a>
+                <a href="/take/child-talent-48" class="btn-primary">شروع ارزیابی</a>
+                <a href="/assessments/child-talent-48" class="btn-secondary">معرفی ارزیابی</a>
               </div>
             </div>
           </div>
@@ -1658,8 +1623,8 @@
                 <p class="id">id: 110004</p>
               </div>
               <div class="battery-links">
-                <a href="/take/child-talent-72" class="battery-btn">شروع ارزیابی</a>
-                <a href="/assessments/child-talent-72" class="outline-btn">معرفی ارزیابی</a>
+                <a href="/take/child-talent-72" class="btn-primary">شروع ارزیابی</a>
+                <a href="/assessments/child-talent-72" class="btn-secondary">معرفی ارزیابی</a>
               </div>
             </div>
           </div>
@@ -1673,8 +1638,8 @@
                 <p class="id">id: 110025</p>
               </div>
               <div class="battery-links">
-                <a href="/take/childrens-personality" class="battery-btn">شروع ارزیابی</a>
-                <a href="/assessments/childrens-personality" class="outline-btn">معرفی ارزیابی</a>
+                <a href="/take/childrens-personality" class="btn-primary">شروع ارزیابی</a>
+                <a href="/assessments/childrens-personality" class="btn-secondary">معرفی ارزیابی</a>
               </div>
             </div>
           </div>
@@ -1703,8 +1668,8 @@
                 <p class="id">id: 110005</p>
               </div>
               <div class="battery-links">
-                <a href="/take/persistence" class="battery-btn">شروع ارزیابی</a>
-                <a href="/assessments/persistence" class="outline-btn">معرفی ارزیابی</a>
+                <a href="/take/persistence" class="btn-primary">شروع ارزیابی</a>
+                <a href="/assessments/persistence" class="btn-secondary">معرفی ارزیابی</a>
               </div>
             </div>
           </div>
@@ -1718,8 +1683,8 @@
                 <p class="id">id: 110037</p>
               </div>
               <div class="battery-links">
-                <a href="/take/talent-interaction" class="battery-btn">شروع ارزیابی</a>
-                <a href="/assessments/talent-interaction" class="outline-btn">معرفی ارزیابی</a>
+                <a href="/take/talent-interaction" class="btn-primary">شروع ارزیابی</a>
+                <a href="/assessments/talent-interaction" class="btn-secondary">معرفی ارزیابی</a>
               </div>
             </div>
           </div>
@@ -1733,8 +1698,8 @@
                 <p class="id">id: 110020</p>
               </div>
               <div class="battery-links">
-                <a href="/take/life-satisfaction" class="battery-btn">شروع ارزیابی</a>
-                <a href="/assessments/life-satisfaction" class="outline-btn">معرفی ارزیابی</a>
+                <a href="/take/life-satisfaction" class="btn-primary">شروع ارزیابی</a>
+                <a href="/assessments/life-satisfaction" class="btn-secondary">معرفی ارزیابی</a>
               </div>
             </div>
           </div>
@@ -1748,8 +1713,8 @@
                 <p class="id">id: 110036</p>
               </div>
               <div class="battery-links">
-                <a href="/take/life-satisfaction-25" class="battery-btn">شروع ارزیابی</a>
-                <a href="/assessments/life-satisfaction-25" class="outline-btn">معرفی ارزیابی</a>
+                <a href="/take/life-satisfaction-25" class="btn-primary">شروع ارزیابی</a>
+                <a href="/assessments/life-satisfaction-25" class="btn-secondary">معرفی ارزیابی</a>
               </div>
             </div>
           </div>
@@ -1778,8 +1743,8 @@
                 <p class="id">id: 110021</p>
               </div>
               <div class="battery-links">
-                <a href="/take/marital-satisfaction" class="battery-btn">شروع ارزیابی</a>
-                <a href="/assessments/marital-satisfaction" class="outline-btn">معرفی ارزیابی</a>
+                <a href="/take/marital-satisfaction" class="btn-primary">شروع ارزیابی</a>
+                <a href="/assessments/marital-satisfaction" class="btn-secondary">معرفی ارزیابی</a>
               </div>
             </div>
           </div>
@@ -1793,8 +1758,8 @@
                 <p class="id">id: 110022</p>
               </div>
               <div class="battery-links">
-                <a href="/take/job-satisfaction" class="battery-btn">شروع ارزیابی</a>
-                <a href="/assessments/job-satisfaction" class="outline-btn">معرفی ارزیابی</a>
+                <a href="/take/job-satisfaction" class="btn-primary">شروع ارزیابی</a>
+                <a href="/assessments/job-satisfaction" class="btn-secondary">معرفی ارزیابی</a>
               </div>
             </div>
           </div>
@@ -1823,8 +1788,8 @@
                 <p class="id">id: 110009</p>
               </div>
               <div class="battery-links">
-                <a href="/take/empirical-analytical" class="battery-btn">شروع ارزیابی</a>
-                <a href="/assessments/empirical-analytical" class="outline-btn">معرفی ارزیابی</a>
+                <a href="/take/empirical-analytical" class="btn-primary">شروع ارزیابی</a>
+                <a href="/assessments/empirical-analytical" class="btn-secondary">معرفی ارزیابی</a>
               </div>
             </div>
           </div>
@@ -1838,8 +1803,8 @@
                 <p class="id">id: 110026</p>
               </div>
               <div class="battery-links">
-                <a href="/take/cognitive-24" class="battery-btn">شروع ارزیابی</a>
-                <a href="/assessments/cognitive-24" class="outline-btn">معرفی ارزیابی</a>
+                <a href="/take/cognitive-24" class="btn-primary">شروع ارزیابی</a>
+                <a href="/assessments/cognitive-24" class="btn-secondary">معرفی ارزیابی</a>
               </div>
             </div>
           </div>
@@ -1853,8 +1818,8 @@
                 <p class="id">id: 110027</p>
               </div>
               <div class="battery-links">
-                <a href="/take/empirical-capacity" class="battery-btn">شروع ارزیابی</a>
-                <a href="/assessments/empirical-capacity" class="outline-btn">معرفی ارزیابی</a>
+                <a href="/take/empirical-capacity" class="btn-primary">شروع ارزیابی</a>
+                <a href="/assessments/empirical-capacity" class="btn-secondary">معرفی ارزیابی</a>
               </div>
             </div>
           </div>
@@ -1868,8 +1833,8 @@
                 <p class="id">id: 110028</p>
               </div>
               <div class="battery-links">
-                <a href="/take/cognitive-capacities" class="battery-btn">شروع ارزیابی</a>
-                <a href="/assessments/cognitive-capacities" class="outline-btn">معرفی ارزیابی</a>
+                <a href="/take/cognitive-capacities" class="btn-primary">شروع ارزیابی</a>
+                <a href="/assessments/cognitive-capacities" class="btn-secondary">معرفی ارزیابی</a>
               </div>
             </div>
           </div>
@@ -1883,8 +1848,8 @@
                 <p class="id">id: 110029</p>
               </div>
               <div class="battery-links">
-                <a href="/take/corona" class="battery-btn">شروع ارزیابی</a>
-                <a href="/assessments/corona" class="outline-btn">معرفی ارزیابی</a>
+                <a href="/take/corona" class="btn-primary">شروع ارزیابی</a>
+                <a href="/assessments/corona" class="btn-secondary">معرفی ارزیابی</a>
               </div>
             </div>
           </div>
@@ -1895,8 +1860,8 @@
         <div class="swiper-button-prev"></div>
       </div>
     </div>
-          <div class="cta-button-container" style="text-align: center; margin-top: 40px;">
-      <a href="/assessments" class="cta-button">مشاهده همه ارزیابی‌ها</a>
+          <div class="btn-primary-container" style="text-align: center; margin-top: 40px;">
+      <a href="/assessments" class="btn-primary">مشاهده همه ارزیابی‌ها</a>
     </div>
   </div> <!-- end container -->
 </section>
@@ -2022,7 +1987,7 @@
                         این‌ها تنها بخشی از <strong>۱۹۰ عامل روان‌شناختی</strong> هستند 
                         که ما در استعدادیاب با رویکرد داده‌محور تحلیل می‌کنیم.
                     </p>
-                    <a href="/resources/factors" class="cta-button">مشاهده همه عوامل</a>
+                    <a href="/resources/factors" class="btn-primary">مشاهده همه عوامل</a>
                 </div>
             </div>
         </section>
@@ -2048,7 +2013,7 @@
                             <li>گزارش مختصر و قابل فهم</li>
                             <li>پشتیبانی از طریق محتوای راهنما</li>
                         </ul>
-                        <a href="/assessments#free-tests" class="cta-button">شروع رایگان</a>
+                        <a href="/assessments#free-tests" class="btn-primary">شروع رایگان</a>
                     </div>
 
                     <!-- Paid Tests -->
@@ -2060,7 +2025,7 @@
                             <li>امکان مشاوره اختیاری</li>
                             <li>دسترسی به نتایج و پیشنهادهای تخصصی</li>
                         </ul>
-                        <a href="/assessments#premium-tests" class="cta-button">مشاهده تست‌ها</a>
+                        <a href="/assessments#premium-tests" class="btn-primary">مشاهده تست‌ها</a>
                     </div>
 
                     <!-- Negotiable Pricing -->
@@ -2072,7 +2037,7 @@
                             <li>گزارش‌های سفارشی و تحلیلی</li>
                             <li>پشتیبانی اختصاصی و داشبورد سازمانی</li>
                         </ul>
-                        <a href="/contact" class="cta-button">تماس بگیرید</a>
+                        <a href="/contact" class="btn-primary">تماس بگیرید</a>
                     </div>
                 </div>
 
