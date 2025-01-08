@@ -815,17 +815,19 @@
 }
 
 /* ======================================
-   2. Call-to-Action Primary Button Styles (20% Smaller)
+   2. Call-to-Action Primary Button Styles (10% Bigger)
    Class Name: btn-cta-primary
-   Purpose: Solid fill with primary color, slightly smaller size, fully rounded, with horizontal margins
+   Purpose: Solid fill with primary color, larger size, fully rounded, with horizontal margins
 ====================================== */
 .btn-cta-primary {
-    display: inline-block;
+    display: inline-flex; /* Use flexbox for better alignment */
+    align-items: center;  /* Vertically center the content */
+    justify-content: center; /* Horizontally center the content */
     background-color: var(--button-primary);
     color: var(--neutral-white);
-    padding: 15px 38px; /* 20% smaller than 19.2px 48px */
+    padding: 19.2px 48px; /* 10% bigger than 15px 38px */
     border-radius: 999px; /* Fully rounded edges */
-    font-size: 1.28em; /* 20% smaller than 1.6em */
+    font-size: 1.408em; /* 10% bigger than 1.28em */
     font-weight: 600;
     text-decoration: none;
     transition: transform var(--transition-speed) var(--transition-type),
@@ -833,8 +835,7 @@
     font-family: 'Vazir', sans-serif; /* Consistent font */
     border: none; /* No border for primary buttons */
     margin: 0 10px; /* Horizontal margins */
-    height: 50px; /* Fixed height for consistency */
-    line-height: 50px; /* Align text vertically */
+    height: 55px; /* Increased from 50px to maintain proportion */
     box-sizing: border-box; /* Ensure padding and border are included in height */
 }
 
@@ -847,26 +848,27 @@
 }
 
 /* ======================================
-   3. Call-to-Action Secondary Button Styles (20% Smaller)
+   3. Call-to-Action Secondary Button Styles (10% Bigger)
    Class Name: btn-cta-secondary
-   Purpose: Outline style with primary color border and no fill, slightly smaller size, fully rounded, with horizontal margins
+   Purpose: Outline style with primary color border and no fill, larger size, fully rounded, with horizontal margins
 ====================================== */
 .btn-cta-secondary {
-    display: inline-block;
+    display: inline-flex; /* Use flexbox for better alignment */
+    align-items: center;  /* Vertically center the content */
+    justify-content: center; /* Horizontally center the content */
     background-color: transparent; /* No fill */
     color: var(--button-primary);
-    padding: 10px 26px; /* 20% smaller than 12.8px 32px */
+    padding: 13px 28.6px; /* 10% bigger than 12px 26px */
     border-radius: 999px; /* Fully rounded edges */
-    font-size: 1.28em; /* 20% smaller than 1.6em */
+    font-size: 1.408em; /* 10% bigger than 1.28em */
     font-weight: 600;
     text-decoration: none;
     transition: transform var(--transition-speed) var(--transition-type),
                 opacity var(--transition-speed) var(--transition-type);
     font-family: 'Vazir', sans-serif; /* Consistent font */
-    border: 2.56px solid var(--button-primary); /* 20% smaller than 3.2px */
+    border: 2.82px solid var(--button-primary); /* 10% bigger than 2.56px */
     margin: 0 10px; /* Horizontal margins */
-    height: 50px; /* Fixed height for consistency */
-    line-height: 50px; /* Align text vertically */
+    height: 55px; /* Increased from 50px to maintain proportion */
     box-sizing: border-box; /* Ensure padding and border are included in height */
 }
 
@@ -877,6 +879,7 @@
     filter: brightness(95%); /* Reduce brightness to darken */
     color: var(--button-primary); /* Ensures text color doesn't change */
 }
+
 
 
 
