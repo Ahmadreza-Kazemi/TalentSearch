@@ -86,7 +86,7 @@
             --spacing-large: 40px;
 
             /* Border Radius */
-            --border-radius: 8px;
+            --border-radius: 4px;
 
             /* Shadows */
             --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -697,6 +697,27 @@
 .battery-btn:focus {
   background-color: var(--button-secondary);
 }
+        /* Outline style for battery-btn within Tabbed Assessments Section */
+.tabbed-assessments .outline-btn {
+    background-color: transparent; /* No fill */
+    color: var(--button-primary); /* Text color matches border */
+    border: 2px solid var(--button-primary); /* Border color */
+    padding: 8px 16px; /* Adequate padding */
+    border-radius: var(--border-radius); /* Consistent border radius */
+    text-decoration: none; /* Remove underline */
+    transition: color var(--transition-speed) var(--transition-type), border-color var(--transition-speed) var(--transition-type);
+    font-weight: 600; /* Consistent font weight */
+    display: inline-block; /* Ensure proper spacing */
+    font-family: 'Vazir', sans-serif; /* Consistent font */
+}
+
+.tabbed-assessments .outline-btn:hover,
+.tabbed-assessments .outline-btn:focus {
+    color: var(--button-secondary); /* Optional: Change text color on hover/focus */
+    border-color: var(--button-secondary); /* Optional: Change border color on hover/focus */
+    /* Optional: Add other hover effects if desired */
+}
+
 
 /* Responsive Adjustments */
 @media (min-width: 768px) {
@@ -704,8 +725,7 @@
     flex-direction: row;
     justify-content: center;
   }
-
-  .battery-btn {
+  .outline-btn .battery-btn {
     font-size: 1em;
   }
 }
@@ -1433,7 +1453,7 @@
               </div>
               <div class="battery-links">
                 <a href="/take/mental-tranquility" class="battery-btn">شروع ارزیابی</a>
-                <a href="/assessments/mental-tranquility" class="battery-btn">معرفی ارزیابی</a>
+                <a href="/assessments/mental-tranquility" class="outline-btn">معرفی ارزیابی</a>
               </div>
             </div>
           </div>
@@ -1448,7 +1468,7 @@
               </div>
               <div class="battery-links">
                 <a href="/take/adolescent-mental-hygiene" class="battery-btn">شروع ارزیابی</a>
-                <a href="/assessments/adolescent-mental-hygiene" class="battery-btn">معرفی ارزیابی</a>
+                <a href="/assessments/adolescent-mental-hygiene" class="outline-btn">معرفی ارزیابی</a>
               </div>
             </div>
           </div>
@@ -1463,7 +1483,7 @@
               </div>
               <div class="battery-links">
                 <a href="/take/purification" class="battery-btn">شروع ارزیابی</a>
-                <a href="/assessments/purification" class="battery-btn">معرفی ارزیابی</a>
+                <a href="/assessments/purification" class="outline-btn">معرفی ارزیابی</a>
               </div>
             </div>
           </div>
@@ -1478,7 +1498,7 @@
               </div>
               <div class="battery-links">
                 <a href="/take/stability" class="battery-btn">شروع ارزیابی</a>
-                <a href="/assessments/stability" class="battery-btn">معرفی ارزیابی</a>
+                <a href="/assessments/stability" class="outline-btn">معرفی ارزیابی</a>
               </div>
             </div>
           </div>
@@ -1493,7 +1513,7 @@
               </div>
               <div class="battery-links">
                 <a href="/take/balance" class="battery-btn">شروع ارزیابی</a>
-                <a href="/assessments/balance" class="battery-btn">معرفی ارزیابی</a>
+                <a href="/assessments/balance" class="outline-btn">معرفی ارزیابی</a>
               </div>
             </div>
           </div>
@@ -1508,7 +1528,7 @@
               </div>
               <div class="battery-links">
                 <a href="/take/mental-balance" class="battery-btn">شروع ارزیابی</a>
-                <a href="/assessments/mental-balance" class="battery-btn">معرفی ارزیابی</a>
+                <a href="/assessments/mental-balance" class="outline-btn">معرفی ارزیابی</a>
               </div>
             </div>
           </div>
@@ -1523,7 +1543,7 @@
               </div>
               <div class="battery-links">
                 <a href="/take/spiritual-support" class="battery-btn">شروع ارزیابی</a>
-                <a href="/assessments/spiritual-support" class="battery-btn">معرفی ارزیابی</a>
+                <a href="/assessments/spiritual-support" class="outline-btn">معرفی ارزیابی</a>
               </div>
             </div>
           </div>
@@ -1553,7 +1573,7 @@
               </div>
               <div class="battery-links">
                 <a href="/take/esteem" class="battery-btn">شروع ارزیابی</a>
-                <a href="/assessments/esteem" class="battery-btn">معرفی ارزیابی</a>
+                <a href="/assessments/esteem" class="outline-btn">معرفی ارزیابی</a>
               </div>
             </div>
           </div>
@@ -1568,7 +1588,7 @@
               </div>
               <div class="battery-links">
                 <a href="/take/personal-commitment" class="battery-btn">شروع ارزیابی</a>
-                <a href="/assessments/personal-commitment" class="battery-btn">معرفی ارزیابی</a>
+                <a href="/assessments/personal-commitment" class="outline-btn">معرفی ارزیابی</a>
               </div>
             </div>
           </div>
@@ -1583,7 +1603,7 @@
               </div>
               <div class="battery-links">
                 <a href="/take/cognitive-integration" class="battery-btn">شروع ارزیابی</a>
-                <a href="/assessments/cognitive-integration" class="battery-btn">معرفی ارزیابی</a>
+                <a href="/assessments/cognitive-integration" class="outline-btn">معرفی ارزیابی</a>
               </div>
             </div>
           </div>
@@ -1598,7 +1618,7 @@
               </div>
               <div class="battery-links">
                 <a href="/take/wisdom" class="battery-btn">شروع ارزیابی</a>
-                <a href="/assessments/wisdom" class="battery-btn">معرفی ارزیابی</a>
+                <a href="/assessments/wisdom" class="outline-btn">معرفی ارزیابی</a>
               </div>
             </div>
           </div>
@@ -1613,7 +1633,7 @@
               </div>
               <div class="battery-links">
                 <a href="/take/self-expansion" class="battery-btn">شروع ارزیابی</a>
-                <a href="/assessments/self-expansion" class="battery-btn">معرفی ارزیابی</a>
+                <a href="/assessments/self-expansion" class="outline-btn">معرفی ارزیابی</a>
               </div>
             </div>
           </div>
@@ -1628,7 +1648,7 @@
               </div>
               <div class="battery-links">
                 <a href="/take/accuracy" class="battery-btn">شروع ارزیابی</a>
-                <a href="/assessments/accuracy" class="battery-btn">معرفی ارزیابی</a>
+                <a href="/assessments/accuracy" class="outline-btn">معرفی ارزیابی</a>
               </div>
             </div>
           </div>
@@ -1658,7 +1678,7 @@
               </div>
               <div class="battery-links">
                 <a href="/take/child-talent-48" class="battery-btn">شروع ارزیابی</a>
-                <a href="/assessments/child-talent-48" class="battery-btn">معرفی ارزیابی</a>
+                <a href="/assessments/child-talent-48" class="outline-btn">معرفی ارزیابی</a>
               </div>
             </div>
           </div>
@@ -1673,7 +1693,7 @@
               </div>
               <div class="battery-links">
                 <a href="/take/child-talent-72" class="battery-btn">شروع ارزیابی</a>
-                <a href="/assessments/child-talent-72" class="battery-btn">معرفی ارزیابی</a>
+                <a href="/assessments/child-talent-72" class="outline-btn">معرفی ارزیابی</a>
               </div>
             </div>
           </div>
@@ -1688,7 +1708,7 @@
               </div>
               <div class="battery-links">
                 <a href="/take/childrens-personality" class="battery-btn">شروع ارزیابی</a>
-                <a href="/assessments/childrens-personality" class="battery-btn">معرفی ارزیابی</a>
+                <a href="/assessments/childrens-personality" class="outline-btn">معرفی ارزیابی</a>
               </div>
             </div>
           </div>
@@ -1718,7 +1738,7 @@
               </div>
               <div class="battery-links">
                 <a href="/take/persistence" class="battery-btn">شروع ارزیابی</a>
-                <a href="/assessments/persistence" class="battery-btn">معرفی ارزیابی</a>
+                <a href="/assessments/persistence" class="outline-btn">معرفی ارزیابی</a>
               </div>
             </div>
           </div>
@@ -1733,7 +1753,7 @@
               </div>
               <div class="battery-links">
                 <a href="/take/talent-interaction" class="battery-btn">شروع ارزیابی</a>
-                <a href="/assessments/talent-interaction" class="battery-btn">معرفی ارزیابی</a>
+                <a href="/assessments/talent-interaction" class="outline-btn">معرفی ارزیابی</a>
               </div>
             </div>
           </div>
@@ -1748,7 +1768,7 @@
               </div>
               <div class="battery-links">
                 <a href="/take/life-satisfaction" class="battery-btn">شروع ارزیابی</a>
-                <a href="/assessments/life-satisfaction" class="battery-btn">معرفی ارزیابی</a>
+                <a href="/assessments/life-satisfaction" class="outline-btn">معرفی ارزیابی</a>
               </div>
             </div>
           </div>
@@ -1763,7 +1783,7 @@
               </div>
               <div class="battery-links">
                 <a href="/take/life-satisfaction-25" class="battery-btn">شروع ارزیابی</a>
-                <a href="/assessments/life-satisfaction-25" class="battery-btn">معرفی ارزیابی</a>
+                <a href="/assessments/life-satisfaction-25" class="outline-btn">معرفی ارزیابی</a>
               </div>
             </div>
           </div>
@@ -1793,7 +1813,7 @@
               </div>
               <div class="battery-links">
                 <a href="/take/marital-satisfaction" class="battery-btn">شروع ارزیابی</a>
-                <a href="/assessments/marital-satisfaction" class="battery-btn">معرفی ارزیابی</a>
+                <a href="/assessments/marital-satisfaction" class="outline-btn">معرفی ارزیابی</a>
               </div>
             </div>
           </div>
@@ -1808,7 +1828,7 @@
               </div>
               <div class="battery-links">
                 <a href="/take/job-satisfaction" class="battery-btn">شروع ارزیابی</a>
-                <a href="/assessments/job-satisfaction" class="battery-btn">معرفی ارزیابی</a>
+                <a href="/assessments/job-satisfaction" class="outline-btn">معرفی ارزیابی</a>
               </div>
             </div>
           </div>
@@ -1838,7 +1858,7 @@
               </div>
               <div class="battery-links">
                 <a href="/take/empirical-analytical" class="battery-btn">شروع ارزیابی</a>
-                <a href="/assessments/empirical-analytical" class="battery-btn">معرفی ارزیابی</a>
+                <a href="/assessments/empirical-analytical" class="outline-btn">معرفی ارزیابی</a>
               </div>
             </div>
           </div>
@@ -1853,7 +1873,7 @@
               </div>
               <div class="battery-links">
                 <a href="/take/cognitive-24" class="battery-btn">شروع ارزیابی</a>
-                <a href="/assessments/cognitive-24" class="battery-btn">معرفی ارزیابی</a>
+                <a href="/assessments/cognitive-24" class="outline-btn">معرفی ارزیابی</a>
               </div>
             </div>
           </div>
@@ -1868,7 +1888,7 @@
               </div>
               <div class="battery-links">
                 <a href="/take/empirical-capacity" class="battery-btn">شروع ارزیابی</a>
-                <a href="/assessments/empirical-capacity" class="battery-btn">معرفی ارزیابی</a>
+                <a href="/assessments/empirical-capacity" class="outline-btn">معرفی ارزیابی</a>
               </div>
             </div>
           </div>
@@ -1883,7 +1903,7 @@
               </div>
               <div class="battery-links">
                 <a href="/take/cognitive-capacities" class="battery-btn">شروع ارزیابی</a>
-                <a href="/assessments/cognitive-capacities" class="battery-btn">معرفی ارزیابی</a>
+                <a href="/assessments/cognitive-capacities" class="outline-btn">معرفی ارزیابی</a>
               </div>
             </div>
           </div>
@@ -1898,7 +1918,7 @@
               </div>
               <div class="battery-links">
                 <a href="/take/corona" class="battery-btn">شروع ارزیابی</a>
-                <a href="/assessments/corona" class="battery-btn">معرفی ارزیابی</a>
+                <a href="/assessments/corona" class="outline-btn">معرفی ارزیابی</a>
               </div>
             </div>
           </div>
@@ -1908,6 +1928,9 @@
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
       </div>
+    </div>
+          <div class="cta-button-container" style="text-align: center; margin-top: 40px;">
+      <a href="/assessments" class="cta-button">مشاهده همه ارزیابی‌ها</a>
     </div>
   </div> <!-- end container -->
 </section>
