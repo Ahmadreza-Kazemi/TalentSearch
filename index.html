@@ -1344,146 +1344,391 @@
             </div>
         </section>
 
-        <!-- Tabbed Assessments Section -->
-        <section class="section tabbed-assessments" id="tabbed-assessments">
-          <div class="container">
-            <!-- Section Title & Intro Text -->
-            <h2 class="section-title">ارزیابی‌های دسته‌بندی‌شده</h2>
-            <p class="section-text">
-              در این بخش، ارزیابی‌ها بر اساس دسته‌بندی‌های مختلف در اختیار شما قرار می‌گیرند.
-              روی هر تب کلیک کنید تا فهرست ارزیابی‌های مربوط را در قالب اسلایدر مشاهده کنید.
-            </p>
+       <!-- =========================================
+     Tabbed Assessments Section (Updated)
+========================================= -->
+<section class="section tabbed-assessments" id="tabbed-assessments">
+  <div class="container">
+    <!-- Section Title & Intro Text -->
+    <h2 class="section-title">ارزیابی‌های دسته‌بندی‌شده</h2>
+    <p class="section-text">
+      در این بخش، ارزیابی‌ها بر اساس دسته‌بندی‌های مختلف در اختیار شما قرار می‌گیرند.
+      روی هر تب کلیک کنید تا فهرست ارزیابی‌های مربوط را در قالب اسلایدر مشاهده کنید.
+    </p>
 
-            <!-- Tabs Navigation -->
-            <div class="tabs-navigation">
-              <!-- Each button is tied to a specific tab content below (data-tab="category1" etc.) -->
-              <button class="tab-link active" data-tab="category1">ارزیابی‌های آرامش روانی</button>
-              <button class="tab-link" data-tab="category2">ارزیابی‌های عزت نفس</button>
-              <button class="tab-link" data-tab="category3">استعدادهای ویژه کودکان</button>
-              <!-- Add more tabs as needed -->
-            </div>
+    <!-- Tabs Navigation -->
+    <div class="tabs-navigation">
+      <!-- Four sample categories (tabs). 
+           You can rename or add/remove tabs as needed. -->
+      <button class="tab-link active" data-tab="category1">ارزیابی‌های سلامت روان</button>
+      <button class="tab-link" data-tab="category2">ارزیابی‌های شخصیت و عزت‌نفس</button>
+      <button class="tab-link" data-tab="category3">ارزیابی‌های کودکان</button>
+      <button class="tab-link" data-tab="category4">ارزیابی‌های زندگی و رشد فردی</button>
+    </div>
 
-            <!-- =====================
-                 Tab Content #1
-            ====================== -->
-            <div id="category1" class="tab-content active">
-              <div class="swiper swiper-category1">
-                <div class="swiper-wrapper">
-                  <!-- Slide 1 -->
-                  <div class="swiper-slide">
-                    <h3>فهرست آرامش روانی - 33</h3>
-                    <p class="description">
-                      این ارزیابی به سنجش میزان آرامش روانی و مدیریت استرس شما می‌پردازد.
-                    </p>
-                    <p class="id">ID: 110001</p>
-                    <div class="battery-links">
-                      <a href="/take/mental-tranquility" class="battery-btn">شروع ارزیابی</a>
-                      <a href="/assessments/mental-tranquility" class="battery-btn">معرفی ارزیابی</a>
-                    </div>
-                  </div>
-                  <!-- Slide 2 -->
-                  <div class="swiper-slide">
-                    <h3>فهرست آرامش روانی - 45</h3>
-                    <p class="description">
-                      این ارزیابی نسخه جامع‌تر و پیشرفته برای سنجش آرامش ذهنی شماست.
-                    </p>
-                    <p class="id">ID: 110004</p>
-                    <div class="battery-links">
-                      <a href="/take/mental-tranquility-advanced" class="battery-btn">شروع ارزیابی</a>
-                      <a href="/assessments/mental-tranquility-advanced" class="battery-btn">معرفی ارزیابی</a>
-                    </div>
-                  </div>
-                  <!-- Add more slides as needed -->
-                </div>
-                <!-- Pagination & Navigation (optional) -->
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-              </div>
-            </div>
+    <!-- =====================
+         Tab Content #1 (Active)
+         Example Category: سلامت روان
+    ====================== -->
+    <div id="category1" class="tab-content active">
+      <!--
+        Below is an example grouping for "سلامت روان."
+        You can rearrange or rename as you see fit.
+      -->
+      <!-- inventory 1 -->
+      <div class="battery-card">
+        <div>
+          <h3>فهرست آرامش روانی - 33</h3>
+          <p class="description">این ارزیابی به سنجش میزان آرامش روانی و توانایی مدیریت استرس شما می‌پردازد.</p>
+          <p class="id">id: 110001</p>
+        </div>
+        <div class="battery-links">
+          <a href="/take/mental-tranquility" class="battery-btn">شروع ارزیابی</a>
+          <a href="/assessments/mental-tranquility" class="battery-btn">معرفی ارزیابی</a>
+        </div>
+      </div>
 
-            <!-- =====================
-                 Tab Content #2
-            ====================== -->
-            <div id="category2" class="tab-content">
-              <div class="swiper swiper-category2">
-                <div class="swiper-wrapper">
-                  <!-- Slide 1 -->
-                  <div class="swiper-slide">
-                    <h3>فهرست ارجمندی - 17</h3>
-                    <p class="description">
-                      این ارزیابی به بررسی سطح ارجمندی و خودارزیابی مثبت شما می‌پردازد.
-                    </p>
-                    <p class="id">ID: 110002</p>
-                    <div class="battery-links">
-                      <a href="/take/esteem" class="battery-btn">شروع ارزیابی</a>
-                      <a href="/assessments/esteem" class="battery-btn">معرفی ارزیابی</a>
-                    </div>
-                  </div>
-                  <!-- Slide 2 -->
-                  <div class="swiper-slide">
-                    <h3>فهرست اعتماد به نفس - 20</h3>
-                    <p class="description">
-                      برای بررسی میزان اعتمادبه‌نفس کلی و نقش آن در تصمیم‌گیری‌های روزمره.
-                    </p>
-                    <p class="id">ID: 110005</p>
-                    <div class="battery-links">
-                      <a href="/take/self-confidence" class="battery-btn">شروع ارزیابی</a>
-                      <a href="/assessments/self-confidence" class="battery-btn">معرفی ارزیابی</a>
-                    </div>
-                  </div>
-                  <!-- Add more slides as needed -->
-                </div>
-                <!-- Pagination & Navigation (optional) -->
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-              </div>
-            </div>
+      <!-- inventory 6 -->
+      <div class="battery-card">
+        <div>
+          <h3>فهرست بهداشت روان نوجوان - 46</h3>
+          <p class="description">این ارزیابی به بررسی سلامت روانی و بهداشت روانی نوجوانان می‌پردازد.</p>
+          <p class="id">id: 110006</p>
+        </div>
+        <div class="battery-links">
+          <a href="/take/adolescent-mental-hygiene" class="battery-btn">شروع ارزیابی</a>
+          <a href="/assessments/adolescent-mental-hygiene" class="battery-btn">معرفی ارزیابی</a>
+        </div>
+      </div>
 
-            <!-- =====================
-                 Tab Content #3
-            ====================== -->
-            <div id="category3" class="tab-content">
-              <div class="swiper swiper-category3">
-                <div class="swiper-wrapper">
-                  <!-- Slide 1 -->
-                  <div class="swiper-slide">
-                    <h3>فهرست استعداد کودک - 48</h3>
-                    <p class="description">
-                      این ارزیابی برای شناسایی استعدادهای بالقوه کودکان طراحی شده است.
-                    </p>
-                    <p class="id">ID: 110003</p>
-                    <div class="battery-links">
-                      <a href="/take/child-talent-48" class="battery-btn">شروع ارزیابی</a>
-                      <a href="/assessments/child-talent-48" class="battery-btn">معرفی ارزیابی</a>
-                    </div>
-                  </div>
-                  <!-- Slide 2 -->
-                  <div class="swiper-slide">
-                    <h3>فهرست مهارت‌های اجتماعی کودک - 22</h3>
-                    <p class="description">
-                      بررسی میزان مهارت‌های ارتباطی و تعامل اجتماعی در کودکان سنین مختلف.
-                    </p>
-                    <p class="id">ID: 110006</p>
-                    <div class="battery-links">
-                      <a href="/take/child-social-skills" class="battery-btn">شروع ارزیابی</a>
-                      <a href="/assessments/child-social-skills" class="battery-btn">معرفی ارزیابی</a>
-                    </div>
-                  </div>
-                  <!-- Add more slides as needed -->
-                </div>
-                <!-- Pagination & Navigation (optional) -->
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-              </div>
-            </div>
-            
-            <!-- Add additional category tabs/contents as needed -->
+      <!-- inventory 7 -->
+      <div class="battery-card">
+        <div>
+          <h3>فهرست پاکزیستی - 20</h3>
+          <p class="description">این ارزیابی به بررسی میزان پاکیزگی و بهداشت شخصی شما می‌پردازد.</p>
+          <p class="id">id: 110007</p>
+        </div>
+        <div class="battery-links">
+          <a href="/take/purification" class="battery-btn">شروع ارزیابی</a>
+          <a href="/assessments/purification" class="battery-btn">معرفی ارزیابی</a>
+        </div>
+      </div>
 
-          </div> <!-- end container -->
-        </section>
+      <!-- inventory 8 -->
+      <div class="battery-card">
+        <div>
+          <h3>فهرست پایایی - 29</h3>
+          <p class="description">این ارزیابی به سنجش میزان پایایی و ثبات احساسی شما می‌پردازد.</p>
+          <p class="id">id: 110008</p>
+        </div>
+        <div class="battery-links">
+          <a href="/take/stability" class="battery-btn">شروع ارزیابی</a>
+          <a href="/assessments/stability" class="battery-btn">معرفی ارزیابی</a>
+        </div>
+      </div>
+
+      <!-- inventory 10 -->
+      <div class="battery-card">
+        <div>
+          <h3>فهرست تعادل - 38</h3>
+          <p class="description">این ارزیابی به بررسی تعادل میان زندگی شخصی و حرفه‌ای شما می‌پردازد.</p>
+          <p class="id">id: 110010</p>
+        </div>
+        <div class="battery-links">
+          <a href="/take/balance" class="battery-btn">شروع ارزیابی</a>
+          <a href="/assessments/balance" class="battery-btn">معرفی ارزیابی</a>
+        </div>
+      </div>
+
+      <!-- inventory 11 -->
+      <div class="battery-card">
+        <div>
+          <h3>فهرست تعادل روان - 94</h3>
+          <p class="description">این ارزیابی به سنجش تعادل روانی و سلامت روان شما می‌پردازد.</p>
+          <p class="id">id: 110011</p>
+        </div>
+        <div class="battery-links">
+          <a href="/take/mental-balance" class="battery-btn">شروع ارزیابی</a>
+          <a href="/assessments/mental-balance" class="battery-btn">معرفی ارزیابی</a>
+        </div>
+      </div>
+
+      <!-- inventory 16 -->
+      <div class="battery-card">
+        <div>
+          <h3>فهرست حمایت معنوی - 28</h3>
+          <p class="description">این ارزیابی میزان حمایت معنوی و روانی شما را بررسی می‌کند.</p>
+          <p class="id">id: 110016</p>
+        </div>
+        <div class="battery-links">
+          <a href="/take/spiritual-support" class="battery-btn">شروع ارزیابی</a>
+          <a href="/assessments/spiritual-support" class="battery-btn">معرفی ارزیابی</a>
+        </div>
+      </div>
+
+      <!-- (Add or remove as you see fit for "سلامت روان") -->
+      <!-- ... -->
+    </div>
+
+    <!-- =====================
+         Tab Content #2
+         Example Category: شخصیت و عزت‌نفس
+    ====================== -->
+    <div id="category2" class="tab-content">
+      <!-- inventory 2 -->
+      <div class="battery-card">
+        <div>
+          <h3>فهرست ارجمندی - 17</h3>
+          <p class="description">این ارزیابی به بررسی سطح ارجمندی و خودارزیابی مثبت شما می‌پردازد.</p>
+          <p class="id">id: 110002</p>
+        </div>
+        <div class="battery-links">
+          <a href="/take/esteem" class="battery-btn">شروع ارزیابی</a>
+          <a href="/assessments/esteem" class="battery-btn">معرفی ارزیابی</a>
+        </div>
+      </div>
+
+      <!-- inventory 9 -->
+      <div class="battery-card">
+        <div>
+          <h3>فهرست تحلیلی تجربی - 42</h3>
+          <p class="description">این ارزیابی توانایی‌های تحلیلی و تجربی شما را بررسی می‌کند.</p>
+          <p class="id">id: 110009</p>
+        </div>
+        <div class="battery-links">
+          <a href="/take/empirical-analytical" class="battery-btn">شروع ارزیابی</a>
+          <a href="/assessments/empirical-analytical" class="battery-btn">معرفی ارزیابی</a>
+        </div>
+      </div>
+
+      <!-- inventory 13 -->
+      <div class="battery-card">
+        <div>
+          <h3>فهرست تعاملی شخصیت - 62</h3>
+          <p class="description">این ارزیابی به بررسی تعامل شخصیت شما با دیگران می‌پردازد.</p>
+          <p class="id">id: 110013</p>
+        </div>
+        <div class="battery-links">
+          <a href="/take/personality-interaction" class="battery-btn">شروع ارزیابی</a>
+          <a href="/assessments/personality-interaction" class="battery-btn">معرفی ارزیابی</a>
+        </div>
+      </div>
+
+      <!-- inventory 14 -->
+      <div class="battery-card">
+        <div>
+          <h3>فهرست تعهد فردی - 12</h3>
+          <p class="description">این ارزیابی میزان تعهد شما به اهداف و مسئولیت‌ها را سنجش می‌کند.</p>
+          <p class="id">id: 110014</p>
+        </div>
+        <div class="battery-links">
+          <a href="/take/personal-commitment" class="battery-btn">شروع ارزیابی</a>
+          <a href="/assessments/personal-commitment" class="battery-btn">معرفی ارزیابی</a>
+        </div>
+      </div>
+
+      <!-- inventory 15 -->
+      <div class="battery-card">
+        <div>
+          <h3>فهرست حریم فردی - 24</h3>
+          <p class="description">این ارزیابی به بررسی نیازها و احترام به حریم شخصی شما می‌پردازد.</p>
+          <p class="id">id: 110015</p>
+        </div>
+        <div class="battery-links">
+          <a href="/take/personal-space" class="battery-btn">شروع ارزیابی</a>
+          <a href="/assessments/personal-space" class="battery-btn">معرفی ارزیابی</a>
+        </div>
+      </div>
+
+      <!-- inventory 17 -->
+      <div class="battery-card">
+        <div>
+          <h3>فهرست خردمندی - 25</h3>
+          <p class="description">این ارزیابی به سنجش میزان خردمندی و درک عمیق شما می‌پردازد.</p>
+          <p class="id">id: 110017</p>
+        </div>
+        <div class="battery-links">
+          <a href="/take/wisdom" class="battery-btn">شروع ارزیابی</a>
+          <a href="/assessments/wisdom" class="battery-btn">معرفی ارزیابی</a>
+        </div>
+      </div>
+
+      <!-- inventory 18 -->
+      <div class="battery-card">
+        <div>
+          <h3>فهرست خود گستری - 62</h3>
+          <p class="description">این ارزیابی به بررسی میزان خودگسترایی و توسعه شخصی شما می‌پردازد.</p>
+          <p class="id">id: 110018</p>
+        </div>
+        <div class="battery-links">
+          <a href="/take/self-expansion" class="battery-btn">شروع ارزیابی</a>
+          <a href="/assessments/self-expansion" class="battery-btn">معرفی ارزیابی</a>
+        </div>
+      </div>
+
+      <!-- inventory 19 -->
+      <div class="battery-card">
+        <div>
+          <h3>فهرست درستی - 17</h3>
+          <p class="description">این ارزیابی به سنجش دقت و صحت در تفکر و عمل شما می‌پردازد.</p>
+          <p class="id">id: 110019</p>
+        </div>
+        <div class="battery-links">
+          <a href="/take/accuracy" class="battery-btn">شروع ارزیابی</a>
+          <a href="/assessments/accuracy" class="battery-btn">معرفی ارزیابی</a>
+        </div>
+      </div>
+
+      <!-- inventory 9, 27, 28, 26, etc. could also fit here if you prefer ... -->
+      <!-- (Continue adding inventories that revolve around شخصیت, عزت‌نفس, or self-related aspects) -->
+    </div>
+
+    <!-- =====================
+         Tab Content #3
+         Example Category: کودکان
+    ====================== -->
+    <div id="category3" class="tab-content">
+      <!-- inventory 3 -->
+      <div class="battery-card">
+        <div>
+          <h3>فهرست استعداد کودک - 48</h3>
+          <p class="description">این ارزیابی برای شناسایی استعدادهای بالقوه کودکان طراحی شده است.</p>
+          <p class="id">id: 110003</p>
+        </div>
+        <div class="battery-links">
+          <a href="/take/child-talent-48" class="battery-btn">شروع ارزیابی</a>
+          <a href="/assessments/child-talent-48" class="battery-btn">معرفی ارزیابی</a>
+        </div>
+      </div>
+
+      <!-- inventory 4 -->
+      <div class="battery-card">
+        <div>
+          <h3>فهرست استعداد کودک - 72</h3>
+          <p class="description">این ارزیابی برای بررسی و توسعه استعدادهای ویژه کودکان مورد استفاده قرار می‌گیرد.</p>
+          <p class="id">id: 110004</p>
+        </div>
+        <div class="battery-links">
+          <a href="/take/child-talent-72" class="battery-btn">شروع ارزیابی</a>
+          <a href="/assessments/child-talent-72" class="battery-btn">معرفی ارزیابی</a>
+        </div>
+      </div>
+
+      <!-- inventory 25 -->
+      <div class="battery-card">
+        <div>
+          <h3>فهرست شخصیت کودکان - 50</h3>
+          <p class="description">این ارزیابی به بررسی ویژگی‌های شخصیتی کودکان می‌پردازد.</p>
+          <p class="id">id: 110025</p>
+        </div>
+        <div class="battery-links">
+          <a href="/take/childrens-personality" class="battery-btn">شروع ارزیابی</a>
+          <a href="/assessments/childrens-personality" class="battery-btn">معرفی ارزیابی</a>
+        </div>
+      </div>
+      <!-- (Add any other child-related inventories if desired) -->
+    </div>
+
+    <!-- =====================
+         Tab Content #4
+         Example Category: زندگی و رشد فردی
+    ====================== -->
+    <div id="category4" class="tab-content">
+      <!-- inventory 5 -->
+      <div class="battery-card">
+        <div>
+          <h3>فهرست استواری پویش - 32</h3>
+          <p class="description">این ارزیابی میزان استواری و پویایی شما در مواجهه با چالش‌ها را سنجش می‌کند.</p>
+          <p class="id">id: 110005</p>
+        </div>
+        <div class="battery-links">
+          <a href="/take/persistence" class="battery-btn">شروع ارزیابی</a>
+          <a href="/assessments/persistence" class="battery-btn">معرفی ارزیابی</a>
+        </div>
+      </div>
+
+      <!-- inventory 12 -->
+      <div class="battery-card">
+        <div>
+          <h3>فهرست تعالی فردی - 37</h3>
+          <p class="description">این ارزیابی به بررسی سطح تعالی و رشد شخصی شما می‌پردازد.</p>
+          <p class="id">id: 110012</p>
+        </div>
+        <div class="battery-links">
+          <a href="/take/personal-excellence" class="battery-btn">شروع ارزیابی</a>
+          <a href="/assessments/personal-excellence" class="battery-btn">معرفی ارزیابی</a>
+        </div>
+      </div>
+
+      <!-- inventory 20 -->
+      <div class="battery-card">
+        <div>
+          <h3>فهرست رضایت از زندگی - 24</h3>
+          <p class="description">این ارزیابی میزان رضایت شما از جنبه‌های مختلف زندگی را بررسی می‌کند.</p>
+          <p class="id">id: 110020</p>
+        </div>
+        <div class="battery-links">
+          <a href="/take/life-satisfaction" class="battery-btn">شروع ارزیابی</a>
+          <a href="/assessments/life-satisfaction" class="battery-btn">معرفی ارزیابی</a>
+        </div>
+      </div>
+
+      <!-- inventory 21 -->
+      <div class="battery-card">
+        <div>
+          <h3>فهرست رضایت زناشویی - 38</h3>
+          <p class="description">این ارزیابی به بررسی رضایت شما از زندگی زناشویی می‌پردازد.</p>
+          <p class="id">id: 110021</p>
+        </div>
+        <div class="battery-links">
+          <a href="/take/marital-satisfaction" class="battery-btn">شروع ارزیابی</a>
+          <a href="/assessments/marital-satisfaction" class="battery-btn">معرفی ارزیابی</a>
+        </div>
+      </div>
+
+      <!-- inventory 22 -->
+      <div class="battery-card">
+        <div>
+          <h3>فهرست رضایت شغلی - 29</h3>
+          <p class="description">این ارزیابی میزان رضایت شما از محیط و شرایط کاری را سنجش می‌کند.</p>
+          <p class="id">id: 110022</p>
+        </div>
+        <div class="battery-links">
+          <a href="/take/job-satisfaction" class="battery-btn">شروع ارزیابی</a>
+          <a href="/assessments/job-satisfaction" class="battery-btn">معرفی ارزیابی</a>
+        </div>
+      </div>
+
+      <!-- inventory 23 -->
+      <div class="battery-card">
+        <div>
+          <h3>فهرست سر زندگی - 24</h3>
+          <p class="description">این ارزیابی به بررسی نقاط اوج و دستاوردهای زندگی شما می‌پردازد.</p>
+          <p class="id">id: 110023</p>
+        </div>
+        <div class="battery-links">
+          <a href="/take/life-summit" class="battery-btn">شروع ارزیابی</a>
+          <a href="/assessments/life-summit" class="battery-btn">معرفی ارزیابی</a>
+        </div>
+      </div>
+
+      <!-- inventory 36 -->
+      <div class="battery-card">
+        <div>
+          <h3>فهرست رضایت از زندگی - 25</h3>
+          <p class="description">این ارزیابی به بررسی سطح رضایت شما از جنبه‌های مختلف زندگی می‌پردازد.</p>
+          <p class="id">id: 110036</p>
+        </div>
+        <div class="battery-links">
+          <a href="/take/life-satisfaction-25" class="battery-btn">شروع ارزیابی</a>
+          <a href="/assessments/life-satisfaction-25" class="battery-btn">معرفی ارزیابی</a>
+        </div>
+      </div>
+
+      <!-- (Continue grouping or adjusting as desired for "زندگی و رشد فردی") -->
+    </div>
+  </div> <!-- end container -->
+</section>
 
         <!-- Diagnostic Factors (Data-Driven) Section -->
         <section id="diagnostic-factors" class="section factors-section">
