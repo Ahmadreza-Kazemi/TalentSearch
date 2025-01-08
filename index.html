@@ -232,44 +232,6 @@
             margin-bottom: var(--spacing-lg);
         }
 
-        /* Swiper Specific Styles for Services */
-        .swiper-services {
-            width: 100%;
-            padding-bottom: 30px;
-        }
-
-        .swiper-services .swiper-wrapper {
-            display: flex;
-        }
-
-        .swiper-services .swiper-slide {
-            background-color: var(--neutral-cool-gray);
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow-card);
-            transition: transform var(--transition-speed) var(--transition-type),
-                        box-shadow var(--transition-speed) var(--transition-type);
-            height: auto; /* Adjust height based on content */
-        }
-
-        .swiper-services .swiper-slide:hover,
-        .swiper-services .swiper-slide:focus-within {
-            box-shadow: var(--shadow-hover);
-        }
-
-        .swiper-services .swiper-slide h3 {
-            font-size: 1.2em;
-            font-weight: 700;
-            color: var(--primary-deep-blue);
-            margin-bottom: var(--spacing-sm);
-        }
-
-        .swiper-services .swiper-slide p {
-            font-size: 0.95em;
-            color: var(--text-secondary);
-            line-height: 1.6;
-            margin-bottom: var(--spacing-sm);
-        }
-
         /* ---------------------------------------------------
            4.4. Assessments Slider Section
         --------------------------------------------------- */
@@ -288,50 +250,6 @@
             margin-bottom: var(--spacing-lg);
         }
 
-        /* Swiper Specific Styles for Assessments */
-        .swiper-assessments {
-            width: 100%;
-            padding-bottom: 50px;
-        }
-
-        .swiper-assessments .swiper-wrapper {
-            display: flex;
-        }
-
-        .swiper-assessments .swiper-slide {
-            background-color: var(--neutral-cool-gray);
-            padding: var(--spacing-md);
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow-card);
-            transition: transform var(--transition-speed) var(--transition-type),
-                        box-shadow var(--transition-speed) var(--transition-type);
-            height: auto; /* Adjust height based on content */
-        }
-
-        .swiper-assessments .swiper-slide:hover,
-        .swiper-assessments .swiper-slide:focus-within {
-            box-shadow: var(--shadow-hover);
-        }
-
-        .swiper-assessments .swiper-slide h3 {
-            font-size: 1.2em;
-            font-weight: 700;
-            color: var(--primary-deep-blue);
-            margin-bottom: var(--spacing-sm);
-        }
-
-        .swiper-assessments .swiper-slide p.description {
-            font-size: 0.95em;
-            color: var(--text-secondary);
-            line-height: 1.6;
-            margin-bottom: var(--spacing-sm);
-        }
-
-        .swiper-assessments .swiper-slide p.id {
-            font-size: 0.85em;
-            color: var(--neutral-dark-gray);
-            margin-bottom: var(--spacing-sm);
-        }
 
 
 
@@ -443,25 +361,223 @@
             opacity: 1;
         }
 
+
+
+/* ======================================
+   1. General Swiper Container Styles
+====================================== */
+
+/* Shared styles for all swiper containers */
+.swiper-services,
+.swiper-assessments,
+.swiper-factors,
+.swiper {
+    width: 100%;
+    margin: 0 auto; /* Center the swiper */
+}
+
+/* Specific padding-bottom for each swiper type */
+.swiper-services {
+    padding-bottom: 30px;
+}
+
+.swiper-assessments,
+.swiper {
+    padding-bottom: 50px;
+}
+
+/* Responsive Width for Swiper Containers */
+@media (min-width: 769px) {
+    .swiper-services,
+    .swiper-assessments {
+        width: 90%;
+    }
+}
+
+/* ======================================
+   2. Swiper Wrapper Styles
+====================================== */
+
+/* Shared styles for swiper-wrapper across different swiper types */
+.swiper-services .swiper-wrapper,
+.swiper-assessments .swiper-wrapper,
+.swiper-factors .swiper-wrapper,
+.swiper .swiper-wrapper {
+    display: flex;
+}
+
+/* ======================================
+   3. Swiper Slide Styles
+====================================== */
+
+/* Shared styles for swiper-slide across different swiper types */
+.swiper-services .swiper-slide,
+.swiper-assessments .swiper-slide,
+.swiper-factors .swiper-slide,
+.swiper .swiper-slide {
+    background-color: var(--neutral-cool-gray);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-card);
+    transition: transform var(--transition-speed) var(--transition-type),
+                box-shadow var(--transition-speed) var(--transition-type);
+    height: auto; /* Adjust height based on content */
+}
+
+/* Additional padding for assessments swiper slides */
+.swiper-assessments .swiper-slide,
+.swiper .swiper-slide {
+    padding: var(--spacing-md);
+}
+
+/* Hover and Focus States for Swiper Slides */
+.swiper-services .swiper-slide:hover,
+.swiper-services .swiper-slide:focus-within,
+.swiper-assessments .swiper-slide:hover,
+.swiper-assessments .swiper-slide:focus-within,
+.swiper-factors .swiper-slide:hover,
+.swiper-factors .swiper-slide:focus-within,
+.swiper .swiper-slide:hover,
+.swiper .swiper-slide:focus-within {
+    box-shadow: var(--shadow-hover);
+}
+
+/* ======================================
+   4. Swiper Slide Content Styles
+====================================== */
+
+/* Shared styles for h3 within swiper slides */
+.swiper-slide h3 {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: var(--primary-deep-blue);
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Specific styles for p.description within assessments swiper slides */
+.swiper-assessments .swiper-slide p.description,
+.swiper .swiper-slide p.description {
+    font-size: 0.95em;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Specific styles for p.id within assessments swiper slides */
+.swiper-assessments .swiper-slide p.id {
+    font-size: 0.85em;
+    color: var(--neutral-dark-gray);
+    margin-bottom: var(--spacing-sm);
+}
+
+/* ======================================
+   5. General Swiper Styles
+====================================== */
+
+/* General swiper styles reused across different sections */
+.swiper {
+    width: 100%;
+    margin: 0 auto;
+    padding-bottom: 50px;
+}
+
+/* General swiper-slide styles */
+.swiper-slide {
+    background-color: var(--neutral-cool-gray);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-card);
+    transition: transform var(--transition-speed) var(--transition-type),
+                box-shadow var(--transition-speed) var(--transition-type);
+}
+
+/* Hover state for general swiper slides */
+.swiper-slide:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+/* Assessment text styling within the slides */
+.swiper-slide h3 {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: var(--primary-deep-blue);
+    margin-bottom: var(--spacing-xs);
+}
+
+/* ======================================
+   6. Swiper Pagination & Navigation
+====================================== */
+
+/* Swiper Pagination Dots */
+.swiper-pagination-bullet {
+    background: var(--neutral-dark-gray);
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--button-primary);
+}
+
+/* Swiper Navigation Buttons */
+.swiper-button-next,
+.swiper-button-prev {
+    color: var(--primary-deep-blue);
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    color: var(--button-primary);
+}
+
+/* ======================================
+   7. Responsive Swiper Slide Widths
+====================================== */
+
+@media (min-width: 576px) {
+    .swiper-factors .swiper-slide {
+        width: 50%;
+    }
+}
+
+@media (min-width: 768px) {
+    .swiper-factors .swiper-slide {
+        width: 33.3333%;
+    }
+    .swiper-slide {
+        padding: var(--spacing-lg);
+    }
+    .tab-link {
+        font-size: 1em;
+    }
+}
+
+@media (min-width: 1024px) {
+    .swiper-factors .swiper-slide {
+        width: 25%;
+    }
+    .swiper-slide h3 {
+        font-size: 1.3em;
+    }
+}
+
+@media (min-width: 1200px) {
+    .swiper-factors .swiper-slide {
+        width: 20%;
+    }
+    .factor-card {
+        max-width: 400px;
+    }
+}
+
+
+
+
+
+
+        
         /* =======================================================
            5. Responsive Styles (Mobile-First)
         ======================================================= */
 
-        /* Services Slider for Large Devices */
-        @media (min-width: 769px) {
-            .swiper-services {
-                width: 90%;
-                margin: 0 auto;
-            }
-        }
 
-        /* Assessments Slider for Larger Devices */
-        @media (min-width: 769px) {
-            .swiper-assessments {
-                width: 90%;
-                margin: 0 auto;
-            }
-        }
 
         /* Adjustments for Very Small Devices */
         @media (max-width: 576px) {
@@ -713,40 +829,7 @@
 }
 
 
-        /* Slides inside each tab: 
-           We'll reuse the existing Swiper styling from your code for consistency.
-           Just ensure you have .swiper and .swiper-slide classes as in the original.
-        */
-        .swiper {
-            width: 100%;
-            margin: 0 auto;
-            padding-bottom: 50px;
-        }
-
-        .swiper-wrapper {
-            display: flex;
-        }
-
-        .swiper-slide {
-            background-color: var(--neutral-cool-gray);
-            padding: var(--spacing-md);
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow-card);
-            transition: transform var(--transition-speed) var(--transition-type),
-                        box-shadow var(--transition-speed) var(--transition-type);
-        }
-
-        .swiper-slide:hover {
-            box-shadow: var(--shadow-hover);
-        }
-
-        /* Assessment text styling within the slides */
-        .swiper-slide h3 {
-            font-size: 1.2em;
-            font-weight: 700;
-            color: var(--primary-deep-blue);
-            margin-bottom: var(--spacing-xs);
-        }
+  
 
         .description {
             font-size: 0.95em;
@@ -771,24 +854,6 @@
 
 
 
-        /* Swiper Pagination & Navigation */
-        .swiper-pagination-bullet {
-            background: var(--neutral-dark-gray);
-        }
-
-        .swiper-pagination-bullet-active {
-            background: var(--button-primary);
-        }
-
-        .swiper-button-next,
-        .swiper-button-prev {
-            color: var(--primary-deep-blue);
-        }
-
-        .swiper-button-next:hover,
-        .swiper-button-prev:hover {
-            color: var(--button-primary);
-        }
 
         /* ============================================
            2. Responsiveness (mobile-first approach)
@@ -805,18 +870,14 @@
             .tab-link {
                 font-size: 1em;
             }
-            .swiper-slide {
-                padding: var(--spacing-lg);
-            }
+
         }
 
         @media (min-width: 1024px) {
             .tabbed-assessments .section-title {
                 font-size: 2.2em;
             }
-            .swiper-slide h3 {
-                font-size: 1.3em;
-            }
+
         }
 
         /* =======================================================
@@ -852,18 +913,7 @@
             text-align: center;
         }
 
-        /* Swiper Diagnostic Factors */
-        .swiper-factors {
-            width: 100%;
-            padding-top: var(--spacing-md);
-            padding-bottom: var(--spacing-lg);
-        }
 
-        .swiper-factors .swiper-slide {
-            display: flex;
-            justify-content: center;
-            align-items: stretch; /* Ensure slides stretch to the same height */
-        }
 
         .factor-card {
             background-color: var(--neutral-white);
@@ -930,38 +980,8 @@
 
 
 
-        /* Swiper Navigation Buttons */
-        .swiper-button-prev,
-        .swiper-button-next {
-            color: var(--primary-deep-blue);
-        }
 
-        .swiper-button-prev:hover,
-        .swiper-button-next:hover {
-            color: var(--button-primary);
-        }
 
-        /* Swiper Pagination Dots */
-        .swiper-pagination-bullet {
-            background: var(--neutral-dark-gray);
-            opacity: 1;
-        }
-
-        .swiper-pagination-bullet-active {
-            background: var(--button-primary);
-        }
-
-        /* Responsive Styles */
-        @media (min-width: 576px) {
-            .swiper-factors .swiper-slide {
-                width: 50%;
-            }
-        }
-
-        @media (min-width: 768px) {
-            .swiper-factors .swiper-slide {
-                width: 33.3333%;
-            }
 
             .factor-card {
                 max-width: 350px;
@@ -969,20 +989,14 @@
         }
 
         @media (min-width: 1024px) {
-            .swiper-factors .swiper-slide {
-                width: 25%;
-            }
+
 
             .factor-card {
                 max-width: 400px;
             }
         }
 
-        @media (min-width: 1200px) {
-            .swiper-factors .swiper-slide {
-                width: 20%;
-            }
-        }
+
 
         /* =======================================================
            10. Partners or Collaborators Section Styles
