@@ -665,7 +665,15 @@
   transform: translateY(-5px);
   box-shadow: var(--shadow-hover);
 }
+/* Hide all tab contents by default */
+.tab-content {
+    display: none;
+}
 
+/* Display the active tab content */
+.tab-content.active {
+    display: block;
+}
 .battery-links {
   display: flex;
   flex-direction: column;
