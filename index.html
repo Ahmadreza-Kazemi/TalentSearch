@@ -360,35 +360,20 @@
             opacity: 1;
         }
 
-
-
 /* ======================================
    1. General Swiper Container Styles
 ====================================== */
 
 /* Shared styles for all swiper containers */
-.swiper,
-.swiper-assessments,
-.swiper-factors,
 .swiper {
     width: 100%;
     margin: 0 auto; /* Center the swiper */
-}
-
-/* Specific padding-bottom for each swiper type */
-.swiper {
-    padding-bottom: 30px;
-}
-
-.swiper-assessments,
-.swiper {
-    padding-bottom: 50px;
+    padding-bottom: 50px; /* Consolidated padding-bottom (50px overrides 30px) */
 }
 
 /* Responsive Width for Swiper Containers */
 @media (min-width: 769px) {
-    .swiper,
-    .swiper-assessments {
+    .swiper {
         width: 90%;
     }
 }
@@ -398,9 +383,6 @@
 ====================================== */
 
 /* Shared styles for swiper-wrapper across different swiper types */
-.swiper .swiper-wrapper,
-.swiper-assessments .swiper-wrapper,
-.swiper-factors .swiper-wrapper,
 .swiper .swiper-wrapper {
     display: flex;
 }
@@ -410,34 +392,12 @@
 ====================================== */
 
 /* Shared styles for swiper-slide across different swiper types */
-.swiper .swiper-slide,
-.swiper-assessments .swiper-slide,
-.swiper-factors .swiper-slide,
-.swiper .swiper-slide {
-    background-color: var(--neutral-cool-gray);
+.swiper-slide {
+    padding: var(--spacing-md);
     border-radius: var(--border-radius);
-    box-shadow: var(--shadow-card);
     transition: transform var(--transition-speed) var(--transition-type),
                 box-shadow var(--transition-speed) var(--transition-type);
     height: auto; /* Adjust height based on content */
-}
-
-/* Additional padding for assessments swiper slides */
-.swiper-assessments .swiper-slide,
-.swiper .swiper-slide {
-    padding: var(--spacing-md);
-}
-
-/* Hover and Focus States for Swiper Slides */
-.swiper .swiper-slide:hover,
-.swiper .swiper-slide:focus-within,
-.swiper-assessments .swiper-slide:hover,
-.swiper-assessments .swiper-slide:focus-within,
-.swiper-factors .swiper-slide:hover,
-.swiper-factors .swiper-slide:focus-within,
-.swiper .swiper-slide:hover,
-.swiper .swiper-slide:focus-within {
-    box-shadow: var(--shadow-hover);
 }
 
 /* ======================================
@@ -449,11 +409,10 @@
     font-size: 1.2em;
     font-weight: 700;
     color: var(--primary-deep-blue);
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-xs); /* Consolidated margin-bottom */
 }
 
 /* Specific styles for p.description within assessments swiper slides */
-.swiper-assessments .swiper-slide p.description,
 .swiper .swiper-slide p.description {
     font-size: 0.95em;
     color: var(--text-secondary);
@@ -462,47 +421,14 @@
 }
 
 /* Specific styles for p.id within assessments swiper slides */
-.swiper-assessments .swiper-slide p.id {
+.swiper .swiper-slide p.id {
     font-size: 0.85em;
     color: var(--neutral-dark-gray);
     margin-bottom: var(--spacing-sm);
 }
 
 /* ======================================
-   5. General Swiper Styles
-====================================== */
-
-/* General swiper styles reused across different sections */
-.swiper {
-    width: 100%;
-    margin: 0 auto;
-    padding-bottom: 50px;
-}
-
-/* General swiper-slide styles */
-.swiper-slide {
-    padding: var(--spacing-md);
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow-card);
-    transition: transform var(--transition-speed) var(--transition-type),
-                box-shadow var(--transition-speed) var(--transition-type);
-}
-
-/* Hover state for general swiper slides */
-.swiper-slide:hover {
-    box-shadow: var(--shadow-hover);
-}
-
-/* Assessment text styling within the slides */
-.swiper-slide h3 {
-    font-size: 1.2em;
-    font-weight: 700;
-    color: var(--primary-deep-blue);
-    margin-bottom: var(--spacing-xs);
-}
-
-/* ======================================
-   6. Swiper Pagination & Navigation
+   5. Swiper Pagination & Navigation
 ====================================== */
 
 /* Swiper Pagination Dots */
@@ -514,29 +440,19 @@
     background: var(--button-primary);
 }
 
-/* Swiper Navigation Buttons */
-.swiper-button-next,
-.swiper-button-prev {
-    color: var(--primary-deep-blue);
-}
-
-.swiper-button-next:hover,
-.swiper-button-prev:hover {
-    color: var(--button-primary);
-}
 
 /* ======================================
    7. Responsive Swiper Slide Widths
 ====================================== */
 
 @media (min-width: 576px) {
-    .swiper-factors .swiper-slide {
+    .swiper .swiper-slide {
         width: 50%;
     }
 }
 
 @media (min-width: 768px) {
-    .swiper-factors .swiper-slide {
+    .swiper .swiper-slide {
         width: 33.3333%;
     }
     .swiper-slide {
@@ -548,7 +464,7 @@
 }
 
 @media (min-width: 1024px) {
-    .swiper-factors .swiper-slide {
+    .swiper .swiper-slide {
         width: 25%;
     }
     .swiper-slide h3 {
@@ -557,13 +473,15 @@
 }
 
 @media (min-width: 1200px) {
-    .swiper-factors .swiper-slide {
+    .swiper .swiper-slide {
         width: 20%;
     }
     .factor-card {
         max-width: 400px;
     }
 }
+
+
         /* =======================================================
            5. Responsive Styles (Mobile-First)
         ======================================================= */
@@ -964,7 +882,6 @@
         .factor-card {
             max-width: 350px;
             }
-        }
         @media (min-width: 1024px) {
             .factor-card {
                 max-width: 400px;
@@ -1798,7 +1715,7 @@
                     جامع و دقیق از ویژگی‌های فردی دست یابیم.
                 </p>
                 <!-- Swiper Diagnostic Factors -->
-                <div class="swiper swiper-factors">
+                <div class="swiper swiper">
                     <div class="swiper-wrapper">
                         <!-- Factor Slide 1 -->
                         <div class="swiper-slide">
@@ -1922,19 +1839,25 @@
         </p>
 
         <!-- Partners Logos -->
-        <div class="partners-grid">
+            <div class="swiper swiper">
+                <div class="swiper-wrapper">
+                    <!-- Factor Slide 1 -->
+                    <div class="swiper-slide">
             <!-- Partner 1 -->
             <div class="partner-card">
                 <!-- Replace the src attribute with the actual logo image paths -->
                 <img src="/assets/images/iran-andiash-logo.png" alt="مرکز خدمات روانشناسی و مشاوره ایران اندیش" class="partner-logo">
                 <p class="partner-name">مرکز خدمات روانشناسی و مشاوره ایران اندیش</p>
             </div>
-
+        </div>
+        <div class="swiper-slide">
             <!-- Partner 2 -->
             <div class="partner-card">
                 <img src="/assets/images/sepehr-logo.png" alt="مرکز خدمات روانشناسی و مشاوره سپهر" class="partner-logo">
                 <p class="partner-name">مرکز خدمات روانشناسی و مشاوره سپهر</p>
             </div>
+        </div>
+    </div>
 
             <!-- Uncomment and add more partners as needed
             <div class="partner-card">
@@ -1943,7 +1866,6 @@
             </div>
             -->
         </div>
-    </div>
 </section>
 
 <!-- Reasonable Pricing Section -->
@@ -2004,10 +1926,6 @@
 
             <!-- Swiper Pagination -->
             <div class="swiper-pagination"></div>
-
-            <!-- Swiper Navigation -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
         </div>
 
         <p class="section-note">
@@ -2295,7 +2213,7 @@
         /* ============================================
            4. Swiper Initialization for Diagnostic Factors
         ============================================ */
-        var swiperFactors = new Swiper(".swiper-factors", {
+        var swiperFactors = new Swiper(".swiper", {
             direction: "horizontal",
             loop: true,
             spaceBetween: 20,
@@ -2317,19 +2235,19 @@
                 },
             },
             pagination: {
-                el: ".swiper-factors .swiper-pagination",
+                el: ".swiper .swiper-pagination",
                 clickable: true,
             },
             navigation: {
-                nextEl: ".swiper-factors .swiper-button-next",
-                prevEl: ".swiper-factors .swiper-button-prev",
+                nextEl: ".swiper .swiper-button-next",
+                prevEl: ".swiper .swiper-button-prev",
             },
         });
 
         /* ============================================
            5. Swiper Initialization for Assessments (If Applicable)
         ============================================ */
-        var assessmentsSwiper = new Swiper('.swiper-assessments', {
+        var assessmentsSwiper = new Swiper('.swiper', {
             direction: 'horizontal',
             loop: true,
             slidesPerView: 1,
@@ -2349,12 +2267,12 @@
                 },
             },
             pagination: {
-                el: '.swiper-assessments .swiper-pagination',
+                el: '.swiper .swiper-pagination',
                 clickable: true,
             },
             navigation: {
-                nextEl: '.swiper-assessments .swiper-button-next',
-                prevEl: '.swiper-assessments .swiper-button-prev',
+                nextEl: '.swiper .swiper-button-next',
+                prevEl: '.swiper .swiper-button-prev',
             },
             autoplay: {
                 delay: 5000,
