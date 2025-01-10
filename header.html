@@ -1,188 +1,219 @@
-    <style>
-        /* Reset and Base Styles */
-        *, *::before, *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html, body {
-            height: 100%;
-            font-family: 'Vazir', sans-serif;
-            background-color: #FFFFFF;
-            color: #1F3B73;
-            direction: rtl;
-            scroll-behavior: smooth;
-            overflow-x: hidden;
-        }
-
-        body {
-            padding-top: 80px;
-            padding-bottom: 60px;
-        }
-
-        a {
-            text-decoration: none;
-            color: #1F3B73;
-            transition: color 0.3s ease-in-out;
-        }
-
-        a:hover, a:focus {
-            color: #F4C553;
-            text-decoration: underline;
-        }
-
-        /* Header Styles */
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 80px;
-            background: #FFFFFF;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 16px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-            z-index: 1000;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #1F3B73;
-            transition: color 0.3s ease-in-out;
-        }
-
-        .logo:hover, .logo:focus {
-            color: #F4C553;
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            flex-wrap: nowrap;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-
-        .nav-links li {
-            margin: 0 24px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #1F3B73;
-            font-size: 1rem;
-            position: relative;
-            padding: 8px 0;
-            transition: color 0.3s ease-in-out;
-        }
-
-        .nav-links a:hover::after,
-        .nav-links a:focus::after {
-            width: 100%;
-            left: 0;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0%;
-            height: 2px;
-            left: 50%;
-            bottom: -4px;
-            background-color: #F4C553;
-            transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
-        }
-                /* ---------------------------------------------------
-           5.1. Mobile Navbar Fix
-        --------------------------------------------------- */
-        @media (max-width: 768px) {
-            /* Hide navigation links in header */
-            .header .nav-links {
-                display: none;
-            }
-
-            /* Fixed Bottom Navbar */
-            .navbar {
-                display: flex;
-                position: fixed;
-                bottom: 0;
-                left: 0; /* Full width, no offset */
-                width: 100%;
-                height: 60px;
-                background-color: #FFFFFF;
-                box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-                justify-content: space-around;
-                align-items: center;
-                padding: 0 16px; /* Add horizontal padding */
-                z-index: 999;
-            }
-
-            /* Show navigation links in mobile navbar */
-            .navbar .nav-links {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-around;
-                align-items: center;
-                width: 100%;
-            }
-
-            /* Navigation Link Items - Mobile */
-            .navbar .nav-links li {
-                margin: 0;
-                flex: 1;
-                text-align: center;
-            }
-
-            /* Navigation Links - Mobile */
-            .navbar .nav-links a {
-                flex-direction: column;
-                font-size: 0.75rem; /* Smaller font size for labels */
-                color: #1F3B73;
-                padding: 5px 0;
-            }
-
-            /* Link Text Styles - Mobile */
-            .navbar .nav-links a .link-text {
-                display: block;
-            }
-
-            /* Hover and Focus Effects - Mobile */
-            .navbar .nav-links a:hover .link-text,
-            .navbar .nav-links a:focus .link-text {
-                color: #F4C553;
-            }
-
-            /* Hover and Focus Effects for Links */
-            .navbar .nav-links a:hover,
-            .navbar .nav-links a:focus {
-                color: #F4C553;
-            }
-                .logo-image {
-        height: 40px; /* Adjust logo size */
-        width: auto;
+<style>
+    /* Reset and Base Styles */
+    *, *::before, *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
     }
 
-            /* Remove Underline Effect on Mobile */
-            .navbar .nav-links a::after {
-                content: none;
-            }
+    html, body {
+        height: 100%;
+        font-family: 'Vazir', sans-serif;
+        background-color: #FFFFFF;
+        color: #1F3B73;
+        direction: rtl;
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+    }
+
+    body {
+        padding-top: 80px;
+        padding-bottom: 60px;
+    }
+
+    a {
+        text-decoration: none;
+        color: #1F3B73;
+        transition: color 0.3s ease-in-out;
+    }
+
+    a:hover, a:focus {
+        color: #F4C553;
+        text-decoration: underline;
+    }
+
+    /* Logo Container Styles */
+    .logo-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 80px;
+        background: #FFFFFF;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 16px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        z-index: 1000;
+    }
+
+    .logo-container a {
+        display: flex;
+        align-items: center;
+    }
+
+    .logo-text {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #1F3B73;
+        transition: color 0.3s ease-in-out;
+    }
+
+    .logo-text:hover, .logo-text:focus {
+        color: #F4C553;
+    }
+
+    .logo-image {
+        height: 40px; /* Adjust logo size as needed */
+        width: auto;
+        margin-left: 12px; /* Space between title and logo */
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    /* Optional: Add hover effect to logo image */
+    .logo-container a:hover .logo-image,
+    .logo-container a:focus .logo-image {
+        opacity: 0.8;
+    }
+
+    /* Navbar Styles */
+    .navbar {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+
+    .nav-links {
+        display: flex;
+        list-style: none;
+    }
+
+    .nav-links li {
+        margin: 0 24px;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: #1F3B73;
+        font-size: 1rem;
+        position: relative;
+        padding: 8px 0;
+        transition: color 0.3s ease-in-out;
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a:focus::after {
+        width: 100%;
+        left: 0;
+    }
+
+    .nav-links a::after {
+        content: '';
+        position: absolute;
+        width: 0%;
+        height: 2px;
+        left: 50%;
+        bottom: -4px;
+        background-color: #F4C553;
+        transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+    }
+
+    /* Mobile Navbar Fix */
+    @media (max-width: 768px) {
+        /* Hide navigation links in header */
+        .nav-links {
+            display: none;
         }
-    </style>
-        <a href="/" class="logo">استعدادیاب</a>
-        <nav class="navbar">
-            <ul class="nav-links">
-                <li><a href="/getting-started"><span class="link-text">شروع استعدادیابی</span></a></li>
-                <li><a href="/assessments"><span class="link-text">آزمون‌ها</span></a></li>
-                <li><a href="/resources/factors"><span class="link-text">عوامل</span></a></li>
-                <li><a href="/about-us"><span class="link-text">معرفی</span></a></li>
-                <li><a href="/contact-us"><span class="link-text">تماس</span></a></li>
-            </ul>
-        </nav>
+
+        /* Fixed Bottom Navbar */
+        .navbar {
+            display: flex;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background-color: #FFFFFF;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+            justify-content: space-around;
+            align-items: center;
+            padding: 0 16px;
+            z-index: 999;
+        }
+
+        /* Show navigation links in mobile navbar */
+        .navbar .nav-links {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+        }
+
+        /* Navigation Link Items - Mobile */
+        .navbar .nav-links li {
+            margin: 0;
+            flex: 1;
+            text-align: center;
+        }
+
+        /* Navigation Links - Mobile */
+        .navbar .nav-links a {
+            flex-direction: column;
+            font-size: 0.75rem; /* Smaller font size for labels */
+            color: #1F3B73;
+            padding: 5px 0;
+        }
+
+        /* Link Text Styles - Mobile */
+        .navbar .nav-links a .link-text {
+            display: block;
+        }
+
+        /* Hover and Focus Effects - Mobile */
+        .navbar .nav-links a:hover .link-text,
+        .navbar .nav-links a:focus .link-text {
+            color: #F4C553;
+        }
+
+        /* Hover and Focus Effects for Links */
+        .navbar .nav-links a:hover,
+        .navbar .nav-links a:focus {
+            color: #F4C553;
+        }
+
+        /* Remove Underline Effect on Mobile */
+        .navbar .nav-links a::after {
+            content: none;
+        }
+
+        /* Adjust Logo for Mobile */
+        .logo-text {
+            font-size: 1.5rem;
+        }
+
+        .logo-image {
+            height: 30px;
+            margin-left: 8px;
+        }
+    }
+</style>
+
+<!-- Logo and Title -->
+<a href="/" class="logo-container">
+    <span class="logo-text">استعدادیاب</span>
+    <img src="/assets/images/logo.png" alt="استعدادیاب Logo" class="logo-image">
+</a>
+
+<!-- Navigation Bar -->
+<nav class="navbar">
+    <ul class="nav-links">
+        <li><a href="/getting-started"><span class="link-text">شروع استعدادیابی</span></a></li>
+        <li><a href="/assessments"><span class="link-text">آزمون‌ها</span></a></li>
+        <li><a href="/resources/factors"><span class="link-text">عوامل</span></a></li>
+        <li><a href="/about-us"><span class="link-text">معرفی</span></a></li>
+        <li><a href="/contact-us"><span class="link-text">تماس</span></a></li>
+    </ul>
+</nav>
