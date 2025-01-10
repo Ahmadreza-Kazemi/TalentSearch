@@ -53,7 +53,21 @@
             font-weight: 700;
             color: #1F3B73;
             transition: color 0.3s ease-in-out;
+              display: flex;
+  align-items: center; /* Aligns image and text vertically */
+  text-decoration: none; /* Removes underline from the link */
         }
+.logo img {
+  max-height: 50px; /* Set a suitable height for the image */
+  margin-right: 10px; /* Space between image and text */
+}
+
+.logo span {
+  font-size: 1.5em; /* Adjust text size */
+  color: #000; /* Set text color */
+  font-weight: bold; /* Make the text bold */
+}
+
 
         .logo:hover, .logo:focus {
             color: #F4C553;
@@ -165,10 +179,16 @@
             .navbar .nav-links a:focus {
                 color: #F4C553;
             }
-                .logo-image {
-        height: 40px; /* Adjust logo size */
-        width: auto;
-    }
+@media (max-width: 768px) {
+  .logo img {
+    max-height: 30px; /* Smaller image for smaller screens */
+  }
+
+  .logo span {
+    font-size: 1em; /* Adjust text size for smaller screens */
+  }
+}
+
 
             /* Remove Underline Effect on Mobile */
             .navbar .nav-links a::after {
