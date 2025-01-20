@@ -184,7 +184,7 @@
             z-index: 1000;
         }
 
-   /* ---------------------------------------------------
+/* ---------------------------------------------------
    4.2. Hero Section - Mobile First
 --------------------------------------------------- */
 .hero {
@@ -197,35 +197,46 @@
     color: var(--text-primary);
     text-align: center;
     padding: var(--spacing-sm);
+    gap: var(--spacing-md); /* Add spacing between elements */
 }
 
 .hero-content h2 {
-    font-size: 2.5em;
+    font-size: 1.8em; /* Adjust size for mobile */
     font-weight: 700;
     color: var(--primary-deep-blue);
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: 0; /* Remove margin to fit on one line */
+    white-space: nowrap; /* Ensure the text stays on one line */
+    overflow: hidden; /* Prevent overflow issues */
+    text-overflow: ellipsis; /* Add ellipsis for long text */
 }
 
-.-content p {
-    font-size: 1em;
-    margin-bottom: var(--spacing-md);
+.hero-content p {
+    font-size: 0.9em; /* Adjust size for mobile */
+    margin-bottom: 0; /* Remove margin to fit on one line */
+    white-space: nowrap; /* Ensure the text stays on one line */
+    overflow: hidden; /* Prevent overflow issues */
+    text-overflow: ellipsis; /* Add ellipsis for long text */
     line-height: 1.6;
 }
 
+/* For larger screens */
 @media (min-width: 768px) {
     .hero {
         height: calc(100vh - var(--header-height));
         padding: var(--spacing-md);
+        gap: var(--spacing-lg); /* Larger spacing for desktop */
     }
 
     .hero-content h2 {
         font-size: 4em;
         margin-bottom: var(--spacing-md);
+        white-space: normal; /* Allow normal wrapping for desktop */
     }
 
     .hero-content p {
         font-size: 1.5em;
         margin-bottom: var(--spacing-lg);
+        white-space: normal; /* Allow normal wrapping for desktop */
     }
 }
 
@@ -784,29 +795,6 @@
         margin: 8px 0; /* Vertical spacing between buttons */
     }
 
-    /* Ensure all buttons take full width and have consistent appearance */
-    .cta-buttons a {
-        width: 100%;
-        text-align: center;
-    }
-
-    /* Optional: Adjust padding for Primary and Secondary buttons if used in mobile */
-    .btn-primary,
-    .btn-secondary {
-        width: 100%;
-        padding: 12px 0; /* Full-width buttons with vertical padding */
-        text-align: center;
-        box-sizing: border-box;
-    }
-
-    .btn-primary {
-        margin: 8px 0;
-    }
-
-    .btn-secondary {
-        margin: 8px 0;
-    }
-}
 
 
         
@@ -1228,10 +1216,10 @@
 <section id="home" class="section hero">
     <div class="hero-content">
         <h2>شما شایسته کشف استعداد خود هستید.</h2>
-        <p>به دنبال چه نوع ارزشیابی‌ای هستید؟</p>
+        <p>به دنبال چه آزمونی هستید؟</p>
         <div>
-            <a href="/take?test=Individual-Satisfaction" class="btn-cta-secondary">برای خودم</a>
-            <a href="/take?test=Child" class="btn-cta-secondary">برای کودکم</a>
+            <a href="/take?test=Individual-Satisfaction" class="btn-cta-primary">استعدادیابی برای خودم</a>
+            <a href="/take?test=Child" class="btn-cta-primary">استعدادیابی برای کودکم</a>
         </div>
     </div>
 </section>
