@@ -21,7 +21,7 @@
                 marginheight="0"
                 marginwidth="0"
                 style="width: 100%; height: calc(100vh + 10px); border: none;"
-                title="Assessment Form"
+                title="فرم ارزیابی"
             ></iframe>
         </section>
     </main>
@@ -29,60 +29,60 @@
     <script src="/assets/js/script.js"></script>
     <script src="/assets/js/header-footer-inject.js"></script>
     
-    <!-- Updated Script to Dynamically Set iframe src Based on Page Path and URL Parameter -->
+    <!-- New Script to Dynamically Set iframe src Based on URL Parameters -->
     <script>
         (function() {
-            // Mapping of page paths to Form IDs
-            const pageToFormIdMap = {
-                "/Job-Satisfaction": "jyzyq",
-                "/Marriage-Satisfaction": "h6a3s",
-                "/Individual-Satisfaction": "i5hv6",
-                "/Marriage-Readiness": "4zowk",
-                "/Adolescent": "cwllb",
-                "/General": "191pa",
-                "/Talent": "ifhf5",
-                "/Child": "vaxur",
-                "/mental-tranquility": "sh68g",
-                "/esteem": "vljt1",
-                "/child-talent-48": "npwsz",
-                "/child-talent-72": "csclb",
-                "/persistence": "40svj",
-                "/adolescent-mental-hygiene": "nh7oc",
-                "/purification": "i09gx",
-                "/stability": "rfayj",
-                "/empirical-analytical": "5sluk",
-                "/balance": "pi6c6",
-                "/mental-balance": "eg75q",
-                "/personal-excellence": "6rvrr",
-                "/personality-interaction": "elgp3",
-                "/personal-commitment": "rdfzb",
-                "/personal-space": "knuln",
-                "/spiritual-support": "ieewp",
-                "/wisdom": "wi5pw",
-                "/self-expansion": "9ytw7",
-                "/accuracy": "9xmbs",
-                "/life-satisfaction": "gz2qd",
-                "/marital-satisfaction": "j5g8u",
-                "/job-satisfaction": "8aj1t",
-                "/life-summit": "88p7y",
-                "/personality": "swa0t",
-                "/childrens-personality": "n60rv",
-                "/cognitive-24": "jwlit",
-                "/empirical-capacity": "owvqj",
-                "/cognitive-capacities": "tayf7",
-                "/corona": "cnjhr",
-                "/needs": "94buv",
-                "/duty": "ncaeh",
-                "/goal-oriented": "jql20",
-                "/successful-intelligence": "vock1",
-                "/thought-emotion": "pb1bu",
-                "/cognitive-integration": "fniq4",
-                "/life-satisfaction-25": "s88q3",
-                "/talent-interaction": "0ekrq"
+            // Mapping of 'test' parameter values to Form IDs
+            const testToFormIdMap = {
+                "Job-Satisfaction": "jyzyq",
+                "Marriage-Satisfaction": "h6a3s",
+                "Individual-Satisfaction": "i5hv6",
+                "Marriage-Readiness": "4zowk",
+                "Adolescent": "cwllb",
+                "General": "191pa",
+                "Talent": "ifhf5",
+                "Child": "vaxur",
+                "mental-tranquility": "sh68g",
+                "esteem": "vljt1",
+                "child-talent-48": "npwsz",
+                "child-talent-72": "csclb",
+                "persistence": "40svj",
+                "adolescent-mental-hygiene": "nh7oc",
+                "purification": "i09gx",
+                "stability": "rfayj",
+                "empirical-analytical": "5sluk",
+                "balance": "pi6c6",
+                "mental-balance": "eg75q",
+                "personal-excellence": "6rvrr",
+                "personality-interaction": "elgp3",
+                "personal-commitment": "rdfzb",
+                "personal-space": "knuln",
+                "spiritual-support": "ieewp",
+                "wisdom": "wi5pw",
+                "self-expansion": "9ytw7",
+                "accuracy": "9xmbs",
+                "life-satisfaction": "gz2qd",
+                "marital-satisfaction": "j5g8u",
+                "job-satisfaction": "8aj1t",
+                "life-summit": "88p7y",
+                "personality": "swa0t",
+                "childrens-personality": "n60rv",
+                "cognitive-24": "jwlit",
+                "empirical-capacity": "owvqj",
+                "cognitive-capacities": "tayf7",
+                "corona": "cnjhr",
+                "needs": "94buv",
+                "duty": "ncaeh",
+                "goal-oriented": "jql20",
+                "successful-intelligence": "vock1",
+                "thought-emotion": "pb1bu",
+                "cognitive-integration": "fniq4",
+                "life-satisfaction-25": "s88q3",
+                "talent-interaction": "0ekrq"
             };
 
             /**
-             * Function to get query parameters
+             * Function to get query parameters from the current URL.
              * @param {string} param - The name of the parameter to retrieve.
              * @returns {string|null} - The value of the parameter or null if not found.
              */
@@ -92,44 +92,61 @@
             }
 
             /**
-             * Function to get the current page path
-             * @returns {string} - The pathname of the current URL.
+             * Function to get the current 'test' and 'list' parameters.
+             * @returns {Object} - An object containing 'test' and 'list' values.
              */
-            function getCurrentPagePath() {
-                return window.location.pathname;
+            function getParameters() {
+                const test = getQueryParam('test');
+                const list = getQueryParam('list');
+                return { test, list };
             }
 
-            // Retrieve the current page path
-            const currentPath = getCurrentPagePath();
-
-            // Retrieve the corresponding Form ID from the mapping
-            let formId = pageToFormIdMap[currentPath];
-
-            // Handle cases where the path is not found in the mapping
-            if (!formId) {
-                console.error(`No Form ID mapping found for path: ${currentPath}`);
-                // Optionally, set a default Form ID or display an error message
-                // For example, set to a default form:
-                // formId = "defaultFormId";
-                return; // Exit the script to prevent further execution
+            /**
+             * Function to construct the iframe src URL.
+             * @param {string} formId - The Form ID to include in the URL.
+             * @param {string|null} listParam - The list parameter value, if any.
+             * @returns {string} - The constructed iframe src URL.
+             */
+            function constructIframeSrc(formId, listParam) {
+                let src = `https://formafzar.com/form/${formId}`;
+                if (listParam && listParam.trim() !== "") {
+                    src += `?list=${encodeURIComponent(listParam)}`;
+                }
+                return src;
             }
 
-            // Get the 'list' parameter from the current URL, default to '' (blank) if not present
-            const listParam = getQueryParam('list');
+            /**
+             * Main function to set the iframe src.
+             */
+            function setIframeSrc() {
+                const { test, list } = getParameters();
 
-            // Construct the new iframe src URL
-            let newIframeSrc = `https://formafzar.com/form/${formId}`;
-            if (listParam !== null && listParam.trim() !== "") {
-                newIframeSrc += `?list=${encodeURIComponent(listParam)}`;
+                if (!test) {
+                    console.error("The 'test' parameter is missing in the URL.");
+                    // Optionally, you can set a default iframe src or display a message to the user.
+                    return;
+                }
+
+                const formId = testToFormIdMap[test];
+
+                if (!formId) {
+                    console.error(`No Form ID mapping found for test: ${test}`);
+                    // Optionally, set a default Form ID or display an error message to the user.
+                    return;
+                }
+
+                const iframeSrc = constructIframeSrc(formId, list);
+
+                const iframe = document.getElementById('assessmentIframe');
+                if (iframe) {
+                    iframe.src = iframeSrc;
+                } else {
+                    console.error("Iframe with ID 'assessmentIframe' not found.");
+                }
             }
 
-            // Set the iframe src
-            const iframe = document.getElementById('assessmentIframe');
-            if (iframe) {
-                iframe.src = newIframeSrc;
-            } else {
-                console.error("Iframe with ID 'assessmentIframe' not found.");
-            }
+            // Execute the main function after the DOM is fully loaded
+            document.addEventListener("DOMContentLoaded", setIframeSrc);
         })();
     </script>
 </body>
