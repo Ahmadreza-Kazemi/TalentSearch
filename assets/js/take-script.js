@@ -1,5 +1,3 @@
-// File: /assets/js/take-script.js
-
 (function() {
     // Mapping of 'test' parameter values to their respective Form IDs and Descriptions
     const testToDetailsMap = {
