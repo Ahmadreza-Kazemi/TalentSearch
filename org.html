@@ -12,11 +12,39 @@
     <div class="header"></div>
     <main class="main-content">
         <section id="assessment-form" class="assessment-form">
-<iframe src="https://formafzar.com/form/6rvrr?list=1942" scrolling="yes" name="myiFrame" frameborder="1" marginheight="0" marginwidth="0" style="width: 100%; height: calc(100vh + 10px); border: none;"></iframe>
+            <iframe
+                id="assessmentIframe"
+                src="https://formafzar.com/form/6rvrr?list=1942"
+                scrolling="yes"
+                name="myiFrame"
+                frameborder="1"
+                marginheight="0"
+                marginwidth="0"
+                style="width: 100%; height: calc(100vh + 10px); border: none;"
+            ></iframe>
         </section>
     </main>
     <div class="footer"></div>
     <script src="/assets/js/script.js"></script>
     <script src="/assets/js/header-footer-inject.js"></script>
+    
+    <!-- New Script to Update iframe src Based on URL Parameter -->
+    <script>
+        // Function to get query parameters
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Get the 'list' parameter from the current URL
+        const listParam = getQueryParam('list') || '1942'; // Default to '1942' if not present
+
+        // Construct the new iframe src
+        const iframeBaseSrc = 'https://formafzar.com/form/6rvrr';
+        const newIframeSrc = `${iframeBaseSrc}?list=${encodeURIComponent(listParam)}`;
+
+        // Set the iframe src
+        document.getElementById('assessmentIframe').src = newIframeSrc;
+    </script>
 </body>
 </html>
