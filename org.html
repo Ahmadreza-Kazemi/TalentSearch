@@ -12,39 +12,16 @@
     <div class="header"></div>
     <main class="main-content">
         <section id="assessment-form" class="assessment-form">
-            <!-- Placeholder for the dynamic form -->
-            <div id="form-container"></div>
+            <script 
+                type="text/javascript" 
+                src="https://formafzar.com/pages/formbuilder/ravesh-formbuilder.js" 
+                form-url="https://formafzar.com/form/6rvrr?list=Tm5ImfoNrkw=" 
+                form-style="inline">
+            </script>
         </section>
     </main>
     <div class="footer"></div>
     <script src="/assets/js/script.js"></script>
     <script src="/assets/js/header-footer-inject.js"></script>
-    
-    <!-- Dynamic Form Loader Script -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Function to get query parameters
-            function getQueryParam(param) {
-                const urlParams = new URLSearchParams(window.location.search);
-                return urlParams.get(param);
-            }
-
-            // Retrieve the 'list' parameter from the URL
-            const listParam = getQueryParam('list') || '';
-
-            // Construct the dynamic form URL
-            const formUrl = `https://formafzar.com/form/6rvrr?list=${encodeURIComponent(listParam)}`;
-
-            // Create the script element for the form builder
-            const formScript = document.createElement('script');
-            formScript.type = 'text/javascript';
-            formScript.src = 'https://formafzar.com/pages/formbuilder/ravesh-formbuilder.js';
-            formScript.setAttribute('form-url', formUrl);
-            formScript.setAttribute('form-style', 'inline');
-
-            // Append the script to the form container
-            document.getElementById('form-container').appendChild(formScript);
-        });
-    </script>
 </body>
 </html>
