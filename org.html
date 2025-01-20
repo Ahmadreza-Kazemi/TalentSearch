@@ -14,13 +14,14 @@
         <section id="assessment-form" class="assessment-form">
             <iframe
                 id="assessmentIframe"
-                src="https://formafzar.com/form/6rvrr?list=1942"
+                src="" <!-- Initially empty; will be set by JavaScript -->
                 scrolling="yes"
                 name="myiFrame"
                 frameborder="1"
                 marginheight="0"
                 marginwidth="0"
                 style="width: 100%; height: calc(100vh + 10px); border: none;"
+                title="Assessment Form"
             ></iframe>
         </section>
     </main>
@@ -28,23 +29,108 @@
     <script src="/assets/js/script.js"></script>
     <script src="/assets/js/header-footer-inject.js"></script>
     
-    <!-- New Script to Update iframe src Based on URL Parameter -->
+    <!-- Updated Script to Dynamically Set iframe src Based on Page Path and URL Parameter -->
     <script>
-        // Function to get query parameters
-        function getQueryParam(param) {
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get(param);
-        }
+        (function() {
+            // Mapping of page paths to Form IDs
+            const pageToFormIdMap = {
+                "/take/Job-Satisfaction": "jyzyq",
+                "/take/Marriage-Satisfaction": "h6a3s",
+                "/take/Individual-Satisfaction": "i5hv6",
+                "/take/Marriage-Readiness": "4zowk",
+                "/take/Adolescent": "cwllb",
+                "/take/General": "191pa",
+                "/take/Talent": "ifhf5",
+                "/take/Child": "vaxur",
+                "/take/mental-tranquility": "sh68g",
+                "/take/esteem": "vljt1",
+                "/take/child-talent-48": "npwsz",
+                "/take/child-talent-72": "csclb",
+                "/take/persistence": "40svj",
+                "/take/adolescent-mental-hygiene": "nh7oc",
+                "/take/purification": "i09gx",
+                "/take/stability": "rfayj",
+                "/take/empirical-analytical": "5sluk",
+                "/take/balance": "pi6c6",
+                "/take/mental-balance": "eg75q",
+                "/take/personal-excellence": "6rvrr",
+                "/take/personality-interaction": "elgp3",
+                "/take/personal-commitment": "rdfzb",
+                "/take/personal-space": "knuln",
+                "/take/spiritual-support": "ieewp",
+                "/take/wisdom": "wi5pw",
+                "/take/self-expansion": "9ytw7",
+                "/take/accuracy": "9xmbs",
+                "/take/life-satisfaction": "gz2qd",
+                "/take/marital-satisfaction": "j5g8u",
+                "/take/job-satisfaction": "8aj1t",
+                "/take/life-summit": "88p7y",
+                "/take/personality": "swa0t",
+                "/take/childrens-personality": "n60rv",
+                "/take/cognitive-24": "jwlit",
+                "/take/empirical-capacity": "owvqj",
+                "/take/cognitive-capacities": "tayf7",
+                "/take/corona": "cnjhr",
+                "/take/needs": "94buv",
+                "/take/duty": "ncaeh",
+                "/take/goal-oriented": "jql20",
+                "/take/successful-intelligence": "vock1",
+                "/take/thought-emotion": "pb1bu",
+                "/take/cognitive-integration": "fniq4",
+                "/take/life-satisfaction-25": "s88q3",
+                "/take/talent-interaction": "0ekrq"
+            };
 
-        // Get the 'list' parameter from the current URL
-        const listParam = getQueryParam('list') || '1942'; // Default to '1942' if not present
+            /**
+             * Function to get query parameters
+             * @param {string} param - The name of the parameter to retrieve.
+             * @returns {string|null} - The value of the parameter or null if not found.
+             */
+            function getQueryParam(param) {
+                const urlParams = new URLSearchParams(window.location.search);
+                return urlParams.get(param);
+            }
 
-        // Construct the new iframe src
-        const iframeBaseSrc = 'https://formafzar.com/form/6rvrr';
-        const newIframeSrc = `${iframeBaseSrc}?list=${encodeURIComponent(listParam)}`;
+            /**
+             * Function to get the current page path
+             * @returns {string} - The pathname of the current URL.
+             */
+            function getCurrentPagePath() {
+                return window.location.pathname;
+            }
 
-        // Set the iframe src
-        document.getElementById('assessmentIframe').src = newIframeSrc;
+            // Retrieve the current page path
+            const currentPath = getCurrentPagePath();
+
+            // Retrieve the corresponding Form ID from the mapping
+            let formId = pageToFormIdMap[currentPath];
+
+            // Handle cases where the path is not found in the mapping
+            if (!formId) {
+                console.error(`No Form ID mapping found for path: ${currentPath}`);
+                // Optionally, set a default Form ID or display an error message
+                // For example, set to a default form:
+                // formId = "defaultFormId";
+                return; // Exit the script to prevent further execution
+            }
+
+            // Get the 'list' parameter from the current URL, default to '' (blank) if not present
+            const listParam = getQueryParam('list');
+
+            // Construct the new iframe src URL
+            let newIframeSrc = `https://formafzar.com/form/${formId}`;
+            if (listParam !== null && listParam.trim() !== "") {
+                newIframeSrc += `?list=${encodeURIComponent(listParam)}`;
+            }
+
+            // Set the iframe src
+            const iframe = document.getElementById('assessmentIframe');
+            if (iframe) {
+                iframe.src = newIframeSrc;
+            } else {
+                console.error("Iframe with ID 'assessmentIframe' not found.");
+            }
+        })();
     </script>
 </body>
 </html>
