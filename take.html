@@ -3,27 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>استعدادیاب | فهرست تعالی فردی - 37</title>
-    <meta name="description" content="آزمون فهرست تعالی فردی - 37 برای ارزیابی ویژگی‌های رشد و تعالی فردی شما.">
+    <title>استعدادیاب | صفحه ارزیابی</title>
+    <meta name="description" content="صفحه ارزیابی روان‌شناختی شما.">
     <link rel="stylesheet" href="/assets/css/styles.css">
     <link rel="stylesheet" href="/assets/css/assessment-form.css">
+    <style>
+        /* Optional: Add any additional styling here */
+        #assessment-form {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+        }
+        #loading-spinner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.2em;
+            color: #555;
+        }
+        #error-message {
+            text-align: center;
+            color: red;
+            margin-top: 20px;
+        }
+        #page-title {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.5em;
+            color: #333;
+            display: none; /* Initially hidden; will be displayed by script */
+        }
+        #page-description {
+            text-align: center;
+            margin: 10px 20px;
+            font-size: 1em;
+            color: #666;
+            display: none; /* Initially hidden; will be displayed by script */
+        }
+    </style>
 </head>
 <body>
     <div class="header"></div>
     <main class="main-content">
         <section id="assessment-form" class="assessment-form">
+            <!-- Page Title -->
+            <h1 id="page-title"></h1>
+            
+            <!-- Page Description -->
+            <p id="page-description"></p>
+            
             <!-- Loading Indicator -->
-            <div id="loading-spinner" style="text-align: center; padding: 20px;">
-                در حال بارگذاری فرم...
-            </div>
+            <div id="loading-spinner">در حال بارگذاری فرم...</div>
             
             <!-- Error Message -->
-            <div id="error-message" style="display: none; color: red; text-align: center; padding: 20px;">
-                خطا: فرم مورد نظر پیدا نشد. لطفاً از صحت URL اطمینان حاصل کنید.
-            </div>
+            <div id="error-message" style="display: none;"></div>
             
-<iframe                 id="assessmentIframe"
- src="" scrolling="yes" name="myiFrame" frameborder="1" marginheight="0" marginwidth="0" style="width: 100%; height: calc(100vh + 10px); border: none;"></iframe>
+            <!-- Iframe (Initially Hidden) -->
+            <iframe
+                id="assessmentIframe"
+                src="" <!-- Will be set by JavaScript -->
+                scrolling="yes"
+                name="myiFrame"
+                frameborder="1"
+                marginheight="0"
+                marginwidth="0"
+                style="width: 100%; height: calc(100vh - 150px); border: none; display: none;"
+                title="فرم ارزیابی"
+            ></iframe>
         </section>
     </main>
     <div class="footer"></div>
