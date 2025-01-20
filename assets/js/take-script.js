@@ -183,7 +183,7 @@
         }
     };
 
-    /**
+/**
      * Retrieves the value of a specified query parameter from the current URL.
      * @param {string} param - The name of the query parameter to retrieve.
      * @returns {string|null} - The value of the parameter or null if not found.
@@ -194,17 +194,12 @@
     }
 
     /**
-     * Constructs the iframe src URL based on Form ID and optional list parameter.
+     * Constructs the iframe src URL based on Form ID.
      * @param {string} formId - The Form ID corresponding to the selected test.
-     * @param {string|null} listParam - The 'list' parameter value from the URL.
      * @returns {string} - The complete URL to be set as the iframe's src.
      */
-    function constructIframeSrc(formId, listParam) {
-        let src = `https://formafzar.com/form/${formId}`;
-        if (listParam && listParam.trim() !== "") {
-            src += `?list=${encodeURIComponent(listParam)}`;
-        }
-        return src;
+    function constructIframeSrc(formId) {
+        return `https://formafzar.com/form/${formId}`;
     }
 
     /**
@@ -212,7 +207,6 @@
      */
     function setIframeSrcAndPageDetails() {
         const testParam = getQueryParam('test');
-        const listParam = getQueryParam('list');
 
         const loadingSpinner = document.getElementById('loading-spinner');
         const errorMessage = document.getElementById('error-message');
@@ -272,8 +266,8 @@
             metaDescription.setAttribute("content", testDetails.description);
         }
 
-        // Construct iframe src
-        const iframeSrc = constructIframeSrc(testDetails.formId, listParam);
+        // Construct iframe src without 'list' parameter
+        const iframeSrc = constructIframeSrc(testDetails.formId);
 
         if (iframe) {
             iframe.src = iframeSrc;
