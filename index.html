@@ -184,53 +184,33 @@
             z-index: 1000;
         }
 
-/* ---------------------------------------------------
-   4.2. Hero Section (Updated with Adjustments)
---------------------------------------------------- */
-.hero {
-    height: calc(100vh - var(--header-height));
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--neutral-cool-gray);
-    color: var(--text-primary);
-    text-align: center;
-    padding: var(--spacing-md);
-}
+        /* ---------------------------------------------------
+           4.2. Hero Section
+        --------------------------------------------------- */
+        .hero {
+            height: calc(100vh - var(--header-height));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--neutral-cool-gray);
+            color: var(--text-primary);
+            text-align: center;
+            padding: var(--spacing-md);
+        }
 
-.hero-content {
-    max-width: 480px;
-    text-align: center;
-}
+        .hero-content h2 {
+            font-size: 4em;
+            font-weight: 700;
+            color: var(--primary-deep-blue);
+            margin-bottom: var(--spacing-md);
+        }
 
-.hero-content h2 {
-    font-size: 2.5em; /* Adjusted for mobile-first design */
-    font-weight: 700;
-    color: var(--primary-deep-blue);
-    margin-bottom: var(--spacing-md);
-}
-
-.hero-content p {
-    font-size: 1em; /* Adjusted for better readability on mobile */
-    margin-bottom: var(--spacing-lg);
-    line-height: 1.6;
-}
-
-
-/* Responsive Design for Larger Screens */
-@media (min-width: 576px) {
-    .hero-content h2 {
-        font-size: 3em; /* Larger font size for bigger screens */
-    }
-
-    .hero-content p {
-        font-size: 1.3em;
-    }
-
-
-}
-
+        .hero-content p {
+            font-size: 1.5em;
+            margin-bottom: var(--spacing-lg);
+            line-height: 1.6;
+        }
 
 
 
