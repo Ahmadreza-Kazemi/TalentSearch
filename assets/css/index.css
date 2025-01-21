@@ -1,1179 +1,1255 @@
-refine it with comment and sectioning witouth changing any thing:
-    <style>
-        /* =======================================================
-           1. Reset and Base Styles
-        ======================================================= */
-        *, *::before, *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+<style>
+    /* =======================================================
+       1. Reset and Base Styles
+    ======================================================= */
+    *, *::before, *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
 
-        html, body {
-            height: 100%;
-            font-family: 'Vazir', sans-serif;
-            background-color: #FFFFFF;
-            color: #1F3B73;
-            direction: rtl;
-            scroll-behavior: smooth;
-            overflow-x: hidden;
-        }
+    html, body {
+        height: 100%;
+        font-family: 'Vazir', sans-serif;
+        background-color: #FFFFFF;
+        color: #1F3B73;
+        direction: rtl;
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+    }
 
-        body {
-            padding-top: 80px;
-            padding-bottom: 60px;
-        }
+    body {
+        padding-top: 80px;
+        padding-bottom: 60px;
+    }
 
-        a {
-            text-decoration: none;
-            color: #1F3B73;
-            transition: color 0.3s ease-in-out;
-        }
+    a {
+        text-decoration: none;
+        color: #1F3B73;
+        transition: color 0.3s ease-in-out;
+    }
 
-        a:hover,
-        a:focus {
-            color: #F4C553;
-            text-decoration: underline;
-        }
+    a:hover,
+    a:focus {
+        color: #F4C553;
+        text-decoration: underline;
+    }
 
-        /* =======================================================
-           2. Root Variables
-        ======================================================= */
-        :root {
-            /* Font Family */
-            --font-family: 'Vazir', sans-serif;
+    /* =======================================================
+       2. Root Variables
+    ======================================================= */
+    :root {
+        /* Font Family */
+        --font-family: 'Vazir', sans-serif;
 
-            /* Color Palette */
-            --primary-gold: #F4C553;
-            --primary-deep-blue: #1F3B73;
-            --secondary-teal-green: #4FBDBA;
-            --secondary-electric-blue: #007BFF;
-            --neutral-white: #FFFFFF;
-            --neutral-cool-gray: #F0F0F5;
-            --neutral-dark-gray: #888888;
-            --accent-golden-yellow: #FFD77B;
+        /* Color Palette */
+        --primary-gold: #F4C553;
+        --primary-deep-blue: #1F3B73;
+        --secondary-teal-green: #4FBDBA;
+        --secondary-electric-blue: #007BFF;
+        --neutral-white: #FFFFFF;
+        --neutral-cool-gray: #F0F0F5;
+        --neutral-dark-gray: #888888;
+        --accent-golden-yellow: #FFD77B;
 
-            /* Text Colors */
-            --text-primary: var(--primary-deep-blue);
-            --text-secondary: var(--neutral-dark-gray);
+        /* Text Colors */
+        --text-primary: var(--primary-deep-blue);
+        --text-secondary: var(--neutral-dark-gray);
 
-            /* Button Colors */
-            --button-primary: var(--primary-gold);
-            --button-secondary: var(--secondary-teal-green);
+        /* Button Colors */
+        --button-primary: var(--primary-gold);
+        --button-secondary: var(--secondary-teal-green);
 
-            /* Spacing */
-            --header-height: 80px;
-            --spacing-xs: 4px;
-            --spacing-sm: 8px;
-            --spacing-md: 16px;
-            --spacing-lg: 24px;
-            --spacing-xl: 32px;
-            --spacing-small: 10px;
-            --spacing-medium: 20px;
-            --spacing-large: 40px;
+        /* Spacing */
+        --header-height: 80px;
+        --spacing-xs: 4px;
+        --spacing-sm: 8px;
+        --spacing-md: 16px;
+        --spacing-lg: 24px;
+        --spacing-xl: 32px;
+        --spacing-small: 10px;
+        --spacing-medium: 20px;
+        --spacing-large: 40px;
 
-            /* Border Radius */
-            --border-radius: 4px;
+        /* Border Radius */
+        --border-radius: 4px;
 
-            /* Shadows */
-            --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.1);
-            --shadow-hover: 0 6px 18px rgba(0, 0, 0, 0.15);
+        /* Shadows */
+        --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.1);
+        --shadow-hover: 0 6px 18px rgba(0, 0, 0, 0.15);
 
-            /* Transitions */
-            --transition-speed: 0.3s;
-            --transition-type: ease-in-out;
-        }
+        /* Transitions */
+        --transition-speed: 0.3s;
+        --transition-type: ease-in-out;
+    }
 
-        /* =======================================================
-           3. Font Imports
-        ======================================================= */
-        @font-face {
-            font-family: 'Vazir';
-            src: url('/assets/fonts/Vazir-Thin-UI.eot');
-            src: url('/assets/fonts/Vazir-Thin-UI.eot?#iefix') format('embedded-opentype'),
-                 url('/assets/fonts/Vazir-Thin-UI.woff2') format('woff2'),
-                 url('/assets/fonts/Vazir-Thin-UI.woff') format('woff'),
-                 url('/assets/fonts/Vazir-Thin-UI.ttf') format('truetype');
-            font-weight: 100;
-            font-style: normal;
-        }
+    /* =======================================================
+       3. Font Imports
+    ======================================================= */
+    @font-face {
+        font-family: 'Vazir';
+        src: url('/assets/fonts/Vazir-Thin-UI.eot');
+        src: url('/assets/fonts/Vazir-Thin-UI.eot?#iefix') format('embedded-opentype'),
+             url('/assets/fonts/Vazir-Thin-UI.woff2') format('woff2'),
+             url('/assets/fonts/Vazir-Thin-UI.woff') format('woff'),
+             url('/assets/fonts/Vazir-Thin-UI.ttf') format('truetype');
+        font-weight: 100;
+        font-style: normal;
+    }
 
-        @font-face {
-            font-family: 'Vazir';
-            src: url('/assets/fonts/Vazir-Light-UI.eot');
-            src: url('/assets/fonts/Vazir-Light-UI.eot?#iefix') format('embedded-opentype'),
-                 url('/assets/fonts/Vazir-Light-UI.woff2') format('woff2'),
-                 url('/assets/fonts/Vazir-Light-UI.woff') format('woff'),
-                 url('/assets/fonts/Vazir-Light-UI.ttf') format('truetype');
-            font-weight: 300;
-            font-style: normal;
-        }
+    @font-face {
+        font-family: 'Vazir';
+        src: url('/assets/fonts/Vazir-Light-UI.eot');
+        src: url('/assets/fonts/Vazir-Light-UI.eot?#iefix') format('embedded-opentype'),
+             url('/assets/fonts/Vazir-Light-UI.woff2') format('woff2'),
+             url('/assets/fonts/Vazir-Light-UI.woff') format('woff'),
+             url('/assets/fonts/Vazir-Light-UI.ttf') format('truetype');
+        font-weight: 300;
+        font-style: normal;
+    }
 
-        @font-face {
-            font-family: 'Vazir';
-            src: url('/assets/fonts/Vazir-Regular-UI.eot');
-            src: url('/assets/fonts/Vazir-Regular-UI.eot?#iefix') format('embedded-opentype'),
-                 url('/assets/fonts/Vazir-Regular-UI.woff2') format('woff2'),
-                 url('/assets/fonts/Vazir-Regular-UI.woff') format('woff'),
-                 url('/assets/fonts/Vazir-Regular-UI.ttf') format('truetype');
-            font-weight: 400;
-            font-style: normal;
-        }
+    @font-face {
+        font-family: 'Vazir';
+        src: url('/assets/fonts/Vazir-Regular-UI.eot');
+        src: url('/assets/fonts/Vazir-Regular-UI.eot?#iefix') format('embedded-opentype'),
+             url('/assets/fonts/Vazir-Regular-UI.woff2') format('woff2'),
+             url('/assets/fonts/Vazir-Regular-UI.woff') format('woff'),
+             url('/assets/fonts/Vazir-Regular-UI.ttf') format('truetype');
+        font-weight: 400;
+        font-style: normal;
+    }
 
-        @font-face {
-            font-family: 'Vazir';
-            src: url('/assets/fonts/Vazir-Medium-UI.eot');
-            src: url('/assets/fonts/Vazir-Medium-UI.eot?#iefix') format('embedded-opentype'),
-                 url('/assets/fonts/Vazir-Medium-UI.woff2') format('woff2'),
-                 url('/assets/fonts/Vazir-Medium-UI.woff') format('woff'),
-                 url('/assets/fonts/Vazir-Medium-UI.ttf') format('truetype');
-            font-weight: 500;
-            font-style: normal;
-        }
+    @font-face {
+        font-family: 'Vazir';
+        src: url('/assets/fonts/Vazir-Medium-UI.eot');
+        src: url('/assets/fonts/Vazir-Medium-UI.eot?#iefix') format('embedded-opentype'),
+             url('/assets/fonts/Vazir-Medium-UI.woff2') format('woff2'),
+             url('/assets/fonts/Vazir-Medium-UI.woff') format('woff'),
+             url('/assets/fonts/Vazir-Medium-UI.ttf') format('truetype');
+        font-weight: 500;
+        font-style: normal;
+    }
 
-        @font-face {
-            font-family: 'Vazir';
-            src: url('/assets/fonts/Vazir-Bold-UI.eot');
-            src: url('/assets/fonts/Vazir-Bold-UI.eot?#iefix') format('embedded-opentype'),
-                 url('/assets/fonts/Vazir-Bold-UI.woff2') format('woff2'),
-                 url('/assets/fonts/Vazir-Bold-UI.woff') format('woff'),
-                 url('/assets/fonts/Vazir-Bold-UI.ttf') format('truetype');
-            font-weight: 700;
-            font-style: normal;
-        }
+    @font-face {
+        font-family: 'Vazir';
+        src: url('/assets/fonts/Vazir-Bold-UI.eot');
+        src: url('/assets/fonts/Vazir-Bold-UI.eot?#iefix') format('embedded-opentype'),
+             url('/assets/fonts/Vazir-Bold-UI.woff2') format('woff2'),
+             url('/assets/fonts/Vazir-Bold-UI.woff') format('woff'),
+             url('/assets/fonts/Vazir-Bold-UI.ttf') format('truetype');
+        font-weight: 700;
+        font-style: normal;
+    }
 
-        @font-face {
-            font-family: 'Vazir';
-            src: url('/assets/fonts/Vazir-Black-UI.eot');
-            src: url('/assets/fonts/Vazir-Black-UI.eot?#iefix') format('embedded-opentype'),
-                 url('/assets/fonts/Vazir-Black-UI.woff2') format('woff2'),
-                 url('/assets/fonts/Vazir-Black-UI.woff') format('woff'),
-                 url('/assets/fonts/Vazir-Black-UI.ttf') format('truetype');
-            font-weight: 900;
-            font-style: normal;
-        }
+    @font-face {
+        font-family: 'Vazir';
+        src: url('/assets/fonts/Vazir-Black-UI.eot');
+        src: url('/assets/fonts/Vazir-Black-UI.eot?#iefix') format('embedded-opentype'),
+             url('/assets/fonts/Vazir-Black-UI.woff2') format('woff2'),
+             url('/assets/fonts/Vazir-Black-UI.woff') format('woff'),
+             url('/assets/fonts/Vazir-Black-UI.ttf') format('truetype');
+        font-weight: 900;
+        font-style: normal;
+    }
 
-        /* =======================================================
-           4. Layout Sections
-        ======================================================= */
+    /* =======================================================
+       4. Layout Sections
+    ======================================================= */
 
-        /* ---------------------------------------------------
-           4.1. Header
-        --------------------------------------------------- */
-        .header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            height: var(--header-height);
-            background-color: var(--neutral-white);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-        }
+    /* ---------------------------------------------------
+       4.1. Header
+    --------------------------------------------------- */
+    .header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: var(--header-height);
+        background-color: var(--neutral-white);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
 
-   /* ---------------------------------------------------
-   4.2. Hero Section - Mobile First
---------------------------------------------------- */
-.hero {
-    height: calc(100vh - 80px - 60px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--neutral-cool-gray);
-    color: var(--text-primary);
-    text-align: center;
-    padding: var(--spacing-sm);
-}
-
-.hero-content h2 {
-    font-size: 2.5em;
-    font-weight: 700;
-    color: var(--primary-deep-blue);
-    margin-bottom: var(--spacing-sm);
-}
-
-.hero-content p {
-    font-size: 1em;
-    margin-bottom: var(--spacing-md);
-    line-height: 1.6;
-}
-
-@media (min-width: 768px) {
+    /* ---------------------------------------------------
+       4.2. Hero Section - Mobile First
+    --------------------------------------------------- */
     .hero {
-        height: calc(100vh - var(--header-height));
-        padding: var(--spacing-md);
+        height: calc(100vh - 80px - 60px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--neutral-cool-gray);
+        color: var(--text-primary);
+        text-align: center;
+        padding: var(--spacing-sm);
     }
 
     .hero-content h2 {
-        font-size: 4em;
-        margin-bottom: var(--spacing-md);
+        font-size: 2.5em;
+        font-weight: 700;
+        color: var(--primary-deep-blue);
+        margin-bottom: var(--spacing-sm);
     }
 
     .hero-content p {
-        font-size: 1.5em;
+        font-size: 1em;
+        margin-bottom: var(--spacing-md);
+        line-height: 1.6;
+    }
+
+    @media (min-width: 768px) {
+        .hero {
+            height: calc(100vh - var(--header-height));
+            padding: var(--spacing-md);
+        }
+
+        .hero-content h2 {
+            font-size: 4em;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .hero-content p {
+            font-size: 1.5em;
+            margin-bottom: var(--spacing-lg);
+        }
+    }
+
+    /* ---------------------------------------------------
+       4.3. Services Slider Section
+    --------------------------------------------------- */
+    .services-slider {
+        padding: var(--spacing-lg);
+        background-color: var(--neutral-white);
+        color: var(--text-primary);
+        text-align: center;
+    }
+
+    .services-slider h2 {
+        font-size: 2em;
+        font-weight: 700;
+        color: var(--primary-deep-blue);
         margin-bottom: var(--spacing-lg);
     }
-}
 
-
-
-        /* ---------------------------------------------------
-           4.3. Services Slider Section
-        --------------------------------------------------- */
-        .services-slider {
-            padding: var(--spacing-lg);
-            background-color: var(--neutral-white);
-            color: var(--text-primary);
-            text-align: center;
-        }
-
-        .services-slider h2 {
-            font-size: 2em;
-            font-weight: 700;
-            color: var(--primary-deep-blue);
-            
-            margin-bottom: var(--spacing-lg);
-        }
-
-        /* ---------------------------------------------------
-           4.4. Assessments Slider Section
-        --------------------------------------------------- */
-        .assessments-slider {
-            padding: var(--spacing-lg);
-            background-color: var(--neutral-white);
-            color: var(--text-primary);
-            text-align: center;
-        }
-
-        .assessments-slider h2 {
-            font-size: 2em;
-            font-weight: 700;
-            color: var(--primary-deep-blue);
-            
-            margin-bottom: var(--spacing-lg);
-        }
-
-
-
-
-        /* ---------------------------------------------------
-           4.5. Footer
-        --------------------------------------------------- */
-        .footer {
-            background-color: var(--neutral-white);
-            padding: var(--spacing-lg);
-            color: var(--text-primary);
-            text-align: center;
-            border-top: 1px solid #F0F0F5;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding-bottom: var(--spacing-md);
-            display: flex;
-            flex-direction: column;
-            gap: var(--spacing-lg);
-            text-align: center;
-        }
-
-        .about-info,
-        .contact-info,
-        .powered-by {
-            flex: 1;
-            text-align: center;
-        }
-
-        .about-info h2 {
-            font-size: 2em;
-            font-weight: 700;
-            color: var(--primary-deep-blue);
-            margin-bottom: var(--spacing-md);
-            position: relative;
-        }
-
-        .about-info h2::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background-color: var(--secondary-teal-green);
-            margin: var(--spacing-sm) auto var(--spacing-md);
-            border-radius: 2px;
-        }
-
-        .about-info p {
-            font-size: 1.1em;
-            color: var(--text-secondary);
-            line-height: 1.8;
-            margin-bottom: var(--spacing-md);
-        }
-
-        .contact-info p {
-            font-size: 1em;
-            color: var(--text-secondary);
-            margin-bottom: var(--spacing-sm);
-        }
-
-        .contact-info p strong {
-            color: var(--primary-gold);
-        }
-
-        .contact-info a {
-            color: var(--primary-gold);
-            text-decoration: none;
-            transition: color 0.3s ease-in-out;
-        }
-
-        .contact-info a:hover,
-        .contact-info a:focus {
-            color: var(--secondary-teal-green);
-            text-decoration: underline;
-        }
-
-        .powered-by {
-            margin-top: var(--spacing-lg);
-            font-size: 0.95em;
-            color: var(--text-primary);
-        }
-
-        .powered-by a {
-            color: var(--primary-deep-blue);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease-in-out;
-        }
-
-        .powered-by a:hover,
-        .powered-by a:focus {
-            color: var(--secondary-teal-green);
-            text-decoration: underline;
-        }
-
-        .footer .decorative-line {
-            width: 100px;
-            height: 2px;
-            background-color: var(--secondary-teal-green);
-            margin: var(--spacing-sm) auto;
-            border-radius: 1px;
-            opacity: 0.7;
-            transition: opacity 0.3s ease-in-out;
-        }
-
-        .footer .decorative-line:hover {
-            opacity: 1;
-        }
-
-/* ======================================
-   1. General Swiper Container Styles
-====================================== */
-
-/* Shared styles for all swiper containers */
-.swiper {
-    width: 100%;
-    margin: 0 auto; /* Center the swiper */
-    padding-bottom: 50px; /* Consolidated padding-bottom (50px overrides 30px) */
-}
-
-/* Responsive Width for Swiper Containers */
-@media (min-width: 769px) {
-    .swiper {
-        width: 90%;
-    }
-}
-
-/* ======================================
-   2. Swiper Wrapper Styles
-====================================== */
-
-/* Shared styles for swiper-wrapper across different swiper types */
-.swiper .swiper-wrapper {
-    display: flex;
-}
-
-/* ======================================
-   3. Swiper Slide Styles
-====================================== */
-
-/* Shared styles for swiper-slide across different swiper types */
-.swiper-slide {
-    padding: var(--spacing-md);
-    border-radius: var(--border-radius);
-    transition: transform var(--transition-speed) var(--transition-type),
-                box-shadow var(--transition-speed) var(--transition-type);
-    height: auto; /* Adjust height based on content */
-}
-
-/* ======================================
-   4. Swiper Slide Content Styles
-====================================== */
-
-/* Shared styles for h3 within swiper slides */
-.swiper-slide h3 {
-    font-size: 1.2em;
-    font-weight: 700;
-    color: var(--primary-deep-blue);
-    margin-bottom: var(--spacing-xs); /* Consolidated margin-bottom */
-}
-
-/* Specific styles for p.description within assessments swiper slides */
-.swiper .swiper-slide p.description {
-    font-size: 0.95em;
-    color: var(--text-secondary);
-    line-height: 1.6;
-    margin-bottom: var(--spacing-sm);
-}
-
-/* Specific styles for p.id within assessments swiper slides */
-.swiper .swiper-slide p.id {
-    font-size: 0.85em;
-    color: var(--neutral-dark-gray);
-    margin-bottom: var(--spacing-sm);
-}
-
-/* ======================================
-   5. Swiper Pagination & Navigation
-====================================== */
-
-/* Swiper Pagination Dots */
-.swiper-pagination-bullet {
-    background: var(--neutral-dark-gray);
-}
-
-.swiper-pagination-bullet-active {
-    background: var(--button-primary);
-}
-
-
-/* ======================================
-   7. Responsive Swiper Slide Widths
-====================================== */
-
-@media (min-width: 576px) {
-    .swiper .swiper-slide {
-        width: 50%;
-    }
-}
-
-@media (min-width: 768px) {
-    .swiper .swiper-slide {
-        width: 33.3333%;
-    }
-    .swiper-slide {
+    /* ---------------------------------------------------
+       4.4. Assessments Slider Section
+    --------------------------------------------------- */
+    .assessments-slider {
         padding: var(--spacing-lg);
+        background-color: var(--neutral-white);
+        color: var(--text-primary);
+        text-align: center;
     }
-    .tab-link {
+
+    .assessments-slider h2 {
+        font-size: 2em;
+        font-weight: 700;
+        color: var(--primary-deep-blue);
+        margin-bottom: var(--spacing-lg);
+    }
+
+    /* ---------------------------------------------------
+       4.5. Footer
+    --------------------------------------------------- */
+    .footer {
+        background-color: var(--neutral-white);
+        padding: var(--spacing-lg);
+        color: var(--text-primary);
+        text-align: center;
+        border-top: 1px solid #F0F0F5;
+    }
+
+    .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding-bottom: var(--spacing-md);
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-lg);
+        text-align: center;
+    }
+
+    .about-info,
+    .contact-info,
+    .powered-by {
+        flex: 1;
+        text-align: center;
+    }
+
+    .about-info h2 {
+        font-size: 2em;
+        font-weight: 700;
+        color: var(--primary-deep-blue);
+        margin-bottom: var(--spacing-md);
+        position: relative;
+    }
+
+    .about-info h2::after {
+        content: '';
+        display: block;
+        width: 80px;
+        height: 4px;
+        background-color: var(--secondary-teal-green);
+        margin: var(--spacing-sm) auto var(--spacing-md);
+        border-radius: 2px;
+    }
+
+    .about-info p {
+        font-size: 1.1em;
+        color: var(--text-secondary);
+        line-height: 1.8;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .contact-info p {
         font-size: 1em;
+        color: var(--text-secondary);
+        margin-bottom: var(--spacing-sm);
     }
-}
 
-@media (min-width: 1024px) {
-    .swiper .swiper-slide {
-        width: 25%;
+    .contact-info p strong {
+        color: var(--primary-gold);
     }
+
+    .contact-info a {
+        color: var(--primary-gold);
+        text-decoration: none;
+        transition: color 0.3s ease-in-out;
+    }
+
+    .contact-info a:hover,
+    .contact-info a:focus {
+        color: var(--secondary-teal-green);
+        text-decoration: underline;
+    }
+
+    .powered-by {
+        margin-top: var(--spacing-lg);
+        font-size: 0.95em;
+        color: var(--text-primary);
+    }
+
+    .powered-by a {
+        color: var(--primary-deep-blue);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease-in-out;
+    }
+
+    .powered-by a:hover,
+    .powered-by a:focus {
+        color: var(--secondary-teal-green);
+        text-decoration: underline;
+    }
+
+    .footer .decorative-line {
+        width: 100px;
+        height: 2px;
+        background-color: var(--secondary-teal-green);
+        margin: var(--spacing-sm) auto;
+        border-radius: 1px;
+        opacity: 0.7;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    .footer .decorative-line:hover {
+        opacity: 1;
+    }
+
+    /* =======================================================
+       5. Swiper Slider Styles
+    ======================================================= */
+
+    /* -----------------------------------------------
+       5.1. General Swiper Container Styles
+    ----------------------------------------------- */
+    .swiper {
+        width: 100%;
+        margin: 0 auto;
+        padding-bottom: 50px;
+    }
+
+    @media (min-width: 769px) {
+        .swiper {
+            width: 90%;
+        }
+    }
+
+    /* -----------------------------------------------
+       5.2. Swiper Wrapper Styles
+    ----------------------------------------------- */
+    .swiper .swiper-wrapper {
+        display: flex;
+    }
+
+    /* -----------------------------------------------
+       5.3. Swiper Slide Styles
+    ----------------------------------------------- */
+    .swiper-slide {
+        padding: var(--spacing-md);
+        border-radius: var(--border-radius);
+        transition: transform var(--transition-speed) var(--transition-type),
+                    box-shadow var(--transition-speed) var(--transition-type);
+        height: auto;
+    }
+
+    /* -----------------------------------------------
+       5.4. Swiper Slide Content Styles
+    ----------------------------------------------- */
     .swiper-slide h3 {
-        font-size: 1.3em;
-    }
-}
-
-@media (min-width: 1200px) {
-    .swiper .swiper-slide {
-        width: 20%;
-    }
-    .factor-card {
-        max-width: 400px;
-    }
-}
-
-
-        /* =======================================================
-           5. Responsive Styles (Mobile-First)
-        ======================================================= */
-        /* Adjustments for Very Small Devices */
-        @media (max-width: 576px) {
-            .footer-content {
-                padding: 60px 15px;
-            }
-            .about-info h2::after {
-                width: 60px;
-            }
-            .about-info p {
-                font-size: 1em;
-            }
-            .contact-info p {
-                font-size: 0.95em;
-            }
-            .powered-by {
-                font-size: 0.85em;
-            }
-        }
-        /* =======================================================
-           6. Reasoning Section Styles
-        ======================================================= */
-        /* Reasoning Section */
-        .reasoning-section {
-            padding: var(--spacing-lg) var(--spacing-md);
-            background-color: var(--neutral-white); /* Light gray for a subtle contrast */
-            text-align: center;
-        }
-        .reasoning-section .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: var(--spacing-md);
-        }
-        .reasoning-section .section-title {
-            font-size: 2em;
-            font-weight: 700;
-            color: var(--primary-deep-blue); /* Main deep blue color */
-            margin-bottom: var(--spacing-lg);
-             /* Golden glow for emphasis */
-        }
-        .reasoning-section .section-text {
-            font-size: 1.2em;
-            color: var(--text-secondary); /* Neutral dark gray for readability */
-            line-height: 1.8;
-            margin-bottom: var(--spacing-md);
-        }
-        /* =======================================================
-           7. CTA Section Styles
-        ======================================================= */
-        /* CTA Section Styles */
-        .cta-section {
-            padding: var(--spacing-lg) var(--spacing-md);
-            background-color: var(--neutral-cool-gray);
-            text-align: center;
-        }
-        .cta-section .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: var(--spacing-md);
-        }
-        .cta-title {
-            font-size: 2em;
-            font-weight: 700;
-            color: var(--primary-deep-blue);
-            margin-bottom: var(--spacing-lg);          
-        }
-        .cta-text {
-            font-size: 1.1em;
-            color: var(--text-secondary);
-            line-height: 1.8;
-            margin-bottom: var(--spacing-md);
-            text-align: justify;
-        }
-        /* =======================================================
-           8. Tabbed Assessments Section Styles
-        ======================================================= */
-        /* Tabbed Assessments Section */
-        .tabbed-assessments {
-            background-color: var(--neutral-white);
-            text-align: center;
-            padding: var(--spacing-lg) var(--spacing-md);
-        }
-        .tabbed-assessments .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: var(--spacing-md);
-        }
-        .tabbed-assessments .section-title {
-            font-size: 2em;
-            font-weight: 700;
-            color: var(--primary-deep-blue);
-            margin-bottom: var(--spacing-lg);           
-        }
-        .tabbed-assessments .section-text {
-            font-size: 1.1em;
-            color: var(--text-secondary);
-            line-height: 1.8;
-            margin-bottom: var(--spacing-md);
-            text-align: justify;
-        }
-/* Tabs Navigation - Mobile First */
-.tabs-navigation {
-  display: flex;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  gap: var(--spacing-md);
-  padding-bottom: var(--spacing-sm);
-  border-bottom: 2px solid var(--neutral-cool-gray);
-}
-.tab-link {
-  flex: 0 0 auto; /* Prevent buttons from stretching */
-  padding: var(--spacing-sm) var(--spacing-md);
-  font-size: 1em;
-  font-weight: 600;
-  color: var(--primary-deep-blue);
-  background-color: transparent;
-  border: none;
-  border-bottom: 2px solid transparent;
-  cursor: pointer;
-  transition: color var(--transition-speed) ease-in-out, border-bottom var(--transition-speed) ease-in-out;
-  white-space: nowrap; /* Prevent text wrapping */
-  font-family: 'Vazir', sans-serif;
-}
-.tab-link.active,
-.tab-link:hover {
-  color: var(--button-primary);
-  border-bottom: 2px solid var(--button-primary);
-}
-/* Battery Cards - Responsive */
-.battery-card {
-  background-color: var(--neutral-white);
-  padding: var(--spacing-md);
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow-card);
-  transition: transform var(--transition-speed) var(--transition-type), box-shadow var(--transition-speed) var(--transition-type);
-  margin-bottom: var(--spacing-lg);
-}
-.battery-card:hover {
-  box-shadow: var(--shadow-hover);
-}
-/* Hide all tab contents by default */
-.tab-content {
-    display: none;
-}
-/* Display the active tab content */
-.tab-content.active {
-    display: block;
-}
-.battery-links {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-sm);
-  margin-top: var(--spacing-md);
-}
-/* ======================================
-   Button Styles - Desktop (Default)
-====================================== */
-
-/* Primary Button Styles */
-.btn-primary {
-    display: inline-block;
-    background-color: var(--button-primary);
-    color: var(--neutral-white);
-    padding: 12px 30px;
-    border-radius: var(--border-radius);
-    font-size: 1em;
-    font-weight: 600;
-    text-decoration: none;
-    transition: transform var(--transition-speed) var(--transition-type),
-                opacity var(--transition-speed) var(--transition-type);
-    font-family: 'Vazir', sans-serif;
-    border: none;
-}
-
-.btn-primary:hover,
-.btn-primary:focus {
-    filter: brightness(95%);
-    text-decoration: none;
-    color: var(--neutral-white);
-}
-
-/* Secondary Button Styles */
-.btn-secondary {
-    display: inline-block;
-    background-color: transparent;
-    color: var(--button-primary);
-    padding: 8px 20px;
-    border-radius: var(--border-radius);
-    font-size: 1em;
-    font-weight: 600;
-    text-decoration: none;
-    transition: transform var(--transition-speed) var(--transition-type),
-                opacity var(--transition-speed) var(--transition-type);
-    font-family: 'Vazir', sans-serif;
-    border: 2px solid var(--button-primary);
-}
-
-.btn-secondary:hover,
-.btn-secondary:focus {
-    text-decoration: none;
-    filter: brightness(95%);
-    color: var(--button-primary);
-}
-
-/* Call-to-Action Primary Button Styles */
-.btn-cta-primary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--button-primary);
-    color: var(--neutral-white);
-    padding: 19.2px 48px;
-    border-radius: 999px;
-    font-size: 1.408em;
-    font-weight: 600;
-    text-decoration: none;
-    transition: transform var(--transition-speed) var(--transition-type),
-                opacity var(--transition-speed) var(--transition-type);
-    font-family: 'Vazir', sans-serif;
-    border: none;
-    margin: 10px;
-    height: 55px;
-    box-sizing: border-box;
-}
-
-.btn-cta-primary:hover,
-.btn-cta-primary:focus {
-    filter: brightness(95%);
-    text-decoration: none;
-    color: var(--neutral-white);
-}
-
-/* Call-to-Action Secondary Button Styles */
-.btn-cta-secondary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background-color: transparent;
-    color: var(--button-primary);
-    padding: 13.2px 28.8px;
-    border-radius: 999px;
-    font-size: 1.408em;
-    font-weight: 600;
-    text-decoration: none;
-    transition: transform var(--transition-speed) var(--transition-type),
-                opacity var(--transition-speed) var(--transition-type);
-    font-family: 'Vazir', sans-serif;
-    border: 2.82px solid var(--button-primary);
-    margin: 10px;
-    height: 55px;
-    box-sizing: border-box;
-}
-
-.btn-cta-secondary:hover,
-.btn-cta-secondary:focus {
-    text-decoration: none;
-    filter: brightness(95%);
-    color: var(--button-primary);
-}
-
-/* ======================================
-   Button Styles - Mobile
-====================================== */
-@media (max-width: 768px) {
-    /* Adjust Call-to-Action Primary Button */
-    .btn-cta-primary {
-        width: 100%;
-        padding: 14px 24px; /* Reduced padding for better fit */
-        font-size: 1.2em; /* Slightly smaller font size */
-        height: auto; /* Remove fixed height to accommodate text */
-        margin: 8px 0; /* Vertical spacing between buttons */
+        font-size: 1.2em;
+        font-weight: 700;
+        color: var(--primary-deep-blue);
+        margin-bottom: var(--spacing-xs);
     }
 
-    /* Adjust Call-to-Action Secondary Button */
-    .btn-cta-secondary {
-        width: 100%;
-        padding: 10px 20px; /* Reduced padding for better fit */
-        font-size: 1.2em; /* Slightly smaller font size */
-        height: auto; /* Remove fixed height to accommodate text */
-        margin: 8px 0; /* Vertical spacing between buttons */
+    .swiper .swiper-slide p.description {
+        font-size: 0.95em;
+        color: var(--text-secondary);
+        line-height: 1.6;
+        margin-bottom: var(--spacing-sm);
     }
 
+    .swiper .swiper-slide p.id {
+        font-size: 0.85em;
+        color: var(--neutral-dark-gray);
+        margin-bottom: var(--spacing-sm);
+    }
 
+    /* -----------------------------------------------
+       5.5. Swiper Pagination & Navigation
+    ----------------------------------------------- */
+    .swiper-pagination-bullet {
+        background: var(--neutral-dark-gray);
+    }
 
-        
-.description {
-            font-size: 0.95em;
-            color: var(--text-secondary);
-            margin-bottom: var(--spacing-sm);
-            line-height: 1.6;
-            text-align: justify;
+    .swiper-pagination-bullet-active {
+        background: var(--button-primary);
+    }
+
+    /* -----------------------------------------------
+       5.6. Responsive Swiper Slide Widths
+    ----------------------------------------------- */
+    @media (min-width: 576px) {
+        .swiper .swiper-slide {
+            width: 50%;
         }
-        .id {
-            font-size: 0.85em;
-            color: var(--neutral-dark-gray);
-            margin-bottom: var(--spacing-sm);
+    }
+
+    @media (min-width: 768px) {
+        .swiper .swiper-slide {
+            width: 33.3333%;
         }
-        /* Battery buttons within slides */
-        .battery-links {
-            margin-top: var(--spacing-sm);
-            display: flex;
-            gap: var(--spacing-sm);
-        }
-        /* ============================================
-           2. Responsiveness (mobile-first approach)
-        ============================================ */
-        /* Already mobile friendly by default. 
-           We'll add breakpoints for larger devices. */
-        @media (min-width: 576px) {
-            .tabbed-assessments .section-text {
-                font-size: 1em;
-            }
-        }
-        @media (min-width: 768px) {
-            .tab-link {
-                font-size: 1em;
-            }
-        }
-        @media (min-width: 1024px) {
-            .tabbed-assessments .section-title {
-                font-size: 2.2em;
-            }
-        }
-        /* =======================================================
-           9. Diagnostic Factors Section Styles
-        ======================================================= */
-        /* Diagnostic Factors Section Styles */
-        .factors-section {
-            padding: var(--spacing-lg) var(--spacing-md);
-            background-color: var(--neutral-cool-gray);
-            text-align: center;
-            font-family: 'Vazir', sans-serif; /* Ensures this section uses Vazir font */
-        }
-        .factors-section .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: var(--spacing-md);
-        }
-        .section-title {
-            font-size: 2em;
-            font-weight: 700;
-            color: var(--primary-deep-blue);
-            margin-bottom: var(--spacing-md);          
-        }
-        .section-subtitle {
-            font-size: 1.1em;
-            color: var(--text-secondary);
-            line-height: 1.8;
-            margin-bottom: var(--spacing-lg);
-            text-align: center;
-        }
-        .factor-card {
-            background-color: var(--neutral-white);
-            width: 100%;
-            max-width: 300px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow-card);
-            text-align: right; /* Right-align text for RTL */
-            padding: var(--spacing-md);
-            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
-            display: flex;
-            flex-direction: column;
-            gap: var(--spacing-sm);
-            height: 100%; /* Make all cards the same height */
-        }
-        .factor-card:hover {
-            box-shadow: var(--shadow-hover);
-        }
-        .factor-icon {
-            width: 50px;
-            height: 50px;
-            margin-bottom: var(--spacing-sm);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .factor-icon img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-        .factor-title {
-            font-size: 1.2em;
-            font-weight: 700;
-            color: var(--primary-deep-blue);
-            margin-bottom: var(--spacing-xs);
-            flex-shrink: 0; /* Prevent title from shrinking */
-        }
-        .factor-description {
-            font-size: 1em;
-            color: var(--text-secondary);
-            line-height: 1.6;
-            text-align: justify;
-            flex-grow: 1; /* Allow description to take up remaining space */
-            overflow: hidden;
-        }
-        .factors-cta {
-            margin-top: var(--spacing-lg);
-            text-align: center;
-        }
-        .factors-note {
-            font-size: 1em;
-            color: var(--text-secondary);
-            margin-bottom: var(--spacing-sm);
-            text-align: center;
-        }
-        .factor-card {
-            max-width: 350px;
-            }
-        @media (min-width: 1024px) {
-            .factor-card {
-                max-width: 400px;
-            }
-        }
-        /* =======================================================
-           10. Partners or Collaborators Section Styles
-        ======================================================= */
-        /* Partners or Collaborators Section Styles */
-        .partners-section {
-            padding: var(--spacing-lg) var(--spacing-md);
-            background-color: var(--neutral-white);
-            text-align: center; /* Center-aligns the text within the section */
-        }
-        .partners-section .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: var(--spacing-md);
-        }
-        .partners-section .section-title {
-            font-size: 2em;
-            font-weight: 700;
-            color: var(--primary-deep-blue);
-            margin-bottom: var(--spacing-lg);          
-            font-family: 'Vazir', sans-serif; /* Ensures the title uses 'Vazir' font */
-        }
-        .partners-section .section-text {
-            font-size: 1.1em;
-            color: var(--text-secondary);
-            line-height: 1.8;
-            margin-bottom: var(--spacing-lg);
-            text-align: justify;
-            font-family: 'Vazir', sans-serif; /* Ensures the text uses 'Vazir' font */
-        }
-        .partners-grid {
-            display: grid;
-            gap: var(--spacing-lg);
-            grid-template-columns: 1fr;
-            align-items: center;
-            justify-items: center; /* Centers items horizontally within their grid cell */
-            justify-content: center; /* Centers the entire grid within the container */
-        }
-        .partner-card {
-            background-color: var(--neutral-cool-gray);
-            padding: var(--spacing-md);
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow-card);
-            transition: transform var(--transition-speed) var(--transition-type), box-shadow var(--transition-speed) var(--transition-type);
-            width: 100%;
-            max-width: 250px;
-            text-align: center; /* Centers text within each partner card */
-            font-family: 'Vazir', sans-serif; /* Ensures the card uses 'Vazir' font */
-        }
-        .partner-card:hover {
-            box-shadow: var(--shadow-hover);
-        }
-        .partner-logo {
-            width: 100%;
-            height: auto;
-            max-height: 100px;
-            object-fit: contain;
-            margin-bottom: var(--spacing-sm);
-        }
-        .partner-name {
-            font-size: 1em;
-            font-weight: 600;
-            color: var(--primary-deep-blue);
-            font-family: 'Vazir', sans-serif; /* Ensures the partner name uses 'Vazir' font */
-        }
-        /* Responsive Styles */
-        @media (min-width: 576px) {
-            .partners-grid {
-                grid-template-columns: repeat(2, 1fr); /* Two columns for screens >= 576px */
-            }
-        }
-        @media (min-width: 768px) {
-            .partners-grid {
-                grid-template-columns: repeat(3, 1fr); /* Three columns for screens >= 768px */
-            }
-        }
-        @media (min-width: 1024px) {
-            .partners-grid {
-                grid-template-columns: repeat(4, 1fr); /* Four columns for screens >= 1024px */
-            }
-        }
-        /* =======================================================
-           11. Reasonable Pricing Section Styles
-        ======================================================= */
-        /* Reasonable Pricing Section Styles */
-        .pricing-section {
-            padding: var(--spacing-lg) var(--spacing-md);
-            background-color: var(--neutral-cool-gray);
-            text-align: center;
-        }
-        .pricing-section .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: var(--spacing-md);
-        }
-        .section-title {
-            font-size: 2em;
-            font-weight: 700;
-            color: var(--primary-deep-blue);
-            margin-bottom: var(--spacing-lg);           
-        }
-        .section-text, .section-note {
-            font-size: 1.1em;
-            color: var(--text-secondary);
-            line-height: 1.8;
-            margin-bottom: var(--spacing-md);
-            text-align: justify;
-        }
-        .pricing-grid {
-            display: grid;
-            gap: var(--spacing-lg);
-            grid-template-columns: 1fr;
-            margin-bottom: var(--spacing-lg);
-        }
-        .pricing-card {
-            background-color: var(--neutral-white);
-            padding: var(--spacing-md);
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow-card);
-            transition: box-shadow var(--transition-speed) var(--transition-type);
-        }
-        .pricing-card:hover {
-            box-shadow: var(--shadow-hover);
-        }
-       .pricing-title {
-            font-size: 1.5em;
-            font-weight: 700;
-            color: var(--primary-deep-blue);
-            margin-bottom: var(--spacing-sm);
-        }
-        .pricing-amount {
-            font-size: 1.2em;
-            font-weight: 600;
-            color: var(--secondary-teal-green);
-            margin-bottom: var(--spacing-md);
-        }
-        .pricing-features {
-            list-style: none;
-            padding: 0;
-            margin-bottom: var(--spacing-md);
-            text-align: center;
-        }
-        .pricing-features li {
-            margin-bottom: var(--spacing-sm);
-            color: var(--text-secondary);
-        }
-        /* Responsive Styles */
-        @media (min-width: 768px) {
-            .pricing-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-        /* =======================================================
-           12. FAQ Section Styles
-        ======================================================= */
-        /* FAQ Section Styles */
-        .faq-section {
-            padding: var(--spacing-lg) var(--spacing-md);
-            background-color: var(--neutral-cool-gray);
-            text-align: center;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: var(--spacing-md);
-        }
-        .section-title {
-            font-size: 2em;
-            font-weight: 700;
-            color: var(--primary-deep-blue);
-            margin-bottom: var(--spacing-md);
-        }
-        .section-text {
-            font-size: 1.1em;
-            color: var(--text-secondary);
-            line-height: 1.8;
-            margin-bottom: var(--spacing-lg);
-            text-align: justify;
-        }
-        /* Tabs */
-        .faq-tabs {
-            display: flex;
-            justify-content: center;
-            gap: var(--spacing-md);
-            margin-bottom: var(--spacing-md);
-            overflow-x: auto;
-            padding-bottom: var(--spacing-sm);
-            border-bottom: 2px solid var(--neutral-cool-gray);
+        .swiper-slide {
+            padding: var(--spacing-lg);
         }
         .tab-link {
-            padding: var(--spacing-sm) var(--spacing-md);
             font-size: 1em;
-            font-weight: 600;
-            color: var(--primary-deep-blue);
-            background-color: transparent;
-            border: none;
-            border-bottom: 2px solid transparent;
-            cursor: pointer;
-            transition: all var(--transition-speed) ease-in-out;
-            white-space: nowrap;
-            font-family: 'Vazir', sans-serif;
         }
-        .tab-link:hover,
-        .tab-link.active {
-            color: var(--button-primary);
-            border-bottom: 2px solid var(--button-primary);
+    }
+
+    @media (min-width: 1024px) {
+        .swiper .swiper-slide {
+            width: 25%;
         }
-        /* FAQ Categories */
-        .faq-category {
-            display: none;
-            text-align: right;
+        .swiper-slide h3 {
+            font-size: 1.3em;
         }
-        .faq-category.active {
-            display: block;
+    }
+
+    @media (min-width: 1200px) {
+        .swiper .swiper-slide {
+            width: 20%;
         }
-        /* FAQ Items */
-        .faq-item {
-            margin-bottom: var(--spacing-md);
+        .factor-card {
+            max-width: 400px;
         }
-        .faq-question {
+    }
+
+    /* =======================================================
+       6. Responsive Styles (Mobile-First)
+    ======================================================= */
+    /* -----------------------------------------------
+       6.1. Adjustments for Very Small Devices
+    ----------------------------------------------- */
+    @media (max-width: 576px) {
+        .footer-content {
+            padding: 60px 15px;
+        }
+        .about-info h2::after {
+            width: 60px;
+        }
+        .about-info p {
+            font-size: 1em;
+        }
+        .contact-info p {
+            font-size: 0.95em;
+        }
+        .powered-by {
+            font-size: 0.85em;
+        }
+    }
+
+    /* =======================================================
+       7. Reasoning Section Styles
+    ======================================================= */
+    .reasoning-section {
+        padding: var(--spacing-lg) var(--spacing-md);
+        background-color: var(--neutral-white);
+        text-align: center;
+    }
+
+    .reasoning-section .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: var(--spacing-md);
+    }
+
+    .reasoning-section .section-title {
+        font-size: 2em;
+        font-weight: 700;
+        color: var(--primary-deep-blue);
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .reasoning-section .section-text {
+        font-size: 1.2em;
+        color: var(--text-secondary);
+        line-height: 1.8;
+        margin-bottom: var(--spacing-md);
+    }
+
+    /* =======================================================
+       8. CTA Section Styles
+    ======================================================= */
+    .cta-section {
+        padding: var(--spacing-lg) var(--spacing-md);
+        background-color: var(--neutral-cool-gray);
+        text-align: center;
+    }
+
+    .cta-section .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: var(--spacing-md);
+    }
+
+    .cta-title {
+        font-size: 2em;
+        font-weight: 700;
+        color: var(--primary-deep-blue);
+        margin-bottom: var(--spacing-lg);          
+    }
+
+    .cta-text {
+        font-size: 1.1em;
+        color: var(--text-secondary);
+        line-height: 1.8;
+        margin-bottom: var(--spacing-md);
+        text-align: justify;
+    }
+
+    /* =======================================================
+       9. Tabbed Assessments Section Styles
+    ======================================================= */
+    .tabbed-assessments {
+        background-color: var(--neutral-white);
+        text-align: center;
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+
+    .tabbed-assessments .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: var(--spacing-md);
+    }
+
+    .tabbed-assessments .section-title {
+        font-size: 2em;
+        font-weight: 700;
+        color: var(--primary-deep-blue);
+        margin-bottom: var(--spacing-lg);           
+    }
+
+    .tabbed-assessments .section-text {
+        font-size: 1.1em;
+        color: var(--text-secondary);
+        line-height: 1.8;
+        margin-bottom: var(--spacing-md);
+        text-align: justify;
+    }
+
+    /* -----------------------------------------------
+       9.1. Tabs Navigation - Mobile First
+    ----------------------------------------------- */
+    .tabs-navigation {
+        display: flex;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        gap: var(--spacing-md);
+        padding-bottom: var(--spacing-sm);
+        border-bottom: 2px solid var(--neutral-cool-gray);
+    }
+
+    .tab-link {
+        flex: 0 0 auto;
+        padding: var(--spacing-sm) var(--spacing-md);
+        font-size: 1em;
+        font-weight: 600;
+        color: var(--primary-deep-blue);
+        background-color: transparent;
+        border: none;
+        border-bottom: 2px solid transparent;
+        cursor: pointer;
+        transition: color var(--transition-speed) ease-in-out, border-bottom var(--transition-speed) ease-in-out;
+        white-space: nowrap;
+        font-family: 'Vazir', sans-serif;
+    }
+
+    .tab-link.active,
+    .tab-link:hover {
+        color: var(--button-primary);
+        border-bottom: 2px solid var(--button-primary);
+    }
+
+    /* -----------------------------------------------
+       9.2. Battery Cards - Responsive
+    ----------------------------------------------- */
+    .battery-card {
+        background-color: var(--neutral-white);
+        padding: var(--spacing-md);
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow-card);
+        transition: transform var(--transition-speed) var(--transition-type), box-shadow var(--transition-speed) var(--transition-type);
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .battery-card:hover {
+        box-shadow: var(--shadow-hover);
+    }
+
+    .battery-links {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        margin-top: var(--spacing-md);
+    }
+
+    /* -----------------------------------------------
+       9.3. Tab Content
+    ----------------------------------------------- */
+    .tab-content {
+        display: none;
+    }
+
+    .tab-content.active {
+        display: block;
+    }
+
+    /* =======================================================
+       10. Button Styles
+    ======================================================= */
+
+    /* -----------------------------------------------
+       10.1. Desktop Button Styles
+    ----------------------------------------------- */
+
+    /* Primary Button Styles */
+    .btn-primary {
+        display: inline-block;
+        background-color: var(--button-primary);
+        color: var(--neutral-white);
+        padding: 12px 30px;
+        border-radius: var(--border-radius);
+        font-size: 1em;
+        font-weight: 600;
+        text-decoration: none;
+        transition: transform var(--transition-speed) var(--transition-type),
+                    opacity var(--transition-speed) var(--transition-type);
+        font-family: 'Vazir', sans-serif;
+        border: none;
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus {
+        filter: brightness(95%);
+        text-decoration: none;
+        color: var(--neutral-white);
+    }
+
+    /* Secondary Button Styles */
+    .btn-secondary {
+        display: inline-block;
+        background-color: transparent;
+        color: var(--button-primary);
+        padding: 8px 20px;
+        border-radius: var(--border-radius);
+        font-size: 1em;
+        font-weight: 600;
+        text-decoration: none;
+        transition: transform var(--transition-speed) var(--transition-type),
+                    opacity var(--transition-speed) var(--transition-type);
+        font-family: 'Vazir', sans-serif;
+        border: 2px solid var(--button-primary);
+    }
+
+    .btn-secondary:hover,
+    .btn-secondary:focus {
+        text-decoration: none;
+        filter: brightness(95%);
+        color: var(--button-primary);
+    }
+
+    /* Call-to-Action Primary Button Styles */
+    .btn-cta-primary {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--button-primary);
+        color: var(--neutral-white);
+        padding: 19.2px 48px;
+        border-radius: 999px;
+        font-size: 1.408em;
+        font-weight: 600;
+        text-decoration: none;
+        transition: transform var(--transition-speed) var(--transition-type),
+                    opacity var(--transition-speed) var(--transition-type);
+        font-family: 'Vazir', sans-serif;
+        border: none;
+        margin: 10px;
+        height: 55px;
+        box-sizing: border-box;
+    }
+
+    .btn-cta-primary:hover,
+    .btn-cta-primary:focus {
+        filter: brightness(95%);
+        text-decoration: none;
+        color: var(--neutral-white);
+    }
+
+    /* Call-to-Action Secondary Button Styles */
+    .btn-cta-secondary {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+        color: var(--button-primary);
+        padding: 13.2px 28.8px;
+        border-radius: 999px;
+        font-size: 1.408em;
+        font-weight: 600;
+        text-decoration: none;
+        transition: transform var(--transition-speed) var(--transition-type),
+                    opacity var(--transition-speed) var(--transition-type);
+        font-family: 'Vazir', sans-serif;
+        border: 2.82px solid var(--button-primary);
+        margin: 10px;
+        height: 55px;
+        box-sizing: border-box;
+    }
+
+    .btn-cta-secondary:hover,
+    .btn-cta-secondary:focus {
+        text-decoration: none;
+        filter: brightness(95%);
+        color: var(--button-primary);
+    }
+
+    /* -----------------------------------------------
+       10.2. Mobile Button Styles
+    ----------------------------------------------- */
+    @media (max-width: 768px) {
+        /* Adjust Call-to-Action Primary Button */
+        .btn-cta-primary {
             width: 100%;
-            text-align: right;
-            background-color: var(--neutral-white);
-            color: var(--primary-deep-blue);
-            padding: var(--spacing-md);
-            font-size: 1em;
-            font-weight: 600;
-            border: none;
-            border-radius: var(--border-radius);
-            cursor: pointer;
-            box-shadow: var(--shadow-card);
-            transition: box-shadow var(--transition-speed) ease-in-out;
-            font-family: 'Vazir', sans-serif;
+            padding: 14px 24px;
+            font-size: 1.2em;
+            height: auto;
+            margin: 8px 0;
         }
-        .faq-question:hover {
-            box-shadow: var(--shadow-hover);
+
+        /* Adjust Call-to-Action Secondary Button */
+        .btn-cta-secondary {
+            width: 100%;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            height: auto;
+            margin: 8px 0;
+        }
+    }
+
+    /* =======================================================
+       11. Diagnostic Factors Section Styles
+    ======================================================= */
+    .factors-section {
+        padding: var(--spacing-lg) var(--spacing-md);
+        background-color: var(--neutral-cool-gray);
+        text-align: center;
+        font-family: 'Vazir', sans-serif;
+    }
+
+    .factors-section .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: var(--spacing-md);
+    }
+
+    .section-title {
+        font-size: 2em;
+        font-weight: 700;
+        color: var(--primary-deep-blue);
+        margin-bottom: var(--spacing-md);          
+    }
+
+    .section-subtitle {
+        font-size: 1.1em;
+        color: var(--text-secondary);
+        line-height: 1.8;
+        margin-bottom: var(--spacing-lg);
+        text-align: center;
+    }
+
+    .factor-card {
+        background-color: var(--neutral-white);
+        width: 100%;
+        max-width: 300px;
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow-card);
+        text-align: right;
+        padding: var(--spacing-md);
+        transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        height: 100%;
+    }
+
+    .factor-card:hover {
+        box-shadow: var(--shadow-hover);
+    }
+
+    .factor-icon {
+        width: 50px;
+        height: 50px;
+        margin-bottom: var(--spacing-sm);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .factor-icon img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .factor-title {
+        font-size: 1.2em;
+        font-weight: 700;
+        color: var(--primary-deep-blue);
+        margin-bottom: var(--spacing-xs);
+        flex-shrink: 0;
+    }
+
+    .factor-description {
+        font-size: 1em;
+        color: var(--text-secondary);
+        line-height: 1.6;
+        text-align: justify;
+        flex-grow: 1;
+        overflow: hidden;
+    }
+
+    .factors-cta {
+        margin-top: var(--spacing-lg);
+        text-align: center;
+    }
+
+    .factors-note {
+        font-size: 1em;
+        color: var(--text-secondary);
+        margin-bottom: var(--spacing-sm);
+        text-align: center;
+    }
+
+    .factor-card {
+        max-width: 350px;
+    }
+
+    @media (min-width: 1024px) {
+        .factor-card {
+            max-width: 400px;
+        }
+    }
+
+    /* =======================================================
+       12. Partners or Collaborators Section Styles
+    ======================================================= */
+    .partners-section {
+        padding: var(--spacing-lg) var(--spacing-md);
+        background-color: var(--neutral-white);
+        text-align: center;
+    }
+
+    .partners-section .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: var(--spacing-md);
+    }
+
+    .partners-section .section-title {
+        font-size: 2em;
+        font-weight: 700;
+        color: var(--primary-deep-blue);
+        margin-bottom: var(--spacing-lg);
+        font-family: 'Vazir', sans-serif;
+    }
+
+    .partners-section .section-text {
+        font-size: 1.1em;
+        color: var(--text-secondary);
+        line-height: 1.8;
+        margin-bottom: var(--spacing-lg);
+        text-align: justify;
+        font-family: 'Vazir', sans-serif;
+    }
+
+    .partners-grid {
+        display: grid;
+        gap: var(--spacing-lg);
+        grid-template-columns: 1fr;
+        align-items: center;
+        justify-items: center;
+        justify-content: center;
+    }
+
+    .partner-card {
+        background-color: var(--neutral-cool-gray);
+        padding: var(--spacing-md);
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow-card);
+        transition: transform var(--transition-speed) var(--transition-type), box-shadow var(--transition-speed) var(--transition-type);
+        width: 100%;
+        max-width: 250px;
+        text-align: center;
+        font-family: 'Vazir', sans-serif;
+    }
+
+    .partner-card:hover {
+        box-shadow: var(--shadow-hover);
+    }
+
+    .partner-logo {
+        width: 100%;
+        height: auto;
+        max-height: 100px;
+        object-fit: contain;
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .partner-name {
+        font-size: 1em;
+        font-weight: 600;
+        color: var(--primary-deep-blue);
+        font-family: 'Vazir', sans-serif;
+    }
+
+    /* -----------------------------------------------
+       12.1. Responsive Partners Grid
+    ----------------------------------------------- */
+    @media (min-width: 576px) {
+        .partners-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (min-width: 768px) {
+        .partners-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .partners-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    /* =======================================================
+       13. Reasonable Pricing Section Styles
+    ======================================================= */
+    .pricing-section {
+        padding: var(--spacing-lg) var(--spacing-md);
+        background-color: var(--neutral-cool-gray);
+        text-align: center;
+    }
+
+    .pricing-section .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: var(--spacing-md);
+    }
+
+    .section-title {
+        font-size: 2em;
+        font-weight: 700;
+        color: var(--primary-deep-blue);
+        margin-bottom: var(--spacing-lg);           
+    }
+
+    .section-text, .section-note {
+        font-size: 1.1em;
+        color: var(--text-secondary);
+        line-height: 1.8;
+        margin-bottom: var(--spacing-md);
+        text-align: justify;
+    }
+
+    .pricing-grid {
+        display: grid;
+        gap: var(--spacing-lg);
+        grid-template-columns: 1fr;
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .pricing-card {
+        background-color: var(--neutral-white);
+        padding: var(--spacing-md);
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow-card);
+        transition: box-shadow var(--transition-speed) var(--transition-type);
+    }
+
+    .pricing-card:hover {
+        box-shadow: var(--shadow-hover);
+    }
+
+    .pricing-title {
+        font-size: 1.5em;
+        font-weight: 700;
+        color: var(--primary-deep-blue);
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .pricing-amount {
+        font-size: 1.2em;
+        font-weight: 600;
+        color: var(--secondary-teal-green);
+        margin-bottom: var(--spacing-md);
+    }
+
+    .pricing-features {
+        list-style: none;
+        padding: 0;
+        margin-bottom: var(--spacing-md);
+        text-align: center;
+    }
+
+    .pricing-features li {
+        margin-bottom: var(--spacing-sm);
+        color: var(--text-secondary);
+    }
+
+    /* -----------------------------------------------
+       13.1. Responsive Pricing Grid
+    ----------------------------------------------- */
+    @media (min-width: 768px) {
+        .pricing-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    /* =======================================================
+       14. FAQ Section Styles
+    ======================================================= */
+    .faq-section {
+        padding: var(--spacing-lg) var(--spacing-md);
+        background-color: var(--neutral-cool-gray);
+        text-align: center;
+    }
+
+    .faq-section .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: var(--spacing-md);
+    }
+
+    .section-title {
+        font-size: 2em;
+        font-weight: 700;
+        color: var(--primary-deep-blue);
+        margin-bottom: var(--spacing-md);
+    }
+
+    .section-text {
+        font-size: 1.1em;
+        color: var(--text-secondary);
+        line-height: 1.8;
+        margin-bottom: var(--spacing-lg);
+        text-align: justify;
+    }
+
+    /* -----------------------------------------------
+       14.1. FAQ Tabs
+    ----------------------------------------------- */
+    .faq-tabs {
+        display: flex;
+        justify-content: center;
+        gap: var(--spacing-md);
+        margin-bottom: var(--spacing-md);
+        overflow-x: auto;
+        padding-bottom: var(--spacing-sm);
+        border-bottom: 2px solid var(--neutral-cool-gray);
+    }
+
+    .faq-tabs .tab-link {
+        padding: var(--spacing-sm) var(--spacing-md);
+        font-size: 1em;
+        font-weight: 600;
+        color: var(--primary-deep-blue);
+        background-color: transparent;
+        border: none;
+        border-bottom: 2px solid transparent;
+        cursor: pointer;
+        transition: all var(--transition-speed) ease-in-out;
+        white-space: nowrap;
+        font-family: 'Vazir', sans-serif;
+    }
+
+    .faq-tabs .tab-link:hover,
+    .faq-tabs .tab-link.active {
+        color: var(--button-primary);
+        border-bottom: 2px solid var(--button-primary);
+    }
+
+    /* -----------------------------------------------
+       14.2. FAQ Categories
+    ----------------------------------------------- */
+    .faq-category {
+        display: none;
+        text-align: right;
+    }
+
+    .faq-category.active {
+        display: block;
+    }
+
+    /* -----------------------------------------------
+       14.3. FAQ Items
+    ----------------------------------------------- */
+    .faq-item {
+        margin-bottom: var(--spacing-md);
+    }
+
+    .faq-question {
+        width: 100%;
+        text-align: right;
+        background-color: var(--neutral-white);
+        color: var(--primary-deep-blue);
+        padding: var(--spacing-md);
+        font-size: 1em;
+        font-weight: 600;
+        border: none;
+        border-radius: var(--border-radius);
+        cursor: pointer;
+        box-shadow: var(--shadow-card);
+        transition: box-shadow var(--transition-speed) ease-in-out;
+        font-family: 'Vazir', sans-serif;
+    }
+
+    .faq-question:hover {
+        box-shadow: var(--shadow-hover);
+    }
+
+    .faq-answer {
+        display: none;
+        text-align: justify;
+        background-color: var(--neutral-white);
+        border-radius: var(--border-radius);
+        margin-top: var(--spacing-xs);
+        padding: var(--spacing-md);
+        line-height: 1.6;
+        color: var(--text-secondary);
+    }
+
+    .faq-item.active .faq-answer {
+        display: block;
+    }
+
+    /* -----------------------------------------------
+       14.4. Responsive FAQ Styles
+    ----------------------------------------------- */
+    @media (min-width: 576px) {
+        .faq-tabs {
+            gap: var(--spacing-md);
+        }
+        .faq-tabs .tab-link {
+            font-size: 1em;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .faq-question {
+            font-size: 1.05em;
         }
         .faq-answer {
-            display: none;
-            text-align: justify;
-            background-color: var(--neutral-white);
-            border-radius: var(--border-radius);
-            margin-top: var(--spacing-xs);
-            padding: var(--spacing-md);
-            line-height: 1.6;
-            color: var(--text-secondary);
+            font-size: 1.1em;
         }
-        .faq-item.active .faq-answer {
-            display: block;
+    }
+
+    @media (min-width: 1024px) {
+        .faq-question {
+            font-size: 1.1em;
         }
-        /* Responsive Styles */
-        @media (min-width: 576px) {
-            .faq-tabs {
-                gap: var(--spacing-md);
-            }
-            .tab-link {
-                font-size: 1em;
-            }
+        .faq-answer {
+            font-size: 1.2em;
         }
-        @media (min-width: 768px) {
-            .faq-question {
-                font-size: 1.05em;
-            }
-            .faq-answer {
-                font-size: 1.1em;
-            }
+    }
+
+    /* =======================================================
+       15. Additional Styles
+    ======================================================= */
+
+    .description {
+        font-size: 0.95em;
+        color: var(--text-secondary);
+        margin-bottom: var(--spacing-sm);
+        line-height: 1.6;
+        text-align: justify;
+    }
+
+    .id {
+        font-size: 0.85em;
+        color: var(--neutral-dark-gray);
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .battery-links {
+        margin-top: var(--spacing-sm);
+        display: flex;
+        gap: var(--spacing-sm);
+    }
+
+    /* ============================================
+       16. Responsiveness (Mobile-First Approach)
+    ============================================ */
+    @media (min-width: 576px) {
+        .tabbed-assessments .section-text {
+            font-size: 1em;
         }
-        @media (min-width: 1024px) {
-            .faq-question {
-                font-size: 1.1em;
-            }
-            .faq-answer {
-                font-size: 1.2em;
-            }
+    }
+
+    @media (min-width: 768px) {
+        .tab-link {
+            font-size: 1em;
         }
-    </style>
+    }
+
+    @media (min-width: 1024px) {
+        .tabbed-assessments .section-title {
+            font-size: 2.2em;
+        }
+    }
+
+</style>
