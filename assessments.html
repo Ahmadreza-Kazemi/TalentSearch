@@ -5,7 +5,368 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>استعدادیاب | معرفی ارزیابی‌های روان‌شناختی</title>
     <meta name="description" content="با استعدادیاب، با ارزیابی‌های روان‌شناختی پیشرفته آشنا شوید و توانمندی‌های خود را بشناسید.">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+    /* =======================================================
+    1. Reset and Base Styles
+ ======================================================= */
+ 
+ /* Resetting box-sizing, margin, and padding for all elements */
+ *, *::before, *::after {
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+ }
+ 
+ /* Base styles for html and body */
+ html, body {
+     height: 100%;
+     font-family: var(--font-family);
+     background-color: var(--neutral-white);
+     color: var(--text-primary);
+     direction: rtl;
+     scroll-behavior: smooth;
+     overflow-x: hidden;
+ }
+ 
+ body {
+     padding-top: var(--header-height); /* Prevent content overlap with header */
+     padding-bottom: 60px; /* Prevent content overlap with mobile navbar */
+ }
+ 
+ /* Base styles for anchor tags */
+ a {
+     text-decoration: none;
+     color: var(--primary-deep-blue);
+     transition: color var(--transition-speed) var(--transition-type);
+ }
+ 
+ a:hover,
+ a:focus {
+     color: var(--primary-gold);
+     text-decoration: underline;
+ }
+ 
+ /* =======================================================
+    2. Root Variables
+ ======================================================= */
+ :root {
+     /* Font Family */
+     --font-family: 'Vazir', sans-serif;
+ 
+     /* Color Palette */
+     /* Primary Colors */
+     --primary-gold: #F4C553;             /* Highlights, Buttons, Icons, CTAs */
+     --primary-deep-blue: #1F3B73;       /* Trust, Headers, Primary Text */
+ 
+     /* Secondary Colors */
+     --secondary-teal-green: #4FBDBA;    /* Growth, Secondary Buttons, Accents */
+     --secondary-electric-blue: #007BFF; /* Dynamic Interactions, Links, Active States */
+ 
+     /* Neutral Colors */
+     --neutral-white: #FFFFFF;            /* Backgrounds, Text Contrast, Open Spaces */
+     --neutral-cool-gray: #F0F0F5;       /* Section Dividers, Form Fields, Subtle Contrasts */
+     --neutral-dark-gray: #888888;       /* General Text and Icons */
+ 
+     /* Accent Colors */
+     --accent-golden-yellow: #FFD77B;     /* Hover Effects, Gradients, Embellishments */
+ 
+     /* Text Colors */
+     --text-primary: var(--primary-deep-blue); /* Main Text */
+     --text-secondary: var(--neutral-dark-gray); /* Secondary Text */
+ 
+     /* Button Colors */
+     --button-primary: var(--primary-gold);          /* Primary Buttons */
+     --button-secondary: var(--secondary-teal-green); /* Secondary Buttons */
+ 
+     /* Spacing */
+     --header-height: 80px;
+     --spacing-xs: 4px;
+     --spacing-sm: 8px;
+     --spacing-md: 16px;
+     --spacing-lg: 24px;
+     --spacing-small: 10px;
+     --spacing-medium: 20px;
+     --spacing-large: 40px;
+ 
+     /* Border Radius */
+     --border-radius: 8px;
+ 
+     /* Shadows */
+     --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.1);
+     --shadow-hover: 0 6px 18px rgba(0, 0, 0, 0.15);
+ 
+     /* Transitions */
+     --transition-speed: 0.3s;
+     --transition-type: ease-in-out;
+ }
+ 
+ /* =======================================================
+    3. Font Imports
+ ======================================================= */
+ 
+ /* Importing Vazir Font with different weights */
+ @font-face {
+     font-family: 'Vazir';
+     src: url('/assets/fonts/Vazir-Thin-UI.eot');
+     src: url('/assets/fonts/Vazir-Thin-UI.eot?#iefix') format('embedded-opentype'),
+          url('/assets/fonts/Vazir-Thin-UI.woff2') format('woff2'),
+          url('/assets/fonts/Vazir-Thin-UI.woff') format('woff'),
+          url('/assets/fonts/Vazir-Thin-UI.ttf') format('truetype');
+     font-weight: 100;
+     font-style: normal;
+ }
+ 
+ @font-face {
+     font-family: 'Vazir';
+     src: url('/assets/fonts/Vazir-Light-UI.eot');
+     src: url('/assets/fonts/Vazir-Light-UI.eot?#iefix') format('embedded-opentype'),
+          url('/assets/fonts/Vazir-Light-UI.woff2') format('woff2'),
+          url('/assets/fonts/Vazir-Light-UI.woff') format('woff'),
+          url('/assets/fonts/Vazir-Light-UI.ttf') format('truetype');
+     font-weight: 300;
+     font-style: normal;
+ }
+ 
+ @font-face {
+     font-family: 'Vazir';
+     src: url('/assets/fonts/Vazir-Regular-UI.eot');
+     src: url('/assets/fonts/Vazir-Regular-UI.eot?#iefix') format('embedded-opentype'),
+          url('/assets/fonts/Vazir-Regular-UI.woff2') format('woff2'),
+          url('/assets/fonts/Vazir-Regular-UI.woff') format('woff'),
+          url('/assets/fonts/Vazir-Regular-UI.ttf') format('truetype');
+     font-weight: 400;
+     font-style: normal;
+ }
+ 
+ @font-face {
+     font-family: 'Vazir';
+     src: url('/assets/fonts/Vazir-Medium-UI.eot');
+     src: url('/assets/fonts/Vazir-Medium-UI.eot?#iefix') format('embedded-opentype'),
+          url('/assets/fonts/Vazir-Medium-UI.woff2') format('woff2'),
+          url('/assets/fonts/Vazir-Medium-UI.woff') format('woff'),
+          url('/assets/fonts/Vazir-Medium-UI.ttf') format('truetype');
+     font-weight: 500;
+     font-style: normal;
+ }
+ 
+ @font-face {
+     font-family: 'Vazir';
+     src: url('/assets/fonts/Vazir-Bold-UI.eot');
+     src: url('/assets/fonts/Vazir-Bold-UI.eot?#iefix') format('embedded-opentype'),
+          url('/assets/fonts/Vazir-Bold-UI.woff2') format('woff2'),
+          url('/assets/fonts/Vazir-Bold-UI.woff') format('woff'),
+          url('/assets/fonts/Vazir-Bold-UI.ttf') format('truetype');
+     font-weight: 700;
+     font-style: normal;
+ }
+ 
+ @font-face {
+     font-family: 'Vazir';
+     src: url('/assets/fonts/Vazir-Black-UI.eot');
+     src: url('/assets/fonts/Vazir-Black-UI.eot?#iefix') format('embedded-opentype'),
+          url('/assets/fonts/Vazir-Black-UI.woff2') format('woff2'),
+          url('/assets/fonts/Vazir-Black-UI.woff') format('woff'),
+          url('/assets/fonts/Vazir-Black-UI.ttf') format('truetype');
+     font-weight: 900;
+     font-style: normal;
+ }
+ 
+ /* =======================================================
+    5. Typography
+ ======================================================= */
+ 
+ /* Headings */
+ h2, h3 {
+     margin-bottom: var(--spacing-large);
+ }
+ 
+ h2 {
+     font-size: 1.8em;
+     font-weight: 700;
+     color: var(--primary-deep-blue);
+     text-shadow: 0 0 10px var(--primary-gold);
+     margin-bottom: var(--spacing-md);
+ }
+ 
+ h3 {
+     font-size: 1.5em;
+     font-weight: 700;
+     color: var(--primary-deep-blue);
+     margin-bottom: var(--spacing-md);
+ }
+ 
+ /* Paragraphs */
+ p {
+     font-size: 1em;
+     max-width: 90%;
+     margin: 0 auto var(--spacing-medium);
+     line-height: 1.6;
+     text-align: center;
+     color: var(--text-primary);
+ }
+ 
+ /* =======================================================
+    6. Layout Sections
+ ======================================================= */
+ 
+ /* ---------------------------------------------------
+    6.1. Hero Section
+ --------------------------------------------------- */
+ .hero {
+     height: calc(100vh - var(--header-height)); /* Adjust height for fixed header */
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     background-color: var(--neutral-cool-gray);
+     color: var(--text-primary);
+     position: relative;
+     overflow: hidden;
+     text-align: center;
+     padding: var(--spacing-md);
+ }
+ 
+ .hero h2 {
+     font-size: 3em;
+     font-weight: 700;
+     color: var(--primary-deep-blue);
+     text-shadow: 0 0 10px var(--primary-gold);
+     margin-bottom: var(--spacing-md);
+ }
+ 
+ .hero p {
+     font-size: 1.5em;
+     margin-bottom: var(--spacing-lg);
+ }
+ 
+ .cta-button {
+     display: inline-block;
+     background-color: var(--button-primary);
+     color: var(--neutral-white);
+     padding: 12px 30px;
+     border-radius: var(--border-radius);
+     font-size: 1em;
+     box-shadow: 0 0 10px var(--accent-golden-yellow);
+     text-decoration: none;
+     font-weight: 600;
+     transition: background-color var(--transition-speed) var(--transition-type),
+                 transform var(--transition-speed) var(--transition-type),
+                 box-shadow var(--transition-speed) var(--transition-type);
+ }
+ 
+ .cta-button:hover,
+ .cta-button:focus {
+     background-color: var(--button-secondary);
+     transform: translateY(-5px);
+     box-shadow: 0 0 20px var(--button-secondary);
+ }
+ 
+ /* ---------------------------------------------------
+    6.3. Batteries Section
+ --------------------------------------------------- */
+ .batteries-grid {
+     display: grid;
+     grid-template-columns: 1fr;
+     gap: var(--spacing-md);
+ }
+ 
+ .battery-card {
+     background-color: var(--neutral-white);
+     border-radius: var(--border-radius);
+     padding: var(--spacing-md);
+     box-shadow: var(--shadow-card);
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     border: 2px solid var(--primary-deep-blue);
+     transition: transform var(--transition-speed) var(--transition-type), box-shadow var(--transition-speed) var(--transition-type);
+ }
+ 
+ .battery-card:hover {
+     transform: translateY(-5px);
+     box-shadow: var(--shadow-hover);
+ }
+ 
+ .battery-card h3 {
+     font-size: 1.3rem;
+     margin-bottom: var(--spacing-sm);
+     color: var(--primary-deep-blue);
+     font-weight: 700;
+ }
+ 
+ .battery-card p.description {
+     font-size: 1rem;
+     color: var(--text-secondary);
+     margin-bottom: var(--spacing-sm);
+     line-height: 1.6;
+ }
+ 
+ .battery-card p.id {
+     font-size: 0.9rem;
+     color: var(--primary-gold);
+     margin-bottom: var(--spacing-md);
+ }
+ 
+ .battery-links {
+     display: flex;
+     gap: var(--spacing-sm);
+     flex-wrap: wrap;
+ }
+ 
+ .battery-btn {
+     flex: 1;
+     padding: var(--spacing-sm) var(--spacing-md);
+     text-align: center;
+     border-radius: var(--border-radius);
+     font-weight: 600;
+     color: var(--neutral-white);
+     cursor: pointer;
+     background-color: var(--button-primary);
+     border: 2px solid var(--button-primary);
+     transition: background-color var(--transition-speed) var(--transition-type);
+ }
+ 
+ .battery-btn:last-child {
+     background-color: var(--button-secondary);
+     border: 2px solid var(--button-secondary);
+ }
+ 
+ .battery-btn:last-child:hover,
+ .battery-btn:last-child:focus {
+     background-color: var(--button-secondary);
+ }
+ 
+ /* ---------------------------------------------------
+    6.4. Footer
+ --------------------------------------------------- */
+ .footer {
+     background-color: var(--neutral-white);
+     padding: var(--spacing-lg);
+     color: var(--text-primary);
+     text-align: center; /* Center all text in the footer */
+     border-top: 1px solid var(--neutral-cool-gray);
+     position: relative;
+ }
+ 
+ /* =======================================================
+    9. Media Queries
+ ======================================================= */
+ 
+ /* ---------------------------------------------------
+    9.7. Additional Responsive Styles for Batteries Section
+ --------------------------------------------------- */
+ @media (min-width: 600px) {
+     .batteries-grid {
+         grid-template-columns: repeat(2, 1fr);
+     }
+ }
+ 
+ @media (min-width: 992px) {
+     .batteries-grid {
+         grid-template-columns: repeat(3, 1fr);
+     }
+ }
+</style> 
 </head>
 <body>
     <!-- skip link for accessibility -->
