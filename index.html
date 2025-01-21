@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>استعدادیاب | ارزیابی‌های روان‌شناختی برای تعالی فردی شما</title>
     <meta name="description" content="با استعدادیاب، با ارزیابی‌های روان‌شناختی پیشرفته آشنا شوید و توانمندی‌های خود را بشناسید.">
-        <link rel="icon" href="/assets/images/logo.png" type="image/png" />
+    <link rel="icon" href="/assets/images/logo.png" type="image/png" />
 
     <!-- Swiper CSS -->
     <link
       rel="stylesheet"
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
     />
-    
+
     <style>
         /* =======================================================
            1. Reset and Base Styles
@@ -184,52 +184,50 @@
             z-index: 1000;
         }
 
-   /* ---------------------------------------------------
-   4.2. Hero Section - Mobile First
---------------------------------------------------- */
-.hero {
-    height: calc(100vh - 80px - 60px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--neutral-cool-gray);
-    color: var(--text-primary);
-    text-align: center;
-    padding: var(--spacing-sm);
-}
+        /* ---------------------------------------------------
+           4.2. Hero Section - Mobile First
+        --------------------------------------------------- */
+        .hero {
+            height: calc(100vh - 80px - 60px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--neutral-cool-gray);
+            color: var(--text-primary);
+            text-align: center;
+            padding: var(--spacing-sm);
+        }
 
-.hero-content h2 {
-    font-size: 2.5em;
-    font-weight: 700;
-    color: var(--primary-deep-blue);
-    margin-bottom: var(--spacing-sm);
-}
+        .hero-content h2 {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: var(--primary-deep-blue);
+            margin-bottom: var(--spacing-sm);
+        }
 
-.hero-content p {
-    font-size: 1em;
-    margin-bottom: var(--spacing-md);
-    line-height: 1.6;
-}
+        .hero-content p {
+            font-size: 1em;
+            margin-bottom: var(--spacing-md);
+            line-height: 1.6;
+        }
 
-@media (min-width: 768px) {
-    .hero {
-        height: calc(100vh - var(--header-height));
-        padding: var(--spacing-md);
-    }
+        @media (min-width: 768px) {
+            .hero {
+                height: calc(100vh - var(--header-height));
+                padding: var(--spacing-md);
+            }
 
-    .hero-content h2 {
-        font-size: 4em;
-        margin-bottom: var(--spacing-md);
-    }
+            .hero-content h2 {
+                font-size: 4em;
+                margin-bottom: var(--spacing-md);
+            }
 
-    .hero-content p {
-        font-size: 1.5em;
-        margin-bottom: var(--spacing-lg);
-    }
-}
-
-
+            .hero-content p {
+                font-size: 1.5em;
+                margin-bottom: var(--spacing-lg);
+            }
+        }
 
         /* ---------------------------------------------------
            4.3. Services Slider Section
@@ -245,7 +243,6 @@
             font-size: 2em;
             font-weight: 700;
             color: var(--primary-deep-blue);
-            
             margin-bottom: var(--spacing-lg);
         }
 
@@ -263,12 +260,8 @@
             font-size: 2em;
             font-weight: 700;
             color: var(--primary-deep-blue);
-            
             margin-bottom: var(--spacing-lg);
         }
-
-
-
 
         /* ---------------------------------------------------
            4.5. Footer
@@ -378,127 +371,125 @@
             opacity: 1;
         }
 
-/* ======================================
-   1. General Swiper Container Styles
-====================================== */
+        /* ======================================
+           1. General Swiper Container Styles
+        ====================================== */
 
-/* Shared styles for all swiper containers */
-.swiper {
-    width: 100%;
-    margin: 0 auto; /* Center the swiper */
-    padding-bottom: 50px; /* Consolidated padding-bottom (50px overrides 30px) */
-}
+        /* Shared styles for all swiper containers */
+        .swiper {
+            width: 100%;
+            margin: 0 auto; /* Center the swiper */
+            padding-bottom: 50px; /* Consolidated padding-bottom (50px overrides 30px) */
+        }
 
-/* Responsive Width for Swiper Containers */
-@media (min-width: 769px) {
-    .swiper {
-        width: 90%;
-    }
-}
+        /* Responsive Width for Swiper Containers */
+        @media (min-width: 769px) {
+            .swiper {
+                width: 90%;
+            }
+        }
 
-/* ======================================
-   2. Swiper Wrapper Styles
-====================================== */
+        /* ======================================
+           2. Swiper Wrapper Styles
+        ====================================== */
 
-/* Shared styles for swiper-wrapper across different swiper types */
-.swiper .swiper-wrapper {
-    display: flex;
-}
+        /* Shared styles for swiper-wrapper across different swiper types */
+        .swiper .swiper-wrapper {
+            display: flex;
+        }
 
-/* ======================================
-   3. Swiper Slide Styles
-====================================== */
+        /* ======================================
+           3. Swiper Slide Styles
+        ====================================== */
 
-/* Shared styles for swiper-slide across different swiper types */
-.swiper-slide {
-    padding: var(--spacing-md);
-    border-radius: var(--border-radius);
-    transition: transform var(--transition-speed) var(--transition-type),
-                box-shadow var(--transition-speed) var(--transition-type);
-    height: auto; /* Adjust height based on content */
-}
+        /* Shared styles for swiper-slide across different swiper types */
+        .swiper-slide {
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius);
+            transition: transform var(--transition-speed) var(--transition-type),
+                        box-shadow var(--transition-speed) var(--transition-type);
+            height: auto; /* Adjust height based on content */
+        }
 
-/* ======================================
-   4. Swiper Slide Content Styles
-====================================== */
+        /* ======================================
+           4. Swiper Slide Content Styles
+        ====================================== */
 
-/* Shared styles for h3 within swiper slides */
-.swiper-slide h3 {
-    font-size: 1.2em;
-    font-weight: 700;
-    color: var(--primary-deep-blue);
-    margin-bottom: var(--spacing-xs); /* Consolidated margin-bottom */
-}
+        /* Shared styles for h3 within swiper slides */
+        .swiper-slide h3 {
+            font-size: 1.2em;
+            font-weight: 700;
+            color: var(--primary-deep-blue);
+            margin-bottom: var(--spacing-xs); /* Consolidated margin-bottom */
+        }
 
-/* Specific styles for p.description within assessments swiper slides */
-.swiper .swiper-slide p.description {
-    font-size: 0.95em;
-    color: var(--text-secondary);
-    line-height: 1.6;
-    margin-bottom: var(--spacing-sm);
-}
+        /* Specific styles for p.description within assessments swiper slides */
+        .swiper .swiper-slide p.description {
+            font-size: 0.95em;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: var(--spacing-sm);
+        }
 
-/* Specific styles for p.id within assessments swiper slides */
-.swiper .swiper-slide p.id {
-    font-size: 0.85em;
-    color: var(--neutral-dark-gray);
-    margin-bottom: var(--spacing-sm);
-}
+        /* Specific styles for p.id within assessments swiper slides */
+        .swiper .swiper-slide p.id {
+            font-size: 0.85em;
+            color: var(--neutral-dark-gray);
+            margin-bottom: var(--spacing-sm);
+        }
 
-/* ======================================
-   5. Swiper Pagination & Navigation
-====================================== */
+        /* ======================================
+           5. Swiper Pagination & Navigation
+        ====================================== */
 
-/* Swiper Pagination Dots */
-.swiper-pagination-bullet {
-    background: var(--neutral-dark-gray);
-}
+        /* Swiper Pagination Dots */
+        .swiper-pagination-bullet {
+            background: var(--neutral-dark-gray);
+        }
 
-.swiper-pagination-bullet-active {
-    background: var(--button-primary);
-}
+        .swiper-pagination-bullet-active {
+            background: var(--button-primary);
+        }
 
+        /* ======================================
+           7. Responsive Swiper Slide Widths
+        ====================================== */
 
-/* ======================================
-   7. Responsive Swiper Slide Widths
-====================================== */
+        @media (min-width: 576px) {
+            .swiper .swiper-slide {
+                width: 50%;
+            }
+        }
 
-@media (min-width: 576px) {
-    .swiper .swiper-slide {
-        width: 50%;
-    }
-}
+        @media (min-width: 768px) {
+            .swiper .swiper-slide {
+                width: 33.3333%;
+            }
+            .swiper-slide {
+                padding: var(--spacing-lg);
+            }
+            .tab-link {
+                font-size: 1em;
+            }
+        }
 
-@media (min-width: 768px) {
-    .swiper .swiper-slide {
-        width: 33.3333%;
-    }
-    .swiper-slide {
-        padding: var(--spacing-lg);
-    }
-    .tab-link {
-        font-size: 1em;
-    }
-}
+        @media (min-width: 1024px) {
+            .swiper .swiper-slide {
+                width: 25%;
+            }
+            .swiper-slide h3 {
+                font-size: 1.3em;
+            }
+        }
 
-@media (min-width: 1024px) {
-    .swiper .swiper-slide {
-        width: 25%;
-    }
-    .swiper-slide h3 {
-        font-size: 1.3em;
-    }
-}
-
-@media (min-width: 1200px) {
-    .swiper .swiper-slide {
-        width: 20%;
-    }
-    .factor-card {
-        max-width: 400px;
-    }
-}
-
+        @media (min-width: 1200px) {
+            .swiper .swiper-slide {
+                width: 20%;
+            }
+            .factor-card {
+                max-width: 400px;
+            }
+        }
 
         /* =======================================================
            5. Responsive Styles (Mobile-First)
@@ -521,6 +512,7 @@
                 font-size: 0.85em;
             }
         }
+
         /* =======================================================
            6. Reasoning Section Styles
         ======================================================= */
@@ -548,6 +540,7 @@
             line-height: 1.8;
             margin-bottom: var(--spacing-md);
         }
+
         /* =======================================================
            7. CTA Section Styles
         ======================================================= */
@@ -575,6 +568,7 @@
             margin-bottom: var(--spacing-md);
             text-align: justify;
         }
+
         /* =======================================================
            8. Tabbed Assessments Section Styles
         ======================================================= */
@@ -602,192 +596,191 @@
             margin-bottom: var(--spacing-md);
             text-align: justify;
         }
-/* Tabs Navigation - Mobile First */
-.tabs-navigation {
-  display: flex;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  gap: var(--spacing-md);
-  padding-bottom: var(--spacing-sm);
-  border-bottom: 2px solid var(--neutral-cool-gray);
-}
-.tab-link {
-  flex: 0 0 auto; /* Prevent buttons from stretching */
-  padding: var(--spacing-sm) var(--spacing-md);
-  font-size: 1em;
-  font-weight: 600;
-  color: var(--primary-deep-blue);
-  background-color: transparent;
-  border: none;
-  border-bottom: 2px solid transparent;
-  cursor: pointer;
-  transition: color var(--transition-speed) ease-in-out, border-bottom var(--transition-speed) ease-in-out;
-  white-space: nowrap; /* Prevent text wrapping */
-  font-family: 'Vazir', sans-serif;
-}
-.tab-link.active,
-.tab-link:hover {
-  color: var(--button-primary);
-  border-bottom: 2px solid var(--button-primary);
-}
-/* Battery Cards - Responsive */
-.battery-card {
-  background-color: var(--neutral-white);
-  padding: var(--spacing-md);
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow-card);
-  transition: transform var(--transition-speed) var(--transition-type), box-shadow var(--transition-speed) var(--transition-type);
-  margin-bottom: var(--spacing-lg);
-}
-.battery-card:hover {
-  box-shadow: var(--shadow-hover);
-}
-/* Hide all tab contents by default */
-.tab-content {
-    display: none;
-}
-/* Display the active tab content */
-.tab-content.active {
-    display: block;
-}
-.battery-links {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-sm);
-  margin-top: var(--spacing-md);
-}
-/* ======================================
-   Button Styles - Desktop (Default)
-====================================== */
+        /* Tabs Navigation - Mobile First */
+        .tabs-navigation {
+          display: flex;
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+          gap: var(--spacing-md);
+          padding-bottom: var(--spacing-sm);
+          border-bottom: 2px solid var(--neutral-cool-gray);
+        }
+        .tab-link {
+          flex: 0 0 auto; /* Prevent buttons from stretching */
+          padding: var(--spacing-sm) var(--spacing-md);
+          font-size: 1em;
+          font-weight: 600;
+          color: var(--primary-deep-blue);
+          background-color: transparent;
+          border: none;
+          border-bottom: 2px solid transparent;
+          cursor: pointer;
+          transition: color var(--transition-speed) ease-in-out, border-bottom var(--transition-speed) ease-in-out;
+          white-space: nowrap; /* Prevent text wrapping */
+          font-family: 'Vazir', sans-serif;
+        }
+        .tab-link.active,
+        .tab-link:hover {
+          color: var(--button-primary);
+          border-bottom: 2px solid var(--button-primary);
+        }
+        /* Battery Cards - Responsive */
+        .battery-card {
+          background-color: var(--neutral-white);
+          padding: var(--spacing-md);
+          border-radius: var(--border-radius);
+          box-shadow: var(--shadow-card);
+          transition: transform var(--transition-speed) var(--transition-type), box-shadow var(--transition-speed) var(--transition-type);
+          margin-bottom: var(--spacing-lg);
+        }
+        .battery-card:hover {
+          box-shadow: var(--shadow-hover);
+        }
+        /* Hide all tab contents by default */
+        .tab-content {
+            display: none;
+        }
+        /* Display the active tab content */
+        .tab-content.active {
+            display: block;
+        }
+        .battery-links {
+          display: flex;
+          flex-direction: column;
+          gap: var(--spacing-sm);
+          margin-top: var(--spacing-md);
+        }
 
-/* Primary Button Styles */
-.btn-primary {
-    display: inline-block;
-    background-color: var(--button-primary);
-    color: var(--neutral-white);
-    padding: 12px 30px;
-    border-radius: var(--border-radius);
-    font-size: 1em;
-    font-weight: 600;
-    text-decoration: none;
-    transition: transform var(--transition-speed) var(--transition-type),
-                opacity var(--transition-speed) var(--transition-type);
-    font-family: 'Vazir', sans-serif;
-    border: none;
-}
+        /* ======================================
+           Button Styles - Desktop (Default)
+        ====================================== */
 
-.btn-primary:hover,
-.btn-primary:focus {
-    filter: brightness(95%);
-    text-decoration: none;
-    color: var(--neutral-white);
-}
+        /* Primary Button Styles */
+        .btn-primary {
+            display: inline-block;
+            background-color: var(--button-primary);
+            color: var(--neutral-white);
+            padding: 12px 30px;
+            border-radius: var(--border-radius);
+            font-size: 1em;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform var(--transition-speed) var(--transition-type),
+                        opacity var(--transition-speed) var(--transition-type);
+            font-family: 'Vazir', sans-serif;
+            border: none;
+        }
 
-/* Secondary Button Styles */
-.btn-secondary {
-    display: inline-block;
-    background-color: transparent;
-    color: var(--button-primary);
-    padding: 8px 20px;
-    border-radius: var(--border-radius);
-    font-size: 1em;
-    font-weight: 600;
-    text-decoration: none;
-    transition: transform var(--transition-speed) var(--transition-type),
-                opacity var(--transition-speed) var(--transition-type);
-    font-family: 'Vazir', sans-serif;
-    border: 2px solid var(--button-primary);
-}
+        .btn-primary:hover,
+        .btn-primary:focus {
+            filter: brightness(95%);
+            text-decoration: none;
+            color: var(--neutral-white);
+        }
 
-.btn-secondary:hover,
-.btn-secondary:focus {
-    text-decoration: none;
-    filter: brightness(95%);
-    color: var(--button-primary);
-}
+        /* Secondary Button Styles */
+        .btn-secondary {
+            display: inline-block;
+            background-color: transparent;
+            color: var(--button-primary);
+            padding: 8px 20px;
+            border-radius: var(--border-radius);
+            font-size: 1em;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform var(--transition-speed) var(--transition-type),
+                        opacity var(--transition-speed) var(--transition-type);
+            font-family: 'Vazir', sans-serif;
+            border: 2px solid var(--button-primary);
+        }
 
-/* Call-to-Action Primary Button Styles */
-.btn-cta-primary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--button-primary);
-    color: var(--neutral-white);
-    padding: 19.2px 48px;
-    border-radius: 999px;
-    font-size: 1.408em;
-    font-weight: 600;
-    text-decoration: none;
-    transition: transform var(--transition-speed) var(--transition-type),
-                opacity var(--transition-speed) var(--transition-type);
-    font-family: 'Vazir', sans-serif;
-    border: none;
-    margin: 10px;
-    height: 55px;
-    box-sizing: border-box;
-}
+        .btn-secondary:hover,
+        .btn-secondary:focus {
+            text-decoration: none;
+            filter: brightness(95%);
+            color: var(--button-primary);
+        }
 
-.btn-cta-primary:hover,
-.btn-cta-primary:focus {
-    filter: brightness(95%);
-    text-decoration: none;
-    color: var(--neutral-white);
-}
+        /* Call-to-Action Primary Button Styles */
+        .btn-cta-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--button-primary);
+            color: var(--neutral-white);
+            padding: 19.2px 48px;
+            border-radius: 999px;
+            font-size: 1.408em;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform var(--transition-speed) var(--transition-type),
+                        opacity var(--transition-speed) var(--transition-type);
+            font-family: 'Vazir', sans-serif;
+            border: none;
+            margin: 10px;
+            height: 55px;
+            box-sizing: border-box;
+        }
 
-/* Call-to-Action Secondary Button Styles */
-.btn-cta-secondary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background-color: transparent;
-    color: var(--button-primary);
-    padding: 13.2px 28.8px;
-    border-radius: 999px;
-    font-size: 1.408em;
-    font-weight: 600;
-    text-decoration: none;
-    transition: transform var(--transition-speed) var(--transition-type),
-                opacity var(--transition-speed) var(--transition-type);
-    font-family: 'Vazir', sans-serif;
-    border: 2.82px solid var(--button-primary);
-    margin: 10px;
-    height: 55px;
-    box-sizing: border-box;
-}
+        .btn-cta-primary:hover,
+        .btn-cta-primary:focus {
+            filter: brightness(95%);
+            text-decoration: none;
+            color: var(--neutral-white);
+        }
 
-.btn-cta-secondary:hover,
-.btn-cta-secondary:focus {
-    text-decoration: none;
-    filter: brightness(95%);
-    color: var(--button-primary);
-}
+        /* Call-to-Action Secondary Button Styles */
+        .btn-cta-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: transparent;
+            color: var(--button-primary);
+            padding: 13.2px 28.8px;
+            border-radius: 999px;
+            font-size: 1.408em;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform var(--transition-speed) var(--transition-type),
+                        opacity var(--transition-speed) var(--transition-type);
+            font-family: 'Vazir', sans-serif;
+            border: 2.82px solid var(--button-primary);
+            margin: 10px;
+            height: 55px;
+            box-sizing: border-box;
+        }
 
-/* ======================================
-   Button Styles - Mobile
-====================================== */
-@media (max-width: 768px) {
-    /* Adjust Call-to-Action Primary Button */
-    .btn-cta-primary {
-        width: 100%;
-        padding: 14px 24px; /* Reduced padding for better fit */
-        font-size: 1.2em; /* Slightly smaller font size */
-        height: auto; /* Remove fixed height to accommodate text */
-        margin: 8px 0; /* Vertical spacing between buttons */
-    }
+        .btn-cta-secondary:hover,
+        .btn-cta-secondary:focus {
+            text-decoration: none;
+            filter: brightness(95%);
+            color: var(--button-primary);
+        }
 
-    /* Adjust Call-to-Action Secondary Button */
-    .btn-cta-secondary {
-        width: 100%;
-        padding: 10px 20px; /* Reduced padding for better fit */
-        font-size: 1.2em; /* Slightly smaller font size */
-        height: auto; /* Remove fixed height to accommodate text */
-        margin: 8px 0; /* Vertical spacing between buttons */
-    }
+        /* ======================================
+           Button Styles - Mobile
+        ====================================== */
+        @media (max-width: 768px) {
+            /* Adjust Call-to-Action Primary Button */
+            .btn-cta-primary {
+                width: 100%;
+                padding: 14px 24px; /* Reduced padding for better fit */
+                font-size: 1.2em; /* Slightly smaller font size */
+                height: auto; /* Remove fixed height to accommodate text */
+                margin: 8px 0; /* Vertical spacing between buttons */
+            }
 
-}
+            /* Adjust Call-to-Action Secondary Button */
+            .btn-cta-secondary {
+                width: 100%;
+                padding: 10px 20px; /* Reduced padding for better fit */
+                font-size: 1.2em; /* Slightly smaller font size */
+                height: auto; /* Remove fixed height to accommodate text */
+                margin: 8px 0; /* Vertical spacing between buttons */
+            }
+        }
 
-        
-.description {
+        .description {
             font-size: 0.95em;
             color: var(--text-secondary);
             margin-bottom: var(--spacing-sm);
@@ -805,6 +798,7 @@
             display: flex;
             gap: var(--spacing-sm);
         }
+
         /* ============================================
            2. Responsiveness (mobile-first approach)
         ============================================ */
@@ -825,12 +819,13 @@
                 font-size: 2.2em;
             }
         }
+
         /* =======================================================
            9. Diagnostic Factors Section Styles
         ======================================================= */
         /* Diagnostic Factors Section Styles */
         .factors-section {
-            padding: var(--spacing-lg) var(--spacing-md);
+            padding: var(--spacing-lg) var(--spacing-xs);
             background-color: var(--neutral-cool-gray);
             text-align: center;
             font-family: 'Vazir', sans-serif; /* Ensures this section uses Vazir font */
@@ -839,6 +834,10 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: var(--spacing-md);
+            display: flex; /* Ensure the layout is set to flex */
+            flex-wrap: wrap;
+            gap: 10px; /* Reduced gap between cards */
+            justify-content: center;
         }
         .section-title {
             font-size: 2em;
@@ -856,7 +855,7 @@
         .factor-card {
             background-color: var(--neutral-white);
             width: 100%;
-            max-width: 300px;
+            max-width: 350px; /* Consistent max-width */
             border-radius: var(--border-radius);
             box-shadow: var(--shadow-card);
             text-align: right; /* Right-align text for RTL */
@@ -864,8 +863,10 @@
             transition: transform var(--transition-speed), box-shadow var(--transition-speed);
             display: flex;
             flex-direction: column;
-            gap: var(--spacing-sm);
-            height: 100%; /* Make all cards the same height */
+            gap: var(--spacing-md); /* Reduced gap */
+            margin: 0px; /* No margin */
+
+            height: 300px; /* Fixed height for consistency */
         }
         .factor-card:hover {
             box-shadow: var(--shadow-hover);
@@ -910,12 +911,13 @@
         }
         .factor-card {
             max-width: 350px;
-            }
+        }
         @media (min-width: 1024px) {
             .factor-card {
                 max-width: 400px;
             }
         }
+
         /* =======================================================
            10. Partners or Collaborators Section Styles
         ======================================================= */
@@ -996,6 +998,7 @@
                 grid-template-columns: repeat(4, 1fr); /* Four columns for screens >= 1024px */
             }
         }
+
         /* =======================================================
            11. Reasonable Pricing Section Styles
         ======================================================= */
@@ -1010,13 +1013,14 @@
             margin: 0 auto;
             padding: var(--spacing-md);
         }
-        .section-title {
+        .pricing-section .section-title {
             font-size: 2em;
             font-weight: 700;
             color: var(--primary-deep-blue);
             margin-bottom: var(--spacing-lg);           
         }
-        .section-text, .section-note {
+        .pricing-section .section-text,
+        .pricing-section .section-note {
             font-size: 1.1em;
             color: var(--text-secondary);
             line-height: 1.8;
@@ -1039,7 +1043,7 @@
         .pricing-card:hover {
             box-shadow: var(--shadow-hover);
         }
-       .pricing-title {
+        .pricing-title {
             font-size: 1.5em;
             font-weight: 700;
             color: var(--primary-deep-blue);
@@ -1067,6 +1071,7 @@
                 grid-template-columns: repeat(3, 1fr);
             }
         }
+
         /* =======================================================
            12. FAQ Section Styles
         ======================================================= */
@@ -1076,18 +1081,18 @@
             background-color: var(--neutral-cool-gray);
             text-align: center;
         }
-        .container {
+        .faq-section .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: var(--spacing-md);
         }
-        .section-title {
+        .faq-section .section-title {
             font-size: 2em;
             font-weight: 700;
             color: var(--primary-deep-blue);
             margin-bottom: var(--spacing-md);
         }
-        .section-text {
+        .faq-section .section-text {
             font-size: 1.1em;
             color: var(--text-secondary);
             line-height: 1.8;
@@ -1104,7 +1109,7 @@
             padding-bottom: var(--spacing-sm);
             border-bottom: 2px solid var(--neutral-cool-gray);
         }
-        .tab-link {
+        .faq-tabs .tab-link {
             padding: var(--spacing-sm) var(--spacing-md);
             font-size: 1em;
             font-weight: 600;
@@ -1117,8 +1122,8 @@
             white-space: nowrap;
             font-family: 'Vazir', sans-serif;
         }
-        .tab-link:hover,
-        .tab-link.active {
+        .faq-tabs .tab-link:hover,
+        .faq-tabs .tab-link.active {
             color: var(--button-primary);
             border-bottom: 2px solid var(--button-primary);
         }
@@ -1170,7 +1175,7 @@
             .faq-tabs {
                 gap: var(--spacing-md);
             }
-            .tab-link {
+            .faq-tabs .tab-link {
                 font-size: 1em;
             }
         }
@@ -1190,6 +1195,24 @@
                 font-size: 1.2em;
             }
         }
+
+        /* =======================================================
+           13. Additional Styles for Conditional Slider Activation
+        ======================================================= */
+        /* When Swiper is not active, center the slides */
+        .swiper-not-active .swiper-wrapper {
+            justify-content: center;
+        }
+
+        /* Ensure slides take only necessary width when Swiper is inactive */
+        .swiper-not-active .swiper-slide {
+            width: auto !important;
+        }
+
+        /* Optional: Adjust Swiper pagination when inactive */
+        .swiper-not-active .swiper-pagination {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -1200,550 +1223,534 @@
     <!-- Main Content -->
     <main id="main-content">
         <!-- Hero Section -->
-     <!-- Updated Hero Section -->
-<!-- Perfected Mobile-First Hero Section -->
-<section id="home" class="section hero">
-    <div class="hero-content">
-        <h2>شما شایسته کشف استعداد خود هستید.</h2>
-        <p>به دنبال چه آزمونی هستید؟</p>
-        <div>
-            <a href="/take?test=Individual-Satisfaction" class="btn-cta-primary">استعدادیابی برای خودم</a>
-            <a href="/take?test=Child" class="btn-cta-primary">استعدادیابی برای کودکم</a>
-        </div>
-    </div>
-</section>
-
-
-
+        <section id="home" class="section hero">
+            <div class="hero-content">
+                <h2>شما شایسته کشف استعداد خود هستید.</h2>
+                <p>به دنبال چه آزمونی هستید؟</p>
+                <div>
+                    <a href="/take?test=Individual-Satisfaction" class="btn-cta-primary">استعدادیابی برای خودم</a>
+                    <a href="/take?test=Child" class="btn-cta-primary">استعدادیابی برای کودکم</a>
+                </div>
+            </div>
+        </section>
 
         <!-- Why Choose Us Section -->
         <section class="section reasoning-section" id="reason">
             <div class="container">
                 <h2 class="section-title">چرا استعدادیاب؟</h2>
                 <p class="section-text">
-تجربه ما در حوزه روان‌شناسی نشان داد افراد معمولاً نتایج ارزیابی‌های خود را به‌صورت کلی دریافت می‌کنند و فرصت کافی برای درک عمیق یا به‌کارگیری آن در زندگی واقعی ندارند. به همین دلیل، ما در استعدادیاب تصمیم گرفتیم بستری مناسب فراهم کنیم تا هر فرد بتواند از هر کجا، پاسخ‌های ارزیابی خود را به‌طور دقیق مشاهده کرده و راهکارهای علمی دریافت کند. هدف ما این است که با ارائه گزارش‌های شفاف، ابزارهای عملی و پشتیبانی مستمر، هر شخص بتواند آگاهانه درباره آینده شغلی، تحصیلی یا شخصی خود تصمیم بگیرد.
+                    تجربه ما در حوزه روان‌شناسی نشان داد افراد معمولاً نتایج ارزیابی‌های خود را به‌صورت کلی دریافت می‌کنند و فرصت کافی برای درک عمیق یا به‌کارگیری آن در زندگی واقعی ندارند. به همین دلیل، ما در استعدادیاب تصمیم گرفتیم بستری مناسب فراهم کنیم تا هر فرد بتواند از هر کجا، پاسخ‌های ارزیابی خود را به‌طور دقیق مشاهده کرده و راهکارهای علمی دریافت کند. هدف ما این است که با ارائه گزارش‌های شفاف، ابزارهای عملی و پشتیبانی مستمر، هر شخص بتواند آگاهانه درباره آینده شغلی، تحصیلی یا شخصی خود تصمیم بگیرد.
                 </p>
             </div>
         </section>
 
+        <!-- =========================================
+             Tabbed Assessments Section (Updated)
+        ========================================= -->
+        <section class="section tabbed-assessments" id="tabbed-assessments">
+            <div class="container">
+                <!-- Section Title & Intro Text -->
+                <h2 class="section-title">ارزیابی‌های روانشناختی</h2>
+                <p class="section-text">
+                    در این بخش، ارزیابی‌ها بر اساس دسته‌بندی‌های مختلف روانشناختی در اختیار شما قرار می‌گیرند.
+                </p>
+                <!-- Tabs Navigation -->
+                <div class="tabs-navigation">
+                    <!-- Define each category as a tab -->
+                    <button class="tab-link active" data-tab="category1">سلامت روان</button>
+                    <button class="tab-link" data-tab="category2">شخصیت و عزت نفس</button>
+                    <button class="tab-link" data-tab="category3">ارزیابی‌های کودکان</button>
+                    <button class="tab-link" data-tab="category4">زندگی و رشد فردی</button>
+                    <button class="tab-link" data-tab="category5">رضایت شغلی و زناشویی</button>
+                    <button class="tab-link" data-tab="category6">ارزیابی‌های شناختی</button>
+                </div>
+                <!-- =====================
+                     Tab Content #1 (Active)
+                     Category: سلامت روان (Mental Health)
+                ====================== -->
+                <div id="category1" class="tab-content active">
+                    <!-- Swiper Container -->
+                    <div class="swiper swiper-category1" data-autoslider="true">
+                        <div class="swiper-wrapper">
+                            <!-- Inventory 1 -->
+                            <div class="swiper-slide">
+                                <div class="battery-card">
+                                    <div>
+                                        <h3>فهرست آرامش روانی - 33</h3>
+                                        <p class="description">این ارزیابی به سنجش میزان آرامش روانی و توانایی مدیریت استرس شما می‌پردازد.</p>
+                                        <p class="id">id: 110001</p>
+                                    </div>
+                                    <div class="battery-links">
+                                        <a href="/take?=mental-tranquility" class="btn-primary">شروع ارزیابی</a>
+                                        <a href="/assessments/mental-tranquility" class="btn-secondary">معرفی ارزیابی</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Inventory 6 -->
+                            <div class="swiper-slide">
+                                <div class="battery-card">
+                                    <div>
+                                        <h3>فهرست بهداشت روان نوجوان - 46</h3>
+                                        <p class="description">این ارزیابی به بررسی سلامت روانی و بهداشت روانی نوجوانان می‌پردازد.</p>
+                                        <p class="id">id: 110006</p>
+                                    </div>
+                                    <div class="battery-links">
+                                        <a href="/take?=adolescent-mental-hygiene" class="btn-primary">شروع ارزیابی</a>
+                                        <a href="/assessments/adolescent-mental-hygiene" class="btn-secondary">معرفی ارزیابی</a>
+                                    </div>
+                                </div>
+                            </div>
 
+                            <!-- Inventory 7 -->
+                            <div class="swiper-slide">
+                                <div class="battery-card">
+                                    <div>
+                                        <h3>فهرست پاکزیستی - 20</h3>
+                                        <p class="description">این ارزیابی به بررسی میزان پاکیزگی و بهداشت شخصی شما می‌پردازد.</p>
+                                        <p class="id">id: 110007</p>
+                                    </div>
+                                    <div class="battery-links">
+                                        <a href="/take?=purification" class="btn-primary">شروع ارزیابی</a>
+                                        <a href="/assessments/purification" class="btn-secondary">معرفی ارزیابی</a>
+                                    </div>
+                                </div>
+                            </div>
 
-<!-- =========================================
-     Tabbed Assessments Section (Updated)
-========================================= -->
-<section class="section tabbed-assessments" id="tabbed-assessments">
-  <div class="container">
-    <!-- Section Title & Intro Text -->
-    <h2 class="section-title">ارزیابی‌های روانشناختی</h2>
-    <p class="section-text">
-      در این بخش، ارزیابی‌ها بر اساس دسته‌بندی‌های مختلف روانشناختی در اختیار شما قرار می‌گیرند.
-    </p>
-    <!-- Tabs Navigation -->
-    <div class="tabs-navigation">
-      <!-- Define each category as a tab -->
-      <button class="tab-link active" data-tab="category1">سلامت روان</button>
-      <button class="tab-link" data-tab="category2">شخصیت و عزت نفس</button>
-      <button class="tab-link" data-tab="category3">ارزیابی‌های کودکان</button>
-      <button class="tab-link" data-tab="category4">زندگی و رشد فردی</button>
-      <button class="tab-link" data-tab="category5">رضایت شغلی و زناشویی</button>
-      <button class="tab-link" data-tab="category6">ارزیابی‌های شناختی</button>
-    </div>
-    <!-- =====================
-         Tab Content #1 (Active)
-         Category: سلامت روان (Mental Health)
-    ====================== -->
-    <div id="category1" class="tab-content active">
-      <!-- Swiper Container -->
-      <div class="swiper swiper-category1">
-        <div class="swiper-wrapper">
-          <!-- Inventory 1 -->
-          <div class="swiper-slide">
-            <div class="battery-card">
-              <div>
-                <h3>فهرست آرامش روانی - 33</h3>
-                <p class="description">این ارزیابی به سنجش میزان آرامش روانی و توانایی مدیریت استرس شما می‌پردازد.</p>
-                <p class="id">id: 110001</p>
-              </div>
-              <div class="battery-links">
-                <a href="/take/mental-tranquility" class="btn-primary">شروع ارزیابی</a>
-                <a href="/assessments/mental-tranquility" class="btn-secondary">معرفی ارزیابی</a>
-              </div>
-            </div>
-          </div>
-          <!-- Inventory 6 -->
-          <div class="swiper-slide">
-            <div class="battery-card">
-              <div>
-                <h3>فهرست بهداشت روان نوجوان - 46</h3>
-                <p class="description">این ارزیابی به بررسی سلامت روانی و بهداشت روانی نوجوانان می‌پردازد.</p>
-                <p class="id">id: 110006</p>
-              </div>
-              <div class="battery-links">
-                <a href="/take/adolescent-mental-hygiene" class="btn-primary">شروع ارزیابی</a>
-                <a href="/assessments/adolescent-mental-hygiene" class="btn-secondary">معرفی ارزیابی</a>
-              </div>
-            </div>
-          </div>
+                            <!-- Inventory 8 -->
+                            <div class="swiper-slide">
+                                <div class="battery-card">
+                                    <div>
+                                        <h3>فهرست پایایی - 29</h3>
+                                        <p class="description">این ارزیابی به سنجش میزان پایایی و ثبات احساسی شما می‌پردازد.</p>
+                                        <p class="id">id: 110008</p>
+                                    </div>
+                                    <div class="battery-links">
+                                        <a href="/take?=stability" class="btn-primary">شروع ارزیابی</a>
+                                        <a href="/assessments/stability" class="btn-secondary">معرفی ارزیابی</a>
+                                    </div>
+                                </div>
+                            </div>
 
-          <!-- Inventory 7 -->
-          <div class="swiper-slide">
-            <div class="battery-card">
-              <div>
-                <h3>فهرست پاکزیستی - 20</h3>
-                <p class="description">این ارزیابی به بررسی میزان پاکیزگی و بهداشت شخصی شما می‌پردازد.</p>
-                <p class="id">id: 110007</p>
-              </div>
-              <div class="battery-links">
-                <a href="/take/purification" class="btn-primary">شروع ارزیابی</a>
-                <a href="/assessments/purification" class="btn-secondary">معرفی ارزیابی</a>
-              </div>
-            </div>
-          </div>
+                            <!-- Inventory 10 -->
+                            <div class="swiper-slide">
+                                <div class="battery-card">
+                                    <div>
+                                        <h3>فهرست تعادل - 38</h3>
+                                        <p class="description">این ارزیابی به بررسی تعادل میان زندگی شخصی و حرفه‌ای شما می‌پردازد.</p>
+                                        <p class="id">id: 110010</p>
+                                    </div>
+                                    <div class="battery-links">
+                                        <a href="/take?=balance" class="btn-primary">شروع ارزیابی</a>
+                                        <a href="/assessments/balance" class="btn-secondary">معرفی ارزیابی</a>
+                                    </div>
+                                </div>
+                            </div>
 
-          <!-- Inventory 8 -->
-          <div class="swiper-slide">
-            <div class="battery-card">
-              <div>
-                <h3>فهرست پایایی - 29</h3>
-                <p class="description">این ارزیابی به سنجش میزان پایایی و ثبات احساسی شما می‌پردازد.</p>
-                <p class="id">id: 110008</p>
-              </div>
-              <div class="battery-links">
-                <a href="/take/stability" class="btn-primary">شروع ارزیابی</a>
-                <a href="/assessments/stability" class="btn-secondary">معرفی ارزیابی</a>
-              </div>
-            </div>
-          </div>
+                            <!-- Inventory 11 -->
+                            <div class="swiper-slide">
+                                <div class="battery-card">
+                                    <div>
+                                        <h3>فهرست تعادل روان - 94</h3>
+                                        <p class="description">این ارزیابی به سنجش تعادل روانی و سلامت روان شما می‌پردازد.</p>
+                                        <p class="id">id: 110011</p>
+                                    </div>
+                                    <div class="battery-links">
+                                        <a href="/take?=mental-balance" class="btn-primary">شروع ارزیابی</a>
+                                        <a href="/assessments/mental-balance" class="btn-secondary">معرفی ارزیابی</a>
+                                    </div>
+                                </div>
+                            </div>
 
-          <!-- Inventory 10 -->
-          <div class="swiper-slide">
-            <div class="battery-card">
-              <div>
-                <h3>فهرست تعادل - 38</h3>
-                <p class="description">این ارزیابی به بررسی تعادل میان زندگی شخصی و حرفه‌ای شما می‌پردازد.</p>
-                <p class="id">id: 110010</p>
-              </div>
-              <div class="battery-links">
-                <a href="/take/balance" class="btn-primary">شروع ارزیابی</a>
-                <a href="/assessments/balance" class="btn-secondary">معرفی ارزیابی</a>
-              </div>
-            </div>
-          </div>
+                            <!-- Inventory 16 -->
+                            <div class="swiper-slide">
+                                <div class="battery-card">
+                                    <div>
+                                        <h3>فهرست حمایت معنوی - 28</h3>
+                                        <p class="description">این ارزیابی میزان حمایت معنوی و روانی شما را بررسی می‌کند.</p>
+                                        <p class="id">id: 110016</p>
+                                    </div>
+                                    <div class="battery-links">
+                                        <a href="/take?=spiritual-support" class="btn-primary">شروع ارزیابی</a>
+                                        <a href="/assessments/spiritual-support" class="btn-secondary">معرفی ارزیابی</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Swiper Pagination & Navigation -->
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
 
-          <!-- Inventory 11 -->
-          <div class="swiper-slide">
-            <div class="battery-card">
-              <div>
-                <h3>فهرست تعادل روان - 94</h3>
-                <p class="description">این ارزیابی به سنجش تعادل روانی و سلامت روان شما می‌پردازد.</p>
-                <p class="id">id: 110011</p>
-              </div>
-              <div class="battery-links">
-                <a href="/take/mental-balance" class="btn-primary">شروع ارزیابی</a>
-                <a href="/assessments/mental-balance" class="btn-secondary">معرفی ارزیابی</a>
-              </div>
-            </div>
-          </div>
+                <!-- =====================
+                     Tab Content #2
+                     Category: شخصیت و عزت نفس (Personality and Self-Esteem)
+                ====================== -->
+                <div id="category2" class="tab-content">
+                    <!-- Swiper Container -->
+                    <div class="swiper swiper-category2" data-autoslider="true">
+                        <div class="swiper-wrapper">
+                            <!-- Inventory 2 -->
+                            <div class="swiper-slide">
+                                <div class="battery-card">
+                                    <div>
+                                        <h3>فهرست ارجمندی - 17</h3>
+                                        <p class="description">این ارزیابی به بررسی سطح ارجمندی و خودارزیابی مثبت شما می‌پردازد.</p>
+                                        <p class="id">id: 110002</p>
+                                    </div>
+                                    <div class="battery-links">
+                                        <a href="/take?=esteem" class="btn-primary">شروع ارزیابی</a>
+                                        <a href="/assessments/esteem" class="btn-secondary">معرفی ارزیابی</a>
+                                    </div>
+                                </div>
+                            </div>
 
-          <!-- Inventory 16 -->
-          <div class="swiper-slide">
-            <div class="battery-card">
-              <div>
-                <h3>فهرست حمایت معنوی - 28</h3>
-                <p class="description">این ارزیابی میزان حمایت معنوی و روانی شما را بررسی می‌کند.</p>
-                <p class="id">id: 110016</p>
-              </div>
-              <div class="battery-links">
-                <a href="/take/spiritual-support" class="btn-primary">شروع ارزیابی</a>
-                <a href="/assessments/spiritual-support" class="btn-secondary">معرفی ارزیابی</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Swiper Pagination & Navigation -->
-        <div class="swiper-pagination"></div>
-        
-        
-      </div>
-    </div>
+                            <!-- Inventory 12 -->
+                            <div class="swiper-slide">
+                                <div class="battery-card">
+                                    <div>
+                                        <h3>فهرست تعهد فردی - 12</h3>
+                                        <p class="description">این ارزیابی میزان تعهد شما به اهداف و مسئولیت‌ها را سنجش می‌کند.</p>
+                                        <p class="id">id: 110014</p>
+                                    </div>
+                                    <div class="battery-links">
+                                        <a href="/take?=personal-commitment" class="btn-primary">شروع ارزیابی</a>
+                                        <a href="/assessments/personal-commitment" class="btn-secondary">معرفی ارزیابی</a>
+                                    </div>
+                                </div>
+                            </div>
 
-    <!-- =====================
-         Tab Content #2
-         Category: شخصیت و عزت نفس (Personality and Self-Esteem)
-    ====================== -->
-    <div id="category2" class="tab-content">
-      <!-- Swiper Container -->
-      <div class="swiper swiper-category2">
-        <div class="swiper-wrapper">
-          <!-- Inventory 2 -->
-          <div class="swiper-slide">
-            <div class="battery-card">
-              <div>
-                <h3>فهرست ارجمندی - 17</h3>
-                <p class="description">این ارزیابی به بررسی سطح ارجمندی و خودارزیابی مثبت شما می‌پردازد.</p>
-                <p class="id">id: 110002</p>
-              </div>
-              <div class="battery-links">
-                <a href="/take/esteem" class="btn-primary">شروع ارزیابی</a>
-                <a href="/assessments/esteem" class="btn-secondary">معرفی ارزیابی</a>
-              </div>
-            </div>
-          </div>
+                            <!-- Inventory 14 -->
+                            <div class="swiper-slide">
+                                <div class="battery-card">
+                                    <div>
+                                        <h3>فهرست یکپارچگی شناختی - 14</h3>
+                                        <p class="description">این ارزیابی به بررسی میزان یکپارچگی و انسجام در تفکر شما می‌پردازد.</p>
+                                        <p class="id">id: 110035</p>
+                                    </div>
+                                    <div class="battery-links">
+                                        <a href="/take?=cognitive-integration" class="btn-primary">شروع ارزیابی</a>
+                                        <a href="/assessments/cognitive-integration" class="btn-secondary">معرفی ارزیابی</a>
+                                    </div>
+                                </div>
+                            </div>
 
-          <!-- Inventory 12 -->
-          <div class="swiper-slide">
-            <div class="battery-card">
-              <div>
-                <h3>فهرست تعهد فردی - 12</h3>
-                <p class="description">این ارزیابی میزان تعهد شما به اهداف و مسئولیت‌ها را سنجش می‌کند.</p>
-                <p class="id">id: 110014</p>
-              </div>
-              <div class="battery-links">
-                <a href="/take/personal-commitment" class="btn-primary">شروع ارزیابی</a>
-                <a href="/assessments/personal-commitment" class="btn-secondary">معرفی ارزیابی</a>
-              </div>
-            </div>
-          </div>
+                            <!-- Inventory 17 -->
+                            <div class="swiper-slide">
+                                <div class="battery-card">
+                                    <div>
+                                        <h3>فهرست خردمندی - 25</h3>
+                                        <p class="description">این ارزیابی به سنجش میزان خردمندی و درک عمیق شما می‌پردازد.</p>
+                                        <p class="id">id: 110017</p>
+                                    </div>
+                                    <div class="battery-links">
+                                        <a href="/take?=wisdom" class="btn-primary">شروع ارزیابی</a>
+                                        <a href="/assessments/wisdom" class="btn-secondary">معرفی ارزیابی</a>
+                                    </div>
+                                </div>
+                            </div>
 
-          <!-- Inventory 14 -->
-          <div class="swiper-slide">
-            <div class="battery-card">
-              <div>
-                <h3>فهرست یکپارچگی شناختی - 14</h3>
-                <p class="description">این ارزیابی به بررسی میزان یکپارچگی و انسجام در تفکر شما می‌پردازد.</p>
-                <p class="id">id: 110035</p>
-              </div>
-              <div class="battery-links">
-                <a href="/take/cognitive-integration" class="btn-primary">شروع ارزیابی</a>
-                <a href="/assessments/cognitive-integration" class="btn-secondary">معرفی ارزیابی</a>
-              </div>
-            </div>
-          </div>
+                            <!-- Inventory 18 -->
+                            <div class="swiper-slide">
+                                <div class="battery-card">
+                                    <div>
+                                        <h3>فهرست خود گستری - 62</h3>
+                                        <p class="description">این ارزیابی به بررسی میزان خودگسترایی و توسعه شخصی شما می‌پردازد.</p>
+                                        <p class="id">id: 110018</p>
+                                    </div>
+                                    <div class="battery-links">
+                                        <a href="/take?=self-expansion" class="btn-primary">شروع ارزیابی</a>
+                                        <a href="/assessments/self-expansion" class="btn-secondary">معرفی ارزیابی</a>
+                                    </div>
+                                </div>
+                            </div>
 
-          <!-- Inventory 17 -->
-          <div class="swiper-slide">
-            <div class="battery-card">
-              <div>
-                <h3>فهرست خردمندی - 25</h3>
-                <p class="description">این ارزیابی به سنجش میزان خردمندی و درک عمیق شما می‌پردازد.</p>
-                <p class="id">id: 110017</p>
-              </div>
-              <div class="battery-links">
-                <a href="/take/wisdom" class="btn-primary">شروع ارزیابی</a>
-                <a href="/assessments/wisdom" class="btn-secondary">معرفی ارزیابی</a>
-              </div>
-            </div>
-          </div>
+                            <!-- Inventory 19 -->
+                            <div class="swiper-slide">
+                                <div class="battery-card">
+                                    <div>
+                                        <h3>فهرست درستی - 17</h3>
+                                        <p class="description">این ارزیابی به سنجش دقت و صحت در تفکر و عمل شما می‌پردازد.</p>
+                                        <p class="id">id: 110019</p>
+                                    </div>
+                                    <div class="battery-links">
+                                        <a href="/take?=accuracy" class="btn-primary">شروع ارزیابی</a>
+                                        <a href="/assessments/accuracy" class="btn-secondary">معرفی ارزیابی</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Swiper Pagination & Navigation -->
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
 
-          <!-- Inventory 18 -->
-          <div class="swiper-slide">
-            <div class="battery-card">
-              <div>
-                <h3>فهرست خود گستری - 62</h3>
-                <p class="description">این ارزیابی به بررسی میزان خودگسترایی و توسعه شخصی شما می‌پردازد.</p>
-                <p class="id">id: 110018</p>
-              </div>
-              <div class="battery-links">
-                <a href="/take/self-expansion" class="btn-primary">شروع ارزیابی</a>
-                <a href="/assessments/self-expansion" class="btn-secondary">معرفی ارزیابی</a>
-              </div>
-            </div>
-          </div>
+                <!-- =====================
+                     Tab Content #3
+                     Category: ارزیابی‌های کودکان (Child Assessments)
+                ====================== -->
+                <div id="category3" class="tab-content">
+                    <!-- Swiper Container -->
+                    <div class="swiper swiper-category3" data-autoslider="true">
+                        <div class="swiper-wrapper">
+                            <!-- Inventory 3 -->
+                            <div class="swiper-slide">
+                                <div class="battery-card">
+                                    <div>
+                                        <h3>فهرست استعداد کودک - 48</h3>
+                                        <p class="description">این ارزیابی برای شناسایی استعدادهای بالقوه کودکان طراحی شده است.</p>
+                                        <p class="id">id: 110003</p>
+                                    </div>
+                                    <div class="battery-links">
+                                        <a href="/take?=child-talent-48" class="btn-primary">شروع ارزیابی</a>
+                                        <a href="/assessments/child-talent-48" class="btn-secondary">معرفی ارزیابی</a>
+                                    </div>
+                                </div>
+                            </div>
 
-          <!-- Inventory 19 -->
-          <div class="swiper-slide">
-            <div class="battery-card">
-              <div>
-                <h3>فهرست درستی - 17</h3>
-                <p class="description">این ارزیابی به سنجش دقت و صحت در تفکر و عمل شما می‌پردازد.</p>
-                <p class="id">id: 110019</p>
-              </div>
-              <div class="battery-links">
-                <a href="/take/accuracy" class="btn-primary">شروع ارزیابی</a>
-                <a href="/assessments/accuracy" class="btn-secondary">معرفی ارزیابی</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Swiper Pagination & Navigation -->
-        <div class="swiper-pagination"></div>
-        
-        
-      </div>
-    </div>
+                            <!-- Inventory 4 -->
+                            <div class="swiper-slide">
+                                <div class="battery-card">
+                                    <div>
+                                        <h3>فهرست استعداد کودک - 72</h3>
+                                        <p class="description">این ارزیابی برای بررسی و توسعه استعدادهای ویژه کودکان مورد استفاده قرار می‌گیرد.</p>
+                                        <p class="id">id: 110004</p>
+                                    </div>
+                                    <div class="battery-links">
+                                        <a href="/take?=child-talent-72" class="btn-primary">شروع ارزیابی</a>
+                                        <a href="/assessments/child-talent-72" class="btn-secondary">معرفی ارزیابی</a>
+                                    </div>
+                                </div>
+                            </div>
 
-    <!-- =====================
-         Tab Content #3
-         Category: ارزیابی‌های کودکان (Child Assessments)
-    ====================== -->
-    <div id="category3" class="tab-content">
-      <!-- Swiper Container -->
-      <div class="swiper swiper-category3">
-        <div class="swiper-wrapper">
-          <!-- Inventory 3 -->
-          <div class="swiper-slide">
-            <div class="battery-card">
-              <div>
-                <h3>فهرست استعداد کودک - 48</h3>
-                <p class="description">این ارزیابی برای شناسایی استعدادهای بالقوه کودکان طراحی شده است.</p>
-                <p class="id">id: 110003</p>
-              </div>
-              <div class="battery-links">
-                <a href="/take/child-talent-48" class="btn-primary">شروع ارزیابی</a>
-                <a href="/assessments/child-talent-48" class="btn-secondary">معرفی ارزیابی</a>
-              </div>
-            </div>
-          </div>
+                            <!-- Inventory 25 -->
+                            <div class="swiper-slide">
+                                <div class="battery-card">
+                                    <div>
+                                        <h3>فهرست شخصیت کودکان - 50</h3>
+                                        <p class="description">این ارزیابی به بررسی ویژگی‌های شخصیتی کودکان می‌پردازد.</p>
+                                        <p class="id">id: 110025</p>
+                                    </div>
+                                    <div class="battery-links">
+                                        <a href="/take?=childrens-personality" class="btn-primary">شروع ارزیابی</a>
+                                        <a href="/assessments/childrens-personality" class="btn-secondary">معرفی ارزیابی</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Swiper Pagination & Navigation -->
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
 
-          <!-- Inventory 4 -->
-          <div class="swiper-slide">
-            <div class="battery-card">
-              <div>
-                <h3>فهرست استعداد کودک - 72</h3>
-                <p class="description">این ارزیابی برای بررسی و توسعه استعدادهای ویژه کودکان مورد استفاده قرار می‌گیرد.</p>
-                <p class="id">id: 110004</p>
-              </div>
-              <div class="battery-links">
-                <a href="/take/child-talent-72" class="btn-primary">شروع ارزیابی</a>
-                <a href="/assessments/child-talent-72" class="btn-secondary">معرفی ارزیابی</a>
-              </div>
-            </div>
-          </div>
+                <!-- =====================
+                     Tab Content #4
+                     Category: زندگی و رشد فردی (Life and Personal Growth)
+                ====================== -->
+                <div id="category4" class="tab-content">
+                    <!-- Swiper Container -->
+                    <div class="swiper swiper-category4" data-autoslider="true">
+                        <div class="swiper-wrapper">
+                            <!-- Inventory 5 -->
+                            <div class="swiper-slide">
+                                <div class="battery-card">
+                                    <div>
+                                        <h3>فهرست استواری پویش - 32</h3>
+                                        <p class="description">این ارزیابی میزان استواری و پویایی شما در مواجهه با چالش‌ها را سنجش می‌کند.</p>
+                                        <p class="id">id: 110005</p>
+                                    </div>
+                                    <div class="battery-links">
+                                        <a href="/take?=persistence" class="btn-primary">شروع ارزیابی</a>
+                                        <a href="/assessments/persistence" class="btn-secondary">معرفی ارزیابی</a>
+                                    </div>
+                                </div>
+                            </div>
 
-          <!-- Inventory 25 -->
-          <div class="swiper-slide">
-            <div class="battery-card">
-              <div>
-                <h3>فهرست شخصیت کودکان - 50</h3>
-                <p class="description">این ارزیابی به بررسی ویژگی‌های شخصیتی کودکان می‌پردازد.</p>
-                <p class="id">id: 110025</p>
-              </div>
-              <div class="battery-links">
-                <a href="/take/childrens-personality" class="btn-primary">شروع ارزیابی</a>
-                <a href="/assessments/childrens-personality" class="btn-secondary">معرفی ارزیابی</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Swiper Pagination & Navigation -->
-        <div class="swiper-pagination"></div>
-        
-        
-      </div>
-    </div>
+                            <!-- Inventory 37 -->
+                            <div class="swiper-slide">
+                                <div class="battery-card">
+                                    <div>
+                                        <h3>فهرست تعاملی استعداد - 15</h3>
+                                        <p class="description">این ارزیابی به بررسی نحوه تعامل استعدادهای شما با محیط اطراف می‌پردازد.</p>
+                                        <p class="id">id: 110037</p>
+                                    </div>
+                                    <div class="battery-links">
+                                        <a href="/take?=talent-interaction" class="btn-primary">شروع ارزیابی</a>
+                                        <a href="/assessments/talent-interaction" class="btn-secondary">معرفی ارزیابی</a>
+                                    </div>
+                                </div>
+                            </div>
 
-    <!-- =====================
-         Tab Content #4
-         Category: زندگی و رشد فردی (Life and Personal Growth)
-    ====================== -->
-    <div id="category4" class="tab-content">
-      <!-- Swiper Container -->
-      <div class="swiper swiper-category4">
-        <div class="swiper-wrapper">
-          <!-- Inventory 5 -->
-          <div class="swiper-slide">
-            <div class="battery-card">
-              <div>
-                <h3>فهرست استواری پویش - 32</h3>
-                <p class="description">این ارزیابی میزان استواری و پویایی شما در مواجهه با چالش‌ها را سنجش می‌کند.</p>
-                <p class="id">id: 110005</p>
-              </div>
-              <div class="battery-links">
-                <a href="/take/persistence" class="btn-primary">شروع ارزیابی</a>
-                <a href="/assessments/persistence" class="btn-secondary">معرفی ارزیابی</a>
-              </div>
-            </div>
-          </div>
+                            <!-- Inventory 20 -->
+                            <div class="swiper-slide">
+                                <div class="battery-card">
+                                    <div>
+                                        <h3>فهرست رضایت از زندگی - 24</h3>
+                                        <p class="description">این ارزیابی میزان رضایت شما از جنبه‌های مختلف زندگی را بررسی می‌کند.</p>
+                                        <p class="id">id: 110020</p>
+                                    </div>
+                                    <div class="battery-links">
+                                        <a href="/take?=life-satisfaction" class="btn-primary">شروع ارزیابی</a>
+                                        <a href="/assessments/life-satisfaction" class="btn-secondary">معرفی ارزیابی</a>
+                                    </div>
+                                </div>
+                            </div>
 
-          <!-- Inventory 37 -->
-          <div class="swiper-slide">
-            <div class="battery-card">
-              <div>
-                <h3>فهرست تعاملی استعداد - 15</h3>
-                <p class="description">این ارزیابی به بررسی نحوه تعامل استعدادهای شما با محیط اطراف می‌پردازد.</p>
-                <p class="id">id: 110037</p>
-              </div>
-              <div class="battery-links">
-                <a href="/take/talent-interaction" class="btn-primary">شروع ارزیابی</a>
-                <a href="/assessments/talent-interaction" class="btn-secondary">معرفی ارزیابی</a>
-              </div>
-            </div>
-          </div>
+                            <!-- Inventory 36 -->
+                            <div class="swiper-slide">
+                                <div class="battery-card">
+                                    <div>
+                                        <h3>فهرست رضایت از زندگی - 25</h3>
+                                        <p class="description">این ارزیابی به بررسی سطح رضایت شما از جنبه‌های مختلف زندگی می‌پردازد.</p>
+                                        <p class="id">id: 110036</p>
+                                    </div>
+                                    <div class="battery-links">
+                                        <a href="/take?=life-satisfaction-25" class="btn-primary">شروع ارزیابی</a>
+                                        <a href="/assessments/life-satisfaction-25" class="btn-secondary">معرفی ارزیابی</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Swiper Pagination & Navigation -->
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
 
-          <!-- Inventory 20 -->
-          <div class="swiper-slide">
-            <div class="battery-card">
-              <div>
-                <h3>فهرست رضایت از زندگی - 24</h3>
-                <p class="description">این ارزیابی میزان رضایت شما از جنبه‌های مختلف زندگی را بررسی می‌کند.</p>
-                <p class="id">id: 110020</p>
-              </div>
-              <div class="battery-links">
-                <a href="/take/life-satisfaction" class="btn-primary">شروع ارزیابی</a>
-                <a href="/assessments/life-satisfaction" class="btn-secondary">معرفی ارزیابی</a>
-              </div>
-            </div>
-          </div>
+                <!-- =====================
+                     Tab Content #5
+                     Category: رضایت شغلی و زناشویی (Job and Marital Satisfaction)
+                ====================== -->
+                <div id="category5" class="tab-content">
+                    <!-- Swiper Container -->
+                    <div class="swiper swiper-category5" data-autoslider="true">
+                        <div class="swiper-wrapper">
+                            <!-- Inventory 21 -->
+                            <div class="swiper-slide">
+                                <div class="battery-card">
+                                    <div>
+                                        <h3>فهرست رضایت زناشویی - 38</h3>
+                                        <p class="description">این ارزیابی به بررسی رضایت شما از زندگی زناشویی می‌پردازد.</p>
+                                        <p class="id">id: 110021</p>
+                                    </div>
+                                    <div class="battery-links">
+                                        <a href="/take?=marital-satisfaction" class="btn-primary">شروع ارزیابی</a>
+                                        <a href="/assessments/marital-satisfaction" class="btn-secondary">معرفی ارزیابی</a>
+                                    </div>
+                                </div>
+                            </div>
 
-          <!-- Inventory 36 -->
-          <div class="swiper-slide">
-            <div class="battery-card">
-              <div>
-                <h3>فهرست رضایت از زندگی - 25</h3>
-                <p class="description">این ارزیابی به بررسی سطح رضایت شما از جنبه‌های مختلف زندگی می‌پردازد.</p>
-                <p class="id">id: 110036</p>
-              </div>
-              <div class="battery-links">
-                <a href="/take/life-satisfaction-25" class="btn-primary">شروع ارزیابی</a>
-                <a href="/assessments/life-satisfaction-25" class="btn-secondary">معرفی ارزیابی</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Swiper Pagination & Navigation -->
-        <div class="swiper-pagination"></div>
-        
-        
-      </div>
-    </div>
+                            <!-- Inventory 22 -->
+                            <div class="swiper-slide">
+                                <div class="battery-card">
+                                    <div>
+                                        <h3>فهرست رضایت شغلی - 29</h3>
+                                        <p class="description">این ارزیابی میزان رضایت شما از محیط و شرایط کاری را سنجش می‌کند.</p>
+                                        <p class="id">id: 110022</p>
+                                    </div>
+                                    <div class="battery-links">
+                                        <a href="/take?=job-satisfaction" class="btn-primary">شروع ارزیابی</a>
+                                        <a href="/assessments/job-satisfaction" class="btn-secondary">معرفی ارزیابی</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Swiper Pagination & Navigation -->
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
 
-    <!-- =====================
-         Tab Content #5
-         Category: رضایت شغلی و زناشویی (Job and Marital Satisfaction)
-    ====================== -->
-    <div id="category5" class="tab-content">
-      <!-- Swiper Container -->
-      <div class="swiper swiper-category5">
-        <div class="swiper-wrapper">
-          <!-- Inventory 21 -->
-          <div class="swiper-slide">
-            <div class="battery-card">
-              <div>
-                <h3>فهرست رضایت زناشویی - 38</h3>
-                <p class="description">این ارزیابی به بررسی رضایت شما از زندگی زناشویی می‌پردازد.</p>
-                <p class="id">id: 110021</p>
-              </div>
-              <div class="battery-links">
-                <a href="/take/marital-satisfaction" class="btn-primary">شروع ارزیابی</a>
-                <a href="/assessments/marital-satisfaction" class="btn-secondary">معرفی ارزیابی</a>
-              </div>
-            </div>
-          </div>
+                <!-- =====================
+                     Tab Content #6
+                     Category: ارزیابی‌های شناختی (Cognitive Assessments)
+                ====================== -->
+                <div id="category6" class="tab-content">
+                    <!-- Swiper Container -->
+                    <div class="swiper swiper-category6" data-autoslider="true">
+                        <div class="swiper-wrapper">
+                            <!-- Inventory 9 -->
+                            <div class="swiper-slide">
+                                <div class="battery-card">
+                                    <div>
+                                        <h3>فهرست تحلیلی تجربی - 42</h3>
+                                        <p class="description">این ارزیابی توانایی‌های تحلیلی و تجربی شما را بررسی می‌کند.</p>
+                                        <p class="id">id: 110009</p>
+                                    </div>
+                                    <div class="battery-links">
+                                        <a href="/take?=empirical-analytical" class="btn-primary">شروع ارزیابی</a>
+                                        <a href="/assessments/empirical-analytical" class="btn-secondary">معرفی ارزیابی</a>
+                                    </div>
+                                </div>
+                            </div>
 
-          <!-- Inventory 22 -->
-          <div class="swiper-slide">
-            <div class="battery-card">
-              <div>
-                <h3>فهرست رضایت شغلی - 29</h3>
-                <p class="description">این ارزیابی میزان رضایت شما از محیط و شرایط کاری را سنجش می‌کند.</p>
-                <p class="id">id: 110022</p>
-              </div>
-              <div class="battery-links">
-                <a href="/take/job-satisfaction" class="btn-primary">شروع ارزیابی</a>
-                <a href="/assessments/job-satisfaction" class="btn-secondary">معرفی ارزیابی</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Swiper Pagination & Navigation -->
-        <div class="swiper-pagination"></div>
-        
-        
-      </div>
-    </div>
+                            <!-- Inventory 26 -->
+                            <div class="swiper-slide">
+                                <div class="battery-card">
+                                    <div>
+                                        <h3>فهرست شناختی - 24</h3>
+                                        <p class="description">این ارزیابی به سنجش توانایی‌های شناختی و ذهنی شما می‌پردازد.</p>
+                                        <p class="id">id: 110026</p>
+                                    </div>
+                                    <div class="battery-links">
+                                        <a href="/take?=cognitive-24" class="btn-primary">شروع ارزیابی</a>
+                                        <a href="/assessments/cognitive-24" class="btn-secondary">معرفی ارزیابی</a>
+                                    </div>
+                                </div>
+                            </div>
 
-    <!-- =====================
-         Tab Content #6
-         Category: ارزیابی‌های شناختی (Cognitive Assessments)
-    ====================== -->
-    <div id="category6" class="tab-content">
-      <!-- Swiper Container -->
-      <div class="swiper swiper-category6">
-        <div class="swiper-wrapper">
-          <!-- Inventory 9 -->
-          <div class="swiper-slide">
-            <div class="battery-card">
-              <div>
-                <h3>فهرست تحلیلی تجربی - 42</h3>
-                <p class="description">این ارزیابی توانایی‌های تحلیلی و تجربی شما را بررسی می‌کند.</p>
-                <p class="id">id: 110009</p>
-              </div>
-              <div class="battery-links">
-                <a href="/take/empirical-analytical" class="btn-primary">شروع ارزیابی</a>
-                <a href="/assessments/empirical-analytical" class="btn-secondary">معرفی ارزیابی</a>
-              </div>
-            </div>
-          </div>
+                            <!-- Inventory 27 -->
+                            <div class="swiper-slide">
+                                <div class="battery-card">
+                                    <div>
+                                        <h3>فهرست ظرفیت تجربی - 63</h3>
+                                        <p class="description">این ارزیابی به بررسی ظرفیت‌های تجربی و عملی شما می‌پردازد.</p>
+                                        <p class="id">id: 110027</p>
+                                    </div>
+                                    <div class="battery-links">
+                                        <a href="/take?=empirical-capacity" class="btn-primary">شروع ارزیابی</a>
+                                        <a href="/assessments/empirical-capacity" class="btn-secondary">معرفی ارزیابی</a>
+                                    </div>
+                                </div>
+                            </div>
 
-          <!-- Inventory 26 -->
-          <div class="swiper-slide">
-            <div class="battery-card">
-              <div>
-                <h3>فهرست شناختی - 24</h3>
-                <p class="description">این ارزیابی به سنجش توانایی‌های شناختی و ذهنی شما می‌پردازد.</p>
-                <p class="id">id: 110026</p>
-              </div>
-              <div class="battery-links">
-                <a href="/take/cognitive-24" class="btn-primary">شروع ارزیابی</a>
-                <a href="/assessments/cognitive-24" class="btn-secondary">معرفی ارزیابی</a>
-              </div>
-            </div>
-          </div>
+                            <!-- Inventory 28 -->
+                            <div class="swiper-slide">
+                                <div class="battery-card">
+                                    <div>
+                                        <h3>فهرست ظرفیتهای شناختی - 35</h3>
+                                        <p class="description">این ارزیابی به بررسی توانایی‌های شناختی پیشرفته شما می‌پردازد.</p>
+                                        <p class="id">id: 110028</p>
+                                    </div>
+                                    <div class="battery-links">
+                                        <a href="/take?=cognitive-capacities" class="btn-primary">شروع ارزیابی</a>
+                                        <a href="/assessments/cognitive-capacities" class="btn-secondary">معرفی ارزیابی</a>
+                                    </div>
+                                </div>
+                            </div>
 
-          <!-- Inventory 27 -->
-          <div class="swiper-slide">
-            <div class="battery-card">
-              <div>
-                <h3>فهرست ظرفیت تجربی - 63</h3>
-                <p class="description">این ارزیابی به بررسی ظرفیت‌های تجربی و عملی شما می‌پردازد.</p>
-                <p class="id">id: 110027</p>
-              </div>
-              <div class="battery-links">
-                <a href="/take/empirical-capacity" class="btn-primary">شروع ارزیابی</a>
-                <a href="/assessments/empirical-capacity" class="btn-secondary">معرفی ارزیابی</a>
-              </div>
-            </div>
-          </div>
+                            <!-- Inventory 29 -->
+                            <div class="swiper-slide">
+                                <div class="battery-card">
+                                    <div>
+                                        <h3>فهرست کرونا - 26</h3>
+                                        <p class="description">این ارزیابی به بررسی تأثیرات کروناویروس بر زندگی و روان شما می‌پردازد.</p>
+                                        <p class="id">id: 110029</p>
+                                    </div>
+                                    <div class="battery-links">
+                                        <a href="/take?=corona" class="btn-primary">شروع ارزیابی</a>
+                                        <a href="/assessments/corona" class="btn-secondary">معرفی ارزیابی</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Swiper Pagination & Navigation -->
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+                <div class="btn-primary-container" style="text-align: center; margin-top: 40px;">
+                    <a href="/assessments" class="btn-cta-secondary">مشاهده همه ارزیابی‌ها</a>
+                </div>
+            </div> <!-- end container -->
+        </section>
 
-          <!-- Inventory 28 -->
-          <div class="swiper-slide">
-            <div class="battery-card">
-              <div>
-                <h3>فهرست ظرفیتهای شناختی - 35</h3>
-                <p class="description">این ارزیابی به بررسی توانایی‌های شناختی پیشرفته شما می‌پردازد.</p>
-                <p class="id">id: 110028</p>
-              </div>
-              <div class="battery-links">
-                <a href="/take/cognitive-capacities" class="btn-primary">شروع ارزیابی</a>
-                <a href="/assessments/cognitive-capacities" class="btn-secondary">معرفی ارزیابی</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Inventory 29 -->
-          <div class="swiper-slide">
-            <div class="battery-card">
-              <div>
-                <h3>فهرست کرونا - 26</h3>
-                <p class="description">این ارزیابی به بررسی تأثیرات کروناویروس بر زندگی و روان شما می‌پردازد.</p>
-                <p class="id">id: 110029</p>
-              </div>
-              <div class="battery-links">
-                <a href="/take/corona" class="btn-primary">شروع ارزیابی</a>
-                <a href="/assessments/corona" class="btn-secondary">معرفی ارزیابی</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Swiper Pagination & Navigation -->
-        <div class="swiper-pagination"></div>
-      </div>
-    </div>
-          <div class="btn-primary-container" style="text-align: center; margin-top: 40px;">
-      <a href="/assessments" class="btn-cta-secondary">مشاهده همه ارزیابی‌ها</a>
-    </div>
-  </div> <!-- end container -->
-</section>
         <!-- Diagnostic Factors (Data-Driven) Section -->
         <section id="diagnostic-factors" class="section factors-section">
             <div class="container">
@@ -1755,7 +1762,7 @@
                     جامع و دقیق از ویژگی‌های فردی دست یابیم.
                 </p>
                 <!-- Swiper Diagnostic Factors -->
-                <div class="swiper swiper">
+                <div class="swiper swiper-diagnostic-factors" data-autoslider="true">
                     <div class="swiper-wrapper">
                         <!-- Factor Slide 1 -->
                         <div class="swiper-slide">
@@ -1868,111 +1875,112 @@
             </div>
         </section>
         
-<!-- Partners or Collaborators Section -->
-<section class="section partners-section" id="partners">
-    <div class="container">
-        <h2 class="section-title">همکاری‌ها و مشتریان ما</h2>
-        <p class="section-text">
-            ما در استعدادیاب مفتخریم که با سازمان‌ها و موسسات معتبر همکاری می‌کنیم تا بهترین خدمات را به شما ارائه دهیم.
-            با بیش از <strong>40,000 تست تکمیل‌شده</strong> و <strong>8,000 مشتری از طریق شرکای ما</strong>,
-            اعتماد بیشمار کاربران به ما را نشان می‌دهد.
-        </p>
+        <!-- Partners or Collaborators Section -->
+        <section class="section partners-section" id="partners">
+            <div class="container">
+                <h2 class="section-title">همکاری‌ها و مشتریان ما</h2>
+                <p class="section-text">
+                    ما در استعدادیاب مفتخریم که با سازمان‌ها و موسسات معتبر همکاری می‌کنیم تا بهترین خدمات را به شما ارائه دهیم.
+                    با بیش از <strong>40,000 تست تکمیل‌شده</strong> و <strong>8,000 مشتری از طریق شرکای ما</strong>,
+                    اعتماد بیشمار کاربران به ما را نشان می‌دهد.
+                </p>
 
-        <!-- Partners Logos -->
-        <div class="swiper swiper-container">
-            <div class="swiper-wrapper">
-                <!-- Partner 1 -->
-                <div class="swiper-slide">
-                    <div class="partner-card">
-                        <img src="/assets/images/iran-andiash-logo.png" alt="مرکز خدمات روانشناسی و مشاوره ایران اندیش" class="partner-logo">
-                        <p class="partner-name">مرکز خدمات روانشناسی و مشاوره ایران اندیش</p>
-                    </div>
-                </div>
-                <!-- Partner 2 -->
-                <div class="swiper-slide">
-                    <div class="partner-card">
-                        <img src="/assets/images/sepehr-logo.png" alt="مرکز خدمات روانشناسی و مشاوره سپهر" class="partner-logo">
-                        <p class="partner-name">مرکز خدمات روانشناسی و مشاوره سپهر</p>
-                    </div>
-                </div>
-                <!-- Partner 3 -->
-                <div class="swiper-slide">
-                    <div class="partner-card">
-                        <img src="/assets/images/federation-koshti-logo.png" alt="فدراسیون کشتی ایران" class="partner-logo">
-                        <p class="partner-name">فدراسیون کشتی ایران</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Reasonable Pricing Section -->
-<section class="section pricing-section" id="pricing">
-    <div class="container">
-        <h2 class="section-title">پلن‌های قیمتی ما</h2>
-        <p class="section-text">
-            ما در استعدادیاب معتقدیم ارزیابی‌های روان‌شناختی باید برای همه قابل‌دسترس باشد. 
-            به همین دلیل ترکیبی از تست‌های رایگان و پرداختی را ارائه می‌دهیم تا بتوانید بر اساس 
-            نیاز و بودجه‌تان، بهترین انتخاب را داشته باشید.
-        </p>
-
-        <!-- Swiper Container -->
-        <div class="swiper swiper-pricing">
-            <div class="swiper-wrapper">
-                <!-- Free Tests -->
-                <div class="swiper-slide">
-                    <div class="pricing-card">
-                        <h3 class="pricing-title">تست‌های رایگان</h3>
-                        <p class="pricing-amount">رایگان</p>
-                        <ul class="pricing-features">
-                            <li>دسترسی به ارزیابی‌های مقدماتی</li>
-                            <li>گزارش مختصر و قابل فهم</li>
-                            <li>پشتیبانی از طریق محتوای راهنما</li>
-                        </ul>
-                        <a href="/assessments#free-tests" class="btn-primary">شروع رایگان</a>
-                    </div>
-                </div>
-
-                <!-- Paid Tests -->
-                <div class="swiper-slide">
-                    <div class="pricing-card">
-                        <h3 class="pricing-title">تست‌های پیشرفته</h3>
-                        <p class="pricing-amount">پرداختی بر اساس هر تست</p>
-                        <ul class="pricing-features">
-                            <li>گزارش‌های جامع و تعاملی</li>
-                            <li>امکان مشاوره اختیاری</li>
-                            <li>دسترسی به نتایج و پیشنهادهای تخصصی</li>
-                        </ul>
-                        <a href="/assessments#premium-tests" class="btn-primary">مشاهده تست‌ها</a>
-                    </div>
-                </div>
-
-                <!-- Negotiable Pricing -->
-                <div class="swiper-slide">
-                    <div class="pricing-card">
-                        <h3 class="pricing-title">سازمان‌ها و مدارس</h3>
-                        <p class="pricing-amount">قابل مذاکره</p>
-                        <ul class="pricing-features">
-                            <li>پکیج‌های ارزیابی گروهی</li>
-                            <li>گزارش‌های سفارشی و تحلیلی</li>
-                            <li>پشتیبانی اختصاصی و داشبورد سازمانی</li>
-                        </ul>
-                        <a href="/contact-us" class="btn-primary">تماس بگیرید</a>
+                <!-- Partners Logos -->
+                <div class="swiper swiper-partners" data-autoslider="true">
+                    <div class="swiper-wrapper">
+                        <!-- Partner 1 -->
+                        <div class="swiper-slide">
+                            <div class="partner-card">
+                                <img src="/assets/images/iran-andiash-logo.png" alt="مرکز خدمات روانشناسی و مشاوره ایران اندیش" class="partner-logo">
+                                <p class="partner-name">مرکز خدمات روانشناسی و مشاوره ایران اندیش</p>
+                            </div>
+                        </div>
+                        <!-- Partner 2 -->
+                        <div class="swiper-slide">
+                            <div class="partner-card">
+                                <img src="/assets/images/sepehr-logo.png" alt="مرکز خدمات روانشناسی و مشاوره سپهر" class="partner-logo">
+                                <p class="partner-name">مرکز خدمات روانشناسی و مشاوره سپهر</p>
+                            </div>
+                        </div>
+                        <!-- Partner 3 -->
+                        <div class="swiper-slide">
+                            <div class="partner-card">
+                                <img src="/assets/images/federation-koshti-logo.png" alt="فدراسیون کشتی ایران" class="partner-logo">
+                                <p class="partner-name">فدراسیون کشتی ایران</p>
+                            </div>
+                        </div>
+                        <!-- Add more partner slides as needed -->
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Swiper Pagination -->
-            <div class="swiper-pagination"></div>
-        </div>
+        <!-- Reasonable Pricing Section -->
+        <section class="section pricing-section" id="pricing">
+            <div class="container">
+                <h2 class="section-title">پلن‌های قیمتی ما</h2>
+                <p class="section-text">
+                    ما در استعدادیاب معتقدیم ارزیابی‌های روان‌شناختی باید برای همه قابل‌دسترس باشد. 
+                    به همین دلیل ترکیبی از تست‌های رایگان و پرداختی را ارائه می‌دهیم تا بتوانید بر اساس 
+                    نیاز و بودجه‌تان، بهترین انتخاب را داشته باشید.
+                </p>
 
-        <p class="section-note">
-            هزینه برخی تست‌ها مستقیماً در صفحه ارزیابی ذکر شده است. 
-            برای اطلاعات بیشتر یا دریافت بسته‌های شخصی‌سازی‌شده، خوشحال می‌شویم با ما در ارتباط باشید.
-        </p>
-    </div>
-</section>
+                <!-- Swiper Container -->
+                <div class="swiper swiper-pricing" data-autoslider="true">
+                    <div class="swiper-wrapper">
+                        <!-- Free Tests -->
+                        <div class="swiper-slide">
+                            <div class="pricing-card">
+                                <h3 class="pricing-title">تست‌های رایگان</h3>
+                                <p class="pricing-amount">رایگان</p>
+                                <ul class="pricing-features">
+                                    <li>دسترسی به ارزیابی‌های مقدماتی</li>
+                                    <li>گزارش مختصر و قابل فهم</li>
+                                    <li>پشتیبانی از طریق محتوای راهنما</li>
+                                </ul>
+                                <a href="/assessments#free-tests" class="btn-primary">شروع رایگان</a>
+                            </div>
+                        </div>
+
+                        <!-- Paid Tests -->
+                        <div class="swiper-slide">
+                            <div class="pricing-card">
+                                <h3 class="pricing-title">تست‌های پیشرفته</h3>
+                                <p class="pricing-amount">پرداختی بر اساس هر تست</p>
+                                <ul class="pricing-features">
+                                    <li>گزارش‌های جامع و تعاملی</li>
+                                    <li>امکان مشاوره اختیاری</li>
+                                    <li>دسترسی به نتایج و پیشنهادهای تخصصی</li>
+                                </ul>
+                                <a href="/assessments#premium-tests" class="btn-primary">مشاهده تست‌ها</a>
+                            </div>
+                        </div>
+
+                        <!-- Negotiable Pricing -->
+                        <div class="swiper-slide">
+                            <div class="pricing-card">
+                                <h3 class="pricing-title">سازمان‌ها و مدارس</h3>
+                                <p class="pricing-amount">قابل مذاکره</p>
+                                <ul class="pricing-features">
+                                    <li>پکیج‌های ارزیابی گروهی</li>
+                                    <li>گزارش‌های سفارشی و تحلیلی</li>
+                                    <li>پشتیبانی اختصاصی و داشبورد سازمانی</li>
+                                </ul>
+                                <a href="/contact-us" class="btn-primary">تماس بگیرید</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Swiper Pagination -->
+                    <div class="swiper-pagination"></div>
+                </div>
+
+                <p class="section-note">
+                    هزینه برخی تست‌ها مستقیماً در صفحه ارزیابی ذکر شده است. 
+                    برای اطلاعات بیشتر یا دریافت بسته‌های شخصی‌سازی‌شده، خوشحال می‌شویم با ما در ارتباط باشید.
+                </p>
+            </div>
+        </section>
 
 
         <!-- FAQ Section -->
@@ -2124,242 +2132,176 @@
     
     <!-- Swiper JS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="assets/js/header-footer-inject.js"></script>
+    <!-- Include any other necessary scripts -->
+    <script src="/assets/js/header-footer-inject.js"></script>
     <script src="/assets/js/script.js"></script>
+    <script src="/assets/js/take-script.js"></script>
     
     <!-- Consolidated Inline Scripts -->
-<!-- Consolidated Inline Scripts -->
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        /* ============================================
-           1. Tabbed Assessments Section Scripts
-        ============================================ */
-        // ========== Tabs ==========
-        const tabLinks = document.querySelectorAll(".tabbed-assessments .tab-link");
-        const tabContents = document.querySelectorAll(".tabbed-assessments .tab-content");
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            /* ============================================
+               1. Tabbed Assessments Section Scripts
+            ============================================ */
+            // ========== Tabs ==========
+            const tabLinks = document.querySelectorAll(".tabbed-assessments .tab-link");
+            const tabContents = document.querySelectorAll(".tabbed-assessments .tab-content");
 
-        tabLinks.forEach((link) => {
-          link.addEventListener("click", () => {
-            // Remove 'active' from all tab links
-            tabLinks.forEach((btn) => btn.classList.remove("active"));
-            // Hide all tab contents
-            tabContents.forEach((content) => content.classList.remove("active"));
+            tabLinks.forEach((link) => {
+                link.addEventListener("click", () => {
+                    // Remove 'active' from all tab links
+                    tabLinks.forEach((btn) => btn.classList.remove("active"));
+                    // Hide all tab contents
+                    tabContents.forEach((content) => content.classList.remove("active"));
 
-            // Add 'active' to clicked tab and its content
-            link.classList.add("active");
-            const tabTarget = link.getAttribute("data-tab");
-            document.getElementById(tabTarget).classList.add("active");
-          });
-        });
-
-        /* ============================================
-           2. Swiper Initializations for Each Category
-        ============================================ */
-        const categories = [
-            { swiperClass: '.swiper-category1', pagination: '.swiper-category1 .swiper-pagination', navigation: {
-                nextEl: '.swiper-category1 .swiper-button-next',
-                prevEl: '.swiper-category1 .swiper-button-prev',
-            }},
-            { swiperClass: '.swiper-category2', pagination: '.swiper-category2 .swiper-pagination', navigation: {
-                nextEl: '.swiper-category2 .swiper-button-next',
-                prevEl: '.swiper-category2 .swiper-button-prev',
-            }},
-            { swiperClass: '.swiper-category3', pagination: '.swiper-category3 .swiper-pagination', navigation: {
-                nextEl: '.swiper-category3 .swiper-button-next',
-                prevEl: '.swiper-category3 .swiper-button-prev',
-            }},
-            { swiperClass: '.swiper-category4', pagination: '.swiper-category4 .swiper-pagination', navigation: {
-                nextEl: '.swiper-category4 .swiper-button-next',
-                prevEl: '.swiper-category4 .swiper-button-prev',
-            }},
-            { swiperClass: '.swiper-category5', pagination: '.swiper-category5 .swiper-pagination', navigation: {
-                nextEl: '.swiper-category5 .swiper-button-next',
-                prevEl: '.swiper-category5 .swiper-button-prev',
-            }},
-            { swiperClass: '.swiper-category6', pagination: '.swiper-category6 .swiper-pagination', navigation: {
-                nextEl: '.swiper-category6 .swiper-button-next',
-                prevEl: '.swiper-category6 .swiper-button-prev',
-            }},
-        ];
-
-        categories.forEach(category => {
-            new Swiper(category.swiperClass, {
-                direction: "horizontal",
-                loop: true,
-                spaceBetween: 20,
-                slidesPerView: 1,
-                centeredSlides: true,
-                pagination: {
-                    el: category.pagination,
-                    clickable: true,
-                },
-                navigation: {
-                    nextEl: category.navigation.nextEl,
-                    prevEl: category.navigation.prevEl,
-                },
-                breakpoints: {
-                    576: {
-                        slidesPerView: 1.5,
-                        spaceBetween: 20,
-                    },
-                    768: {
-                        slidesPerView: 2,
-                        spaceBetween: 30,
-                    },
-                    1024: {
-                        slidesPerView: 3,
-                        spaceBetween: 40,
-                    },
-                },
+                    // Add 'active' to clicked tab and its content
+                    link.classList.add("active");
+                    const tabTarget = link.getAttribute("data-tab");
+                    document.getElementById(tabTarget).classList.add("active");
+                });
             });
-        });
 
-        /* ============================================
-           3. FAQ Section Scripts
-        ============================================ */
-        // Tab Navigation for FAQ
-        const faqTabs = document.querySelectorAll(".faq-section .tab-link");
-        const faqCategories = document.querySelectorAll(".faq-category");
+            /* ============================================
+               2. Swiper Initializations for Each Category
+            ============================================ */
+            // Initialize Swiper instances conditionally
+            const swiperContainers = document.querySelectorAll('[data-autoslider="true"]');
+            const swiperInstances = new Map();
 
-        faqTabs.forEach((tab) => {
-            tab.addEventListener("click", () => {
-                // Remove active class from all tabs
-                faqTabs.forEach((t) => t.classList.remove("active"));
-                // Hide all categories
-                faqCategories.forEach((c) => c.classList.remove("active"));
-                // Add active class to clicked tab
-                tab.classList.add("active");
-                // Show corresponding category
-                const target = tab.getAttribute("data-tab");
-                document.getElementById(target).classList.add("active");
+            const initSwipers = () => {
+                swiperContainers.forEach(container => {
+                    const swiperWrapper = container.querySelector('.swiper-wrapper');
+                    const swiperSlides = container.querySelectorAll('.swiper-slide');
+                    
+                    // Calculate total slides width
+                    let totalWidth = 0;
+                    swiperSlides.forEach(slide => {
+                        // Temporarily set to display: block to accurately calculate width
+                        slide.style.display = 'block';
+                        totalWidth += slide.offsetWidth + parseFloat(getComputedStyle(slide).marginLeft) + parseFloat(getComputedStyle(slide).marginRight);
+                        slide.style.display = ''; // Reset display property
+                    });
+
+                    // Get container width
+                    const containerWidth = container.offsetWidth;
+
+                    if (totalWidth > containerWidth) {
+                        // Initialize Swiper if not already initialized
+                        if (!swiperInstances.has(container)) {
+                            const swiper = new Swiper(container, {
+                                direction: "horizontal",
+                                loop: true,
+                                spaceBetween: 10,
+                                slidesPerView: 1,
+                                centeredSlides: true,
+                                pagination: {
+                                    el: container.querySelector('.swiper-pagination'),
+                                    clickable: true,
+                                },
+                                navigation: {
+                                    nextEl: container.querySelector('.swiper-button-next'),
+                                    prevEl: container.querySelector('.swiper-button-prev'),
+                                },
+                                breakpoints: {
+                                    576: {
+                                        slidesPerView: 2,
+                                        spaceBetween: 10,
+                                    },
+                                    768: {
+                                        slidesPerView: 3,
+                                        spaceBetween: 10,
+                                    },
+                                    1024: {
+                                        slidesPerView: 4,
+                                        spaceBetween: 10,
+                                    },
+                                    1200: {
+                                        slidesPerView: 5,
+                                        spaceBetween: 10,
+                                    },
+                                },
+                                autoplay: {
+                                    delay: 5000,
+                                    disableOnInteraction: false,
+                                },
+                            });
+                            swiperInstances.set(container, swiper);
+                            container.classList.remove('swiper-not-active');
+                        }
+                    } else {
+                        // Destroy Swiper if initialized
+                        if (swiperInstances.has(container)) {
+                            swiperInstances.get(container).destroy(true, true);
+                            swiperInstances.delete(container);
+                            container.classList.add('swiper-not-active');
+                        } else {
+                            // Ensure content is centered even if Swiper was never initialized
+                            container.classList.add('swiper-not-active');
+                        }
+                    }
+                });
+            };
+
+            // Initialize Swipers on load
+            initSwipers();
+
+            // Re-initialize Swipers on window resize with debounce
+            let resizeTimeout;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimeout);
+                resizeTimeout = setTimeout(() => {
+                    initSwipers();
+                }, 200);
             });
-        });
 
-        // Accordion Functionality for FAQ
-        document.querySelectorAll(".faq-question").forEach((btn) => {
-            btn.addEventListener("click", () => {
-                const parent = btn.parentElement;
-                parent.classList.toggle("active");
+            /* ============================================
+               3. FAQ Section Scripts
+            ============================================ */
+            // Tab Navigation for FAQ
+            const faqTabs = document.querySelectorAll(".faq-section .tab-link");
+            const faqCategories = document.querySelectorAll(".faq-category");
+
+            faqTabs.forEach((tab) => {
+                tab.addEventListener("click", () => {
+                    // Remove active class from all tabs
+                    faqTabs.forEach((t) => t.classList.remove("active"));
+                    // Hide all categories
+                    faqCategories.forEach((c) => c.classList.remove("active"));
+                    // Add active class to clicked tab
+                    tab.classList.add("active");
+                    // Show corresponding category
+                    const target = tab.getAttribute("data-tab");
+                    document.getElementById(target).classList.add("active");
+                });
             });
+
+            // Accordion Functionality for FAQ
+            document.querySelectorAll(".faq-question").forEach((btn) => {
+                btn.addEventListener("click", () => {
+                    const parent = btn.parentElement;
+                    parent.classList.toggle("active");
+                });
+            });
+
+            // Set default active FAQ tab and category
+            const defaultFaqTab = document.querySelector(".faq-section .tab-link[data-tab='faq-general']");
+            if (defaultFaqTab) {
+                defaultFaqTab.click();
+            }
+
+            /* ============================================
+               4. Swiper Initialization for Diagnostic Factors
+            ============================================ */
+            // Handled by initSwipers function above
+
+            /* ============================================
+               5. Swiper Initialization for Assessments (If Applicable)
+            ============================================ */
+            // Handled by initSwipers function above
         });
 
-        // Set default active FAQ tab and category
-        const defaultFaqTab = document.querySelector(".faq-section .tab-link[data-tab='faq-general']");
-        if (defaultFaqTab) {
-            defaultFaqTab.click();
-        }
-
-        /* ============================================
-           4. Swiper Initialization for Diagnostic Factors
-        ============================================ */
-        var swiperFactors = new Swiper(".swiper", {
-            direction: "horizontal",
-            loop: true,
-            spaceBetween: 20,
-            slidesPerView: 1,
-            centeredSlides: true,
-            // Responsive breakpoints
-            breakpoints: {
-                576: {
-                    slidesPerView: 1.5,
-                },
-                768: {
-                    slidesPerView: 2,
-                },
-                1024: {
-                    slidesPerView: 3,
-                },
-                1200: {
-                    slidesPerView: 4,
-                },
-            },
-            pagination: {
-                el: ".swiper .swiper-pagination",
-                clickable: true,
-            },
-            navigation: {
-                nextEl: ".swiper .swiper-button-next",
-                prevEl: ".swiper .swiper-button-prev",
-            },
-        });
-
-        /* ============================================
-           5. Swiper Initialization for Assessments (If Applicable)
-        ============================================ */
-        var assessmentsSwiper = new Swiper('.swiper', {
-            direction: 'horizontal',
-            loop: true,
-            slidesPerView: 1,
-            spaceBetween: 20,
-            breakpoints: {
-                576: {
-                    slidesPerView: 1.5,
-                    spaceBetween: 20,
-                },
-                768: {
-                    slidesPerView: 2.5,
-                    spaceBetween: 30,
-                },
-                1024: {
-                    slidesPerView: 3,
-                    spaceBetween: 40,
-                },
-            },
-            pagination: {
-                el: '.swiper .swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper .swiper-button-next',
-                prevEl: '.swiper .swiper-button-prev',
-            },
-            autoplay: {
-                delay: 5000,
-                disableOnInteraction: false,
-            },
-        });
-    });
-    // Initialize Swiper for Pricing Section
-document.addEventListener("DOMContentLoaded", function () {
-    /* Pricing Swiper Initialization */
-    var pricingSwiper = new Swiper('.swiper-pricing', {
-        // Optional parameters
-        loop: true, // Enable looping
-        slidesPerView: 1, // Number of slides per view
-        spaceBetween: 30, // Space between slides in px
-        centeredSlides: true, // Center the active slide
-
-        // Responsive breakpoints
-        breakpoints: {
-            576: {
-                slidesPerView: 1.2,
-                spaceBetween: 20,
-            },
-            768: {
-                slidesPerView: 1.5,
-                spaceBetween: 30,
-            },
-            1024: {
-                slidesPerView: 2,
-                spaceBetween: 40,
-            },
-        },
-
-        // If you want pagination
-        pagination: {
-            el: '.swiper-pricing .swiper-pagination',
-            clickable: true,
-        },
-
-        // Navigation arrows
-        navigation: {
-            nextEl: '.swiper-pricing .swiper-button-next',
-            prevEl: '.swiper-pricing .swiper-button-prev',
-        },
-    });
-});
-
-</script>
-
+        /* Pricing Swiper Initialization */
+        // Handled by initSwipers function above (since pricing section has data-autoslider="true")
+    </script>
 </body>
 </html>
