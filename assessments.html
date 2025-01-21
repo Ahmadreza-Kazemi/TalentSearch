@@ -6,388 +6,616 @@
     <title>استعدادیاب | معرفی ارزیابی‌های روان‌شناختی</title>
     <meta name="description" content="با استعدادیاب، با ارزیابی‌های روان‌شناختی پیشرفته آشنا شوید و توانمندی‌های خود را بشناسید.">
     <style>
-    /* =======================================================
-    1. Reset and Base Styles
- ======================================================= */
- 
- /* Resetting box-sizing, margin, and padding for all elements */
- *, *::before, *::after {
-     box-sizing: border-box;
-     margin: 0;
-     padding: 0;
- }
- 
- /* Base styles for html and body */
- html, body {
-     height: 100%;
-     font-family: var(--font-family);
-     background-color: var(--neutral-white);
-     color: var(--text-primary);
-     direction: rtl;
-     scroll-behavior: smooth;
-     overflow-x: hidden;
- }
- 
- body {
-     padding-top: var(--header-height); /* Prevent content overlap with header */
-     padding-bottom: 60px; /* Prevent content overlap with mobile navbar */
- }
- 
- /* Base styles for anchor tags */
- a {
-     text-decoration: none;
-     color: var(--primary-deep-blue);
-     transition: color var(--transition-speed) var(--transition-type);
- }
- 
- a:hover,
- a:focus {
-     color: var(--primary-gold);
-     text-decoration: underline;
- }
- 
- /* =======================================================
-    2. Root Variables
- ======================================================= */
- :root {
-     /* Font Family */
-     --font-family: 'Vazir', sans-serif;
- 
-     /* Color Palette */
-     /* Primary Colors */
-     --primary-gold: #F4C553;             /* Highlights, Buttons, Icons, CTAs */
-     --primary-deep-blue: #1F3B73;       /* Trust, Headers, Primary Text */
- 
-     /* Secondary Colors */
-     --secondary-teal-green: #4FBDBA;    /* Growth, Secondary Buttons, Accents */
-     --secondary-electric-blue: #007BFF; /* Dynamic Interactions, Links, Active States */
- 
-     /* Neutral Colors */
-     --neutral-white: #FFFFFF;            /* Backgrounds, Text Contrast, Open Spaces */
-     --neutral-cool-gray: #F0F0F5;       /* Section Dividers, Form Fields, Subtle Contrasts */
-     --neutral-dark-gray: #888888;       /* General Text and Icons */
- 
-     /* Accent Colors */
-     --accent-golden-yellow: #FFD77B;     /* Hover Effects, Gradients, Embellishments */
- 
-     /* Text Colors */
-     --text-primary: var(--primary-deep-blue); /* Main Text */
-     --text-secondary: var(--neutral-dark-gray); /* Secondary Text */
- 
-     /* Button Colors */
-     --button-primary: var(--primary-gold);          /* Primary Buttons */
-     --button-secondary: var(--secondary-teal-green); /* Secondary Buttons */
- 
-     /* Spacing */
-     --header-height: 80px;
-     --spacing-xs: 4px;
-     --spacing-sm: 8px;
-     --spacing-md: 16px;
-     --spacing-lg: 24px;
-     --spacing-small: 10px;
-     --spacing-medium: 20px;
-     --spacing-large: 40px;
- 
-     /* Border Radius */
-     --border-radius: 8px;
- 
-     /* Shadows */
-     --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.1);
-     --shadow-hover: 0 6px 18px rgba(0, 0, 0, 0.15);
- 
-     /* Transitions */
-     --transition-speed: 0.3s;
-     --transition-type: ease-in-out;
- }
- 
- /* =======================================================
-    3. Font Imports
- ======================================================= */
- 
- /* Importing Vazir Font with different weights */
- @font-face {
-     font-family: 'Vazir';
-     src: url('/assets/fonts/Vazir-Thin-UI.eot');
-     src: url('/assets/fonts/Vazir-Thin-UI.eot?#iefix') format('embedded-opentype'),
-          url('/assets/fonts/Vazir-Thin-UI.woff2') format('woff2'),
-          url('/assets/fonts/Vazir-Thin-UI.woff') format('woff'),
-          url('/assets/fonts/Vazir-Thin-UI.ttf') format('truetype');
-     font-weight: 100;
-     font-style: normal;
- }
- 
- @font-face {
-     font-family: 'Vazir';
-     src: url('/assets/fonts/Vazir-Light-UI.eot');
-     src: url('/assets/fonts/Vazir-Light-UI.eot?#iefix') format('embedded-opentype'),
-          url('/assets/fonts/Vazir-Light-UI.woff2') format('woff2'),
-          url('/assets/fonts/Vazir-Light-UI.woff') format('woff'),
-          url('/assets/fonts/Vazir-Light-UI.ttf') format('truetype');
-     font-weight: 300;
-     font-style: normal;
- }
- 
- @font-face {
-     font-family: 'Vazir';
-     src: url('/assets/fonts/Vazir-Regular-UI.eot');
-     src: url('/assets/fonts/Vazir-Regular-UI.eot?#iefix') format('embedded-opentype'),
-          url('/assets/fonts/Vazir-Regular-UI.woff2') format('woff2'),
-          url('/assets/fonts/Vazir-Regular-UI.woff') format('woff'),
-          url('/assets/fonts/Vazir-Regular-UI.ttf') format('truetype');
-     font-weight: 400;
-     font-style: normal;
- }
- 
- @font-face {
-     font-family: 'Vazir';
-     src: url('/assets/fonts/Vazir-Medium-UI.eot');
-     src: url('/assets/fonts/Vazir-Medium-UI.eot?#iefix') format('embedded-opentype'),
-          url('/assets/fonts/Vazir-Medium-UI.woff2') format('woff2'),
-          url('/assets/fonts/Vazir-Medium-UI.woff') format('woff'),
-          url('/assets/fonts/Vazir-Medium-UI.ttf') format('truetype');
-     font-weight: 500;
-     font-style: normal;
- }
- 
- @font-face {
-     font-family: 'Vazir';
-     src: url('/assets/fonts/Vazir-Bold-UI.eot');
-     src: url('/assets/fonts/Vazir-Bold-UI.eot?#iefix') format('embedded-opentype'),
-          url('/assets/fonts/Vazir-Bold-UI.woff2') format('woff2'),
-          url('/assets/fonts/Vazir-Bold-UI.woff') format('woff'),
-          url('/assets/fonts/Vazir-Bold-UI.ttf') format('truetype');
-     font-weight: 700;
-     font-style: normal;
- }
- 
- @font-face {
-     font-family: 'Vazir';
-     src: url('/assets/fonts/Vazir-Black-UI.eot');
-     src: url('/assets/fonts/Vazir-Black-UI.eot?#iefix') format('embedded-opentype'),
-          url('/assets/fonts/Vazir-Black-UI.woff2') format('woff2'),
-          url('/assets/fonts/Vazir-Black-UI.woff') format('woff'),
-          url('/assets/fonts/Vazir-Black-UI.ttf') format('truetype');
-     font-weight: 900;
-     font-style: normal;
- }
- 
- /* =======================================================
-    5. Typography
- ======================================================= */
- 
- /* Headings */
- h2, h3 {
-     margin-bottom: var(--spacing-large);
- }
- 
- h2 {
-     font-size: 1.8em;
-     font-weight: 700;
-     color: var(--primary-deep-blue);
-     text-shadow: 0 0 10px var(--primary-gold);
-     margin-bottom: var(--spacing-md);
- }
- 
- h3 {
-     font-size: 1.5em;
-     font-weight: 700;
-     color: var(--primary-deep-blue);
-     margin-bottom: var(--spacing-md);
- }
- 
- /* Paragraphs */
- p {
-     font-size: 1em;
-     max-width: 90%;
-     margin: 0 auto var(--spacing-medium);
-     line-height: 1.6;
-     text-align: center;
-     color: var(--text-primary);
- }
- 
- /* =======================================================
-    6. Layout Sections
- ======================================================= */
- 
- /* ---------------------------------------------------
-    6.1. Hero Section
- --------------------------------------------------- */
- .hero {
-     height: calc(100vh - var(--header-height)); /* Adjust height for fixed header */
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-     justify-content: center;
-     background-color: var(--neutral-cool-gray);
-     color: var(--text-primary);
-     position: relative;
-     overflow: hidden;
-     text-align: center;
-     padding: var(--spacing-md);
- }
- 
- .hero h2 {
-     font-size: 3em;
-     font-weight: 700;
-     color: var(--primary-deep-blue);
-     text-shadow: 0 0 10px var(--primary-gold);
-     margin-bottom: var(--spacing-md);
- }
- 
- .hero p {
-     font-size: 1.5em;
-     margin-bottom: var(--spacing-lg);
- }
- 
- .cta-button {
-     display: inline-block;
-     background-color: var(--button-primary);
-     color: var(--neutral-white);
-     padding: 12px 30px;
-     border-radius: var(--border-radius);
-     font-size: 1em;
-     box-shadow: 0 0 10px var(--accent-golden-yellow);
-     text-decoration: none;
-     font-weight: 600;
-     transition: background-color var(--transition-speed) var(--transition-type),
-                 transform var(--transition-speed) var(--transition-type),
-                 box-shadow var(--transition-speed) var(--transition-type);
- }
- 
- .cta-button:hover,
- .cta-button:focus {
-     background-color: var(--button-secondary);
-     transform: translateY(-5px);
-     box-shadow: 0 0 20px var(--button-secondary);
- }
- 
- /* ---------------------------------------------------
-    6.3. Batteries Section
- --------------------------------------------------- */
- .batteries-grid {
-     display: grid;
-     grid-template-columns: 1fr;
-     gap: var(--spacing-md);
- }
- 
- .battery-card {
-     background-color: var(--neutral-white);
-     border-radius: var(--border-radius);
-     padding: var(--spacing-md);
-     box-shadow: var(--shadow-card);
-     display: flex;
-     flex-direction: column;
-     justify-content: space-between;
-     border: 2px solid var(--primary-deep-blue);
-     transition: transform var(--transition-speed) var(--transition-type), box-shadow var(--transition-speed) var(--transition-type);
- }
- 
- .battery-card:hover {
-     transform: translateY(-5px);
-     box-shadow: var(--shadow-hover);
- }
- 
- .battery-card h3 {
-     font-size: 1.3rem;
-     margin-bottom: var(--spacing-sm);
-     color: var(--primary-deep-blue);
-     font-weight: 700;
- }
- 
- .battery-card p.description {
-     font-size: 1rem;
-     color: var(--text-secondary);
-     margin-bottom: var(--spacing-sm);
-     line-height: 1.6;
- }
- 
- .battery-card p.id {
-     font-size: 0.9rem;
-     color: var(--primary-gold);
-     margin-bottom: var(--spacing-md);
- }
- 
- .battery-links {
-     display: flex;
-     gap: var(--spacing-sm);
-     flex-wrap: wrap;
- }
- 
- .battery-btn {
-     flex: 1;
-     padding: var(--spacing-sm) var(--spacing-md);
-     text-align: center;
-     border-radius: var(--border-radius);
-     font-weight: 600;
-     color: var(--neutral-white);
-     cursor: pointer;
-     background-color: var(--button-primary);
-     border: 2px solid var(--button-primary);
-     transition: background-color var(--transition-speed) var(--transition-type);
- }
- 
- .battery-btn:last-child {
-     background-color: var(--button-secondary);
-     border: 2px solid var(--button-secondary);
- }
- 
- .battery-btn:last-child:hover,
- .battery-btn:last-child:focus {
-     background-color: var(--button-secondary);
- }
- 
- /* ---------------------------------------------------
-    6.4. Footer
- --------------------------------------------------- */
- .footer {
-     background-color: var(--neutral-white);
-     padding: var(--spacing-lg);
-     color: var(--text-primary);
-     text-align: center; /* Center all text in the footer */
-     border-top: 1px solid var(--neutral-cool-gray);
-     position: relative;
- }
- 
- /* =======================================================
-    9. Media Queries
- ======================================================= */
- 
- /* ---------------------------------------------------
-    9.7. Additional Responsive Styles for Batteries Section
- --------------------------------------------------- */
- @media (min-width: 600px) {
-     .batteries-grid {
-         grid-template-columns: repeat(2, 1fr);
-     }
- }
- 
- @media (min-width: 992px) {
-     .batteries-grid {
-         grid-template-columns: repeat(3, 1fr);
-     }
- }
-</style> 
+        /* =======================================================
+        1. Reset and Base Styles
+        ======================================================= */
+        
+        /* Resetting box-sizing, margin, and padding for all elements */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Base styles for html and body */
+        html, body {
+            height: 100%;
+            font-family: var(--font-family);
+            background-color: var(--neutral-white);
+            color: var(--text-primary);
+            direction: rtl;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        
+        body {
+            padding-top: var(--header-height); /* Prevent content overlap with header */
+            padding-bottom: 60px; /* Prevent content overlap with mobile navbar */
+        }
+        
+        /* Base styles for anchor tags */
+        a {
+            text-decoration: none;
+            color: var(--primary-deep-blue);
+            transition: color var(--transition-speed) var(--transition-type);
+        }
+        
+        a:hover,
+        a:focus {
+            color: var(--primary-gold);
+            text-decoration: underline;
+        }
+        
+        /* =======================================================
+        2. Root Variables
+        ======================================================= */
+        :root {
+            /* Font Family */
+            --font-family: 'Vazir', sans-serif;
+        
+            /* Color Palette */
+            /* Primary Colors */
+            --primary-gold: #F4C553;             /* Highlights, Buttons, Icons, CTAs */
+            --primary-deep-blue: #1F3B73;       /* Trust, Headers, Primary Text */
+        
+            /* Secondary Colors */
+            --secondary-teal-green: #4FBDBA;    /* Growth, Secondary Buttons, Accents */
+            --secondary-electric-blue: #007BFF; /* Dynamic Interactions, Links, Active States */
+        
+            /* Neutral Colors */
+            --neutral-white: #FFFFFF;            /* Backgrounds, Text Contrast, Open Spaces */
+            --neutral-cool-gray: #F0F0F5;       /* Section Dividers, Form Fields, Subtle Contrasts */
+            --neutral-dark-gray: #888888;       /* General Text and Icons */
+        
+            /* Accent Colors */
+            --accent-golden-yellow: #FFD77B;     /* Hover Effects, Gradients, Embellishments */
+        
+            /* Text Colors */
+            --text-primary: var(--primary-deep-blue); /* Main Text */
+            --text-secondary: var(--neutral-dark-gray); /* Secondary Text */
+        
+            /* Button Colors */
+            --button-primary: var(--primary-gold);          /* Primary Buttons */
+            --button-secondary: var(--secondary-teal-green); /* Secondary Buttons */
+        
+            /* Spacing */
+            --header-height: 80px;
+            --spacing-xs: 4px;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+            --spacing-small: 10px;
+            --spacing-medium: 20px;
+            --spacing-large: 40px;
+        
+            /* Border Radius */
+            --border-radius: 8px;
+        
+            /* Shadows */
+            --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 6px 18px rgba(0, 0, 0, 0.15);
+        
+            /* Transitions */
+            --transition-speed: 0.3s;
+            --transition-type: ease-in-out;
+        }
+        
+        /* =======================================================
+        3. Font Imports
+        ======================================================= */
+        
+        /* Importing Vazir Font with different weights */
+        @font-face {
+            font-family: 'Vazir';
+            src: url('/assets/fonts/Vazir-Thin-UI.eot');
+            src: url('/assets/fonts/Vazir-Thin-UI.eot?#iefix') format('embedded-opentype'),
+                 url('/assets/fonts/Vazir-Thin-UI.woff2') format('woff2'),
+                 url('/assets/fonts/Vazir-Thin-UI.woff') format('woff'),
+                 url('/assets/fonts/Vazir-Thin-UI.ttf') format('truetype');
+            font-weight: 100;
+            font-style: normal;
+        }
+        
+        @font-face {
+            font-family: 'Vazir';
+            src: url('/assets/fonts/Vazir-Light-UI.eot');
+            src: url('/assets/fonts/Vazir-Light-UI.eot?#iefix') format('embedded-opentype'),
+                 url('/assets/fonts/Vazir-Light-UI.woff2') format('woff2'),
+                 url('/assets/fonts/Vazir-Light-UI.woff') format('woff'),
+                 url('/assets/fonts/Vazir-Light-UI.ttf') format('truetype');
+            font-weight: 300;
+            font-style: normal;
+        }
+        
+        @font-face {
+            font-family: 'Vazir';
+            src: url('/assets/fonts/Vazir-Regular-UI.eot');
+            src: url('/assets/fonts/Vazir-Regular-UI.eot?#iefix') format('embedded-opentype'),
+                 url('/assets/fonts/Vazir-Regular-UI.woff2') format('woff2'),
+                 url('/assets/fonts/Vazir-Regular-UI.woff') format('woff'),
+                 url('/assets/fonts/Vazir-Regular-UI.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+        }
+        
+        @font-face {
+            font-family: 'Vazir';
+            src: url('/assets/fonts/Vazir-Medium-UI.eot');
+            src: url('/assets/fonts/Vazir-Medium-UI.eot?#iefix') format('embedded-opentype'),
+                 url('/assets/fonts/Vazir-Medium-UI.woff2') format('woff2'),
+                 url('/assets/fonts/Vazir-Medium-UI.woff') format('woff'),
+                 url('/assets/fonts/Vazir-Medium-UI.ttf') format('truetype');
+            font-weight: 500;
+            font-style: normal;
+        }
+        
+        @font-face {
+            font-family: 'Vazir';
+            src: url('/assets/fonts/Vazir-Bold-UI.eot');
+            src: url('/assets/fonts/Vazir-Bold-UI.eot?#iefix') format('embedded-opentype'),
+                 url('/assets/fonts/Vazir-Bold-UI.woff2') format('woff2'),
+                 url('/assets/fonts/Vazir-Bold-UI.woff') format('woff'),
+                 url('/assets/fonts/Vazir-Bold-UI.ttf') format('truetype');
+            font-weight: 700;
+            font-style: normal;
+        }
+        
+        @font-face {
+            font-family: 'Vazir';
+            src: url('/assets/fonts/Vazir-Black-UI.eot');
+            src: url('/assets/fonts/Vazir-Black-UI.eot?#iefix') format('embedded-opentype'),
+                 url('/assets/fonts/Vazir-Black-UI.woff2') format('woff2'),
+                 url('/assets/fonts/Vazir-Black-UI.woff') format('woff'),
+                 url('/assets/fonts/Vazir-Black-UI.ttf') format('truetype');
+            font-weight: 900;
+            font-style: normal;
+        }
+        
+        /* =======================================================
+        4. Typography
+        ======================================================= */
+        
+        /* Headings */
+        h2, h3 {
+            margin-bottom: var(--spacing-large);
+        }
+        
+        h2 {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: var(--primary-deep-blue);
+            text-shadow: 0 0 10px var(--primary-gold);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        h3 {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: var(--primary-deep-blue);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        /* Paragraphs */
+        p {
+            font-size: 1em;
+            max-width: 90%;
+            margin: 0 auto var(--spacing-medium);
+            line-height: 1.6;
+            text-align: center;
+            color: var(--text-primary);
+        }
+        
+        /* Price Paragraph */
+        p.price {
+            font-weight: bold;
+            color: var(--primary-deep-blue);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        /* =======================================================
+        5. Layout Sections
+        ======================================================= */
+        
+        /* ---------------------------------------------------
+            5.1. Hero Section
+        --------------------------------------------------- */
+        .hero {
+            height: calc(100vh - var(--header-height)); /* Adjust height for fixed header */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--neutral-cool-gray);
+            color: var(--text-primary);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            padding: var(--spacing-md);
+        }
+        
+        .hero h2 {
+            font-size: 3em;
+            font-weight: 700;
+            color: var(--primary-deep-blue);
+            text-shadow: 0 0 10px var(--primary-gold);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .hero p {
+            font-size: 1.5em;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--button-primary);
+            color: var(--neutral-white);
+            padding: 12px 30px;
+            border-radius: var(--border-radius);
+            font-size: 1em;
+            box-shadow: 0 0 10px var(--accent-golden-yellow);
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color var(--transition-speed) var(--transition-type),
+                        transform var(--transition-speed) var(--transition-type),
+                        box-shadow var(--transition-speed) var(--transition-type);
+        }
+        
+        .cta-button:hover,
+        .cta-button:focus {
+            background-color: var(--button-secondary);
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px var(--button-secondary);
+        }
+        
+        /* ---------------------------------------------------
+            5.2. Main Content Container
+        --------------------------------------------------- */
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            padding: var(--spacing-md);
+        }
+        
+        @media (min-width: 992px) {
+            .main-content {
+                flex-direction: row;
+                align-items: flex-start;
+                gap: var(--spacing-lg);
+                padding: var(--spacing-lg);
+            }
+        }
+        
+        /* ---------------------------------------------------
+            5.3. Batteries Section
+        --------------------------------------------------- */
+        .batteries-section {
+            flex: 1;
+        }
+        
+        .batteries-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-md);
+            padding: var(--spacing-md);
+            max-width: 1200px;
+            margin: 0 auto var(--spacing-lg);
+        }
+        
+        @media (min-width: 600px) {
+            .batteries-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 992px) {
+            .batteries-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .battery-card {
+            background-color: var(--neutral-white);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-md);
+            box-shadow: var(--shadow-card);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: 2px solid var(--primary-deep-blue);
+            transition: transform var(--transition-speed) var(--transition-type), box-shadow var(--transition-speed) var(--transition-type);
+        }
+        
+        .battery-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .battery-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: var(--spacing-sm);
+            color: var(--primary-deep-blue);
+            font-weight: 700;
+        }
+        
+        .battery-card p.description {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-sm);
+            line-height: 1.6;
+        }
+        
+        .battery-card p.price {
+            font-size: 1rem;
+            color: var(--primary-deep-blue);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .battery-card p.id {
+            font-size: 0.9rem;
+            color: var(--primary-gold);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .battery-links {
+            display: flex;
+            gap: var(--spacing-sm);
+            flex-wrap: wrap;
+        }
+        
+        .battery-btn {
+            flex: 1;
+            padding: var(--spacing-sm) var(--spacing-md);
+            text-align: center;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            color: var(--neutral-white);
+            cursor: pointer;
+            background-color: var(--button-primary);
+            border: 2px solid var(--button-primary);
+            transition: background-color var(--transition-speed) var(--transition-type);
+        }
+        
+        .battery-btn:last-child {
+            background-color: var(--button-secondary);
+            border: 2px solid var(--button-secondary);
+        }
+        
+        .battery-btn:last-child:hover,
+        .battery-btn:last-child:focus {
+            background-color: var(--button-secondary);
+        }
+        
+        /* ---------------------------------------------------
+            5.4. Filter Sidebar
+        --------------------------------------------------- */
+        
+        /* Filter Sidebar Container */
+        .filter-section {
+            background-color: var(--neutral-cool-gray);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-card);
+            margin-bottom: var(--spacing-lg);
+            transition: all var(--transition-speed) var(--transition-type);
+            width: 100%;
+        }
+        
+        @media (min-width: 992px) {
+            .filter-section {
+                width: 250px; /* Fixed width for sidebar */
+                margin-bottom: 0;
+                position: sticky;
+                top: var(--header-height);
+                height: calc(100vh - var(--header-height));
+                overflow-y: auto;
+            }
+        }
+        
+        /* Filter Header */
+        .filter-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .filter-header h3 {
+            font-size: 1.6em;
+            color: var(--primary-deep-blue);
+        }
+        
+        .filter-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            padding: var(--spacing-xs);
+            transition: transform var(--transition-speed) var(--transition-type);
+        }
+        
+        .toggle-icon {
+            display: inline-block;
+            transition: transform var(--transition-speed) var(--transition-type);
+            font-size: 1.2em;
+            color: var(--primary-deep-blue);
+        }
+        
+        /* Screen Reader Only */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+        
+        /* Filter Content */
+        .filter-content {
+            margin-top: var(--spacing-md);
+            display: none;
+            flex-direction: column;
+            gap: var(--spacing-md);
+        }
+        
+        .filter-content.active {
+            display: flex;
+        }
+        
+        @media (min-width: 992px) {
+            .filter-content {
+                display: block !important;
+            }
+        }
+        
+        /* Filter Group */
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Filter Labels */
+        .filter-label {
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+            color: var(--primary-deep-blue);
+        }
+        
+        /* Filter Options */
+        .filter-options {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-xs);
+        }
+        
+        /* Toggle Switch Styles */
+        .switch {
+            position: relative;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+            font-size: 1em;
+            color: var(--text-primary);
+        }
+        
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .slider {
+            position: relative;
+            width: 40px;
+            height: 20px;
+            background-color: var(--neutral-dark-gray);
+            border-radius: 34px;
+            margin-left: var(--spacing-sm);
+            transition: background-color var(--transition-speed) var(--transition-type);
+        }
+        
+        .slider::before {
+            content: "";
+            position: absolute;
+            height: 16px;
+            width: 16px;
+            left: 2px;
+            bottom: 2px;
+            background-color: var(--neutral-white);
+            border-radius: 50%;
+            transition: transform var(--transition-speed) var(--transition-type);
+        }
+        
+        .switch input:checked + .slider {
+            background-color: var(--primary-gold);
+        }
+        
+        .switch input:checked + .slider::before {
+            transform: translateX(20px);
+        }
+        
+        /* Clear Filters Button */
+        .clear-filters {
+            background-color: var(--button-secondary);
+            color: var(--neutral-white);
+            padding: var(--spacing-sm) var(--spacing-md);
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color var(--transition-speed) var(--transition-type);
+            align-self: flex-start;
+            margin-top: var(--spacing-md);
+        }
+        
+        .clear-filters:hover {
+            background-color: var(--primary-deep-blue);
+        }
+        
+        /* Filter Search Input */
+        .filter-search {
+            padding: var(--spacing-xs);
+            border: 1px solid var(--neutral-dark-gray);
+            border-radius: var(--border-radius);
+            margin-bottom: var(--spacing-sm);
+            font-size: 1em;
+        }
+        
+        /* =======================================================
+        6. Media Queries
+        ======================================================= */
+        
+        /* ---------------------------------------------------
+            6.1. Responsive Batteries Section
+        --------------------------------------------------- */
+        @media (min-width: 600px) {
+            .batteries-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 992px) {
+            .batteries-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- skip link for accessibility -->
-    <header class="header"></header>
+    <!-- Skip link for accessibility -->
+    <a href="#main-content" class="sr-only">پرش به محتوا</a>
 
-    <main id="main-content">
-        <section class="hero">
-            <div class="hero-content">
-                <h2>بسته‌های ارزیابی</h2>
-                <p>بسته‌های ارزیابی شامل مجموعه‌ای از ارزیابی‌های مرتبط هستند که به شما کمک می‌کنند تا جنبه‌های مختلف شخصیت و توانمندی‌های خود را به‌طور جامع بررسی کنید.</p>
-                <!-- cta button to scroll to batteries section -->
-                <a href="#batteries-section" class="cta-button">مشاهده بسته‌ها</a>
-            </div>
-        </section>
-                <div class="batteries-grid" id="batteries-section">
+    <!-- Header -->
+    <header class="header">
+        <!-- Header content goes here -->
+    </header>
 
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <h2>بسته‌های ارزیابی</h2>
+            <p>بسته‌های ارزیابی شامل مجموعه‌ای از ارزیابی‌های مرتبط هستند که به شما کمک می‌کنند تا جنبه‌های مختلف شخصیت و توانمندی‌های خود را به‌طور جامع بررسی کنید.</p>
+            <!-- CTA button to scroll to main content -->
+            <a href="#main-content" class="cta-button">مشاهده بسته‌ها</a>
+        </div>
+    </section>
+    
+    <!-- Main Content -->
+    <div class="main-content" id="main-content">
+        <!-- Batteries Section -->
+        <section class="batteries-section">
+            <div class="batteries-grid" id="batteries-section">
+    
                 <!-- inventory 1 -->
-                <div class="battery-card">
+                <div class="battery-card" data-price="priced" data-persona="adult" data-categories="سلامت عاطفی,توسعه فردی,روابط اجتماعی">
                     <div>
                         <h3>فهرست آرامش روانی - 33</h3>
                         <p class="description">این ارزیابی به سنجش میزان آرامش روانی و توانایی مدیریت استرس شما می‌پردازد.</p>
+                        <p class="price">قیمت: 120 هزار تومان</p>
                         <p class="id">id: 110001</p>
                     </div>
                     <div class="battery-links">
@@ -395,12 +623,13 @@
                         <a href="/assessments/mental-tranquility" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
-
+    
                 <!-- inventory 2 -->
-                <div class="battery-card">
+                <div class="battery-card" data-price="priced" data-persona="adult" data-categories="توسعه فردی,روابط اجتماعی">
                     <div>
                         <h3>فهرست ارجمندی - 17</h3>
                         <p class="description">این ارزیابی به بررسی سطح ارجمندی و خودارزیابی مثبت شما می‌پردازد.</p>
+                        <p class="price">160 هزار تومان</p>
                         <p class="id">id: 110002</p>
                     </div>
                     <div class="battery-links">
@@ -408,12 +637,13 @@
                         <a href="/assessments/esteem" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
-
-                <!-- inventory 3 
-                <div class="battery-card">
+    
+                <!-- inventory 3 -->
+                <div class="battery-card" data-price="priced" data-persona="child" data-categories="توسعه فردی,روابط اجتماعی">
                     <div>
                         <h3>فهرست استعداد کودک - 48</h3>
                         <p class="description">این ارزیابی برای شناسایی استعدادهای بالقوه کودکان طراحی شده است.</p>
+                        <p class="price">360 هزار تومان</p>
                         <p class="id">id: 110003</p>
                     </div>
                     <div class="battery-links">
@@ -421,25 +651,13 @@
                         <a href="/assessments/child-talent-48" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
--->
-                <!-- inventory 4 
-                <div class="battery-card">
-                    <div>
-                        <h3>فهرست استعداد کودک - 72</h3>
-                        <p class="description">این ارزیابی برای بررسی و توسعه استعدادهای ویژه کودکان مورد استفاده قرار می‌گیرد.</p>
-                        <p class="id">id: 110004</p>
-                    </div>
-                    <div class="battery-links">
-                        <a href="/take?test=child-talent-72" class="battery-btn">شروع ارزیابی</a>
-                        <a href="/assessments/child-talent-72" class="battery-btn">معرفی ارزیابی</a>
-                    </div>
-                </div>
--->
-                <!-- inventory 5 -->
-                <div class="battery-card">
+    
+                <!-- inventory 4 -->
+                <div class="battery-card" data-price="priced" data-persona="adult" data-categories="سلامت عاطفی,توسعه فردی">
                     <div>
                         <h3>فهرست استواری پویش - 32</h3>
                         <p class="description">این ارزیابی میزان استواری و پویایی شما در مواجهه با چالش‌ها را سنجش می‌کند.</p>
+                        <p class="price">80 هزار تومان</p>
                         <p class="id">id: 110005</p>
                     </div>
                     <div class="battery-links">
@@ -447,12 +665,13 @@
                         <a href="/assessments/persistence" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
-
-                <!-- inventory 6 -->
-                <div class="battery-card">
+    
+                <!-- inventory 5 -->
+                <div class="battery-card" data-price="priced" data-persona="teen" data-categories="سلامت عاطفی,روابط اجتماعی">
                     <div>
                         <h3>فهرست بهداشت روان نوجوان - 46</h3>
                         <p class="description">این ارزیابی به بررسی سلامت روانی و بهداشت روانی نوجوانان می‌پردازد.</p>
+                        <p class="price">200 هزار تومان</p>
                         <p class="id">id: 110006</p>
                     </div>
                     <div class="battery-links">
@@ -460,415 +679,713 @@
                         <a href="/assessments/adolescent-mental-hygiene" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
-
-                <!-- inventory 7 -->
-                <div class="battery-card">
+    
+                <!-- inventory 6 -->
+                <div class="battery-card" data-price="priced" data-persona="adult" data-categories="سلامت عاطفی">
                     <div>
-                        <h3>فهرست پاکزیستی - 20</h3>
-                        <p class="description">این ارزیابی به بررسی میزان پاکیزگی و بهداشت شخصی شما می‌پردازد.</p>
+                        <h3>فهرست بیتابی - 24</h3>
+                        <p class="description">این ارزیابی به سنجش میزان بیتابی و اضطراب شما می‌پردازد.</p>
+                        <p class="price">40 هزار تومان</p>
                         <p class="id">id: 110007</p>
                     </div>
                     <div class="battery-links">
-                        <a href="/take?test=purification" class="battery-btn">شروع ارزیابی</a>
-                        <a href="/assessments/purification" class="battery-btn">معرفی ارزیابی</a>
+                        <a href="/take/restlessness" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/assessments/restlessness" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
-
-                <!-- inventory 8 -->
-                <div class="battery-card">
+    
+                <!-- inventory 7 -->
+                <div class="battery-card" data-price="priced" data-persona="adult" data-categories="روابط اجتماعی,توسعه فردی">
                     <div>
-                        <h3>فهرست پایایی - 29</h3>
-                        <p class="description">این ارزیابی به سنجش میزان پایایی و ثبات احساسی شما می‌پردازد.</p>
+                        <h3>فهرست پاکزیستی - 20</h3>
+                        <p class="description">این ارزیابی به بررسی میزان پاکیزگی و بهداشت شخصی شما می‌پردازد.</p>
+                        <p class="price">80 هزار تومان</p>
                         <p class="id">id: 110008</p>
                     </div>
                     <div class="battery-links">
-                        <a href="/take?test=stability" class="battery-btn">شروع ارزیابی</a>
-                        <a href="/assessments/stability" class="battery-btn">معرفی ارزیابی</a>
+                        <a href="/take/purification" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/assessments/purification" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
-
-                <!-- inventory 9 
-                <div class="battery-card">
+    
+                <!-- inventory 8 -->
+                <div class="battery-card" data-price="priced" data-persona="adult" data-categories="سلامت عاطفی,عملکرد شناختی">
                     <div>
-                        <h3>فهرست تحلیلی تجربی - 42</h3>
-                        <p class="description">این ارزیابی توانایی‌های تحلیلی و تجربی شما را بررسی می‌کند.</p>
+                        <h3>فهرست پایایی - 29</h3>
+                        <p class="description">این ارزیابی به سنجش میزان پایایی و ثبات احساسی شما می‌پردازد.</p>
+                        <p class="price">200 هزار تومان</p>
                         <p class="id">id: 110009</p>
                     </div>
                     <div class="battery-links">
-                        <a href="/take?test=empirical-analytical" class="battery-btn">شروع ارزیابی</a>
-                        <a href="/assessments/empirical-analytical" class="battery-btn">معرفی ارزیابی</a>
+                        <a href="/take/stability" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/assessments/stability" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
--->
-                <!-- inventory 10 -->
-                <div class="battery-card">
+    
+                <!-- inventory 9 -->
+                <div class="battery-card" data-price="priced" data-persona="adult" data-categories="توسعه فردی,روابط اجتماعی,انگیزش و اهداف">
                     <div>
                         <h3>فهرست تعادل - 38</h3>
                         <p class="description">این ارزیابی به بررسی تعادل میان زندگی شخصی و حرفه‌ای شما می‌پردازد.</p>
+                        <p class="price">240 هزار تومان</p>
                         <p class="id">id: 110010</p>
                     </div>
                     <div class="battery-links">
-                        <a href="/take?test=balance" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/take/balance" class="battery-btn">شروع ارزیابی</a>
                         <a href="/assessments/balance" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
-
-                <!-- inventory 11 -->
-                <div class="battery-card">
+    
+                <!-- inventory 10 -->
+                <div class="battery-card" data-price="priced" data-persona="adult" data-categories="سلامت عاطفی,توسعه فردی,عملکرد شناختی,انگیزش و اهداف">
                     <div>
                         <h3>فهرست تعادل روان - 94</h3>
                         <p class="description">این ارزیابی به سنجش تعادل روانی و سلامت روان شما می‌پردازد.</p>
+                        <p class="price">800 هزار تومان</p>
                         <p class="id">id: 110011</p>
                     </div>
                     <div class="battery-links">
-                        <a href="/take?test=mental-balance" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/take/mental-balance" class="battery-btn">شروع ارزیابی</a>
                         <a href="/assessments/mental-balance" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
-
-                <!-- inventory 12 -->
-                <div class="battery-card">
+    
+                <!-- inventory 11 -->
+                <div class="battery-card" data-price="priced" data-persona="adult" data-categories="توسعه فردی,روابط اجتماعی">
                     <div>
                         <h3>فهرست تعالی فردی - 37</h3>
                         <p class="description">این ارزیابی به بررسی سطح تعالی و رشد شخصی شما می‌پردازد.</p>
+                        <p class="price">240 هزار تومان</p>
                         <p class="id">id: 110012</p>
                     </div>
                     <div class="battery-links">
-                        <a href="/take?test=personal-excellence" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/take/personal-excellence" class="battery-btn">شروع ارزیابی</a>
                         <a href="/assessments/personal-excellence" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
-
-                <!-- inventory 13 -->
-                <div class="battery-card">
+    
+                <!-- inventory 12 -->
+                <div class="battery-card" data-price="priced" data-persona="adult" data-categories="سلامت عاطفی,روابط اجتماعی,عملکرد شناختی">
                     <div>
                         <h3>فهرست تعاملی شخصیت - 62</h3>
                         <p class="description">این ارزیابی به بررسی تعامل شخصیت شما با دیگران می‌پردازد.</p>
+                        <p class="price">240 هزار تومان</p>
                         <p class="id">id: 110013</p>
                     </div>
                     <div class="battery-links">
-                        <a href="/take?test=personality-interaction" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/take/personality-interaction" class="battery-btn">شروع ارزیابی</a>
                         <a href="/assessments/personality-interaction" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
-
-                <!-- inventory 14 -->
-                <div class="battery-card">
+    
+                <!-- inventory 13 -->
+                <div class="battery-card" data-price="priced" data-persona="adult" data-categories="توسعه فردی,انگیزش و اهداف">
                     <div>
                         <h3>فهرست تعهد فردی - 12</h3>
                         <p class="description">این ارزیابی میزان تعهد شما به اهداف و مسئولیت‌ها را سنجش می‌کند.</p>
+                        <p class="price">160 هزار تومان</p>
                         <p class="id">id: 110014</p>
                     </div>
                     <div class="battery-links">
-                        <a href="/take?test=personal-commitment" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/take/personal-commitment" class="battery-btn">شروع ارزیابی</a>
                         <a href="/assessments/personal-commitment" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
-
-                <!-- inventory 15 
-                <div class="battery-card">
+    
+                <!-- inventory 14 -->
+                <div class="battery-card" data-price="priced" data-persona="adult" data-categories="توسعه فردی,روابط اجتماعی">
                     <div>
                         <h3>فهرست حریم فردی - 24</h3>
                         <p class="description">این ارزیابی به بررسی نیازها و احترام به حریم شخصی شما می‌پردازد.</p>
+                        <p class="price">80 هزار تومان</p>
                         <p class="id">id: 110015</p>
                     </div>
                     <div class="battery-links">
-                        <a href="/take?test=personal-space" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/take/personal-space" class="battery-btn">شروع ارزیابی</a>
                         <a href="/assessments/personal-space" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
--->
-                <!-- inventory 16 -->
-                <div class="battery-card">
+    
+                <!-- inventory 15 -->
+                <div class="battery-card" data-price="priced" data-persona="adult" data-categories="روابط اجتماعی,انگیزش و اهداف">
                     <div>
                         <h3>فهرست حمایت معنوی - 28</h3>
                         <p class="description">این ارزیابی میزان حمایت معنوی و روانی شما را بررسی می‌کند.</p>
+                        <p class="price">120 هزار تومان</p>
                         <p class="id">id: 110016</p>
                     </div>
                     <div class="battery-links">
-                        <a href="/take?test=spiritual-support" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/take/spiritual-support" class="battery-btn">شروع ارزیابی</a>
                         <a href="/assessments/spiritual-support" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
-
-                <!-- inventory 17 -->
-                <div class="battery-card">
+    
+                <!-- inventory 16 -->
+                <div class="battery-card" data-price="priced" data-persona="adult" data-categories="سلامت عاطفی,توسعه فردی">
                     <div>
                         <h3>فهرست خردمندی - 25</h3>
                         <p class="description">این ارزیابی به سنجش میزان خردمندی و درک عمیق شما می‌پردازد.</p>
+                        <p class="price">120 هزار تومان</p>
                         <p class="id">id: 110017</p>
                     </div>
                     <div class="battery-links">
-                        <a href="/take?test=wisdom" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/take/wisdom" class="battery-btn">شروع ارزیابی</a>
                         <a href="/assessments/wisdom" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
-
-                <!-- inventory 18 -->
-                <div class="battery-card">
-                    <div>
-                        <h3>فهرست خود گستری - 62</h3>
-                        <p class="description">این ارزیابی به بررسی میزان خودگسترایی و توسعه شخصی شما می‌پردازد.</p>
-                        <p class="id">id: 110018</p>
-                    </div>
-                    <div class="battery-links">
-                        <a href="/take?test=self-expansion" class="battery-btn">شروع ارزیابی</a>
-                        <a href="/assessments/self-expansion" class="battery-btn">معرفی ارزیابی</a>
-                    </div>
-                </div>
-
-                <!-- inventory 19 -->
-                <div class="battery-card">
+    
+                <!-- inventory 17 -->
+                <div class="battery-card" data-price="priced" data-persona="adult" data-categories="انگیزش و اهداف,توسعه فردی">
                     <div>
                         <h3>فهرست درستی - 17</h3>
                         <p class="description">این ارزیابی به سنجش دقت و صحت در تفکر و عمل شما می‌پردازد.</p>
-                        <p class="id">id: 110019</p>
+                        <p class="price">160 هزار تومان</p>
+                        <p class="id">id: 110018</p>
                     </div>
                     <div class="battery-links">
-                        <a href="/take?test=accuracy" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/take/accuracy" class="battery-btn">شروع ارزیابی</a>
                         <a href="/assessments/accuracy" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
-
-                <!-- inventory 20 -->
-                <div class="battery-card">
+    
+                <!-- inventory 18 -->
+                <div class="battery-card" data-price="priced" data-persona="adult" data-categories="توسعه فردی,روابط اجتماعی">
                     <div>
                         <h3>فهرست رضایت از زندگی - 24</h3>
                         <p class="description">این ارزیابی میزان رضایت شما از جنبه‌های مختلف زندگی را بررسی می‌کند.</p>
+                        <p class="price">120 هزار تومان</p>
                         <p class="id">id: 110020</p>
                     </div>
                     <div class="battery-links">
-                        <a href="/take?test=life-satisfaction" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/take/life-satisfaction" class="battery-btn">شروع ارزیابی</a>
                         <a href="/assessments/life-satisfaction" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
-
-                <!-- inventory 21 -->
-                <div class="battery-card">
+    
+                <!-- inventory 19 -->
+                <div class="battery-card" data-price="priced" data-persona="adult" data-categories="روابط اجتماعی,انگیزش و اهداف">
                     <div>
                         <h3>فهرست رضایت زناشویی - 38</h3>
                         <p class="description">این ارزیابی به بررسی رضایت شما از زندگی زناشویی می‌پردازد.</p>
+                        <p class="price">120 هزار تومان</p>
                         <p class="id">id: 110021</p>
                     </div>
                     <div class="battery-links">
-                        <a href="/take?test=marital-satisfaction" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/take/marital-satisfaction" class="battery-btn">شروع ارزیابی</a>
                         <a href="/assessments/marital-satisfaction" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
-
-                <!-- inventory 22 -->
-                <div class="battery-card">
+    
+                <!-- inventory 20 -->
+                <div class="battery-card" data-price="priced" data-persona="adult" data-categories="انگیزش و اهداف,عملکرد شناختی">
                     <div>
                         <h3>فهرست رضایت شغلی - 29</h3>
                         <p class="description">این ارزیابی میزان رضایت شما از محیط و شرایط کاری را سنجش می‌کند.</p>
+                        <p class="price">200 هزار تومان</p>
                         <p class="id">id: 110022</p>
                     </div>
                     <div class="battery-links">
-                        <a href="/take?test=job-satisfaction" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/take/job-satisfaction" class="battery-btn">شروع ارزیابی</a>
                         <a href="/assessments/job-satisfaction" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
-
-                <!-- inventory 23 -->
-                <div class="battery-card">
+    
+                <!-- inventory 21 -->
+                <div class="battery-card" data-price="priced" data-persona="adult" data-categories="توسعه فردی,روابط اجتماعی">
                     <div>
                         <h3>فهرست سر زندگی - 24</h3>
                         <p class="description">این ارزیابی به بررسی نقاط اوج و دستاوردهای زندگی شما می‌پردازد.</p>
+                        <p class="price">80 هزار تومان</p>
                         <p class="id">id: 110023</p>
                     </div>
                     <div class="battery-links">
-                        <a href="/take?test=life-summit" class="battery-btn">شروع ارزیابی</a>
-                        <a href="/assessments/life-summit" class="battery-btn">معرفی ارزیابی</a>
+                        <a href="/take/vitality" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/assessments/vitality" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
-
-                <!-- inventory 24 -->
-                <div class="battery-card">
+    
+                <!-- inventory 22 -->
+                <div class="battery-card" data-price="priced" data-persona="adult" data-categories="سلامت عاطفی,توسعه فردی,روابط اجتماعی,عملکرد شناختی,انگیزش و اهداف">
                     <div>
                         <h3>فهرست شخصیت - 79</h3>
                         <p class="description">این ارزیابی به بررسی ویژگی‌ها و ابعاد مختلف شخصیت شما می‌پردازد.</p>
+                        <p class="price">840 هزار تومان</p>
                         <p class="id">id: 110024</p>
                     </div>
                     <div class="battery-links">
-                        <a href="/take?test=personality" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/take/personality" class="battery-btn">شروع ارزیابی</a>
                         <a href="/assessments/personality" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
-
-                <!-- inventory 25 -->
-                <div class="battery-card">
+    
+                <!-- inventory 23 -->
+                <div class="battery-card" data-price="priced" data-persona="child" data-categories="توسعه فردی,روابط اجتماعی">
                     <div>
                         <h3>فهرست شخصیت کودکان - 50</h3>
                         <p class="description">این ارزیابی به بررسی ویژگی‌های شخصیتی کودکان می‌پردازد.</p>
+                        <p class="price">400 هزار تومان</p>
                         <p class="id">id: 110025</p>
                     </div>
                     <div class="battery-links">
-                        <a href="/take?test=childrens-personality" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/take/childrens-personality" class="battery-btn">شروع ارزیابی</a>
                         <a href="/assessments/childrens-personality" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
-
-                <!-- inventory 26 -->
-                <div class="battery-card">
-                    <div>
-                        <h3>فهرست شناختی - 24</h3>
-                        <p class="description">این ارزیابی به سنجش توانایی‌های شناختی و ذهنی شما می‌پردازد.</p>
-                        <p class="id">id: 110026</p>
-                    </div>
-                    <div class="battery-links">
-                        <a href="/take?test=cognitive-24" class="battery-btn">شروع ارزیابی</a>
-                        <a href="/assessments/cognitive-24" class="battery-btn">معرفی ارزیابی</a>
-                    </div>
-                </div>
-
-                <!-- inventory 27 -->
-                <div class="battery-card">
+    
+                <!-- inventory 24 -->
+                <div class="battery-card" data-price="priced" data-persona="adult" data-categories="عملکرد شناختی">
                     <div>
                         <h3>فهرست ظرفیت تجربی - 63</h3>
                         <p class="description">این ارزیابی به بررسی ظرفیت‌های تجربی و عملی شما می‌پردازد.</p>
+                        <p class="price">120 هزار تومان</p>
                         <p class="id">id: 110027</p>
                     </div>
                     <div class="battery-links">
-                        <a href="/take?test=empirical-capacity" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/take/empirical-capacity" class="battery-btn">شروع ارزیابی</a>
                         <a href="/assessments/empirical-capacity" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
-
-                <!-- inventory 28 -->
-                <div class="battery-card">
-                    <div>
-                        <h3>فهرست ظرفیتهای شناختی - 35</h3>
-                        <p class="description">این ارزیابی به بررسی توانایی‌های شناختی پیشرفته شما می‌پردازد.</p>
-                        <p class="id">id: 110028</p>
-                    </div>
-                    <div class="battery-links">
-                        <a href="/take?test=cognitive-capacities" class="battery-btn">شروع ارزیابی</a>
-                        <a href="/assessments/cognitive-capacities" class="battery-btn">معرفی ارزیابی</a>
-                    </div>
-                </div>
-
-                <!-- inventory 29 
-                <div class="battery-card">
-                    <div>
-                        <h3>فهرست کرونا - 26</h3>
-                        <p class="description">این ارزیابی به بررسی تأثیرات کروناویروس بر زندگی و روان شما می‌پردازد.</p>
-                        <p class="id">id: 110029</p>
-                    </div>
-                    <div class="battery-links">
-                        <a href="/take?test=corona" class="battery-btn">شروع ارزیابی</a>
-                        <a href="/assessments/corona" class="battery-btn">معرفی ارزیابی</a>
-                    </div>
-                </div>
--->
-                <!-- inventory 30 -->
-                <div class="battery-card">
+    
+                <!-- inventory 25 -->
+                <div class="battery-card" data-price="priced" data-persona="adult" data-categories="توسعه فردی,روابط اجتماعی">
                     <div>
                         <h3>فهرست نیازها - 18</h3>
                         <p class="description">این ارزیابی به بررسی نیازهای اساسی و اولویت‌های شما می‌پردازد.</p>
-                        <p class="id">id: 110030</p>
+                        <p class="price">120 هزار تومان</p>
+                        <p class="id">id: 110028</p>
                     </div>
                     <div class="battery-links">
-                        <a href="/take?test=needs" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/take/needs" class="battery-btn">شروع ارزیابی</a>
                         <a href="/assessments/needs" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
-
-                <!-- inventory 31 -->
-                <div class="battery-card">
+    
+                <!-- inventory 26 -->
+                <div class="battery-card" data-price="free" data-persona="adult" data-categories="">
                     <div>
-                        <h3>فهرست وظیفه مندی - 11</h3>
-                        <p class="description">این ارزیابی به بررسی سطح وظیفه‌مندی و مسئولیت‌پذیری شما می‌پردازد.</p>
+                        <h3>فهرست شناختی - 24</h3>
+                        <p class="description">این ارزیابی به سنجش توانایی‌های شناختی و ذهنی شما می‌پردازد.</p>
+                        <p class="price">0 هزار تومان</p>
+                        <p class="id">id: 110029</p>
+                    </div>
+                    <div class="battery-links">
+                        <a href="/take/cognitive-24" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/assessments/cognitive-24" class="battery-btn">معرفی ارزیابی</a>
+                    </div>
+                </div>
+    
+                <!-- inventory 27 -->
+                <div class="battery-card" data-price="priced" data-persona="adult" data-categories="عملکرد شناختی">
+                    <div>
+                        <h3>فهرست ظرفیتهای شناختی - 35</h3>
+                        <p class="description">این ارزیابی به بررسی توانایی‌های شناختی پیشرفته شما می‌پردازد.</p>
+                        <p class="price">120 هزار تومان</p>
+                        <p class="id">id: 110030</p>
+                    </div>
+                    <div class="battery-links">
+                        <a href="/take/cognitive-capacities" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/assessments/cognitive-capacities" class="battery-btn">معرفی ارزیابی</a>
+                    </div>
+                </div>
+    
+                <!-- inventory 28 -->
+                <div class="battery-card" data-price="priced" data-persona="adult" data-categories="سلامت عاطفی">
+                    <div>
+                        <h3>فهرست کرونا - 26</h3>
+                        <p class="description">این ارزیابی به بررسی تأثیرات کروناویروس بر زندگی و روان شما می‌پردازد.</p>
+                        <p class="price">80 هزار تومان</p>
                         <p class="id">id: 110031</p>
                     </div>
                     <div class="battery-links">
-                        <a href="/take?test=duty" class="battery-btn">شروع ارزیابی</a>
-                        <a href="/assessments/duty" class="battery-btn">معرفی ارزیابی</a>
+                        <a href="/take/corona" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/assessments/corona" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
-
-                <!-- inventory 32 -->
-                <div class="battery-card">
+    
+                <!-- inventory 29 -->
+                <div class="battery-card" data-price="priced" data-persona="adult" data-categories="عملکرد شناختی">
                     <div>
-                        <h3>فهرست هدفمندی - 25</h3>
-                        <p class="description">این ارزیابی به بررسی تمرکز و هدفمندی شما در رسیدن به اهداف می‌پردازد.</p>
+                        <h3>فهرست وظیفه مندی - 11</h3>
+                        <p class="description">این ارزیابی به بررسی سطح وظیفه‌مندی و مسئولیت‌پذیری شما می‌پردازد.</p>
+                        <p class="price">80 هزار تومان</p>
                         <p class="id">id: 110032</p>
                     </div>
                     <div class="battery-links">
-                        <a href="/take?test=goal-oriented" class="battery-btn">شروع ارزیابی</a>
-                        <a href="/assessments/goal-oriented" class="battery-btn">معرفی ارزیابی</a>
+                        <a href="/take/duty" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/assessments/duty" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
-
-                <!-- inventory 33 -->
-                <div class="battery-card">
+    
+                <!-- inventory 30 -->
+                <div class="battery-card" data-price="priced" data-persona="adult" data-categories="توسعه فردی,انگیزش و اهداف">
                     <div>
-                        <h3>فهرست هوش موفق - 49</h3>
-                        <p class="description">این ارزیابی به بررسی هوش موفق و توانایی‌های موفقیت‌آمیز شما می‌پردازد.</p>
+                        <h3>فهرست هدفمندی - 25</h3>
+                        <p class="description">این ارزیابی به بررسی تمرکز و هدفمندی شما در رسیدن به اهداف می‌پردازد.</p>
+                        <p class="price">120 هزار تومان</p>
                         <p class="id">id: 110033</p>
                     </div>
                     <div class="battery-links">
-                        <a href="/take?test=successful-intelligence" class="battery-btn">شروع ارزیابی</a>
-                        <a href="/assessments/successful-intelligence" class="battery-btn">معرفی ارزیابی</a>
+                        <a href="/take/goal-oriented" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/assessments/goal-oriented" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
-
-                <!-- inventory 34 -->
-                <div class="battery-card">
+    
+                <!-- inventory 31 -->
+                <div class="battery-card" data-price="priced" data-persona="adult" data-categories="انگیزش و اهداف,عملکرد شناختی">
                     <div>
-                        <h3>فهرست هیجان اندیشه - 69</h3>
-                        <p class="description">این ارزیابی به بررسی ارتباط میان افکار و احساسات شما می‌پردازد.</p>
+                        <h3>فهرست هوش موفق - 49</h3>
+                        <p class="description">این ارزیابی به بررسی هوش موفق و توانایی‌های موفقیت‌آمیز شما می‌پردازد.</p>
+                        <p class="price">240 هزار تومان</p>
                         <p class="id">id: 110034</p>
                     </div>
                     <div class="battery-links">
-                        <a href="/take?test=thought-emotion" class="battery-btn">شروع ارزیابی</a>
-                        <a href="/assessments/thought-emotion" class="battery-btn">معرفی ارزیابی</a>
+                        <a href="/take/successful-intelligence" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/assessments/successful-intelligence" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
-
-                <!-- inventory 35 -->
-                <div class="battery-card">
+    
+                <!-- inventory 32 -->
+                <div class="battery-card" data-price="priced" data-persona="adult" data-categories="سلامت عاطفی,توسعه فردی,انگیزش و اهداف">
                     <div>
-                        <h3>فهرست یکپارچگی شناختی - 14</h3>
-                        <p class="description">این ارزیابی به بررسی میزان یکپارچگی و انسجام در تفکر شما می‌پردازد.</p>
+                        <h3>فهرست هیجان اندیشه - 69</h3>
+                        <p class="description">این ارزیابی به بررسی ارتباط میان افکار و احساسات شما می‌پردازد.</p>
+                        <p class="price">480 هزار تومان</p>
                         <p class="id">id: 110035</p>
                     </div>
                     <div class="battery-links">
-                        <a href="/take?test=cognitive-integration" class="battery-btn">شروع ارزیابی</a>
-                        <a href="/assessments/cognitive-integration" class="battery-btn">معرفی ارزیابی</a>
+                        <a href="/take/thought-emotion" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/assessments/thought-emotion" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
-
-                <!-- inventory 36 
-                <div class="battery-card">
+    
+                <!-- inventory 33 -->
+                <div class="battery-card" data-price="priced" data-persona="adult" data-categories="عملکرد شناختی">
                     <div>
-                        <h3>فهرست رضایت از زندگی - 25</h3>
-                        <p class="description">این ارزیابی به بررسی سطح رضایت شما از جنبه‌های مختلف زندگی می‌پردازد.</p>
+                        <h3>فهرست یکپارچگی شناختی - 14</h3>
+                        <p class="description">این ارزیابی به بررسی میزان یکپارچگی و انسجام در تفکر شما می‌پردازد.</p>
+                        <p class="price">80 هزار تومان</p>
                         <p class="id">id: 110036</p>
                     </div>
                     <div class="battery-links">
-                        <a href="/take?test=life-satisfaction-25" class="battery-btn">شروع ارزیابی</a>
-                        <a href="/assessments/life-satisfaction-25" class="battery-btn">معرفی ارزیابی</a>
+                        <a href="/take/cognitive-integration" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/assessments/cognitive-integration" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
--->
-                <!-- inventory 37 
-                <div class="battery-card">
+    
+                <!-- inventory 34 -->
+                <div class="battery-card" data-price="priced" data-persona="adult" data-categories="توسعه فردی,انگیزش و اهداف">
                     <div>
-                        <h3>فهرست تعاملی استعداد - 15</h3>
-                        <p class="description">این ارزیابی به بررسی نحوه تعامل استعدادهای شما با محیط اطراف می‌پردازد.</p>
+                        <h3>فهرست رضایت از زندگی - 25</h3>
+                        <p class="description">این ارزیابی به بررسی سطح رضایت شما از جنبه‌های مختلف زندگی می‌پردازد.</p>
+                        <p class="price">120 هزار تومان</p>
                         <p class="id">id: 110037</p>
                     </div>
                     <div class="battery-links">
-                        <a href="/take?test=talent-interaction" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/take/life-satisfaction-25" class="battery-btn">شروع ارزیابی</a>
+                        <a href="/assessments/life-satisfaction-25" class="battery-btn">معرفی ارزیابی</a>
+                    </div>
+                </div>
+    
+                <!-- inventory 35 -->
+                <div class="battery-card" data-price="free" data-persona="adult" data-categories="">
+                    <div>
+                        <h3>فهرست تعاملی استعداد - 15</h3>
+                        <p class="description">این ارزیابی به بررسی نحوه تعامل استعدادهای شما با محیط اطراف می‌پردازد.</p>
+                        <p class="price">0 هزار تومان</p>
+                        <p class="id">id: 110038</p>
+                    </div>
+                    <div class="battery-links">
+                        <a href="/take/talent-interaction" class="battery-btn">شروع ارزیابی</a>
                         <a href="/assessments/talent-interaction" class="battery-btn">معرفی ارزیابی</a>
                     </div>
                 </div>
+    
             </div>
-                    -->
-</main>
-        <div class="footer"></div>
-        <script src="assets/js/header-footer-inject.js"></script>
-    <script src="/assets/js/script.js"></script>
+        </section>
+    
+        <!-- Filter Sidebar -->
+        <aside class="filter-section">
+            <div class="filter-header">
+                <h3>فیلترها</h3>
+                <button class="filter-toggle" aria-expanded="false" aria-controls="filter-content">
+                    <span class="toggle-icon">▶</span>
+                    <span class="sr-only">باز کردن/بستن فیلترها</span>
+                </button>
+            </div>
+            <div class="filter-content" id="filter-content" hidden>
+                <!-- Price Filter -->
+                <div class="filter-group">
+                    <label class="filter-label">قیمت:</label>
+                    <input type="text" class="filter-search" placeholder="جستجو..." aria-label="جستجوی قیمت">
+                    <div class="filter-options">
+                        <label class="switch">
+                            <input type="checkbox" name="price" value="free">
+                            <span class="slider"></span>
+                            رایگان
+                        </label>
+                        <label class="switch">
+                            <input type="checkbox" name="price" value="priced">
+                            <span class="slider"></span>
+                            پرداختی
+                        </label>
+                    </div>
+                </div>
+                
+                <!-- Persona Filter -->
+                <div class="filter-group">
+                    <label class="filter-label">شخصیت:</label>
+                    <input type="text" class="filter-search" placeholder="جستجو..." aria-label="جستجوی شخصیت">
+                    <div class="filter-options">
+                        <label class="switch">
+                            <input type="checkbox" name="persona" value="adult">
+                            <span class="slider"></span>
+                            بزرگسال
+                        </label>
+                        <label class="switch">
+                            <input type="checkbox" name="persona" value="teen">
+                            <span class="slider"></span>
+                            نوجوان
+                        </label>
+                        <label class="switch">
+                            <input type="checkbox" name="persona" value="child">
+                            <span class="slider"></span>
+                            کودک
+                        </label>
+                    </div>
+                </div>
+                
+                <!-- Factors Filter -->
+                <div class="filter-group">
+                    <label class="filter-label">دسته‌بندی عوامل:</label>
+                    <input type="text" class="filter-search" placeholder="جستجو..." aria-label="جستجوی دسته‌بندی عوامل">
+                    <div class="filter-options">
+                        <label class="switch">
+                            <input type="checkbox" name="categories" value="سلامت عاطفی">
+                            <span class="slider"></span>
+                            سلامت عاطفی
+                        </label>
+                        <label class="switch">
+                            <input type="checkbox" name="categories" value="توسعه فردی">
+                            <span class="slider"></span>
+                            توسعه فردی
+                        </label>
+                        <label class="switch">
+                            <input type="checkbox" name="categories" value="روابط اجتماعی">
+                            <span class="slider"></span>
+                            روابط اجتماعی
+                        </label>
+                        <label class="switch">
+                            <input type="checkbox" name="categories" value="عملکرد شناختی">
+                            <span class="slider"></span>
+                            عملکرد شناختی
+                        </label>
+                        <label class="switch">
+                            <input type="checkbox" name="categories" value="انگیزش و اهداف">
+                            <span class="slider"></span>
+                            انگیزش و اهداف
+                        </label>
+                    </div>
+                </div>
+                
+                <!-- Clear Filters Button -->
+                <button class="clear-filters">پاک کردن تمام فیلترها</button>
+            </div>
+        </aside>
+    </div>
 
+    <!-- Footer -->
+    <footer class="footer">
+        <!-- Footer content goes here -->
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="assets/js/header-footer-inject.js"></script>
+    <script src="/assets/js/script.js"></script>
+        
+    <!-- Inline Scripts -->
+    <script>
+        // Header Mobile Navigation Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuButton = document.querySelector('.menu-button');
+            const mobileNav = document.querySelector('.mobile-nav');
+            const body = document.body;
+            
+            if (menuButton && mobileNav) {
+                menuButton.addEventListener('click', function() {
+                    const isOpen = mobileNav.style.display === 'flex';
+                    mobileNav.style.display = isOpen ? 'none' : 'flex';
+                    mobileNav.setAttribute('aria-hidden', isOpen ? 'true' : 'false');
+                });
+            }
+        });
+        
+        // Filter Functionality Script
+        document.addEventListener('DOMContentLoaded', function() {
+            const batteries = document.querySelectorAll('.battery-card');
+            const priceFilters = document.querySelectorAll('input[name="price"]');
+            const personaFilters = document.querySelectorAll('input[name="persona"]');
+            const categoryFilters = document.querySelectorAll('input[name="categories"]');
+            const filterToggleBtn = document.querySelector('.filter-toggle');
+            const filterContent = document.querySelector('.filter-content');
+            const clearFiltersBtn = document.querySelector('.clear-filters');
+            const filterSearchInputs = document.querySelectorAll('.filter-search');
+            
+            // Toggle filter content on mobile
+            if (filterToggleBtn && filterContent) {
+                filterToggleBtn.addEventListener('click', function() {
+                    const isExpanded = filterToggleBtn.getAttribute('aria-expanded') === 'true';
+                    filterToggleBtn.setAttribute('aria-expanded', !isExpanded);
+                    filterContent.hidden = isExpanded;
+                    filterContent.classList.toggle('active');
+                    // Rotate the toggle icon
+                    const toggleIcon = filterToggleBtn.querySelector('.toggle-icon');
+                    toggleIcon.style.transform = isExpanded ? 'rotate(0deg)' : 'rotate(90deg)';
+                });
+            }
+        
+            // Function to get selected filter values
+            function getSelectedFilters(name) {
+                let checked = [];
+                if (name === 'price') {
+                    priceFilters.forEach(filter => {
+                        if (filter.checked) checked.push(filter.value);
+                    });
+                } else if (name === 'persona') {
+                    personaFilters.forEach(filter => {
+                        if (filter.checked) checked.push(filter.value);
+                    });
+                } else if (name === 'categories') {
+                    categoryFilters.forEach(filter => {
+                        if (filter.checked) checked.push(filter.value);
+                    });
+                }
+                return checked;
+            }
+        
+            // Function to filter batteries
+            function filterBatteries() {
+                const selectedPrices = getSelectedFilters('price');
+                const selectedPersonas = getSelectedFilters('persona');
+                const selectedCategories = getSelectedFilters('categories');
+        
+                batteries.forEach(battery => {
+                    const batteryPrice = battery.getAttribute('data-price');
+                    const batteryPersona = battery.getAttribute('data-persona');
+                    const batteryCategories = battery.getAttribute('data-categories') ? battery.getAttribute('data-categories').split(',').map(c => c.trim()) : [];
+        
+                    // Price Filter
+                    let priceMatch = false;
+                    if (selectedPrices.length === 0) {
+                        priceMatch = true;
+                    } else {
+                        if (selectedPrices.includes(batteryPrice)) {
+                            priceMatch = true;
+                        }
+                    }
+        
+                    // Persona Filter
+                    let personaMatch = false;
+                    if (selectedPersonas.length === 0) {
+                        personaMatch = true;
+                    } else {
+                        if (selectedPersonas.includes(batteryPersona)) {
+                            personaMatch = true;
+                        }
+                    }
+        
+                    // Categories Filter
+                    let categoriesMatch = false;
+                    if (selectedCategories.length === 0) {
+                        categoriesMatch = true;
+                    } else {
+                        // Check if batteryCategories contains all selectedCategories
+                        categoriesMatch = selectedCategories.every(category => batteryCategories.includes(category));
+                    }
+        
+                    // Show or hide the battery based on all filters
+                    if (priceMatch && personaMatch && categoriesMatch) {
+                        battery.style.display = 'flex';
+                    } else {
+                        battery.style.display = 'none';
+                    }
+                });
+            }
+        
+            // Add event listeners to all filter checkboxes
+            priceFilters.forEach(filter => {
+                filter.addEventListener('change', filterBatteries);
+            });
+        
+            personaFilters.forEach(filter => {
+                filter.addEventListener('change', filterBatteries);
+            });
+        
+            categoryFilters.forEach(filter => {
+                filter.addEventListener('change', filterBatteries);
+            });
+        
+            // Add event listeners to filter search inputs
+            filterSearchInputs.forEach(searchInput => {
+                searchInput.addEventListener('input', function(e) {
+                    const searchTerm = e.target.value.toLowerCase();
+                    const filterOptions = e.target.nextElementSibling.querySelectorAll('.switch');
+        
+                    filterOptions.forEach(option => {
+                        const labelText = option.textContent.toLowerCase();
+                        if (labelText.includes(searchTerm)) {
+                            option.style.display = 'flex';
+                        } else {
+                            option.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        
+            // Clear all filters
+            if (clearFiltersBtn) {
+                clearFiltersBtn.addEventListener('click', function() {
+                    const allFilters = document.querySelectorAll('.filter-options input');
+                    allFilters.forEach(filter => {
+                        filter.checked = false;
+                        filter.dispatchEvent(new Event('change'));
+                    });
+                });
+            }
+        
+            // Initialize filter section state based on screen size
+            function initializeFilterState() {
+                if (window.innerWidth < 992) { // Mobile and Tablet
+                    if (filterContent) {
+                        filterContent.hidden = true;
+                        filterContent.classList.remove('active');
+                        if (filterToggleBtn) {
+                            filterToggleBtn.setAttribute('aria-expanded', 'false');
+                            const toggleIcon = filterToggleBtn.querySelector('.toggle-icon');
+                            toggleIcon.style.transform = 'rotate(0deg)';
+                        }
+                    }
+                } else { // Desktop
+                    if (filterContent) {
+                        filterContent.hidden = false;
+                        filterContent.classList.add('active');
+                        if (filterToggleBtn) {
+                            filterToggleBtn.setAttribute('aria-expanded', 'true');
+                            const toggleIcon = filterToggleBtn.querySelector('.toggle-icon');
+                            toggleIcon.style.transform = 'rotate(90deg)';
+                        }
+                    }
+                }
+            }
+        
+            // Initial state
+            initializeFilterState();
+            filterBatteries();
+        
+            // Handle window resize to show/hide filter toggle
+            window.addEventListener('resize', function() {
+                initializeFilterState();
+            });
+        });
+    </script>
 </body>
 </html>

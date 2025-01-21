@@ -475,7 +475,7 @@
 
         @media (min-width: 1024px) {
             .swiper .swiper-slide {
-                width: 25%;
+                width: 33.3333%;
             }
             .swiper-slide h3 {
                 font-size: 1.3em;
@@ -484,7 +484,7 @@
 
         @media (min-width: 1200px) {
             .swiper .swiper-slide {
-                width: 20%;
+                width: 33.3333%;
             }
             .factor-card {
                 max-width: 400px;
@@ -866,7 +866,7 @@
             gap: var(--spacing-md); /* Reduced gap */
             margin: 0px; /* No margin */
 
-            height: 300px; /* Fixed height for consistency */
+            /* Remove fixed height */
         }
         .factor-card:hover {
             box-shadow: var(--shadow-hover);
@@ -897,7 +897,7 @@
             line-height: 1.6;
             text-align: justify;
             flex-grow: 1; /* Allow description to take up remaining space */
-            overflow: hidden;
+            /* Remove overflow: hidden; */
         }
         .factors-cta {
             margin-top: var(--spacing-lg);
@@ -2212,11 +2212,11 @@
                                         spaceBetween: 10,
                                     },
                                     1024: {
-                                        slidesPerView: 4,
+                                        slidesPerView: 3,
                                         spaceBetween: 10,
                                     },
                                     1200: {
-                                        slidesPerView: 5,
+                                        slidesPerView: 3,
                                         spaceBetween: 10,
                                     },
                                 },
@@ -2288,20 +2288,6 @@
             if (defaultFaqTab) {
                 defaultFaqTab.click();
             }
-
-            /* ============================================
-               4. Swiper Initialization for Diagnostic Factors
-            ============================================ */
-            // Handled by initSwipers function above
-
-            /* ============================================
-               5. Swiper Initialization for Assessments (If Applicable)
-            ============================================ */
-            // Handled by initSwipers function above
-        });
-
-        /* Pricing Swiper Initialization */
-        // Handled by initSwipers function above (since pricing section has data-autoslider="true")
     </script>
 </body>
 </html>
