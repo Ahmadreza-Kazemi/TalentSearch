@@ -6,7 +6,7 @@
 
 ## Contact Us
 
-- **Address:** Tehran, Sohrvardi, Khoramshahr, Abrali, 6th, 44
+- **Address:** Tehran, Sohrvardi, Khoram Shahr, Arab Ali, 6th, 44
 - **Phone:** +98 21 88174100
 - **Email:** [info@talentsearch.ir](mailto:info@talentsearch.ir)
 
