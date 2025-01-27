@@ -11,6 +11,11 @@
             displayName: "فهرست ارجمندی - 17",
             description: "آزمون فهرست ارجمندی - 17 برای ارزیابی سطح ارجمندی و خودارزیابی مثبت شما."
         },
+        "wrestlingfederation": {
+            formId: "sdnhd",
+            displayName: "فهرست جامع تشخیص فدراسیون کشتی",
+            description: "این فهرست جهت تعالی فردی قهرمانی کشتی گیران است"
+        },
         "child-talent-48": {
             formId: "npwsz",
             displayName: "فهرست استعداد کودک - 48",
