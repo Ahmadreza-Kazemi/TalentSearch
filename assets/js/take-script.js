@@ -16,6 +16,11 @@
             displayName: "فهرست جامع تشخیص فدراسیون کشتی",
             description: "این فهرست جهت تعالی فردی قهرمانی کشتی گیران است"
         },
+        "fit": {
+            formId: "mt53x",
+            displayName: "fit",
+            description: "آزمون تصویری fit"
+        },
         "child-talent-48": {
             formId: "npwsz",
             displayName: "فهرست استعداد کودک - 48",
