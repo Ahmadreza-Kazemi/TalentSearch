@@ -11,6 +11,16 @@
             displayName: "شروع خدمات روانشناسی و مشاوره فردی",
             description: "مشاوره فردی در هیجان اندیشه"
         },
+            "experimental-analysis-42": {
+        formId: "5sluk",
+        displayName: "فهرست تحلیلی تجربی «42»",
+        description: "این ارزیابی به تحلیل تجربی و شناسایی جنبه‌های مختلف تجربیات فردی شما می‌پردازد."
+    },
+    "child-talents-72": {
+        formId: "csclb",
+        displayName: "فهرست استعداد کودک «72»",
+        description: "این ارزیابی به شناسایی و تحلیل استعدادهای مختلف کودک شما می‌پردازد."
+    }
                 "personal-space": {
             formId: "kzan7",
             displayName: "فهرست حریم فردی - 24",
