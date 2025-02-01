@@ -20,7 +20,7 @@
         formId: "csclb",
         displayName: "فهرست استعداد کودک «72»",
         description: "این ارزیابی به شناسایی و تحلیل استعدادهای مختلف کودک شما می‌پردازد."
-    }
+    },
                 "personal-space": {
             formId: "kzan7",
             displayName: "فهرست حریم فردی - 24",
