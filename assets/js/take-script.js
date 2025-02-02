@@ -96,13 +96,13 @@
         "formId": "pi6c6",
         "displayName": "فهرست تعادل - 38",
         "description": "آزمون فهرست تعادل - 38 برای ارزیابی تعادل میان زندگی شخصی و حرفه‌ای شما.",
-        "ref": "000"
+        "ref": "2012"
     },
     "mental-balance": {
         "formId": "eg75q",
         "displayName": "فهرست تعادل روان - 94",
         "description": "آزمون فهرست تعادل روان - 94 برای ارزیابی تعادل روانی و سلامت روان شما.",
-        "ref": "000"
+        "ref": "2033"
     },
     "personal-excellence": {
         "formId": "6rvrr",
