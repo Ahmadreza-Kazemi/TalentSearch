@@ -1,6 +1,7 @@
 (function() {
     // Mapping of 'test' parameter values to their respective Form IDs, Descriptions, and Ref values
     const testToDetailsMap = {
+    {
     "mental-tranquility": {
         "formId": "sh68g",
         "displayName": "فهرست آرامش روانی - 33",
@@ -10,7 +11,8 @@
     "therapy": {
         "formId": "kzan7",
         "displayName": "شروع خدمات روانشناسی و مشاوره فردی",
-        "description": "مشاوره فردی در هیجان اندیشه"
+        "description": "مشاوره فردی در هیجان اندیشه",
+        "ref": "000"
     },
     "experimental-analysis-42": {
         "formId": "5sluk",
@@ -27,7 +29,8 @@
     "personal-space": {
         "formId": "knuln",
         "displayName": "فهرست حریم فردی - 24",
-        "description": "این ارزیابی به بررسی نیازها و احترام به حریم شخصی شما می‌پردازد."
+        "description": "این ارزیابی به بررسی نیازها و احترام به حریم شخصی شما می‌پردازد.",
+        "ref": "2010"
     },
     "restlessness": {
         "formId": "1vp1t",
@@ -38,22 +41,26 @@
     "esteem": {
         "formId": "vljt1",
         "displayName": "فهرست ارجمندی - 17",
-        "description": "آزمون فهرست ارجمندی - 17 برای ارزیابی سطح ارجمندی و خودارزیابی مثبت شما."
+        "description": "آزمون فهرست ارجمندی - 17 برای ارزیابی سطح ارجمندی و خودارزیابی مثبت شما.",
+        "ref": "2017"
     },
     "wrestlingfederation": {
         "formId": "sdnhd",
         "displayName": "فهرست جامع تشخیص فدراسیون کشتی",
-        "description": "این فهرست جهت تعالی فردی قهرمانی کشتی گیران است"
+        "description": "این فهرست جهت تعالی فردی قهرمانی کشتی گیران است",
+        "ref": "000"
     },
     "fit": {
         "formId": "mt53x",
         "displayName": "fit",
-        "description": "آزمون تصویری fit"
+        "description": "آزمون تصویری fit",
+        "ref": "000"
     },
     "child-talent-48": {
         "formId": "npwsz",
         "displayName": "فهرست استعداد کودک - 48",
-        "description": "آزمون فهرست استعداد کودک - 48 برای شناسایی استعدادهای بالقوه کودکان طراحی شده است."
+        "description": "آزمون فهرست استعداد کودک - 48 برای شناسایی استعدادهای بالقوه کودکان طراحی شده است.",
+        "ref": "2023"
     },
     "persistence": {
         "formId": "40svj",
@@ -88,12 +95,14 @@
     "balance": {
         "formId": "pi6c6",
         "displayName": "فهرست تعادل - 38",
-        "description": "آزمون فهرست تعادل - 38 برای ارزیابی تعادل میان زندگی شخصی و حرفه‌ای شما."
+        "description": "آزمون فهرست تعادل - 38 برای ارزیابی تعادل میان زندگی شخصی و حرفه‌ای شما.",
+        "ref": "000"
     },
     "mental-balance": {
         "formId": "eg75q",
         "displayName": "فهرست تعادل روان - 94",
-        "description": "آزمون فهرست تعادل روان - 94 برای ارزیابی تعادل روانی و سلامت روان شما."
+        "description": "آزمون فهرست تعادل روان - 94 برای ارزیابی تعادل روانی و سلامت روان شما.",
+        "ref": "000"
     },
     "personal-excellence": {
         "formId": "6rvrr",
@@ -287,6 +296,8 @@
         "description": "آزمون فهرست جامع تشخیص تعاملی کودک برای ارزیابی جنبه‌های مختلف زندگی کودکان.",
         "ref": "2004"
     }
+}
+
     };
 
     /**
