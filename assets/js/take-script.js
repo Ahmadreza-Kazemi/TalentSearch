@@ -1,7 +1,7 @@
 (function() {
     // Mapping of 'test' parameter values to their respective Form IDs, Descriptions, and Ref values
     const testToDetailsMap = {
-    {
+    
     "mental-tranquility": {
         "formId": "sh68g",
         "displayName": "فهرست آرامش روانی - 33",
@@ -296,7 +296,7 @@
         "description": "آزمون فهرست جامع تشخیص تعاملی کودک برای ارزیابی جنبه‌های مختلف زندگی کودکان.",
         "ref": "2004"
     }
-}
+
 
     };
 
