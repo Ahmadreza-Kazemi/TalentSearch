@@ -1,346 +1,462 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fardin Home - خانه فاردین</title>
-  <!-- You can replace these fonts with any Persian calligraphic fonts you prefer -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri&family=Vazir&display=swap">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>فهرست مطالب صنایع تزئینی ایرانی</title>
   <style>
-    /* --- Global Styles & Reset --- */
-    * {
+    body {
+      font-family: 'Tahoma', sans-serif;
+      background-color: #f7f7f7;
+      color: #333;
+      line-height: 1.6;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
+      direction: rtl;
     }
-    body {
-      font-family: 'Vazir', 'Amiri', sans-serif;
-      background-color: #2E1A47;
-      color: #FFD700;
-      line-height: 1.6;
-      scroll-behavior: smooth;
-    }
-    a {
-      color: #FFD700;
-      text-decoration: none;
-      transition: transform 0.3s ease;
-    }
-    a:hover {
-      transform: scale(1.1);
-    }
-
-    /* --- Header & Hero Section --- */
     header {
       background-color: #2E1A47;
-      text-align: center;
-      padding: 2rem 1rem;
-    }
-    header h1 {
-      font-size: 3rem;
-      font-family: 'Amiri', serif;
       color: #FFD700;
-      margin-bottom: 0.5rem;
-    }
-    header p {
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
-    }
-    .hero {
-      width: 100%;
-      height: 600px;
-      background: url('https://via.placeholder.com/1920x600?text=Persian+Craftsmanship') no-repeat center center/cover;
-      position: relative;
-    }
-    .hero::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: rgba(46, 26, 71, 0.6); /* overlay for enhanced text/image contrast */
-    }
-
-    /* --- Section General Styles & Animation --- */
-    section {
-      padding: 4rem 2rem;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    }
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .section-title {
+      padding: 20px;
       text-align: center;
-      margin-bottom: 2rem;
-      font-size: 2.5rem;
     }
-
-    /* --- Grid Layout for Textiles & Handicrafts --- */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
+    nav {
+      background: #fff;
+      padding: 10px 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
-    .grid-item {
-      background-color: rgba(255, 215, 0, 0.1);
-      border: 1px solid rgba(255, 215, 0, 0.3);
-      padding: 1rem;
-      border-radius: 8px;
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
     }
-    .grid-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    nav ul li {
+      margin: 0 10px;
     }
-    .grid-item img {
-      width: 100%;
-      height: auto;
+    nav ul li a {
+      text-decoration: none;
+      color: #2E1A47;
+      font-weight: bold;
+    }
+    nav ul li a:hover {
+      color: #FFD700;
+    }
+    section {
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 1000px;
+      background: #fff;
       border-radius: 5px;
-      margin-bottom: 1rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
-    .grid-item h3 {
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
-    }
-    .grid-item p {
-      font-size: 1rem;
-      line-height: 1.4;
-    }
-
-    /* --- Contact Form & Social Media --- */
-    .contact-form {
-      max-width: 600px;
-      margin: 0 auto;
-      background-color: rgba(255, 215, 0, 0.1);
-      padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    }
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      padding: 0.75rem;
-      margin-bottom: 1rem;
-      border: none;
-      border-radius: 4px;
-      font-size: 1rem;
-    }
-    .contact-form input::placeholder,
-    .contact-form textarea::placeholder {
+    section h2 {
+      border-bottom: 2px solid #2E1A47;
+      padding-bottom: 10px;
       color: #2E1A47;
     }
-    .contact-form button {
-      display: block;
-      width: 100%;
-      padding: 0.75rem;
-      background-color: #FFD700;
-      border: none;
-      border-radius: 4px;
-      font-size: 1.2rem;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
+    .sub-section {
+      margin: 20px 0;
     }
-    .contact-form button:hover {
-      background-color: #e6c200;
+    .sub-section h3 {
+      color: #2E1A47;
     }
-    .social-media {
+    .placeholder {
+      background-color: #eaeaea;
+      border: 1px dashed #ccc;
+      padding: 10px;
+      margin-top: 10px;
+      font-style: italic;
       text-align: center;
-      margin-top: 2rem;
-      font-size: 1.2rem;
     }
-    .social-media a {
-      margin: 0 1rem;
-    }
-
-    /* --- Footer --- */
     footer {
       text-align: center;
-      padding: 1rem;
-      background-color: #2E1A47;
+      padding: 20px;
+      background: #2E1A47;
       color: #FFD700;
-      font-size: 0.9rem;
-    }
-
-    /* --- Responsive Adjustments --- */
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2.5rem;
-      }
-      .section-title {
-        font-size: 2rem;
-      }
     }
   </style>
 </head>
 <body>
-  <!-- Header & Hero Section -->
+
   <header>
-    <h1>Fardin Home</h1>
-    <p>هنر و اصالت ایران در دستان شما</p>
+    <h1>فهرست مطالب صنایع تزئینی ایرانی</h1>
+    <p>صفحه محتوا برای افزودن اطلاعات بیشتر به هر بخش</p>
   </header>
-  <div class="hero"></div>
 
-  <!-- Handwoven Textiles Section -->
-  <section id="textiles">
-    <h2 class="section-title">بافته‌های دستباف ایرانی</h2>
-    <div class="grid">
-      <!-- Carpets & Rugs -->
-      <div class="grid-item">
-        <img src="https://via.placeholder.com/400x300?text=فرش+و+قالی" alt="فرش و قالی ایرانی">
-        <h3>فرش و قالی ایرانی</h3>
-        <p>فرش‌های دستباف تبریز، اصفهان، کرمان و ...</p>
+  <nav>
+    <ul>
+      <li><a href="#manasoujat">منسوجات و دستبافت‌های بافندگی</a></li>
+      <li><a href="#zorof">ظروف و اشیای دکوری</a></li>
+      <li><a href="#moblman">چیدمان و مبلمان سنتی</a></li>
+      <li><a href="#dezeynat">تزئینات دیواری و سقفی</a></li>
+      <li><a href="#nonwoven">صنایع دستی غیر بافتنی</a></li>
+      <li><a href="#architecture">هنرهای معماری و تزئینی</a></li>
+    </ul>
+  </nav>
+
+  <!-- ۱. منسوجات و دستبافت‌های بافندگی -->
+  <section id="manasoujat">
+    <h2>۱. منسوجات و دستبافت‌های بافندگی</h2>
+    
+    <!-- الف) فرش و قالی -->
+    <div class="sub-section" id="carpets">
+      <h3>الف) فرش و قالی</h3>
+      <ul>
+        <li>قالی تبریز – معروف به طرح‌های ریزبافت و ظریف</li>
+        <li>قالی اصفهان – دارای نقش‌های اسلیمی و استفاده از ابریشم</li>
+        <li>قالی کرمان – ریزبافت‌ترین قالی ایرانی با رنگ‌های متنوع</li>
+        <li>قالی نائین – معروف به ترکیب رنگ‌های روشن و استفاده از ابریشم</li>
+        <li>قالی قم – فرش‌های ابریشمی با طرح‌های ریزنقش</li>
+        <li>قالی مشهد – از مشهورترین قالی‌های پشمی ایران</li>
+        <li>قالی سنندج (کردستان) – با نقوش هندسی و رنگ‌های طبیعی</li>
+        <li>قالی اردبیل – دارای طرح‌های سنتی و اصیل</li>
+        <li>قالی یزد – طرح‌های الهام‌گرفته از قالی کرمان</li>
+        <li>قالی بیرجند (خراسان جنوبی) – طرح‌های ریزنقش و سنتی</li>
+        <li>قالی چهارمحال و بختیاری – طرح‌های عشایری و پشم خالص</li>
+        <li>قالی ترکمن (گلستان) – با نقوش قرمز و سیاه و بافته‌شده توسط ترکمن‌ها</li>
+        <li>قالی ساروق (مرکزی) – دارای شهرت جهانی و نقوش خاص</li>
+      </ul>
+      <div class="placeholder">[محتوای بیشتر به زودی اضافه خواهد شد]</div>
+    </div>
+
+    <!-- ب) سایر منسوجات دستباف -->
+    <div class="sub-section" id="other-textiles">
+      <h3>ب) سایر منسوجات دستباف</h3>
+      
+      <!-- گلیم -->
+      <div class="sub-section" id="kilims">
+        <h4>گلیم</h4>
+        <ul>
+          <li>گلیم هرسین (کرمانشاه) – دارای نقش‌های ظریف و هندسی</li>
+          <li>گلیم سنندج (کردستان) – با طرح‌های ریزنقش و رنگ‌های گرم</li>
+          <li>گلیم شاهسون (اردبیل و آذربایجان شرقی) – با طرح‌های راه‌راه و رنگ‌های زنده</li>
+          <li>گلیم بلوچ (سیستان و بلوچستان و خراسان جنوبی) – دارای طرح‌های هندسی خاص</li>
+          <li>گلیم قشقایی (فارس) – با طرح‌های الهام‌گرفته از طبیعت و رنگ‌های طبیعی</li>
+          <li>گلیم ترکمن (گلستان) – با نقوش قرمز و مشکی خاص ترکمن‌ها</li>
+          <li>گلیم مازندران – با نقوش الهام‌گرفته از طبیعت شمال ایران</li>
+        </ul>
       </div>
-      <!-- Kilims -->
-      <div class="grid-item">
-        <img src="https://via.placeholder.com/400x300?text=گلیم" alt="گلیم">
-        <h3>گلیم</h3>
-        <p>فرش‌های سنتی با طرح‌های هندسی برجسته</p>
+      
+      <!-- جاجیم -->
+      <div class="sub-section" id="jajim">
+        <h4>جاجیم</h4>
+        <ul>
+          <li>جاجیم خلخال (اردبیل) – دارای طرح‌های رنگارنگ</li>
+          <li>جاجیم بختیاری (چهارمحال و بختیاری) – با رنگ‌های گرم و طبیعی</li>
+          <li>جاجیم بجنورد (خراسان شمالی) – بافته‌شده با نخ پشمی و نخی</li>
+          <li>جاجیم شیراز (فارس) – مناسب برای روفرشی و روکرسی</li>
+          <li>جاجیم الموت (قزوین) – بافت متراکم و رنگ‌های متنوع</li>
+        </ul>
       </div>
-      <!-- Jajims -->
-      <div class="grid-item">
-        <img src="https://via.placeholder.com/400x300?text=جاجیم" alt="جاجیم">
-        <h3>جاجیم</h3>
-        <p>بافت‌های رنگارنگ برای پوشش و مبلمان</p>
+      
+      <!-- زیلو -->
+      <div class="sub-section" id="ziloo">
+        <h4>زیلو</h4>
+        <ul>
+          <li>زیلو میبد (یزد) – معروف به رنگ‌های فیروزه‌ای و طرح‌های هندسی</li>
+          <li>زیلو سمنان – با نخ‌های پنبه‌ای و طرح‌های ساده</li>
+          <li>زیلو ابرکوه (یزد) – دارای نقش‌های الهام‌گرفته از معماری ایرانی</li>
+        </ul>
       </div>
-      <!-- Ziloo -->
-      <div class="grid-item">
-        <img src="https://via.placeholder.com/400x300?text=زیلو" alt="زیلو">
-        <h3>زیلو</h3>
-        <p>پوشش‌های بومی از یزد با طراحی منحصر به فرد</p>
+      
+      <!-- نمدبافی -->
+      <div class="sub-section" id="feltworks">
+        <h4>نمدبافی</h4>
+        <ul>
+          <li>نمدمالی سمنان – معروف به نمدهای طرح‌دار</li>
+          <li>نمد بختیاری (چهارمحال و بختیاری) – برای زیرانداز و پشتی</li>
+          <li>نمد مازندران و گیلان – کاربردی برای پوشش دیوار و زیرانداز</li>
+        </ul>
       </div>
-      <!-- Feltwork -->
-      <div class="grid-item">
-        <img src="https://via.placeholder.com/400x300?text=نمدبافی" alt="نمدبافی">
-        <h3>نمدبافی</h3>
-        <p>منسوجات نمدی دست‌ساز برای نشیمن و تزئین</p>
+      
+      <!-- پته‌دوزی -->
+      <div class="sub-section" id="pate-douzi">
+        <h4>پته‌دوزی</h4>
+        <ul>
+          <li>پته کرمان – معروف‌ترین نوع پته با طرح‌های درختی و بته‌جقه</li>
+          <li>پته سیرجان – با رنگ‌های طبیعی و نقش‌های پرکار</li>
+        </ul>
       </div>
-      <!-- Pateh Embroidery -->
-      <div class="grid-item">
-        <img src="https://via.placeholder.com/400x300?text=پته‌دوزی" alt="پته‌دوزی">
-        <h3>پته‌دوزی</h3>
-        <p>سوزن‌دوزی‌های پیچیده از کرمان</p>
+      
+      <!-- سوزن‌دوزی -->
+      <div class="sub-section" id="soozan-douzi">
+        <h4>سوزن‌دوزی</h4>
+        <ul>
+          <li>سوزن‌دوزی بلوچ (سیستان و بلوچستان) – پارچه‌های رنگارنگ با دوخت‌های ریز</li>
+          <li>سوزن‌دوزی هرمزگان – با نقش‌های بومی و الهام از طبیعت</li>
+          <li>سوزن‌دوزی ترکمن (گلستان) – روی پارچه‌های ابریشمی و پشمی</li>
+        </ul>
       </div>
-      <!-- Needlework -->
-      <div class="grid-item">
-        <img src="https://via.placeholder.com/400x300?text=سوزن‌دوزی" alt="سوزن‌دوزی">
-        <h3>سوزن‌دوزی</h3>
-        <p>فرش‌های تزئینی با دوخت‌های دقیق از مناطق مختلف</p>
+      
+      <!-- احرامی‌بافی و چادرشب‌بافی -->
+      <div class="sub-section" id="ahrami">
+        <h4>احرامی‌بافی و چادرشب‌بافی</h4>
+        <ul>
+          <li>احرامی‌بافی شوشتر (خوزستان) – پارچه‌های دستباف نخی</li>
+          <li>چادرشب‌بافی گیلان و مازندران – پارچه‌های رنگارنگ راه‌راه</li>
+        </ul>
       </div>
-      <!-- Traditional Woven Fabrics -->
-      <div class="grid-item">
-        <img src="https://via.placeholder.com/400x300?text=پارچه‌های+دستباف" alt="پارچه‌های دستباف سنتی">
-        <h3>پارچه‌های دستباف سنتی</h3>
-        <p>منسوجات ابریشمی و پنبه‌ای لوکس مانند ترمه و چاپ‌های باتیک</p>
+      
+      <!-- پارچه‌بافی سنتی -->
+      <div class="sub-section" id="traditional-weaving">
+        <h4>پارچه‌بافی سنتی</h4>
+        <ul>
+          <li>ترمه یزد – پارچه گرانبهای ابریشمی با طرح بته‌جقه</li>
+          <li>مخمل‌بافی کاشان – پارچه‌های پرنقش و خاص</li>
+          <li>چاپ قلمکار (اصفهان) – پارچه‌های طرح‌دار سنتی</li>
+        </ul>
       </div>
+      
+      <div class="placeholder">[محتوای بیشتر به زودی اضافه خواهد شد]</div>
     </div>
   </section>
 
-  <!-- Decorative Handicrafts Section -->
-  <section id="handicrafts">
-    <h2 class="section-title">صنایع دستی تزئینی ایرانی</h2>
-    <div class="grid">
-      <!-- Metal Engraving -->
-      <div class="grid-item">
-        <img src="https://via.placeholder.com/400x300?text=قلم‌زنی" alt="قلم‌زنی">
-        <h3>قلم‌زنی</h3>
-        <p>ظروف مسی، برنجی و نقره‌ای با نقوش دستی</p>
-      </div>
-      <!-- Turquoise Inlay -->
-      <div class="grid-item">
-        <img src="https://via.placeholder.com/400x300?text=فیروزه‌کوبی" alt="فیروزه‌کوبی">
-        <h3>فیروزه‌کوبی</h3>
-        <p>ظروف مسی با تزئین فیروزه‌ای اصیل</p>
-      </div>
-      <!-- Marquetry -->
-      <div class="grid-item">
-        <img src="https://via.placeholder.com/400x300?text=معرق‌کاری" alt="معرق‌کاری و خاتم‌کاری">
-        <h3>معرق‌کاری و خاتم‌کاری</h3>
-        <p>تراشکاری‌های چوبی دقیق برای جعبه‌ها و قاب‌ها</p>
-      </div>
-      <!-- Glasswork & Mirrors -->
-      <div class="grid-item">
-        <img src="https://via.placeholder.com/400x300?text=شیشه‌گری" alt="شیشه‌گری و آیینه‌کاری">
-        <h3>شیشه‌گری و آیینه‌کاری</h3>
-        <p>هنرهای سنتی در شیشه‌سازی و کار با آیینه</p>
-      </div>
-      <!-- Pottery & Ceramics -->
-      <div class="grid-item">
-        <img src="https://via.placeholder.com/400x300?text=سفال" alt="سفال و سرامیک سنتی">
-        <h3>سفال و سرامیک سنتی</h3>
-        <p>ظروف سفالی و کاشی‌های دست‌ساز از لاله‌چای</p>
-      </div>
-      <!-- Persian Calligraphy Wall Art -->
-      <div class="grid-item">
-        <img src="https://via.placeholder.com/400x300?text=خوشنویسی" alt="تابلوهای خوشنویسی">
-        <h3>تابلوهای خوشنویسی</h3>
-        <p>تابلوهای دیواری با شعر و نثر فارسی</p>
-      </div>
-      <!-- Traditional Copperware -->
-      <div class="grid-item">
-        <img src="https://via.placeholder.com/400x300?text=ظروف+مسی" alt="ظروف مسی سنتی">
-        <h3>ظروف مسی سنتی</h3>
-        <p>ظروف پخت و پز و تزئینی از مس دست‌ساز</p>
-      </div>
-      <!-- Persian Chandelier Craft -->
-      <div class="grid-item">
-        <img src="https://via.placeholder.com/400x300?text=لوستر" alt="لوسترهای کریستالی و سنتی">
-        <h3>لوسترهای کریستالی و سنتی</h3>
-        <p>لوسترهای مجلل از ترکیب کریستال و سنت</p>
-      </div>
-      <!-- Persian Jewelry & Silverware -->
-      <div class="grid-item">
-        <img src="https://via.placeholder.com/400x300?text=زیورآلات" alt="زیورآلات و نقره‌کاری سنتی">
-        <h3>زیورآلات و نقره‌کاری سنتی</h3>
-        <p>زیورآلات دست‌ساز با جواهرات و نقره خالص</p>
-      </div>
-    </div>
+  <!-- ۲. ظروف و اشیای دکوری -->
+  <section id="zorof">
+    <h2>۲. ظروف و اشیای دکوری</h2>
+    <ul>
+      <li>میناکاری – ظروف مسی یا سفالی با نقوش میناکاری شده</li>
+      <li>خاتم‌کاری – اشیای چوبی با تزئینات خاتم (جعبه، قلمدان، و ظروف)</li>
+      <li>فیروزه‌کوبی – ظروف و اشیای فلزی تزئین‌شده با سنگ‌های فیروزه</li>
+      <li>سفال و سرامیک لعاب‌دار – کوزه، بشقاب، کاسه و کاشی‌های سنتی</li>
+      <li>مس و برنج – ظروف مسی مانند سینی، قندان، سماور، و دیگ‌های تزئینی</li>
+      <li>آیینه و شمعدان – با قاب‌های چوبی، برنجی یا خاتم‌کاری‌شده</li>
+      <li>چراغ‌های سنتی (فانوس و قندیل) – با شیشه‌های رنگی یا برنزکاری</li>
+    </ul>
+    <div class="placeholder">[محتوای بیشتر به زودی اضافه خواهد شد]</div>
   </section>
 
-  <!-- Contact & Social Media Section -->
-  <section id="contact">
-    <h2 class="section-title">تماس با ما</h2>
-    <div class="contact-form">
-      <form action="#" method="post">
-        <input type="text" name="name" placeholder="نام شما" required>
-        <input type="email" name="email" placeholder="ایمیل شما" required>
-        <textarea name="message" rows="5" placeholder="پیام شما" required></textarea>
-        <button type="submit">ارسال پیام</button>
-      </form>
-    </div>
-    <div class="social-media">
-      <a href="#" title="اینستاگرام" target="_blank">اینستاگرام</a>
-      <a href="#" title="تلگرام" target="_blank">تلگرام</a>
-      <a href="#" title="واتس‌اپ" target="_blank">واتس‌اپ</a>
-    </div>
+  <!-- ۳. چیدمان و مبلمان سنتی -->
+  <section id="moblman">
+    <h2>۳. چیدمان و مبلمان سنتی</h2>
+    <ul>
+      <li>کرسی – میز چوبی با لحاف ضخیم برای گرمایش سنتی</li>
+      <li>صندلی و تخت چوبی سنتی – با حکاکی‌های زیبا و گاهی معرق‌کاری‌شده</li>
+      <li>سفره قلمکار – پارچه‌های سنتی با نقوش چاپی برای میز یا سفره</li>
+      <li>قالیچه و پادری سنتی – فرش‌های کوچک با طرح‌های محلی</li>
+      <li>نیمکت‌های چوبی – همراه با گلیم یا مخده‌های دستباف</li>
+    </ul>
+    <div class="placeholder">[محتوای بیشتر به زودی اضافه خواهد شد]</div>
   </section>
 
-  <!-- Footer -->
+  <!-- ۴. تزئینات دیواری و سقفی -->
+  <section id="dezeynat">
+    <h2>۴. تزئینات دیواری و سقفی</h2>
+    <ul>
+      <li>کاشی‌کاری سنتی – استفاده از کاشی‌های فیروزه‌ای و لاجوردی بر دیوارها یا ستون‌ها</li>
+      <li>دیوارکوب سفالی یا چوبی – بشقاب‌ها و تابلوهای دیواری دست‌ساز</li>
+      <li>آیینه‌کاری – تزئین دیوارها و سقف با تکه‌های آینه</li>
+      <li>نقاشی دیواری سنتی – شامل طرح‌های گل و مرغ یا الگوهای اسلیمی</li>
+      <li>طاقچه‌ها و رف‌های گچی – برای نمایش ظروف و اشیای دکوری</li>
+      <li>چوب‌کاری و گره‌چینی – استفاده از چوب‌های مشبک در پنجره‌ها و سقف‌ها</li>
+    </ul>
+    <div class="placeholder">[محتوای بیشتر به زودی اضافه خواهد شد]</div>
+  </section>
+
+  <!-- ۵. صنایع دستی غیر بافتنی -->
+  <section id="nonwoven">
+    <h2>۵. صنایع دستی غیر بافتنی</h2>
+    <!-- فلزکاری و حکاکی روی فلز -->
+    <div class="sub-section" id="metalwork">
+      <h3>الف) فلزکاری و حکاکی روی فلز</h3>
+      <ul>
+        <li>قلم‌زنی (اصفهان، زنجان، شیراز) – حکاکی نقش‌های اسلیمی و هندسی روی مس، نقره و برنج</li>
+        <li>فیروزه‌کوبی (مشهد، اصفهان) – تزئین ظروف مسی با سنگ‌های فیروزه</li>
+        <li>ملیله‌کاری (زنجان، اصفهان) – ساخت ظروف و زیورآلات نقره‌ای با سیم‌های نازک</li>
+        <li>مسگری (کرمان، اصفهان، زنجان) – ساخت ظروف مسی سنتی</li>
+        <li>حکاکی و قلم‌زنی روی برنج (اصفهان، زنجان)</li>
+        <li>ساخت سماور (زنجان، تهران، اصفهان) – سماورهای برنجی و زغالی</li>
+      </ul>
+    </div>
+
+    <!-- چوب و منبت‌کاری -->
+    <div class="sub-section" id="woodwork">
+      <h3>ب) چوب و منبت‌کاری</h3>
+      <ul>
+        <li>منبت‌کاری (ملایر، گلپایگان، اصفهان) – حکاکی روی چوب برای ساخت مبلمان و تابلو</li>
+        <li>معرق‌کاری (تهران، اصفهان، شیراز) – تلفیق چوب‌های رنگی برای طرح‌های تزئینی</li>
+        <li>خاتم‌کاری (اصفهان، شیراز) – تزئین سطح چوب با اشکال هندسی</li>
+        <li>گره‌چینی چوب (یزد، اصفهان) – ساخت پنجره‌ها و درهای سنتی با چوب‌های مشبک</li>
+        <li>خراطی چوب (تهران، کردستان، مازندران) – ساخت اشیای چوبی گرد مثل پایه میز</li>
+        <li>ساخت صندوق‌های چوبی (مازندران، گیلان) – جهت نگهداری وسایل دکوری</li>
+      </ul>
+    </div>
+
+    <!-- سفال و سرامیک -->
+    <div class="sub-section" id="ceramics">
+      <h3>ج) سفال و سرامیک</h3>
+      <ul>
+        <li>سفال لالجین (همدان) – معروف‌ترین سفال ایران با لعاب‌های متنوع</li>
+        <li>سفال کلپورگان (سیستان و بلوچستان) – سفال بدون لعاب با نقوش سنتی</li>
+        <li>سفال نطنز و میبد (اصفهان، یزد) – سفال لعاب‌دار با نقوش اسلیمی</li>
+        <li>کاشی هفت‌رنگ (اصفهان، مشهد، یزد) – برای تزئین دیوارها و بناهای سنتی</li>
+        <li>کاشی معرق (اصفهان، تهران) – تلفیق قطعات کاشی برای خلق نقش‌های سنتی</li>
+      </ul>
+    </div>
+
+    <!-- شیشه‌گری و آینه‌کاری -->
+    <div class="sub-section" id="glasswork">
+      <h3>د) شیشه‌گری و آینه‌کاری</h3>
+      <ul>
+        <li>شیشه‌گری دستی (تهران، اصفهان، قزوین) – ساخت ظروف شیشه‌ای رنگی</li>
+        <li>آیینه‌کاری (اصفهان، تهران، شیراز) – تزئین دیوارها با تکه‌های آینه</li>
+        <li>نقاشی روی شیشه (قزوین، تهران) – خلق آثار هنری روی شیشه‌های رنگی</li>
+      </ul>
+    </div>
+
+    <!-- حصیربافی و بافت‌های گیاهی -->
+    <div class="sub-section" id="basketry">
+      <h3>ه) حصیربافی و بافت‌های گیاهی</h3>
+      <ul>
+        <li>حصیربافی (سیستان و بلوچستان، بوشهر، گیلان) – تولید سبد، زیرانداز و وسایل تزئینی</li>
+        <li>بامبوبافی (گیلان، مازندران) – ساخت ظروف و وسایل تزئینی از نی و بامبو</li>
+        <li>سفره‌آردی (سیستان و بلوچستان) – حصیرهای نازک مخصوص نگهداری نان</li>
+      </ul>
+    </div>
+
+    <!-- سنگ‌تراشی و حکاکی روی سنگ -->
+    <div class="sub-section" id="stone-carving">
+      <h3>و) سنگ‌تراشی و حکاکی روی سنگ</h3>
+      <ul>
+        <li>حجاری سنتی (شیراز، اصفهان، تبریز) – ساخت ستون، سنگ قبر و نماهای سنتی</li>
+        <li>مشبک‌کاری سنگ (یزد، اصفهان) – ایجاد طرح‌های مشبک در سنگ</li>
+        <li>حکاکی روی سنگ (مشهد، نیشابور) – حکاکی نقوش اسلیمی روی ظروف سنگی</li>
+      </ul>
+    </div>
+
+    <!-- صنایع دستی چرمی -->
+    <div class="sub-section" id="leather">
+      <h3>ز) صنایع دستی چرمی</h3>
+      <ul>
+        <li>چرم‌دوزی سنتی (تبریز، مشهد، همدان) – ساخت کیف، کفش و کمربند</li>
+        <li>معرق چرم (تهران، مشهد) – ترکیب چرم‌های رنگی برای ایجاد نقوش خاص</li>
+        <li>نقاشی روی چرم (آذربایجان غربی، تهران) – ایجاد طرح‌های تزئینی روی چرم</li>
+      </ul>
+    </div>
+
+    <!-- زیورآلات سنتی و سنگ‌های قیمتی -->
+    <div class="sub-section" id="jewelry">
+      <h3>ح) زیورآلات سنتی و سنگ‌های قیمتی</h3>
+      <ul>
+        <li>طلاسازی سنتی (اصفهان، تهران، تبریز) – ساخت زیورآلات دست‌ساز طلا</li>
+        <li>ساخت نقره و فیروزه‌کاری (مشهد، اصفهان، زنجان) – انگشتر، گردنبند و زیورآلات</li>
+        <li>حکاکی روی عقیق و فیروزه (مشهد، نیشابور) – حکاکی اسم و نقوش اسلامی روی سنگ‌های قیمتی</li>
+      </ul>
+    </div>
+
+    <!-- هنرهای تزئینی روی پارچه (غیر از دستبافت‌های عمده) -->
+    <div class="sub-section" id="fabric-art">
+      <h3>ط) هنرهای تزئینی روی پارچه</h3>
+      <ul>
+        <li>چاپ قلمکار (اصفهان، کاشان) – نقاشی و چاپ روی پارچه</li>
+        <li>باتیک (هرمزگان، گیلان) – رنگرزی پارچه با استفاده از موم و رنگ‌های طبیعی</li>
+        <li>گلابتون‌دوزی (هرمزگان، بوشهر) – دوخت‌های تزئینی با نخ‌های طلایی</li>
+        <li>زری‌بافی (یزد، اصفهان) – پارچه‌های لوکس ابریشمی با نقوش طلایی</li>
+      </ul>
+    </div>
+
+    <!-- صنایع دستی شمع‌سازی و کندوی عسل -->
+    <div class="sub-section" id="candles-hives">
+      <h3>ی) صنایع دستی شمع‌سازی و کندوی عسل</h3>
+      <ul>
+        <li>شمع‌سازی سنتی (تهران، کاشان) – ساخت شمع‌های تزئینی با پارافین</li>
+        <li>کندوی عسل حصیری (گیلان، مازندران) – ساخت کندوهای طبیعی</li>
+      </ul>
+    </div>
+
+    <!-- وسایل موسیقی سنتی -->
+    <div class="sub-section" id="traditional-music">
+      <h3>ک) وسایل موسیقی سنتی</h3>
+      <ul>
+        <li>تار و سه‌تار (تهران، اصفهان) – ساخت سازهای سنتی ایرانی</li>
+        <li>دف و تنبک (کردستان، فارس) – سازهای کوبه‌ای دست‌ساز</li>
+        <li>سنتور (تهران، اصفهان) – ساخت سنتورهای چوبی</li>
+      </ul>
+    </div>
+
+    <!-- محصولات کاغذی و کتاب‌آرایی -->
+    <div class="sub-section" id="paper-products">
+      <h3>ل) محصولات کاغذی و کتاب‌آرایی</h3>
+      <ul>
+        <li>تذهیب و نگارگری (اصفهان، تهران) – نقاشی‌های ظریف با رنگ‌های طلایی</li>
+        <li>کتابت و خوشنویسی (قزوین، تهران، اصفهان) – هنر نوشتن خط نستعلیق و شکسته</li>
+        <li>جلدسازی سنتی (تهران، مشهد) – ساخت جلدهای چرمی دست‌ساز برای کتاب‌ها</li>
+      </ul>
+    </div>
+
+    <div class="placeholder">[محتوای بیشتر به زودی اضافه خواهد شد]</div>
+  </section>
+
+  <!-- ۶. هنرهای معماری و تزئینی -->
+  <section id="architecture">
+    <h2>۶. هنرهای معماری و تزئینی</h2>
+    
+    <!-- هنرهای معماری سنتی -->
+    <div class="sub-section" id="traditional-architecture">
+      <h3>الف) هنرهای معماری سنتی</h3>
+      <ul>
+        <li>رُگچین – چینش خاص آجرها در نماهای سنتی</li>
+        <li>گچ‌بری سنتی (یزد، اصفهان، شیراز) – تزئین دیوارها و سقف‌ها با نقوش اسلیمی</li>
+        <li>آجرکاری معقلی (کاشان، اصفهان) – ترکیب آجر و کاشی برای ایجاد الگوهای هندسی</li>
+        <li>مقرنس‌کاری (اصفهان، شیراز) – هنر تزئین گنبدها و سقف‌های مساجد</li>
+        <li>نقاشی دیواری قهوه‌خانه‌ای (تهران، اصفهان، شیراز) – داستان‌سرایی تصویری روی دیوارهای سنتی</li>
+      </ul>
+    </div>
+    
+    <!-- هنرهای مرتبط با مواد طبیعی -->
+    <div class="sub-section" id="natural-materials">
+      <h3>ب) هنرهای مرتبط با مواد طبیعی</h3>
+      <ul>
+        <li>صابون‌سازی سنتی (مراغه، تبریز) – صابون‌های گیاهی و دست‌ساز با کاربرد تزئینی</li>
+        <li>گل خشک‌آرایی (گیلان، مازندران) – ساخت دسته‌گل و تابلوهای تزئینی از گل‌های خشک‌شده</li>
+        <li>چیدمان سنگ‌های رودخانه‌ای (کردستان، مازندران) – ساخت تزئینات از سنگ‌های طبیعی</li>
+        <li>مجسمه‌سازی چوبی سنتی (مازندران، گیلان) – ساخت مجسمه‌های دست‌ساز از تنه و شاخه درختان</li>
+      </ul>
+    </div>
+    
+    <!-- هنرهای مرتبط با کاغذ و چوب -->
+    <div class="sub-section" id="paper-wood">
+      <h3>ج) هنرهای مرتبط با کاغذ و چوب</h3>
+      <ul>
+        <li>کاغذسازی سنتی (کاشان، یزد) – تولید کاغذ دست‌ساز با الیاف طبیعی</li>
+        <li>چاپ سنگی (تهران، تبریز) – روش قدیمی چاپ روی کاغذ و پارچه با استفاده از سنگ</li>
+        <li>منبت‌کاری روی استخوان و عاج (همدان، کرمان) – حکاکی طرح‌های ریز روی استخوان حیوانات</li>
+      </ul>
+    </div>
+    
+    <!-- تزئینات مرتبط با نور و روشنایی -->
+    <div class="sub-section" id="lighting">
+      <h3>د) تزئینات دست‌ساز مرتبط با نور و روشنایی</h3>
+      <ul>
+        <li>فانوس‌سازی سنتی (تهران، یزد) – ساخت فانوس‌های فلزی و شیشه‌ای برای نورپردازی سنتی</li>
+        <li>ساخت لوسترهای سنتی (اصفهان، کاشان) – ساخت چراغ‌ها و لوسترهای تزئینی با شیشه و فلز</li>
+      </ul>
+    </div>
+    
+    <!-- هنرهای مبتنی بر ترکیب مواد مختلف -->
+    <div class="sub-section" id="mixed-media">
+      <h3>ه) هنرهای مبتنی بر ترکیب مواد مختلف</h3>
+      <ul>
+        <li>لاک‌تراشی و لاک‌کاری (قزوین، اصفهان) – ساخت جعبه‌های چوبی با روکش لاکی و نقاشی</li>
+        <li>آبگینه‌کاری (اصفهان، تهران) – ترکیب شیشه‌های رنگی برای خلق آثار تزئینی</li>
+        <li>پیکرتراشی سنتی (تهران، شیراز، تبریز) – ساخت پیکره‌های دست‌ساز از چوب، سنگ یا فلز</li>
+        <li>تابلوسازی با نقره و مس (زنجان، اصفهان) – ساخت تابلوهای هنری با ترکیب نقره و مس</li>
+        <li>سازسازی سنتی (تهران، اصفهان، شیراز) – تولید سازهای دست‌ساز مثل تار، سه‌تار و نی</li>
+      </ul>
+    </div>
+    
+    <div class="placeholder">[محتوای بیشتر به زودی اضافه خواهد شد]</div>
+  </section>
+
   <footer>
-    <p>© 2025 Fardin Home. تمامی حقوق محفوظ است. | آدرس فروشگاه: تهران، ایران</p>
+    <p>کلیه حقوق محفوظ است &copy; 2025 - فردین</p>
   </footer>
 
-  <!-- --- Simple Scroll Reveal Animation --- -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const sections = document.querySelectorAll("section");
-      const options = { threshold: 0.1 };
-      const observer = new IntersectionObserver(function(entries, observer) {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      }, options);
-      sections.forEach(section => {
-        observer.observe(section);
-      });
-    });
-  </script>
 </body>
 </html>
