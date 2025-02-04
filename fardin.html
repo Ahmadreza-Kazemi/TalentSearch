@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fardin Home - خانه فاردین</title>
+  <!-- You can replace these fonts with any Persian calligraphic fonts you prefer -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri&family=Vazir&display=swap">
+  <style>
+    /* --- Global Styles & Reset --- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Vazir', 'Amiri', sans-serif;
+      background-color: #2E1A47;
+      color: #FFD700;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+    a {
+      color: #FFD700;
+      text-decoration: none;
+      transition: transform 0.3s ease;
+    }
+    a:hover {
+      transform: scale(1.1);
+    }
+
+    /* --- Header & Hero Section --- */
+    header {
+      background-color: #2E1A47;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    header h1 {
+      font-size: 3rem;
+      font-family: 'Amiri', serif;
+      color: #FFD700;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+    .hero {
+      width: 100%;
+      height: 600px;
+      background: url('https://via.placeholder.com/1920x600?text=Persian+Craftsmanship') no-repeat center center/cover;
+      position: relative;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(46, 26, 71, 0.6); /* overlay for enhanced text/image contrast */
+    }
+
+    /* --- Section General Styles & Animation --- */
+    section {
+      padding: 4rem 2rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2.5rem;
+    }
+
+    /* --- Grid Layout for Textiles & Handicrafts --- */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .grid-item {
+      background-color: rgba(255, 215, 0, 0.1);
+      border: 1px solid rgba(255, 215, 0, 0.3);
+      padding: 1rem;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .grid-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    .grid-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+      margin-bottom: 1rem;
+    }
+    .grid-item h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .grid-item p {
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+
+    /* --- Contact Form & Social Media --- */
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: rgba(255, 215, 0, 0.1);
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+      color: #2E1A47;
+    }
+    .contact-form button {
+      display: block;
+      width: 100%;
+      padding: 0.75rem;
+      background-color: #FFD700;
+      border: none;
+      border-radius: 4px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .contact-form button:hover {
+      background-color: #e6c200;
+    }
+    .social-media {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 1.2rem;
+    }
+    .social-media a {
+      margin: 0 1rem;
+    }
+
+    /* --- Footer --- */
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #2E1A47;
+      color: #FFD700;
+      font-size: 0.9rem;
+    }
+
+    /* --- Responsive Adjustments --- */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+      .section-title {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header & Hero Section -->
+  <header>
+    <h1>Fardin Home</h1>
+    <p>هنر و اصالت ایران در دستان شما</p>
+  </header>
+  <div class="hero"></div>
+
+  <!-- Handwoven Textiles Section -->
+  <section id="textiles">
+    <h2 class="section-title">بافته‌های دستباف ایرانی</h2>
+    <div class="grid">
+      <!-- Carpets & Rugs -->
+      <div class="grid-item">
+        <img src="https://via.placeholder.com/400x300?text=فرش+و+قالی" alt="فرش و قالی ایرانی">
+        <h3>فرش و قالی ایرانی</h3>
+        <p>فرش‌های دستباف تبریز، اصفهان، کرمان و ...</p>
+      </div>
+      <!-- Kilims -->
+      <div class="grid-item">
+        <img src="https://via.placeholder.com/400x300?text=گلیم" alt="گلیم">
+        <h3>گلیم</h3>
+        <p>فرش‌های سنتی با طرح‌های هندسی برجسته</p>
+      </div>
+      <!-- Jajims -->
+      <div class="grid-item">
+        <img src="https://via.placeholder.com/400x300?text=جاجیم" alt="جاجیم">
+        <h3>جاجیم</h3>
+        <p>بافت‌های رنگارنگ برای پوشش و مبلمان</p>
+      </div>
+      <!-- Ziloo -->
+      <div class="grid-item">
+        <img src="https://via.placeholder.com/400x300?text=زیلو" alt="زیلو">
+        <h3>زیلو</h3>
+        <p>پوشش‌های بومی از یزد با طراحی منحصر به فرد</p>
+      </div>
+      <!-- Feltwork -->
+      <div class="grid-item">
+        <img src="https://via.placeholder.com/400x300?text=نمدبافی" alt="نمدبافی">
+        <h3>نمدبافی</h3>
+        <p>منسوجات نمدی دست‌ساز برای نشیمن و تزئین</p>
+      </div>
+      <!-- Pateh Embroidery -->
+      <div class="grid-item">
+        <img src="https://via.placeholder.com/400x300?text=پته‌دوزی" alt="پته‌دوزی">
+        <h3>پته‌دوزی</h3>
+        <p>سوزن‌دوزی‌های پیچیده از کرمان</p>
+      </div>
+      <!-- Needlework -->
+      <div class="grid-item">
+        <img src="https://via.placeholder.com/400x300?text=سوزن‌دوزی" alt="سوزن‌دوزی">
+        <h3>سوزن‌دوزی</h3>
+        <p>فرش‌های تزئینی با دوخت‌های دقیق از مناطق مختلف</p>
+      </div>
+      <!-- Traditional Woven Fabrics -->
+      <div class="grid-item">
+        <img src="https://via.placeholder.com/400x300?text=پارچه‌های+دستباف" alt="پارچه‌های دستباف سنتی">
+        <h3>پارچه‌های دستباف سنتی</h3>
+        <p>منسوجات ابریشمی و پنبه‌ای لوکس مانند ترمه و چاپ‌های باتیک</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Decorative Handicrafts Section -->
+  <section id="handicrafts">
+    <h2 class="section-title">صنایع دستی تزئینی ایرانی</h2>
+    <div class="grid">
+      <!-- Metal Engraving -->
+      <div class="grid-item">
+        <img src="https://via.placeholder.com/400x300?text=قلم‌زنی" alt="قلم‌زنی">
+        <h3>قلم‌زنی</h3>
+        <p>ظروف مسی، برنجی و نقره‌ای با نقوش دستی</p>
+      </div>
+      <!-- Turquoise Inlay -->
+      <div class="grid-item">
+        <img src="https://via.placeholder.com/400x300?text=فیروزه‌کوبی" alt="فیروزه‌کوبی">
+        <h3>فیروزه‌کوبی</h3>
+        <p>ظروف مسی با تزئین فیروزه‌ای اصیل</p>
+      </div>
+      <!-- Marquetry -->
+      <div class="grid-item">
+        <img src="https://via.placeholder.com/400x300?text=معرق‌کاری" alt="معرق‌کاری و خاتم‌کاری">
+        <h3>معرق‌کاری و خاتم‌کاری</h3>
+        <p>تراشکاری‌های چوبی دقیق برای جعبه‌ها و قاب‌ها</p>
+      </div>
+      <!-- Glasswork & Mirrors -->
+      <div class="grid-item">
+        <img src="https://via.placeholder.com/400x300?text=شیشه‌گری" alt="شیشه‌گری و آیینه‌کاری">
+        <h3>شیشه‌گری و آیینه‌کاری</h3>
+        <p>هنرهای سنتی در شیشه‌سازی و کار با آیینه</p>
+      </div>
+      <!-- Pottery & Ceramics -->
+      <div class="grid-item">
+        <img src="https://via.placeholder.com/400x300?text=سفال" alt="سفال و سرامیک سنتی">
+        <h3>سفال و سرامیک سنتی</h3>
+        <p>ظروف سفالی و کاشی‌های دست‌ساز از لاله‌چای</p>
+      </div>
+      <!-- Persian Calligraphy Wall Art -->
+      <div class="grid-item">
+        <img src="https://via.placeholder.com/400x300?text=خوشنویسی" alt="تابلوهای خوشنویسی">
+        <h3>تابلوهای خوشنویسی</h3>
+        <p>تابلوهای دیواری با شعر و نثر فارسی</p>
+      </div>
+      <!-- Traditional Copperware -->
+      <div class="grid-item">
+        <img src="https://via.placeholder.com/400x300?text=ظروف+مسی" alt="ظروف مسی سنتی">
+        <h3>ظروف مسی سنتی</h3>
+        <p>ظروف پخت و پز و تزئینی از مس دست‌ساز</p>
+      </div>
+      <!-- Persian Chandelier Craft -->
+      <div class="grid-item">
+        <img src="https://via.placeholder.com/400x300?text=لوستر" alt="لوسترهای کریستالی و سنتی">
+        <h3>لوسترهای کریستالی و سنتی</h3>
+        <p>لوسترهای مجلل از ترکیب کریستال و سنت</p>
+      </div>
+      <!-- Persian Jewelry & Silverware -->
+      <div class="grid-item">
+        <img src="https://via.placeholder.com/400x300?text=زیورآلات" alt="زیورآلات و نقره‌کاری سنتی">
+        <h3>زیورآلات و نقره‌کاری سنتی</h3>
+        <p>زیورآلات دست‌ساز با جواهرات و نقره خالص</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Social Media Section -->
+  <section id="contact">
+    <h2 class="section-title">تماس با ما</h2>
+    <div class="contact-form">
+      <form action="#" method="post">
+        <input type="text" name="name" placeholder="نام شما" required>
+        <input type="email" name="email" placeholder="ایمیل شما" required>
+        <textarea name="message" rows="5" placeholder="پیام شما" required></textarea>
+        <button type="submit">ارسال پیام</button>
+      </form>
+    </div>
+    <div class="social-media">
+      <a href="#" title="اینستاگرام" target="_blank">اینستاگرام</a>
+      <a href="#" title="تلگرام" target="_blank">تلگرام</a>
+      <a href="#" title="واتس‌اپ" target="_blank">واتس‌اپ</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Fardin Home. تمامی حقوق محفوظ است. | آدرس فروشگاه: تهران، ایران</p>
+  </footer>
+
+  <!-- --- Simple Scroll Reveal Animation --- -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const sections = document.querySelectorAll("section");
+      const options = { threshold: 0.1 };
+      const observer = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, options);
+      sections.forEach(section => {
+        observer.observe(section);
+      });
+    });
+  </script>
+</body>
+</html>
